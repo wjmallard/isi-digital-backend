@@ -8,8 +8,9 @@
 
 #include "fifo_rx.h"
 
-#define BYTE 1
 #define FIFO_WIDTH 32
+
+static unsigned char not_killed = 1;
 
 int main(int argc, char **argv)
 {
@@ -23,13 +24,15 @@ int main(int argc, char **argv)
 	char *path = argv[2];
 
 	int sock = open_udp_recv_socket(port);
-	void *fifo_data = calloc(FIFO_WIDTH, BYTE);
+	void *fifo_data = map_memory(FIFO_WIDTH);
 	ssize_t bytes_received = 0;
 
 	int file = open_file_wo(path);
 	ssize_t bytes_written = 0;
 
-	while (bytes_received >= 0)
+	//signal(SIGINT, cleanup);
+
+	while (not_killed)
 	{
 		bytes_received = recv(sock, fifo_data, FIFO_WIDTH, 0);
 		if (bytes_received == -1)
@@ -48,6 +51,8 @@ int main(int argc, char **argv)
 		}
 	}
 
+	unmap_memory(fifo_data, FIFO_WIDTH);
+
 	return 0;
 }
 
@@ -56,15 +61,25 @@ int main(int argc, char **argv)
  */
 int open_file_wo(char *path)
 {
+	int file_fd = -1;
+
 	int flags = O_WRONLY|O_CREAT|O_TRUNC;
 	mode_t mode = S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH;
 
-	int file_fd = open(path, flags, mode);
+	file_fd = open(path, flags, mode);
 	if (file_fd == -1)
 	{
 		perror("open");
 		exit(1);
 	}
+
 	return file_fd;
 }
 
+
+void cleanup(int signal)
+{
+	printf("Ctrl-C caught! Quitting.\n");
+
+	not_killed = 0;
+}

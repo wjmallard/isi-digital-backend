@@ -98,3 +98,42 @@ void hexdump(void *data, int size)
 
 	printf("\n");
 }
+
+/*
+ * Allocate some fast memory.
+ */
+void *map_memory(size_t size)
+{
+	void *memory = NULL;
+
+	void *addr = NULL;
+	size_t len = size;
+	int prot = PROT_READ|PROT_WRITE;
+	int flags = MAP_PRIVATE|MAP_ANONYMOUS;
+	int fd = -1;
+	off_t off = 0;
+
+	memory = mmap(addr, len, prot, flags, fd, off);
+	if (memory == MAP_FAILED)
+	{
+		perror("mmap");
+		exit(1);
+	}
+
+	return memory;
+}
+
+/*
+ * Deallocate some fast memory.
+ */
+void unmap_memory(void *addr, size_t size)
+{
+	int status = 0;
+
+	status = munmap(addr, size);
+	if (status == -1)
+	{
+		perror("munmap");
+		exit(1);
+	}
+}

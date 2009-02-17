@@ -10,6 +10,7 @@
 #define FIFO_RX_H_
 
 #include <fcntl.h>
+#include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/socket.h>
@@ -19,5 +20,6 @@
 #include "libnet.h"
 
 int open_file_wo(char *path);
+void cleanup(int signal);
 
 #endif /* FIFO_RX_H_ */
