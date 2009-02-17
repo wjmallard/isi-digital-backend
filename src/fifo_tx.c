@@ -38,20 +38,17 @@ int main(int argc, char **argv)
 		if (bytes_read == -1)
 		{
 			perror("read");
+			exit(1);
 		}
 
-		printf("Read %d bytes.\n", (int)bytes_read);
 		hexdump(fifo_data, FIFO_WIDTH);
 
 		bytes_sent = send(sock, fifo_data, FIFO_WIDTH, 0);
 		if (bytes_sent == -1)
 		{
 			perror("send");
+			exit(1);
 		}
-
-		printf("Sent %d bytes.\n", (int)bytes_sent);
-
-		break;
 	}
 
 	return 0;
@@ -70,8 +67,9 @@ int open_fifo_ro(char *pid, char *dev)
 	if (fifo_fd == -1)
 	{
 		perror("open");
-		return -1;
+		exit(1);
 	}
 
 	return fifo_fd;
 }
+

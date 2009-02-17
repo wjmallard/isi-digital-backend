@@ -35,20 +35,17 @@ int main(int argc, char **argv)
 		if (bytes_received == -1)
 		{
 			perror("recv");
+			exit(1);
 		}
 
-		printf("Received %d bytes.\n", (int)bytes_received);
 		hexdump(fifo_data, FIFO_WIDTH);
 
 		bytes_written = write(file, fifo_data, FIFO_WIDTH);
 		if (bytes_written == -1)
 		{
 			perror("write");
+			exit(1);
 		}
-
-		printf("Wrote %d bytes.\n", (int)bytes_written);
-
-		break;
 	}
 
 	return 0;
@@ -66,7 +63,8 @@ int open_file_wo(char *path)
 	if (file_fd == -1)
 	{
 		perror("open");
-		exit(-1);
+		exit(1);
 	}
 	return file_fd;
 }
+
