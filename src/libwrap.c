@@ -58,6 +58,7 @@ ssize_t Send(int socket, const void *buffer, size_t length, int flags)
 	if (bytes_sent == -1)
 	{
 		perror("send");
+		exit(1);
 	}
 
 	return bytes_sent;
@@ -71,6 +72,7 @@ ssize_t Recv(int socket, void *buffer, size_t length, int flags)
 	if (bytes_received == -1)
 	{
 		perror("recv");
+		exit(1);
 	}
 
 	return bytes_received;
@@ -84,6 +86,7 @@ ssize_t Write(int fildes, const void *buf, size_t nbyte)
 	if (bytes_written == -1)
 	{
 		perror("write");
+		exit(1);
 	}
 
 	return bytes_written;
@@ -97,6 +100,7 @@ ssize_t Read(int fildes, void *buf, size_t nbyte)
 	if (bytes_read == -1)
 	{
 		perror("read");
+		exit(1);
 	}
 
 	return bytes_read;
