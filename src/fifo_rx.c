@@ -28,7 +28,6 @@ int main(int argc, char **argv)
 	while (NOT_KILLED)
 	{
 		Recv(sock, fifo_data, FIFO_WIDTH, 0);
-		hexdump(fifo_data, FIFO_WIDTH);
 		Write(file, fifo_data, FIFO_WIDTH);
 	}
 

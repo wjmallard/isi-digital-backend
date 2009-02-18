@@ -29,7 +29,6 @@ int main(int argc, char **argv)
 	while (NOT_KILLED)
 	{
 		Read(fifo, fifo_data, FIFO_WIDTH);
-		hexdump(fifo_data, FIFO_WIDTH);
 		Write(file, fifo_data, FIFO_WIDTH);
 	}
 
