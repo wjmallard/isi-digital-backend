@@ -7,16 +7,16 @@ all: fifo_tx fifo_rx fifo_cat fifo_dump
 libfifo.o: libfifo.c libfifo.h
 	$(CC) $(CFLAGS) $(SOFLAGS) libfifo.c -o libfifo.o 
 
-fifo_tx: fifo_tx.c libfifo.c
+fifo_tx: fifo_tx.c libfifo.o
 	$(CC) $(CFLAGS) fifo_tx.c libfifo.c -o fifo_tx
 
-fifo_rx: fifo_rx.c libfifo.c
+fifo_rx: fifo_rx.c libfifo.o
 	$(CC) $(CFLAGS) fifo_rx.c libfifo.c -o fifo_rx
 
-fifo_cat: fifo_cat.c libfifo.c
+fifo_cat: fifo_cat.c libfifo.o
 	$(CC) $(CFLAGS) fifo_cat.c libfifo.c -o fifo_cat
 
-fifo_dump: fifo_dump.c libfifo.c
+fifo_dump: fifo_dump.c libfifo.o
 	$(CC) $(CFLAGS) fifo_dump.c libfifo.c -o fifo_dump
 
 clean:

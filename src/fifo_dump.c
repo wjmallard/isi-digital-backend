@@ -8,8 +8,6 @@
 
 #include "libfifo.h"
 
-#define FIFO_WIDTH 32
-
 int main(int argc, char **argv)
 {
 	if (argc != 4)
@@ -29,15 +27,14 @@ int main(int argc, char **argv)
 	int file = open_file_wo(path);
 	ssize_t bytes_written = 0;
 
-	//signal(SIGINT, cleanup);
+	init_signals();
 
-	while (not_killed)
+	while (NOT_KILLED)
 	{
 		bytes_read = read(fifo, fifo_data, FIFO_WIDTH);
 		if (bytes_read == -1)
 		{
 			perror("read");
-			exit(1);
 		}
 
 		hexdump(fifo_data, FIFO_WIDTH);
@@ -46,11 +43,12 @@ int main(int argc, char **argv)
 		if (bytes_written == -1)
 		{
 			perror("write");
-			exit(1);
 		}
 	}
 
+	close_file(fifo);
 	unmap_memory(fifo_data, FIFO_WIDTH);
+	close_file(file);
 
 	return 0;
 }

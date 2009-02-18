@@ -8,7 +8,9 @@
 
 #include "libfifo.h"
 
-#define BUFFER_LENGTH 128
+unsigned char NOT_KILLED = 1;
+unsigned int BUFFER_LENGTH = 128;
+unsigned int FIFO_WIDTH = 32;
 
 /*
  * Open a UDP connection to the specified host.
@@ -22,6 +24,11 @@ int open_udp_send_socket(char *dst_host, char *dst_port)
 	dst_addr.sin_port = parse_port(dst_port);
 
 	int sock = socket(AF_INET, SOCK_DGRAM, 0);
+	if (sock == -1)
+	{
+		perror("socket");
+		exit(1);
+	}
 
 	int status = connect(sock, (struct sockaddr *)&dst_addr, sizeof(dst_addr));
 	if (status == -1)
@@ -121,6 +128,21 @@ int open_file_wo(char *path)
 }
 
 /*
+ * Close a file.
+ */
+void close_file(int fd)
+{
+	int status;
+
+	status = close(fd);
+	if (status == -1)
+	{
+		perror("close");
+		exit(1);
+	}
+}
+
+/*
  * Open a fifo for reading.
  */
 int open_fifo_ro(char *pid, char *dev)
@@ -195,9 +217,36 @@ void unmap_memory(void *addr, size_t size)
 	}
 }
 
-void cleanup(int signal)
-{
-	printf("Ctrl-C caught! Quitting.\n");
 
-	not_killed = 0;
+void init_signals()
+{
+	int status = -1;
+
+	signal(SIGINT, handle_eintr);
+
+	struct sigaction action;
+	memset(&action, 0, sizeof(struct sigaction));
+
+	status = sigaction(SIGINT, NULL, &action);
+	if (status == -1)
+	{
+		perror("sigaction");
+		exit(1);
+	}
+
+	action.sa_flags &= !SA_RESTART;
+
+	status = sigaction(SIGINT, &action, NULL);
+	if (status == -1)
+	{
+		perror("sigaction");
+		exit(1);
+	}
+}
+
+void handle_eintr(int signal)
+{
+	printf("\nCtrl-C caught! Quitting.\n");
+
+	NOT_KILLED = 0;
 }

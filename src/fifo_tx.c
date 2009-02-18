@@ -8,8 +8,6 @@
 
 #include "libfifo.h"
 
-#define FIFO_WIDTH 32
-
 int main(int argc, char **argv)
 {
 	if (argc != 5)
@@ -30,15 +28,14 @@ int main(int argc, char **argv)
 	int sock = open_udp_send_socket(host, port);
 	ssize_t bytes_sent = 0;
 
-	signal(SIGINT, cleanup);
+	init_signals();
 
-	while (not_killed)
+	while (NOT_KILLED)
 	{
 		bytes_read = read(fifo, fifo_data, FIFO_WIDTH);
 		if (bytes_read == -1)
 		{
 			perror("read");
-			exit(1);
 		}
 
 		hexdump(fifo_data, FIFO_WIDTH);
@@ -47,11 +44,12 @@ int main(int argc, char **argv)
 		if (bytes_sent == -1)
 		{
 			perror("send");
-			exit(1);
 		}
 	}
 
+	close_file(fifo);
 	unmap_memory(fifo_data, FIFO_WIDTH);
+	close_file(sock);
 
 	return 0;
 }
