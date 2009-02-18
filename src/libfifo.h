@@ -6,8 +6,8 @@
  * date: 13-Feb-2008
  */
 
-#ifndef _LIBNET_H_
-#define _LIBNET_H_
+#ifndef _LIBFIFO_H_
+#define _LIBFIFO_H_
 
 #include <errno.h>
 #include <fcntl.h>
@@ -21,6 +21,8 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
+
+#include "libwrap.h"
 
 extern unsigned char NOT_KILLED;
 extern unsigned int BUFFER_LENGTH;
@@ -43,4 +45,4 @@ void unmap_memory(void *addr, size_t size);
 void init_signals();
 void handle_eintr(int signal);
 
-#endif /* _LIBNET_H_ */
+#endif /* _LIBFIFO_H_ */

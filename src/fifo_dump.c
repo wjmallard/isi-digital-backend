@@ -22,28 +22,15 @@ int main(int argc, char **argv)
 
 	int fifo = open_fifo_ro(pid, dev);
 	void *fifo_data = map_memory(FIFO_WIDTH);
-	ssize_t bytes_read = 0;
-
 	int file = open_file_wo(path);
-	ssize_t bytes_written = 0;
 
 	init_signals();
 
 	while (NOT_KILLED)
 	{
-		bytes_read = read(fifo, fifo_data, FIFO_WIDTH);
-		if (bytes_read == -1)
-		{
-			perror("read");
-		}
-
+		Read(fifo, fifo_data, FIFO_WIDTH);
 		hexdump(fifo_data, FIFO_WIDTH);
-
-		bytes_written = write(file, fifo_data, FIFO_WIDTH);
-		if (bytes_written == -1)
-		{
-			perror("write");
-		}
+		Write(file, fifo_data, FIFO_WIDTH);
 	}
 
 	close_file(fifo);

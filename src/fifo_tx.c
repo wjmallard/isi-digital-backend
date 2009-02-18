@@ -23,28 +23,15 @@ int main(int argc, char **argv)
 
 	int fifo = open_fifo_ro(pid, dev);
 	void *fifo_data = map_memory(FIFO_WIDTH);
-	ssize_t bytes_read = 0;
-
 	int sock = open_udp_send_socket(host, port);
-	ssize_t bytes_sent = 0;
 
 	init_signals();
 
 	while (NOT_KILLED)
 	{
-		bytes_read = read(fifo, fifo_data, FIFO_WIDTH);
-		if (bytes_read == -1)
-		{
-			perror("read");
-		}
-
+		Read(fifo, fifo_data, FIFO_WIDTH);
 		hexdump(fifo_data, FIFO_WIDTH);
-
-		bytes_sent = send(sock, fifo_data, FIFO_WIDTH, 0);
-		if (bytes_sent == -1)
-		{
-			perror("send");
-		}
+		Send(sock, fifo_data, FIFO_WIDTH, 0);
 	}
 
 	close_file(fifo);

@@ -17,25 +17,17 @@ unsigned int FIFO_WIDTH = 32;
  */
 int open_udp_send_socket(char *dst_host, char *dst_port)
 {
+	int sock = 0;
+
 	struct sockaddr_in dst_addr;
 	memset(&dst_addr, 0, sizeof(struct sockaddr_in));
 	dst_addr.sin_family = AF_INET;
 	dst_addr.sin_addr.s_addr = parse_host(dst_host);
 	dst_addr.sin_port = parse_port(dst_port);
 
-	int sock = socket(AF_INET, SOCK_DGRAM, 0);
-	if (sock == -1)
-	{
-		perror("socket");
-		exit(1);
-	}
+	sock = Socket(AF_INET, SOCK_DGRAM, 0);
 
-	int status = connect(sock, (struct sockaddr *)&dst_addr, sizeof(dst_addr));
-	if (status == -1)
-	{
-		printf("Cannot open connection to %s on port %s.\n", dst_host, dst_port);
-		perror("connect");
-	}
+	Connect(sock, (struct sockaddr *)&dst_addr, sizeof(dst_addr));
 
 	return sock;
 }
@@ -51,9 +43,9 @@ int open_udp_recv_socket(char *dst_port)
 	src_addr.sin_addr.s_addr = htonl(INADDR_ANY);
 	src_addr.sin_port = parse_port(dst_port);
 
-	int sock = socket(AF_INET, SOCK_DGRAM, 0);
+	int sock = Socket(AF_INET, SOCK_DGRAM, 0);
 
-	bind(sock, (struct sockaddr *)&src_addr, sizeof(src_addr));
+	Bind(sock, (struct sockaddr *)&src_addr, sizeof(src_addr));
 
 	return sock;
 }

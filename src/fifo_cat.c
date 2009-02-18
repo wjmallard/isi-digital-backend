@@ -21,18 +21,12 @@ int main(int argc, char **argv)
 
 	int fifo = open_fifo_ro(pid, dev);
 	void *fifo_data = map_memory(FIFO_WIDTH);
-	ssize_t bytes_read = 0;
 
 	init_signals();
 
 	while (NOT_KILLED)
 	{
-		bytes_read = read(fifo, fifo_data, FIFO_WIDTH);
-		if (bytes_read == -1)
-		{
-			perror("read");
-		}
-
+		Read(fifo, fifo_data, FIFO_WIDTH);
 		hexdump(fifo_data, FIFO_WIDTH);
 	}
 

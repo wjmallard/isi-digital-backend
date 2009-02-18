@@ -21,28 +21,15 @@ int main(int argc, char **argv)
 
 	int sock = open_udp_recv_socket(port);
 	void *fifo_data = map_memory(FIFO_WIDTH);
-	ssize_t bytes_received = 0;
-
 	int file = open_file_wo(path);
-	ssize_t bytes_written = 0;
 
 	init_signals();
 
 	while (NOT_KILLED)
 	{
-		recv(sock, fifo_data, FIFO_WIDTH, 0);
-		if (bytes_received == -1)
-		{
-			perror("recv");
-		}
-
+		Recv(sock, fifo_data, FIFO_WIDTH, 0);
 		hexdump(fifo_data, FIFO_WIDTH);
-
-		bytes_written = write(file, fifo_data, FIFO_WIDTH);
-		if (bytes_written == -1)
-		{
-			perror("write");
-		}
+		Write(file, fifo_data, FIFO_WIDTH);
 	}
 
 	close_file(sock);
