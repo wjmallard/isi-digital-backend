@@ -6,7 +6,9 @@
  * date: 13-Feb-2008
  */
 
-#include "libnet.h"
+#include "libfifo.h"
+
+#define BUFFER_LENGTH 128
 
 /*
  * Open a UDP connection to the specified host.
@@ -80,6 +82,61 @@ unsigned short int parse_port(char *port_str)
 }
 
 /*
+ * Open a file for reading.
+ */
+int open_file_ro(char *path)
+{
+	int fifo_fd = -1;
+
+	int flags = O_RDONLY;
+
+	fifo_fd = open(path, flags);
+	if (fifo_fd == -1)
+	{
+		perror("open");
+		exit(1);
+	}
+
+	return fifo_fd;
+}
+
+/*
+ * Open a file for writing.
+ */
+int open_file_wo(char *path)
+{
+	int file_fd = -1;
+
+	int flags = O_WRONLY|O_CREAT|O_TRUNC;
+	mode_t mode = S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH;
+
+	file_fd = open(path, flags, mode);
+	if (file_fd == -1)
+	{
+		perror("open");
+		exit(1);
+	}
+
+	return file_fd;
+}
+
+/*
+ * Open a fifo for reading.
+ */
+int open_fifo_ro(char *pid, char *dev)
+{
+	int fifo_fd = -1;
+
+	char fifo_path[BUFFER_LENGTH];
+	memset(&fifo_path, 0, sizeof(fifo_path));
+	snprintf(fifo_path, BUFFER_LENGTH, "/proc/%s/hw/ioreg/%s", pid, dev);
+
+	fifo_fd = open_file_ro(fifo_path);
+
+	return fifo_fd;
+}
+
+/*
  * Print the contents of a raw memory chunk.
  */
 void hexdump(void *data, int size)
@@ -136,4 +193,11 @@ void unmap_memory(void *addr, size_t size)
 		perror("munmap");
 		exit(1);
 	}
+}
+
+void cleanup(int signal)
+{
+	printf("Ctrl-C caught! Quitting.\n");
+
+	not_killed = 0;
 }

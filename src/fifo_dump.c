@@ -1,9 +1,9 @@
 /*
- * fifo_rx.c
+ * fifo_dump.c
  *
  * auth: Billy Mallard
  * mail: wjm@berkeley.edu
- * date: 13-Feb-2008
+ * date: 17-Feb-2008
  */
 
 #include "libfifo.h"
@@ -12,18 +12,19 @@
 
 int main(int argc, char **argv)
 {
-	if (argc != 3)
+	if (argc != 4)
 	{
-		printf("Usage: %s [port] [file]\n", argv[0]);
+		printf("Usage: %s [pid] [dev] [file]\n", argv[0]);
 		exit(1);
 	}
 
-	char *port = argv[1];
-	char *path = argv[2];
+	char *pid = argv[1];
+	char *dev = argv[2];
+	char *path = argv[3];
 
-	int sock = open_udp_recv_socket(port);
+	int fifo = open_fifo_ro(pid, dev);
 	void *fifo_data = map_memory(FIFO_WIDTH);
-	ssize_t bytes_received = 0;
+	ssize_t bytes_read = 0;
 
 	int file = open_file_wo(path);
 	ssize_t bytes_written = 0;
@@ -32,10 +33,10 @@ int main(int argc, char **argv)
 
 	while (not_killed)
 	{
-		bytes_received = recv(sock, fifo_data, FIFO_WIDTH, 0);
-		if (bytes_received == -1)
+		bytes_read = read(fifo, fifo_data, FIFO_WIDTH);
+		if (bytes_read == -1)
 		{
-			perror("recv");
+			perror("read");
 			exit(1);
 		}
 
