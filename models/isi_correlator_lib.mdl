@@ -34,9 +34,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Sep 22 23:36:07 2009"
+  LastModifiedDate	  "Wed Sep 23 00:30:28 2009"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:312>"
+  ModelVersionFormat	  "1.%<AutoIncrement:314>"
   ConfigurationManager	  "None"
   SimulationMode	  "normal"
   LinearizationMsg	  "none"
@@ -7599,7 +7599,7 @@ Library {
       MaskTabNameString	      ",,,,,"
       System {
 	Name			"link_demux"
-	Location		[8, 78, 1913, 951]
+	Location		[8, 78, 1913, 950]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -7704,7 +7704,7 @@ Library {
 	Block {
 	  BlockType		  Inport
 	  Name			  "rst"
-	  Position		  [15, 808, 45, 822]
+	  Position		  [15, 813, 45, 827]
 	  Port			  "11"
 	  IconDisplay		  "Port number"
 	  OutDataType		  "sfix(16)"
@@ -7712,38 +7712,9 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Constant"
-	  Ports			  [0, 1]
-	  Position		  [950, 48, 995, 62]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Constant"
-	  SourceType		  "Xilinx Constant Block Block"
-	  arith_type		  "Boolean"
-	  const			  "0"
-	  n_bits		  "1"
-	  bin_pt		  "0"
-	  explicit_period	  on
-	  period		  "1"
-	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
-	  equ			  "P=C"
-	  opselect		  "C"
-	  inp2			  "PCIN>>17"
-	  opr			  "+"
-	  inp1			  "P"
-	  carry			  "CIN"
-	  dbl_ovrd		  off
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,400,346"
-	  block_type		  "constant"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,72d575a1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
 	  Name			  "Convert"
 	  Ports			  [1, 1]
-	  Position		  [1105, 73, 1150, 87]
+	  Position		  [1135, 73, 1185, 87]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Convert"
 	  SourceType		  "Xilinx Type Converter Block"
@@ -7762,13 +7733,13 @@ Library {
 	  sggui_pos		  "20,20,461,334"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,ba4d1298,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,ba4d1298,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  From
 	  Name			  "From1"
-	  Position		  [330, 198, 390, 212]
+	  Position		  [340, 198, 400, 212]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "syncL"
@@ -7776,15 +7747,23 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From10"
-	  Position		  [615, 33, 675, 47]
+	  Position		  [630, 33, 690, 47]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "readyL"
 	}
 	Block {
 	  BlockType		  From
+	  Name			  "From105"
+	  Position		  [975, 48, 1035, 62]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "lost_align"
+	}
+	Block {
+	  BlockType		  From
 	  Name			  "From11"
-	  Position		  [615, 48, 675, 62]
+	  Position		  [630, 48, 690, 62]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "ready0"
@@ -7792,7 +7771,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From112"
-	  Position		  [1355, 833, 1415, 847]
+	  Position		  [1395, 833, 1455, 847]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "valid"
@@ -7800,7 +7779,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From12"
-	  Position		  [615, 63, 675, 77]
+	  Position		  [630, 63, 690, 77]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "ready1"
@@ -7808,7 +7787,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From13"
-	  Position		  [615, 78, 675, 92]
+	  Position		  [630, 78, 690, 92]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "ready2"
@@ -7816,7 +7795,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From14"
-	  Position		  [615, 93, 675, 107]
+	  Position		  [630, 93, 690, 107]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "ready3"
@@ -7824,7 +7803,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From15"
-	  Position		  [615, 213, 675, 227]
+	  Position		  [630, 213, 690, 227]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "readyL"
@@ -7832,7 +7811,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From16"
-	  Position		  [1355, 198, 1415, 212]
+	  Position		  [1395, 198, 1455, 212]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "valid"
@@ -7840,7 +7819,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From17"
-	  Position		  [615, 348, 675, 362]
+	  Position		  [630, 348, 690, 362]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "ready0"
@@ -7848,7 +7827,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From18"
-	  Position		  [1355, 333, 1415, 347]
+	  Position		  [1395, 333, 1455, 347]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "valid"
@@ -7856,7 +7835,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From19"
-	  Position		  [1355, 318, 1415, 332]
+	  Position		  [1395, 318, 1455, 332]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "rx_trig0"
@@ -7864,7 +7843,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From2"
-	  Position		  [330, 333, 390, 347]
+	  Position		  [340, 333, 400, 347]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "sync0"
@@ -7872,7 +7851,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From21"
-	  Position		  [330, 138, 390, 152]
+	  Position		  [340, 138, 400, 152]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "dataL"
@@ -7880,7 +7859,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From22"
-	  Position		  [330, 273, 390, 287]
+	  Position		  [340, 273, 400, 287]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "data0"
@@ -7888,7 +7867,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From23"
-	  Position		  [330, 408, 390, 422]
+	  Position		  [340, 408, 400, 422]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "data1"
@@ -7896,7 +7875,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From24"
-	  Position		  [330, 543, 390, 557]
+	  Position		  [340, 543, 400, 557]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "data2"
@@ -7904,7 +7883,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From25"
-	  Position		  [330, 678, 390, 692]
+	  Position		  [340, 678, 400, 692]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "data3"
@@ -7912,7 +7891,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From3"
-	  Position		  [330, 468, 390, 482]
+	  Position		  [340, 468, 400, 482]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "sync1"
@@ -7920,7 +7899,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From31"
-	  Position		  [330, 168, 390, 182]
+	  Position		  [340, 168, 400, 182]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "validL"
@@ -7928,7 +7907,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From32"
-	  Position		  [330, 303, 390, 317]
+	  Position		  [340, 303, 400, 317]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "valid0"
@@ -7936,7 +7915,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From33"
-	  Position		  [330, 438, 390, 452]
+	  Position		  [340, 438, 400, 452]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "valid1"
@@ -7944,7 +7923,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From34"
-	  Position		  [330, 573, 390, 587]
+	  Position		  [340, 573, 400, 587]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "valid2"
@@ -7952,7 +7931,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From35"
-	  Position		  [330, 708, 390, 722]
+	  Position		  [340, 708, 400, 722]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "valid3"
@@ -7960,7 +7939,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From36"
-	  Position		  [1755, 198, 1815, 212]
+	  Position		  [1810, 198, 1870, 212]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "reL"
@@ -7968,7 +7947,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From37"
-	  Position		  [1755, 333, 1815, 347]
+	  Position		  [1810, 333, 1870, 347]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "re0"
@@ -7976,7 +7955,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From38"
-	  Position		  [1755, 468, 1815, 482]
+	  Position		  [1810, 468, 1870, 482]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "re1"
@@ -7984,7 +7963,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From39"
-	  Position		  [1755, 603, 1815, 617]
+	  Position		  [1810, 603, 1870, 617]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "re2"
@@ -7992,7 +7971,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From4"
-	  Position		  [330, 603, 390, 617]
+	  Position		  [340, 603, 400, 617]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "sync2"
@@ -8000,7 +7979,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From40"
-	  Position		  [1755, 738, 1815, 752]
+	  Position		  [1810, 738, 1870, 752]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "re3"
@@ -8008,7 +7987,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From41"
-	  Position		  [615, 483, 675, 497]
+	  Position		  [630, 483, 690, 497]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "ready1"
@@ -8016,7 +7995,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From42"
-	  Position		  [1355, 468, 1415, 482]
+	  Position		  [1395, 468, 1455, 482]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "valid"
@@ -8024,7 +8003,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From43"
-	  Position		  [950, 63, 1010, 77]
+	  Position		  [975, 63, 1035, 77]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "aligned"
@@ -8032,7 +8011,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From44"
-	  Position		  [1355, 453, 1415, 467]
+	  Position		  [1395, 453, 1455, 467]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "rx_trig1"
@@ -8040,7 +8019,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From45"
-	  Position		  [615, 618, 675, 632]
+	  Position		  [630, 618, 690, 632]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "ready2"
@@ -8048,7 +8027,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From46"
-	  Position		  [1355, 603, 1415, 617]
+	  Position		  [1395, 603, 1455, 617]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "valid"
@@ -8056,7 +8035,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From47"
-	  Position		  [1355, 588, 1415, 602]
+	  Position		  [1395, 588, 1455, 602]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "rx_trig0"
@@ -8064,7 +8043,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From48"
-	  Position		  [615, 753, 675, 767]
+	  Position		  [630, 753, 690, 767]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "ready3"
@@ -8072,7 +8051,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From49"
-	  Position		  [1355, 738, 1415, 752]
+	  Position		  [1395, 738, 1455, 752]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "valid"
@@ -8080,7 +8059,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From5"
-	  Position		  [330, 738, 390, 752]
+	  Position		  [340, 738, 400, 752]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "sync3"
@@ -8088,7 +8067,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From50"
-	  Position		  [1355, 723, 1415, 737]
+	  Position		  [1395, 723, 1455, 737]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "rx_trig1"
@@ -8096,7 +8075,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From51"
-	  Position		  [2080, 508, 2140, 522]
+	  Position		  [2105, 508, 2165, 522]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "rx_select"
@@ -8104,7 +8083,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From52"
-	  Position		  [2080, 543, 2140, 557]
+	  Position		  [2105, 543, 2165, 557]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "dout2"
@@ -8112,7 +8091,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From53"
-	  Position		  [2080, 678, 2140, 692]
+	  Position		  [2105, 678, 2165, 692]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "dout3"
@@ -8120,7 +8099,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From54"
-	  Position		  [2080, 138, 2140, 152]
+	  Position		  [2105, 138, 2165, 152]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "doutL"
@@ -8128,7 +8107,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From55"
-	  Position		  [950, 13, 1010, 27]
+	  Position		  [975, 13, 1035, 27]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "sync_out"
@@ -8136,7 +8115,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From6"
-	  Position		  [330, 808, 390, 822]
+	  Position		  [340, 813, 400, 827]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "rst"
@@ -8144,7 +8123,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From7"
-	  Position		  [2080, 238, 2140, 252]
+	  Position		  [2105, 238, 2165, 252]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "rx_select"
@@ -8152,7 +8131,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From8"
-	  Position		  [2080, 273, 2140, 287]
+	  Position		  [2105, 273, 2165, 287]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "dout0"
@@ -8160,7 +8139,7 @@ Library {
 	Block {
 	  BlockType		  From
 	  Name			  "From9"
-	  Position		  [2080, 408, 2140, 422]
+	  Position		  [2105, 408, 2165, 422]
 	  ShowName		  off
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "dout1"
@@ -8168,7 +8147,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto1"
-	  Position		  [220, 333, 280, 347]
+	  Position		  [230, 333, 290, 347]
 	  ShowName		  off
 	  GotoTag		  "sync0"
 	  TagVisibility		  "local"
@@ -8176,7 +8155,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto10"
-	  Position		  [220, 303, 280, 317]
+	  Position		  [230, 303, 290, 317]
 	  ShowName		  off
 	  GotoTag		  "valid0"
 	  TagVisibility		  "local"
@@ -8184,7 +8163,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto11"
-	  Position		  [220, 438, 280, 452]
+	  Position		  [230, 438, 290, 452]
 	  ShowName		  off
 	  GotoTag		  "valid1"
 	  TagVisibility		  "local"
@@ -8192,7 +8171,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto12"
-	  Position		  [220, 573, 280, 587]
+	  Position		  [230, 573, 290, 587]
 	  ShowName		  off
 	  GotoTag		  "valid2"
 	  TagVisibility		  "local"
@@ -8200,7 +8179,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto13"
-	  Position		  [220, 708, 280, 722]
+	  Position		  [230, 708, 290, 722]
 	  ShowName		  off
 	  GotoTag		  "valid3"
 	  TagVisibility		  "local"
@@ -8208,7 +8187,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto14"
-	  Position		  [220, 138, 280, 152]
+	  Position		  [230, 138, 290, 152]
 	  ShowName		  off
 	  GotoTag		  "dataL"
 	  TagVisibility		  "local"
@@ -8216,7 +8195,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto15"
-	  Position		  [220, 168, 280, 182]
+	  Position		  [230, 168, 290, 182]
 	  ShowName		  off
 	  GotoTag		  "validL"
 	  TagVisibility		  "local"
@@ -8224,7 +8203,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto17"
-	  Position		  [220, 198, 280, 212]
+	  Position		  [230, 198, 290, 212]
 	  ShowName		  off
 	  GotoTag		  "syncL"
 	  TagVisibility		  "local"
@@ -8232,7 +8211,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto18"
-	  Position		  [1645, 198, 1705, 212]
+	  Position		  [1700, 198, 1760, 212]
 	  ShowName		  off
 	  GotoTag		  "reL"
 	  TagVisibility		  "local"
@@ -8240,7 +8219,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto19"
-	  Position		  [1645, 333, 1705, 347]
+	  Position		  [1700, 333, 1760, 347]
 	  ShowName		  off
 	  GotoTag		  "re0"
 	  TagVisibility		  "local"
@@ -8248,7 +8227,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto2"
-	  Position		  [220, 273, 280, 287]
+	  Position		  [230, 273, 290, 287]
 	  ShowName		  off
 	  GotoTag		  "data0"
 	  TagVisibility		  "local"
@@ -8256,7 +8235,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto20"
-	  Position		  [1645, 468, 1705, 482]
+	  Position		  [1700, 468, 1760, 482]
 	  ShowName		  off
 	  GotoTag		  "re1"
 	  TagVisibility		  "local"
@@ -8264,7 +8243,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto21"
-	  Position		  [1645, 603, 1705, 617]
+	  Position		  [1700, 603, 1760, 617]
 	  ShowName		  off
 	  GotoTag		  "re2"
 	  TagVisibility		  "local"
@@ -8272,7 +8251,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto22"
-	  Position		  [1645, 738, 1705, 752]
+	  Position		  [1700, 738, 1760, 752]
 	  ShowName		  off
 	  GotoTag		  "re3"
 	  TagVisibility		  "local"
@@ -8280,7 +8259,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto23"
-	  Position		  [505, 348, 565, 362]
+	  Position		  [520, 348, 580, 362]
 	  ShowName		  off
 	  GotoTag		  "ready0"
 	  TagVisibility		  "local"
@@ -8288,7 +8267,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto24"
-	  Position		  [505, 483, 565, 497]
+	  Position		  [520, 483, 580, 497]
 	  ShowName		  off
 	  GotoTag		  "ready1"
 	  TagVisibility		  "local"
@@ -8296,7 +8275,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto25"
-	  Position		  [505, 618, 565, 632]
+	  Position		  [520, 618, 580, 632]
 	  ShowName		  off
 	  GotoTag		  "ready2"
 	  TagVisibility		  "local"
@@ -8304,7 +8283,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto26"
-	  Position		  [505, 753, 565, 767]
+	  Position		  [520, 753, 580, 767]
 	  ShowName		  off
 	  GotoTag		  "ready3"
 	  TagVisibility		  "local"
@@ -8312,7 +8291,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto27"
-	  Position		  [505, 213, 565, 227]
+	  Position		  [520, 213, 580, 227]
 	  ShowName		  off
 	  GotoTag		  "readyL"
 	  TagVisibility		  "local"
@@ -8320,7 +8299,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto28"
-	  Position		  [840, 63, 900, 77]
+	  Position		  [865, 63, 925, 77]
 	  ShowName		  off
 	  GotoTag		  "aligned"
 	  TagVisibility		  "local"
@@ -8328,7 +8307,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto29"
-	  Position		  [1970, 58, 2030, 72]
+	  Position		  [1995, 58, 2055, 72]
 	  ShowName		  off
 	  GotoTag		  "rx_select"
 	  TagVisibility		  "local"
@@ -8336,7 +8315,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto3"
-	  Position		  [220, 468, 280, 482]
+	  Position		  [230, 468, 290, 482]
 	  ShowName		  off
 	  GotoTag		  "sync1"
 	  TagVisibility		  "local"
@@ -8344,7 +8323,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto30"
-	  Position		  [840, 38, 900, 52]
+	  Position		  [865, 38, 925, 52]
 	  ShowName		  off
 	  GotoTag		  "lost_align"
 	  TagVisibility		  "local"
@@ -8352,7 +8331,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto31"
-	  Position		  [840, 13, 900, 27]
+	  Position		  [865, 13, 925, 27]
 	  ShowName		  off
 	  GotoTag		  "sync_out"
 	  TagVisibility		  "local"
@@ -8360,7 +8339,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto32"
-	  Position		  [1970, 138, 2030, 152]
+	  Position		  [1995, 138, 2055, 152]
 	  ShowName		  off
 	  GotoTag		  "doutL"
 	  TagVisibility		  "local"
@@ -8368,7 +8347,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto33"
-	  Position		  [1970, 273, 2030, 287]
+	  Position		  [1995, 273, 2055, 287]
 	  ShowName		  off
 	  GotoTag		  "dout0"
 	  TagVisibility		  "local"
@@ -8376,7 +8355,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto34"
-	  Position		  [1970, 408, 2030, 422]
+	  Position		  [1995, 408, 2055, 422]
 	  ShowName		  off
 	  GotoTag		  "dout1"
 	  TagVisibility		  "local"
@@ -8384,7 +8363,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto35"
-	  Position		  [1970, 543, 2030, 557]
+	  Position		  [1995, 543, 2055, 557]
 	  ShowName		  off
 	  GotoTag		  "dout2"
 	  TagVisibility		  "local"
@@ -8392,7 +8371,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto36"
-	  Position		  [1970, 678, 2030, 692]
+	  Position		  [1995, 678, 2055, 692]
 	  ShowName		  off
 	  GotoTag		  "dout3"
 	  TagVisibility		  "local"
@@ -8400,7 +8379,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto37"
-	  Position		  [1245, 73, 1305, 87]
+	  Position		  [1285, 73, 1345, 87]
 	  ShowName		  off
 	  GotoTag		  "rx_trig0"
 	  TagVisibility		  "local"
@@ -8408,7 +8387,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto38"
-	  Position		  [1245, 88, 1305, 102]
+	  Position		  [1285, 88, 1345, 102]
 	  ShowName		  off
 	  GotoTag		  "rx_trig1"
 	  TagVisibility		  "local"
@@ -8416,7 +8395,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto4"
-	  Position		  [220, 408, 280, 422]
+	  Position		  [230, 408, 290, 422]
 	  ShowName		  off
 	  GotoTag		  "data1"
 	  TagVisibility		  "local"
@@ -8424,7 +8403,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto5"
-	  Position		  [220, 603, 280, 617]
+	  Position		  [230, 603, 290, 617]
 	  ShowName		  off
 	  GotoTag		  "sync2"
 	  TagVisibility		  "local"
@@ -8432,7 +8411,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto54"
-	  Position		  [1245, 103, 1305, 117]
+	  Position		  [1285, 103, 1345, 117]
 	  ShowName		  off
 	  GotoTag		  "valid"
 	  TagVisibility		  "local"
@@ -8440,7 +8419,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto6"
-	  Position		  [220, 543, 280, 557]
+	  Position		  [230, 543, 290, 557]
 	  ShowName		  off
 	  GotoTag		  "data2"
 	  TagVisibility		  "local"
@@ -8448,7 +8427,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto7"
-	  Position		  [220, 808, 280, 822]
+	  Position		  [230, 813, 290, 827]
 	  ShowName		  off
 	  GotoTag		  "rst"
 	  TagVisibility		  "local"
@@ -8456,7 +8435,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto8"
-	  Position		  [220, 738, 280, 752]
+	  Position		  [230, 738, 290, 752]
 	  ShowName		  off
 	  GotoTag		  "sync3"
 	  TagVisibility		  "local"
@@ -8464,7 +8443,7 @@ Library {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto9"
-	  Position		  [220, 678, 280, 692]
+	  Position		  [230, 678, 290, 692]
 	  ShowName		  off
 	  GotoTag		  "data3"
 	  TagVisibility		  "local"
@@ -8473,7 +8452,7 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Inverter0"
 	  Ports			  [1, 1]
-	  Position		  [1175, 73, 1220, 87]
+	  Position		  [1210, 73, 1260, 87]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Inverter"
 	  SourceType		  "Xilinx Inverter Block"
@@ -8487,14 +8466,14 @@ Library {
 	  sggui_pos		  "20,20,348,251"
 	  block_type		  "inv"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,1ab4a85f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[7 16 29 42 51 51 47 51 51 39 51 42 29 16 7 19 7 7 11 7 7 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('not');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,1ab4a85f,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('not');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "Inverter1"
 	  Ports			  [1, 1]
-	  Position		  [1435, 213, 1480, 227]
+	  Position		  [1475, 213, 1525, 227]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Inverter"
 	  SourceType		  "Xilinx Inverter Block"
@@ -8515,7 +8494,7 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Inverter2"
 	  Ports			  [1, 1]
-	  Position		  [1435, 348, 1480, 362]
+	  Position		  [1475, 348, 1525, 362]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Inverter"
 	  SourceType		  "Xilinx Inverter Block"
@@ -8536,7 +8515,7 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Inverter3"
 	  Ports			  [1, 1]
-	  Position		  [1435, 483, 1480, 497]
+	  Position		  [1475, 483, 1525, 497]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Inverter"
 	  SourceType		  "Xilinx Inverter Block"
@@ -8557,7 +8536,7 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Inverter4"
 	  Ports			  [1, 1]
-	  Position		  [1435, 618, 1480, 632]
+	  Position		  [1475, 618, 1525, 632]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Inverter"
 	  SourceType		  "Xilinx Inverter Block"
@@ -8578,7 +8557,7 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Inverter5"
 	  Ports			  [1, 1]
-	  Position		  [1435, 753, 1480, 767]
+	  Position		  [1475, 753, 1525, 767]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Inverter"
 	  SourceType		  "Xilinx Inverter Block"
@@ -8599,7 +8578,7 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Logical"
 	  Ports			  [5, 1]
-	  Position		  [700, 33, 745, 107]
+	  Position		  [715, 33, 765, 107]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Logical"
 	  SourceType		  "Xilinx Logical Block Block"
@@ -8619,14 +8598,14 @@ Library {
 	  sggui_pos		  "20,20,348,261"
 	  block_type		  "logical"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,74,1,1,white,blue,0,59824c49,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 74 74 ],[0.77 0.82 0.91]);\npatch([10 3 14 3 10 22 25 28 41 31 21 14 25 14 21 31 41 28 25 22 10 ],[19 26 37 48 55 55 52 55 55 45 55 48 37 26 19 29 19 19 22 19 19 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 74 74 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineand\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,74,1,1,white,blue,0,59824c49,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 74 74 ],[0.77 0.82 0.91]);\npatch([11 3 15 3 11 24 28 32 46 35 24 16 28 16 24 35 46 32 28 24 11 ],[17 25 37 49 57 57 53 57 57 46 57 49 37 25 17 28 17 17 21 17 17 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 74 74 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineand\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "Logical1"
 	  Ports			  [2, 1]
-	  Position		  [1575, 198, 1620, 227]
+	  Position		  [1625, 198, 1675, 227]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Logical"
 	  SourceType		  "Xilinx Logical Block Block"
@@ -8646,14 +8625,14 @@ Library {
 	  sggui_pos		  "20,20,348,261"
 	  block_type		  "logical"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,29,1,1,white,blue,0,60344167,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[8 17 30 43 52 52 48 52 52 40 52 43 30 17 8 20 8 8 12 8 8 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineor\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,29,1,1,white,blue,0,60344167,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 29 29 ],[0.77 0.82 0.91]);\npatch([17 12 19 12 17 25 27 29 37 31 25 20 27 20 25 31 37 29 27 25 17 ],[3 8 15 22 27 27 25 27 27 21 27 22 15 8 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 29 29 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineor\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "Logical2"
 	  Ports			  [2, 1]
-	  Position		  [1505, 318, 1550, 347]
+	  Position		  [1550, 318, 1600, 347]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Logical"
 	  SourceType		  "Xilinx Logical Block Block"
@@ -8673,14 +8652,14 @@ Library {
 	  sggui_pos		  "20,20,348,261"
 	  block_type		  "logical"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,29,1,1,white,blue,0,d60ce02c,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[8 17 30 43 52 52 48 52 52 40 52 43 30 17 8 20 8 8 12 8 8 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineand\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,29,1,1,white,blue,0,d60ce02c,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 29 29 ],[0.77 0.82 0.91]);\npatch([17 12 19 12 17 25 27 29 37 31 25 20 27 20 25 31 37 29 27 25 17 ],[3 8 15 22 27 27 25 27 27 21 27 22 15 8 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 29 29 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineand\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "Logical3"
 	  Ports			  [2, 1]
-	  Position		  [1575, 323, 1620, 367]
+	  Position		  [1625, 323, 1675, 367]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Logical"
 	  SourceType		  "Xilinx Logical Block Block"
@@ -8700,14 +8679,14 @@ Library {
 	  sggui_pos		  "20,20,348,261"
 	  block_type		  "logical"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,44,1,1,white,blue,0,60344167,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[8 17 30 43 52 52 48 52 52 40 52 43 30 17 8 20 8 8 12 8 8 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineor\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,44,1,1,white,blue,0,60344167,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 44 44 ],[0.77 0.82 0.91]);\npatch([13 6 16 6 13 25 28 31 43 33 24 17 26 17 24 33 43 31 28 25 13 ],[5 12 22 32 39 39 36 39 39 29 38 31 22 13 6 15 5 5 8 5 5 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 44 44 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineor\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "Logical4"
 	  Ports			  [2, 1]
-	  Position		  [1505, 453, 1550, 482]
+	  Position		  [1550, 453, 1600, 482]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Logical"
 	  SourceType		  "Xilinx Logical Block Block"
@@ -8727,14 +8706,14 @@ Library {
 	  sggui_pos		  "20,20,348,261"
 	  block_type		  "logical"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,29,1,1,white,blue,0,d60ce02c,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[8 17 30 43 52 52 48 52 52 40 52 43 30 17 8 20 8 8 12 8 8 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineand\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,29,1,1,white,blue,0,d60ce02c,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 29 29 ],[0.77 0.82 0.91]);\npatch([17 12 19 12 17 25 27 29 37 31 25 20 27 20 25 31 37 29 27 25 17 ],[3 8 15 22 27 27 25 27 27 21 27 22 15 8 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 29 29 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineand\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "Logical5"
 	  Ports			  [2, 1]
-	  Position		  [1575, 458, 1620, 502]
+	  Position		  [1625, 458, 1675, 502]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Logical"
 	  SourceType		  "Xilinx Logical Block Block"
@@ -8754,14 +8733,14 @@ Library {
 	  sggui_pos		  "20,20,348,261"
 	  block_type		  "logical"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,44,1,1,white,blue,0,60344167,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[8 17 30 43 52 52 48 52 52 40 52 43 30 17 8 20 8 8 12 8 8 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineor\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,44,1,1,white,blue,0,60344167,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 44 44 ],[0.77 0.82 0.91]);\npatch([13 6 16 6 13 25 28 31 43 33 24 17 26 17 24 33 43 31 28 25 13 ],[5 12 22 32 39 39 36 39 39 29 38 31 22 13 6 15 5 5 8 5 5 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 44 44 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineor\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "Logical6"
 	  Ports			  [2, 1]
-	  Position		  [1505, 588, 1550, 617]
+	  Position		  [1550, 588, 1600, 617]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Logical"
 	  SourceType		  "Xilinx Logical Block Block"
@@ -8781,14 +8760,14 @@ Library {
 	  sggui_pos		  "20,20,348,261"
 	  block_type		  "logical"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,29,1,1,white,blue,0,d60ce02c,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[8 17 30 43 52 52 48 52 52 40 52 43 30 17 8 20 8 8 12 8 8 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineand\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,29,1,1,white,blue,0,d60ce02c,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 29 29 ],[0.77 0.82 0.91]);\npatch([17 12 19 12 17 25 27 29 37 31 25 20 27 20 25 31 37 29 27 25 17 ],[3 8 15 22 27 27 25 27 27 21 27 22 15 8 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 29 29 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineand\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "Logical7"
 	  Ports			  [2, 1]
-	  Position		  [1575, 593, 1620, 637]
+	  Position		  [1625, 593, 1675, 637]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Logical"
 	  SourceType		  "Xilinx Logical Block Block"
@@ -8808,14 +8787,14 @@ Library {
 	  sggui_pos		  "20,20,348,261"
 	  block_type		  "logical"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,44,1,1,white,blue,0,60344167,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[8 17 30 43 52 52 48 52 52 40 52 43 30 17 8 20 8 8 12 8 8 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineor\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,44,1,1,white,blue,0,60344167,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 44 44 ],[0.77 0.82 0.91]);\npatch([13 6 16 6 13 25 28 31 43 33 24 17 26 17 24 33 43 31 28 25 13 ],[5 12 22 32 39 39 36 39 39 29 38 31 22 13 6 15 5 5 8 5 5 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 44 44 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineor\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "Logical8"
 	  Ports			  [2, 1]
-	  Position		  [1505, 723, 1550, 752]
+	  Position		  [1550, 723, 1600, 752]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Logical"
 	  SourceType		  "Xilinx Logical Block Block"
@@ -8835,14 +8814,14 @@ Library {
 	  sggui_pos		  "20,20,348,261"
 	  block_type		  "logical"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,29,1,1,white,blue,0,d60ce02c,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[8 17 30 43 52 52 48 52 52 40 52 43 30 17 8 20 8 8 12 8 8 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineand\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,29,1,1,white,blue,0,d60ce02c,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 29 29 ],[0.77 0.82 0.91]);\npatch([17 12 19 12 17 25 27 29 37 31 25 20 27 20 25 31 37 29 27 25 17 ],[3 8 15 22 27 27 25 27 27 21 27 22 15 8 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 29 29 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineand\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "Logical9"
 	  Ports			  [2, 1]
-	  Position		  [1575, 728, 1620, 772]
+	  Position		  [1625, 728, 1675, 772]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Logical"
 	  SourceType		  "Xilinx Logical Block Block"
@@ -8862,104 +8841,104 @@ Library {
 	  sggui_pos		  "20,20,348,261"
 	  block_type		  "logical"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,44,1,1,white,blue,0,60344167,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[8 17 30 43 52 52 48 52 52 40 52 43 30 17 8 20 8 8 12 8 8 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineor\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,44,1,1,white,blue,0,60344167,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 44 44 ],[0.77 0.82 0.91]);\npatch([13 6 16 6 13 25 28 31 43 33 24 17 26 17 24 33 43 31 28 25 13 ],[5 12 22 32 39 39 36 39 39 29 38 31 22 13 6 15 5 5 8 5 5 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 44 44 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineor\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator1"
-	  Position		  [1970, 195, 1990, 215]
+	  Position		  [1995, 195, 2015, 215]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator10"
-	  Position		  [1970, 600, 1990, 620]
+	  Position		  [1995, 600, 2015, 620]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator11"
-	  Position		  [1970, 630, 1990, 650]
+	  Position		  [1995, 630, 2015, 650]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator12"
-	  Position		  [1970, 570, 1990, 590]
+	  Position		  [1995, 570, 2015, 590]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator13"
-	  Position		  [1970, 735, 1990, 755]
+	  Position		  [1995, 735, 2015, 755]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator14"
-	  Position		  [1970, 765, 1990, 785]
+	  Position		  [1995, 765, 2015, 785]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator15"
-	  Position		  [1970, 705, 1990, 725]
+	  Position		  [1995, 705, 2015, 725]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator2"
-	  Position		  [1970, 225, 1990, 245]
+	  Position		  [1995, 225, 2015, 245]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator3"
-	  Position		  [1970, 330, 1990, 350]
+	  Position		  [1995, 330, 2015, 350]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator4"
-	  Position		  [1970, 360, 1990, 380]
+	  Position		  [1995, 360, 2015, 380]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator5"
-	  Position		  [1970, 300, 1990, 320]
+	  Position		  [1995, 300, 2015, 320]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator6"
-	  Position		  [1970, 465, 1990, 485]
+	  Position		  [1995, 465, 2015, 485]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator7"
-	  Position		  [1970, 495, 1990, 515]
+	  Position		  [1995, 495, 2015, 515]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator8"
-	  Position		  [1970, 165, 1990, 185]
+	  Position		  [1995, 165, 2015, 185]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator9"
-	  Position		  [1970, 435, 1990, 455]
+	  Position		  [1995, 435, 2015, 455]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "fifo_loop"
 	  Ports			  [4, 4]
-	  Position		  [1865, 133, 1945, 247]
+	  Position		  [1920, 133, 1970, 247]
 	  SourceBlock		  "xbsIndex_r4/FIFO"
 	  SourceType		  "Xilinx FIFO Block Block"
 	  depth			  "64"
@@ -8979,14 +8958,14 @@ Library {
 	  sggui_pos		  "20,20,348,419"
 	  block_type		  "fifo"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "80,114,1,1,white,blue,0,a325e44c,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 ],[0 0 114 114 ],[0.77 0.82 0.91]);\npatch([18 5 24 5 18 39 45 51 74 56 39 27 46 27 39 56 74 51 45 39 18 ],[26 39 58 77 90 90 84 90 90 72 89 77 58 39 27 44 26 26 32 26 26 ],[0.98 0.96 0.92]);\nplot([0 80 80 0 0 ],[0 0 114 114 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'din');\ncolor('black');port_label('input',2,'we');\ncolor('black');port_label('input',3,'re');\ncolor('black');port_label('input',4,'rst');\ncolor('black');port_label('output',1,'dout');\ncolor('black');port_label('output',2,'empty');\ncolor('black');port_label('output',3,'%full');\ncolor('black');port_label('output',4,'full');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,114,1,1,white,blue,0,a325e44c,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 114 114 ],[0.77 0.82 0.91]);\npatch([11 3 15 3 11 24 28 32 46 35 24 16 28 16 24 35 46 32 28 24 11 ],[37 45 57 69 77 77 73 77 77 66 77 69 57 45 37 48 37 37 41 37 37 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 114 114 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'din');\ncolor('black');port_label('input',2,'we');\ncolor('black');port_label('input',3,'re');\ncolor('black');port_label('input',4,'rst');\ncolor('black');port_label('output',1,'dout');\ncolor('black');port_label('output',2,'empty');\ncolor('black');port_label('output',3,'%full');\ncolor('black');port_label('output',4,'full');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "fifo_xaui0"
 	  Ports			  [4, 4]
-	  Position		  [1865, 268, 1945, 382]
+	  Position		  [1920, 268, 1970, 382]
 	  SourceBlock		  "xbsIndex_r4/FIFO"
 	  SourceType		  "Xilinx FIFO Block Block"
 	  depth			  "16"
@@ -9006,14 +8985,14 @@ Library {
 	  sggui_pos		  "20,20,348,419"
 	  block_type		  "fifo"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "80,114,1,1,white,blue,0,a325e44c,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 ],[0 0 114 114 ],[0.77 0.82 0.91]);\npatch([18 5 24 5 18 39 45 51 74 56 39 27 46 27 39 56 74 51 45 39 18 ],[26 39 58 77 90 90 84 90 90 72 89 77 58 39 27 44 26 26 32 26 26 ],[0.98 0.96 0.92]);\nplot([0 80 80 0 0 ],[0 0 114 114 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'din');\ncolor('black');port_label('input',2,'we');\ncolor('black');port_label('input',3,'re');\ncolor('black');port_label('input',4,'rst');\ncolor('black');port_label('output',1,'dout');\ncolor('black');port_label('output',2,'empty');\ncolor('black');port_label('output',3,'%full');\ncolor('black');port_label('output',4,'full');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,114,1,1,white,blue,0,a325e44c,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 114 114 ],[0.77 0.82 0.91]);\npatch([11 3 15 3 11 24 28 32 46 35 24 16 28 16 24 35 46 32 28 24 11 ],[37 45 57 69 77 77 73 77 77 66 77 69 57 45 37 48 37 37 41 37 37 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 114 114 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'din');\ncolor('black');port_label('input',2,'we');\ncolor('black');port_label('input',3,'re');\ncolor('black');port_label('input',4,'rst');\ncolor('black');port_label('output',1,'dout');\ncolor('black');port_label('output',2,'empty');\ncolor('black');port_label('output',3,'%full');\ncolor('black');port_label('output',4,'full');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "fifo_xaui1"
 	  Ports			  [4, 4]
-	  Position		  [1865, 403, 1945, 517]
+	  Position		  [1920, 403, 1970, 517]
 	  SourceBlock		  "xbsIndex_r4/FIFO"
 	  SourceType		  "Xilinx FIFO Block Block"
 	  depth			  "16"
@@ -9033,14 +9012,14 @@ Library {
 	  sggui_pos		  "20,20,348,419"
 	  block_type		  "fifo"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "80,114,1,1,white,blue,0,a325e44c,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 ],[0 0 114 114 ],[0.77 0.82 0.91]);\npatch([18 5 24 5 18 39 45 51 74 56 39 27 46 27 39 56 74 51 45 39 18 ],[26 39 58 77 90 90 84 90 90 72 89 77 58 39 27 44 26 26 32 26 26 ],[0.98 0.96 0.92]);\nplot([0 80 80 0 0 ],[0 0 114 114 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'din');\ncolor('black');port_label('input',2,'we');\ncolor('black');port_label('input',3,'re');\ncolor('black');port_label('input',4,'rst');\ncolor('black');port_label('output',1,'dout');\ncolor('black');port_label('output',2,'empty');\ncolor('black');port_label('output',3,'%full');\ncolor('black');port_label('output',4,'full');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,114,1,1,white,blue,0,a325e44c,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 114 114 ],[0.77 0.82 0.91]);\npatch([11 3 15 3 11 24 28 32 46 35 24 16 28 16 24 35 46 32 28 24 11 ],[37 45 57 69 77 77 73 77 77 66 77 69 57 45 37 48 37 37 41 37 37 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 114 114 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'din');\ncolor('black');port_label('input',2,'we');\ncolor('black');port_label('input',3,'re');\ncolor('black');port_label('input',4,'rst');\ncolor('black');port_label('output',1,'dout');\ncolor('black');port_label('output',2,'empty');\ncolor('black');port_label('output',3,'%full');\ncolor('black');port_label('output',4,'full');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "fifo_xaui2"
 	  Ports			  [4, 4]
-	  Position		  [1865, 538, 1945, 652]
+	  Position		  [1920, 538, 1970, 652]
 	  SourceBlock		  "xbsIndex_r4/FIFO"
 	  SourceType		  "Xilinx FIFO Block Block"
 	  depth			  "16"
@@ -9060,14 +9039,14 @@ Library {
 	  sggui_pos		  "20,20,348,419"
 	  block_type		  "fifo"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "80,114,1,1,white,blue,0,a325e44c,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 ],[0 0 114 114 ],[0.77 0.82 0.91]);\npatch([18 5 24 5 18 39 45 51 74 56 39 27 46 27 39 56 74 51 45 39 18 ],[26 39 58 77 90 90 84 90 90 72 89 77 58 39 27 44 26 26 32 26 26 ],[0.98 0.96 0.92]);\nplot([0 80 80 0 0 ],[0 0 114 114 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'din');\ncolor('black');port_label('input',2,'we');\ncolor('black');port_label('input',3,'re');\ncolor('black');port_label('input',4,'rst');\ncolor('black');port_label('output',1,'dout');\ncolor('black');port_label('output',2,'empty');\ncolor('black');port_label('output',3,'%full');\ncolor('black');port_label('output',4,'full');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,114,1,1,white,blue,0,a325e44c,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 114 114 ],[0.77 0.82 0.91]);\npatch([11 3 15 3 11 24 28 32 46 35 24 16 28 16 24 35 46 32 28 24 11 ],[37 45 57 69 77 77 73 77 77 66 77 69 57 45 37 48 37 37 41 37 37 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 114 114 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'din');\ncolor('black');port_label('input',2,'we');\ncolor('black');port_label('input',3,'re');\ncolor('black');port_label('input',4,'rst');\ncolor('black');port_label('output',1,'dout');\ncolor('black');port_label('output',2,'empty');\ncolor('black');port_label('output',3,'%full');\ncolor('black');port_label('output',4,'full');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "fifo_xaui3"
 	  Ports			  [4, 4]
-	  Position		  [1865, 673, 1945, 787]
+	  Position		  [1920, 673, 1970, 787]
 	  SourceBlock		  "xbsIndex_r4/FIFO"
 	  SourceType		  "Xilinx FIFO Block Block"
 	  depth			  "16"
@@ -9087,14 +9066,14 @@ Library {
 	  sggui_pos		  "20,20,348,419"
 	  block_type		  "fifo"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "80,114,1,1,white,blue,0,a325e44c,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 80 80 0 ],[0 0 114 114 ],[0.77 0.82 0.91]);\npatch([18 5 24 5 18 39 45 51 74 56 39 27 46 27 39 56 74 51 45 39 18 ],[26 39 58 77 90 90 84 90 90 72 89 77 58 39 27 44 26 26 32 26 26 ],[0.98 0.96 0.92]);\nplot([0 80 80 0 0 ],[0 0 114 114 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'din');\ncolor('black');port_label('input',2,'we');\ncolor('black');port_label('input',3,'re');\ncolor('black');port_label('input',4,'rst');\ncolor('black');port_label('output',1,'dout');\ncolor('black');port_label('output',2,'empty');\ncolor('black');port_label('output',3,'%full');\ncolor('black');port_label('output',4,'full');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,114,1,1,white,blue,0,a325e44c,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 114 114 ],[0.77 0.82 0.91]);\npatch([11 3 15 3 11 24 28 32 46 35 24 16 28 16 24 35 46 32 28 24 11 ],[37 45 57 69 77 77 73 77 77 66 77 69 57 45 37 48 37 37 41 37 37 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 114 114 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'din');\ncolor('black');port_label('input',2,'we');\ncolor('black');port_label('input',3,'re');\ncolor('black');port_label('input',4,'rst');\ncolor('black');port_label('output',1,'dout');\ncolor('black');port_label('output',2,'empty');\ncolor('black');port_label('output',3,'%full');\ncolor('black');port_label('output',4,'full');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "mux_Y"
 	  Ports			  [3, 1]
-	  Position		  [2165, 228, 2210, 332]
+	  Position		  [2190, 228, 2240, 332]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Mux"
 	  SourceType		  "Xilinx Bus Multiplexer Block"
@@ -9114,14 +9093,14 @@ Library {
 	  sggui_pos		  "20,20,348,303"
 	  block_type		  "mux"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,104,1,1,white,blue,3,03f9c9b9,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 14.8571 89.1429 104 ],[0.77 0.82 0.91]);\npatch([10 3 14 3 10 22 25 28 41 31 21 14 25 14 21 31 41 28 25 22 10 ],[34 41 52 63 70 70 67 70 70 60 70 63 52 41 34 44 34 34 37 34 34 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 14.8571 89.1429 104 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('black');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');disp('\\bf{  z^{-1}}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,104,1,1,white,blue,3,03f9c9b9,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 14.8571 89.1429 104 ],[0.77 0.82 0.91]);\npatch([11 3 15 3 11 24 28 32 46 35 24 16 28 16 24 35 46 32 28 24 11 ],[32 40 52 64 72 72 68 72 72 61 72 64 52 40 32 43 32 32 36 32 32 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 14.8571 89.1429 104 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('black');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');disp('\\bf{  z^{-1}}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "mux_Z"
 	  Ports			  [3, 1]
-	  Position		  [2165, 498, 2210, 602]
+	  Position		  [2190, 498, 2240, 602]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Mux"
 	  SourceType		  "Xilinx Bus Multiplexer Block"
@@ -9141,15 +9120,15 @@ Library {
 	  sggui_pos		  "20,20,348,303"
 	  block_type		  "mux"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,104,1,1,white,blue,3,03f9c9b9,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 14.8571 89.1429 104 ],[0.77 0.82 0.91]);\npatch([10 3 14 3 10 22 25 28 41 31 21 14 25 14 21 31 41 28 25 22 10 ],[34 41 52 63 70 70 67 70 70 60 70 63 52 41 34 44 34 34 37 34 34 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 14.8571 89.1429 104 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('black');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');disp('\\bf{  z^{-1}}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,104,1,1,white,blue,3,03f9c9b9,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 14.8571 89.1429 104 ],[0.77 0.82 0.91]);\npatch([11 3 15 3 11 24 28 32 46 35 24 16 28 16 24 35 46 32 28 24 11 ],[32 40 52 64 72 72 68 72 72 61 72 64 52 40 32 43 32 32 36 32 32 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 14.8571 89.1429 104 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('black');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');disp('\\bf{  z^{-1}}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "negedge"
 	  Tag			  "Rising Edge Detector"
 	  Ports			  [1, 1]
-	  Position		  [770, 38, 815, 52]
+	  Position		  [790, 38, 840, 52]
 	  SourceBlock		  "casper_library/Misc/negedge"
 	  SourceType		  "negedge"
 	  ShowPortLabels	  "FromPortIcon"
@@ -9166,7 +9145,7 @@ Library {
 	  Name			  "posedge"
 	  Tag			  "Rising Edge Detector"
 	  Ports			  [1, 1]
-	  Position		  [770, 13, 815, 27]
+	  Position		  [790, 13, 840, 27]
 	  SourceBlock		  "casper_library/Misc/posedge"
 	  SourceType		  "posedge"
 	  ShowPortLabels	  "FromPortIcon"
@@ -9182,7 +9161,7 @@ Library {
 	  BlockType		  Reference
 	  Name			  "pulse_hold0"
 	  Ports			  [2, 1]
-	  Position		  [435, 329, 480, 376]
+	  Position		  [445, 329, 495, 376]
 	  SourceBlock		  "isi_correlator_lib/pulse_hold"
 	  SourceType		  "SubSystem"
 	  ShowPortLabels	  "FromPortIcon"
@@ -9198,7 +9177,7 @@ Library {
 	  BlockType		  Reference
 	  Name			  "pulse_hold1"
 	  Ports			  [2, 1]
-	  Position		  [435, 464, 480, 511]
+	  Position		  [445, 464, 495, 511]
 	  SourceBlock		  "isi_correlator_lib/pulse_hold"
 	  SourceType		  "SubSystem"
 	  ShowPortLabels	  "FromPortIcon"
@@ -9214,7 +9193,7 @@ Library {
 	  BlockType		  Reference
 	  Name			  "pulse_hold2"
 	  Ports			  [2, 1]
-	  Position		  [435, 599, 480, 646]
+	  Position		  [445, 599, 495, 646]
 	  SourceBlock		  "isi_correlator_lib/pulse_hold"
 	  SourceType		  "SubSystem"
 	  ShowPortLabels	  "FromPortIcon"
@@ -9230,7 +9209,7 @@ Library {
 	  BlockType		  Reference
 	  Name			  "pulse_hold3"
 	  Ports			  [2, 1]
-	  Position		  [435, 734, 480, 781]
+	  Position		  [445, 734, 495, 781]
 	  SourceBlock		  "isi_correlator_lib/pulse_hold"
 	  SourceType		  "SubSystem"
 	  ShowPortLabels	  "FromPortIcon"
@@ -9246,7 +9225,7 @@ Library {
 	  BlockType		  Reference
 	  Name			  "pulse_holdF"
 	  Ports			  [2, 1]
-	  Position		  [435, 194, 480, 241]
+	  Position		  [445, 194, 495, 241]
 	  SourceBlock		  "isi_correlator_lib/pulse_hold"
 	  SourceType		  "SubSystem"
 	  ShowPortLabels	  "FromPortIcon"
@@ -9262,7 +9241,7 @@ Library {
 	  BlockType		  Reference
 	  Name			  "rx_counter"
 	  Ports			  [2, 1]
-	  Position		  [1035, 47, 1080, 78]
+	  Position		  [1060, 47, 1110, 78]
 	  SourceBlock		  "xbsIndex_r4/Counter"
 	  SourceType		  "Xilinx Counter Block"
 	  infoedit		  "Hardware notes: Free running counters are the least expensive in hardware.  A count limited counter is implemented by combining a counter with a comparator."
@@ -9289,14 +9268,14 @@ Library {
 	  sggui_pos		  "20,20,348,619"
 	  block_type		  "counter"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,31,1,1,white,blue,0,46c73e85,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 31 31 ],[0.77 0.82 0.91]);\npatch([14 9 16 9 14 22 24 26 35 28 21 16 23 16 21 28 35 26 24 22 14 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 31 31 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'rst');\ncolor('black');port_label('input',2,'en');\ncolor('black');port_label('output',1,'out');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,31,1,1,white,blue,0,46c73e85,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 31 31 ],[0.77 0.82 0.91]);\npatch([17 12 19 12 17 25 27 29 38 31 24 19 26 19 24 31 38 29 27 25 17 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 31 31 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'rst');\ncolor('black');port_label('input',2,'en');\ncolor('black');port_label('output',1,'out');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice0"
 	  Ports			  [1, 1]
-	  Position		  [80, 138, 125, 152]
+	  Position		  [80, 138, 130, 152]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -9313,14 +9292,14 @@ Library {
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,b1026674,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([22 17 24 17 22 30 32 34 42 35 29 24 30 24 29 35 42 34 32 30 22 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,b1026674,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice1"
 	  Ports			  [1, 1]
-	  Position		  [80, 198, 125, 212]
+	  Position		  [80, 198, 130, 212]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -9337,14 +9316,14 @@ Library {
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,b1026674,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([22 17 24 17 22 30 32 34 42 35 29 24 30 24 29 35 42 34 32 30 22 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,b1026674,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice2"
 	  Ports			  [1, 1]
-	  Position		  [80, 273, 125, 287]
+	  Position		  [80, 273, 130, 287]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -9361,14 +9340,14 @@ Library {
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,b1026674,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([22 17 24 17 22 30 32 34 42 35 29 24 30 24 29 35 42 34 32 30 22 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,b1026674,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice3"
 	  Ports			  [1, 1]
-	  Position		  [80, 333, 125, 347]
+	  Position		  [80, 333, 130, 347]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -9385,14 +9364,14 @@ Library {
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,b1026674,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([22 17 24 17 22 30 32 34 42 35 29 24 30 24 29 35 42 34 32 30 22 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,b1026674,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice4"
 	  Ports			  [1, 1]
-	  Position		  [80, 408, 125, 422]
+	  Position		  [80, 408, 130, 422]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -9409,14 +9388,14 @@ Library {
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,b1026674,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([22 17 24 17 22 30 32 34 42 35 29 24 30 24 29 35 42 34 32 30 22 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,b1026674,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice5"
 	  Ports			  [1, 1]
-	  Position		  [80, 468, 125, 482]
+	  Position		  [80, 468, 130, 482]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -9433,14 +9412,14 @@ Library {
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,b1026674,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([22 17 24 17 22 30 32 34 42 35 29 24 30 24 29 35 42 34 32 30 22 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,b1026674,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice6"
 	  Ports			  [1, 1]
-	  Position		  [80, 543, 125, 557]
+	  Position		  [80, 543, 130, 557]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -9457,14 +9436,14 @@ Library {
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,b1026674,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([22 17 24 17 22 30 32 34 42 35 29 24 30 24 29 35 42 34 32 30 22 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,b1026674,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice7"
 	  Ports			  [1, 1]
-	  Position		  [80, 603, 125, 617]
+	  Position		  [80, 603, 130, 617]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -9481,14 +9460,14 @@ Library {
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,b1026674,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([22 17 24 17 22 30 32 34 42 35 29 24 30 24 29 35 42 34 32 30 22 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,b1026674,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice8"
 	  Ports			  [1, 1]
-	  Position		  [80, 678, 125, 692]
+	  Position		  [80, 678, 130, 692]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -9505,14 +9484,14 @@ Library {
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,b1026674,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([22 17 24 17 22 30 32 34 42 35 29 24 30 24 29 35 42 34 32 30 22 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,b1026674,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "slice9"
 	  Ports			  [1, 1]
-	  Position		  [80, 738, 125, 752]
+	  Position		  [80, 738, 130, 752]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
@@ -9529,14 +9508,14 @@ Library {
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,b1026674,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([22 17 24 17 22 30 32 34 42 35 29 24 30 24 29 35 42 34 32 30 22 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,b1026674,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay1"
 	  Ports			  [1, 1]
-	  Position		  [1505, 348, 1550, 362]
+	  Position		  [1550, 348, 1600, 362]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9551,14 +9530,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay10"
 	  Ports			  [1, 1]
-	  Position		  [700, 213, 745, 227]
+	  Position		  [715, 213, 765, 227]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9573,14 +9552,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay11"
 	  Ports			  [1, 1]
-	  Position		  [700, 483, 745, 497]
+	  Position		  [715, 483, 765, 497]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9595,14 +9574,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay117"
 	  Ports			  [1, 1]
-	  Position		  [1505, 833, 1550, 847]
+	  Position		  [1550, 833, 1600, 847]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9617,14 +9596,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay118"
 	  Ports			  [1, 1]
-	  Position		  [1575, 833, 1620, 847]
+	  Position		  [1625, 833, 1675, 847]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9639,14 +9618,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay12"
 	  Ports			  [1, 1]
-	  Position		  [700, 618, 745, 632]
+	  Position		  [715, 618, 765, 632]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9661,14 +9640,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay120"
 	  Ports			  [1, 1]
-	  Position		  [2165, 833, 2210, 847]
+	  Position		  [2190, 833, 2240, 847]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9683,14 +9662,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay13"
 	  Ports			  [1, 1]
-	  Position		  [700, 753, 745, 767]
+	  Position		  [715, 753, 765, 767]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9705,14 +9684,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay14"
 	  Ports			  [1, 1]
-	  Position		  [435, 808, 480, 822]
+	  Position		  [445, 813, 495, 827]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9727,14 +9706,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay15"
 	  Ports			  [1, 1]
-	  Position		  [435, 708, 480, 722]
+	  Position		  [445, 708, 495, 722]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9749,14 +9728,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay16"
 	  Ports			  [1, 1]
-	  Position		  [435, 678, 480, 692]
+	  Position		  [445, 678, 495, 692]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9771,14 +9750,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay17"
 	  Ports			  [1, 1]
-	  Position		  [435, 573, 480, 587]
+	  Position		  [445, 573, 495, 587]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9793,14 +9772,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay18"
 	  Ports			  [1, 1]
-	  Position		  [435, 543, 480, 557]
+	  Position		  [445, 543, 495, 557]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9815,14 +9794,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay19"
 	  Ports			  [1, 1]
-	  Position		  [435, 438, 480, 452]
+	  Position		  [445, 438, 495, 452]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9837,14 +9816,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay2"
 	  Ports			  [1, 1]
-	  Position		  [1505, 483, 1550, 497]
+	  Position		  [1550, 483, 1600, 497]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9859,14 +9838,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay20"
 	  Ports			  [1, 1]
-	  Position		  [435, 408, 480, 422]
+	  Position		  [445, 408, 495, 422]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9881,14 +9860,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay21"
 	  Ports			  [1, 1]
-	  Position		  [435, 303, 480, 317]
+	  Position		  [445, 303, 495, 317]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9903,14 +9882,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay22"
 	  Ports			  [1, 1]
-	  Position		  [435, 273, 480, 287]
+	  Position		  [445, 273, 495, 287]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9925,14 +9904,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay23"
 	  Ports			  [1, 1]
-	  Position		  [435, 168, 480, 182]
+	  Position		  [445, 168, 495, 182]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9947,14 +9926,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay24"
 	  Ports			  [1, 1]
-	  Position		  [435, 138, 480, 152]
+	  Position		  [445, 138, 495, 152]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9969,14 +9948,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay25"
 	  Ports			  [1, 1]
-	  Position		  [1865, 13, 1910, 27]
+	  Position		  [1920, 13, 1970, 27]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -9991,14 +9970,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay26"
 	  Ports			  [1, 1]
-	  Position		  [1865, 58, 1910, 72]
+	  Position		  [1920, 58, 1970, 72]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10013,14 +9992,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay28"
 	  Ports			  [1, 1]
-	  Position		  [700, 138, 745, 152]
+	  Position		  [715, 138, 765, 152]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10035,14 +10014,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay29"
 	  Ports			  [1, 1]
-	  Position		  [700, 168, 745, 182]
+	  Position		  [715, 168, 765, 182]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10057,14 +10036,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay3"
 	  Ports			  [1, 1]
-	  Position		  [1505, 618, 1550, 632]
+	  Position		  [1550, 618, 1600, 632]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10079,14 +10058,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay31"
 	  Ports			  [1, 1]
-	  Position		  [700, 273, 745, 287]
+	  Position		  [715, 273, 765, 287]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10101,14 +10080,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay32"
 	  Ports			  [1, 1]
-	  Position		  [700, 303, 745, 317]
+	  Position		  [715, 303, 765, 317]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10123,14 +10102,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay34"
 	  Ports			  [1, 1]
-	  Position		  [700, 408, 745, 422]
+	  Position		  [715, 408, 765, 422]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10145,14 +10124,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay35"
 	  Ports			  [1, 1]
-	  Position		  [700, 438, 745, 452]
+	  Position		  [715, 438, 765, 452]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10167,14 +10146,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay37"
 	  Ports			  [1, 1]
-	  Position		  [700, 543, 745, 557]
+	  Position		  [715, 543, 765, 557]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10189,14 +10168,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay38"
 	  Ports			  [1, 1]
-	  Position		  [700, 573, 745, 587]
+	  Position		  [715, 573, 765, 587]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10211,14 +10190,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay4"
 	  Ports			  [1, 1]
-	  Position		  [1505, 753, 1550, 767]
+	  Position		  [1550, 753, 1600, 767]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10233,14 +10212,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay40"
 	  Ports			  [1, 1]
-	  Position		  [700, 678, 745, 692]
+	  Position		  [715, 678, 765, 692]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10255,14 +10234,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay41"
 	  Ports			  [1, 1]
-	  Position		  [700, 708, 745, 722]
+	  Position		  [715, 708, 765, 722]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10277,14 +10256,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay43"
 	  Ports			  [1, 1]
-	  Position		  [1505, 58, 1550, 72]
+	  Position		  [1550, 58, 1600, 72]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10299,14 +10278,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay44"
 	  Ports			  [1, 1]
-	  Position		  [1575, 58, 1620, 72]
+	  Position		  [1625, 58, 1675, 72]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10321,14 +10300,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay45"
 	  Ports			  [1, 1]
-	  Position		  [700, 808, 745, 822]
+	  Position		  [715, 813, 765, 827]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10343,14 +10322,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay47"
 	  Ports			  [1, 1]
-	  Position		  [1505, 808, 1550, 822]
+	  Position		  [1550, 813, 1600, 827]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10365,14 +10344,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay48"
 	  Ports			  [1, 1]
-	  Position		  [1575, 808, 1620, 822]
+	  Position		  [1625, 813, 1675, 827]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10387,14 +10366,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay49"
 	  Ports			  [1, 1]
-	  Position		  [1505, 13, 1550, 27]
+	  Position		  [1550, 13, 1600, 27]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10409,14 +10388,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay5"
 	  Ports			  [1, 1]
-	  Position		  [1505, 198, 1550, 212]
+	  Position		  [1550, 198, 1600, 212]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10431,14 +10410,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay50"
 	  Ports			  [1, 1]
-	  Position		  [1575, 13, 1620, 27]
+	  Position		  [1625, 13, 1675, 27]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10453,14 +10432,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay6"
 	  Ports			  [1, 1]
-	  Position		  [1105, 58, 1150, 72]
+	  Position		  [1135, 58, 1185, 72]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10475,14 +10454,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay7"
 	  Ports			  [1, 1]
-	  Position		  [1865, 833, 1910, 847]
+	  Position		  [1920, 833, 1970, 847]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10497,14 +10476,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay71"
 	  Ports			  [1, 1]
-	  Position		  [150, 138, 195, 152]
+	  Position		  [155, 138, 205, 152]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10519,14 +10498,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay72"
 	  Ports			  [1, 1]
-	  Position		  [150, 168, 195, 182]
+	  Position		  [155, 168, 205, 182]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10541,14 +10520,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay73"
 	  Ports			  [1, 1]
-	  Position		  [150, 198, 195, 212]
+	  Position		  [155, 198, 205, 212]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10563,14 +10542,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay74"
 	  Ports			  [1, 1]
-	  Position		  [150, 273, 195, 287]
+	  Position		  [155, 273, 205, 287]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10585,14 +10564,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay75"
 	  Ports			  [1, 1]
-	  Position		  [150, 303, 195, 317]
+	  Position		  [155, 303, 205, 317]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10607,14 +10586,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay76"
 	  Ports			  [1, 1]
-	  Position		  [150, 333, 195, 347]
+	  Position		  [155, 333, 205, 347]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10629,14 +10608,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay77"
 	  Ports			  [1, 1]
-	  Position		  [150, 408, 195, 422]
+	  Position		  [155, 408, 205, 422]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10651,14 +10630,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay78"
 	  Ports			  [1, 1]
-	  Position		  [150, 438, 195, 452]
+	  Position		  [155, 438, 205, 452]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10673,14 +10652,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay79"
 	  Ports			  [1, 1]
-	  Position		  [150, 468, 195, 482]
+	  Position		  [155, 468, 205, 482]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10695,14 +10674,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay8"
 	  Ports			  [1, 1]
-	  Position		  [1105, 103, 1150, 117]
+	  Position		  [1135, 103, 1185, 117]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10717,14 +10696,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay80"
 	  Ports			  [1, 1]
-	  Position		  [150, 543, 195, 557]
+	  Position		  [155, 543, 205, 557]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10739,14 +10718,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay81"
 	  Ports			  [1, 1]
-	  Position		  [150, 573, 195, 587]
+	  Position		  [155, 573, 205, 587]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10761,14 +10740,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay82"
 	  Ports			  [1, 1]
-	  Position		  [150, 603, 195, 617]
+	  Position		  [155, 603, 205, 617]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10783,14 +10762,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay83"
 	  Ports			  [1, 1]
-	  Position		  [150, 678, 195, 692]
+	  Position		  [155, 678, 205, 692]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10805,14 +10784,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay84"
 	  Ports			  [1, 1]
-	  Position		  [150, 708, 195, 722]
+	  Position		  [155, 708, 205, 722]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10827,14 +10806,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay85"
 	  Ports			  [1, 1]
-	  Position		  [150, 738, 195, 752]
+	  Position		  [155, 738, 205, 752]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10849,14 +10828,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay86"
 	  Ports			  [1, 1]
-	  Position		  [150, 808, 195, 822]
+	  Position		  [155, 813, 205, 827]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10871,14 +10850,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay87"
 	  Ports			  [1, 1]
-	  Position		  [2165, 138, 2210, 152]
+	  Position		  [2190, 138, 2240, 152]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10893,14 +10872,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay88"
 	  Ports			  [1, 1]
-	  Position		  [2165, 13, 2210, 27]
+	  Position		  [2190, 13, 2240, 27]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10915,14 +10894,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay89"
 	  Ports			  [1, 1]
-	  Position		  [1505, 213, 1550, 227]
+	  Position		  [1550, 213, 1600, 227]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10937,14 +10916,14 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "sync_delay9"
 	  Ports			  [1, 1]
-	  Position		  [700, 348, 745, 362]
+	  Position		  [715, 348, 765, 362]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
@@ -10959,13 +10938,13 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,fc531c0e,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 14 14 ],[0.77 0.82 0.91]);\npatch([21 19 22 19 21 25 26 27 31 28 25 23 26 23 25 28 31 27 26 25 21 ],[2 4 7 10 12 12 11 12 12 9 12 10 7 4 2 5 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 14 14 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "sync_out"
-	  Position		  [2235, 13, 2265, 27]
+	  Position		  [2265, 13, 2295, 27]
 	  IconDisplay		  "Port number"
 	  OutDataType		  "sfix(16)"
 	  OutScaling		  "2^0"
@@ -10973,7 +10952,7 @@ Library {
 	Block {
 	  BlockType		  Outport
 	  Name			  "from_X"
-	  Position		  [2235, 138, 2265, 152]
+	  Position		  [2265, 138, 2295, 152]
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	  OutDataType		  "sfix(16)"
@@ -10982,7 +10961,7 @@ Library {
 	Block {
 	  BlockType		  Outport
 	  Name			  "from_Y"
-	  Position		  [2235, 273, 2265, 287]
+	  Position		  [2265, 273, 2295, 287]
 	  Port			  "3"
 	  IconDisplay		  "Port number"
 	  OutDataType		  "sfix(16)"
@@ -10991,7 +10970,7 @@ Library {
 	Block {
 	  BlockType		  Outport
 	  Name			  "from_Z"
-	  Position		  [2235, 543, 2265, 557]
+	  Position		  [2265, 543, 2295, 557]
 	  Port			  "4"
 	  IconDisplay		  "Port number"
 	  OutDataType		  "sfix(16)"
@@ -11000,11 +10979,24 @@ Library {
 	Block {
 	  BlockType		  Outport
 	  Name			  "valid"
-	  Position		  [2235, 833, 2265, 847]
+	  Position		  [2265, 833, 2295, 847]
 	  Port			  "5"
 	  IconDisplay		  "Port number"
 	  OutDataType		  "sfix(16)"
 	  OutScaling		  "2^0"
+	}
+	Line {
+	  SrcBlock		  "Logical7"
+	  SrcPort		  1
+	  Points		  [0, -5]
+	  DstBlock		  "Goto21"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From105"
+	  SrcPort		  1
+	  DstBlock		  "rx_counter"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "sync_delay26"
@@ -11082,12 +11074,6 @@ Library {
 	  SrcBlock		  "sync_delay14"
 	  SrcPort		  1
 	  DstBlock		  "sync_delay45"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Constant"
-	  SrcPort		  1
-	  DstBlock		  "rx_counter"
 	  DstPort		  1
 	}
 	Line {
@@ -11173,13 +11159,6 @@ Library {
 	  SrcPort		  1
 	  Points		  [0, -5]
 	  DstBlock		  "Goto22"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Logical7"
-	  SrcPort		  1
-	  Points		  [0, -5]
-	  DstBlock		  "Goto21"
 	  DstPort		  1
 	}
 	Line {
@@ -11608,41 +11587,41 @@ Library {
 	  SrcPort		  1
 	  Points		  [10, 0]
 	  Branch {
-	    DstBlock		    "sync_delay14"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, -45]
+	    Points		    [0, -50]
+	    Branch {
+	      DstBlock		      "pulse_hold3"
+	      DstPort		      2
+	    }
 	    Branch {
 	      Points		      [0, -135]
 	      Branch {
+		DstBlock		"pulse_hold2"
+		DstPort			2
+	      }
+	      Branch {
 		Points			[0, -135]
 		Branch {
+		  DstBlock		  "pulse_hold1"
+		  DstPort		  2
+		}
+		Branch {
 		  Points		  [0, -135]
+		  Branch {
+		    DstBlock		    "pulse_hold0"
+		    DstPort		    2
+		  }
 		  Branch {
 		    Points		    [0, -135]
 		    DstBlock		    "pulse_holdF"
 		    DstPort		    2
 		  }
-		  Branch {
-		    DstBlock		    "pulse_hold0"
-		    DstPort		    2
-		  }
-		}
-		Branch {
-		  DstBlock		  "pulse_hold1"
-		  DstPort		  2
 		}
 	      }
-	      Branch {
-		DstBlock		"pulse_hold2"
-		DstPort			2
-	      }
 	    }
-	    Branch {
-	      DstBlock		      "pulse_hold3"
-	      DstPort		      2
-	    }
+	  }
+	  Branch {
+	    DstBlock		    "sync_delay14"
+	    DstPort		    1
 	  }
 	}
 	Line {
@@ -12107,7 +12086,7 @@ Library {
 	Line {
 	  SrcBlock		  "sync_delay48"
 	  SrcPort		  1
-	  Points		  [215, 0; 0, -40]
+	  Points		  [215, 0; 0, -45]
 	  Branch {
 	    Points		    [0, -135]
 	    Branch {
@@ -12115,12 +12094,12 @@ Library {
 	      Branch {
 		Points			[0, -135]
 		Branch {
-		  Points		  [0, -135]
-		  DstBlock		  "fifo_loop"
+		  DstBlock		  "fifo_xaui0"
 		  DstPort		  4
 		}
 		Branch {
-		  DstBlock		  "fifo_xaui0"
+		  Points		  [0, -135]
+		  DstBlock		  "fifo_loop"
 		  DstPort		  4
 		}
 	      }
@@ -12336,35 +12315,6 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Constant2"
-	  Ports			  [0, 1]
-	  Position		  [420, 168, 470, 182]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Constant"
-	  SourceType		  "Xilinx Constant Block Block"
-	  arith_type		  "Boolean"
-	  const			  "1"
-	  n_bits		  "1"
-	  bin_pt		  "0"
-	  explicit_period	  "on"
-	  period		  "1"
-	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
-	  equ			  "P=C"
-	  opselect		  "C"
-	  inp2			  "PCIN>>17"
-	  opr			  "+"
-	  inp1			  "P"
-	  carry			  "CIN"
-	  dbl_ovrd		  "off"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,400,346"
-	  block_type		  "constant"
-	  block_version		  "10.1.1"
-	  sg_icon_stat		  "50,14,0,1,white,blue,0,06094819,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'1');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
 	  Name			  "Convert"
 	  Ports			  [1, 1]
 	  Position		  [260, 53, 310, 67]
@@ -12378,9 +12328,9 @@ Library {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  latency		  "1"
-	  dbl_ovrd		  "off"
-	  pipeline		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  pipeline		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,461,334"
@@ -12398,11 +12348,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
+	  en			  off
 	  latency		  "1"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  reg_retiming		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -12420,11 +12370,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
+	  en			  off
 	  latency		  "1"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  reg_retiming		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -12442,11 +12392,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
+	  en			  off
 	  latency		  "1"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  reg_retiming		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -12464,11 +12414,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
+	  en			  off
 	  latency		  "1"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  reg_retiming		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -12486,11 +12436,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
+	  en			  off
 	  latency		  "1"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  reg_retiming		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -12508,11 +12458,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
+	  en			  off
 	  latency		  "1"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  reg_retiming		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -12530,11 +12480,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
+	  en			  off
 	  latency		  "1"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  reg_retiming		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -12552,11 +12502,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
+	  en			  off
 	  latency		  "1"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  reg_retiming		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -12574,11 +12524,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
+	  en			  off
 	  latency		  "1"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  reg_retiming		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -12596,10 +12546,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Inverter"
 	  SourceType		  "Xilinx Inverter Block"
 	  infoedit		  "Bitwise logical negation (one's complement) operator."
-	  en			  "off"
+	  en			  off
 	  latency		  "0"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,251"
@@ -12618,15 +12568,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "AND"
 	  inputs		  "2"
-	  en			  "off"
+	  en			  off
 	  latency		  "1"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "1"
 	  bin_pt		  "0"
-	  align_bp		  "on"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
+	  align_bp		  on
+	  dbl_ovrd		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,261"
@@ -12645,15 +12595,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "AND"
 	  inputs		  "2"
-	  en			  "off"
+	  en			  off
 	  latency		  "1"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "1"
 	  bin_pt		  "0"
-	  align_bp		  "on"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
+	  align_bp		  on
+	  dbl_ovrd		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,261"
@@ -12671,7 +12621,7 @@ Library {
 	  SourceType		  "SubSystem"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12694,16 +12644,16 @@ Library {
 	  arith_type		  "Unsigned"
 	  n_bits		  "1"
 	  bin_pt		  "0"
-	  load_pin		  "off"
-	  rst			  "on"
-	  en			  "on"
+	  load_pin		  off
+	  rst			  on
+	  en			  on
 	  explicit_period	  "on"
 	  period		  "1"
-	  dbl_ovrd		  "off"
-	  use_behavioral_HDL	  "off"
-	  use_rpm		  "off"
+	  dbl_ovrd		  off
+	  use_behavioral_HDL	  off
+	  use_rpm		  off
 	  implementation	  "Fabric"
-	  xl_use_area		  "off"
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,619"
@@ -12873,12 +12823,6 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Constant2"
-	  SrcPort		  1
-	  DstBlock		  "tx_validL"
-	  DstPort		  1
-	}
-	Line {
 	  SrcBlock		  "to_X"
 	  SrcPort		  1
 	  DstBlock		  "Delay1"
@@ -12999,6 +12943,11 @@ Library {
 	  SrcBlock		  "Delay"
 	  SrcPort		  1
 	  Points		  [85, 0]
+	  Branch {
+	    Points		    [0, 60]
+	    DstBlock		    "tx_validL"
+	    DstPort		    1
+	  }
 	  Branch {
 	    DstBlock		    "Logical1"
 	    DstPort		    2
@@ -14588,9 +14537,9 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/AddSub"
 	  SourceType		  "Xilinx Adder/Subtractor Block"
 	  mode			  "Subtraction"
-	  use_carryin		  "off"
-	  use_carryout		  "off"
-	  en			  "off"
+	  use_carryin		  off
+	  use_carryout		  off
+	  en			  off
 	  latency		  "2"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
@@ -14598,18 +14547,18 @@ Library {
 	  bin_pt		  "14"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  "off"
-	  use_behavioral_HDL	  "off"
-	  pipelined		  "off"
-	  use_rpm		  "on"
+	  dbl_ovrd		  off
+	  use_behavioral_HDL	  off
+	  pipelined		  off
+	  use_rpm		  on
 	  hw_selection		  "Fabric"
-	  xl_use_area		  "off"
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,344"
 	  block_type		  "addsub"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,51,2,1,white,blue,0,2d46ec54,right"
+	  sg_icon_stat		  "50,51,1,1,white,blue,0,2d46ec54,right"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a - b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
@@ -14638,15 +14587,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "OR"
 	  inputs		  "2"
-	  en			  "off"
+	  en			  off
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "16"
 	  bin_pt		  "0"
-	  align_bp		  "on"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
+	  align_bp		  on
+	  dbl_ovrd		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,261"
@@ -14664,7 +14613,7 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Mux"
 	  SourceType		  "Xilinx Bus Multiplexer Block"
 	  inputs		  "2"
-	  en			  "off"
+	  en			  off
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
@@ -14672,8 +14621,8 @@ Library {
 	  bin_pt		  "14"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -14691,10 +14640,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Relational"
 	  SourceType		  "Xilinx Arithmetic Relational Operator Block"
 	  mode			  "a>=b"
-	  en			  "off"
+	  en			  off
 	  latency		  "1"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,193"
@@ -14748,16 +14697,16 @@ Library {
 	  arith_type		  "Unsigned"
 	  n_bits		  "32"
 	  bin_pt		  "0"
-	  load_pin		  "off"
-	  rst			  "on"
-	  en			  "off"
+	  load_pin		  off
+	  rst			  on
+	  en			  off
 	  explicit_period	  "on"
 	  period		  "1"
-	  dbl_ovrd		  "off"
-	  use_behavioral_HDL	  "off"
-	  use_rpm		  "off"
+	  dbl_ovrd		  off
+	  use_behavioral_HDL	  off
+	  use_rpm		  off
 	  implementation	  "Fabric"
-	  xl_use_area		  "off"
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,619"
@@ -14794,10 +14743,10 @@ Library {
 	  Position		  [75, 85, 175, 115]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/software register"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -14822,7 +14771,7 @@ Library {
 	  const			  "3"
 	  n_bits		  "32"
 	  bin_pt		  "0"
-	  explicit_period	  "on"
+	  explicit_period	  on
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -14831,7 +14780,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,400,346"
 	  block_type		  "constant"
@@ -14849,7 +14798,7 @@ Library {
 	  SourceType		  "posedge"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -14864,10 +14813,10 @@ Library {
 	  Position		  [75, 15, 175, 45]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/software register"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -14890,13 +14839,13 @@ Library {
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
 	  infoedit		  "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	  nbits			  "1"
-	  boolean_output	  "on"
+	  boolean_output	  on
 	  mode			  "Lower Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
