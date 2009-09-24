@@ -133,6 +133,50 @@ def read_eq (fpga):
 	eq = uncat_fft(eq_blk0, eq_blk1)
 	return eq
 
+def read_corr (fpga):
+	corr0_AAr_bram = fpga.read('capt_corr0_capt0_bram0', freq_read_length)
+	corr0_BBr_bram = fpga.read('capt_corr0_capt0_bram1', freq_read_length)
+	corr0_CCr_bram = fpga.read('capt_corr0_capt0_bram2', freq_read_length)
+	corr0_ABr_bram = fpga.read('capt_corr0_capt1_bram0', freq_read_length)
+	corr0_ABi_bram = fpga.read('capt_corr0_capt1_bram1', freq_read_length)
+	corr0_BCr_bram = fpga.read('capt_corr0_capt1_bram2', freq_read_length)
+	corr0_BCi_bram = fpga.read('capt_corr0_capt2_bram0', freq_read_length)
+	corr0_CAr_bram = fpga.read('capt_corr0_capt2_bram1', freq_read_length)
+	corr0_CAi_bram = fpga.read('capt_corr0_capt2_bram2', freq_read_length)
+
+	corr1_AAr_bram = fpga.read('capt_corr1_capt0_bram0', freq_read_length)
+	corr1_BBr_bram = fpga.read('capt_corr1_capt0_bram1', freq_read_length)
+	corr1_CCr_bram = fpga.read('capt_corr1_capt0_bram2', freq_read_length)
+	corr1_ABr_bram = fpga.read('capt_corr1_capt1_bram0', freq_read_length)
+	corr1_ABi_bram = fpga.read('capt_corr1_capt1_bram1', freq_read_length)
+	corr1_BCr_bram = fpga.read('capt_corr1_capt1_bram2', freq_read_length)
+	corr1_BCi_bram = fpga.read('capt_corr1_capt2_bram0', freq_read_length)
+	corr1_CAr_bram = fpga.read('capt_corr1_capt2_bram1', freq_read_length)
+	corr1_CAi_bram = fpga.read('capt_corr1_capt2_bram2', freq_read_length)
+
+	corr2_AAr_bram = fpga.read('capt_corr2_capt0_bram0', freq_read_length)
+	corr2_BBr_bram = fpga.read('capt_corr2_capt0_bram1', freq_read_length)
+	corr2_CCr_bram = fpga.read('capt_corr2_capt0_bram2', freq_read_length)
+	corr2_ABr_bram = fpga.read('capt_corr2_capt1_bram0', freq_read_length)
+	corr2_ABi_bram = fpga.read('capt_corr2_capt1_bram1', freq_read_length)
+	corr2_BCr_bram = fpga.read('capt_corr2_capt1_bram2', freq_read_length)
+	corr2_BCi_bram = fpga.read('capt_corr2_capt2_bram0', freq_read_length)
+	corr2_CAr_bram = fpga.read('capt_corr2_capt2_bram1', freq_read_length)
+	corr2_CAi_bram = fpga.read('capt_corr2_capt2_bram2', freq_read_length)
+
+	corr0 = (corr0_AAr_bram, corr0_BBr_bram, corr0_CCr_bram, \
+		 corr0_ABr_bram, corr0_ABi_bram, corr0_BCr_bram, \
+		 corr0_BCi_bram, corr0_CAr_bram, corr0_CAi_bram)
+	corr1 = (corr1_AAr_bram, corr1_BBr_bram, corr1_CCr_bram, \
+		 corr1_ABr_bram, corr1_ABi_bram, corr1_BCr_bram, \
+		 corr1_BCi_bram, corr1_CAr_bram, corr1_CAi_bram)
+	corr2 = (corr2_AAr_bram, corr2_BBr_bram, corr2_CCr_bram, \
+		 corr2_ABr_bram, corr2_ABi_bram, corr2_BCr_bram, \
+		 corr2_BCi_bram, corr2_CAr_bram, corr2_CAi_bram)
+
+	corr = (corr0, corr1, corr2)
+	return corr
+
 # Parse command line arguments.
 
 usage = "usage: %prog [options] ADDR"
@@ -223,6 +267,7 @@ while True:
 	pfb = read_pfb(fpga)
 	fft = read_fft(fpga)
 	eq = read_eq(fpga)
+	corr = read_corr(fpga)
 
 	c1.set_ydata(adc)
 	ax1.relim()
