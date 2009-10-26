@@ -3,7 +3,7 @@
 # auth: Billy Mallard
 # mail: wjm@llard.net
 # date: 2009-10-25
-# desc: A control and readout script for the link mux/demux test.
+# desc: A control script for test_link_mux_demux.mdl.
 
 import corr
 import sys
