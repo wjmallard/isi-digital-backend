@@ -38,6 +38,11 @@ def bit_unset (fpga, reg_name, flags):
 	reg_state &= ~flags
 	fpga.write_int(reg_name, reg_state)
 
+def reset_fifo (fpga):
+	bit_set(fpga, 'control', FIFO_RESET)
+	time.sleep(.1)
+	bit_unset(fpga, 'control', FIFO_RESET)
+
 def send_sync (fpga):
 	"""Sends a new sync pulse through the system."""
 	bit_unset(fpga, 'control', ARM_RESET | FORCE_TRIG)
@@ -102,31 +107,37 @@ if options.boffile:
 		print "Program succeeded."
 
 print "Setting acquisition parameters."
-read_length = 1<<7
-update_delay = .25 # seconds
+read_length = 1<<4
+update_delay = 1 # seconds
 
 print "Setting up plot."
 pylab.ion()
 
 index = range(0, read_length)
 
-ax1 = pylab.subplot(311)
+ax1 = pylab.subplot(411)
 mx = [0] * read_length
 dx = [0] * read_length
 c_mx,c_dx = ax1.plot(index, mx, '-', index, dx, '--')
 ax1.autoscale_view(tight=True, scalex=True, scaley=True)
 
-ax2 = pylab.subplot(312)
+ax2 = pylab.subplot(412)
 my = [0] * read_length
 dy = [0] * read_length
 c_my,c_dy = ax2.plot(index, my, '-', index, dy, '--')
 ax2.autoscale_view(tight=True, scalex=True, scaley=True)
 
-ax3 = pylab.subplot(313)
+ax3 = pylab.subplot(413)
 mz = [0] * read_length
 dz = [0] * read_length
 c_mz,c_dz = ax3.plot(index, mz, '-', index, dz, '--')
 ax3.autoscale_view(tight=True, scalex=True, scaley=True)
+
+ax4 = pylab.subplot(414)
+x0 = [0] * read_length
+x1 = [0] * read_length
+c_x0,c_x1 = ax4.plot(index, x0, '-', index, x1, '--')
+ax4.autoscale_view(tight=True, scalex=True, scaley=True)
 
 print "Initializing control registers."
 fpga.write_int('control', 0)
@@ -134,6 +145,7 @@ fpga.write_int('sync_gen2_period', 2**26)
 fpga.write_int('sync_gen2_select', 1)
 
 print "Sending intial sync pulse."
+reset_fifo(fpga)
 send_sync(fpga)
 
 print "Looping forever."
@@ -141,6 +153,7 @@ while True:
 
 	acquire(fpga)
 	(mx, my, mz) = read_capt(fpga, "mux", 3, read_length)
+	(xL, x0, x1) = read_capt(fpga, "xaui", 3, read_length)
 	(dx, dy, dz) = read_capt(fpga, "demux", 3, read_length)
 
 	c_mx.set_ydata(mx)
@@ -157,6 +170,11 @@ while True:
 	c_dz.set_ydata(dz)
 	ax3.relim()
 	ax3.autoscale_view(tight=False, scalex=False, scaley=True)
+
+	c_x0.set_ydata(x0)
+	c_x1.set_ydata(x1)
+	ax4.relim()
+	ax4.autoscale_view(tight=False, scalex=False, scaley=True)
 
 	pylab.draw()
 
