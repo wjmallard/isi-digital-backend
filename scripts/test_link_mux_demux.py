@@ -107,7 +107,7 @@ if options.boffile:
 		print "Program succeeded."
 
 print "Setting acquisition parameters."
-read_length = 1<<4
+read_length = 1<<9
 update_delay = 1 # seconds
 
 print "Setting up plot."
@@ -156,8 +156,10 @@ while True:
 	(xL, x0, x1) = read_capt(fpga, "xaui", 3, read_length)
 	(dx, dy, dz) = read_capt(fpga, "demux", 3, read_length)
 
-	c_mx.set_ydata(mx)
-	c_dx.set_ydata(dx)
+	#c_mx.set_ydata(mx)
+	#c_dx.set_ydata(dx)
+	c_mx.set_ydata(diff(dy,mx))
+	c_dx.set_ydata(diff(dz,mx))
 	ax1.relim()
 	ax1.autoscale_view(tight=False, scalex=False, scaley=True)
 
