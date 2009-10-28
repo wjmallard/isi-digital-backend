@@ -3,7 +3,7 @@
 # auth: Billy Mallard
 # mail: wjm@llard.net
 # date: 2009-10-25
-# desc: A control script for test_link_mux_demux.mdl.
+# desc: A control script for test_interconnect.mdl.
 
 import corr
 import sys
