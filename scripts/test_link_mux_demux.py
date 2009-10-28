@@ -115,29 +115,27 @@ pylab.ion()
 
 index = range(0, read_length)
 
-ax1 = pylab.subplot(411)
-mx = [0] * read_length
-dx = [0] * read_length
-c_mx,c_dx = ax1.plot(index, mx, '-', index, dx, '--')
+ax1 = pylab.subplot(311)
+XA = [0] * read_length
+XB = [0] * read_length
+XC = [0] * read_length
+c_XA,c_XB,c_XC = ax1.plot(index, XA, '-', index, XB, '--', index, XC, '-.')
 ax1.autoscale_view(tight=True, scalex=True, scaley=True)
 
-ax2 = pylab.subplot(412)
-my = [0] * read_length
-dy = [0] * read_length
-c_my,c_dy = ax2.plot(index, my, '-', index, dy, '--')
+ax2 = pylab.subplot(312)
+YA = [0] * read_length
+YB = [0] * read_length
+YC = [0] * read_length
+c_YA,c_YB,c_YC = ax2.plot(index, YA, '-', index, YB, '--', index, YC, '-.')
+ax1.autoscale_view(tight=True, scalex=True, scaley=True)
 ax2.autoscale_view(tight=True, scalex=True, scaley=True)
 
-ax3 = pylab.subplot(413)
-mz = [0] * read_length
-dz = [0] * read_length
-c_mz,c_dz = ax3.plot(index, mz, '-', index, dz, '--')
+ax3 = pylab.subplot(313)
+ZA = [0] * read_length
+ZB = [0] * read_length
+ZC = [0] * read_length
+c_ZA,c_ZB,c_ZC = ax3.plot(index, ZA, '-', index, ZB, '--', index, ZC, '-.')
 ax3.autoscale_view(tight=True, scalex=True, scaley=True)
-
-ax4 = pylab.subplot(414)
-x0 = [0] * read_length
-x1 = [0] * read_length
-c_x0,c_x1 = ax4.plot(index, x0, '-', index, x1, '--')
-ax4.autoscale_view(tight=True, scalex=True, scaley=True)
 
 print "Initializing control registers."
 fpga.write_int('control', 0)
@@ -152,31 +150,27 @@ print "Looping forever."
 while True:
 
 	acquire(fpga)
-	(mx, my, mz) = read_capt(fpga, "mux", 3, read_length)
-	(xL, x0, x1) = read_capt(fpga, "xaui", 3, read_length)
-	(dx, dy, dz) = read_capt(fpga, "demux", 3, read_length)
+	(XA, XB, XC) = read_capt(fpga, "X", 3, read_length)
+	(YA, YB, YC) = read_capt(fpga, "Y", 3, read_length)
+	(ZA, ZB, ZC) = read_capt(fpga, "Z", 3, read_length)
 
-	#c_mx.set_ydata(mx)
-	#c_dx.set_ydata(dx)
-	c_mx.set_ydata(diff(dy,mx))
-	c_dx.set_ydata(diff(dz,mx))
+	c_XA.set_ydata(XA)
+	c_XB.set_ydata(XB)
+	c_XC.set_ydata(XC)
 	ax1.relim()
 	ax1.autoscale_view(tight=False, scalex=False, scaley=True)
 
-	c_my.set_ydata(my)
-	c_dy.set_ydata(dy)
+	c_YA.set_ydata(YA)
+	c_YB.set_ydata(YB)
+	c_YC.set_ydata(YC)
 	ax2.relim()
 	ax2.autoscale_view(tight=False, scalex=False, scaley=True)
 
-	c_mz.set_ydata(mz)
-	c_dz.set_ydata(dz)
+	c_ZA.set_ydata(ZA)
+	c_ZB.set_ydata(ZB)
+	c_ZC.set_ydata(ZC)
 	ax3.relim()
 	ax3.autoscale_view(tight=False, scalex=False, scaley=True)
-
-	c_x0.set_ydata(x0)
-	c_x1.set_ydata(x1)
-	ax4.relim()
-	ax4.autoscale_view(tight=False, scalex=False, scaley=True)
 
 	pylab.draw()
 
