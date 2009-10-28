@@ -14,6 +14,8 @@ import struct
 import pylab
 import IPython
 
+from itertools import *
+
 ipshell = IPython.Shell.IPShellEmbed()
 
 # Control flags
@@ -25,7 +27,7 @@ ACQUIRE         = 1<<3
 CAPT_RESET      = 1<<4
 
 #
-# Miscellaneous functions.
+# Board control functions.
 #
 
 def bit_set (fpga, reg_name, flags):
@@ -71,6 +73,39 @@ def read_capt (fpga, capt_name, num_brams, read_len):
 		capt_data += [bram_vals]
 	return capt_data
 
+def read_capt8 (fpga, capt_name, num_brams, read_len):
+	capt_data = []
+	for bram_num in xrange(0, num_brams):
+		bram_name = "capt_%s_bram%d" % (capt_name, bram_num)
+		bram_data = fpga.read(bram_name, read_len)
+		bram_vals = struct.unpack('>%sB' % read_len, bram_data)
+		capt_data += [bram_vals]
+	return capt_data
+
+#
+# Simulation functions.
+#
+
+def unclump(A):
+	A4 = islice(A, 4, None, 16)
+	A5 = islice(A, 5, None, 16)
+	A6 = islice(A, 6, None, 16)
+	A7 = islice(A, 7, None, 16)
+	A8 = islice(A, 8, None, 16)
+	A9 = islice(A, 9, None, 16)
+	A10 = islice(A, 10, None, 16)
+	A11 = islice(A, 11, None, 16)
+	A12 = islice(A, 12, None, 16)
+	A13 = islice(A, 13, None, 16)
+	A14 = islice(A, 14, None, 16)
+	A15 = islice(A, 15, None, 16)
+	A_iter = izip(A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15)
+	A_list = [x for y in A_iter for x in y]
+	X1 = islice(A_list, 0, None, 3)
+	X2 = islice(A_list, 1, None, 3)
+	X3 = islice(A_list, 2, None, 3)
+	return (X1, X2, X3)
+
 def diff (x_list, y_list):
 	return [x-y for x,y in zip(x_list, y_list)]
 
@@ -107,7 +142,7 @@ if options.boffile:
 		print "Program succeeded."
 
 print "Setting acquisition parameters."
-read_length = 1<<9
+read_length = 1<<6
 update_delay = 1 # seconds
 
 print "Setting up plot."
@@ -150,6 +185,15 @@ print "Looping forever."
 while True:
 
 	acquire(fpga)
+
+	(m0, m1, m2) = read_capt(fpga, "012", 3, read_length)
+	(m3, m4, m5) = read_capt(fpga, "345", 3, read_length)
+	(m6, m7, mZ) = read_capt(fpga, "67Z", 3, read_length)
+
+	(txX, txY, txZ) = read_capt8(fpga, "clump", 3, read_length)
+	(rxX, rxY, rxZ) = read_capt8(fpga, "xaui", 3, read_length)
+	(xrX, xrY, xrZ) = read_capt8(fpga, "resync", 3, read_length)
+
 	(XA, XB, XC) = read_capt(fpga, "X", 3, read_length)
 	(YA, YB, YC) = read_capt(fpga, "Y", 3, read_length)
 	(ZA, ZB, ZC) = read_capt(fpga, "Z", 3, read_length)
