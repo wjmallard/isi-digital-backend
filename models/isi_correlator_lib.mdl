@@ -14,9 +14,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Oct 27 23:58:04 2009"
+  LastModifiedDate	  "Wed Oct 28 21:42:27 2009"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:361>"
+  ModelVersionFormat	  "1.%<AutoIncrement:363>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -9844,7 +9844,7 @@ Library {
       MaskValueString	      "4"
       System {
 	Name			"resync"
-	Location		[107, 861, 695, 1037]
+	Location		[107, 861, 723, 1039]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -9865,23 +9865,55 @@ Library {
 	}
 	Block {
 	  BlockType		  Inport
-	  Name			  "sync"
+	  Name			  "sync_in"
 	  Position		  [15, 98, 45, 112]
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Inport
-	  Name			  "data"
+	  Name			  "data_in"
 	  Position		  [15, 138, 45, 152]
 	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "ASR"
+	  Name			  "ASR0"
 	  Ports			  [2, 1]
-	  Position		  [465, 16, 515, 69]
+	  Position		  [490, 16, 540, 69]
+	  SourceBlock		  "xbsIndex_r4/Addressable Shift Register"
+	  SourceType		  "Xilinx Addressable Shift Register Block"
+	  infoedit		  "Delay of configurable length.  Any element in the delay line can be addressed and driven onto the outp"
+	  "ut port.<br><br>Hardware notes: Implemented using SRL16s.  If Virtex-4, Virtex-II or Spartan-3 devices are used, mu"
+	  "ltiple SRLC16s are cascaded together."
+	  infer_latency		  on
+	  depth			  "2^depth"
+	  initVector		  "[0]"
+	  en			  off
+	  dbl_ovrd		  off
+	  use_behavioral_HDL	  off
+	  xl_use_area		  off
+	  xl_area		  "[0,0,0,0,0,0,0]"
+	  use_rpm		  "off"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "20,20,543,470"
+	  block_type		  "addrsr"
+	  block_version		  "10.1.3"
+	  sg_icon_stat		  "50,53,2,1,white,blue,0,a352fb33,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.64 0.56 0.48 0.22 ],[0.1320"
+	  "75 0.283019 0.509434 0.735849 0.886792 0.886792 0.811321 0.886792 0.886792 0.679245 0.886792 0.735849 0.509434 0.28"
+	  "3019 0.132075 0.339623 0.132075 0.132075 0.207547 0.132075 0.132075 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 "
+	  "1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_la"
+	  "bel('input',1,'d');\ncolor('black');port_label('input',2,'addr');\ncolor('black');port_label('output',1,'q');\nfpri"
+	  "ntf('','COMMENT: end icon text');\n"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ASR1"
+	  Ports			  [2, 1]
+	  Position		  [490, 91, 540, 144]
 	  SourceBlock		  "xbsIndex_r4/Addressable Shift Register"
 	  SourceType		  "Xilinx Addressable Shift Register Block"
 	  infoedit		  "Delay of configurable length.  Any element in the delay line can be addressed and driven onto the outp"
@@ -9914,6 +9946,7 @@ Library {
 	  Name			  "Counter"
 	  Ports			  [2, 1]
 	  Position		  [390, 37, 440, 68]
+	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Counter"
 	  SourceType		  "Xilinx Counter Block"
 	  infoedit		  "Hardware notes: Free running counters are the least expensive in hardware.  A count limited counter is"
@@ -9949,33 +9982,6 @@ Library {
 	  "0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');p"
 	  "ort_label('input',1,'rst');\ncolor('black');port_label('input',2,'en');\ncolor('black');port_label('output',1,'out'"
 	  ");\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay2"
-	  Ports			  [1, 1]
-	  Position		  [465, 98, 515, 112]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
-	  latency		  "2^depth-1"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,543,392"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,c21c4c41,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-15}','te"
-	  "xmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -10092,18 +10098,18 @@ Library {
 	Block {
 	  BlockType		  Outport
 	  Name			  "dout"
-	  Position		  [540, 38, 570, 52]
+	  Position		  [565, 38, 595, 52]
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "aligned"
-	  Position		  [540, 98, 570, 112]
+	  Position		  [565, 113, 595, 127]
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  SrcBlock		  "Delay2"
+	  SrcBlock		  "ASR1"
 	  SrcPort		  1
 	  DstBlock		  "aligned"
 	  DstPort		  1
@@ -10127,7 +10133,7 @@ Library {
 	  Points		  [5, 0]
 	  Branch {
 	    Points		    [0, 15]
-	    DstBlock		    "Delay2"
+	    DstBlock		    "ASR1"
 	    DstPort		    1
 	  }
 	  Branch {
@@ -10138,8 +10144,16 @@ Library {
 	Line {
 	  SrcBlock		  "Counter"
 	  SrcPort		  1
-	  DstBlock		  "ASR"
-	  DstPort		  2
+	  Points		  [25, 0]
+	  Branch {
+	    Points		    [0, 75]
+	    DstBlock		    "ASR1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "ASR0"
+	    DstPort		    2
+	  }
 	}
 	Line {
 	  SrcBlock		  "Inverter1"
@@ -10149,13 +10163,13 @@ Library {
 	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "ASR"
+	  SrcBlock		  "ASR0"
 	  SrcPort		  1
 	  DstBlock		  "dout"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "sync"
+	  SrcBlock		  "sync_in"
 	  SrcPort		  1
 	  Points		  [5, 0]
 	  Branch {
@@ -10190,10 +10204,10 @@ Library {
 	  }
 	}
 	Line {
-	  SrcBlock		  "data"
+	  SrcBlock		  "data_in"
 	  SrcPort		  1
-	  Points		  [400, 0]
-	  DstBlock		  "ASR"
+	  Points		  [405, 0; 0, -115]
+	  DstBlock		  "ASR0"
 	  DstPort		  1
 	}
       }
@@ -14363,7 +14377,7 @@ Library {
       System {
 	Name			"xaui_resync"
 	Location		[562, 441, 1101, 915]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"

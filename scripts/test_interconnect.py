@@ -87,23 +87,16 @@ def read_capt8 (fpga, capt_name, num_brams, read_len):
 #
 
 def unclump(A):
-	A4 = islice(A, 4, None, 16)
-	A5 = islice(A, 5, None, 16)
-	A6 = islice(A, 6, None, 16)
-	A7 = islice(A, 7, None, 16)
-	A8 = islice(A, 8, None, 16)
-	A9 = islice(A, 9, None, 16)
-	A10 = islice(A, 10, None, 16)
-	A11 = islice(A, 11, None, 16)
-	A12 = islice(A, 12, None, 16)
-	A13 = islice(A, 13, None, 16)
-	A14 = islice(A, 14, None, 16)
-	A15 = islice(A, 15, None, 16)
-	A_iter = izip(A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15)
-	A_list = [x for y in A_iter for x in y]
-	X1 = islice(A_list, 0, None, 3)
-	X2 = islice(A_list, 1, None, 3)
-	X3 = islice(A_list, 2, None, 3)
+	"""Inverts the compression operation of the clump block."""
+	X = []
+	num_frames = len(A)/16
+	for i in xrange(0, num_frames):
+		sof = i*16 + 4
+		eof = sof + 12
+		X += A[sof:eof]
+	X1 = X[0:None:3]
+	X2 = X[1:None:3]
+	X3 = X[2:None:3]
 	return (X1, X2, X3)
 
 def diff (x_list, y_list):
@@ -190,29 +183,42 @@ while True:
 	(m3, m4, m5) = read_capt(fpga, "345", 3, read_length)
 	(m6, m7, mZ) = read_capt(fpga, "67Z", 3, read_length)
 
-	(txX, txY, txZ) = read_capt8(fpga, "clump", 3, read_length)
-	(rxX, rxY, rxZ) = read_capt8(fpga, "xaui", 3, read_length)
-	(xrX, xrY, xrZ) = read_capt8(fpga, "resync", 3, read_length)
+	(txX, txY, txZ) = read_capt8(fpga, "clump", 3, read_length * 4)
+	(rxX, rxY, rxZ) = read_capt8(fpga, "xaui", 3, read_length * 4)
+	(xrX, xrY, xrZ) = read_capt8(fpga, "resync", 3, read_length *4)
 
+	(tx0, tx1, tx2) = unclump(txX)
+	(tx3, tx4, tx5) = unclump(txY)
+	(tx6, tx7, txZ) = unclump(txZ)
+
+	(rx0, rx1, rx2) = unclump(rxX)
+	(rx3, rx4, rx5) = unclump(rxY)
+	(rx6, rx7, rxZ) = unclump(rxZ)
+
+	(xr0, xr1, xr2) = unclump(xrX)
+	(xr3, xr4, xr5) = unclump(xrY)
+	(xr6, xr7, xrZ) = unclump(xrZ)
+
+	(XA, XB, XC) = read_capt(fpga, "X", 3, read_length)
 	(XA, XB, XC) = read_capt(fpga, "X", 3, read_length)
 	(YA, YB, YC) = read_capt(fpga, "Y", 3, read_length)
 	(ZA, ZB, ZC) = read_capt(fpga, "Z", 3, read_length)
 
-	c_XA.set_ydata(XA)
-	c_XB.set_ydata(XB)
-	c_XC.set_ydata(XC)
+	c_XA.set_ydata(m3)
+	c_XB.set_ydata(rx3)
+	c_XC.set_ydata(xr3)
 	ax1.relim()
 	ax1.autoscale_view(tight=False, scalex=False, scaley=True)
 
-	c_YA.set_ydata(YA)
-	c_YB.set_ydata(YB)
-	c_YC.set_ydata(YC)
+	c_YA.set_ydata(m4)
+	c_YB.set_ydata(rx4)
+	c_YC.set_ydata(xr4)
 	ax2.relim()
 	ax2.autoscale_view(tight=False, scalex=False, scaley=True)
 
-	c_ZA.set_ydata(ZA)
-	c_ZB.set_ydata(ZB)
-	c_ZC.set_ydata(ZC)
+	c_ZA.set_ydata(m5)
+	c_ZB.set_ydata(rx5)
+	c_ZC.set_ydata(xr5)
 	ax3.relim()
 	ax3.autoscale_view(tight=False, scalex=False, scaley=True)
 

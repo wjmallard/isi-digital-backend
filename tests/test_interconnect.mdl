@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.29"
+    ComputedModelVersion    "1.32"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -24,9 +24,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Oct 28 14:21:53 2009"
+  LastModifiedDate	  "Wed Oct 28 21:43:11 2009"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:29>"
+  ModelVersionFormat	  "1.%<AutoIncrement:32>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1425,7 +1425,7 @@ Model {
       Position		      [575, 28, 635, 42]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "fifo_reset"
+      GotoTag		      "mux_sync"
     }
     Block {
       BlockType		      From
@@ -1577,7 +1577,7 @@ Model {
       Position		      [575, 208, 635, 222]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "fifo_reset"
+      GotoTag		      "mux_sync"
     }
     Block {
       BlockType		      From
@@ -1649,7 +1649,7 @@ Model {
       Position		      [575, 88, 635, 102]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "fifo_reset"
+      GotoTag		      "mux_sync"
     }
     Block {
       BlockType		      From
@@ -1745,7 +1745,7 @@ Model {
       Position		      [575, 148, 635, 162]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "fifo_reset"
+      GotoTag		      "mux_sync"
     }
     Block {
       BlockType		      From
@@ -1809,7 +1809,7 @@ Model {
       Position		      [575, 268, 635, 282]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "fifo_reset"
+      GotoTag		      "mux_sync"
     }
     Block {
       BlockType		      From
@@ -1822,10 +1822,10 @@ Model {
     Block {
       BlockType		      From
       Name		      "From39"
-      Position		      [575, 448, 635, 462]
+      Position		      [575, 328, 635, 342]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "fifo_reset"
+      GotoTag		      "mux_sync"
     }
     Block {
       BlockType		      From
@@ -1838,10 +1838,10 @@ Model {
     Block {
       BlockType		      From
       Name		      "From40"
-      Position		      [575, 328, 635, 342]
+      Position		      [575, 388, 635, 402]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "fifo_reset"
+      GotoTag		      "mux_sync"
     }
     Block {
       BlockType		      From
@@ -1870,10 +1870,10 @@ Model {
     Block {
       BlockType		      From
       Name		      "From44"
-      Position		      [575, 388, 635, 402]
+      Position		      [575, 448, 635, 462]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "fifo_reset"
+      GotoTag		      "mux_sync"
     }
     Block {
       BlockType		      From
@@ -10133,72 +10133,6 @@ Model {
       Name		      "xaui_resync"
       Ports		      [9, 5]
       Position		      [1655, 15, 1755, 295]
-      LinkData {
-	BlockName		"resyncY/Delay2"
-	DialogParameters {
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,5a372139,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-255}','t"
-	  "exmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"resyncY/Inverter0"
-	DialogParameters {
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,267846e5,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('not');\nfpri"
-	  "ntf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"resyncY/Register"
-	DialogParameters {
-	  sg_icon_stat		  "50,52,3,1,white,blue,0,b821322c,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.64 0.56 0.48 0.22 ],[0.1153"
-	  "85 0.269231 0.5 0.730769 0.884615 0.884615 0.807692 0.884615 0.884615 0.673077 0.884615 0.730769 0.5 0.269231 0.115"
-	  "385 0.326923 0.115385 0.115385 0.192308 0.115385 0.115385 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nf"
-	  "printf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input"
-	  "',1,'d');\ncolor('black');port_label('input',2,'rst');\ncolor('black');port_label('input',3,'en');\ncolor('black');"
-	  "port_label('output',1,'q');\ncolor('black');disp('\\bf{z^{-1}}','texmode','on');\nfprintf('','COMMENT: end icon tex"
-	  "t');\n"
-	}
-	BlockName		"resyncZ/Delay2"
-	DialogParameters {
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,5a372139,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-255}','t"
-	  "exmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"resyncZ/Inverter0"
-	DialogParameters {
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,267846e5,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('not');\nfpri"
-	  "ntf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"resyncZ/Register"
-	DialogParameters {
-	  sg_icon_stat		  "50,52,3,1,white,blue,0,b821322c,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.64 0.56 0.48 0.22 ],[0.1153"
-	  "85 0.269231 0.5 0.730769 0.884615 0.884615 0.807692 0.884615 0.884615 0.673077 0.884615 0.730769 0.5 0.269231 0.115"
-	  "385 0.326923 0.115385 0.115385 0.192308 0.115385 0.115385 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nf"
-	  "printf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input"
-	  "',1,'d');\ncolor('black');port_label('input',2,'rst');\ncolor('black');port_label('input',3,'en');\ncolor('black');"
-	  "port_label('output',1,'q');\ncolor('black');disp('\\bf{z^{-1}}','texmode','on');\nfprintf('','COMMENT: end icon tex"
-	  "t');\n"
-	}
-      }
       SourceBlock	      "isi_correlator_lib/xaui_resync"
       SourceType	      "link_demux"
       ShowPortLabels	      "FromPortIcon"
@@ -11083,13 +11017,13 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "From40"
+      SrcBlock		      "From39"
       SrcPort		      1
       DstBlock		      "counter5"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "From44"
+      SrcBlock		      "From40"
       SrcPort		      1
       DstBlock		      "counter6"
       DstPort		      1
@@ -11167,7 +11101,7 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "From39"
+      SrcBlock		      "From44"
       SrcPort		      1
       DstBlock		      "counter7"
       DstPort		      1
