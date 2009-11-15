@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.40"
+    ComputedModelVersion    "1.43"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -24,9 +24,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Nov 14 16:28:19 2009"
+  LastModifiedDate	  "Sat Nov 14 18:07:27 2009"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:40>"
+  ModelVersionFormat	  "1.%<AutoIncrement:43>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -640,7 +640,7 @@ Model {
   }
   System {
     Name		    "test_interconnect"
-    Location		    [21, 546, 1902, 1148]
+    Location		    [21, 546, 1902, 1172]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -732,7 +732,7 @@ Model {
       BlockType		      Reference
       Name		      "Concat2"
       Ports		      [5, 1]
-      Position		      [1615, 316, 1665, 394]
+      Position		      [1165, 461, 1215, 539]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Concat"
       SourceType	      "Xilinx Bus Concatenator Block"
@@ -756,7 +756,7 @@ Model {
       BlockType		      Reference
       Name		      "Concat3"
       Ports		      [5, 1]
-      Position		      [1830, 316, 1880, 394]
+      Position		      [1385, 461, 1435, 539]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Concat"
       SourceType	      "Xilinx Bus Concatenator Block"
@@ -768,14 +768,13 @@ Model {
       sggui_pos		      "20,20,328,272"
       block_type	      "concat"
       block_version	      "11.3"
-      sg_icon_stat	      "50,78,5,1,white,blue,0,e3f87c2f,right,"
+      sg_icon_stat	      "50,78,5,1,white,blue,0,ad0df03d,right,"
       sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
       ");\npatch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.64 0.56 0.48 0.22"
       " ],[0.24359 0.346154 0.5 0.653846 0.75641 0.75641 0.705128 0.75641 0.75641 0.615385 0.75641 0.653846 0.5 0.34615"
       "4 0.24359 0.384615 0.24359 0.24359 0.294872 0.24359 0.24359 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]"
       ");\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_labe"
-      "l('input',1,'hi');\ncolor('black');port_label('input',5,'lo');\ncolor('red');disp('\\fontsize{11pt}\\bf(!)','tex"
-      "mode','on');\nfprintf('','COMMENT: end icon text');\n"
+      "l('input',1,'hi');\ncolor('black');port_label('input',5,'lo');\nfprintf('','COMMENT: end icon text');\n"
     }
     Block {
       BlockType		      Reference
@@ -815,7 +814,7 @@ Model {
       BlockType		      Reference
       Name		      "Constant10"
       Ports		      [0, 1]
-      Position		      [1530, 318, 1580, 332]
+      Position		      [1080, 463, 1130, 477]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Constant"
       SourceType	      "Xilinx Constant Block Block"
@@ -849,7 +848,7 @@ Model {
       BlockType		      Reference
       Name		      "Constant11"
       Ports		      [0, 1]
-      Position		      [1745, 318, 1795, 332]
+      Position		      [1300, 463, 1350, 477]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Constant"
       SourceType	      "Xilinx Constant Block Block"
@@ -1547,7 +1546,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From10"
-      Position		      [1385, 473, 1445, 487]
+      Position		      [1665, 473, 1725, 487]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "rx_dataY"
@@ -1563,7 +1562,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From101"
-      Position		      [1745, 378, 1805, 392]
+      Position		      [1300, 523, 1360, 537]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_sync"
@@ -1571,7 +1570,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From102"
-      Position		      [1745, 363, 1805, 377]
+      Position		      [1300, 508, 1360, 522]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "syncX"
@@ -1579,7 +1578,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From103"
-      Position		      [1745, 348, 1805, 362]
+      Position		      [1300, 493, 1360, 507]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "syncY"
@@ -1587,7 +1586,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From104"
-      Position		      [1745, 333, 1805, 347]
+      Position		      [1300, 478, 1360, 492]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "syncZ"
@@ -1595,7 +1594,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From105"
-      Position		      [1820, 398, 1880, 412]
+      Position		      [1375, 543, 1435, 557]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "acquire"
@@ -1603,7 +1602,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From106"
-      Position		      [1820, 413, 1880, 427]
+      Position		      [1375, 558, 1435, 572]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_sync"
@@ -1611,7 +1610,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From107"
-      Position		      [1820, 428, 1880, 442]
+      Position		      [1375, 573, 1435, 587]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "capt_reset"
@@ -1619,7 +1618,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From11"
-      Position		      [1385, 503, 1445, 517]
+      Position		      [1665, 503, 1725, 517]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "acquire"
@@ -1627,7 +1626,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From12"
-      Position		      [1385, 533, 1445, 547]
+      Position		      [1665, 533, 1725, 547]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "capt_reset"
@@ -1643,7 +1642,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From130"
-      Position		      [1105, 488, 1165, 502]
+      Position		      [1520, 488, 1580, 502]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_dataZ"
@@ -1651,7 +1650,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From132"
-      Position		      [1105, 518, 1165, 532]
+      Position		      [1520, 518, 1580, 532]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_sync"
@@ -1659,7 +1658,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From139"
-      Position		      [1105, 458, 1165, 472]
+      Position		      [1520, 458, 1580, 472]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_dataX"
@@ -1675,7 +1674,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From140"
-      Position		      [1105, 473, 1165, 487]
+      Position		      [1520, 473, 1580, 487]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_dataY"
@@ -1683,7 +1682,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From141"
-      Position		      [1105, 503, 1165, 517]
+      Position		      [1520, 503, 1580, 517]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "acquire"
@@ -1691,7 +1690,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From142"
-      Position		      [1105, 533, 1165, 547]
+      Position		      [1520, 533, 1580, 547]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "capt_reset"
@@ -1787,7 +1786,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From195"
-      Position		      [1705, 488, 1765, 502]
+      Position		      [1810, 488, 1870, 502]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "xr_Z"
@@ -1795,7 +1794,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From196"
-      Position		      [1705, 518, 1765, 532]
+      Position		      [1810, 518, 1870, 532]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "xr_sync"
@@ -1803,7 +1802,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From197"
-      Position		      [1705, 458, 1765, 472]
+      Position		      [1810, 458, 1870, 472]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "xr_X"
@@ -1811,7 +1810,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From198"
-      Position		      [1705, 473, 1765, 487]
+      Position		      [1810, 473, 1870, 487]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "xr_Y"
@@ -1819,7 +1818,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From199"
-      Position		      [1705, 503, 1765, 517]
+      Position		      [1810, 503, 1870, 517]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "acquire"
@@ -1843,7 +1842,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From200"
-      Position		      [1705, 533, 1765, 547]
+      Position		      [1810, 533, 1870, 547]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "capt_reset"
@@ -2011,7 +2010,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From4"
-      Position		      [1385, 488, 1445, 502]
+      Position		      [1665, 488, 1725, 502]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "rx_dataZ"
@@ -2187,7 +2186,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From6"
-      Position		      [1385, 518, 1445, 532]
+      Position		      [1665, 518, 1725, 532]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_sync"
@@ -2363,7 +2362,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From8"
-      Position		      [1385, 458, 1445, 472]
+      Position		      [1665, 458, 1725, 472]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "rx_dataX"
@@ -2475,7 +2474,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From92"
-      Position		      [1530, 378, 1590, 392]
+      Position		      [1080, 523, 1140, 537]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_valid"
@@ -2483,7 +2482,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From93"
-      Position		      [1530, 363, 1590, 377]
+      Position		      [1080, 508, 1140, 522]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "rx_validX"
@@ -2491,7 +2490,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From94"
-      Position		      [1530, 348, 1590, 362]
+      Position		      [1080, 493, 1140, 507]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "rx_validY"
@@ -2499,7 +2498,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From95"
-      Position		      [1530, 333, 1590, 347]
+      Position		      [1080, 478, 1140, 492]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "rx_validZ"
@@ -2507,7 +2506,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From96"
-      Position		      [1605, 398, 1665, 412]
+      Position		      [1155, 543, 1215, 557]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "acquire"
@@ -2515,7 +2514,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From97"
-      Position		      [1605, 413, 1665, 427]
+      Position		      [1155, 558, 1215, 572]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_sync"
@@ -2523,7 +2522,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From98"
-      Position		      [1605, 428, 1665, 442]
+      Position		      [1155, 573, 1215, 587]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "capt_reset"
@@ -6496,7 +6495,7 @@ Model {
       BlockType		      Reference
       Name		      "capt_clump"
       Ports		      [6]
-      Position		      [1190, 459, 1240, 546]
+      Position		      [1605, 459, 1655, 546]
       LinkData {
 	BlockName		"bram0/mem/Single Port RAM"
 	DialogParameters {
@@ -6746,7 +6745,7 @@ Model {
       BlockType		      Reference
       Name		      "capt_resync"
       Ports		      [6]
-      Position		      [1790, 459, 1840, 546]
+      Position		      [1895, 459, 1945, 546]
       LinkData {
 	BlockName		"Constant"
 	DialogParameters {
@@ -7305,7 +7304,7 @@ Model {
       BlockType		      Reference
       Name		      "capt_sync"
       Ports		      [4]
-      Position		      [1905, 384, 1955, 441]
+      Position		      [1460, 529, 1510, 586]
       LinkData {
 	BlockName		"bram0/mem/Single Port RAM"
 	DialogParameters {
@@ -7352,14 +7351,14 @@ Model {
 	}
 	BlockName		"freeze_cntr/Counter3"
 	DialogParameters {
-	  sg_icon_stat		  "50,55,2,1,white,blue,0,d605779c,right,"
+	  sg_icon_stat		  "50,56,2,1,white,blue,0,d605779c,right,"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.64 0.56 0.48 0.22 ],[0.1454"
-	  "55 0.290909 0.509091 0.727273 0.872727 0.872727 0.8 0.872727 0.872727 0.672727 0.872727 0.727273 0.509091 0.290909 "
-	  "0.145455 0.345455 0.145455 0.145455 0.218182 0.145455 0.145455 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]"
-	  ");\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('"
-	  "input',1,'rst');\ncolor('black');port_label('input',2,'en');\ncolor('black');port_label('output',1,'out');\nfprintf"
-	  "('','COMMENT: end icon text');\n"
+	  "ch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.64 0.56 0.48 0.22 ],[0.1428"
+	  "57 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.660714 0.857143 0.714286 0.5 0.285714 0.142"
+	  "857 0.339286 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nf"
+	  "printf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input"
+	  "',1,'rst');\ncolor('black');port_label('input',2,'en');\ncolor('black');port_label('output',1,'out');\nfprintf('','"
+	  "COMMENT: end icon text');\n"
 	}
 	BlockName		"freeze_cntr/Inverter"
 	DialogParameters {
@@ -7469,7 +7468,7 @@ Model {
       BlockType		      Reference
       Name		      "capt_valid"
       Ports		      [4]
-      Position		      [1690, 384, 1740, 441]
+      Position		      [1240, 529, 1290, 586]
       LinkData {
 	BlockName		"bram0/mem/Single Port RAM"
 	DialogParameters {
@@ -7516,14 +7515,14 @@ Model {
 	}
 	BlockName		"freeze_cntr/Counter3"
 	DialogParameters {
-	  sg_icon_stat		  "50,55,2,1,white,blue,0,d605779c,right,"
+	  sg_icon_stat		  "50,56,2,1,white,blue,0,d605779c,right,"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.64 0.56 0.48 0.22 ],[0.1454"
-	  "55 0.290909 0.509091 0.727273 0.872727 0.872727 0.8 0.872727 0.872727 0.672727 0.872727 0.727273 0.509091 0.290909 "
-	  "0.145455 0.345455 0.145455 0.145455 0.218182 0.145455 0.145455 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]"
-	  ");\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('"
-	  "input',1,'rst');\ncolor('black');port_label('input',2,'en');\ncolor('black');port_label('output',1,'out');\nfprintf"
-	  "('','COMMENT: end icon text');\n"
+	  "ch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.64 0.56 0.48 0.22 ],[0.1428"
+	  "57 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.660714 0.857143 0.714286 0.5 0.285714 0.142"
+	  "857 0.339286 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nf"
+	  "printf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input"
+	  "',1,'rst');\ncolor('black');port_label('input',2,'en');\ncolor('black');port_label('output',1,'out');\nfprintf('','"
+	  "COMMENT: end icon text');\n"
 	}
 	BlockName		"freeze_cntr/Inverter"
 	DialogParameters {
@@ -7633,7 +7632,7 @@ Model {
       BlockType		      Reference
       Name		      "capt_xaui"
       Ports		      [6]
-      Position		      [1470, 459, 1520, 546]
+      Position		      [1750, 459, 1800, 546]
       LinkData {
 	BlockName		"Constant"
 	DialogParameters {
@@ -9047,7 +9046,7 @@ Model {
       cnt_to		      "Inf"
       operation		      "Up"
       start_count	      "0"
-      cnt_by_val	      "1"
+      cnt_by_val	      "128"
       arith_type	      "Unsigned"
       n_bits		      "8"
       bin_pt		      "0"
@@ -9088,7 +9087,7 @@ Model {
       cnt_to		      "Inf"
       operation		      "Up"
       start_count	      "0"
-      cnt_by_val	      "2"
+      cnt_by_val	      "64"
       arith_type	      "Unsigned"
       n_bits		      "8"
       bin_pt		      "0"
@@ -9129,7 +9128,7 @@ Model {
       cnt_to		      "Inf"
       operation		      "Up"
       start_count	      "0"
-      cnt_by_val	      "4"
+      cnt_by_val	      "32"
       arith_type	      "Unsigned"
       n_bits		      "8"
       bin_pt		      "0"
@@ -9170,7 +9169,7 @@ Model {
       cnt_to		      "Inf"
       operation		      "Up"
       start_count	      "0"
-      cnt_by_val	      "8"
+      cnt_by_val	      "16"
       arith_type	      "Unsigned"
       n_bits		      "8"
       bin_pt		      "0"
@@ -9211,7 +9210,7 @@ Model {
       cnt_to		      "Inf"
       operation		      "Up"
       start_count	      "0"
-      cnt_by_val	      "16"
+      cnt_by_val	      "8"
       arith_type	      "Unsigned"
       n_bits		      "8"
       bin_pt		      "0"
@@ -9252,7 +9251,7 @@ Model {
       cnt_to		      "Inf"
       operation		      "Up"
       start_count	      "0"
-      cnt_by_val	      "32"
+      cnt_by_val	      "4"
       arith_type	      "Unsigned"
       n_bits		      "8"
       bin_pt		      "0"
@@ -9293,7 +9292,7 @@ Model {
       cnt_to		      "Inf"
       operation		      "Up"
       start_count	      "0"
-      cnt_by_val	      "64"
+      cnt_by_val	      "2"
       arith_type	      "Unsigned"
       n_bits		      "8"
       bin_pt		      "0"
@@ -9334,7 +9333,7 @@ Model {
       cnt_to		      "Inf"
       operation		      "Up"
       start_count	      "0"
-      cnt_by_val	      "128"
+      cnt_by_val	      "1"
       arith_type	      "Unsigned"
       n_bits		      "8"
       bin_pt		      "0"
@@ -9385,6 +9384,38 @@ Model {
       Name		      "fake_xaui"
       Ports		      [3, 3]
       Position		      [1280, 16, 1430, 114]
+      LinkData {
+	BlockName		"Delay1"
+	DialogParameters {
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,91428c9d,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
+	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
+	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-128}','t"
+	  "exmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	BlockName		"Delay2"
+	DialogParameters {
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,91428c9d,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
+	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
+	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-128}','t"
+	  "exmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	BlockName		"Delay3"
+	DialogParameters {
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,91428c9d,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
+	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
+	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-128}','t"
+	  "exmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	}
+      }
       SourceBlock	      "isi_correlator_lib/fake_xaui"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
@@ -9395,7 +9426,7 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      latency		      "64"
+      latency		      "32"
     }
     Block {
       BlockType		      Reference

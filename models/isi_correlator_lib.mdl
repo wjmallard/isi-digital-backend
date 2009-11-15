@@ -14,9 +14,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Oct 28 21:42:27 2009"
+  LastModifiedDate	  "Sat Nov 14 17:18:18 2009"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:363>"
+  ModelVersionFormat	  "1.%<AutoIncrement:364>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -696,7 +696,7 @@ Library {
 	  const			  "1"
 	  n_bits		  "1"
 	  bin_pt		  "0"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -705,7 +705,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,400,346"
 	  block_type		  "constant"
@@ -728,15 +728,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "AND"
 	  inputs		  "2"
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "16"
 	  bin_pt		  "0"
-	  align_bp		  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  align_bp		  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -759,10 +759,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Register"
 	  SourceType		  "Xilinx Register Block"
 	  init			  "0"
-	  rst			  on
-	  en			  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  rst			  "on"
+	  en			  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,193"
@@ -788,7 +788,7 @@ Library {
 	  SourceType		  "posedge"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -941,7 +941,7 @@ Library {
 	  const			  "1"
 	  n_bits		  "1"
 	  bin_pt		  "0"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -950,7 +950,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "constant"
@@ -972,10 +972,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Inverter"
 	  SourceType		  "Xilinx Inverter Block"
 	  infoedit		  "Bitwise logical negation (one's complement) operator."
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -999,15 +999,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "AND"
 	  inputs		  "3"
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "1"
 	  bin_pt		  "0"
-	  align_bp		  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  align_bp		  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,261"
@@ -1030,10 +1030,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Register"
 	  SourceType		  "Xilinx Register Block"
 	  init			  "0"
-	  rst			  on
-	  en			  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  rst			  "on"
+	  en			  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -1062,9 +1062,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -1098,10 +1098,10 @@ Library {
 	  Position		  [580, 13, 680, 57]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/Shared BRAM"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -1123,7 +1123,7 @@ Library {
 	  SourceType		  "freeze_cntr"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -1141,7 +1141,7 @@ Library {
 	  SourceType		  "posedge"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -1337,7 +1337,7 @@ Library {
 	  const			  "1"
 	  n_bits		  "1"
 	  bin_pt		  "0"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -1346,7 +1346,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "constant"
@@ -1368,10 +1368,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Inverter"
 	  SourceType		  "Xilinx Inverter Block"
 	  infoedit		  "Bitwise logical negation (one's complement) operator."
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -1395,15 +1395,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "AND"
 	  inputs		  "3"
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "1"
 	  bin_pt		  "0"
-	  align_bp		  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  align_bp		  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,261"
@@ -1426,10 +1426,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Register"
 	  SourceType		  "Xilinx Register Block"
 	  init			  "0"
-	  rst			  on
-	  en			  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  rst			  "on"
+	  en			  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -1458,9 +1458,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -1487,9 +1487,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -1529,10 +1529,10 @@ Library {
 	  Position		  [580, 13, 680, 57]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/Shared BRAM"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -1553,10 +1553,10 @@ Library {
 	  Position		  [580, 78, 680, 122]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/Shared BRAM"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -1578,7 +1578,7 @@ Library {
 	  SourceType		  "freeze_cntr"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -1596,7 +1596,7 @@ Library {
 	  SourceType		  "posedge"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -1833,7 +1833,7 @@ Library {
 	  const			  "1"
 	  n_bits		  "1"
 	  bin_pt		  "0"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -1842,7 +1842,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "constant"
@@ -1864,10 +1864,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Inverter"
 	  SourceType		  "Xilinx Inverter Block"
 	  infoedit		  "Bitwise logical negation (one's complement) operator."
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -1891,15 +1891,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "AND"
 	  inputs		  "3"
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "1"
 	  bin_pt		  "0"
-	  align_bp		  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  align_bp		  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,261"
@@ -1922,10 +1922,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Register"
 	  SourceType		  "Xilinx Register Block"
 	  init			  "0"
-	  rst			  on
-	  en			  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  rst			  "on"
+	  en			  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -1954,9 +1954,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -1983,9 +1983,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -2012,9 +2012,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -2060,10 +2060,10 @@ Library {
 	  Position		  [580, 13, 680, 57]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/Shared BRAM"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -2084,10 +2084,10 @@ Library {
 	  Position		  [580, 78, 680, 122]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/Shared BRAM"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -2108,10 +2108,10 @@ Library {
 	  Position		  [580, 143, 680, 187]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/Shared BRAM"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -2133,7 +2133,7 @@ Library {
 	  SourceType		  "freeze_cntr"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -2151,7 +2151,7 @@ Library {
 	  SourceType		  "posedge"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -2429,7 +2429,7 @@ Library {
 	  const			  "1"
 	  n_bits		  "1"
 	  bin_pt		  "0"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -2438,7 +2438,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "constant"
@@ -2460,10 +2460,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Inverter"
 	  SourceType		  "Xilinx Inverter Block"
 	  infoedit		  "Bitwise logical negation (one's complement) operator."
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -2487,15 +2487,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "AND"
 	  inputs		  "3"
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "1"
 	  bin_pt		  "0"
-	  align_bp		  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  align_bp		  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,261"
@@ -2518,10 +2518,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Register"
 	  SourceType		  "Xilinx Register Block"
 	  init			  "0"
-	  rst			  on
-	  en			  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  rst			  "on"
+	  en			  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -2550,9 +2550,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -2579,9 +2579,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -2608,9 +2608,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -2637,9 +2637,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -2691,10 +2691,10 @@ Library {
 	  Position		  [580, 13, 680, 57]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/Shared BRAM"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -2715,10 +2715,10 @@ Library {
 	  Position		  [580, 78, 680, 122]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/Shared BRAM"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -2739,10 +2739,10 @@ Library {
 	  Position		  [580, 143, 680, 187]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/Shared BRAM"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -2763,10 +2763,10 @@ Library {
 	  Position		  [580, 208, 680, 252]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/Shared BRAM"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -2788,7 +2788,7 @@ Library {
 	  SourceType		  "freeze_cntr"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -2806,7 +2806,7 @@ Library {
 	  SourceType		  "posedge"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -3185,7 +3185,7 @@ Library {
 	  infoedit		  "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary point at ze"
 	  "ro."
 	  num_inputs		  "4"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,165"
 	  block_type		  "concat"
@@ -3209,7 +3209,7 @@ Library {
 	  infoedit		  "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary point at ze"
 	  "ro."
 	  num_inputs		  "4"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,165"
 	  block_type		  "concat"
@@ -3233,7 +3233,7 @@ Library {
 	  infoedit		  "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary point at ze"
 	  "ro."
 	  num_inputs		  "4"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,165"
 	  block_type		  "concat"
@@ -3257,7 +3257,7 @@ Library {
 	  infoedit		  "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary point at ze"
 	  "ro."
 	  num_inputs		  "4"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,165"
 	  block_type		  "concat"
@@ -3283,9 +3283,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -3312,9 +3312,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -3341,9 +3341,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -3370,9 +3370,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -3399,9 +3399,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -3428,9 +3428,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -3457,9 +3457,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -3486,9 +3486,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -3515,9 +3515,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -3544,9 +3544,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -3573,9 +3573,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -3602,9 +3602,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -3631,9 +3631,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -3660,9 +3660,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -3689,9 +3689,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -3718,9 +3718,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -3743,7 +3743,7 @@ Library {
 	  SourceType		  "SubSystem"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -4109,7 +4109,7 @@ Library {
 	  SourceType		  "SubSystem"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -4125,7 +4125,7 @@ Library {
 	  SourceType		  "SubSystem"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -4141,7 +4141,7 @@ Library {
 	  SourceType		  "SubSystem"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -4381,7 +4381,7 @@ Library {
 	  infoedit		  "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary point at ze"
 	  "ro."
 	  num_inputs		  "4"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,165"
 	  block_type		  "concat"
@@ -4405,7 +4405,7 @@ Library {
 	  infoedit		  "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary point at ze"
 	  "ro."
 	  num_inputs		  "4"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,165"
 	  block_type		  "concat"
@@ -4431,9 +4431,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -4460,9 +4460,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -4489,9 +4489,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -4518,9 +4518,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -4547,9 +4547,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -4576,9 +4576,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -4605,9 +4605,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -4634,9 +4634,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -4659,7 +4659,7 @@ Library {
 	  SourceType		  "SubSystem"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -4678,13 +4678,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware "
 	  "notes: In hardware this block costs nothing."
 	  nbits			  "8"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
@@ -4709,13 +4709,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware "
 	  "notes: In hardware this block costs nothing."
 	  nbits			  "8"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
@@ -4740,13 +4740,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware "
 	  "notes: In hardware this block costs nothing."
 	  nbits			  "8"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
@@ -4771,13 +4771,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware "
 	  "notes: In hardware this block costs nothing."
 	  nbits			  "8"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
@@ -4802,13 +4802,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware "
 	  "notes: In hardware this block costs nothing."
 	  nbits			  "8"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
@@ -4833,13 +4833,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware "
 	  "notes: In hardware this block costs nothing."
 	  nbits			  "8"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
@@ -4864,13 +4864,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware "
 	  "notes: In hardware this block costs nothing."
 	  nbits			  "8"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
@@ -4895,13 +4895,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware "
 	  "notes: In hardware this block costs nothing."
 	  nbits			  "8"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
@@ -4924,7 +4924,7 @@ Library {
 	  SourceType		  "power"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -4944,7 +4944,7 @@ Library {
 	  SourceType		  "power"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -4964,7 +4964,7 @@ Library {
 	  SourceType		  "power"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -4984,7 +4984,7 @@ Library {
 	  SourceType		  "power"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -5004,7 +5004,7 @@ Library {
 	  SourceType		  "power"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -5024,7 +5024,7 @@ Library {
 	  SourceType		  "power"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -5044,7 +5044,7 @@ Library {
 	  SourceType		  "power"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -5064,7 +5064,7 @@ Library {
 	  SourceType		  "power"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -5083,11 +5083,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "5"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -5110,11 +5110,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "5"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -5137,11 +5137,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "5"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -5527,7 +5527,7 @@ Library {
 	  infoedit		  "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary point at ze"
 	  "ro."
 	  num_inputs		  "5"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,165"
 	  block_type		  "concat"
@@ -5549,11 +5549,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -5576,11 +5576,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -5603,11 +5603,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -5630,11 +5630,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -5657,11 +5657,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -5684,11 +5684,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -5711,11 +5711,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -5738,11 +5738,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -5765,11 +5765,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -5792,11 +5792,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -5819,11 +5819,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -5846,11 +5846,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -5873,11 +5873,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -5900,7 +5900,7 @@ Library {
 	  SourceType		  "SubSystem"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -5916,7 +5916,7 @@ Library {
 	  SourceType		  "SubSystem"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -6247,15 +6247,15 @@ Library {
 	  arith_type		  "Unsigned"
 	  n_bits		  "2"
 	  bin_pt		  "0"
-	  load_pin		  off
-	  rst			  on
-	  en			  off
+	  load_pin		  "off"
+	  rst			  "on"
+	  en			  "off"
 	  explicit_period	  "on"
 	  period		  "1"
-	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
+	  dbl_ovrd		  "off"
+	  use_behavioral_HDL	  "off"
 	  implementation	  "Fabric"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  use_rpm		  "off"
 	  has_advanced_control	  "0"
@@ -6280,15 +6280,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "OR"
 	  inputs		  "2"
-	  en			  off
+	  en			  "off"
 	  latency		  "latency"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "16"
 	  bin_pt		  "0"
-	  align_bp		  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  align_bp		  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,357"
@@ -6312,15 +6312,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "OR"
 	  inputs		  "2"
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "16"
 	  bin_pt		  "0"
-	  align_bp		  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  align_bp		  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,357"
@@ -6346,13 +6346,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "1"
-	  boolean_output	  on
+	  boolean_output	  "on"
 	  mode			  "Lower Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -6377,13 +6377,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "1"
-	  boolean_output	  on
+	  boolean_output	  "on"
 	  mode			  "Lower Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "1"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -6402,10 +6402,10 @@ Library {
 	  Ports			  [4, 1]
 	  Position		  [295, 53, 345, 112]
 	  SourceBlock		  "isi_correlator_lib/compress"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -6419,10 +6419,10 @@ Library {
 	  Ports			  [4, 1]
 	  Position		  [295, 138, 345, 197]
 	  SourceBlock		  "isi_correlator_lib/compress"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -6436,10 +6436,10 @@ Library {
 	  Ports			  [4, 1]
 	  Position		  [295, 223, 345, 282]
 	  SourceBlock		  "isi_correlator_lib/compress"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -6459,7 +6459,7 @@ Library {
 	  const			  "0"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -6468,7 +6468,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,554,541"
 	  block_type		  "constant"
@@ -6490,11 +6490,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "latency"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
@@ -6778,7 +6778,7 @@ Library {
 	  infoedit		  "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary point at ze"
 	  "ro."
 	  num_inputs		  "3"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,328,272"
 	  block_type		  "concat"
@@ -6802,7 +6802,7 @@ Library {
 	  infoedit		  "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary point at ze"
 	  "ro."
 	  num_inputs		  "2"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,328,272"
 	  block_type		  "concat"
@@ -6827,7 +6827,7 @@ Library {
 	  const			  "0"
 	  n_bits		  "32"
 	  bin_pt		  "0"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -6836,7 +6836,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,554,541"
 	  block_type		  "constant"
@@ -6858,11 +6858,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "1"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -6885,7 +6885,7 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Mux"
 	  SourceType		  "Xilinx Bus Multiplexer Block"
 	  inputs		  "4"
-	  en			  off
+	  en			  "off"
 	  latency		  "latency"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
@@ -6893,8 +6893,8 @@ Library {
 	  bin_pt		  "14"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,429"
@@ -6922,13 +6922,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "32"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -6953,13 +6953,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "32"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "-8"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -6984,13 +6984,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "32"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "-16"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -7201,9 +7201,9 @@ Library {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  latency		  "0"
-	  dbl_ovrd		  off
-	  pipeline		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  pipeline		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "773,83,461,334"
@@ -7231,9 +7231,9 @@ Library {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  latency		  "0"
-	  dbl_ovrd		  off
-	  pipeline		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  pipeline		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "19,31,461,334"
@@ -7261,9 +7261,9 @@ Library {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  latency		  "0"
-	  dbl_ovrd		  off
-	  pipeline		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  pipeline		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,461,334"
@@ -7291,9 +7291,9 @@ Library {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  latency		  "0"
-	  dbl_ovrd		  off
-	  pipeline		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  pipeline		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,461,334"
@@ -7321,9 +7321,9 @@ Library {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  latency		  "0"
-	  dbl_ovrd		  off
-	  pipeline		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  pipeline		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,461,334"
@@ -7351,9 +7351,9 @@ Library {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  latency		  "0"
-	  dbl_ovrd		  off
-	  pipeline		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  pipeline		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,461,334"
@@ -7381,9 +7381,9 @@ Library {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  latency		  "0"
-	  dbl_ovrd		  off
-	  pipeline		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  pipeline		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,461,334"
@@ -7411,9 +7411,9 @@ Library {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  latency		  "0"
-	  dbl_ovrd		  off
-	  pipeline		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  pipeline		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,461,334"
@@ -7441,9 +7441,9 @@ Library {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  latency		  "0"
-	  dbl_ovrd		  off
-	  pipeline		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  pipeline		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,461,334"
@@ -7465,11 +7465,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "mult_latency + add_latency"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -7488,10 +7488,10 @@ Library {
 	  Ports			  [2, 2]
 	  Position		  [175, 149, 225, 196]
 	  SourceBlock		  "isi_correlator_lib/cplx_mult"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -7508,10 +7508,10 @@ Library {
 	  Ports			  [2, 2]
 	  Position		  [175, 214, 225, 261]
 	  SourceBlock		  "isi_correlator_lib/cplx_mult"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -7528,10 +7528,10 @@ Library {
 	  Ports			  [2, 2]
 	  Position		  [175, 279, 225, 326]
 	  SourceBlock		  "isi_correlator_lib/cplx_mult"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -7551,7 +7551,7 @@ Library {
 	  SourceType		  "power"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -7570,7 +7570,7 @@ Library {
 	  SourceType		  "power"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -7589,7 +7589,7 @@ Library {
 	  SourceType		  "power"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -7948,7 +7948,7 @@ Library {
 	  SourceType		  "c_to_ri"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -7969,7 +7969,7 @@ Library {
 	  SourceType		  "c_to_ri"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -7988,7 +7988,7 @@ Library {
 	  SourceType		  "cmult_4bit_em*"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -8132,7 +8132,7 @@ Library {
 	  infoedit		  "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary point at ze"
 	  "ro."
 	  num_inputs		  "2"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,328,272"
 	  block_type		  "concat"
@@ -8154,11 +8154,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "1"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -8181,7 +8181,7 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Mux"
 	  SourceType		  "Xilinx Bus Multiplexer Block"
 	  inputs		  "4"
-	  en			  off
+	  en			  "off"
 	  latency		  "latency"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
@@ -8189,8 +8189,8 @@ Library {
 	  bin_pt		  "14"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,429"
@@ -8218,13 +8218,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "24"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Lower Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "8"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -8249,13 +8249,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "24"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Lower Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "16"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -8280,13 +8280,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "24"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Lower Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "24"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -8311,13 +8311,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "24"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Lower Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "32"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -8342,13 +8342,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "8"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -8373,13 +8373,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "8"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "-8"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -8404,13 +8404,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "8"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "-16"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -8682,11 +8682,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "3"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -8710,11 +8710,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "3"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -8738,11 +8738,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "3"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -8766,11 +8766,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "3"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -8794,11 +8794,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "3"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -8822,11 +8822,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "3"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -8850,11 +8850,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "3"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -8878,11 +8878,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "3"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -8906,11 +8906,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "5"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -8934,11 +8934,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "3"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -8963,15 +8963,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "OR"
 	  inputs		  "8"
-	  en			  off
+	  en			  "off"
 	  latency		  "3"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "16"
 	  bin_pt		  "0"
-	  align_bp		  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  align_bp		  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,261"
@@ -8992,10 +8992,10 @@ Library {
 	  Ports			  [2, 2]
 	  Position		  [90, 48, 135, 97]
 	  SourceBlock		  "isi_correlator_lib/scale"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -9012,10 +9012,10 @@ Library {
 	  Ports			  [2, 2]
 	  Position		  [90, 118, 135, 167]
 	  SourceBlock		  "isi_correlator_lib/scale"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -9032,10 +9032,10 @@ Library {
 	  Ports			  [2, 2]
 	  Position		  [90, 188, 135, 237]
 	  SourceBlock		  "isi_correlator_lib/scale"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -9052,10 +9052,10 @@ Library {
 	  Ports			  [2, 2]
 	  Position		  [90, 258, 135, 307]
 	  SourceBlock		  "isi_correlator_lib/scale"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -9072,10 +9072,10 @@ Library {
 	  Ports			  [2, 2]
 	  Position		  [90, 328, 135, 377]
 	  SourceBlock		  "isi_correlator_lib/scale"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -9092,10 +9092,10 @@ Library {
 	  Ports			  [2, 2]
 	  Position		  [90, 398, 135, 447]
 	  SourceBlock		  "isi_correlator_lib/scale"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -9112,10 +9112,10 @@ Library {
 	  Ports			  [2, 2]
 	  Position		  [90, 468, 135, 517]
 	  SourceBlock		  "isi_correlator_lib/scale"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -9132,10 +9132,10 @@ Library {
 	  Ports			  [2, 2]
 	  Position		  [90, 538, 135, 587]
 	  SourceBlock		  "isi_correlator_lib/scale"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -9572,11 +9572,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "latency"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
@@ -9599,11 +9599,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "latency"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
@@ -9626,11 +9626,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "latency"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
@@ -9761,10 +9761,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Register"
 	  SourceType		  "Xilinx Register Block"
 	  init			  "0"
-	  rst			  on
-	  en			  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  rst			  "on"
+	  en			  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,193"
@@ -9887,13 +9887,13 @@ Library {
 	  infoedit		  "Delay of configurable length.  Any element in the delay line can be addressed and driven onto the outp"
 	  "ut port.<br><br>Hardware notes: Implemented using SRL16s.  If Virtex-4, Virtex-II or Spartan-3 devices are used, mu"
 	  "ltiple SRLC16s are cascaded together."
-	  infer_latency		  on
+	  infer_latency		  "on"
 	  depth			  "2^depth"
 	  initVector		  "[0]"
-	  en			  off
-	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
-	  xl_use_area		  off
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  use_behavioral_HDL	  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  use_rpm		  "off"
 	  has_advanced_control	  "0"
@@ -9919,13 +9919,13 @@ Library {
 	  infoedit		  "Delay of configurable length.  Any element in the delay line can be addressed and driven onto the outp"
 	  "ut port.<br><br>Hardware notes: Implemented using SRL16s.  If Virtex-4, Virtex-II or Spartan-3 devices are used, mu"
 	  "ltiple SRLC16s are cascaded together."
-	  infer_latency		  on
+	  infer_latency		  "on"
 	  depth			  "2^depth"
 	  initVector		  "[0]"
-	  en			  off
-	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
-	  xl_use_area		  off
+	  en			  "off"
+	  dbl_ovrd		  "off"
+	  use_behavioral_HDL	  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  use_rpm		  "off"
 	  has_advanced_control	  "0"
@@ -9959,15 +9959,15 @@ Library {
 	  arith_type		  "Unsigned"
 	  n_bits		  "depth"
 	  bin_pt		  "0"
-	  load_pin		  off
-	  rst			  on
-	  en			  on
+	  load_pin		  "off"
+	  rst			  "on"
+	  en			  "on"
 	  explicit_period	  "on"
 	  period		  "1"
-	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
+	  dbl_ovrd		  "off"
+	  use_behavioral_HDL	  "off"
 	  implementation	  "Fabric"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  use_rpm		  "off"
 	  has_advanced_control	  "0"
@@ -9992,10 +9992,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Inverter"
 	  SourceType		  "Xilinx Inverter Block"
 	  infoedit		  "Bitwise logical negation (one's complement) operator."
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,376"
@@ -10018,10 +10018,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Inverter"
 	  SourceType		  "Xilinx Inverter Block"
 	  infoedit		  "Bitwise logical negation (one's complement) operator."
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,376"
@@ -10045,15 +10045,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "AND"
 	  inputs		  "2"
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "16"
 	  bin_pt		  "0"
-	  align_bp		  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  align_bp		  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,357"
@@ -10076,10 +10076,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Register"
 	  SourceType		  "Xilinx Register Block"
 	  init			  "0"
-	  rst			  on
-	  en			  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  rst			  "on"
+	  en			  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,249"
@@ -10274,7 +10274,7 @@ Library {
 	  infoedit		  "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary point at ze"
 	  "ro."
 	  num_inputs		  "2"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,165"
 	  block_type		  "concat"
@@ -10303,9 +10303,9 @@ Library {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  pipeline		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  pipeline		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,461,334"
@@ -10328,15 +10328,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "OR"
 	  inputs		  "2"
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "8"
 	  bin_pt		  "2"
-	  align_bp		  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  align_bp		  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,261"
@@ -10363,7 +10363,7 @@ Library {
 	  const			  "(2^(out_bit_width-1)-1)/(2^(out_bit_width-1))"
 	  n_bits		  "in_bit_width"
 	  bin_pt		  "in_bin_point"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -10372,7 +10372,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "95,381,400,346"
 	  block_type		  "constant"
@@ -10396,7 +10396,7 @@ Library {
 	  const			  "(2^(out_bit_width-1)-1)/(2^(out_bit_width-1))"
 	  n_bits		  "out_bit_width"
 	  bin_pt		  "out_bin_point"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -10405,7 +10405,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "95,381,400,346"
 	  block_type		  "constant"
@@ -10429,7 +10429,7 @@ Library {
 	  const			  "0"
 	  n_bits		  "out_bit_width"
 	  bin_pt		  "out_bin_point"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -10438,7 +10438,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "95,381,400,346"
 	  block_type		  "constant"
@@ -10462,7 +10462,7 @@ Library {
 	  const			  "-(2^(out_bit_width - 1) - 1) / 2^(out_bit_width - 1)"
 	  n_bits		  "in_bit_width"
 	  bin_pt		  "in_bin_point"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -10471,7 +10471,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "465,54,400,346"
 	  block_type		  "constant"
@@ -10495,7 +10495,7 @@ Library {
 	  const			  "-(2^(out_bit_width - 1) - 1) / 2^(out_bit_width - 1)"
 	  n_bits		  "out_bit_width"
 	  bin_pt		  "out_bin_point"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -10504,7 +10504,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "465,54,400,346"
 	  block_type		  "constant"
@@ -10525,7 +10525,7 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Mux"
 	  SourceType		  "Xilinx Bus Multiplexer Block"
 	  inputs		  "4"
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Signed  (2's comp)"
@@ -10533,8 +10533,8 @@ Library {
 	  bin_pt		  "2"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,303"
@@ -10564,9 +10564,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -10593,9 +10593,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -10618,10 +10618,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Relational"
 	  SourceType		  "Xilinx Arithmetic Relational Operator Block"
 	  mode			  "a>b"
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,193"
@@ -10646,10 +10646,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Relational"
 	  SourceType		  "Xilinx Arithmetic Relational Operator Block"
 	  mode			  "a<b"
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -10870,15 +10870,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "OR"
 	  inputs		  "2"
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "8"
 	  bin_pt		  "2"
-	  align_bp		  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  align_bp		  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,261"
@@ -10908,14 +10908,14 @@ Library {
 	  bin_pt		  "14"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  en			  off
+	  en			  "off"
 	  latency		  "3"
-	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
+	  dbl_ovrd		  "off"
+	  use_behavioral_HDL	  "off"
 	  opt			  "Speed"
-	  use_embedded		  on
-	  optimum_pipeline	  off
-	  xl_use_area		  off
+	  use_embedded		  "on"
+	  optimum_pipeline	  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  pipeline		  "on"
 	  use_rpm		  "on"
@@ -10949,14 +10949,14 @@ Library {
 	  bin_pt		  "14"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  en			  off
+	  en			  "off"
 	  latency		  "3"
-	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
+	  dbl_ovrd		  "off"
+	  use_behavioral_HDL	  "off"
 	  opt			  "Speed"
-	  use_embedded		  on
-	  optimum_pipeline	  off
-	  xl_use_area		  off
+	  use_embedded		  "on"
+	  optimum_pipeline	  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  pipeline		  "on"
 	  use_rpm		  "on"
@@ -10987,9 +10987,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -11016,9 +11016,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Signed  (2's comp)"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "in_bit_width"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -11043,13 +11043,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware "
 	  "notes: In hardware this block costs nothing."
 	  nbits			  "in_bit_width * 2"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Lower Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
@@ -11073,7 +11073,7 @@ Library {
 	  SourceType		  "c_to_ri"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -11093,7 +11093,7 @@ Library {
 	  SourceType		  "ri_to_c"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -11106,10 +11106,10 @@ Library {
 	  Ports			  [1, 2]
 	  Position		  [340, 78, 390, 107]
 	  SourceBlock		  "isi_correlator_lib/saturate"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -11126,10 +11126,10 @@ Library {
 	  Ports			  [1, 2]
 	  Position		  [340, 13, 390, 42]
 	  SourceBlock		  "isi_correlator_lib/saturate"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -11358,7 +11358,7 @@ Library {
 	  const			  "0"
 	  n_bits		  "32"
 	  bin_pt		  "0"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -11367,7 +11367,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,400,346"
 	  block_type		  "constant"
@@ -11392,7 +11392,7 @@ Library {
 	  const			  "0"
 	  n_bits		  "32"
 	  bin_pt		  "0"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -11401,7 +11401,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,400,346"
 	  block_type		  "constant"
@@ -11426,7 +11426,7 @@ Library {
 	  const			  "0"
 	  n_bits		  "32"
 	  bin_pt		  "0"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -11435,7 +11435,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,400,346"
 	  block_type		  "constant"
@@ -11461,9 +11461,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -11489,13 +11489,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware "
 	  "notes: In hardware this block costs nothing."
 	  nbits			  "2"
-	  boolean_output	  off
+	  boolean_output	  "off"
 	  mode			  "Lower Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
@@ -11517,7 +11517,7 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Mux"
 	  SourceType		  "Xilinx Bus Multiplexer Block"
 	  inputs		  "4"
-	  en			  off
+	  en			  "off"
 	  latency		  "latency"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
@@ -11525,8 +11525,8 @@ Library {
 	  bin_pt		  "14"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,303"
@@ -11551,7 +11551,7 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Mux"
 	  SourceType		  "Xilinx Bus Multiplexer Block"
 	  inputs		  "4"
-	  en			  off
+	  en			  "off"
 	  latency		  "latency"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
@@ -11559,8 +11559,8 @@ Library {
 	  bin_pt		  "14"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,303"
@@ -11585,7 +11585,7 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Mux"
 	  SourceType		  "Xilinx Bus Multiplexer Block"
 	  inputs		  "4"
-	  en			  off
+	  en			  "off"
 	  latency		  "latency"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
@@ -11593,8 +11593,8 @@ Library {
 	  bin_pt		  "14"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,303"
@@ -11619,11 +11619,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "latency"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -11916,9 +11916,9 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/AddSub"
 	  SourceType		  "Xilinx Adder/Subtracter Block"
 	  mode			  "Subtraction"
-	  use_carryin		  off
-	  use_carryout		  off
-	  en			  off
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
 	  latency		  "2"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
@@ -11926,11 +11926,11 @@ Library {
 	  bin_pt		  "14"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
+	  dbl_ovrd		  "off"
+	  use_behavioral_HDL	  "off"
 	  hw_selection		  "Fabric"
-	  pipelined		  off
-	  xl_use_area		  off
+	  pipelined		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  use_rpm		  "on"
 	  has_advanced_control	  "0"
@@ -11973,15 +11973,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "OR"
 	  inputs		  "2"
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "16"
 	  bin_pt		  "0"
-	  align_bp		  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  align_bp		  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,261"
@@ -12004,7 +12004,7 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Mux"
 	  SourceType		  "Xilinx Bus Multiplexer Block"
 	  inputs		  "2"
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
@@ -12012,8 +12012,8 @@ Library {
 	  bin_pt		  "14"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -12037,10 +12037,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Relational"
 	  SourceType		  "Xilinx Arithmetic Relational Operator Block"
 	  mode			  "a>=b"
-	  en			  off
+	  en			  "off"
 	  latency		  "1"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,193"
@@ -12106,15 +12106,15 @@ Library {
 	  arith_type		  "Unsigned"
 	  n_bits		  "32"
 	  bin_pt		  "0"
-	  load_pin		  off
-	  rst			  on
-	  en			  off
+	  load_pin		  "off"
+	  rst			  "on"
+	  en			  "off"
 	  explicit_period	  "on"
 	  period		  "1"
-	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
+	  dbl_ovrd		  "off"
+	  use_behavioral_HDL	  "off"
 	  implementation	  "Fabric"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  use_rpm		  "off"
 	  has_advanced_control	  "0"
@@ -12157,10 +12157,10 @@ Library {
 	  Position		  [75, 85, 175, 115]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/software register"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12185,7 +12185,7 @@ Library {
 	  const			  "3"
 	  n_bits		  "32"
 	  bin_pt		  "0"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -12194,7 +12194,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,400,346"
 	  block_type		  "constant"
@@ -12217,7 +12217,7 @@ Library {
 	  SourceType		  "posedge"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12232,10 +12232,10 @@ Library {
 	  Position		  [75, 15, 175, 45]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/software register"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12260,13 +12260,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware "
 	  "notes: In hardware this block costs nothing."
 	  nbits			  "1"
-	  boolean_output	  on
+	  boolean_output	  "on"
 	  mode			  "Lower Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
@@ -12483,15 +12483,15 @@ Library {
 	  arith_type		  "Unsigned"
 	  n_bits		  "2"
 	  bin_pt		  "0"
-	  load_pin		  off
-	  rst			  on
-	  en			  off
+	  load_pin		  "off"
+	  rst			  "on"
+	  en			  "off"
 	  explicit_period	  "on"
 	  period		  "1"
-	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
+	  dbl_ovrd		  "off"
+	  use_behavioral_HDL	  "off"
 	  implementation	  "Fabric"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  use_rpm		  "off"
 	  has_advanced_control	  "0"
@@ -12516,15 +12516,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "OR"
 	  inputs		  "2"
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "16"
 	  bin_pt		  "0"
-	  align_bp		  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  align_bp		  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,357"
@@ -12544,10 +12544,10 @@ Library {
 	  Ports			  [2, 3]
 	  Position		  [295, 44, 345, 106]
 	  SourceBlock		  "isi_correlator_lib/decompress"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12561,10 +12561,10 @@ Library {
 	  Ports			  [2, 3]
 	  Position		  [295, 134, 345, 196]
 	  SourceBlock		  "isi_correlator_lib/decompress"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12578,10 +12578,10 @@ Library {
 	  Ports			  [2, 3]
 	  Position		  [295, 224, 345, 286]
 	  SourceBlock		  "isi_correlator_lib/decompress"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12598,11 +12598,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "latency"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
@@ -12625,11 +12625,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "latency"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
@@ -12965,15 +12965,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "AND"
 	  inputs		  "9"
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "16"
 	  bin_pt		  "0"
-	  align_bp		  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  align_bp		  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,261"
@@ -12997,11 +12997,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -13059,7 +13059,7 @@ Library {
 	  SourceType		  "simple_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -13078,7 +13078,7 @@ Library {
 	  SourceType		  "simple_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -13097,7 +13097,7 @@ Library {
 	  SourceType		  "simple_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -13116,7 +13116,7 @@ Library {
 	  SourceType		  "simple_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -13135,7 +13135,7 @@ Library {
 	  SourceType		  "simple_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -13154,7 +13154,7 @@ Library {
 	  SourceType		  "simple_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -13173,7 +13173,7 @@ Library {
 	  SourceType		  "simple_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -13192,7 +13192,7 @@ Library {
 	  SourceType		  "simple_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -13211,7 +13211,7 @@ Library {
 	  SourceType		  "simple_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -13553,798 +13553,6 @@ Library {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "var_delay"
-      Ports		      [2, 1]
-      Position		      [15, 253, 65, 282]
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"var_delay"
-	Location		[980, 299, 1268, 720]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "din"
-	  Position		  [15, 28, 45, 42]
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "delay"
-	  Position		  [15, 363, 45, 377]
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay0"
-	  Ports			  [1, 1]
-	  Position		  [95, 43, 145, 57]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
-	  latency		  "1"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,07b98262,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','tex"
-	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay1"
-	  Ports			  [1, 1]
-	  Position		  [95, 113, 145, 127]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
-	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,85ce9542,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','tex"
-	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay2"
-	  Ports			  [1, 1]
-	  Position		  [95, 183, 145, 197]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
-	  latency		  "4"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,d390c2d8,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-4}','tex"
-	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay3"
-	  Ports			  [1, 1]
-	  Position		  [95, 253, 145, 267]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
-	  latency		  "8"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,e47f993a,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-8}','tex"
-	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay4"
-	  Ports			  [1, 1]
-	  Position		  [95, 323, 145, 337]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
-	  latency		  "16"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,f89f7887,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-16}','te"
-	  "xmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay5"
-	  Ports			  [1, 1]
-	  Position		  [95, 393, 145, 407]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
-	  latency		  "32"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,05c6467a,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-32}','te"
-	  "xmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Mux0"
-	  Ports			  [3, 1]
-	  Position		  [170, 13, 220, 57]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Mux"
-	  SourceType		  "Xilinx Bus Multiplexer Block"
-	  inputs		  "2"
-	  en			  off
-	  latency		  "0"
-	  precision		  "Full"
-	  arith_type		  "Unsigned"
-	  n_bits		  "16"
-	  bin_pt		  "14"
-	  quantization		  "Truncate"
-	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
-	  block_type		  "mux"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,44,3,1,white,blue,3,eb98d690,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0.142857 0.857143 1 ],[0.77 0.8"
-	  "2 0.91]);\npatch([0.26 0.12 0.32 0.12 0.26 0.5 0.56 0.62 0.86 0.66 0.48 0.34 0.52 0.34 0.48 0.66 0.86 0.62 0.56 0.5"
-	  " 0.26 ],[0.113636 0.272727 0.5 0.727273 0.886364 0.886364 0.818182 0.886364 0.886364 0.659091 0.863636 0.704545 0.5"
-	  " 0.295455 0.136364 0.340909 0.113636 0.113636 0.181818 0.113636 0.113636 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-	  " 0.142857 0.857143 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncol"
-	  "or('black');port_label('input',1,'sel');\ncolor('black');port_label('input',2,'d0');\ncolor('black');port_label('in"
-	  "put',3,'d1');\ncolor('black');disp('\\bf{}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Mux1"
-	  Ports			  [3, 1]
-	  Position		  [170, 83, 220, 127]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Mux"
-	  SourceType		  "Xilinx Bus Multiplexer Block"
-	  inputs		  "2"
-	  en			  off
-	  latency		  "0"
-	  precision		  "Full"
-	  arith_type		  "Unsigned"
-	  n_bits		  "16"
-	  bin_pt		  "14"
-	  quantization		  "Truncate"
-	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
-	  block_type		  "mux"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,44,3,1,white,blue,3,eb98d690,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0.142857 0.857143 1 ],[0.77 0.8"
-	  "2 0.91]);\npatch([0.26 0.12 0.32 0.12 0.26 0.5 0.56 0.62 0.86 0.66 0.48 0.34 0.52 0.34 0.48 0.66 0.86 0.62 0.56 0.5"
-	  " 0.26 ],[0.113636 0.272727 0.5 0.727273 0.886364 0.886364 0.818182 0.886364 0.886364 0.659091 0.863636 0.704545 0.5"
-	  " 0.295455 0.136364 0.340909 0.113636 0.113636 0.181818 0.113636 0.113636 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-	  " 0.142857 0.857143 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncol"
-	  "or('black');port_label('input',1,'sel');\ncolor('black');port_label('input',2,'d0');\ncolor('black');port_label('in"
-	  "put',3,'d1');\ncolor('black');disp('\\bf{}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Mux2"
-	  Ports			  [3, 1]
-	  Position		  [170, 153, 220, 197]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Mux"
-	  SourceType		  "Xilinx Bus Multiplexer Block"
-	  inputs		  "2"
-	  en			  off
-	  latency		  "0"
-	  precision		  "Full"
-	  arith_type		  "Unsigned"
-	  n_bits		  "16"
-	  bin_pt		  "14"
-	  quantization		  "Truncate"
-	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
-	  block_type		  "mux"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,44,3,1,white,blue,3,eb98d690,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0.142857 0.857143 1 ],[0.77 0.8"
-	  "2 0.91]);\npatch([0.26 0.12 0.32 0.12 0.26 0.5 0.56 0.62 0.86 0.66 0.48 0.34 0.52 0.34 0.48 0.66 0.86 0.62 0.56 0.5"
-	  " 0.26 ],[0.113636 0.272727 0.5 0.727273 0.886364 0.886364 0.818182 0.886364 0.886364 0.659091 0.863636 0.704545 0.5"
-	  " 0.295455 0.136364 0.340909 0.113636 0.113636 0.181818 0.113636 0.113636 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-	  " 0.142857 0.857143 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncol"
-	  "or('black');port_label('input',1,'sel');\ncolor('black');port_label('input',2,'d0');\ncolor('black');port_label('in"
-	  "put',3,'d1');\ncolor('black');disp('\\bf{}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Mux3"
-	  Ports			  [3, 1]
-	  Position		  [170, 223, 220, 267]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Mux"
-	  SourceType		  "Xilinx Bus Multiplexer Block"
-	  inputs		  "2"
-	  en			  off
-	  latency		  "0"
-	  precision		  "Full"
-	  arith_type		  "Unsigned"
-	  n_bits		  "16"
-	  bin_pt		  "14"
-	  quantization		  "Truncate"
-	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
-	  block_type		  "mux"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,44,3,1,white,blue,3,eb98d690,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0.142857 0.857143 1 ],[0.77 0.8"
-	  "2 0.91]);\npatch([0.26 0.12 0.32 0.12 0.26 0.5 0.56 0.62 0.86 0.66 0.48 0.34 0.52 0.34 0.48 0.66 0.86 0.62 0.56 0.5"
-	  " 0.26 ],[0.113636 0.272727 0.5 0.727273 0.886364 0.886364 0.818182 0.886364 0.886364 0.659091 0.863636 0.704545 0.5"
-	  " 0.295455 0.136364 0.340909 0.113636 0.113636 0.181818 0.113636 0.113636 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-	  " 0.142857 0.857143 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncol"
-	  "or('black');port_label('input',1,'sel');\ncolor('black');port_label('input',2,'d0');\ncolor('black');port_label('in"
-	  "put',3,'d1');\ncolor('black');disp('\\bf{}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Mux4"
-	  Ports			  [3, 1]
-	  Position		  [170, 293, 220, 337]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Mux"
-	  SourceType		  "Xilinx Bus Multiplexer Block"
-	  inputs		  "2"
-	  en			  off
-	  latency		  "0"
-	  precision		  "Full"
-	  arith_type		  "Unsigned"
-	  n_bits		  "16"
-	  bin_pt		  "14"
-	  quantization		  "Truncate"
-	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
-	  block_type		  "mux"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,44,3,1,white,blue,3,eb98d690,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0.142857 0.857143 1 ],[0.77 0.8"
-	  "2 0.91]);\npatch([0.26 0.12 0.32 0.12 0.26 0.5 0.56 0.62 0.86 0.66 0.48 0.34 0.52 0.34 0.48 0.66 0.86 0.62 0.56 0.5"
-	  " 0.26 ],[0.113636 0.272727 0.5 0.727273 0.886364 0.886364 0.818182 0.886364 0.886364 0.659091 0.863636 0.704545 0.5"
-	  " 0.295455 0.136364 0.340909 0.113636 0.113636 0.181818 0.113636 0.113636 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-	  " 0.142857 0.857143 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncol"
-	  "or('black');port_label('input',1,'sel');\ncolor('black');port_label('input',2,'d0');\ncolor('black');port_label('in"
-	  "put',3,'d1');\ncolor('black');disp('\\bf{}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Mux5"
-	  Ports			  [3, 1]
-	  Position		  [170, 363, 220, 407]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Mux"
-	  SourceType		  "Xilinx Bus Multiplexer Block"
-	  inputs		  "2"
-	  en			  off
-	  latency		  "0"
-	  precision		  "Full"
-	  arith_type		  "Unsigned"
-	  n_bits		  "16"
-	  bin_pt		  "14"
-	  quantization		  "Truncate"
-	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
-	  block_type		  "mux"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,44,3,1,white,blue,3,eb98d690,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0.142857 0.857143 1 ],[0.77 0.8"
-	  "2 0.91]);\npatch([0.26 0.12 0.32 0.12 0.26 0.5 0.56 0.62 0.86 0.66 0.48 0.34 0.52 0.34 0.48 0.66 0.86 0.62 0.56 0.5"
-	  " 0.26 ],[0.113636 0.272727 0.5 0.727273 0.886364 0.886364 0.818182 0.886364 0.886364 0.659091 0.863636 0.704545 0.5"
-	  " 0.295455 0.136364 0.340909 0.113636 0.113636 0.181818 0.113636 0.113636 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-	  " 0.142857 0.857143 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncol"
-	  "or('black');port_label('input',1,'sel');\ncolor('black');port_label('input',2,'d0');\ncolor('black');port_label('in"
-	  "put',3,'d1');\ncolor('black');disp('\\bf{}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Slice0"
-	  Ports			  [1, 1]
-	  Position		  [95, 13, 145, 27]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Slice"
-	  SourceType		  "Xilinx Bit Slice Extractor Block"
-	  infoedit		  "Extracts a given range of bits from each input sample and presents it at the output.  The output type "
-	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware "
-	  "notes: In hardware this block costs nothing."
-	  nbits			  "1"
-	  boolean_output	  on
-	  mode			  "Lower Bit Location + Width"
-	  bit1			  "0"
-	  base1			  "MSB of Input"
-	  bit0			  "0"
-	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,449,376"
-	  block_type		  "slice"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,1fd851a7,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output"
-	  "',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Slice1"
-	  Ports			  [1, 1]
-	  Position		  [95, 83, 145, 97]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Slice"
-	  SourceType		  "Xilinx Bit Slice Extractor Block"
-	  infoedit		  "Extracts a given range of bits from each input sample and presents it at the output.  The output type "
-	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware "
-	  "notes: In hardware this block costs nothing."
-	  nbits			  "1"
-	  boolean_output	  on
-	  mode			  "Lower Bit Location + Width"
-	  bit1			  "0"
-	  base1			  "MSB of Input"
-	  bit0			  "1"
-	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,449,376"
-	  block_type		  "slice"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,1fd851a7,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output"
-	  "',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Slice2"
-	  Ports			  [1, 1]
-	  Position		  [95, 153, 145, 167]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Slice"
-	  SourceType		  "Xilinx Bit Slice Extractor Block"
-	  infoedit		  "Extracts a given range of bits from each input sample and presents it at the output.  The output type "
-	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware "
-	  "notes: In hardware this block costs nothing."
-	  nbits			  "1"
-	  boolean_output	  on
-	  mode			  "Lower Bit Location + Width"
-	  bit1			  "0"
-	  base1			  "MSB of Input"
-	  bit0			  "2"
-	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,449,376"
-	  block_type		  "slice"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,1fd851a7,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output"
-	  "',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Slice3"
-	  Ports			  [1, 1]
-	  Position		  [95, 223, 145, 237]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Slice"
-	  SourceType		  "Xilinx Bit Slice Extractor Block"
-	  infoedit		  "Extracts a given range of bits from each input sample and presents it at the output.  The output type "
-	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware "
-	  "notes: In hardware this block costs nothing."
-	  nbits			  "1"
-	  boolean_output	  on
-	  mode			  "Lower Bit Location + Width"
-	  bit1			  "0"
-	  base1			  "MSB of Input"
-	  bit0			  "3"
-	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,449,376"
-	  block_type		  "slice"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,1fd851a7,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output"
-	  "',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Slice4"
-	  Ports			  [1, 1]
-	  Position		  [95, 293, 145, 307]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Slice"
-	  SourceType		  "Xilinx Bit Slice Extractor Block"
-	  infoedit		  "Extracts a given range of bits from each input sample and presents it at the output.  The output type "
-	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware "
-	  "notes: In hardware this block costs nothing."
-	  nbits			  "1"
-	  boolean_output	  on
-	  mode			  "Lower Bit Location + Width"
-	  bit1			  "0"
-	  base1			  "MSB of Input"
-	  bit0			  "4"
-	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,449,376"
-	  block_type		  "slice"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,1fd851a7,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output"
-	  "',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Slice5"
-	  Ports			  [1, 1]
-	  Position		  [95, 363, 145, 377]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Slice"
-	  SourceType		  "Xilinx Bit Slice Extractor Block"
-	  infoedit		  "Extracts a given range of bits from each input sample and presents it at the output.  The output type "
-	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware "
-	  "notes: In hardware this block costs nothing."
-	  nbits			  "1"
-	  boolean_output	  on
-	  mode			  "Lower Bit Location + Width"
-	  bit1			  "0"
-	  base1			  "MSB of Input"
-	  bit0			  "5"
-	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,449,376"
-	  block_type		  "slice"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,1fd851a7,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output"
-	  "',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "dout"
-	  Position		  [245, 378, 275, 392]
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "Mux0"
-	  SrcPort		  1
-	  Points		  [0, 35; -145, 0; 0, 35]
-	  Branch {
-	    DstBlock		    "Delay1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Mux1"
-	    DstPort		    2
-	  }
-	}
-	Line {
-	  SrcBlock		  "Mux1"
-	  SrcPort		  1
-	  Points		  [0, 35; -145, 0; 0, 35]
-	  Branch {
-	    DstBlock		    "Delay2"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Mux2"
-	    DstPort		    2
-	  }
-	}
-	Line {
-	  SrcBlock		  "Mux2"
-	  SrcPort		  1
-	  Points		  [0, 35; -145, 0; 0, 35]
-	  Branch {
-	    DstBlock		    "Delay3"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Mux3"
-	    DstPort		    2
-	  }
-	}
-	Line {
-	  SrcBlock		  "Mux3"
-	  SrcPort		  1
-	  Points		  [0, 35; -145, 0; 0, 35]
-	  Branch {
-	    DstBlock		    "Delay4"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Mux4"
-	    DstPort		    2
-	  }
-	}
-	Line {
-	  SrcBlock		  "Mux4"
-	  SrcPort		  1
-	  Points		  [0, 35; -145, 0; 0, 35]
-	  Branch {
-	    DstBlock		    "Delay5"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Mux5"
-	    DstPort		    2
-	  }
-	}
-	Line {
-	  SrcBlock		  "Delay5"
-	  SrcPort		  1
-	  DstBlock		  "Mux5"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "din"
-	  SrcPort		  1
-	  Points		  [30, 0]
-	  Branch {
-	    DstBlock		    "Mux0"
-	    DstPort		    2
-	  }
-	  Branch {
-	    DstBlock		    "Delay0"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "Slice0"
-	  SrcPort		  1
-	  DstBlock		  "Mux0"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Delay0"
-	  SrcPort		  1
-	  DstBlock		  "Mux0"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Slice1"
-	  SrcPort		  1
-	  DstBlock		  "Mux1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Delay1"
-	  SrcPort		  1
-	  DstBlock		  "Mux1"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Slice2"
-	  SrcPort		  1
-	  DstBlock		  "Mux2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Delay2"
-	  SrcPort		  1
-	  DstBlock		  "Mux2"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Slice3"
-	  SrcPort		  1
-	  DstBlock		  "Mux3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Delay3"
-	  SrcPort		  1
-	  DstBlock		  "Mux3"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Slice4"
-	  SrcPort		  1
-	  DstBlock		  "Mux4"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Delay4"
-	  SrcPort		  1
-	  DstBlock		  "Mux4"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Slice5"
-	  SrcPort		  1
-	  DstBlock		  "Mux5"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Mux5"
-	  SrcPort		  1
-	  DstBlock		  "dout"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "delay"
-	  SrcPort		  1
-	  Points		  [10, 0]
-	  Branch {
-	    Points		    [0, -70]
-	    Branch {
-	      Points		      [0, -70]
-	      Branch {
-		Points			[0, -70]
-		Branch {
-		  Points		  [0, -70]
-		  Branch {
-		    Points		    [0, -70]
-		    DstBlock		    "Slice0"
-		    DstPort		    1
-		  }
-		  Branch {
-		    DstBlock		    "Slice1"
-		    DstPort		    1
-		  }
-		}
-		Branch {
-		  DstBlock		  "Slice2"
-		  DstPort		  1
-		}
-	      }
-	      Branch {
-		DstBlock		"Slice3"
-		DstPort			1
-	      }
-	    }
-	    Branch {
-	      DstBlock		      "Slice4"
-	      DstPort		      1
-	    }
-	  }
-	  Branch {
-	    DstBlock		    "Slice5"
-	    DstPort		    1
-	  }
-	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
       Name		      "xaui_resync"
       Ports		      [9, 5]
       Position		      [490, 15, 590, 295]
@@ -14377,7 +13585,7 @@ Library {
       System {
 	Name			"xaui_resync"
 	Location		[562, 441, 1101, 915]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
