@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.43"
+    ComputedModelVersion    "1.45"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -24,9 +24,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Nov 14 18:07:27 2009"
+  LastModifiedDate	  "Sun Nov 15 19:21:50 2009"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:43>"
+  ModelVersionFormat	  "1.%<AutoIncrement:45>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -2189,7 +2189,7 @@ Model {
       Position		      [1665, 518, 1725, 532]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "tx_sync"
+      GotoTag		      "syncX"
     }
     Block {
       BlockType		      From
@@ -2325,7 +2325,7 @@ Model {
       Position		      [1970, 308, 2030, 322]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "mux_sync"
+      GotoTag		      "sync"
     }
     Block {
       BlockType		      From
@@ -2381,7 +2381,7 @@ Model {
       Position		      [1970, 413, 2030, 427]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "mux_sync"
+      GotoTag		      "sync"
     }
     Block {
       BlockType		      From
@@ -2421,7 +2421,7 @@ Model {
       Position		      [1970, 518, 2030, 532]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "mux_sync"
+      GotoTag		      "sync"
     }
     Block {
       BlockType		      From
@@ -9387,33 +9387,33 @@ Model {
       LinkData {
 	BlockName		"Delay1"
 	DialogParameters {
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,91428c9d,right,"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,05c6467a,right,"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
 	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
 	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
 	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-128}','t"
-	  "exmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-32}','te"
+	  "xmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"Delay2"
 	DialogParameters {
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,91428c9d,right,"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,05c6467a,right,"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
 	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
 	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
 	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-128}','t"
-	  "exmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-32}','te"
+	  "xmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"Delay3"
 	DialogParameters {
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,91428c9d,right,"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,05c6467a,right,"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
 	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
 	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
 	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-128}','t"
-	  "exmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-32}','te"
+	  "xmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
       }
       SourceBlock	      "isi_correlator_lib/fake_xaui"

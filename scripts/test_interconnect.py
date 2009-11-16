@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 #
 # auth: Billy Mallard
 # mail: wjm@llard.net
@@ -9,12 +9,9 @@ import corr
 import sys
 import time
 import optparse
-import itertools
 import struct
 import pylab
 import IPython
-
-from itertools import *
 
 ipshell = IPython.Shell.IPShellEmbed()
 
@@ -179,8 +176,8 @@ while True:
 
 	acquire(fpga)
 
-	V = read_capt(fpga, "valid", 1, read_length)
-	S = read_capt(fpga, "sync", 1, read_length)
+	(V,) = read_capt(fpga, "valid", 1, read_length)
+	(S,) = read_capt(fpga, "sync", 1, read_length)
 
 	(m0, m1, m2) = read_capt(fpga, "012", 3, read_length)
 	(m3, m4, m5) = read_capt(fpga, "345", 3, read_length)
@@ -208,21 +205,21 @@ while True:
 	(YA, YB, YC) = read_capt(fpga, "Z", 3, read_length)
 	(ZA, ZB, ZC) = read_capt(fpga, "Y", 3, read_length)
 
-	c_XA.set_ydata(m3)
-	c_XB.set_ydata(rx3)
-	c_XC.set_ydata(YA)
+	c_XA.set_ydata(tx2)
+	c_XB.set_ydata(xr2)
+	c_XC.set_ydata(XC)
 	ax1.relim()
 	ax1.autoscale_view(tight=False, scalex=False, scaley=True)
 
-	c_YA.set_ydata(m4)
-	c_YB.set_ydata(rx4)
-	c_YC.set_ydata(YB)
+	c_YA.set_ydata(tx3)
+	c_YB.set_ydata(xr3)
+	c_YC.set_ydata(YA)
 	ax2.relim()
 	ax2.autoscale_view(tight=False, scalex=False, scaley=True)
 
-	c_ZA.set_ydata(m5)
-	c_ZB.set_ydata(rx5)
-	c_ZC.set_ydata(YC)
+	c_ZA.set_ydata(tx6)
+	c_ZB.set_ydata(xr6)
+	c_ZC.set_ydata(ZA)
 	ax3.relim()
 	ax3.autoscale_view(tight=False, scalex=False, scaley=True)
 
