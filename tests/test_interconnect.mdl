@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.45"
+    ComputedModelVersion    "1.46"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -24,9 +24,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Nov 15 19:21:50 2009"
+  LastModifiedDate	  "Wed Nov 18 12:58:14 2009"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:45>"
+  ModelVersionFormat	  "1.%<AutoIncrement:46>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -640,7 +640,7 @@ Model {
   }
   System {
     Name		    "test_interconnect"
-    Location		    [21, 546, 1902, 1172]
+    Location		    [38, 49, 1919, 675]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -2058,7 +2058,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From45"
-      Position		      [1890, 158, 1950, 172]
+      Position		      [1890, 193, 1950, 207]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "xr_Z"
@@ -2074,7 +2074,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From47"
-      Position		      [1890, 78, 1950, 92]
+      Position		      [1890, 93, 1950, 107]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "xr_X"
@@ -2082,7 +2082,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From48"
-      Position		      [1890, 118, 1950, 132]
+      Position		      [1890, 143, 1950, 157]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "xr_Y"
@@ -2090,7 +2090,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From49"
-      Position		      [1890, 38, 1950, 52]
+      Position		      [1890, 43, 1950, 57]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "xr_sync"
@@ -2102,14 +2102,6 @@ Model {
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "mux0"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From50"
-      Position		      [1890, 198, 1950, 212]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "fifo_reset"
     }
     Block {
       BlockType		      From
@@ -10330,7 +10322,7 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "unclump"
-      Ports		      [5, 10]
+      Ports		      [4, 10]
       Position		      [1975, 24, 2025, 226]
       SourceBlock	      "isi_correlator_lib/unclump"
       SourceType	      ""
@@ -10716,6 +10708,12 @@ Model {
       Name		      "xaui_resync"
       Ports		      [9, 5]
       Position		      [1655, 15, 1755, 295]
+      LinkData {
+	BlockName		"delay_sync"
+	DialogParameters {
+	  sggui_pos		  "20,20,543,392"
+	}
+      }
       SourceBlock	      "isi_correlator_lib/xaui_resync"
       SourceType	      "link_demux"
       ShowPortLabels	      "FromPortIcon"
@@ -11784,12 +11782,6 @@ Model {
       SrcPort		      1
       DstBlock		      "unclump"
       DstPort		      4
-    }
-    Line {
-      SrcBlock		      "From50"
-      SrcPort		      1
-      DstBlock		      "unclump"
-      DstPort		      5
     }
     Line {
       SrcBlock		      "unclump"

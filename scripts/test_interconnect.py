@@ -225,6 +225,6 @@ while True:
 
 	pylab.draw()
 
-print "Ok, handing over control.  Enjoy!"
-ipshell()
+	print "Ok, handing over control.  Enjoy!"
+	ipshell()
 

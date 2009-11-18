@@ -14,9 +14,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Nov 14 17:18:18 2009"
+  LastModifiedDate	  "Wed Nov 18 12:57:04 2009"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:364>"
+  ModelVersionFormat	  "1.%<AutoIncrement:366>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -626,7 +626,7 @@ Library {
   }
   System {
     Name		    "isi_correlator_lib"
-    Location		    [9, 74, 1630, 648]
+    Location		    [1, 49, 1622, 623]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -11886,7 +11886,7 @@ Library {
       MaskTabNameString	      ",,,,,,,,,,,"
       System {
 	Name			"sync_gen2"
-	Location		[1155, 625, 1614, 918]
+	Location		[1203, 512, 1662, 805]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -11916,9 +11916,9 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/AddSub"
 	  SourceType		  "Xilinx Adder/Subtracter Block"
 	  mode			  "Subtraction"
-	  use_carryin		  "off"
-	  use_carryout		  "off"
-	  en			  "off"
+	  use_carryin		  off
+	  use_carryout		  off
+	  en			  off
 	  latency		  "2"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
@@ -11926,11 +11926,11 @@ Library {
 	  bin_pt		  "14"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  "off"
-	  use_behavioral_HDL	  "off"
+	  dbl_ovrd		  off
+	  use_behavioral_HDL	  off
 	  hw_selection		  "Fabric"
-	  pipelined		  "off"
-	  xl_use_area		  "off"
+	  pipelined		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  use_rpm		  "on"
 	  has_advanced_control	  "0"
@@ -11973,15 +11973,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "OR"
 	  inputs		  "2"
-	  en			  "off"
+	  en			  off
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "16"
 	  bin_pt		  "0"
-	  align_bp		  "on"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
+	  align_bp		  on
+	  dbl_ovrd		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,261"
@@ -12004,7 +12004,7 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Mux"
 	  SourceType		  "Xilinx Bus Multiplexer Block"
 	  inputs		  "2"
-	  en			  "off"
+	  en			  off
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
@@ -12012,8 +12012,8 @@ Library {
 	  bin_pt		  "14"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -12037,10 +12037,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Relational"
 	  SourceType		  "Xilinx Arithmetic Relational Operator Block"
 	  mode			  "a>=b"
-	  en			  "off"
+	  en			  off
 	  latency		  "1"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,193"
@@ -12106,15 +12106,15 @@ Library {
 	  arith_type		  "Unsigned"
 	  n_bits		  "32"
 	  bin_pt		  "0"
-	  load_pin		  "off"
-	  rst			  "on"
-	  en			  "off"
+	  load_pin		  off
+	  rst			  on
+	  en			  off
 	  explicit_period	  "on"
 	  period		  "1"
-	  dbl_ovrd		  "off"
-	  use_behavioral_HDL	  "off"
+	  dbl_ovrd		  off
+	  use_behavioral_HDL	  off
 	  implementation	  "Fabric"
-	  xl_use_area		  "off"
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  use_rpm		  "off"
 	  has_advanced_control	  "0"
@@ -12157,10 +12157,10 @@ Library {
 	  Position		  [75, 85, 175, 115]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/software register"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12185,7 +12185,7 @@ Library {
 	  const			  "3"
 	  n_bits		  "32"
 	  bin_pt		  "0"
-	  explicit_period	  "on"
+	  explicit_period	  on
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -12194,7 +12194,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,400,346"
 	  block_type		  "constant"
@@ -12217,7 +12217,7 @@ Library {
 	  SourceType		  "posedge"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12232,10 +12232,10 @@ Library {
 	  Position		  [75, 15, 175, 45]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/software register"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12260,13 +12260,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware "
 	  "notes: In hardware this block costs nothing."
 	  nbits			  "1"
-	  boolean_output	  "on"
+	  boolean_output	  on
 	  mode			  "Lower Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
@@ -12394,7 +12394,7 @@ Library {
     Block {
       BlockType		      SubSystem
       Name		      "unclump"
-      Ports		      [5, 10]
+      Ports		      [4, 10]
       Position		      [615, 14, 665, 216]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -12418,7 +12418,7 @@ Library {
       MaskValueString	      "1"
       System {
 	Name			"unclump"
-	Location		[984, 739, 1408, 1098]
+	Location		[810, 677, 1384, 1045]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -12459,13 +12459,6 @@ Library {
 	  IconDisplay		  "Port number"
 	}
 	Block {
-	  BlockType		  Inport
-	  Name			  "rst"
-	  Position		  [15, 323, 45, 337]
-	  Port			  "5"
-	  IconDisplay		  "Port number"
-	}
-	Block {
 	  BlockType		  Reference
 	  Name			  "Counter"
 	  Ports			  [1, 1]
@@ -12483,15 +12476,15 @@ Library {
 	  arith_type		  "Unsigned"
 	  n_bits		  "2"
 	  bin_pt		  "0"
-	  load_pin		  "off"
-	  rst			  "on"
-	  en			  "off"
+	  load_pin		  off
+	  rst			  on
+	  en			  off
 	  explicit_period	  "on"
 	  period		  "1"
-	  dbl_ovrd		  "off"
-	  use_behavioral_HDL	  "off"
+	  dbl_ovrd		  off
+	  use_behavioral_HDL	  off
 	  implementation	  "Fabric"
-	  xl_use_area		  "off"
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  use_rpm		  "off"
 	  has_advanced_control	  "0"
@@ -12508,46 +12501,103 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Logical1"
+	  Name			  "Inverter"
+	  Ports			  [1, 1]
+	  Position		  [70, 323, 120, 337]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Inverter"
+	  SourceType		  "Xilinx Inverter Block"
+	  infoedit		  "Bitwise logical negation (one's complement) operator."
+	  en			  off
+	  latency		  "0"
+	  dbl_ovrd		  off
+	  xl_use_area		  off
+	  xl_area		  "[0,0,0,0,0,0,0]"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "-1,-1,-1,-1"
+	  block_type		  "inv"
+	  block_version		  "11.3"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,267846e5,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
+	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
+	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('not');\nfpri"
+	  "ntf('','COMMENT: end icon text');\n"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Logical"
 	  Ports			  [2, 1]
-	  Position		  [145, 308, 195, 337]
+	  Position		  [145, 309, 195, 336]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Logical"
 	  SourceType		  "Xilinx Logical Block Block"
-	  logical_function	  "OR"
+	  logical_function	  "AND"
 	  inputs		  "2"
-	  en			  "off"
+	  en			  off
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "16"
 	  bin_pt		  "0"
-	  align_bp		  "on"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
+	  align_bp		  on
+	  dbl_ovrd		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,357"
 	  block_type		  "logical"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,29,2,1,white,blue,0,fc354646,right,"
+	  block_version		  "11.3"
+	  sg_icon_stat		  "50,27,2,1,white,blue,0,0a851f85,right,"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.34 0.24 0.38 0.24 0.34 0.5 0.54 0.58 0.74 0.62 0.5 0.4 0.54 0.4 0.5 0.62 0.74 0.58 0.54 0.5 0.34 ],[0.103448 "
-	  "0.275862 0.517241 0.758621 0.931034 0.931034 0.862069 0.931034 0.931034 0.724138 0.931034 0.758621 0.517241 0.27586"
-	  "2 0.103448 0.310345 0.103448 0.103448 0.172414 0.103448 0.103448 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0"
-	  " ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\ne"
-	  "wlineor\\newlinez^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  "ch([0.34 0.26 0.38 0.26 0.34 0.48 0.52 0.56 0.72 0.6 0.48 0.4 0.52 0.4 0.48 0.6 0.72 0.56 0.52 0.48 0.34 ],[0.11111"
+	  "1 0.259259 0.481481 0.703704 0.851852 0.851852 0.777778 0.851852 0.851852 0.62963 0.851852 0.703704 0.481481 0.2592"
+	  "59 0.111111 0.333333 0.111111 0.111111 0.185185 0.111111 0.111111 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 "
+	  "0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\n"
+	  "ewlineand\\newlinez^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Slice"
+	  Ports			  [1, 1]
+	  Position		  [295, 318, 345, 332]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Slice"
+	  SourceType		  "Xilinx Bit Slice Extractor Block"
+	  infoedit		  "Extracts a given range of bits from each input sample and presents it at the output.  The output type "
+	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
+	  "e notes: In hardware this block costs nothing."
+	  nbits			  "1"
+	  boolean_output	  on
+	  mode			  "Upper Bit Location + Width"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "0"
+	  base0			  "LSB of Input"
+	  dbl_ovrd		  off
+	  has_advanced_control	  "0"
+	  sggui_pos		  "20,20,631,621"
+	  block_type		  "slice"
+	  block_version		  "10.1.1"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,1fd851a7,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
+	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
+	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output"
+	  "',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "decompressX"
 	  Ports			  [2, 3]
-	  Position		  [295, 44, 345, 106]
+	  Position		  [445, 44, 495, 106]
 	  SourceBlock		  "isi_correlator_lib/decompress"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12559,12 +12609,12 @@ Library {
 	  BlockType		  Reference
 	  Name			  "decompressY"
 	  Ports			  [2, 3]
-	  Position		  [295, 134, 345, 196]
+	  Position		  [445, 134, 495, 196]
 	  SourceBlock		  "isi_correlator_lib/decompress"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12576,12 +12626,12 @@ Library {
 	  BlockType		  Reference
 	  Name			  "decompressZ"
 	  Ports			  [2, 3]
-	  Position		  [295, 224, 345, 286]
+	  Position		  [445, 224, 495, 286]
 	  SourceBlock		  "isi_correlator_lib/decompress"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12591,18 +12641,35 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
+	  Name			  "negedge"
+	  Tag			  "Rising Edge Detector"
+	  Ports			  [1, 1]
+	  Position		  [370, 318, 420, 332]
+	  SourceBlock		  "casper_library/Misc/negedge"
+	  SourceType		  "negedge"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	}
+	Block {
+	  BlockType		  Reference
 	  Name			  "sync_delay"
 	  Ports			  [1, 1]
-	  Position		  [295, 13, 345, 27]
+	  Position		  [445, 13, 495, 27]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
+	  en			  off
 	  latency		  "latency"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  reg_retiming		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
@@ -12620,16 +12687,16 @@ Library {
 	  BlockType		  Reference
 	  Name			  "sync_delay1"
 	  Ports			  [1, 1]
-	  Position		  [70, 308, 120, 322]
+	  Position		  [70, 13, 120, 27]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
-	  latency		  "latency"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
+	  en			  off
+	  latency		  "1"
+	  dbl_ovrd		  off
+	  reg_retiming		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
@@ -12646,88 +12713,108 @@ Library {
 	Block {
 	  BlockType		  Outport
 	  Name			  "sync_out"
-	  Position		  [370, 13, 400, 27]
+	  Position		  [520, 13, 550, 27]
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "XA"
-	  Position		  [370, 48, 400, 62]
+	  Position		  [520, 48, 550, 62]
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "XB"
-	  Position		  [370, 68, 400, 82]
+	  Position		  [520, 68, 550, 82]
 	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "XC"
-	  Position		  [370, 88, 400, 102]
+	  Position		  [520, 88, 550, 102]
 	  Port			  "4"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "YA"
-	  Position		  [370, 138, 400, 152]
+	  Position		  [520, 138, 550, 152]
 	  Port			  "5"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "YB"
-	  Position		  [370, 158, 400, 172]
+	  Position		  [520, 158, 550, 172]
 	  Port			  "6"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "YC"
-	  Position		  [370, 178, 400, 192]
+	  Position		  [520, 178, 550, 192]
 	  Port			  "7"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "ZA"
-	  Position		  [370, 228, 400, 242]
+	  Position		  [520, 228, 550, 242]
 	  Port			  "8"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "ZB"
-	  Position		  [370, 248, 400, 262]
+	  Position		  [520, 248, 550, 262]
 	  Port			  "9"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "ZC"
-	  Position		  [370, 268, 400, 282]
+	  Position		  [520, 268, 550, 282]
 	  Port			  "10"
 	  IconDisplay		  "Port number"
 	}
 	Line {
 	  SrcBlock		  "sync_delay1"
 	  SrcPort		  1
-	  DstBlock		  "Logical1"
+	  Points		  [5, 0]
+	  Branch {
+	    DstBlock		    "Logical"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "sync_delay"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "negedge"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, 25; -375, 0]
+	  DstBlock		  "Inverter"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "rst"
+	  SrcBlock		  "Logical"
 	  SrcPort		  1
-	  DstBlock		  "Logical1"
+	  DstBlock		  "Counter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Inverter"
+	  SrcPort		  1
+	  DstBlock		  "Logical"
 	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "Logical1"
+	  SrcBlock		  "Slice"
 	  SrcPort		  1
-	  DstBlock		  "Counter"
+	  DstBlock		  "negedge"
 	  DstPort		  1
 	}
 	Line {
@@ -12805,15 +12892,8 @@ Library {
 	Line {
 	  SrcBlock		  "sync"
 	  SrcPort		  1
-	  Points		  [5, 0]
-	  Branch {
-	    DstBlock		    "sync_delay1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "sync_delay"
-	    DstPort		    1
-	  }
+	  DstBlock		  "sync_delay1"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "sync_delay"
@@ -12824,21 +12904,29 @@ Library {
 	Line {
 	  SrcBlock		  "Counter"
 	  SrcPort		  1
-	  Points		  [5, 0; 0, -85]
+	  Points		  [5, 0]
 	  Branch {
-	    Points		    [0, -90]
-	    Branch {
-	      DstBlock		      "decompressX"
-	      DstPort		      1
-	    }
-	    Branch {
-	      DstBlock		      "decompressY"
-	      DstPort		      1
-	    }
+	    DstBlock		    "Slice"
+	    DstPort		    1
 	  }
 	  Branch {
-	    DstBlock		    "decompressZ"
-	    DstPort		    1
+	    Points		    [0, -85]
+	    Branch {
+	      Points		      [0, -90]
+	      Branch {
+		Points			[0, -90]
+		DstBlock		"decompressX"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"decompressY"
+		DstPort			1
+	      }
+	    }
+	    Branch {
+	      DstBlock		      "decompressZ"
+	      DstPort		      1
+	    }
 	  }
 	}
       }
@@ -13688,11 +13776,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "logic_latency"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
@@ -13715,11 +13803,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "logic_latency"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
@@ -13742,11 +13830,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "logic_latency"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
@@ -13769,11 +13857,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "logic_latency"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
@@ -13941,15 +14029,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "AND"
 	  inputs		  "5"
-	  en			  off
+	  en			  "off"
 	  latency		  "logic_latency"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "16"
 	  bin_pt		  "0"
-	  align_bp		  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  align_bp		  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,357"
@@ -13972,11 +14060,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2^buffer_depth"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
@@ -13999,11 +14087,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2^buffer_depth"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
@@ -14026,11 +14114,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2^buffer_depth"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
@@ -14053,11 +14141,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2^buffer_depth"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
@@ -14080,11 +14168,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2^buffer_depth"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
@@ -14104,10 +14192,10 @@ Library {
 	  Ports			  [3, 2]
 	  Position		  [95, 126, 195, 184]
 	  SourceBlock		  "isi_correlator_lib/resync"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -14121,10 +14209,10 @@ Library {
 	  Ports			  [3, 2]
 	  Position		  [95, 261, 195, 319]
 	  SourceBlock		  "isi_correlator_lib/resync"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
