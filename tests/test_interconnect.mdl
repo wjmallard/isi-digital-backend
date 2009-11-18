@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.46"
+    ComputedModelVersion    "1.48"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -24,9 +24,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 18 12:58:14 2009"
+  LastModifiedDate	  "Wed Nov 18 15:57:13 2009"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:46>"
+  ModelVersionFormat	  "1.%<AutoIncrement:48>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -640,7 +640,7 @@ Model {
   }
   System {
     Name		    "test_interconnect"
-    Location		    [38, 49, 1919, 675]
+    Location		    [38, 50, 1919, 676]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1762,7 +1762,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From17"
-      Position		      [920, 98, 980, 112]
+      Position		      [920, 108, 980, 122]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "mux3"
@@ -1770,7 +1770,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From18"
-      Position		      [920, 178, 980, 192]
+      Position		      [920, 188, 980, 202]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "mux7"
@@ -1778,7 +1778,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From19"
-      Position		      [920, 118, 980, 132]
+      Position		      [920, 128, 980, 142]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "mux4"
@@ -1866,7 +1866,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From23"
-      Position		      [920, 138, 980, 152]
+      Position		      [920, 148, 980, 162]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "mux5"
@@ -1874,7 +1874,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From24"
-      Position		      [920, 158, 980, 172]
+      Position		      [920, 168, 980, 182]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "mux6"
@@ -2066,7 +2066,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From46"
-      Position		      [920, 18, 980, 32]
+      Position		      [920, 28, 980, 42]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "mux_sync"
@@ -2098,7 +2098,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From5"
-      Position		      [920, 38, 980, 52]
+      Position		      [920, 48, 980, 62]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "mux0"
@@ -2110,14 +2110,6 @@ Model {
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "mux2"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From52"
-      Position		      [920, 198, 980, 212]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "fifo_reset"
     }
     Block {
       BlockType		      From
@@ -2266,7 +2258,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From7"
-      Position		      [920, 58, 980, 72]
+      Position		      [920, 68, 980, 82]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "mux1"
@@ -2442,7 +2434,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From9"
-      Position		      [920, 78, 980, 92]
+      Position		      [920, 88, 980, 102]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "mux2"
@@ -8184,30 +8176,40 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "clump"
-      Ports		      [10, 5]
+      Ports		      [9, 5]
       Position		      [1005, 14, 1055, 216]
       LinkData {
-	BlockName		"Slice0"
+	BlockName		"synced_cntr/negedge/Delay"
 	DialogParameters {
-	  sggui_pos		  "20,20,631,621"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,1fd851a7,right,"
+	  sg_icon_stat		  "45,46,1,1,white,blue,0,07b98262,right,"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output"
-	  "',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+	  "ch([0.222222 0.0666667 0.311111 0.0666667 0.222222 0.488889 0.555556 0.622222 0.911111 0.688889 0.466667 0.311111 0"
+	  ".555556 0.311111 0.466667 0.688889 0.911111 0.622222 0.555556 0.488889 0.222222 ],[0.108696 0.26087 0.5 0.73913 0.8"
+	  "91304 0.891304 0.826087 0.891304 0.891304 0.673913 0.891304 0.73913 0.5 0.26087 0.108696 0.326087 0.108696 0.108696"
+	  " 0.173913 0.108696 0.108696 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon g"
+	  "raphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COM"
+	  "MENT: end icon text');\n"
 	}
-	BlockName		"Slice1"
+	BlockName		"synced_cntr/negedge/Inverter"
 	DialogParameters {
-	  sggui_pos		  "20,20,631,621"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,1fd851a7,right,"
+	  sg_icon_stat		  "50,34,1,1,white,blue,0,267846e5,right,"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output"
-	  "',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+	  "ch([0.32 0.2 0.36 0.2 0.32 0.5 0.54 0.58 0.78 0.62 0.48 0.38 0.54 0.38 0.48 0.62 0.78 0.58 0.54 0.5 0.32 ],[0.11764"
+	  "7 0.294118 0.529412 0.764706 0.941176 0.941176 0.882353 0.941176 0.941176 0.705882 0.911765 0.764706 0.529412 0.294"
+	  "118 0.147059 0.352941 0.117647 0.117647 0.176471 0.117647 0.117647 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1"
+	  " 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('no"
+	  "t');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	BlockName		"synced_cntr/negedge/Logical"
+	DialogParameters {
+	  sg_icon_stat		  "60,87,2,1,white,blue,0,0a851f85,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.233333 0.0666667 0.3 0.0666667 0.233333 0.5 0.566667 0.633333 0.916667 0.7 0.483333 0.333333 0.583333 0.33333"
+	  "3 0.483333 0.7 0.916667 0.633333 0.566667 0.5 0.233333 ],[0.229885 0.344828 0.505747 0.666667 0.781609 0.781609 0.7"
+	  "35632 0.781609 0.781609 0.632184 0.781609 0.678161 0.505747 0.333333 0.229885 0.37931 0.229885 0.229885 0.275862 0."
+	  "229885 0.229885 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\n"
+	  "fprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineand\\newlinez^{-0}','texmode','on');\nfprint"
+	  "f('','COMMENT: end icon text');\n"
 	}
       }
       SourceBlock	      "isi_correlator_lib/clump"
@@ -10324,6 +10326,40 @@ Model {
       Name		      "unclump"
       Ports		      [4, 10]
       Position		      [1975, 24, 2025, 226]
+      LinkData {
+	BlockName		"synced_cntr/negedge/Delay"
+	DialogParameters {
+	  sg_icon_stat		  "45,46,1,1,white,blue,0,07b98262,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.222222 0.0666667 0.311111 0.0666667 0.222222 0.488889 0.555556 0.622222 0.911111 0.688889 0.466667 0.311111 0"
+	  ".555556 0.311111 0.466667 0.688889 0.911111 0.622222 0.555556 0.488889 0.222222 ],[0.108696 0.26087 0.5 0.73913 0.8"
+	  "91304 0.891304 0.826087 0.891304 0.891304 0.673913 0.891304 0.73913 0.5 0.26087 0.108696 0.326087 0.108696 0.108696"
+	  " 0.173913 0.108696 0.108696 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon g"
+	  "raphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COM"
+	  "MENT: end icon text');\n"
+	}
+	BlockName		"synced_cntr/negedge/Inverter"
+	DialogParameters {
+	  sg_icon_stat		  "50,34,1,1,white,blue,0,267846e5,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.32 0.2 0.36 0.2 0.32 0.5 0.54 0.58 0.78 0.62 0.48 0.38 0.54 0.38 0.48 0.62 0.78 0.58 0.54 0.5 0.32 ],[0.11764"
+	  "7 0.294118 0.529412 0.764706 0.941176 0.941176 0.882353 0.941176 0.941176 0.705882 0.911765 0.764706 0.529412 0.294"
+	  "118 0.147059 0.352941 0.117647 0.117647 0.176471 0.117647 0.117647 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1"
+	  " 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('no"
+	  "t');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	BlockName		"synced_cntr/negedge/Logical"
+	DialogParameters {
+	  sg_icon_stat		  "60,87,2,1,white,blue,0,0a851f85,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.233333 0.0666667 0.3 0.0666667 0.233333 0.5 0.566667 0.633333 0.916667 0.7 0.483333 0.333333 0.583333 0.33333"
+	  "3 0.483333 0.7 0.916667 0.633333 0.566667 0.5 0.233333 ],[0.229885 0.344828 0.505747 0.666667 0.781609 0.781609 0.7"
+	  "35632 0.781609 0.781609 0.632184 0.781609 0.678161 0.505747 0.333333 0.229885 0.37931 0.229885 0.229885 0.275862 0."
+	  "229885 0.229885 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\n"
+	  "fprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineand\\newlinez^{-0}','texmode','on');\nfprint"
+	  "f('','COMMENT: end icon text');\n"
+	}
+      }
       SourceBlock	      "isi_correlator_lib/unclump"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
@@ -11422,12 +11458,6 @@ Model {
       SrcPort		      1
       DstBlock		      "clump"
       DstPort		      9
-    }
-    Line {
-      SrcBlock		      "From52"
-      SrcPort		      1
-      DstBlock		      "clump"
-      DstPort		      10
     }
     Line {
       SrcBlock		      "clump"
