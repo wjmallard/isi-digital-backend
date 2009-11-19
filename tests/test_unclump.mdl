@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.20"
+    ComputedModelVersion    "1.21"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -24,9 +24,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 18 12:57:22 2009"
+  LastModifiedDate	  "Wed Nov 18 17:52:14 2009"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:20>"
+  ModelVersionFormat	  "1.%<AutoIncrement:21>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -596,7 +596,7 @@ Model {
   }
   System {
     Name		    "test_clump_unclump"
-    Location		    [23, 801, 789, 1147]
+    Location		    [23, 802, 789, 1148]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -663,7 +663,7 @@ Model {
       BlockType		      Reference
       Name		      "Constant0"
       Ports		      [0, 1]
-      Position		      [105, 83, 155, 97]
+      Position		      [105, 93, 155, 107]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Constant"
       SourceType	      "Xilinx Constant Block Block"
@@ -697,7 +697,7 @@ Model {
       BlockType		      Reference
       Name		      "Constant1"
       Ports		      [0, 1]
-      Position		      [105, 103, 155, 117]
+      Position		      [105, 113, 155, 127]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Constant"
       SourceType	      "Xilinx Constant Block Block"
@@ -731,7 +731,7 @@ Model {
       BlockType		      Reference
       Name		      "Constant2"
       Ports		      [0, 1]
-      Position		      [105, 123, 155, 137]
+      Position		      [105, 133, 155, 147]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Constant"
       SourceType	      "Xilinx Constant Block Block"
@@ -765,7 +765,7 @@ Model {
       BlockType		      Reference
       Name		      "Constant3"
       Ports		      [0, 1]
-      Position		      [105, 143, 155, 157]
+      Position		      [105, 153, 155, 167]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Constant"
       SourceType	      "Xilinx Constant Block Block"
@@ -799,7 +799,7 @@ Model {
       BlockType		      Reference
       Name		      "Constant4"
       Ports		      [0, 1]
-      Position		      [105, 163, 155, 177]
+      Position		      [105, 173, 155, 187]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Constant"
       SourceType	      "Xilinx Constant Block Block"
@@ -833,7 +833,7 @@ Model {
       BlockType		      Reference
       Name		      "Constant5"
       Ports		      [0, 1]
-      Position		      [105, 183, 155, 197]
+      Position		      [105, 193, 155, 207]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Constant"
       SourceType	      "Xilinx Constant Block Block"
@@ -867,7 +867,7 @@ Model {
       BlockType		      Reference
       Name		      "Constant6"
       Ports		      [0, 1]
-      Position		      [105, 203, 155, 217]
+      Position		      [105, 213, 155, 227]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Constant"
       SourceType	      "Xilinx Constant Block Block"
@@ -901,7 +901,7 @@ Model {
       BlockType		      Reference
       Name		      "Constant7"
       Ports		      [0, 1]
-      Position		      [105, 223, 155, 237]
+      Position		      [105, 233, 155, 247]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Constant"
       SourceType	      "Xilinx Constant Block Block"
@@ -933,49 +933,15 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "Constant8"
-      Ports		      [0, 1]
-      Position		      [105, 283, 155, 297]
-      ShowName		      off
-      SourceBlock	      "xbsIndex_r4/Constant"
-      SourceType	      "Xilinx Constant Block Block"
-      arith_type	      "Boolean"
-      const		      "0"
-      n_bits		      "1"
-      bin_pt		      "0"
-      explicit_period	      on
-      period		      "1"
-      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
-      equ		      "P=C"
-      opselect		      "C"
-      inp2		      "PCIN>>17"
-      opr		      "+"
-      inp1		      "P"
-      carry		      "CIN"
-      dbl_ovrd		      off
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,554,541"
-      block_type	      "constant"
-      block_version	      "10.1.1"
-      sg_icon_stat	      "50,14,0,1,white,blue,0,bf4ddd8b,right,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      Reference
       Name		      "Delay3"
       Ports		      [1, 1]
-      Position		      [360, 278, 410, 292]
+      Position		      [360, 273, 410, 287]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Delay"
       SourceType	      "Xilinx Delay Block"
       infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
       en		      off
-      latency		      "3"
+      latency		      "1"
       dbl_ovrd		      off
       reg_retiming	      off
       xl_use_area	      off
@@ -984,13 +950,13 @@ Model {
       sggui_pos		      "20,20,543,392"
       block_type	      "delay"
       block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,83e6bb61,right,"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,07b98262,right,"
       sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
       ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
       "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
       "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
       " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+      ";disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
     }
     Block {
       BlockType		      From
@@ -1092,7 +1058,7 @@ Model {
       BlockType		      Reference
       Name		      "Gateway Out0"
       Ports		      [1, 1]
-      Position		      [435, 63, 485, 77]
+      Position		      [435, 58, 485, 72]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
@@ -1122,7 +1088,7 @@ Model {
       BlockType		      Reference
       Name		      "Gateway Out1"
       Ports		      [1, 1]
-      Position		      [435, 83, 485, 97]
+      Position		      [435, 78, 485, 92]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
@@ -1152,7 +1118,7 @@ Model {
       BlockType		      Reference
       Name		      "Gateway Out10"
       Ports		      [1, 1]
-      Position		      [435, 278, 485, 292]
+      Position		      [435, 273, 485, 287]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
@@ -1182,7 +1148,7 @@ Model {
       BlockType		      Reference
       Name		      "Gateway Out11"
       Ports		      [1, 1]
-      Position		      [435, 43, 485, 57]
+      Position		      [435, 38, 485, 52]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
@@ -1212,7 +1178,7 @@ Model {
       BlockType		      Reference
       Name		      "Gateway Out2"
       Ports		      [1, 1]
-      Position		      [435, 103, 485, 117]
+      Position		      [435, 98, 485, 112]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
@@ -1242,7 +1208,7 @@ Model {
       BlockType		      Reference
       Name		      "Gateway Out3"
       Ports		      [1, 1]
-      Position		      [435, 123, 485, 137]
+      Position		      [435, 118, 485, 132]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
@@ -1272,7 +1238,7 @@ Model {
       BlockType		      Reference
       Name		      "Gateway Out4"
       Ports		      [1, 1]
-      Position		      [435, 143, 485, 157]
+      Position		      [435, 138, 485, 152]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
@@ -1302,7 +1268,7 @@ Model {
       BlockType		      Reference
       Name		      "Gateway Out5"
       Ports		      [1, 1]
-      Position		      [435, 163, 485, 177]
+      Position		      [435, 158, 485, 172]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
@@ -1332,7 +1298,7 @@ Model {
       BlockType		      Reference
       Name		      "Gateway Out6"
       Ports		      [1, 1]
-      Position		      [435, 183, 485, 197]
+      Position		      [435, 178, 485, 192]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
@@ -1362,7 +1328,7 @@ Model {
       BlockType		      Reference
       Name		      "Gateway Out7"
       Ports		      [1, 1]
-      Position		      [435, 203, 485, 217]
+      Position		      [435, 198, 485, 212]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
@@ -1392,7 +1358,7 @@ Model {
       BlockType		      Reference
       Name		      "Gateway Out8"
       Ports		      [1, 1]
-      Position		      [435, 223, 485, 237]
+      Position		      [435, 218, 485, 232]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
@@ -1422,7 +1388,7 @@ Model {
       BlockType		      Reference
       Name		      "Gateway Out9"
       Ports		      [1, 1]
-      Position		      [435, 243, 485, 257]
+      Position		      [435, 238, 485, 252]
       ShowName		      off
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
@@ -1451,7 +1417,7 @@ Model {
     Block {
       BlockType		      Goto
       Name		      "Goto1"
-      Position		      [510, 83, 570, 97]
+      Position		      [510, 78, 570, 92]
       ShowName		      off
       GotoTag		      "XA"
       TagVisibility	      "local"
@@ -1459,7 +1425,7 @@ Model {
     Block {
       BlockType		      Goto
       Name		      "Goto10"
-      Position		      [510, 223, 570, 237]
+      Position		      [510, 218, 570, 232]
       ShowName		      off
       GotoTag		      "ZB"
       TagVisibility	      "local"
@@ -1467,7 +1433,7 @@ Model {
     Block {
       BlockType		      Goto
       Name		      "Goto11"
-      Position		      [510, 243, 570, 257]
+      Position		      [510, 238, 570, 252]
       ShowName		      off
       GotoTag		      "ZC"
       TagVisibility	      "local"
@@ -1475,7 +1441,7 @@ Model {
     Block {
       BlockType		      Goto
       Name		      "Goto12"
-      Position		      [510, 43, 570, 57]
+      Position		      [510, 38, 570, 52]
       ShowName		      off
       GotoTag		      "sync_clump"
       TagVisibility	      "local"
@@ -1483,7 +1449,7 @@ Model {
     Block {
       BlockType		      Goto
       Name		      "Goto2"
-      Position		      [510, 103, 570, 117]
+      Position		      [510, 98, 570, 112]
       ShowName		      off
       GotoTag		      "XB"
       TagVisibility	      "local"
@@ -1491,7 +1457,7 @@ Model {
     Block {
       BlockType		      Goto
       Name		      "Goto3"
-      Position		      [510, 123, 570, 137]
+      Position		      [510, 118, 570, 132]
       ShowName		      off
       GotoTag		      "XC"
       TagVisibility	      "local"
@@ -1499,7 +1465,7 @@ Model {
     Block {
       BlockType		      Goto
       Name		      "Goto4"
-      Position		      [510, 278, 570, 292]
+      Position		      [510, 273, 570, 287]
       ShowName		      off
       GotoTag		      "valid"
       TagVisibility	      "local"
@@ -1507,7 +1473,7 @@ Model {
     Block {
       BlockType		      Goto
       Name		      "Goto5"
-      Position		      [510, 143, 570, 157]
+      Position		      [510, 138, 570, 152]
       ShowName		      off
       GotoTag		      "YA"
       TagVisibility	      "local"
@@ -1515,7 +1481,7 @@ Model {
     Block {
       BlockType		      Goto
       Name		      "Goto6"
-      Position		      [510, 163, 570, 177]
+      Position		      [510, 158, 570, 172]
       ShowName		      off
       GotoTag		      "YB"
       TagVisibility	      "local"
@@ -1523,7 +1489,7 @@ Model {
     Block {
       BlockType		      Goto
       Name		      "Goto7"
-      Position		      [510, 63, 570, 77]
+      Position		      [510, 58, 570, 72]
       ShowName		      off
       GotoTag		      "sync"
       TagVisibility	      "local"
@@ -1531,7 +1497,7 @@ Model {
     Block {
       BlockType		      Goto
       Name		      "Goto8"
-      Position		      [510, 183, 570, 197]
+      Position		      [510, 178, 570, 192]
       ShowName		      off
       GotoTag		      "YC"
       TagVisibility	      "local"
@@ -1539,7 +1505,7 @@ Model {
     Block {
       BlockType		      Goto
       Name		      "Goto9"
-      Position		      [510, 203, 570, 217]
+      Position		      [510, 198, 570, 212]
       ShowName		      off
       GotoTag		      "ZA"
       TagVisibility	      "local"
@@ -1550,8 +1516,8 @@ Model {
       Ports		      [3]
       Position		      [690, 16, 740, 74]
       Floating		      off
-      Location		      [91, 88, 926, 595]
-      Open		      on
+      Location		      [91, 92, 926, 599]
+      Open		      off
       NumInputPorts	      "3"
       List {
 	ListType		AxesTitles
@@ -1570,8 +1536,8 @@ Model {
       Ports		      [3]
       Position		      [690, 96, 740, 154]
       Floating		      off
-      Location		      [1061, 88, 1895, 589]
-      Open		      on
+      Location		      [1061, 90, 1895, 591]
+      Open		      off
       NumInputPorts	      "3"
       List {
 	ListType		AxesTitles
@@ -1693,12 +1659,44 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "clump"
-      Ports		      [10, 5]
+      Ports		      [9, 5]
       Position		      [255, 59, 305, 261]
       LinkData {
 	BlockName		"Counter"
 	DialogParameters {
 	  sggui_pos		  "20,20,543,936"
+	}
+	BlockName		"synced_cntr/negedge/Delay"
+	DialogParameters {
+	  sg_icon_stat		  "45,46,1,1,white,blue,0,07b98262,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.222222 0.0666667 0.311111 0.0666667 0.222222 0.488889 0.555556 0.622222 0.911111 0.688889 0.466667 0.311111 0"
+	  ".555556 0.311111 0.466667 0.688889 0.911111 0.622222 0.555556 0.488889 0.222222 ],[0.108696 0.26087 0.5 0.73913 0.8"
+	  "91304 0.891304 0.826087 0.891304 0.891304 0.673913 0.891304 0.73913 0.5 0.26087 0.108696 0.326087 0.108696 0.108696"
+	  " 0.173913 0.108696 0.108696 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon g"
+	  "raphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COM"
+	  "MENT: end icon text');\n"
+	}
+	BlockName		"synced_cntr/negedge/Inverter"
+	DialogParameters {
+	  sg_icon_stat		  "50,34,1,1,white,blue,0,267846e5,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.32 0.2 0.36 0.2 0.32 0.5 0.54 0.58 0.78 0.62 0.48 0.38 0.54 0.38 0.48 0.62 0.78 0.58 0.54 0.5 0.32 ],[0.11764"
+	  "7 0.294118 0.529412 0.764706 0.941176 0.941176 0.882353 0.941176 0.941176 0.705882 0.911765 0.764706 0.529412 0.294"
+	  "118 0.147059 0.352941 0.117647 0.117647 0.176471 0.117647 0.117647 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1"
+	  " 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('no"
+	  "t');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	BlockName		"synced_cntr/negedge/Logical"
+	DialogParameters {
+	  sg_icon_stat		  "60,87,2,1,white,blue,0,0a851f85,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.233333 0.0666667 0.3 0.0666667 0.233333 0.5 0.566667 0.633333 0.916667 0.7 0.483333 0.333333 0.583333 0.33333"
+	  "3 0.483333 0.7 0.916667 0.633333 0.566667 0.5 0.233333 ],[0.229885 0.344828 0.505747 0.666667 0.781609 0.781609 0.7"
+	  "35632 0.781609 0.781609 0.632184 0.781609 0.678161 0.505747 0.333333 0.229885 0.37931 0.229885 0.229885 0.275862 0."
+	  "229885 0.229885 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\n"
+	  "fprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineand\\newlinez^{-0}','texmode','on');\nfprint"
+	  "f('','COMMENT: end icon text');\n"
 	}
       }
       SourceBlock	      "isi_correlator_lib/clump"
@@ -1808,7 +1806,41 @@ Model {
       BlockType		      Reference
       Name		      "unclump"
       Ports		      [4, 10]
-      Position		      [360, 59, 410, 261]
+      Position		      [360, 54, 410, 256]
+      LinkData {
+	BlockName		"synced_cntr/negedge/Delay"
+	DialogParameters {
+	  sg_icon_stat		  "45,46,1,1,white,blue,0,07b98262,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.222222 0.0666667 0.311111 0.0666667 0.222222 0.488889 0.555556 0.622222 0.911111 0.688889 0.466667 0.311111 0"
+	  ".555556 0.311111 0.466667 0.688889 0.911111 0.622222 0.555556 0.488889 0.222222 ],[0.108696 0.26087 0.5 0.73913 0.8"
+	  "91304 0.891304 0.826087 0.891304 0.891304 0.673913 0.891304 0.73913 0.5 0.26087 0.108696 0.326087 0.108696 0.108696"
+	  " 0.173913 0.108696 0.108696 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon g"
+	  "raphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COM"
+	  "MENT: end icon text');\n"
+	}
+	BlockName		"synced_cntr/negedge/Inverter"
+	DialogParameters {
+	  sg_icon_stat		  "50,34,1,1,white,blue,0,267846e5,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.32 0.2 0.36 0.2 0.32 0.5 0.54 0.58 0.78 0.62 0.48 0.38 0.54 0.38 0.48 0.62 0.78 0.58 0.54 0.5 0.32 ],[0.11764"
+	  "7 0.294118 0.529412 0.764706 0.941176 0.941176 0.882353 0.941176 0.941176 0.705882 0.911765 0.764706 0.529412 0.294"
+	  "118 0.147059 0.352941 0.117647 0.117647 0.176471 0.117647 0.117647 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1"
+	  " 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('no"
+	  "t');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	BlockName		"synced_cntr/negedge/Logical"
+	DialogParameters {
+	  sg_icon_stat		  "60,87,2,1,white,blue,0,0a851f85,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.233333 0.0666667 0.3 0.0666667 0.233333 0.5 0.566667 0.633333 0.916667 0.7 0.483333 0.333333 0.583333 0.33333"
+	  "3 0.483333 0.7 0.916667 0.633333 0.566667 0.5 0.233333 ],[0.229885 0.344828 0.505747 0.666667 0.781609 0.781609 0.7"
+	  "35632 0.781609 0.781609 0.632184 0.781609 0.678161 0.505747 0.333333 0.229885 0.37931 0.229885 0.229885 0.275862 0."
+	  "229885 0.229885 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\n"
+	  "fprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineand\\newlinez^{-0}','texmode','on');\nfprint"
+	  "f('','COMMENT: end icon text');\n"
+	}
+      }
       SourceBlock	      "isi_correlator_lib/unclump"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
@@ -1826,12 +1858,11 @@ Model {
       SrcPort		      1
       Points		      [30, 0]
       Branch {
-	Points			[5, 0]
 	DstBlock		"unclump"
 	DstPort			1
       }
       Branch {
-	Points			[0, -30]
+	Points			[0, -35]
 	DstBlock		"Gateway Out11"
 	DstPort			1
       }
@@ -1846,21 +1877,21 @@ Model {
     Line {
       SrcBlock		      "clump"
       SrcPort		      3
-      Points		      [35, 0]
+      Points		      [25, 0; 0, 20]
       DstBlock		      "unclump"
       DstPort		      3
     }
     Line {
       SrcBlock		      "clump"
       SrcPort		      4
-      Points		      [35, 0]
+      Points		      [15, 0; 0, 30]
       DstBlock		      "unclump"
       DstPort		      4
     }
     Line {
       SrcBlock		      "clump"
       SrcPort		      5
-      Points		      [15, 0; 0, 45]
+      Points		      [5, 0; 0, 40]
       DstBlock		      "Delay3"
       DstPort		      1
     }
@@ -1911,13 +1942,6 @@ Model {
       SrcPort		      1
       DstBlock		      "clump"
       DstPort		      9
-    }
-    Line {
-      SrcBlock		      "Constant8"
-      SrcPort		      1
-      Points		      [80, 0]
-      DstBlock		      "clump"
-      DstPort		      10
     }
     Line {
       SrcBlock		      "sync_gen"

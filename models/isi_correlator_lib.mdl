@@ -14,9 +14,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 18 16:12:08 2009"
+  LastModifiedDate	  "Wed Nov 18 20:49:46 2009"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:372>"
+  ModelVersionFormat	  "1.%<AutoIncrement:373>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -11213,7 +11213,7 @@ Library {
       MaskValueString	      "3"
       System {
 	Name			"shuffle"
-	Location		[1172, 431, 1537, 929]
+	Location		[1172, 432, 1537, 930]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -11559,7 +11559,7 @@ Library {
 	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
+	  sggui_pos		  "20,20,543,392"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
 	  sg_icon_stat		  "50,14,1,1,white,blue,0,83e6bb61,right,"
@@ -11586,7 +11586,7 @@ Library {
 	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
+	  sggui_pos		  "20,20,543,392"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
 	  sg_icon_stat		  "50,14,1,1,white,blue,0,83e6bb61,right,"
