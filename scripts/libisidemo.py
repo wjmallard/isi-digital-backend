@@ -5,9 +5,10 @@
 
 import corr
 import itertools
-import optparse
+import pylab
 import time
 import struct
+import sys
 
 #
 # Static variables
@@ -26,24 +27,16 @@ update_delay = 0
 ARM_RESET   = 1<<0
 FORCE_TRIG  = 1<<1
 FIFO_RESET  = 1<<2
-ACQUIRE     = 1<<3
+ACQUIRE	 = 1<<3
 CAPT_RESET  = 1<<4
 
 #
 # Initialization functions.
 #
 
-def board_connect (port=7147):
-	usage = "usage: %prog ADDR"
-	parser = optparse.OptionParser(usage=usage)
-	(options, args) = parser.parse_args()
-
-	if len (args) != 1:
-		parser.print_help()
-		sys.exit(1)
-
-	print "Connecting to %s on port %d." % (args[0], port)
-	fpga = corr.katcp_wrapper.FpgaClient(args[0], port)
+def board_connect (host='localhost', port=7147):
+	print "Connecting to %s on port %d." % (host, port)
+	fpga = corr.katcp_wrapper.FpgaClient(host, port)
 	time.sleep(.25)
 	return fpga
 
@@ -63,6 +56,25 @@ def board_init (fpga):
 	print "Sending intial sync pulse."
 	reset_fifo(fpga)
 	send_sync(fpga)
+
+#
+# Plot control functions.
+#
+
+def create_plot (num_plots, plot_num, num_points, y_min, y_max, label=None):
+	x = range(0, num_points)
+	y = [0] * num_points
+	y[0] = y_min
+	y[1] = y_max
+
+	ax = pylab.subplot(num_plots, 1, plot_num)
+	contour, = ax.plot(x, y, '-')
+	ax.autoscale_view(tight=True, scalex=True, scaley=True)
+
+	if label != None:
+		pylab.ylabel(label)
+
+	return (y, contour)
 
 #
 # Board control functions.
@@ -92,7 +104,7 @@ def send_sync (fpga):
 	bit_set(fpga, 'control', FORCE_TRIG)
 
 #
-# FPGA data readout functions.
+# Data readout functions.
 #
 
 def acquire (fpga):
@@ -131,7 +143,7 @@ def read_capt8 (fpga, capt_name, num_brams, read_len, signed=False):
 	return capt_data
 
 #
-# Stream manipulation functions
+# Block verification functions.
 #
 
 def uncat_adc (adc0_msb, adc0_lsb, adc1_msb, adc1_lsb):
@@ -162,6 +174,22 @@ def uncat_fft (eq_msb, eq_lsb):
 	eq_list = [x for y in eq_tuple for x in y]
 	return eq_list
 
+def unclump(A):
+	"""Inverts the compression operation of the clump block."""
+	X = []
+	num_frames = len(A)/16
+	for i in xrange(0, num_frames):
+		sof = i*16 + 4
+		eof = sof + 12
+		X += A[sof:eof]
+	X1 = X[0:None:3]
+	X2 = X[1:None:3]
+	X3 = X[2:None:3]
+	return (X1, X2, X3)
+
+def diff (x_list, y_list):
+	return [x-y for x,y in zip(x_list, y_list)]
+
 #
 # Block readout functions
 #
@@ -172,7 +200,7 @@ def read_adc (fpga, capt_block):
 	return adc
 
 def read_fft (fpga, capt_block):
-	(x0, x1) = read_capt8(fpga, capt_block, 4, freq_read_length)
+	(x0, x1) = read_capt8(fpga, capt_block, 2, freq_read_length)
 	fft = uncat_fft(x0, x1)
 	return fft
 

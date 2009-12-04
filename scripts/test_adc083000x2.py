@@ -6,7 +6,6 @@
 # desc: A control script for test_adc083000x2.mdl.
 
 import corr
-import sys
 import pylab
 import IPython
 
@@ -23,14 +22,7 @@ isi.board_init(fpga)
 print "Setting up plot."
 pylab.ion()
 
-index = range(0, isi.num_samples)
-
-ax1 = pylab.subplot(111)
-adc = [0] * isi.num_samples
-adc[0] = 128
-adc[1] = -128
-c_adc, = ax1.plot(index, adc, '-')
-ax1.autoscale_view(tight=True, scalex=True, scaley=True)
+(adc, c1) = isi.create_plot(1, 1, isi.num_samples, -128, 128, "Voltage")
 
 print "Looping forever."
 while True:
@@ -39,7 +31,7 @@ while True:
 
 	adc = isi.read_adc(fpga, "adc_capt_4x")
 
-	c_adc.set_ydata(adc)
+	c1.set_ydata(adc)
 
 	pylab.draw()
 

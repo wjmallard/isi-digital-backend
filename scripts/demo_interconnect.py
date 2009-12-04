@@ -6,78 +6,12 @@
 # desc: A control script for demo_interconnect.mdl.
 
 import corr
-import sys
-import time
-import optparse
-import struct
 import pylab
 import IPython
 
+import libisidemo as isi
+
 ipshell = IPython.Shell.IPShellEmbed()
-
-# Control flags
-
-ARM_RESET       = 1<<0
-FORCE_TRIG      = 1<<1
-FIFO_RESET      = 1<<2
-ACQUIRE         = 1<<3
-CAPT_RESET      = 1<<4
-
-#
-# Board control functions.
-#
-
-def bit_set (fpga, reg_name, flags):
-	reg_state = fpga.read_int(reg_name)
-	reg_state |= flags
-	fpga.write_int(reg_name, reg_state)
-
-def bit_unset (fpga, reg_name, flags):
-	reg_state = fpga.read_int(reg_name)
-	reg_state &= ~flags
-	fpga.write_int(reg_name, reg_state)
-
-def reset_fifo (fpga):
-	bit_set(fpga, 'control', FIFO_RESET)
-	time.sleep(.1)
-	bit_unset(fpga, 'control', FIFO_RESET)
-
-def send_sync (fpga):
-	"""Sends a new sync pulse through the system."""
-	bit_unset(fpga, 'control', ARM_RESET | FORCE_TRIG)
-	time.sleep(.1)
-	bit_set(fpga, 'control', ARM_RESET)
-	time.sleep(.1)
-	bit_set(fpga, 'control', FORCE_TRIG)
-
-#
-# FPGA data readout functions.
-#
-
-def acquire (fpga):
-	bit_unset(fpga, 'control', ACQUIRE)
-	bit_set(fpga, 'control', CAPT_RESET)
-	bit_unset(fpga, 'control', CAPT_RESET)
-	bit_set(fpga, 'control', ACQUIRE)
-	time.sleep(update_delay)
-
-def read_capt (fpga, capt_name, num_brams, read_len):
-	capt_data = []
-	for bram_num in xrange(0, num_brams):
-		bram_name = "capt_%s_bram%d" % (capt_name, bram_num)
-		bram_data = fpga.read(bram_name, read_len*4)
-		bram_vals = struct.unpack('>%sI' % read_len, bram_data)
-		capt_data += [bram_vals]
-	return capt_data
-
-def read_capt8 (fpga, capt_name, num_brams, read_len):
-	capt_data = []
-	for bram_num in xrange(0, num_brams):
-		bram_name = "capt_%s_bram%d" % (capt_name, bram_num)
-		bram_data = fpga.read(bram_name, read_len)
-		bram_vals = struct.unpack('>%sB' % read_len, bram_data)
-		capt_data += [bram_vals]
-	return capt_data
 
 #
 # Simulation functions.
