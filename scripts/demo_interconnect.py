@@ -101,15 +101,8 @@ def diff (x_list, y_list):
 
 # Parse command line arguments.
 
-usage = "usage: %prog [options] ADDR"
+usage = "usage: %prog ADDR"
 parser = optparse.OptionParser(usage=usage)
-parser.add_option("-P", "--port",
-	dest = "port", default = 7147,
-	help = "connect on the given port")
-parser.add_option("-p", "--program",
-	dest = "boffile", default = None,
-	help = "program with the specified bof file")
-
 (options, args) = parser.parse_args()
 
 if len (args) != 1:
@@ -121,15 +114,6 @@ if len (args) != 1:
 print "Connecting to %s on port %d." % (args[0], options.port)
 fpga = corr.katcp_wrapper.FpgaClient(args[0], options.port)
 time.sleep(.25)
-
-if options.boffile:
-	print "Programming device with %s." % (options.boffile)
-	status = fpga.progdev(options.boffile)
-	if status != "ok":
-		print "ERROR: Cannot program device!"
-		sys.exit(1)
-	else:
-		print "Program succeeded."
 
 print "Setting acquisition parameters."
 read_length = 1<<6
