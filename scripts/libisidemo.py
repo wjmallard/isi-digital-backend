@@ -22,6 +22,7 @@ num_chans = 0
 time_read_length = 0
 freq_read_length = 0
 update_delay = 0
+sync_period = 2**26
 
 #
 # Control flags
@@ -53,7 +54,7 @@ def board_init (fpga):
 
 	print "Initializing control registers."
 	fpga.write_int('control', 0)
-	fpga.write_int('sync_gen2_period', 2**26)
+	fpga.write_int('sync_gen2_period', sync_period)
 	fpga.write_int('sync_gen2_select', 1)
 
 	print "Sending intial sync pulse."
@@ -136,7 +137,7 @@ def bit_unset (fpga, reg_name, flags):
 
 def reset_fifo (fpga):
 	bit_set(fpga, 'control', FIFO_RESET)
-	time.sleep(.1)
+	time.sleep(1)
 	bit_unset(fpga, 'control', FIFO_RESET)
 
 def send_sync (fpga):
