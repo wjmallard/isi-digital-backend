@@ -25,7 +25,7 @@ print "Setting up plots."
 
 pylab.ion()
 
-((A,c_A), (B,c_B), (C,c_C)) = isi.create_plot2(3,
+c1,c2,c3 = isi.create_plot2(3,
 	[3] * 3,
 	[isi.num_samples] * 3,
 	[[0, 256]] * 3,
@@ -66,17 +66,17 @@ while True:
 	(YA, YB, YC) = isi.read_capt(fpga, "Z", 3, isi.num_samples)
 	(ZA, ZB, ZC) = isi.read_capt(fpga, "Y", 3, isi.num_samples)
 
-	c_A[0].set_ydata(tx2)
-	c_A[1].set_ydata(xr2)
-	c_A[2].set_ydata(XC)
+	c1[0].set_ydata(tx2)
+	c1[1].set_ydata(xr2)
+	c1[2].set_ydata(XC)
 
-	c_B[0].set_ydata(tx3)
-	c_B[1].set_ydata(xr3)
-	c_B[2].set_ydata(YA)
+	c2[0].set_ydata(tx3)
+	c2[1].set_ydata(xr3)
+	c2[2].set_ydata(YA)
 
-	c_C[0].set_ydata(tx6)
-	c_C[1].set_ydata(xr6)
-	c_C[2].set_ydata(ZA)
+	c3[0].set_ydata(tx6)
+	c3[1].set_ydata(xr6)
+	c3[2].set_ydata(ZA)
 
 	pylab.draw()
 

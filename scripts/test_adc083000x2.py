@@ -13,16 +13,22 @@ import libisidemo as isi
 
 ipshell = IPython.Shell.IPShellEmbed()
 
-isi.num_samples = 1<<7
+isi.num_samples = 1<<4
 isi.update_delay = 1 # seconds
 
 fpga = isi.board_connect()
 isi.board_init(fpga)
 
 print "Setting up plot."
+
 pylab.ion()
 
-(adc, c1) = isi.create_plot(1, 1, isi.num_samples, -128, 128, "Voltage")
+c1, = isi.create_plot2(1,
+	[1],
+	[isi.num_samples],
+	[[-128, 128]],
+	["Voltage"])
+isi.customize_window("ISI Test: adc083000x2")
 
 print "Looping forever."
 while True:
@@ -31,7 +37,7 @@ while True:
 
 	adc = isi.read_adc(fpga, "adc_capt_4x")
 
-	c1.set_ydata(adc)
+	c1[0].set_ydata(adc)
 
 	pylab.draw()
 

@@ -15,7 +15,7 @@ ipshell = IPython.Shell.IPShellEmbed()
 
 isi.num_samples = 1<<7
 isi.num_chans = 1<<6
-isi.update_delay = .1 # seconds
+isi.update_delay = 1 # seconds
 
 fpga = isi.board_connect()
 isi.board_init(fpga)
@@ -32,10 +32,12 @@ print "Setting up plots."
 
 pylab.ion()
 
-(adc, c1) = isi.create_plot(4, 1, isi.num_samples, -256, 256, "Voltage")
-(pfb, c2) = isi.create_plot(4, 2, isi.num_samples, -256, 256, "Voltage")
-(fft, c3) = isi.create_plot(4, 3, isi.num_chans, -256, 256, "Power")
-(eq, c4) = isi.create_plot(4, 4, isi.num_chans, -256, 256, "Eq. Power")
+c1,c2,c3,c4 = isi.create_plot2(4,
+	[1, 1, 1, 1],
+	[isi.num_samples, isi.num_samples, isi.num_chans, isi.num_chans],
+	[[-128,128],[-128,128],[0,256],[0,256]],
+	["Voltage","Voltage","Power","Eq, Power"])
+isi.customize_window("ISI Demo: F-Engine")
 
 print "Done setting up plots."
 
@@ -49,10 +51,10 @@ while True:
 	fft = isi.read_fft(fpga, "fft_capt_2x")
 	eq = isi.read_fft(fpga, "eq_capt_2x")
 
-	c1.set_ydata(adc)
-	c2.set_ydata(pfb)
-	c3.set_ydata(fft)
-	c4.set_ydata(eq)
+	c1[0].set_ydata(adc)
+	c2[0].set_ydata(pfb)
+	c3[0].set_ydata(fft)
+	c4[0].set_ydata(eq)
 
 	pylab.draw()
 

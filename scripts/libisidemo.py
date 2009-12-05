@@ -119,10 +119,6 @@ def create_plot2 (num_plots, num_subplots, x_lengths, y_bounds, labels):
 		plot_rect[1] -= plot_delta
 		ax = fig.add_axes(plot_rect, **axprops)
 
-		# update for next time
-		axprops['sharex'] = ax
-		axprops['sharey'] = ax
-
 		c_sublist = []
 		for j in xrange(num_subplots[i]):
 			c, = ax.plot(x_list[i][j], y_list[i][j])
@@ -138,7 +134,7 @@ def create_plot2 (num_plots, num_subplots, x_lengths, y_bounds, labels):
 
 	pylab.draw()
 
-	return zip(y_list, c_list)
+	return c_list
 
 def customize_window (window_title):
 	m = pylab.get_current_fig_manager()
