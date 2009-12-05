@@ -81,20 +81,26 @@ def create_plot (num_plots, plot_num, num_points, y_min, y_max, label=None):
 
 	return (y, contour)
 
-def create_plot2 (num_plots, x_lengths, y_bounds, labels):
+def create_plot2 (num_plots, num_subplots, x_lengths, y_bounds, labels):
 
 	x_list = []
 	y_list = []
 	for i in xrange(num_plots):
 		num_points = x_lengths[i]
 
-		x = range(0, num_points)
-		y = [0] * num_points
-		y[0] = y_bounds[i][0]
-		y[1] = y_bounds[i][1]
+		x_sublist = []
+		y_sublist = []
+		for j in xrange(num_subplots[i]):
+			x = range(0, num_points)
+			y = [0] * num_points
+			y[0] = y_bounds[i][0]
+			y[1] = y_bounds[i][1]
 
-		x_list += [x]
-		y_list += [y]
+			x_sublist += [x]
+			y_sublist += [y]
+
+		x_list += [x_sublist]
+		y_list += [y_sublist]
 
 	plot_delta = 1. / num_plots
 	plot_offset = 1.0
@@ -112,22 +118,32 @@ def create_plot2 (num_plots, x_lengths, y_bounds, labels):
 	for i in xrange(num_plots):
 		plot_rect[1] -= plot_delta
 		ax = fig.add_axes(plot_rect, **axprops)
-		c, = ax.plot(x_list[i], y_list[i])
+
+		# update for next time
+		axprops['sharex'] = ax
+		axprops['sharey'] = ax
+
+		c_sublist = []
+		for j in xrange(num_subplots[i]):
+			c, = ax.plot(x_list[i][j], y_list[i][j])
+			c_sublist += [c]
 
 		ax.set_ylabel(labels[i], **yprops)
 		ax.set_ybound(lower=y_bounds[i][0], upper=y_bounds[i][1])
 		ax.autoscale_view(tight=True, scalex=True, scaley=True)
 		pylab.setp(ax.get_xticklabels(), visible=False)
 
-		axprops['sharex'] = ax
-		axprops['sharey'] = ax
-
 		ax_list += [ax]
-		c_list += [c]
+		c_list += [c_sublist]
 
 	pylab.draw()
 
 	return zip(y_list, c_list)
+
+def customize_window (window_title):
+	m = pylab.get_current_fig_manager()
+	m.set_window_title(window_title)
+	m.toolbar.hide_all()
 
 #
 # Board control functions.
