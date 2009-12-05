@@ -32,7 +32,7 @@ print "Setting up plots."
 
 pylab.ion()
 
-c1,c2,c3,c4 = isi.create_plot2(4,
+c1,c2,c3,c4 = isi.create_plot(4,
 	[1, 1, 1, 1],
 	[isi.num_samples, isi.num_samples, isi.num_chans, isi.num_chans],
 	[[-128,128],[-128,128],[0,256],[0,256]],

@@ -13,8 +13,6 @@ import sys
 import IPython
 ipshell = IPython.Shell.IPShellEmbed()
 
-from matplotlib.numerix import sin, cos, exp, pi, arange
-
 #
 # Static variables
 #
@@ -32,7 +30,7 @@ update_delay = 0
 ARM_RESET   = 1<<0
 FORCE_TRIG  = 1<<1
 FIFO_RESET  = 1<<2
-ACQUIRE	 = 1<<3
+ACQUIRE     = 1<<3
 CAPT_RESET  = 1<<4
 
 #
@@ -66,22 +64,7 @@ def board_init (fpga):
 # Plot control functions.
 #
 
-def create_plot (num_plots, plot_num, num_points, y_min, y_max, label=None):
-	x = range(0, num_points)
-	y = [0] * num_points
-	y[0] = y_min
-	y[1] = y_max
-
-	ax = pylab.subplot(num_plots, 1, plot_num)
-	contour, = ax.plot(x, y, '-')
-	ax.autoscale_view(tight=True, scalex=True, scaley=True)
-
-	if label != None:
-		pylab.ylabel(label)
-
-	return (y, contour)
-
-def create_plot2 (num_plots, num_subplots, x_lengths, y_bounds, labels):
+def create_plot (num_plots, num_subplots, x_lengths, y_bounds, labels):
 
 	x_list = []
 	y_list = []
@@ -107,9 +90,7 @@ def create_plot2 (num_plots, num_subplots, x_lengths, y_bounds, labels):
 	plot_rect = [0.04, plot_offset, 0.96, plot_delta]
 
 	axprops = dict(yticks=[])
-	yprops = dict(rotation=90,
-		horizontalalignment='right',
-		verticalalignment='center')
+	yprops = dict(rotation=90)
 
 	fig = pylab.figure()
 
@@ -125,14 +106,12 @@ def create_plot2 (num_plots, num_subplots, x_lengths, y_bounds, labels):
 			c_sublist += [c]
 
 		ax.set_ylabel(labels[i], **yprops)
-		ax.set_ybound(lower=y_bounds[i][0], upper=y_bounds[i][1])
+		print "bound=[%d,%d]" % (y_bounds[i][0], y_bounds[i][1])
 		ax.autoscale_view(tight=True, scalex=True, scaley=True)
 		pylab.setp(ax.get_xticklabels(), visible=False)
 
 		ax_list += [ax]
 		c_list += [c_sublist]
-
-	pylab.draw()
 
 	return c_list
 

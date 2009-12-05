@@ -25,7 +25,7 @@ print "Setting up plots."
 
 pylab.ion()
 
-c1,c2,c3 = isi.create_plot2(3,
+c1,c2,c3 = isi.create_plot(3,
 	[3] * 3,
 	[isi.num_samples] * 3,
 	[[0, 256]] * 3,
