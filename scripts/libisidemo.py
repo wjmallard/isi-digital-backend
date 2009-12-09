@@ -103,7 +103,7 @@ def create_plot (num_plots, num_subplots, x_lengths, y_bounds, labels):
 
 		c_sublist = []
 		for j in xrange(num_subplots[i]):
-			c, = ax.plot(x_list[i][j], y_list[i][j])
+			c, = ax.plot(x_list[i][j], y_list[i][j], '.')
 			c_sublist += [c]
 
 		ax.set_ylabel(labels[i], **yprops)
@@ -241,7 +241,7 @@ def diff (x_list, y_list):
 
 def read_adc (fpga, capt_block):
 	(x0, x1, x2, x3) = read_capt8(fpga, capt_block, 4, time_read_length, signed=True)
-	adc = uncat_adc(x1, x1, x2, x3)
+	adc = uncat_adc(x0, x1, x2, x3)
 	return adc
 
 def read_fft (fpga, capt_block):
