@@ -245,7 +245,8 @@ def read_adc (fpga, capt_block):
 	return adc
 
 def read_fft (fpga, capt_block):
-	(x0, x1) = read_capt8(fpga, capt_block, 2, freq_read_length)
-	fft = uncat_fft(x0, x1)
+	msb = read_capt(fpga, capt_block + "_msb", 4, freq_read_length/4)
+	lsb = read_capt(fpga, capt_block + "_lsb", 4, freq_read_length/4)
+	fft = uncat_fft(msb, lsb)
 	return fft
 

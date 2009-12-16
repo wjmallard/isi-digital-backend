@@ -35,8 +35,8 @@ pylab.ion()
 c1,c2,c3,c4 = isi.create_plot(4,
 	[1, 1, 1, 1],
 	[isi.num_samples, isi.num_samples, isi.num_chans, isi.num_chans],
-	[[-128,128],[-128,128],[0,256],[0,256]],
-	["Voltage","Voltage","Power","Eq, Power"])
+	[[-128,128],[-128,128],[0,2**16],[0,2**16]],
+	["ADC Voltage","FIR Voltage","FFT Power","Eq FFT Power"])
 isi.customize_window("ISI Demo: F-Engine")
 
 print "Done setting up plots."
@@ -48,8 +48,8 @@ while True:
 
 	adc = isi.read_adc(fpga, "adc_capt_4x")
 	pfb = isi.read_adc(fpga, "pfb_capt_4x")
-	fft = isi.read_fft(fpga, "fft_capt_2x")
-	eq = isi.read_fft(fpga, "eq_capt_2x")
+	fft = isi.read_fft(fpga, "fft")
+	eq = isi.read_fft(fpga, "eq")
 
 	c1[0].set_ydata(adc)
 	c2[0].set_ydata(pfb)
