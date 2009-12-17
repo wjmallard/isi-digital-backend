@@ -209,12 +209,18 @@ def uncat_adc (adc0_msb, adc0_lsb, adc1_msb, adc1_lsb):
 
 def uncat_fft (eq_msb, eq_lsb):
 	"""Un-concatenates and re-interleaves fft data."""
-	iter0 = itertools.chain(eq_msb)
-	iter1 = itertools.chain(eq_lsb)
+	iter0 = itertools.chain(eq_msb[0])
+	iter1 = itertools.chain(eq_msb[1])
+	iter2 = itertools.chain(eq_msb[2])
+	iter3 = itertools.chain(eq_msb[3])
+	iter4 = itertools.chain(eq_lsb[0])
+	iter5 = itertools.chain(eq_lsb[1])
+	iter6 = itertools.chain(eq_lsb[2])
+	iter7 = itertools.chain(eq_lsb[3])
 	eq_tuple = itertools.izip \
 	( \
-		iter0, iter0, iter0, iter0, \
-		iter1, iter1, iter1, iter1, \
+		iter0, iter1, iter2, iter3, \
+		iter4, iter5, iter6, iter7, \
 	)
 	eq_list = [x for y in eq_tuple for x in y]
 	return eq_list

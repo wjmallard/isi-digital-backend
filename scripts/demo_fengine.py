@@ -35,7 +35,7 @@ pylab.ion()
 c3,c4 = isi.create_plot(2,
 	[1, 1],
 	[isi.num_chans, isi.num_chans],
-	[[0,2**18],[0,2**8]],
+	[[0,2**20],[0,2**8]],
 	["FFT Power","Eq FFT Power"])
 isi.customize_window("ISI Demo: F-Engine")
 
