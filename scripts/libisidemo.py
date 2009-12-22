@@ -119,7 +119,6 @@ def create_plot (num_plots, num_subplots, x_lengths, y_bounds, labels):
 def customize_window (window_title):
 	m = pylab.get_current_fig_manager()
 	m.set_window_title(window_title)
-	m.toolbar.hide_all()
 
 #
 # Board control functions.
