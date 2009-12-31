@@ -1,7 +1,7 @@
 # auth: Billy Mallard
 # mail: wjm@llard.net
 # date: 2009-12-30
-# desc: A library for the isi_correlator.
+# desc: The ISI Correlator library.
 
 import corr
 import itertools
@@ -92,22 +92,61 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 			XY_real, YZ_real, ZX_real, \
 			XY_imag, YZ_imag, ZX_imag)
 
+class IsiRoachFake(object):
+	"""
+	A fake ROACH board (for testing).
+	"""
+
+	def __init__ (self, id=0):
+		self._id = id
+
+	def read_int (self, name):
+		return 0
+
+	def write_int (self, name, value):
+		pass
+
+	def reset (self):
+		pass
+
+	def arm_sync (self):
+		pass
+
+	def send_sync (self):
+		pass
+
+	def acquire (self):
+		pass
+
+	def read_vacc (self, chan_group):
+		x = (1,1,1,1,1,1,1,1)
+		y = (x,x,x,x,x,x,x,x,x)
+		return y
+
 class IsiCorrelator(object):
 	"""
 	An abstraction of the three ROACH boards and their gateware.
 	"""
 
-	def __init__ (self):
+	def __init__ (self, hosts=('isi0', 'isi1', 'isi2'), ports=(7147, 7147, 7147)):
 		self._boards = []
+		self._hosts = hosts
+		self._ports = ports
 		self._num_chans = 64
 		self._sync_period = 2**26 # clocks
 		self._update_delay = .1 # seconds
 
-	def connect (self, hosts=("isi0", "isi1", "isi2"), ports=(7147, 7147, 7147)):
-		assert (len(hosts) == 3)
-		assert (len(ports) == 3)
+		self._connect()
+
+	def _connect (self):
+		assert (len(self._hosts) == 3)
+		assert (len(self._ports) == 3)
+
 		for i in xrange(3):
-			self._boards += [IsiRoachBoard(hosts[i], ports[i], i)]
+			if self._hosts[i] == 'fake':
+				self._boards += [IsiRoachFake(i)]
+			else:
+				self._boards += [IsiRoachBoard(self._hosts[i], self._ports[i], i)]
 
 	def set_sync_period (self, sync_period):
 		self._sync_period = sync_period
@@ -121,11 +160,11 @@ class IsiCorrelator(object):
 			board.write_int('sync_gen2_period', sync_period)
 			board.write_int('sync_gen2_select', sync_select)
 
-	def set_fft_shift (shift):
+	def set_fft_shift (self, shift):
 		for board in self._boards:
 			board.write_int('fft_shift', shift)
 
-	def set_eq_coeff (coeff):
+	def set_eq_coeff (self, coeff):
 		for board in self._boards:
 			board.write_int('eq_coeff', coeff)
 
@@ -137,13 +176,17 @@ class IsiCorrelator(object):
 		for board in self._boards:
 			board.arm_sync()
 
+	def send_sync (self):
+		for board in self._boards:
+			board.send_sync()
+
 	def acquire (self):
 		for board in self._boards:
 			board.acquire()
 		time.sleep(self._update_delay)
 
-	def get_data ():
-		"""Permute data into a useful order."""
+	def get_data (self):
+		"""Permutes data into a useful order."""
 		XA = self._boards[0].read_vacc('A')
 		XB = self._boards[0].read_vacc('B')
 		XC = self._boards[0].read_vacc('C')
@@ -182,68 +225,79 @@ class IsiCorrelator(object):
 			XY_real, YZ_real, ZX_real, \
 			XY_imag, YZ_imag, ZX_imag)
 
+class IsiDisplay(object):
+	"""
+	A real-time graphical baseline display.
+	"""
 
+	def __init__ (self):
+		self._num_rows = 3
+		self._num_cols = 3
+		self._num_plots = self._num_rows * self._num_cols
 
-#
-# ASSUME THAT NOTHING WORKS BELOW HERE ...
-#
+		self._num_channels = 64
+		self._ymin = 0
+		self._ymax = 2**8
 
-#
-# Plot control functions.
-#
+		self._fig = None
+		self._axes_l = None
+		self._contour_l = None
 
-def create_plots (num_channels):
-	#(num_plots, num_subplots, x_lengths, y_bounds, labels):
+		self._label_l = \
+			("XX_auto", "YY_auto", "ZZ_auto", \
+			 "XY_real", "YZ_real", "ZX_real", \
+			 "XY_imag", "YX_imag", "ZX_imag")
 
-	num_rows = 8
-	num_cols = 9
-	y_min = 0
-	y_max = 2**28
+		self._init_window()
+		self._init_plots()
 
-	xdata = range(0, num_channels)
-	ydata_ll = []
-	for i in xrange(num_rows):
-		ydata_l = []
-		for j in xrange(num_cols):
-			ydata = [0] * num_channels
-			y[0] = y_min
-			y[1] = y_max
-			ydata_l += ydata
-		ydata_ll += [ydata_l]
+	def _init_window (self):
+		"""Initializes _fig. Creates a graph window."""
+		
+		pylab.ion()
+		self._fig = pylab.figure()
+		m = pylab.get_current_fig_manager()
+		m.set_window_title("ISI Correlator")
 
-	xoffset = 0.0
-	yoffset = 1.0
-	xwidth = 1. / num_cols
-	ywidth = 1. / num_rows
-	plot_rect = [xoffset, yoffset, xwidth, ywidth]
+	def _init_plots (self):
+		"""Initializes _axes_l and _contour_l."""
 
-	axprops = dict(yticks=[])
-	yprops = dict(rotation=90)
+		width = 1. / self._num_cols
+		height = 1. / self._num_rows
 
-	fig = pylab.figure()
+		xdata = range(0, self._num_channels)
+		ydata = [0] * self._num_channels
+		ydata[0] = self._ymax
+		ydata[1] = self._ymin
 
-	ax_list = []
-	c_list = []
-	for i in xrange(num_plots):
-		plot_rect[1] -= plot_delta
-		ax = fig.add_axes(plot_rect, **axprops)
+		axprops = dict(yticks=[])
 
-		c_sublist = []
-		for j in xrange(num_subplots[i]):
-			c, = ax.plot(x_list[i][j], y_list[i][j], '.')
-			c_sublist += [c]
+		self._axes_l = []
+		self._contour_l = []
 
-		ax.set_ylabel(labels[i], **yprops)
-		print "bound=[%d,%d]" % (y_bounds[i][0], y_bounds[i][1])
-		ax.autoscale_view(tight=True, scalex=True, scaley=True)
-		pylab.setp(ax.get_xticklabels(), visible=False)
+		for i in xrange(self._num_rows):
+			for j in xrange(self._num_cols):
 
-		ax_list += [ax]
-		c_list += [c_sublist]
+				rect = [j*width, 1-(i+1)*height, width, height]
+				axes = self._fig.add_axes(rect, **axprops)
+				contour, = axes.plot(xdata, ydata, '.')
 
-	return c_list
+				plot_num = i * self._num_cols + j
+				label = self._label_l[plot_num]
+				contour.set_label(label)
+				axes.text(1, 2, label, fontsize=10)
 
-def customize_window (window_title):
-	m = pylab.get_current_fig_manager()
-	m.set_window_title(window_title)
+				axes.autoscale_view(tight=True, scalex=True, scaley=True)
+				pylab.setp(axes.get_xticklabels(), visible=False)
+
+				self._axes_l += [axes]
+				self._contour_l += [contour]
+
+	def set_data (self, data):
+		"""
+		Updates the ydata for all contours and redraws the plots.
+		"""
+		for i in xrange(self._num_plots):
+			self._contour_l[i].set_ydata(data[i])
+		pylab.draw()
 
