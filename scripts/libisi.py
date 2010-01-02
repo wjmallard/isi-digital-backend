@@ -106,6 +106,9 @@ class IsiRoachFake(object):
 	def write_int (self, name, value):
 		pass
 
+	def progdev (self, filename):
+		pass
+
 	def reset (self):
 		pass
 
@@ -147,6 +150,13 @@ class IsiCorrelator(object):
 				self._boards += [IsiRoachFake(i)]
 			else:
 				self._boards += [IsiRoachBoard(self._hosts[i], self._ports[i], i)]
+
+	def program (self, filename):
+		print "Programming boards ..."
+		for board in self._boards:
+			board.progdev(filename)
+		time.sleep(.25)
+		print "... done!"
 
 	def set_sync_period (self, sync_period):
 		self._sync_period = sync_period

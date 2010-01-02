@@ -7,8 +7,10 @@
 
 from libisi import *
 
-I = IsiCorrelator(hosts=('localhost', 'fake', 'fake'))
+I = IsiCorrelator(hosts=('localhost', 'localhost', 'fake'), ports=(7147,7148,0))
 D = IsiDisplay()
+
+#I.program('isi_correlator.bof')
 
 I.set_sync_period(2**12)
 I.set_fft_shift(0x7f)
