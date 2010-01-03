@@ -82,12 +82,12 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		XX_auto = self._read_bram("auto_acc_" + chan_group, 0, 8)
 		YY_auto = self._read_bram("auto_acc_" + chan_group, 1, 8)
 		ZZ_auto = self._read_bram("auto_acc_" + chan_group, 2, 8)
-		XY_real = self._read_bram("auto_acc_" + chan_group, 0, 8)
-		YZ_real = self._read_bram("auto_acc_" + chan_group, 1, 8)
-		ZX_real = self._read_bram("auto_acc_" + chan_group, 2, 8)
-		XY_imag = self._read_bram("auto_acc_" + chan_group, 0, 8)
-		YZ_imag = self._read_bram("auto_acc_" + chan_group, 1, 8)
-		ZX_imag = self._read_bram("auto_acc_" + chan_group, 2, 8)
+		XY_real = self._read_bram("real_acc_" + chan_group, 0, 8)
+		YZ_real = self._read_bram("real_acc_" + chan_group, 1, 8)
+		ZX_real = self._read_bram("real_acc_" + chan_group, 2, 8)
+		XY_imag = self._read_bram("imag_acc_" + chan_group, 0, 8)
+		YZ_imag = self._read_bram("imag_acc_" + chan_group, 1, 8)
+		ZX_imag = self._read_bram("imag_acc_" + chan_group, 2, 8)
 		return (XX_auto, YY_auto, ZZ_auto, \
 			XY_real, YZ_real, ZX_real, \
 			XY_imag, YZ_imag, ZX_imag)
