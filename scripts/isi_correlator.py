@@ -7,7 +7,7 @@
 
 from libisi import *
 
-I = IsiCorrelator(hosts=('localhost', 'localhost', 'fake'), ports=(7147,7148,0))
+I = IsiCorrelator(hosts=('localhost', 'localhost', 'localhost'), ports=(7147,7148,7149))
 D = IsiDisplay()
 
 #I.program('isi_correlator.bof')

@@ -30,7 +30,6 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		self._port = port
 		self._id = id
 		time.sleep(.25) # NOTE: race condition!
-		self.reset()
 
 	def _set_flag (self, flags):
 		reg_state = self.read_int('control')
@@ -146,10 +145,12 @@ class IsiCorrelator(object):
 		assert (len(self._ports) == 3)
 
 		for i in xrange(3):
+			new_board = None
 			if self._hosts[i] == 'fake':
-				self._boards += [IsiRoachFake(i)]
+				new_board = IsiRoachFake(i)
 			else:
-				self._boards += [IsiRoachBoard(self._hosts[i], self._ports[i], i)]
+				new_board = IsiRoachBoard(self._hosts[i], self._ports[i], i)
+			self._boards += [new_board]
 
 	def program (self, filename):
 		print "Programming boards ..."
