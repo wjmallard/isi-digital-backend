@@ -159,16 +159,21 @@ def acquire (fpga):
 	time.sleep(update_delay)
 
 def read_capt (fpga, capt_name, num_brams, read_len, signed=False):
-	if signed:
-		fmt = '>%sb'
+	if capt_name == None:
+		capt_str = 'capt_bram'
 	else:
-		fmt = '>%sB'
+		capt_str = "capt_%s_bram" % (capt_name)
+
+	if signed:
+		fmt = '!%si'
+	else:
+		fmt = '!%sI'
 
 	capt_data = []
 	for bram_num in xrange(0, num_brams):
-		bram_name = "capt_%s_bram%d" % (capt_name, bram_num)
+		bram_name = "%s%d" % (capt_str, bram_num)
 		bram_data = fpga.read(bram_name, read_len*4)
-		bram_vals = struct.unpack('>%sI' % read_len, bram_data)
+		bram_vals = struct.unpack(fmt % read_len, bram_data)
 		capt_data += [bram_vals]
 	return capt_data
 
