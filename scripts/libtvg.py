@@ -10,27 +10,33 @@ import struct
 
 def sine (length, cycles=1, phase=0):
 	x = xrange(length)
-	A = 2**7-1
+	A = (2**7)-1
 	B = 2*math.pi*cycles/length
 	C = 2*math.pi*phase
 	y = [int(A*math.sin(B*t+C)) for t in x]
 	return arrayToByteString(y)
 
 def rand (length, seed=None):
-    random.seed(seed)
-    y = [(2**8)*random.random() for x in xrange(length)]
-    return arrayToByteString(y)
+	random.seed(seed)
+	A = 2**8
+	y = [int(A*random.random()) for x in xrange(length)]
+	return arrayToByteString(y, signed=False)
 
-def arrayToByteString (array):
-	byteStrings = [struct.pack('!1b', x) for x in array]
+def arrayToByteString (array, signed=True):
+	if signed:
+		fmt = '!1b'
+	else:
+		fmt = '!1B'
+
+	byteStrings = [struct.pack(fmt, x) for x in array]
 	byteString = ''.join(byteStrings)
 	return byteString
 
 def main ():
 	s = sine(8, 1.5, .5)
-	print s
 	r = rand(8, 1234)
-	print r
+	print "Sine: %s" % (s)
+	print "Rand: %s" % (r)
 
 if __name__ == "__main__":
 	main()
