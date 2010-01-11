@@ -24,12 +24,16 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 	ACQUIRE     = 1<<3
 	CAPT_RESET  = 1<<4
 
-	def __init__ (self, host, port, id=0):
+	def __init__ (self, host, port, id=0, tv=None):
 		super(IsiRoachBoard, self).__init__(host, port)
 		self._host = host
 		self._port = port
 		self._id = id
+		self._tv = tv
 		time.sleep(.25) # NOTE: race condition!
+
+		if self._tv != None:
+			self._fill_tvg(self._tv)
 
 	def _set_flag (self, flags):
 		reg_state = self.read_int('control')
@@ -51,6 +55,12 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		bram_dump = self.read(bram_name, read_len*4)
 		bram_data = struct.unpack('>%sI' % read_len, bram_dump)
 		return bram_data
+
+	def _fill_tvg (self, tv):
+		self.write("adc_tvg_tvg0_bram", tv)
+		self.write("adc_tvg_tvg1_bram", tv)
+		self.write("adc_tvg_tvg2_bram", tv)
+		self.write("adc_tvg_tvg3_bram", tv)
 
 	def reset (self):
 		self.write_int('fft_shift', 0)
@@ -130,10 +140,14 @@ class IsiCorrelator(object):
 	An abstraction of the three ROACH boards and their gateware.
 	"""
 
-	def __init__ (self, hosts=('isi0', 'isi1', 'isi2'), ports=(7147, 7147, 7147)):
+	def __init__ (self, \
+					hosts=('isi0', 'isi1', 'isi2'), \
+					ports=(7147, 7147, 7147), \
+					tvs=(None, None, None)):
 		self._boards = []
 		self._hosts = hosts
 		self._ports = ports
+		self._tvs = tvs
 		self._num_chans = 64
 		self._sync_period = 2**26 # clocks
 		self._update_delay = .1 # seconds
@@ -149,7 +163,7 @@ class IsiCorrelator(object):
 			if self._hosts[i] == 'fake':
 				new_board = IsiRoachFake(i)
 			else:
-				new_board = IsiRoachBoard(self._hosts[i], self._ports[i], i)
+				new_board = IsiRoachBoard(self._hosts[i], self._ports[i], i, self._tvs[i])
 			self._boards += [new_board]
 
 	def program (self, filename):
