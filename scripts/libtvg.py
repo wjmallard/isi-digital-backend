@@ -8,10 +8,13 @@ import math
 import random
 import struct
 
-def sine (length, cycles=1):
+def sine (length, cycles=1, phase=0):
 	x = xrange(length)
-	y = [int((1<<31)*math.sin(cycles*(2*math.pi*t)/(length-1))) for t in x]
-	return wordToByteString(y)
+	A = 2**7-1
+	B = 2*math.pi*cycles/length
+	C = 2*math.pi*phase
+	y = [int(A*math.sin(B*t+C)) for t in x]
+	return arrayToByteString(y)
 
 class lfsr32 (object):
 	"""A 32-stage Linear Feedback Shift Register."""
@@ -30,8 +33,8 @@ class lfsr32 (object):
 		self._state = and_taps | self._state >> 1
 		return self._state
 
-def wordToByteString (array):
-	byteStrings = [struct.pack('!1i', x) for x in array]
+def arrayToByteString (array):
+	byteStrings = [struct.pack('!1b', x) for x in array]
 	byteString = ''.join(byteStrings)
 	return byteString
 
