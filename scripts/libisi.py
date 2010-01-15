@@ -15,7 +15,7 @@ ipshell = IPython.Shell.IPShellEmbed()
 
 class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 	"""
-	A wrapper around the KATCP FPGA Client class.
+	An ISI-specific extension of the KATCP FPGA Client class.
 	"""
 
 	ARM_RESET   = 1<<0
@@ -211,7 +211,7 @@ class IsiCorrelator(object):
 		time.sleep(self._update_delay)
 
 	def get_data (self):
-		"""Permutes data into a useful order."""
+		"""Read vacc data and permute it into a useful order."""
 		XA = self._boards[0].read_vacc('A')
 		XB = self._boards[0].read_vacc('B')
 		XC = self._boards[0].read_vacc('C')
@@ -277,7 +277,7 @@ class IsiDisplay(object):
 		self._init_plots()
 
 	def _init_window (self):
-		"""Initializes _fig. Creates a graph window."""
+		"""Initialize _fig. Create a graph window."""
 		
 		pylab.ion()
 		self._fig = pylab.figure()
@@ -285,7 +285,7 @@ class IsiDisplay(object):
 		m.set_window_title("ISI Correlator")
 
 	def _init_plots (self):
-		"""Initializes _axes_l and _contour_l."""
+		"""Initialize _axes_l and _contour_l."""
 
 		width = 1. / self._num_cols
 		height = 1. / self._num_rows
@@ -320,7 +320,7 @@ class IsiDisplay(object):
 
 	def set_data (self, data):
 		"""
-		Updates the ydata for all contours and redraws the plots.
+		Update the ydata for all contours and redraw the plots.
 		"""
 		for i in xrange(self._num_plots):
 			self._contour_l[i].set_ydata(data[i])
