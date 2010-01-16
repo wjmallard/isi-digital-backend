@@ -9,12 +9,54 @@ import math
 import random
 import struct
 
+import IPython
+ipshell = IPython.Shell.IPythonShellEmbed()
+
 def cplx_pwr (z):
 	"""Calculate the complex power of an array."""
 	p = [(a*a.conj()).real for a in z]
 	return p
 
+def fxn_sum (fxns):
+	"""Sum and normalize an arbitrary list of functions."""
+	c = 1./len(fxns)
+	f = [c*sum(a) for a in itertools.izip(*fxns)]
+	return f
+
+def prep_for_bram (array, num_inputs, bram_size):
+	window_length = len(array)
+	num_brams = num_inputs / 4
+	num_reps = (bram_size / window_length) * num_brams
+
+	iter_l = []
+	for i in xrange(num_brams):
+		# Grab one byte per input.
+		iter0 = itertools.islice(array, 4*i+0, None, num_inputs)
+		iter1 = itertools.islice(array, 4*i+1, None, num_inputs)
+		iter2 = itertools.islice(array, 4*i+2, None, num_inputs)
+		iter3 = itertools.islice(array, 4*i+3, None, num_inputs)
+
+		# Clump bytes into words.
+		iterZ = itertools.izip(iter0, iter1, iter2, iter3)
+		iterC = itertools.chain.from_iterable(iterZ)
+
+		# Flatten iterator to list.
+		window = [x for x in iterC]
+
+		# Loop sequence to fill bram.
+		iterR = itertools.repeat(window, num_reps)
+		iter = itertools.chain.from_iterable(iterR)
+
+		iter_l += [iter]
+
+	bram_l = []
+	for bram_data in iter_l:
+		bram_l += [scaleByteString(bram_data)]
+
+	return bram_l
+
 def scaleByteString (array):
+	"""Scale an array and return it as a byte string."""
 	c = 2**6
 	X = [int(c*x) for x in array]
 	A = [struct.pack('!1b', x) for x in X]
@@ -22,6 +64,7 @@ def scaleByteString (array):
 	return B
 
 def scaleArray (array):
+	"""Scale an array and return it as an array."""
 	c = 2**6
 	X = [int(c*x) for x in array]
 	return X

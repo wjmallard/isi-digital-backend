@@ -24,16 +24,13 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 	ACQUIRE     = 1<<3
 	CAPT_RESET  = 1<<4
 
-	def __init__ (self, host, port, id=0, tv=None):
+	def __init__ (self, host, port, id=0):
 		super(IsiRoachBoard, self).__init__(host, port)
 		self._host = host
 		self._port = port
 		self._id = id
-		self._tv = tv
+		self._tv = None
 		time.sleep(.25) # NOTE: race condition!
-
-		if self._tv != None:
-			self._fill_tvg(self._tv)
 
 	def _set_flag (self, flags):
 		reg_state = self.read_int('control')
@@ -50,17 +47,10 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		time.sleep(.1)
 		self._unset_flag(flag)
 
-	def _read_bram (self, capt_name, bram_num, read_len):
-		bram_name = "capt_%s_bram%d" % (capt_name, bram_num)
+	def _read_bram (self, bram_name, read_len):
 		bram_dump = self.read(bram_name, read_len*4)
 		bram_data = struct.unpack('>%sI' % read_len, bram_dump)
 		return bram_data
-
-	def _fill_tvg (self, tv):
-		self.write("adc_tvg_tvg0_bram", tv)
-		self.write("adc_tvg_tvg1_bram", tv)
-		self.write("adc_tvg_tvg2_bram", tv)
-		self.write("adc_tvg_tvg3_bram", tv)
 
 	def reset (self):
 		self.write_int('fft_shift', 0)
@@ -81,6 +71,18 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		self.arm_sync()
 		self._set_flag(IsiRoachBoard.FORCE_TRIG)
 
+	def load_tvg (self, tv):
+		assert (len(tv) == 4)
+
+		try:
+			self.write("adc_tvg_tvg0_bram", tv[0])
+			self.write("adc_tvg_tvg1_bram", tv[1])
+			self.write("adc_tvg_tvg2_bram", tv[2])
+			self.write("adc_tvg_tvg3_bram", tv[3])
+			self._tv = tv
+		except RuntimeError:
+			print "Warning: Cannot load tvg on board %d." % (self._id)
+
 	def acquire (self):
 		self._unset_flag(IsiRoachBoard.ACQUIRE)
 		self._set_flag(IsiRoachBoard.CAPT_RESET)
@@ -88,15 +90,16 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		self._set_flag(IsiRoachBoard.ACQUIRE)
 
 	def read_vacc (self, chan_group):
-		XX_auto = self._read_bram("auto_acc_" + chan_group, 0, 8)
-		YY_auto = self._read_bram("auto_acc_" + chan_group, 1, 8)
-		ZZ_auto = self._read_bram("auto_acc_" + chan_group, 2, 8)
-		XY_real = self._read_bram("real_acc_" + chan_group, 0, 8)
-		YZ_real = self._read_bram("real_acc_" + chan_group, 1, 8)
-		ZX_real = self._read_bram("real_acc_" + chan_group, 2, 8)
-		XY_imag = self._read_bram("imag_acc_" + chan_group, 0, 8)
-		YZ_imag = self._read_bram("imag_acc_" + chan_group, 1, 8)
-		ZX_imag = self._read_bram("imag_acc_" + chan_group, 2, 8)
+		bram_name = "capt_%s_acc_%c_bram%d"
+		XX_auto = self._read_bram(bram_name % ("auto", chan_group, 0), 8)
+		YY_auto = self._read_bram(bram_name % ("auto", chan_group, 1), 8)
+		ZZ_auto = self._read_bram(bram_name % ("auto", chan_group, 2), 8)
+		XY_real = self._read_bram(bram_name % ("real", chan_group, 0), 8)
+		YZ_real = self._read_bram(bram_name % ("real", chan_group, 1), 8)
+		ZX_real = self._read_bram(bram_name % ("real", chan_group, 2), 8)
+		XY_imag = self._read_bram(bram_name % ("imag", chan_group, 0), 8)
+		YZ_imag = self._read_bram(bram_name % ("imag", chan_group, 1), 8)
+		ZX_imag = self._read_bram(bram_name % ("imag", chan_group, 2), 8)
 		return (XX_auto, YY_auto, ZZ_auto, \
 			XY_real, YZ_real, ZX_real, \
 			XY_imag, YZ_imag, ZX_imag)
@@ -142,12 +145,10 @@ class IsiCorrelator(object):
 
 	def __init__ (self, \
 					hosts=('isi0', 'isi1', 'isi2'), \
-					ports=(7147, 7147, 7147), \
-					tvs=(None, None, None)):
+					ports=(7147, 7147, 7147)):
 		self._boards = []
 		self._hosts = hosts
 		self._ports = ports
-		self._tvs = tvs
 		self._num_chans = 64
 		self._sync_period = 2**26 # clocks
 		self._update_delay = .1 # seconds
@@ -163,7 +164,7 @@ class IsiCorrelator(object):
 			if self._hosts[i] == 'fake':
 				new_board = IsiRoachFake(i)
 			else:
-				new_board = IsiRoachBoard(self._hosts[i], self._ports[i], i, self._tvs[i])
+				new_board = IsiRoachBoard(self._hosts[i], self._ports[i], i)
 			self._boards += [new_board]
 
 	def program (self, filename):
@@ -172,6 +173,10 @@ class IsiCorrelator(object):
 			board.progdev(filename)
 		time.sleep(.25)
 		print "... done!"
+
+	def load_tvg (self, tvs):
+		for i in xrange(3):
+			self._boards[i].load_tvg(tvs[i])
 
 	def set_sync_period (self, sync_period):
 		self._sync_period = sync_period
@@ -259,10 +264,7 @@ class IsiDisplay(object):
 		self._num_rows = 3
 		self._num_cols = 3
 		self._num_plots = self._num_rows * self._num_cols
-
 		self._num_channels = 64
-		self._ymin = 0
-		self._ymax = 2**8
 
 		self._fig = None
 		self._axes_l = None
@@ -287,15 +289,14 @@ class IsiDisplay(object):
 	def _init_plots (self):
 		"""Initialize _axes_l and _contour_l."""
 
-		width = 1. / self._num_cols
-		height = 1. / self._num_rows
+		pwidth = 1. / self._num_cols
+		pheight = 1. / self._num_rows
+		lwidth = .08
 
-		xdata = range(0, self._num_channels)
 		ydata = [0] * self._num_channels
-		ydata[0] = self._ymax
-		ydata[1] = self._ymin
 
-		axprops = dict(yticks=[])
+		axprops = dict(yticklabels=[])
+		yprops = dict(rotation=90)
 
 		self._axes_l = []
 		self._contour_l = []
@@ -303,16 +304,17 @@ class IsiDisplay(object):
 		for i in xrange(self._num_rows):
 			for j in xrange(self._num_cols):
 
-				rect = [j*width, 1-(i+1)*height, width, height]
+				rect = [(j+lwidth)*pwidth, 1-(i+1)*pheight, (1-lwidth)*pwidth, pheight]
 				axes = self._fig.add_axes(rect, **axprops)
-				contour, = axes.plot(xdata, ydata, '.')
+				contour, = axes.plot(ydata, '.')
 
 				plot_num = i * self._num_cols + j
 				label = self._label_l[plot_num]
 				contour.set_label(label)
-				axes.text(1, 2, label, fontsize=10)
+				axes.set_ylabel(label, labelpad=-5, **yprops)
 
-				axes.autoscale_view(tight=True, scalex=True, scaley=True)
+				axes.set_xlim(0, self._num_channels)
+				axes.set_ylim(ymin=0)
 				pylab.setp(axes.get_xticklabels(), visible=False)
 
 				self._axes_l += [axes]
@@ -322,7 +324,11 @@ class IsiDisplay(object):
 		"""
 		Update the ydata for all contours and redraw the plots.
 		"""
+		assert (len(data) == self._num_plots)
+
 		for i in xrange(self._num_plots):
 			self._contour_l[i].set_ydata(data[i])
+			self._axes_l[i].set_ylim(ymax=1.1*max(data[i]))
+
 		pylab.draw()
 
