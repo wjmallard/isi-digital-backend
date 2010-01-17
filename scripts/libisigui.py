@@ -66,7 +66,7 @@ class IsiGui (gtk.Window):
 		fft_shift_entry.connect("changed", self._fft_shift_action)
 		ctrl_panel.pack_start(fft_shift_entry, True, True, 0)
 
-		eq_coeff_entry = gtk.Entry(3)
+		eq_coeff_entry = gtk.Entry(5)
 		eq_coeff_entry.connect("changed", self._eq_coeff_action)
 		ctrl_panel.pack_start(eq_coeff_entry, True, True, 0)
 
@@ -92,7 +92,7 @@ class IsiGui (gtk.Window):
 		self._isi_correlator.set_fft_shift(shift)
 
 	def _eq_coeff_action (self, widget):
-		coeff = self._validate_entry(widget, 0x00, 0xff)
+		coeff = self._validate_entry(widget, 0x0000, 0xffff)
 		self._isi_correlator.set_eq_coeff(coeff)
 
 	def _quit_action (self, widget):
