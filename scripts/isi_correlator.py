@@ -5,8 +5,8 @@
 # date: 2009-12-30
 # desc: The ISI Correlator display.
 
-from libisi import *
-from libtvg import *
+from libisicorr import *
+from libisitvg import *
 
 L=2**7
 f1 = sine_wave(L, cycles=200, phase=0)

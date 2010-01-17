@@ -5,17 +5,24 @@ pygtk.require('2.0')
 import gtk
 import gobject
 
-import matplotlib
-matplotlib.use('GTKAgg')
-from matplotlib.backends.backend_gtk import FigureCanvasGTK as FigureCanvas
-from matplotlib.figure import Figure
+import libisiplot
+import libisi
 
 class IsiGui (gtk.Window):
-	def __init__ (self):
+	def __init__ (self, corr):
 		gtk.Window.__init__(self)
+
+		self._isi_correlator = corr
+		self._num_chans = corr.get_num_chans()
 
 		self._canvas = None
 		self._figure = None
+		self._axes_l = None
+		self._contour_l = None
+		self._label_l = \
+			("XX_auto", "YY_auto", "ZZ_auto", \
+			 "XY_real", "YZ_real", "ZX_real", \
+			 "XY_imag", "YX_imag", "ZX_imag")
 
 		self._set_params()
 
@@ -37,8 +44,8 @@ class IsiGui (gtk.Window):
 		self.set_border_width(8)
 
 	def _gen_canvas (self):
-		self._figure = Figure(figsize=(8,6), dpi=100)
-		self._canvas = FigureCanvas(self._figure)
+		self._figure = libisiplot.IsiFigure()
+		self._canvas = libisiplot.IsiCanvas(self._figure)
 		return self._canvas
 
 	def _gen_cpanel (self):
@@ -73,6 +80,7 @@ class IsiGui (gtk.Window):
 		return self._figure
 
 	def start (self):
+		gobject.timeout_add(self._update_timeout, self._update_action)
 		gtk.main()
 
 if __name__ == "__main__":
