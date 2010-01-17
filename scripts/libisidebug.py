@@ -51,6 +51,11 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 
 		return c_list
 
+	def _read_bram8 (self, bram_name, read_len):
+		bram_dump = self.read(bram_name, read_len)
+		bram_data = struct.unpack('>%sb' % read_len, bram_dump)
+		return bram_data
+
 	def read_capt (self, capt_name, num_brams, read_len):
 		capt_data = []
 		for bram_num in xrange(num_brams):
@@ -63,7 +68,7 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 		capt_data = []
 		for bram_num in xrange(num_brams):
 			bram_name = "capt_%s_bram%d" % (capt_name, bram_num)
-			bram_vals = self._read_bram(bram_name, read_len)
+			bram_vals = self._read_bram8(bram_name, read_len)
 			capt_data += [bram_vals]
 		return capt_data
 
@@ -125,14 +130,14 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 	# Block readout functions
 	#
 
-	def read_adc (self, capt_block):
-		(x0, x1, x2, x3) = read_capt8(fpga, capt_block, 4, time_read_length)
-		adc = uncat_adc(x0, x1, x2, x3)
+	def read_adc (self, capt_block, read_len):
+		(x0, x1, x2, x3) = self.read_capt8(capt_block, 4, read_len/4)
+		adc = self.uncat_adc(x0, x1, x2, x3)
 		return adc
 
-	def read_fft (self, capt_block):
-		msb = read_capt(fpga, capt_block + "_msb", 4, freq_read_length/4)
-		lsb = read_capt(fpga, capt_block + "_lsb", 4, freq_read_length/4)
-		fft = uncat_fft(msb, lsb)
+	def read_fft (self, capt_block, read_len):
+		msb = self.read_capt(capt_block + "_msb", 4, read_len/4)
+		lsb = self.read_capt(capt_block + "_lsb", 4, read_len/4)
+		fft = self.uncat_fft(msb, lsb)
 		return fft
 
