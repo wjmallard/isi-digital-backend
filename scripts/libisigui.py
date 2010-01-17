@@ -43,40 +43,79 @@ class IsiGui (gtk.Window):
 		canvas = self._gen_canvas()
 		vbox.pack_start(canvas)
 
-		cpanel = self._gen_cpanel()
-		vbox.pack_start(cpanel, False, False)
+		ctrl_panel = self._gen_ctrl_panel()
+		vbox.pack_start(ctrl_panel, False, False)
 
 	def _gen_canvas (self):
 		self._figure = libisiplot.IsiFigure()
 		self._canvas = libisiplot.IsiCanvas(self._figure)
 		return self._canvas
 
-	def _gen_cpanel (self):
-		cpanel = gtk.HBox()
+	def _gen_ctrl_panel (self):
+		ctrl_panel = gtk.HButtonBox()
+
+		freeze_checkbox = gtk.ToggleButton("Freeze")
+		freeze_checkbox.connect("clicked", self._freeze_action)
+		ctrl_panel.pack_start(freeze_checkbox, True, True, 0)
 
 		sync_button = gtk.Button("Sync")
 		sync_button.connect("clicked", self._sync_action)
-		cpanel.pack_start(sync_button, True, True, 0)
+		ctrl_panel.pack_start(sync_button, True, True, 0)
 
-		fft_shift_button = gtk.Button("FFT Shift")
-		fft_shift_button.connect("clicked", self._fft_shift_action)
-		cpanel.pack_start(fft_shift_button, True, True, 0)
+		fft_shift_entry = gtk.Entry(3)
+		fft_shift_entry.connect("changed", self._fft_shift_action)
+		ctrl_panel.pack_start(fft_shift_entry, True, True, 0)
+
+		eq_coeff_entry = gtk.Entry(3)
+		eq_coeff_entry.connect("changed", self._eq_coeff_action)
+		ctrl_panel.pack_start(eq_coeff_entry, True, True, 0)
 
 		quit_button = gtk.Button("Quit")
 		quit_button.connect("clicked", self._quit_action)
-		cpanel.pack_start(quit_button, True, True, 0)
+		ctrl_panel.pack_start(quit_button, True, True, 0)
 
-		return cpanel
+		return ctrl_panel
+
+	def _freeze_action (self, widget):
+		state = widget.get_active()
+		if (state):
+			print "Frozen!"
+		else:
+			print "Unfrozen."
 
 	def _sync_action (self, widget):
 		self._isi_correlator.send_sync()
 		print "Sync sent!"
 
 	def _fft_shift_action (self, widget):
-		print "Clicked fft_shift button."
+		shift = self._validate_entry(widget, 0x00, 0x7f)
+		self._isi_correlator.set_fft_shift(shift)
+
+	def _eq_coeff_action (self, widget):
+		coeff = self._validate_entry(widget, 0x00, 0xff)
+		self._isi_correlator.set_eq_coeff(coeff)
 
 	def _quit_action (self, widget):
 		gtk.main_quit()
+
+	def _validate_entry (self, widget, min, max):
+		text = widget.get_text()
+
+		value = -1
+		if text != "":
+			try:
+				value = int(text, 16)
+			except ValueError:
+				pass
+
+		if value < min:
+			value = min
+		elif value > max:
+			value = max
+
+		widget.set_text("%x" % value)
+		return value
+		
 
 	def _update (self):
 		self._isi_correlator.acquire()

@@ -31,6 +31,9 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		self._tv = None
 		time.sleep(.25) # NOTE: race condition!
 
+		self._fft_shift = 0
+		self._eq_coeff = 1
+
 	def _set_flag (self, flags):
 		reg_state = self.read_int('control')
 		reg_state |= flags
@@ -52,8 +55,8 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		return bram_data
 
 	def reset (self):
-		self.write_int('fft_shift', 0)
-		self.write_int('eq_coeff', 1)
+		self.set_fft_shift(0)
+		self.set_eq_coeff(1)
 		self.write_int('sync_gen2_period', 1)
 		self.write_int('sync_gen2_select', 0)
 		self._set_flag(IsiRoachBoard.FIFO_RESET)
@@ -69,6 +72,14 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		self._unset_flag(IsiRoachBoard.FORCE_TRIG)
 		self.arm_sync()
 		self._set_flag(IsiRoachBoard.FORCE_TRIG)
+
+	def set_fft_shift (self, shift):
+		self.write_int('fft_shift', shift)
+		self._fft_shift = shift
+
+	def set_eq_coeff (self, coeff):
+		self.write_int('eq_coeff', coeff)
+		self._eq_coeff = coeff
 
 	def load_tvg (self, tv):
 		assert (len(tv) == 4)
@@ -127,6 +138,12 @@ class IsiRoachFake(object):
 		pass
 
 	def send_sync (self):
+		pass
+
+	def set_fft_shift (self, shift):
+		pass
+
+	def set_eq_coeff (self, coeff):
 		pass
 
 	def acquire (self):
@@ -191,11 +208,11 @@ class IsiCorrelator(object):
 
 	def set_fft_shift (self, shift):
 		for board in self._boards:
-			board.write_int('fft_shift', shift)
+			board.set_fft_shift(shift)
 
 	def set_eq_coeff (self, coeff):
 		for board in self._boards:
-			board.write_int('eq_coeff', coeff)
+			board.set_eq_coeff(coeff)
 
 	def get_num_chans (self):
 		return self._num_chans
