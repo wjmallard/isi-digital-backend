@@ -32,7 +32,8 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		time.sleep(.25) # NOTE: race condition!
 
 		self._fft_shift = 0
-		self._eq_coeff = 1
+		self._eq_coeff = 0
+		self._sync_period = 0
 
 	def _set_flag (self, flags):
 		reg_state = self.read_int('control')
@@ -57,8 +58,7 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 	def reset (self):
 		self.set_fft_shift(0)
 		self.set_eq_coeff(1)
-		self.write_int('sync_gen2_period', 1)
-		self.write_int('sync_gen2_select', 0)
+		self.set_sync_period(0x8000)
 		self._set_flag(IsiRoachBoard.FIFO_RESET)
 		self._set_flag(IsiRoachBoard.CAPT_RESET)
 		self.write_int('control', 0)
@@ -72,6 +72,16 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		self._unset_flag(IsiRoachBoard.FORCE_TRIG)
 		self.arm_sync()
 		self._set_flag(IsiRoachBoard.FORCE_TRIG)
+
+	def set_sync_period (self, period):
+		if period > 0:
+			select = 1
+		else:
+			select = 0
+
+		self.write_int('sync_gen2_period', period)
+		self.write_int('sync_gen2_select', select)
+		self._sync_period = period
 
 	def set_fft_shift (self, shift):
 		self.write_int('fft_shift', shift)
@@ -140,6 +150,9 @@ class IsiRoachFake(object):
 	def send_sync (self):
 		pass
 
+	def set_sync_period (self, period):
+		pass
+
 	def set_fft_shift (self, shift):
 		pass
 
@@ -166,7 +179,6 @@ class IsiCorrelator(object):
 		self._hosts = hosts
 		self._ports = ports
 		self._num_chans = 64
-		self._sync_period = 2**26 # clocks
 		self._update_delay = .1 # seconds
 
 		self._connect()
@@ -194,17 +206,9 @@ class IsiCorrelator(object):
 		for i in xrange(3):
 			self._boards[i].load_tvg(tvs[i])
 
-	def set_sync_period (self, sync_period):
-		self._sync_period = sync_period
-
-		if sync_period > 0:
-			sync_select = 1
-		else:
-			sync_select = 0
-
+	def set_sync_period (self, period):
 		for board in self._boards:
-			board.write_int('sync_gen2_period', sync_period)
-			board.write_int('sync_gen2_select', sync_select)
+			board.set_sync_period(period)
 
 	def set_fft_shift (self, shift):
 		for board in self._boards:
