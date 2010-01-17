@@ -5,6 +5,7 @@
 # date: 2009-12-30
 # desc: The ISI Correlator display.
 
+from libisigui import *
 from libisicorr import *
 from libisitvg import *
 
@@ -26,7 +27,7 @@ tv3 = prep_for_bram(s3, 16, 2**11)
 hosts = ('localhost', 'localhost', 'localhost')
 ports = (7147, 7148, 7149)
 I = IsiCorrelator(hosts, ports)
-D = IsiDisplay(I)
+D = IsiGui(I)
 
 #I.program('isi_correlator_tvg.bof')
 I.load_tvg((tv1, tv2, tv3))

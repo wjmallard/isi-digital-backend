@@ -6,7 +6,10 @@ import gtk
 import gobject
 
 import libisiplot
-import libisi
+import libisicorr
+
+import IPython
+ipshell = IPython.Shell.IPShellEmbed()
 
 class IsiGui (gtk.Window):
 	def __init__ (self, corr):
@@ -76,14 +79,15 @@ class IsiGui (gtk.Window):
 	def _quit_action (self, widget):
 		gtk.main_quit()
 
-	def get_figure (self):
-		return self._figure
+	def _update (self):
+		self._isi_correlator.acquire()
+		data = self._isi_correlator.get_data()
+		self._canvas.update(data)
+		self._canvas.draw()
+		return True
 
 	def start (self):
-		gobject.timeout_add(self._update_timeout, self._update_action)
+		gobject.idle_add(self._update)
+		self.show_all()
 		gtk.main()
-
-if __name__ == "__main__":
-	x = IsiGui()
-	x.start()
 
