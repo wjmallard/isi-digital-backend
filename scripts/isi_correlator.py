@@ -11,9 +11,9 @@ from libisicorr import *
 from libisitvg import *
 
 L=2**7
-f1 = sine_wave(L, cycles=200, phase=0)
-f2 = sine_wave(L, cycles=200, phase=.5)
-f3 = sine_wave(L, cycles=400, phase=0)
+f1 = sine_wave(L, cycles=8, phase=0)
+f2 = sine_wave(L, cycles=8, phase=.5)
+f3 = sine_wave(L, cycles=16, phase=0)
 n1 = random_noise(L, seed=0xFC96)
 n2 = random_noise(L, seed=0xEB85)
 n3 = random_noise(L, seed=0xDA74)
