@@ -26,7 +26,7 @@ tv3 = prep_for_bram(s3, 16, 2**11)
 hosts = ('localhost', 'localhost', 'localhost')
 ports = (7147, 7148, 7149)
 I = IsiCorrelator(hosts, ports)
-D = IsiDisplay()
+D = IsiDisplay(I)
 
 #I.program('isi_correlator_tvg.bof')
 I.load_tvg((tv1, tv2, tv3))
@@ -37,8 +37,5 @@ I.set_eq_coeff((2**7)<<8)
 
 I.send_sync()
 
-while True:
-	I.acquire()
-	data = I.get_data()
-	D.set_data(data)
+D.start()
 

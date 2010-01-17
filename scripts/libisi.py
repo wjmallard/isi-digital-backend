@@ -3,6 +3,11 @@
 # date: 2009-12-30
 # desc: The ISI Correlator library.
 
+import matplotlib
+matplotlib.use('GTKAgg')
+import gobject
+import gtk
+
 import corr
 import itertools
 import pylab
@@ -198,6 +203,9 @@ class IsiCorrelator(object):
 		for board in self._boards:
 			board.write_int('eq_coeff', coeff)
 
+	def get_num_chans (self):
+		return self._num_chans
+
 	def reset (self):
 		for board in self._boards:
 			board.reset()
@@ -260,12 +268,16 @@ class IsiDisplay(object):
 	A real-time graphical baseline display.
 	"""
 
-	def __init__ (self):
+	def __init__ (self, corr):
 		self._num_rows = 3
 		self._num_cols = 3
 		self._num_plots = self._num_rows * self._num_cols
-		self._num_channels = 64
 
+		self._isi_correlator = corr
+		self._num_chans = corr.get_num_chans()
+
+		self._window = None
+		self._figman = None
 		self._fig = None
 		self._axes_l = None
 		self._contour_l = None
@@ -278,22 +290,28 @@ class IsiDisplay(object):
 		self._init_window()
 		self._init_plots()
 
+	def _on_key_press_event (self, widget, event):
+		keyname = gtk.gdk.keyval_name(event.keyval)
+		if keyname == 'q':
+			sys.exit(0)
+
 	def _init_window (self):
-		"""Initialize _fig. Create a graph window."""
+		"""Initialize the graph window."""
 		
-		pylab.ion()
 		self._fig = pylab.figure()
-		m = pylab.get_current_fig_manager()
-		m.set_window_title("ISI Correlator")
+		self._figman = pylab.get_current_fig_manager()
+		self._figman.set_window_title("ISI Correlator")
+		self._window = self._figman.window
+		self._window.connect('key_press_event', self._on_key_press_event)
 
 	def _init_plots (self):
-		"""Initialize _axes_l and _contour_l."""
+		"""Initialize the axes and countours."""
 
 		pwidth = 1. / self._num_cols
 		pheight = 1. / self._num_rows
 		lwidth = .08
 
-		ydata = [0] * self._num_channels
+		ydata = [0] * self._num_chans
 
 		axprops = dict(yticklabels=[])
 		yprops = dict(rotation=90)
@@ -313,22 +331,26 @@ class IsiDisplay(object):
 				contour.set_label(label)
 				axes.set_ylabel(label, labelpad=-5, **yprops)
 
-				axes.set_xlim(0, self._num_channels)
+				axes.set_xlim(0, self._num_chans)
 				axes.set_ylim(ymin=0)
 				pylab.setp(axes.get_xticklabels(), visible=False)
 
 				self._axes_l += [axes]
 				self._contour_l += [contour]
 
-	def set_data (self, data):
-		"""
-		Update the ydata for all contours and redraw the plots.
-		"""
-		assert (len(data) == self._num_plots)
+	def _update_plots (self):
+		"""Update all plots with the latest data."""
+		self._isi_correlator.acquire()
+		data = self._isi_correlator.get_data()
 
 		for i in xrange(self._num_plots):
 			self._contour_l[i].set_ydata(data[i])
-			self._axes_l[i].set_ylim(ymax=1.1*max(data[i]))
+			self._axes_l[i].set_xlim(0, self._num_chans)
+			self._axes_l[i].set_ylim(0, max(2**8, 1.1*max(data[i])))
 
-		pylab.draw()
+		self._figman.canvas.draw()
+		return True
 
+	def start (self):
+		gobject.idle_add(self._update_plots)
+		pylab.show()
