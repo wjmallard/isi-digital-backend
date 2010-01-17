@@ -1,9 +1,10 @@
 #!/usr/bin/env python
-#
-# auth: Billy Mallard
-# mail: wjm@llard.net
-# date: 2009-12-30
-# desc: The ISI Correlator display.
+
+__author__ = "William Mallard"
+__email__ = "wjm@llard.net"
+__copyright__ = "Copyright 2010, CASPER"
+__license__ = "GPL"
+__status__ = "Development"
 
 from libisigui import *
 from libisicorr import *
