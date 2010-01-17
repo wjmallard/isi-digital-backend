@@ -18,7 +18,7 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 	ACQUIRE     = 1<<3
 	CAPT_RESET  = 1<<4
 
-	def __init__ (self, host, port, id=0):
+	def __init__ (self, host, port, id=-1):
 		super(IsiRoachBoard, self).__init__(host, port)
 		self._host = host
 		self._port = port
@@ -103,7 +103,7 @@ class IsiRoachFake(object):
 	A fake ROACH board (for testing).
 	"""
 
-	def __init__ (self, id=0):
+	def __init__ (self, id=-1):
 		self._id = id
 
 	def read_int (self, name):
