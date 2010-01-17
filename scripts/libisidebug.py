@@ -1,7 +1,10 @@
-# auth: Billy Mallard
-# mail: wjm@llard.net
-# date: 2009-12-01
-# desc: A library for isi_correlator debugging.
+#!/usr/bin/env python
+
+__author__ = "William Mallard"
+__email__ = "wjm@llard.net"
+__copyright__ = "Copyright 2010, CASPER"
+__license__ = "GPL"
+__status__ = "Development"
 
 import libisicorr
 

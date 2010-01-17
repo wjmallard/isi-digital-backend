@@ -1,11 +1,16 @@
+#!/usr/bin/env python
+
+__author__ = "William Mallard"
+__email__ = "wjm@llard.net"
+__copyright__ = "Copyright 2010, CASPER"
+__license__ = "GPL"
+__status__ = "Development"
+
 import corr
 import itertools
 import time
 import struct
 import sys
-
-import IPython
-ipshell = IPython.Shell.IPShellEmbed()
 
 class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 	"""

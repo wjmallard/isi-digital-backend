@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 
 __author__ = "William Mallard"
+__email__ = "wjm@llard.net"
+__copyright__ = "Copyright 2010, CASPER"
 __license__ = "GPL"
-__version__ = "0.1"
+__status__ = "Development"
 
 import itertools
 import math
