@@ -11,9 +11,6 @@ import math
 import random
 import struct
 
-import IPython
-ipshell = IPython.Shell.IPythonShellEmbed()
-
 def cplx_pwr (z):
 	"""Calculate the complex power of an array."""
 	p = [(a*a.conj()).real for a in z]
@@ -25,7 +22,13 @@ def fxn_sum (fxns):
 	f = [c*sum(a) for a in itertools.izip(*fxns)]
 	return f
 
-def prep_for_bram (array, num_inputs, bram_size):
+def interleave_tvg_bram (array, num_inputs, bram_size):
+	"""Interleave ARRAY for use in NUM_INPUTS brams of BRAM_SIZE length.
+
+	Take a byte array of arbitrary length and split it into words across
+	(num_inputs/4) arrays.  Loop this as many times as necessary to fill
+	each bram."""
+
 	window_length = len(array)
 	num_brams = num_inputs / 4
 	num_reps = (bram_size / window_length) * num_brams
@@ -51,27 +54,30 @@ def prep_for_bram (array, num_inputs, bram_size):
 
 		iter_l += [iter]
 
-	bram_l = []
-	for bram_data in iter_l:
-		bram_l += [scaleByteString(bram_data)]
+	return iter_l
 
-	return bram_l
+def scale_bram_list (iter_l, coeff=2**6):
+	"""Scale a list of arrays and convert it to a list of byte strings."""
+	data_l = []
+	for iter in iter_l:
+		A = scale_bram_data(iter, coeff)
+		B = array_to_bytestring(A)
+		data_l += [B]
+	return data_l
 
-def scaleByteString (array):
-	"""Scale an array and return it as a byte string."""
-	c = 2**6
-	X = [int(c*x) for x in array]
-	A = [struct.pack('!1b', x) for x in X]
-	B = ''.join(A)
-	return B
-
-def scaleArray (array):
-	"""Scale an array and return it as an array."""
-	c = 2**6
-	X = [int(c*x) for x in array]
+def scale_bram_data (array, coeff=2**6):
+	"""Scale an array of BRAM data."""
+	X = [int(coeff*x) for x in array]
 	return X
 
+def array_to_bytestring (array):
+	"""Convert an array to a byte string."""
+	ba = [struct.pack('!1b', x) for x in array]
+	bs = ''.join(ba)
+	return bs
+
 def sine_wave (L, cycles=1, phase=0):
+	"""Build an L-point sine wave with range [-1,1)."""
 	x = xrange(L)
 	omega = 2*math.pi*cycles/L
 	phi = 2*math.pi*phase
