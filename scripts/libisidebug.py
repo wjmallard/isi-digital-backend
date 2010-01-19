@@ -131,13 +131,15 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 	#
 
 	def read_adc (self, capt_block, read_len):
-		(x0, x1, x2, x3) = self.read_capt8(capt_block, 4, read_len/4)
+		length = read_len / 4
+		(x0, x1, x2, x3) = self.read_capt8(capt_block, 4, length)
 		adc = self.uncat_adc(x0, x1, x2, x3)
 		return adc
 
 	def read_fft (self, capt_block, read_len):
-		msb = self.read_capt(capt_block + "_msb", 4, read_len/4)
-		lsb = self.read_capt(capt_block + "_lsb", 4, read_len/4)
+		length = read_len / 8
+		msb = self.read_capt(capt_block + "_msb", 4, length)
+		lsb = self.read_capt(capt_block + "_lsb", 4, length)
 		fft = self.uncat_fft(msb, lsb)
 		return fft
 
