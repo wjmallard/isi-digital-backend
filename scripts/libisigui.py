@@ -28,6 +28,7 @@ class IsiGui (gtk.Window):
 		self._figure = None
 
 		self._set_params()
+		self._set_accels()
 		self._set_layout()
 
 	def _set_params (self):
@@ -35,6 +36,21 @@ class IsiGui (gtk.Window):
 		self.connect("destroy", self._quit_action)
 		self.set_title("ISI Correlator")
 		self.set_border_width(8)
+
+	def _set_accels (self):
+		group = gtk.AccelGroup()
+
+		cmnd_map = dict \
+		({ \
+			'<Control>q' : self._quit_action, \
+			'<Control>f' : self._fullscreen_action, \
+		})
+
+		for (cmnd, func) in cmnd_map.items():
+			key, mod = gtk.accelerator_parse(cmnd)
+			group.connect_group(key, mod, gtk.ACCEL_VISIBLE, func)
+
+		self.add_accel_group(group)
 
 	def _set_layout (self):
 		vbox = gtk.VBox(False, 8)
@@ -77,14 +93,17 @@ class IsiGui (gtk.Window):
 		cp_ctrl_hbox.pack_start(cp_ctrl_vbbox, padding=5)
 
 		freeze_button = gtk.ToggleButton("Freeze")
+		freeze_button.unset_flags(gtk.CAN_FOCUS)
 		freeze_button.connect("clicked", self._freeze_action)
 		cp_ctrl_vbbox.pack_start(freeze_button)
 
 		sync_button = gtk.Button("Sync")
+		sync_button.unset_flags(gtk.CAN_FOCUS)
 		sync_button.connect("clicked", self._sync_action)
 		cp_ctrl_vbbox.pack_start(sync_button)
 
 		update_button = gtk.Button("Update")
+		update_button.unset_flags(gtk.CAN_FOCUS)
 		update_button.connect("clicked", self._update_action)
 		cp_ctrl_vbbox.pack_start(update_button)
 
@@ -234,6 +253,14 @@ class IsiGui (gtk.Window):
 
 		return ctrl_panel
 
+	def _quit_action (self, widget, *args):
+		gtk.main_quit()
+		return True
+
+	def _fullscreen_action (self, widget, *args):
+		print "Fullscreen is unimplemented!"
+		return True
+
 	def _freeze_action (self, widget):
 		state = widget.get_active()
 		if (state):
@@ -249,9 +276,6 @@ class IsiGui (gtk.Window):
 
 	def _update_action (self, widget):
 		print "Update clicked."
-
-	def _quit_action (self, widget):
-		gtk.main_quit()
 
 	def _sync_period_action (self, widget):
 		print "Sync period changed."
