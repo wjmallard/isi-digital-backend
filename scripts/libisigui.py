@@ -14,10 +14,8 @@ import gobject
 import libisiplot
 import libisicorr
 
-import IPython
-ipshell = IPython.Shell.IPShellEmbed()
-
 class IsiGui (gtk.Window):
+	"""The control and status GUI for the ISI Correlator."""
 	def __init__ (self, corr):
 		gtk.Window.__init__(self)
 
@@ -102,6 +100,7 @@ class IsiGui (gtk.Window):
 		gtk.main()
 
 class IsiControlFrame (gtk.Frame):
+	"""The Control frame of the ISI GUI."""
 	def __init__ (self, corr):
 		gtk.Frame.__init__(self, "Control")
 		self._isi_correlator = corr
@@ -221,6 +220,7 @@ class IsiControlFrame (gtk.Frame):
 		return value
 
 class IsiStatusFrame (gtk.Frame):
+	"""The Status frame of the ISI GUI."""
 	def __init__ (self, corr):
 		gtk.Frame.__init__(self, "Status")
 		self._isi_correlator = corr
@@ -234,87 +234,46 @@ class IsiStatusFrame (gtk.Frame):
 		vbox0 = gtk.VBox()
 		hbox.pack_start(vbox0, padding=5)
 
-		vbox1 = gtk.VBox()
-		hbox.pack_start(vbox1, padding=0)
-
 		sep0 = gtk.VSeparator()
 		hbox.pack_start(sep0, padding=5)
 
-		vbox2 = gtk.VBox()
-		hbox.pack_start(vbox2, padding=0)
-
-		vbox3 = gtk.VBox()
-		hbox.pack_start(vbox3, padding=5)
+		vbox1 = gtk.VBox()
+		hbox.pack_start(vbox1, padding=0)
 
 		#
 		# LEDs
 		#
 
-		led_sync = gtk.Image()
-		led_sync.set_from_file("led_off.xpm")
-		vbox0.pack_start(led_sync)
+		vbox0.pack_start(IsiStatusLEDs("Sync"))
+		vbox0.pack_start(IsiStatusLEDs("Armed"))
+		vbox0.pack_start(IsiStatusLEDs("Acquire"))
+		vbox0.pack_start(IsiStatusLEDs("(unused)"))
 
-		led_armed = gtk.Image()
-		led_armed.set_from_file("led_off.xpm")
-		vbox0.pack_start(led_armed)
+		vbox1.pack_start(IsiStatusLEDs("ADC Valid"))
+		vbox1.pack_start(IsiStatusLEDs("ADC OOR"))
+		vbox1.pack_start(IsiStatusLEDs("FFT OF"))
+		vbox1.pack_start(IsiStatusLEDs("EQ Clip"))
 
-		led_acquire = gtk.Image()
-		led_acquire.set_from_file("led_off.xpm")
-		vbox0.pack_start(led_acquire)
+class IsiStatusLEDs (gtk.HBox):
+	"""A labeled group of LEDs for the Status frame of the ISI GUI."""
+	def __init__ (self, label):
+		gtk.HBox.__init__(self)
+		self._LEDs = []
+		self._assemble()
 
-		led_unused = gtk.Image()
-		led_unused.set_from_file("led_off.xpm")
-		vbox0.pack_start(led_unused)
+	def _assemble (self):
+		for i in xrange(3):
+			led_image = gtk.Image()
+			led_image.set_from_file("led_off.xpm")
+			self.pack_start(led_image, expand=False, padding=0)
+			self._LEDs += [led_image]
 
-		led_sync_label = gtk.Label("Sync")
-		led_sync_label.set_alignment(0, .5)
-		vbox1.pack_start(led_sync_label)
-
-		led_armed_label = gtk.Label("Armed")
-		led_armed_label.set_alignment(0, .5)
-		vbox1.pack_start(led_armed_label)
-
-		led_acquire_label = gtk.Label("Acquire")
-		led_acquire_label.set_alignment(0, .5)
-		vbox1.pack_start(led_acquire_label)
-
-		led_unused_label = gtk.Label("(unused)")
-		led_acquire_label.set_alignment(0, .5)
-		vbox1.pack_start(led_unused_label)
-
-		led_adc_valid = gtk.Image()
-		led_adc_valid.set_from_file("led_off.xpm")
-		vbox2.pack_start(led_adc_valid)
-
-		led_adc_oor = gtk.Image()
-		led_adc_oor.set_from_file("led_off.xpm")
-		vbox2.pack_start(led_adc_oor)
-
-		led_fft_of = gtk.Image()
-		led_fft_of.set_from_file("led_off.xpm")
-		vbox2.pack_start(led_fft_of)
-
-		led_eq_clip = gtk.Image()
-		led_eq_clip.set_from_file("led_off.xpm")
-		vbox2.pack_start(led_eq_clip)
-
-		led_adc_valid_label = gtk.Label("ADC Valid")
-		led_adc_valid_label.set_alignment(0, .5)
-		vbox3.pack_start(led_adc_valid_label)
-
-		led_adc_oor_label = gtk.Label("ADC OOR")
-		led_adc_oor_label.set_alignment(0, .5)
-		vbox3.pack_start(led_adc_oor_label)
-
-		led_fft_of_label = gtk.Label("FFT OF")
-		led_fft_of_label.set_alignment(0, .5)
-		vbox3.pack_start(led_fft_of_label)
-
-		led_eq_clip_label = gtk.Label("EQ Clip")
-		led_eq_clip_label.set_alignment(0, .5)
-		vbox3.pack_start(led_eq_clip_label)
+		led_label = gtk.Label(label)
+		led_label.set_alignment(0, .5)
+		self.pack_start(led_label, expand=False, padding=5)
 
 class IsiLogoFrame (gtk.Frame):
+	"""The logo frame of the ISI GUI."""
 	def __init__ (self):
 		gtk.Frame.__init__(self)
 		self._assemble()
