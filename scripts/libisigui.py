@@ -259,9 +259,9 @@ class IsiStatusLEDs (gtk.HBox):
 	def __init__ (self, label):
 		gtk.HBox.__init__(self)
 		self._LEDs = []
-		self._assemble()
+		self._assemble(label)
 
-	def _assemble (self):
+	def _assemble (self, label):
 		for i in xrange(3):
 			led_image = gtk.Image()
 			led_image.set_from_file("led_off.xpm")
