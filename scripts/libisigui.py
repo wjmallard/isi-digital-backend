@@ -80,7 +80,7 @@ class IsiGui (gtk.Window):
 		ctrl_panel.pack_start(cp_stat_frame, expand=False, padding=1)
 
 		cp_fill_frame = gtk.Frame()
-		ctrl_panel.pack_start(cp_fill_frame, expand=True, padding=1)
+		ctrl_panel.pack_end(cp_fill_frame, expand=False, padding=1)
 
 		#
 		# Control Buttons
@@ -258,7 +258,7 @@ class IsiGui (gtk.Window):
 		return True
 
 	def _fullscreen_action (self, widget, *args):
-		print "Fullscreen is unimplemented!"
+		self.maximize()
 		return True
 
 	def _freeze_action (self, widget):
