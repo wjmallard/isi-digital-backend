@@ -29,13 +29,17 @@ class IsiCanvas (FigureCanvasGTK):
 		self._num_cols = 3
 		self._num_plots = self._num_rows * self._num_cols
 
+		self._ymax = 2**32
+		self._autoscale = False
+		self._freeze = False
+
 		self._axes_l = None
 		self._contour_l = None
 
 		self._label_l = \
 			("XX_auto", "YY_auto", "ZZ_auto", \
 			 "XY_real", "YZ_real", "ZX_real", \
-			 "XY_imag", "YX_imag", "ZX_imag")
+			 "XY_imag", "YZ_imag", "ZX_imag")
 
 		self._init_plots()
 
@@ -45,7 +49,7 @@ class IsiCanvas (FigureCanvasGTK):
 		width = 1. / self._num_cols
 		height = 1. / self._num_rows
 
-		ydata = [0] * self._num_chans
+		ydata = [1] * self._num_chans
 
 		axprops = dict(xticklabels=[], yticklabels=[])
 
@@ -57,23 +61,41 @@ class IsiCanvas (FigureCanvasGTK):
 
 				rect = [j*width, 1-(i+1)*height, width, height]
 				axes = self._fig.add_axes(rect, **axprops)
-				contour, = axes.plot(ydata, '.')
+				contour, = axes.semilogy(ydata,'.')
 
 				plot_num = i * self._num_cols + j
 				label = self._label_l[plot_num]
 				contour.set_label(label)
-				self._fig.text(j*width, 1-(i+1)*height, label, fontsize=8)
+				label_pos = (j*width+.01, 1-(i+1)*height)
+				self._fig.text(label_pos[0], label_pos[1], label, fontsize=8)
 
 				axes.set_xlim(0, self._num_chans)
-				axes.set_ylim(ymin=0)
+				axes.set_ylim(ymin=0, ymax=self._ymax)
+				axes.set_yticklabels([], visible=False)
+
+				axes.xaxis.set_ticks_position("bottom")
+				axes.yaxis.set_ticks_position("left")
 
 				self._axes_l += [axes]
 				self._contour_l += [contour]
 
+	def set_autoscale (self, state):
+		self._autoscale = state
+
+	def set_freeze (self, state):
+		self._freeze = state
+
 	def update (self, data):
 		"""Update all plots with the latest data."""
+
+		if self._freeze:
+			return
+
 		for i in xrange(self._num_plots):
 			self._contour_l[i].set_ydata(data[i])
-			self._axes_l[i].set_xlim(0, self._num_chans)
-			self._axes_l[i].set_ylim(0, max(2**8, 1.1*max(data[i])))
+
+			if self._autoscale:
+				self._axes_l[i].set_ylim(0, 2*max(data[i]))
+			else:
+				self._axes_l[i].set_ylim(0, self._ymax)
 

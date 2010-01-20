@@ -68,7 +68,7 @@ class IsiGui (gtk.Window):
 	def _assemble_panel (self):
 		panel = gtk.HBox(spacing=5)
 
-		control_frame = IsiControlFrame(self._isi_correlator)
+		control_frame = IsiControlFrame(self._isi_correlator, self._canvas)
 		panel.pack_start(control_frame, expand=False, padding=1)
 
 		status_frame = IsiStatusFrame(self._isi_correlator)
@@ -101,9 +101,10 @@ class IsiGui (gtk.Window):
 
 class IsiControlFrame (gtk.Frame):
 	"""The Control frame of the ISI GUI."""
-	def __init__ (self, corr):
+	def __init__ (self, corr, canvas):
 		gtk.Frame.__init__(self, "Control")
 		self._isi_correlator = corr
+		self._canvas = canvas
 		self._assemble()
 
 	def _assemble (self):
@@ -127,6 +128,11 @@ class IsiControlFrame (gtk.Frame):
 		# Buttons
 		#
 
+		autoscale_button = gtk.ToggleButton("Autoscale")
+		autoscale_button.unset_flags(gtk.CAN_FOCUS)
+		autoscale_button.connect("clicked", self._autoscale_action)
+		vbbox0.pack_start(autoscale_button)
+
 		freeze_button = gtk.ToggleButton("Freeze")
 		freeze_button.unset_flags(gtk.CAN_FOCUS)
 		freeze_button.connect("clicked", self._freeze_action)
@@ -137,10 +143,10 @@ class IsiControlFrame (gtk.Frame):
 		sync_button.connect("clicked", self._sync_action)
 		vbbox0.pack_start(sync_button)
 
-		update_button = gtk.Button("Update")
-		update_button.unset_flags(gtk.CAN_FOCUS)
-		update_button.connect("clicked", self._update_action)
-		vbbox0.pack_start(update_button)
+		#update_button = gtk.Button("Update")
+		#update_button.unset_flags(gtk.CAN_FOCUS)
+		#update_button.connect("clicked", self._update_action)
+		#vbbox0.pack_start(update_button)
 
 		#
 		# Parameter Labels
@@ -174,14 +180,17 @@ class IsiControlFrame (gtk.Frame):
 		eq_coeff_entry.connect("changed", self._eq_coeff_action)
 		vbbox2.pack_start(eq_coeff_entry)
 
+	def _autoscale_action (self, widget):
+		state = widget.get_active()
+		self._canvas.set_autoscale(state)
+
 	def _freeze_action (self, widget):
 		state = widget.get_active()
+		self._canvas.set_freeze(state)
 		if (state):
 			widget.set_label("Unfreeze")
-			print "Frozen!"
 		else:
 			widget.set_label("Freeze")
-			print "Unfrozen."
 
 	def _sync_action (self, widget):
 		self._isi_correlator.send_sync()
