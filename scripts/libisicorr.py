@@ -91,6 +91,10 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		self.write_int('eq_coeff', coeff)
 		self._eq_coeff = coeff
 
+	def get_status (self):
+		status = self.read_int('status')
+		return status
+
 	def load_tvg (self, tv):
 		assert (len(tv) == 4)
 
@@ -159,6 +163,12 @@ class IsiRoachFake(object):
 	def set_eq_coeff (self, coeff):
 		pass
 
+	def get_status (self):
+		return 0
+
+	def load_tvg (self):
+		pass
+
 	def acquire (self):
 		pass
 
@@ -220,6 +230,13 @@ class IsiCorrelator(object):
 
 	def get_num_chans (self):
 		return self._num_chans
+
+	def get_status (self):
+		status_l = []
+		for i in xrange(3):
+			status = self._boards[i].get_status()
+			status_l += [status]
+		return status_l
 
 	def reset (self):
 		for board in self._boards:
