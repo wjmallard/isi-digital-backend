@@ -89,6 +89,8 @@ class IsiGui (gtk.Window):
 
 	def _update (self):
 		self._isi_correlator.acquire()
+		# TODO: replace with 1pps!
+		self._isi_correlator.send_sync()
 		data = self._isi_correlator.get_data()
 		self._canvas.update(data)
 		self._canvas.draw()
