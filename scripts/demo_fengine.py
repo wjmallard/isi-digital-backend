@@ -5,55 +5,31 @@
 # date: 2009-09-11
 # desc: A control script for demo_fengine.mdl.
 
-import corr
-import pylab
+from libisigui import *
+from libisiplot import *
+from libisidebug import *
+from libisifenggui import *
+
 import IPython
-
-import libisidemo as isi
-
 ipshell = IPython.Shell.IPShellEmbed()
 
-isi.num_samples = 1<<7
-isi.num_chans = 1<<6
-isi.update_delay = 1 # seconds
+host = 'localhost'
+port = 7147
+R = IsiCorrelatorDebug(host, port)
 
-fpga = isi.board_connect()
-isi.board_init(fpga)
+R.progdev('demo_fengine_2010_Jan_20_0530.bof')
+R.set_sync_period(2**12)
+R.set_fft_shift(0x7f)
+R.set_eq_coeff((2**7)<<8)
+R.send_sync()
 
-fft_shift = 0x7f
-eq_coeff = (2**7)<<8
+G = IsiFEngineGui(R)
+C = G.get_canvas()
 
-fpga.write_int('fft_shift', fft_shift)
-fpga.write_int('eq_coeff', eq_coeff)
+C.add_plot(0, [0]*128, "adc")
+C.add_plot(1, [0]*128, "pfb")
+C.add_plot(2, [0]*64, "fft")
+C.add_plot(3, [0]*64, "eq")
 
-# Script begins here.
-
-print "Setting up plots."
-
-pylab.ion()
-
-c3,c4 = isi.create_plot(2,
-	[1, 1],
-	[isi.num_chans, isi.num_chans],
-	[[0,2**20],[0,2**8]],
-	["FFT Power","Eq FFT Power"])
-isi.customize_window("ISI Demo: F-Engine")
-
-print "Done setting up plots."
-
-print "Looping forever."
-while True:
-
-	isi.acquire(fpga)
-
-	fft = isi.read_fft(fpga, "fft")
-	eq = isi.read_fft(fpga, "eq")
-
-	c3[0].set_ydata(fft)
-	c4[0].set_ydata(eq)
-
-	pylab.draw()
-
-print "Ok, handing over control.  Enjoy!"
-ipshell()
+G.start()
 
