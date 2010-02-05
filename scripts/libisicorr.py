@@ -166,7 +166,7 @@ class IsiRoachFake(object):
 	def get_status (self):
 		return 0
 
-	def load_tvg (self):
+	def load_tvg (self, tv):
 		pass
 
 	def acquire (self):
