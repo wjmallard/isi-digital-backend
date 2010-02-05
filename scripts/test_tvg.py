@@ -1,51 +1,27 @@
 #!/usr/bin/env python
-#
-# auth: Billy Mallard
-# mail: wjm@llard.net
-# date: 2010-01-10
-# desc: A control script for test_tvg.mdl.
 
-import corr
-import pylab
-import IPython
+__author__ = "William Mallard"
+__email__ = "wjm@llard.net"
+__copyright__ = "Copyright 2010, CASPER"
+__license__ = "GPL"
+__status__ = "Development"
 
-import libisidemo as isi
-import libtvg as tvg
+# NOTE: run "ipython --pylab", copy-and-paste, and poke around.
+# TODO: automate this.
 
-ipshell = IPython.Shell.IPShellEmbed()
+from libisidebug import *
+from libisitvg import *
 
-isi.num_samples = 1<<11
-isi.update_delay = 1 # seconds
+num_samples = 1<<11
 
-fpga = isi.board_connect()
-isi.board_init(fpga)
+R = IsiCorrelatorDebug('localhost', 7147)
+R.progdev('test_tvg.bof')
 
-tvg_data = tvg.sine(isi.num_samples, cycles=1.5)
-fpga.write("tvg_bram", tvg_data)
+tvg_sine = sine_wave(num_samples, cycles=1.5)
+tvg_data = scale_bram_data(tvg_sine)
+tvg_bstr = array_to_bytestring(tvg_data)
+R.write("tvg_bram", tvg_bstr)
 
-print "Setting up plot."
-
-pylab.ion()
-
-c1, = isi.create_plot(1,
-	[1],
-	[isi.num_samples],
-	[[-2**31, 2**31]],
-	["Data"])
-isi.customize_window("ISI Test: tvg")
-
-print "Looping forever."
-while True:
-
-	isi.acquire(fpga)
-	isi.send_sync(fpga)
-
-	capt = isi.read_capt(fpga, None, 3, isi.num_samples, signed=True)
-
-	c1[0].set_ydata(capt[2])
-
-	pylab.draw()
-
-print "Ok, handing over control.  Enjoy!"
-ipshell()
+data_tvg = R.read("tvg_bram", num_samples)
+data_capt = R.read("capt_bram0", num_samples)
 
