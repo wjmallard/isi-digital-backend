@@ -28,7 +28,7 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 	def gen_plot (self, data_l):
 		assert (type(data_l) == list)
 
-		if (type(data[0]) != list):
+		if (type(data_l[0]) != list):
 			self._data_l = [data_l]
 		else:
 			self._data_l = data_l
