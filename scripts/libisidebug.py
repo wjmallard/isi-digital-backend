@@ -51,9 +51,14 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 
 		return c_list
 
-	def _read_bram8 (self, bram_name, read_len):
+	def _read_bram8 (self, bram_name, read_len, signed=False):
+		if signed:
+			fmt = '>%sb'
+		else:
+			fmt = '>%sB'
+
 		bram_dump = self.read(bram_name, read_len)
-		bram_data = struct.unpack('>%sb' % read_len, bram_dump)
+		bram_data = struct.unpack(fmt % read_len, bram_dump)
 		return bram_data
 
 	def read_capt (self, capt_name, num_brams, read_len):
@@ -64,11 +69,11 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 			capt_data += [bram_vals]
 		return capt_data
 
-	def read_capt8 (self, capt_name, num_brams, read_len):
+	def read_capt8 (self, capt_name, num_brams, read_len, signed=False):
 		capt_data = []
 		for bram_num in xrange(num_brams):
 			bram_name = "capt_%s_bram%d" % (capt_name, bram_num)
-			bram_vals = self._read_bram8(bram_name, read_len)
+			bram_vals = self._read_bram8(bram_name, read_len, signed)
 			capt_data += [bram_vals]
 		return capt_data
 
@@ -132,7 +137,7 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 
 	def read_adc (self, capt_block, read_len):
 		length = read_len / 4
-		(x0, x1, x2, x3) = self.read_capt8(capt_block, 4, length)
+		(x0, x1, x2, x3) = self.read_capt8(capt_block, 4, length, signed=True)
 		adc = self.uncat_adc(x0, x1, x2, x3)
 		return adc
 
