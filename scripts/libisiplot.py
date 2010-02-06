@@ -128,21 +128,24 @@ class IsiCanvas2 (FigureCanvasGTK):
 		self._contour_l = [None] * self._num_plots
 		self._label_l = [None] * self._num_plots
 
-	def add_plot (self, id, data, label=None):
+	def add_plot (self, id, data, label=None, log=False):
 		if self._axes_l[id] != None:
 			x = id / self._num_cols
 			y = id % self._num_cols
 			print "WARN: Plot (%d,%d) already exists!" % (x, y)
 			return
 
-		ydata = [1] * len(data)
-
 		axprops = dict(xticklabels=[], yticklabels=[])
 		rect = self._rect_l[id]
 		axes = self._fig.add_axes(rect, **axprops)
-		contour, = axes.semilogy(ydata, '.')
 
-		contour.set_ydata(data)
+		contour = None
+		if log:
+			ydata = [1] * len(data)
+			contour, = axes.semilogy(ydata, '.')
+			contour.set_ydata(data)
+		else:
+			contour, = axes.plot(data, '.')
 
 		if label != None:
 			contour.set_label(label)
@@ -165,5 +168,5 @@ class IsiCanvas2 (FigureCanvasGTK):
 
 	def set_data (self, id, data):
 		self._contour_l[id].set_ydata(data)
-		self._axes_l[id].set_ylim(ymin=min(data), ymax=max(data))
+		self._axes_l[id].set_ylim(ymin=0, ymax=1.2*max(data))
 
