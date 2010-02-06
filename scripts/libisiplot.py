@@ -128,7 +128,7 @@ class IsiCanvas2 (FigureCanvasGTK):
 		self._contour_l = [None] * self._num_plots
 		self._label_l = [None] * self._num_plots
 
-	def add_plot (self, id, data, label=None, log=False):
+	def add_plot (self, id, data, label=None, line='.', log=False):
 		if self._axes_l[id] != None:
 			x = id / self._num_cols
 			y = id % self._num_cols
@@ -142,10 +142,10 @@ class IsiCanvas2 (FigureCanvasGTK):
 		contour = None
 		if log:
 			ydata = [1] * len(data)
-			contour, = axes.semilogy(ydata, '.')
+			contour, = axes.semilogy(ydata, line)
 			contour.set_ydata(data)
 		else:
-			contour, = axes.plot(data, '.')
+			contour, = axes.plot(data, line)
 
 		if label != None:
 			contour.set_label(label)
@@ -168,5 +168,5 @@ class IsiCanvas2 (FigureCanvasGTK):
 
 	def set_data (self, id, data):
 		self._contour_l[id].set_ydata(data)
-		self._axes_l[id].set_ylim(ymin=0, ymax=1.2*max(data))
+		self._axes_l[id].set_ylim(ymin=1.2*min(data), ymax=1.2*max(data))
 
