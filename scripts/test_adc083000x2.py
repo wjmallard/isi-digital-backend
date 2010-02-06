@@ -7,16 +7,17 @@
 
 import corr
 import pylab
-import IPython
 
 import libisidemo as isi
 
+import IPython
 ipshell = IPython.Shell.IPShellEmbed()
 
 isi.num_samples = 1<<6
 isi.update_delay = 1 # seconds
 
 fpga = isi.board_connect()
+fpga.progdev('test_adc083000x2.bof')
 isi.board_init(fpga)
 
 print "Setting up plot."
