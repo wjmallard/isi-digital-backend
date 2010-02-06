@@ -68,8 +68,8 @@ class IsiFEngineGui (gtk.Window):
 		# TODO: replace with 1pps!
 		self._isi_fengine.send_sync()
 
-		adc = self._isi_fengine.read_adc("adc_capt_4x", 128)
-		pfb = self._isi_fengine.read_adc("pfb_capt_4x", 128)
+		adc = self._isi_fengine.read_adc("adc_capt", 128)
+		pfb = self._isi_fengine.read_adc("pfb_capt", 128)
 		fft = self._isi_fengine.read_fft("fft", 64)
 		eq = self._isi_fengine.read_fft("eq", 64)
 
