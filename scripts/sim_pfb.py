@@ -32,6 +32,32 @@ def fft_real (data):
 	C = np.abs(B)
 	return C
 
+def sim_pfbs (length, freq_res, taps):
+	norm_L1 = np.zeros(freq_res)
+	norm_L2 = np.zeros(freq_res)
+	norm_inf = np.zeros(freq_res)
+	res_step = float(length) / freq_res
+	for i in xrange(freq_res):
+		cycles = (i+.5) * res_step
+		adc = sine_fxn(length, cycles, taps)
+		pfb = pfb_fir(adc, taps)
+		ADC = fft_real(adc[0:length])
+		PFB = fft_real(pfb)
+		diff = np.subtract(ADC, PFB)
+		norm_L1[i] = np.linalg.norm(diff, 1)
+		norm_L2[i] = np.linalg.norm(diff, 2)
+		norm_inf[i] = np.linalg.norm(diff, inf)
+	return (norm_L1, norm_L2, norm_inf)
+
+avg_L1 = []
+avg_L2 = []
+avg_inf = []
+for i in xrange(8):
+	DATA = sim_pfbs (128, 1024, i+1)
+	avg_L1 += [np.average(DATA[0])]
+	avg_L2 += [np.average(DATA[1])]
+	avg_inf += [np.average(DATA[2])]
+
 adc = sine_fxn(128, np.pi, 4)
 pfb = pfb_fir(adc, taps=4)
 fft_raw = fft_real(adc[0:128])
