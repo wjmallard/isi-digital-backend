@@ -25,10 +25,9 @@ def pfb_fir (data, taps=4):
 	w = np.hanning(length)
 	A = s*w*data
 	B = np.array_split(A, taps)
-	C = np.zeros(len(B[0]))
-	for b in B:
-		C = np.add(C, b)
-	return C
+	C = np.array(B)
+	D = C.sum(axis=0)
+	return D
 
 def fft_real (data, split=1):
 	A = np.array_split(data, split)
