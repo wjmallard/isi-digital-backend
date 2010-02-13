@@ -17,7 +17,7 @@ def sine_fxn (length, cycles, windows=1):
 def pfb_fir (data, taps=4):
 	assert (taps>0)
 	length = len(data)
-	x = np.arange(-length/4, length/2)/(float(length)/taps)
+	x = np.arange(-length/2, length/2)/(float(length)/taps)
 	s = np.sinc(x)
 	w = np.hanning(length)
 	A = s*w*data
