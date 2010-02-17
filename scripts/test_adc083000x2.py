@@ -1,48 +1,35 @@
 #!/usr/bin/env python
-#
-# auth: Billy Mallard
-# mail: wjm@llard.net
-# date: 2009-12-01
-# desc: A control script for test_adc083000x2.mdl.
 
-import corr
-import pylab
+__author__ = "William Mallard"
+__email__ = "wjm@llard.net"
+__copyright__ = "Copyright 2010, CASPER"
+__license__ = "GPL"
+__status__ = "Development"
 
-import libisidemo as isi
+# NOTE: run "ipython --pylab", copy-and-paste, and poke around.
+# TODO: automate this.
 
-import IPython
-ipshell = IPython.Shell.IPShellEmbed()
+from libisidebug import *
+import time
 
-isi.num_samples = 1<<6
-isi.update_delay = .25 # seconds
+# temporary!
+from libisiroach import IsiRoachBoard
+# remove after reimplementing acquire().
 
-fpga = isi.board_connect()
-fpga.progdev('test_adc083000x2.bof')
-#fpga.progdev('demo_fengine.bof')
-isi.board_init(fpga)
+num_samples = 1<<11
+sync_period = 1 # sec
+clock_freq = 200 # MHz
+sync_clocks = sync_period * clock_freq * 10**6
 
-print "Setting up plot."
+R = IsiCorrelatorDebug('localhost', 7147)
+R.progdev('test_adc083000x2.bof')
 
-pylab.ion()
+R.set_sync_period(sync_clocks)
+R._set_flag(IsiRoachBoard.ARM_RESET)
 
-c1, = isi.create_plot(1,
-	[1],
-	[isi.num_samples],
-	[[-128, 128]],
-	["Voltage"])
-isi.customize_window("ISI Test: adc083000x2")
+R._set_flag(IsiRoachBoard.ACQUIRE)
+time.sleep(sync_period)
+R._unset_flag(IsiRoachBoard.ACQUIRE)
 
-print "Looping forever."
-while True:
-
-	isi.acquire(fpga)
-
-	adc = isi.read_adc(fpga, "adc_capt")
-
-	c1[0].set_ydata(adc)
-
-	pylab.draw()
-
-print "Ok, handing over control.  Enjoy!"
-ipshell()
+adc = R.read_adc('adc_capt', num_samples)
 
