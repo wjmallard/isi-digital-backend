@@ -2,7 +2,7 @@
 %                                                                             %
 %   Center for Astronomy Signal Processing and Electronics Research           %
 %   http://casper.berkeley.edu                                                %
-%   Copyright (C)2009 Mark Wagner, Suraj Gowda, Billy Mallard                 %
+%   Copyright (C)2010 Billy Mallard                                           %
 %                                                                             %
 %   This program is free software; you can redistribute it and/or modify      %
 %   it under the terms of the GNU General Public License as published by      %
@@ -46,11 +46,11 @@ done_port = get_var('done_port', 'defaults', defaults, varargin{:});
 % Validate input fields.
 
 if num_brams < 1
-    errordlg('capture: Invalid number of BRAMs. Should be greater than zero.')
+	errordlg('capture: Invalid number of BRAMs. Should be greater than zero.')
 end
 
 if addr_width < 11
-    errordlg('capture: Invalid address width. Must be at least 11 bits.')
+	errordlg('capture: Invalid address width. Must be at least 11 bits.')
 end
 
 %
@@ -70,7 +70,7 @@ for i = 1:num_brams
 	position = [15, ypos, 45, ypos+14];
 	reuse_block(blk, name, 'built-in/inport', ...
 		'Position', position, ...
-		'Port', num2str(cur_port))
+		'Port', num2str(cur_port));
 
 	name = ['reinterp', id];
 	ypos = cur_ypos + 28;
@@ -81,7 +81,7 @@ for i = 1:num_brams
 		'force_arith_type', 'on', ...
 		'arith_type', 'Unsigned', ...
 		'force_bin_pt', 'on', ...
-		'bin_pt', '0')
+		'bin_pt', '0');
 
 	name = ['bram', id];
 	ypos = cur_ypos + 13;
@@ -92,18 +92,18 @@ for i = 1:num_brams
 		'addr_width', 'addr_width', ...
 		'data_bin_pt', '0', ...
 		'init_vals', '0', ...
-		'sample_rate', '1')
+		'sample_rate', '1');
 
 	name = ['terminator', id];
 	ypos = cur_ypos + 25;
 	position = [405, ypos, 425, ypos+20];
 	reuse_block(blk, name, 'built-in/terminator', ...
 		'Position', position, ...
-		'ShowName', 'off')
+		'ShowName', 'off');
 
-	add_line(blk, ['din', id, '/1'], ['reinterp', id, '/1'])
-	add_line(blk, ['reinterp', id, '/1'], ['bram', id, '/2'])
-	add_line(blk, ['bram', id, '/1'], ['terminator', id, '/1'])
+	add_line(blk, ['din', id, '/1'], ['reinterp', id, '/1']);
+	add_line(blk, ['reinterp', id, '/1'], ['bram', id, '/2']);
+	add_line(blk, ['bram', id, '/1'], ['terminator', id, '/1']);
 
 	cur_port = cur_port + 1;
 	cur_ypos = cur_ypos + 65;
@@ -158,21 +158,23 @@ reuse_block(blk, name, 'casper_library/Misc/freeze_cntr', ...
 	'Position', position, ...
 	'CounterBits', 'addr_width')
 
-name = 'done';
-delete_block([blk, '/', name]);
 if done_port
+	name = 'done';
 	ypos = cur_ypos + 53;
 	position = [405, ypos, 435, ypos+14];
 	reuse_block(blk, name, 'built-in/outport', ...
 		'Position', position, ...
 		'ShowName', 'on', ...
 		'Port', '1')
+	add_line(blk, 'freeze_cntr/3', [name, '/1'])
 else
+	name = 'terminator_done';
 	ypos = cur_ypos + 50;
 	position = [405, ypos, 425, ypos+20];
 	reuse_block(blk, name, 'built-in/terminator', ...
 		'Position', position, ...
 		'ShowName', 'off')
+	add_line(blk, 'freeze_cntr/3', [name, '/1'])
 end
 
 add_line(blk, 'en/1', 'Logical/1')
@@ -183,7 +185,6 @@ for i = 1:num_brams
 	add_line(blk, 'freeze_cntr/1', ['bram', num2str(i-1), '/1'])
 	add_line(blk, 'freeze_cntr/2', ['bram', num2str(i-1), '/3'])
 end
-add_line(blk, 'freeze_cntr/3', 'done/1')
 
 clean_blocks(blk)
 
@@ -201,4 +202,6 @@ ystart = position(2);
 yend = ystart + 15*(num_brams+2);
 position = [xstart, ystart, xend, yend];
 set_param(blk, 'Position', position)
+
+save_state(blk, 'defaults', defaults, varargin{:});
 
