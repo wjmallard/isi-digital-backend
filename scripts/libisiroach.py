@@ -88,7 +88,7 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		else:
 			select = 0
 
-		clocks = period * self._clock_freq * 10**6
+		clocks = int(period * self._clock_freq * 10**6)
 		self.write_int('sync_gen2_period', clocks)
 		self.write_int('sync_gen2_select', select)
 		self._sync_period = period
