@@ -9,7 +9,7 @@ __status__ = "Development"
 import libisigui
 import libisicorr
 
-hosts = ('localhost', 'fake', 'fake')
+hosts = ('localhost', 'localhost', 'localhost')
 ports = (7147, 7148, 7149)
 I = libisicorr.IsiCorrelator(hosts, ports)
 D = libisigui.IsiGui(I)
