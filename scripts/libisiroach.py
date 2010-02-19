@@ -21,7 +21,6 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 	FORCE_TRIG  = 1<<1
 	FIFO_RESET  = 1<<2
 	ACQUIRE     = 1<<3
-	CAPT_RESET  = 1<<4
 
 	def __init__ (self, host, port, id=-1):
 		super(IsiRoachBoard, self).__init__(host, port)
@@ -31,9 +30,10 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		self._tv = None
 		time.sleep(.25) # NOTE: race condition!
 
+		self._clock_freq = 0 # MHz
+		self._sync_period = 0 # sec
 		self._fft_shift = 0
 		self._eq_coeff = 0
-		self._sync_period = 0
 
 	def _set_flag (self, flags):
 		reg_state = self.read_int('control')
@@ -61,11 +61,11 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		return bram_data
 
 	def reset (self):
+		self.set_clock_freq()
+		self.set_sync_period()
 		self.set_fft_shift(0)
 		self.set_eq_coeff(1)
-		self.set_sync_period(0x8000)
 		self._set_flag(IsiRoachBoard.FIFO_RESET)
-		self._set_flag(IsiRoachBoard.CAPT_RESET)
 		self.write_int('control', 0)
 
 	def arm_sync (self):
@@ -78,13 +78,18 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		self.arm_sync()
 		self._set_flag(IsiRoachBoard.FORCE_TRIG)
 
-	def set_sync_period (self, period):
+	def set_clock_freq (self, freq=200):
+		assert (freq > 25)
+		self._clock_freq = freq
+
+	def set_sync_period (self, period=1):
 		if period > 0:
 			select = 1
 		else:
 			select = 0
 
-		self.write_int('sync_gen2_period', period)
+		clocks = period * self._clock_freq * 10**6
+		self.write_int('sync_gen2_period', clocks)
 		self.write_int('sync_gen2_select', select)
 		self._sync_period = period
 
@@ -113,10 +118,9 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 			print "Warning: Cannot load tvg on board %d." % (self._id)
 
 	def acquire (self):
-		self._unset_flag(IsiRoachBoard.ACQUIRE)
-		self._set_flag(IsiRoachBoard.CAPT_RESET)
-		self._unset_flag(IsiRoachBoard.CAPT_RESET)
 		self._set_flag(IsiRoachBoard.ACQUIRE)
+		time.sleep(self._sync_period)
+		self._unset_flag(IsiRoachBoard.ACQUIRE)
 
 	def read_vacc (self, chan_group):
 		bram_name = "capt_%s_acc_%c_bram%d"
@@ -157,6 +161,9 @@ class IsiRoachFake(object):
 		pass
 
 	def send_sync (self):
+		pass
+
+	def set_clock_freq (self, period):
 		pass
 
 	def set_sync_period (self, period):

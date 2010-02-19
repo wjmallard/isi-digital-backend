@@ -16,10 +16,11 @@ ipshell = IPython.Shell.IPShellEmbed()
 R = IsiCorrelatorDebug('localhost', 7147)
 R.progdev('demo_fengine.bof')
 
-R.set_sync_period(2**12)
+R.set_clock_freq(200)
+R.set_sync_period(.25)
 R.set_fft_shift(0x7f)
 R.set_eq_coeff((2**7)<<8)
-R.send_sync()
+R.arm_sync()
 
 G = IsiFEngineGui(R)
 C = G.get_canvas()

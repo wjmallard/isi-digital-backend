@@ -85,10 +85,10 @@ class IsiFEngineGui (gtk.Window):
 		# TODO: replace with 1pps!
 		self._isi_fengine.send_sync()
 
-		adc = self._isi_fengine.read_adc("adc_capt", 128)
-		pfb = self._isi_fengine.read_adc("pfb_capt", 128)
-		fft = self._isi_fengine.read_fft("fft", 64)
-		eq = self._isi_fengine.read_fft("eq", 64)
+		adc = self._isi_fengine.read_adc("capt_adc_data", 128)
+		pfb = self._isi_fengine.read_adc("capt_pfb_data", 128)
+		fft = self._isi_fengine.read_fft("capt_fft_data", 64)
+		eq = self._isi_fengine.read_fft("capt_eq_data", 64)
 
 		if self._dump_pending:
 			print "Dumping plot data to file!"

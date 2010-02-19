@@ -97,16 +97,16 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 		adc_list = [x for y in adc_tuple for x in y]
 		return adc_list
 
-	def uncat_fft (self, eq_msb, eq_lsb):
+	def uncat_fft (self, x0, x1, x2, x3, x4, x5, x6, x7):
 		"""Un-concatenates and re-interleaves fft data."""
-		iter0 = itertools.chain(eq_msb[0])
-		iter1 = itertools.chain(eq_msb[1])
-		iter2 = itertools.chain(eq_msb[2])
-		iter3 = itertools.chain(eq_msb[3])
-		iter4 = itertools.chain(eq_lsb[0])
-		iter5 = itertools.chain(eq_lsb[1])
-		iter6 = itertools.chain(eq_lsb[2])
-		iter7 = itertools.chain(eq_lsb[3])
+		iter0 = itertools.chain(x0)
+		iter1 = itertools.chain(x1)
+		iter2 = itertools.chain(x2)
+		iter3 = itertools.chain(x3)
+		iter4 = itertools.chain(x4)
+		iter5 = itertools.chain(x5)
+		iter6 = itertools.chain(x6)
+		iter7 = itertools.chain(x7)
 		eq_tuple = itertools.izip \
 		( \
 			iter0, iter1, iter2, iter3, \
@@ -143,8 +143,7 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 
 	def read_fft (self, capt_block, read_len):
 		length = read_len / 8
-		msb = self.read_capt(capt_block + "_msb", 4, length)
-		lsb = self.read_capt(capt_block + "_lsb", 4, length)
-		fft = self.uncat_fft(msb, lsb)
+		(x0, x1, x2, x3, x4, x5, x6, x7) = self.read_capt(capt_block, 8, length)
+		fft = self.uncat_fft(x0, x1, x2, x3, x4, x5, x6, x7)
 		return fft
 
