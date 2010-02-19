@@ -12,24 +12,16 @@ __status__ = "Development"
 from libisidebug import *
 import time
 
-# temporary!
-from libisiroach import IsiRoachBoard
-# remove after reimplementing acquire().
-
 num_samples = 1<<11
-sync_period = 1 # sec
-clock_freq = 200 # MHz
-sync_clocks = sync_period * clock_freq * 10**6
 
 R = IsiCorrelatorDebug('localhost', 7147)
 R.progdev('test_adc083000x2.bof')
 
-R.set_sync_period(sync_clocks)
-R._set_flag(IsiRoachBoard.ARM_RESET)
+R.set_clock_freq(200)
+R.set_sync_period(1)
+R.arm_sync()
 
-R._set_flag(IsiRoachBoard.ACQUIRE)
-time.sleep(sync_period)
-R._unset_flag(IsiRoachBoard.ACQUIRE)
+R.acquire()
 
 adc = R.read_adc('capt_adc_data', num_samples)
 
