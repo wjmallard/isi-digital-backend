@@ -31,5 +31,5 @@ R._set_flag(IsiRoachBoard.ACQUIRE)
 time.sleep(sync_period)
 R._unset_flag(IsiRoachBoard.ACQUIRE)
 
-adc = R.read_adc('adc_capt', num_samples)
+adc = R.read_adc('capt_adc_data', num_samples)
 
