@@ -61,18 +61,18 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 		bram_data = struct.unpack(fmt % read_len, bram_dump)
 		return bram_data
 
-	def read_capt (self, capt_name, num_brams, read_len):
+	def read_capt (self, capt_name, num_brams, read_len, signed=False):
 		capt_data = []
 		for bram_num in xrange(num_brams):
-			bram_name = "capt_%s_bram%d" % (capt_name, bram_num)
-			bram_vals = self._read_bram(bram_name, read_len)
+			bram_name = "%s_bram%d" % (capt_name, bram_num)
+			bram_vals = self._read_bram(bram_name, read_len, signed)
 			capt_data += [bram_vals]
 		return capt_data
 
 	def read_capt8 (self, capt_name, num_brams, read_len, signed=False):
 		capt_data = []
 		for bram_num in xrange(num_brams):
-			bram_name = "capt_%s_bram%d" % (capt_name, bram_num)
+			bram_name = "%s_bram%d" % (capt_name, bram_num)
 			bram_vals = self._read_bram8(bram_name, read_len, signed)
 			capt_data += [bram_vals]
 		return capt_data

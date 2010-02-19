@@ -50,9 +50,14 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		time.sleep(.1)
 		self._unset_flag(flag)
 
-	def _read_bram (self, bram_name, read_len):
+	def _read_bram (self, bram_name, read_len, signed=False):
+		if signed:
+			fmt = '>%si'
+		else:
+			fmt = '>%sI'
+
 		bram_dump = self.read(bram_name, read_len*4)
-		bram_data = struct.unpack('>%sI' % read_len, bram_dump)
+		bram_data = struct.unpack(fmt % read_len, bram_dump)
 		return bram_data
 
 	def reset (self):
