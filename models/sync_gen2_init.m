@@ -2,7 +2,7 @@
 %                                                                             %
 %   Center for Astronomy Signal Processing and Electronics Research           %
 %   http://casper.berkeley.edu                                                %
-%   Copyright (C)2009 Mark Wagner, Suraj Gowda, Billy Mallard                 %
+%   Copyright (C)2009 Billy Mallard                                           %
 %                                                                             %
 %   This program is free software; you can redistribute it and/or modify      %
 %   it under the terms of the GNU General Public License as published by      %
@@ -133,3 +133,6 @@ set_param([blk, '/calculated_period'], 'const', num2str(sync_period));
 % Display the sync period under this block.
 fmtstr = sprintf('sync_period=%d', sync_period);
 set_param(blk, 'AttributesFormatString', fmtstr);
+
+save_state(blk, 'defaults', defaults, varargin{:});
+
