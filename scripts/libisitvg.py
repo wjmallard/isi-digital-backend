@@ -72,7 +72,7 @@ def scale_bram_data (array, coeff=2**6):
 
 def array_to_bytestring (array):
 	"""Convert an array to a byte string."""
-	ba = [struct.pack('!1b', x) for x in array]
+	ba = [struct.pack('!i', x) for x in array]
 	bs = ''.join(ba)
 	return bs
 
