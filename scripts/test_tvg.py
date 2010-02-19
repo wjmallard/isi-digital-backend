@@ -6,9 +6,6 @@ __copyright__ = "Copyright 2010, CASPER"
 __license__ = "GPL"
 __status__ = "Development"
 
-# NOTE: run "ipython --pylab", copy-and-paste, and poke around.
-# TODO: automate this.
-
 from libisidebug import *
 from libisitvg import *
 import time
