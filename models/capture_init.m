@@ -158,7 +158,7 @@ reuse_block(blk, name, 'casper_library/Misc/freeze_cntr', ...
 	'Position', position, ...
 	'CounterBits', 'addr_width')
 
-if done_port
+if strcmp(done_port, 'on')
 	name = 'done';
 	ypos = cur_ypos + 53;
 	position = [405, ypos, 435, ypos+14];
