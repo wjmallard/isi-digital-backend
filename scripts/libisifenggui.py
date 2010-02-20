@@ -86,7 +86,7 @@ class IsiFEngineGui (gtk.Window):
 		self._isi_fengine.send_sync()
 
 		adc = self._isi_fengine.read_adc("capt_adc_data", 128)
-		pfb = self._isi_fengine.read_adc("capt_pfb_data", 128)
+		pfb = self._isi_fengine.read_adc("capt_pfb", 128)
 		fft = self._isi_fengine.read_fft("capt_fft_data", 64)
 		eq = self._isi_fengine.read_fft("capt_eq_data", 64)
 
