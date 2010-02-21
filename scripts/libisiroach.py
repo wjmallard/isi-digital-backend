@@ -56,7 +56,7 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		else:
 			fmt = '>%sI'
 
-		bram_dump = self.read(bram_name, read_len*4)
+		bram_dump = self.read(bram_name, 4*read_len)
 		bram_data = struct.unpack(fmt % read_len, bram_dump)
 		return bram_data
 
@@ -69,6 +69,7 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		self.write_int('control', 0)
 
 	def arm_sync (self):
+		self._unset_flag(IsiRoachBoard.ARM_RESET)
 		self._set_flag(IsiRoachBoard.ARM_RESET)
 		time.sleep(.1)
 		self._unset_flag(IsiRoachBoard.ARM_RESET)
@@ -77,6 +78,13 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		self._unset_flag(IsiRoachBoard.FORCE_TRIG)
 		self.arm_sync()
 		self._set_flag(IsiRoachBoard.FORCE_TRIG)
+		time.sleep(.1)
+		self._unset_flag(IsiRoachBoard.FORCE_TRIG)
+
+	def acquire (self):
+		self._set_flag(IsiRoachBoard.ACQUIRE)
+		time.sleep(self._sync_period)
+		self._unset_flag(IsiRoachBoard.ACQUIRE)
 
 	def set_clock_freq (self, freq=200):
 		assert (freq > 25)
@@ -116,11 +124,6 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 			self._tv = tv
 		except RuntimeError:
 			print "Warning: Cannot load tvg on board %d." % (self._id)
-
-	def acquire (self):
-		self._set_flag(IsiRoachBoard.ACQUIRE)
-		time.sleep(self._sync_period)
-		self._unset_flag(IsiRoachBoard.ACQUIRE)
 
 	def read_vacc (self, chan_group):
 		bram_name = "capt_%s_acc_%c_bram%d"
@@ -163,6 +166,9 @@ class IsiRoachFake(object):
 	def send_sync (self):
 		pass
 
+	def acquire (self):
+		pass
+
 	def set_clock_freq (self, period):
 		pass
 
@@ -179,9 +185,6 @@ class IsiRoachFake(object):
 		return 0
 
 	def load_tvg (self, tv):
-		pass
-
-	def acquire (self):
 		pass
 
 	def read_vacc (self, chan_group):
