@@ -82,11 +82,9 @@ class IsiFEngineGui (gtk.Window):
 
 	def _update (self):
 		self._isi_fengine.acquire()
-		# TODO: replace with 1pps!
-		self._isi_fengine.send_sync()
 
 		adc = self._isi_fengine.read_adc("capt_adc_data", 128)
-		pfb = self._isi_fengine.read_adc("capt_pfb", 128)
+		pfb = self._isi_fengine.read_pfb("capt_pfb", 128)
 		fft = self._isi_fengine.read_fft("capt_fft_data", 64)
 		eq = self._isi_fengine.read_fft("capt_eq_data", 64)
 

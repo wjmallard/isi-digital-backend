@@ -81,39 +81,23 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 	# Block verification methods.
 	#
 
-	def uncat_adc (self, adc0_msb, adc0_lsb, adc1_msb, adc1_lsb):
-		"""Un-concatenates and re-interleaves adc data."""
-		iter0 = itertools.chain(adc0_msb)
-		iter1 = itertools.chain(adc0_lsb)
-		iter2 = itertools.chain(adc1_msb)
-		iter3 = itertools.chain(adc1_lsb)
-		adc_tuple = itertools.izip \
-		( \
-			iter0, iter0, iter0, iter0, \
-			iter1, iter1, iter1, iter1, \
-			iter2, iter2, iter2, iter2, \
-			iter3, iter3, iter3, iter3 \
-		)
-		adc_list = [x for y in adc_tuple for x in y]
-		return adc_list
+	def bram_uncat (self, data):
+		"""Un-concatenates parallel BRAM data."""
+		iter = []
+		for i in data:
+			iter += 4*[itertools.chain(i)]
+		return iter
 
-	def uncat_fft (self, x0, x1, x2, x3, x4, x5, x6, x7):
-		"""Un-concatenates and re-interleaves fft data."""
-		iter0 = itertools.chain(x0)
-		iter1 = itertools.chain(x1)
-		iter2 = itertools.chain(x2)
-		iter3 = itertools.chain(x3)
-		iter4 = itertools.chain(x4)
-		iter5 = itertools.chain(x5)
-		iter6 = itertools.chain(x6)
-		iter7 = itertools.chain(x7)
-		eq_tuple = itertools.izip \
-		( \
-			iter0, iter1, iter2, iter3, \
-			iter4, iter5, iter6, iter7, \
-		)
-		eq_list = [x for y in eq_tuple for x in y]
-		return eq_list
+	def bram_interleave (self, data):
+		"""Interleaves parallel BRAM data streams."""
+		iter = []
+		for i in data:
+			iter += [itertools.chain(i)]
+		return itertools.izip(*iter)
+
+	def flatten (self, list):
+		"""Flattens a list of iterators into just a list."""
+		return [item for iter in list for item in iter]
 
 	def unclump(self, A):
 		"""Inverts the compression operation of the clump block."""
@@ -137,13 +121,23 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 
 	def read_adc (self, capt_block, read_len):
 		length = read_len / 4
-		(x0, x1, x2, x3) = self.read_capt8(capt_block, 4, length, signed=True)
-		adc = self.uncat_adc(x0, x1, x2, x3)
-		return adc
+		bram_data = self.read_capt8(capt_block, 4, length, signed=True)
+		byte_data = self.bram_uncat(bram_data)
+		data_iter = self.bram_interleave(byte_data)
+		data = self.flatten(data_iter)
+		return data
+
+	def read_pfb (self, capt_block, read_len):
+		length = read_len / 16
+		bram_data = self.read_capt(capt_block, 16, length, signed=True)
+		data_iter = self.bram_interleave(bram_data)
+		data = self.flatten(data_iter)
+		return data
 
 	def read_fft (self, capt_block, read_len):
 		length = read_len / 8
-		(x0, x1, x2, x3, x4, x5, x6, x7) = self.read_capt(capt_block, 8, length)
-		fft = self.uncat_fft(x0, x1, x2, x3, x4, x5, x6, x7)
-		return fft
+		bram_data = self.read_capt(capt_block, 8, length)
+		data_iter = self.bram_interleave(bram_data)
+		data = self.flatten(data_iter)
+		return data
 
