@@ -67,7 +67,7 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 			bram_name = "%s_bram%d" % (capt_name, bram_num)
 			bram_vals = self._read_bram(bram_name, read_len, signed)
 			capt_data += [bram_vals]
-		return capt_data
+		return tuple(capt_data)
 
 	def read_capt8 (self, capt_name, num_brams, read_len, signed=False):
 		capt_data = []
@@ -75,7 +75,7 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 			bram_name = "%s_bram%d" % (capt_name, bram_num)
 			bram_vals = self._read_bram8(bram_name, read_len, signed)
 			capt_data += [bram_vals]
-		return capt_data
+		return tuple(capt_data)
 
 	#
 	# Block verification methods.
@@ -103,14 +103,14 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 		"""Inverts the compression operation of the clump block."""
 		X = []
 		num_frames = len(A)/16
-		for i in xrange(0, num_frames):
+		for i in xrange(num_frames):
 			sof = i*16 + 4
 			eof = sof + 12
 			X += A[sof:eof]
 		X1 = X[0:None:3]
 		X2 = X[1:None:3]
 		X3 = X[2:None:3]
-		return (X1, X2, X3)
+		return (tuple(X1), tuple(X2), tuple(X3))
 
 	def diff (self, x_list, y_list):
 		return [x-y for x,y in zip(x_list, y_list)]
