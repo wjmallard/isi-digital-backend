@@ -1,17 +1,15 @@
 #!/usr/bin/env python
-#
-# auth: Billy Mallard
-# mail: wjm@llard.net
-# date: 2009-09-11
-# desc: A control script for demo_fengine.mdl.
+
+__author__ = "William Mallard"
+__email__ = "wjm@llard.net"
+__copyright__ = "Copyright 2010, CASPER"
+__license__ = "GPL"
+__status__ = "Development"
 
 from libisigui import *
 from libisiplot import *
 from libisidebug import *
 from libisifenggui import *
-
-import IPython
-ipshell = IPython.Shell.IPShellEmbed()
 
 R = IsiCorrelatorDebug('localhost', 7147)
 R.progdev('demo_fengine.bof')
