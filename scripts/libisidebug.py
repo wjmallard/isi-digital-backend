@@ -95,9 +95,9 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 			iter += [itertools.chain(i)]
 		return itertools.izip(*iter)
 
-	def flatten (self, list):
-		"""Flattens a list of iterators into just a list."""
-		return [item for iter in list for item in iter]
+	def flatten (self, iterlist):
+		"""Flattens an iterator of iterators into just an iterator."""
+		return itertools.chain(*iterlist)
 
 	def unclump(self, A):
 		"""Inverts the compression operation of the clump block."""
@@ -112,6 +112,9 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 		X3 = X[2:None:3]
 		return (tuple(X1), tuple(X2), tuple(X3))
 
+	def sign_extend (self, data, bits):
+		return (data + 2**(bits-1)) % 2**bits - 2**(bits-1)
+
 	def diff (self, x_list, y_list):
 		return [x-y for x,y in zip(x_list, y_list)]
 
@@ -125,19 +128,19 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 		byte_data = self.bram_uncat(bram_data)
 		data_iter = self.bram_interleave(byte_data)
 		data = self.flatten(data_iter)
-		return data
+		return [x for x in data]
 
 	def read_pfb (self, capt_block, read_len):
 		length = read_len / 16
 		bram_data = self.read_capt(capt_block, 16, length, signed=True)
 		data_iter = self.bram_interleave(bram_data)
 		data = self.flatten(data_iter)
-		return data
+		return [self.sign_extend(x, 18) for x in data]
 
 	def read_fft (self, capt_block, read_len):
 		length = read_len / 8
 		bram_data = self.read_capt(capt_block, 8, length)
 		data_iter = self.bram_interleave(bram_data)
 		data = self.flatten(data_iter)
-		return data
+		return [x for x in data]
 
