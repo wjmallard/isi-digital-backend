@@ -1,85 +1,118 @@
 #!/usr/bin/env python
-#
-# auth: Billy Mallard
-# mail: wjm@llard.net
-# date: 2009-10-25
-# desc: A control script for demo_interconnect.mdl.
 
-import corr
-import pylab
-import IPython
+__author__ = "William Mallard"
+__email__ = "wjm@llard.net"
+__copyright__ = "Copyright 2010, CASPER"
+__license__ = "GPL"
+__status__ = "Development"
 
-import libisidemo as isi
+from libisidebug import *
 
-ipshell = IPython.Shell.IPShellEmbed()
+def run_test ():
 
-isi.num_samples = 1<<6
-isi.update_delay = .1 # seconds
+	num_samples = 1<<11
 
-fpga = isi.board_connect()
-isi.board_init(fpga)
+	# Connect to board.
+	R = IsiCorrelatorDebug('localhost', 7147)
+	R.progdev('demo_interconnect.bof')
 
-# Script begins here.
+	# Initialize board.
+	R.set_clock_freq(200)
+	R.set_sync_period(1)
+	R.arm_sync()
+	R.send_sync()
 
-print "Setting up plots."
+	# Initiate capture.
+	R.acquire()
 
-pylab.ion()
+	# Read data from BRAM.
 
-c1,c2,c3 = isi.create_plot(3,
-	[3] * 3,
-	[isi.num_samples] * 3,
-	[[0, 256]] * 3,
-	["A","B","C"])
-isi.customize_window("ISI Demo: Board Interconnect")
+	(V,) = R.read_capt("capt_valid", 1, num_samples)
+	(S,) = R.read_capt("capt_sync", 1, num_samples)
 
-print "Looping forever."
-while True:
+	# Data sent over XAUI, in its original form.
+	(X0, X1, X2) = R.read_capt("capt_012", 3, num_samples)
+	(X3, X4, X5) = R.read_capt("capt_345", 3, num_samples)
+	(X6, X7, Xz) = R.read_capt("capt_67z", 3, num_samples)
 
-	isi.acquire(fpga)
+	# Data sent over XAUI, raw.
+	(txX, txY, txZ) = R.read_capt8("capt_clump", 3, 4*num_samples)
+	# Data sent over XAUI, unscrambled.
+	(tx0, tx1, tx2) = R.unclump(txX)
+	(tx3, tx4, tx5) = R.unclump(txY)
+	(tx6, tx7, txz) = R.unclump(txZ)
 
-	(V,) = isi.read_capt(fpga, "valid", 1, isi.num_samples)
-	(S,) = isi.read_capt(fpga, "sync", 1, isi.num_samples)
+	# Data received from XAUI, raw.
+	(rxX, rxZ, rxY) = R.read_capt8("capt_xaui", 3, 4*num_samples)
+	# Data received from XAUI, unscrambled.
+	(rx0, rx1, rx2) = R.unclump(rxX)
+	(rx3, rx4, rx5) = R.unclump(rxY)
+	(rx6, rx7, rxz) = R.unclump(rxZ)
 
-	(m0, m1, m2) = isi.read_capt(fpga, "012", 3, isi.num_samples)
-	(m3, m4, m5) = isi.read_capt(fpga, "345", 3, isi.num_samples)
-	(m6, m7, mz) = isi.read_capt(fpga, "67Z", 3, isi.num_samples)
+	# Data received from XAUI, resynced and raw.
+	(xrX, xrZ, xrY) = R.read_capt8("capt_resync", 3, 4*num_samples)
+	# Data received from XAUI, resynced and unscrambled.
+	(xr0, xr1, xr2) = R.unclump(xrX)
+	(xr3, xr4, xr5) = R.unclump(xrY)
+	(xr6, xr7, xrz) = R.unclump(xrZ)
 
-	(txX, txY, txZ) = isi.read_capt8(fpga, "clump", 3, isi.num_samples * 4)
-	# Swapped Y and Z to test with just one cable.
-	(rxX, rxZ, rxY) = isi.read_capt8(fpga, "xaui", 3, isi.num_samples * 4)
-	(xrX, xrZ, xrY) = isi.read_capt8(fpga, "resync", 3, isi.num_samples *4)
+	# Data received from XAUI, resynced and unscrambled in hardware.
+	(XA, XB, XC) = R.read_capt("capt_X", 3, num_samples)
+	(YA, YB, YC) = R.read_capt("capt_Z", 3, num_samples)
+	(ZA, ZB, ZC) = R.read_capt("capt_Y", 3, num_samples)
 
-	(tx0, tx1, tx2) = isi.unclump(txX)
-	(tx3, tx4, tx5) = isi.unclump(txY)
-	(tx6, tx7, txz) = isi.unclump(txZ)
+	# Verify data.
 
-	(rx0, rx1, rx2) = isi.unclump(rxX)
-	(rx3, rx4, rx5) = isi.unclump(rxY)
-	(rx6, rx7, rxz) = isi.unclump(rxZ)
+	# These should hold:
+	# X0 = tx0 = xr0 = XA
 
-	(xr0, xr1, xr2) = isi.unclump(xrX)
-	(xr3, xr4, xr5) = isi.unclump(xrY)
-	(xr6, xr7, xrz) = isi.unclump(xrZ)
+	correct_tx = \
+		(X0 == tx0) & \
+		(X1 == tx1) & \
+		(X2 == tx2) & \
+		(X3 == tx3) & \
+		(X4 == tx4) & \
+		(X5 == tx5) & \
+		(X6 == tx6) & \
+		(X7 == tx7) & \
+		(Xz == txz)
+	if not correct_tx:
+		print "Failure in clump block."
 
-	# Swapped Y and Z to test with just one cable.
-	(XA, XB, XC) = isi.read_capt(fpga, "X", 3, isi.num_samples)
-	(YA, YB, YC) = isi.read_capt(fpga, "Z", 3, isi.num_samples)
-	(ZA, ZB, ZC) = isi.read_capt(fpga, "Y", 3, isi.num_samples)
+	correct_xr = \
+		(tx0 == xr0) & \
+		(tx1 == xr1) & \
+		(tx2 == xr2) & \
+		(tx3 == xr3) & \
+		(tx4 == xr4) & \
+		(tx5 == xr5) & \
+		(tx6 == xr6) & \
+		(tx7 == xr7) & \
+		(txz == xrz)
+	if not correct_xr:
+		print "Failure in XAUI or resync block."
 
-	c1[0].set_ydata(tx2)
-	c1[1].set_ydata(xr2)
-	c1[2].set_ydata(XC)
+	correct_X = \
+		(xr0 == XA) & \
+		(xr1 == XB) & \
+		(xr2 == XC) & \
+		(xr3 == YA) & \
+		(xr4 == YB) & \
+		(xr5 == YC) & \
+		(xr6 == ZA) & \
+		(xr7 == ZB) & \
+		(xrz == ZC)
+	if not correct_X:
+		print "Failure in unclump block."
 
-	c2[0].set_ydata(tx3)
-	c2[1].set_ydata(xr3)
-	c2[2].set_ydata(YA)
+	status = (correct_tx & correct_xr & correct_X)
 
-	c3[0].set_ydata(tx6)
-	c3[1].set_ydata(xr6)
-	c3[2].set_ydata(ZA)
+	return status
 
-	pylab.draw()
-
-print "Ok, handing over control.  Enjoy!"
-ipshell()
+if __name__ == "__main__":
+	status = run_test()
+	if status:
+		print "Passed."
+	else:
+		print "Failed."
 
