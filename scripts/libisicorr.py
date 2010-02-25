@@ -47,28 +47,6 @@ class IsiCorrelator(object):
 		for i in xrange(3):
 			self._boards[i].load_tvg(tvs[i])
 
-	def set_sync_period (self, period):
-		for board in self._boards:
-			board.set_sync_period(period)
-
-	def set_fft_shift (self, shift):
-		for board in self._boards:
-			board.set_fft_shift(shift)
-
-	def set_eq_coeff (self, coeff):
-		for board in self._boards:
-			board.set_eq_coeff(coeff)
-
-	def get_num_chans (self):
-		return self._num_chans
-
-	def get_status (self):
-		status_l = []
-		for i in xrange(3):
-			status = self._boards[i].get_status()
-			status_l += [status]
-		return status_l
-
 	def reset (self):
 		for board in self._boards:
 			board.reset()
@@ -85,6 +63,32 @@ class IsiCorrelator(object):
 		for board in self._boards:
 			board.acquire()
 		time.sleep(self._update_delay)
+
+	def set_clock_freq (self, freq=200):
+		for board in self._boards:
+			board.set_clock_freq(freq)
+
+	def set_sync_period (self, period):
+		for board in self._boards:
+			board.set_sync_period(period)
+
+	def set_fft_shift (self, shift):
+		for board in self._boards:
+			board.set_fft_shift(shift)
+
+	def set_eq_coeff (self, coeff):
+		for board in self._boards:
+			board.set_eq_coeff(coeff)
+
+	def get_status (self):
+		status_l = []
+		for i in xrange(3):
+			status = self._boards[i].get_status()
+			status_l += [status]
+		return status_l
+
+	def get_num_chans (self):
+		return self._num_chans
 
 	def get_data (self):
 		"""Read vacc data and permute it into a useful order."""
