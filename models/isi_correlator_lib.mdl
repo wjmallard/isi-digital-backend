@@ -14,9 +14,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Feb 25 18:46:47 2010"
+  LastModifiedDate	  "Thu Feb 25 19:19:09 2010"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:487>"
+  ModelVersionFormat	  "1.%<AutoIncrement:488>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -10758,15 +10758,15 @@ Library {
       MaskHideContents	      off
       MaskType		      "capture"
       MaskDescription	      "This block captures N data lines into N separate BRAMs."
-      MaskPromptString	      "Number of BRAMs:|Address width:|Provide done port"
-      MaskStyleString	      "edit,edit,checkbox"
-      MaskTunableValueString  "on,on,on"
-      MaskCallbackString      "||"
-      MaskEnableString	      "on,on,on"
-      MaskVisibilityString    "on,on,on"
-      MaskToolTipString	      "on,on,on"
-      MaskVarAliasString      ",,"
-      MaskVariables	      "num_brams=@1;addr_width=@2;done_port=&3;"
+      MaskPromptString	      "Number of BRAMs:|Address width:|Provide done port:|Latency:"
+      MaskStyleString	      "edit,edit,checkbox,edit"
+      MaskTunableValueString  "on,on,on,on"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskToolTipString	      "on,on,on,on"
+      MaskVarAliasString      ",,,"
+      MaskVariables	      "num_brams=@1;addr_width=@2;done_port=&3;latency=@4;"
       MaskInitialization      "capture_init(gcb, ...\n    'num_brams', num_brams, ...\n    'addr_width', addr_width, ."
       "..\n    'done_port', done_port);"
       MaskSelfModifiable      on
@@ -10775,12 +10775,12 @@ Library {
       MaskIconRotate	      "none"
       MaskPortRotate	      "default"
       MaskIconUnits	      "autoscale"
-      MaskValueString	      "1|11|on"
-      MaskTabNameString	      ",,"
+      MaskValueString	      "1|11|on|2"
+      MaskTabNameString	      ",,,"
       System {
 	Name			"capture"
 	Location		[1003, 51, 1472, 324]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -10824,7 +10824,7 @@ Library {
 	  const			  "1"
 	  n_bits		  "1"
 	  bin_pt		  "0"
-	  explicit_period	  "on"
+	  explicit_period	  on
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -10833,7 +10833,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "constant"
@@ -10856,15 +10856,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "AND"
 	  inputs		  "2"
-	  en			  "off"
+	  en			  off
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "16"
 	  bin_pt		  "0"
-	  align_bp		  "on"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
+	  align_bp		  on
+	  dbl_ovrd		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -10886,10 +10886,10 @@ Library {
 	  Position		  [275, 13, 375, 57]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/Shared BRAM"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -10911,7 +10911,7 @@ Library {
 	  SourceType		  "freeze_cntr"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -10932,9 +10932,9 @@ Library {
 	  "<br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigne"
 	  "d with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000"
 	  " in binary)."
-	  force_arith_type	  "on"
+	  force_arith_type	  on
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  "on"
+	  force_bin_pt		  on
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -22250,11 +22250,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "1"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -22276,11 +22276,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "1"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -22302,11 +22302,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
@@ -22329,15 +22329,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "AND"
 	  inputs		  "2"
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "16"
 	  bin_pt		  "0"
-	  align_bp		  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  align_bp		  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,357"
@@ -22360,7 +22360,7 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Mux"
 	  SourceType		  "Xilinx Bus Multiplexer Block"
 	  inputs		  "9"
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
@@ -22368,8 +22368,8 @@ Library {
 	  bin_pt		  "14"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,429"
@@ -22557,10 +22557,10 @@ Library {
 	  Position		  [825, 907, 925, 983]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/Shared BRAM"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -22936,10 +22936,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Inverter"
 	  SourceType		  "Xilinx Inverter Block"
 	  infoedit		  "Bitwise logical negation (one's complement) operator."
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -22961,16 +22961,16 @@ Library {
 	  SourceType		  "Xilinx FIFO Block Block"
 	  depth			  "16"
 	  percent_nbits		  "1"
-	  rst			  on
-	  en			  off
-	  use_dcount		  off
-	  use_almost_empty	  off
+	  rst			  "on"
+	  en			  "off"
+	  use_dcount		  "off"
+	  use_almost_empty	  "off"
 	  almost_empty_thresh	  "2"
-	  use_almost_full	  off
+	  use_almost_full	  "off"
 	  almost_full_thresh	  "14"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  mem_type		  "Block RAM"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  explicit_period	  "off"
 	  has_advanced_control	  "0"
@@ -22997,16 +22997,16 @@ Library {
 	  SourceType		  "Xilinx FIFO Block Block"
 	  depth			  "16"
 	  percent_nbits		  "1"
-	  rst			  on
-	  en			  off
-	  use_dcount		  off
-	  use_almost_empty	  off
+	  rst			  "on"
+	  en			  "off"
+	  use_dcount		  "off"
+	  use_almost_empty	  "off"
 	  almost_empty_thresh	  "2"
-	  use_almost_full	  off
+	  use_almost_full	  "off"
 	  almost_full_thresh	  "14"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  mem_type		  "Block RAM"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  explicit_period	  "off"
 	  has_advanced_control	  "0"
@@ -23033,16 +23033,16 @@ Library {
 	  SourceType		  "Xilinx FIFO Block Block"
 	  depth			  "16"
 	  percent_nbits		  "1"
-	  rst			  on
-	  en			  off
-	  use_dcount		  off
-	  use_almost_empty	  off
+	  rst			  "on"
+	  en			  "off"
+	  use_dcount		  "off"
+	  use_almost_empty	  "off"
 	  almost_empty_thresh	  "2"
-	  use_almost_full	  off
+	  use_almost_full	  "off"
 	  almost_full_thresh	  "14"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  mem_type		  "Block RAM"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  explicit_period	  "off"
 	  has_advanced_control	  "0"
@@ -23069,16 +23069,16 @@ Library {
 	  SourceType		  "Xilinx FIFO Block Block"
 	  depth			  "16"
 	  percent_nbits		  "1"
-	  rst			  on
-	  en			  off
-	  use_dcount		  off
-	  use_almost_empty	  off
+	  rst			  "on"
+	  en			  "off"
+	  use_dcount		  "off"
+	  use_almost_empty	  "off"
 	  almost_empty_thresh	  "2"
-	  use_almost_full	  off
+	  use_almost_full	  "off"
 	  almost_full_thresh	  "14"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  mem_type		  "Block RAM"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  explicit_period	  "off"
 	  has_advanced_control	  "0"
@@ -23105,16 +23105,16 @@ Library {
 	  SourceType		  "Xilinx FIFO Block Block"
 	  depth			  "16"
 	  percent_nbits		  "1"
-	  rst			  on
-	  en			  off
-	  use_dcount		  off
-	  use_almost_empty	  off
+	  rst			  "on"
+	  en			  "off"
+	  use_dcount		  "off"
+	  use_almost_empty	  "off"
 	  almost_empty_thresh	  "2"
-	  use_almost_full	  off
+	  use_almost_full	  "off"
 	  almost_full_thresh	  "14"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  mem_type		  "Block RAM"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  explicit_period	  "off"
 	  has_advanced_control	  "0"
@@ -23141,16 +23141,16 @@ Library {
 	  SourceType		  "Xilinx FIFO Block Block"
 	  depth			  "16"
 	  percent_nbits		  "1"
-	  rst			  on
-	  en			  off
-	  use_dcount		  off
-	  use_almost_empty	  off
+	  rst			  "on"
+	  en			  "off"
+	  use_dcount		  "off"
+	  use_almost_empty	  "off"
 	  almost_empty_thresh	  "2"
-	  use_almost_full	  off
+	  use_almost_full	  "off"
 	  almost_full_thresh	  "14"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  mem_type		  "Block RAM"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  explicit_period	  "off"
 	  has_advanced_control	  "0"
@@ -23177,16 +23177,16 @@ Library {
 	  SourceType		  "Xilinx FIFO Block Block"
 	  depth			  "16"
 	  percent_nbits		  "1"
-	  rst			  on
-	  en			  off
-	  use_dcount		  off
-	  use_almost_empty	  off
+	  rst			  "on"
+	  en			  "off"
+	  use_dcount		  "off"
+	  use_almost_empty	  "off"
 	  almost_empty_thresh	  "2"
-	  use_almost_full	  off
+	  use_almost_full	  "off"
 	  almost_full_thresh	  "14"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  mem_type		  "Block RAM"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  explicit_period	  "off"
 	  has_advanced_control	  "0"
@@ -23213,16 +23213,16 @@ Library {
 	  SourceType		  "Xilinx FIFO Block Block"
 	  depth			  "16"
 	  percent_nbits		  "1"
-	  rst			  on
-	  en			  off
-	  use_dcount		  off
-	  use_almost_empty	  off
+	  rst			  "on"
+	  en			  "off"
+	  use_dcount		  "off"
+	  use_almost_empty	  "off"
 	  almost_empty_thresh	  "2"
-	  use_almost_full	  off
+	  use_almost_full	  "off"
 	  almost_full_thresh	  "14"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  mem_type		  "Block RAM"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  explicit_period	  "off"
 	  has_advanced_control	  "0"
@@ -23249,16 +23249,16 @@ Library {
 	  SourceType		  "Xilinx FIFO Block Block"
 	  depth			  "16"
 	  percent_nbits		  "1"
-	  rst			  on
-	  en			  off
-	  use_dcount		  off
-	  use_almost_empty	  off
+	  rst			  "on"
+	  en			  "off"
+	  use_dcount		  "off"
+	  use_almost_empty	  "off"
 	  almost_empty_thresh	  "2"
-	  use_almost_full	  off
+	  use_almost_full	  "off"
 	  almost_full_thresh	  "14"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  mem_type		  "Block RAM"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  explicit_period	  "off"
 	  has_advanced_control	  "0"
@@ -23284,10 +23284,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Inverter"
 	  SourceType		  "Xilinx Inverter Block"
 	  infoedit		  "Bitwise logical negation (one's complement) operator."
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -23309,7 +23309,7 @@ Library {
 	  SourceType		  "simple_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -23328,7 +23328,7 @@ Library {
 	  SourceType		  "simple_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -23347,7 +23347,7 @@ Library {
 	  SourceType		  "simple_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -23366,7 +23366,7 @@ Library {
 	  SourceType		  "simple_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -23385,7 +23385,7 @@ Library {
 	  SourceType		  "simple_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -23404,7 +23404,7 @@ Library {
 	  SourceType		  "simple_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -23423,7 +23423,7 @@ Library {
 	  SourceType		  "simple_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -23442,7 +23442,7 @@ Library {
 	  SourceType		  "simple_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -23461,7 +23461,7 @@ Library {
 	  SourceType		  "simple_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
