@@ -14,9 +14,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Feb 26 02:09:38 2010"
+  LastModifiedDate	  "Fri Feb 26 02:18:41 2010"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:499>"
+  ModelVersionFormat	  "1.%<AutoIncrement:500>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -16491,137 +16491,24 @@ Library {
 	  "',1,'3');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
-	  BlockType		  SubSystem
+	  BlockType		  Reference
 	  Name			  "pipeline0"
 	  Ports			  [1, 1]
 	  Position		  [195, 62, 245, 78]
 	  ShowName		  off
-	  AncestorBlock		  "casper_library/Delays/pipeline"
 	  UserDataPersistent	  on
 	  UserData		  "DataTag30"
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
 	  FunctionWithSeparateData off
-	  Opaque		  off
-	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
-	  MaskType		  "pipeline"
-	  MaskDescription	  "An explicitly laid-out delay line to avoid mapping to SRL16s\nfor use in pipelining to help achi"
-	  "eve timing closure."
-	  MaskPromptString	  "Latency"
-	  MaskStyleString	  "edit"
-	  MaskTunableValueString  "off"
-	  MaskEnableString	  "on"
-	  MaskVisibilityString	  "on"
-	  MaskToolTipString	  "on"
-	  MaskVariables		  "latency=@1;"
-	  MaskInitialization	  "pipeline_init(gcb, 'latency', latency);"
-	  MaskDisplay		  "port_label('input', 1, 'd');\nport_label('output', 1, 'q');\ndisp(['Z^-', num2str(latency)]);"
-	  MaskIconFrame		  on
-	  MaskIconOpaque	  on
-	  MaskIconRotate	  "none"
-	  MaskPortRotate	  "default"
-	  MaskIconUnits		  "autoscale"
-	  MaskValueString	  "2"
-	  System {
-	    Name		    "pipeline0"
-	    Location		    [371, 368, 953, 706]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "usletter"
-	    PaperUnits		    "inches"
-	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "d"
-	      Position		      [15, 48, 45, 62]
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Register0"
-	      Ports		      [1, 1]
-	      Position		      [115, 27, 175, 83]
-	      SourceBlock	      "xbsIndex_r4/Register"
-	      SourceType	      "Xilinx Register Block"
-	      init		      "0"
-	      rst		      off
-	      en		      off
-	      dbl_ovrd		      off
-	      xl_use_area	      off
-	      xl_area		      "[0,0,0,0,0,0,0]"
-	      has_advanced_control    "0"
-	      sggui_pos		      "20,20,348,193"
-	      block_type	      "register"
-	      block_version	      "10.1.3"
-	      sg_icon_stat	      "60,56,1,1,white,blue,0,ef2275f7,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.25 0.1 0.316667 0.1 0.25 0.5 0.566667 0.633333 0.9 0.683333 0.483333 0.333333 0.533333 0.333333 0"
-	      ".483333 0.683333 0.9 0.633333 0.566667 0.5 0.25 ],[0.107143 0.267857 0.5 0.732143 0.892857 0.892857 0.821429 0."
-	      "892857 0.892857 0.660714 0.875 0.714286 0.5 0.285714 0.125 0.339286 0.107143 0.107143 0.178571 0.107143 0.10714"
-	      "3 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf(''"
-	      ",'COMMENT: begin icon text');\ncolor('black');port_label('input',1,'d');\ncolor('black');port_label('output',1,"
-	      "'q');\ncolor('black');disp('\\bf{z^{-1}}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Register1"
-	      Ports		      [1, 1]
-	      Position		      [215, 27, 275, 83]
-	      SourceBlock	      "xbsIndex_r4/Register"
-	      SourceType	      "Xilinx Register Block"
-	      init		      "0"
-	      rst		      off
-	      en		      off
-	      dbl_ovrd		      off
-	      xl_use_area	      off
-	      xl_area		      "[0,0,0,0,0,0,0]"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "register"
-	      block_version	      "10.1.3"
-	      sg_icon_stat	      "60,56,1,1,white,blue,0,ef2275f7,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.25 0.1 0.316667 0.1 0.25 0.5 0.566667 0.633333 0.9 0.683333 0.483333 0.333333 0.533333 0.333333 0"
-	      ".483333 0.683333 0.9 0.633333 0.566667 0.5 0.25 ],[0.107143 0.267857 0.5 0.732143 0.892857 0.892857 0.821429 0."
-	      "892857 0.892857 0.660714 0.875 0.714286 0.5 0.285714 0.125 0.339286 0.107143 0.107143 0.178571 0.107143 0.10714"
-	      "3 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf(''"
-	      ",'COMMENT: begin icon text');\ncolor('black');port_label('input',1,'d');\ncolor('black');port_label('output',1,"
-	      "'q');\ncolor('black');disp('\\bf{z^{-1}}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "q"
-	      Position		      [315, 48, 345, 62]
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      SrcBlock		      "Register0"
-	      SrcPort		      1
-	      DstBlock		      "Register1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "d"
-	      SrcPort		      1
-	      DstBlock		      "Register0"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Register1"
-	      SrcPort		      1
-	      DstBlock		      "q"
-	      DstPort		      1
-	    }
-	  }
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "2"
 	}
 	Block {
 	  BlockType		  Reference
