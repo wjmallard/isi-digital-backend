@@ -14,9 +14,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Feb 25 19:19:09 2010"
+  LastModifiedDate	  "Thu Feb 25 19:33:52 2010"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:488>"
+  ModelVersionFormat	  "1.%<AutoIncrement:489>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -10779,8 +10779,8 @@ Library {
       MaskTabNameString	      ",,,"
       System {
 	Name			"capture"
-	Location		[1003, 51, 1472, 324]
-	Open			on
+	Location		[1003, 51, 1532, 423]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -10880,10 +10880,30 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
+	  Name			  "addr_pipeline"
+	  Ports			  [1, 1]
+	  Position		  [245, 88, 295, 102]
+	  ShowName		  off
+	  UserDataPersistent	  on
+	  UserData		  "DataTag23"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "latency"
+	}
+	Block {
+	  BlockType		  Reference
 	  Name			  "bram0"
 	  Tag			  "xps:bram"
 	  Ports			  [3, 1]
-	  Position		  [275, 13, 375, 57]
+	  Position		  [345, 13, 445, 57]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/Shared BRAM"
 	  SourceType		  ""
@@ -10904,6 +10924,26 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
+	  Name			  "done_pipeline"
+	  Ports			  [1, 1]
+	  Position		  [245, 118, 295, 132]
+	  ShowName		  off
+	  UserDataPersistent	  on
+	  UserData		  "DataTag24"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "latency"
+	}
+	Block {
+	  BlockType		  Reference
 	  Name			  "freeze_cntr"
 	  Ports			  [2, 3]
 	  Position		  [170, 88, 220, 132]
@@ -10918,6 +10958,26 @@ Library {
 	  RTWMemSecDataInternal	  "Inherit from model"
 	  RTWMemSecDataParameters "Inherit from model"
 	  CounterBits		  "addr_width"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pipeline0"
+	  Ports			  [1, 1]
+	  Position		  [245, 28, 295, 42]
+	  ShowName		  off
+	  UserDataPersistent	  on
+	  UserData		  "DataTag25"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "latency"
 	}
 	Block {
 	  BlockType		  Reference
@@ -10951,13 +11011,33 @@ Library {
 	Block {
 	  BlockType		  Terminator
 	  Name			  "terminator0"
-	  Position		  [405, 25, 425, 45]
+	  Position		  [470, 25, 490, 45]
 	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "we_pipeline"
+	  Ports			  [1, 1]
+	  Position		  [245, 103, 295, 117]
+	  ShowName		  off
+	  UserDataPersistent	  on
+	  UserData		  "DataTag26"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "latency"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "done"
-	  Position		  [405, 118, 435, 132]
+	  Position		  [470, 118, 500, 132]
 	  IconDisplay		  "Port number"
 	}
 	Line {
@@ -10969,6 +11049,12 @@ Library {
 	Line {
 	  SrcBlock		  "reinterp0"
 	  SrcPort		  1
+	  DstBlock		  "pipeline0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pipeline0"
+	  SrcPort		  1
 	  DstBlock		  "bram0"
 	  DstPort		  2
 	}
@@ -10979,8 +11065,8 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "freeze_cntr"
-	  SrcPort		  3
+	  SrcBlock		  "done_pipeline"
+	  SrcPort		  1
 	  DstBlock		  "done"
 	  DstPort		  1
 	}
@@ -11011,12 +11097,30 @@ Library {
 	Line {
 	  SrcBlock		  "freeze_cntr"
 	  SrcPort		  1
-	  DstBlock		  "bram0"
+	  DstBlock		  "addr_pipeline"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "freeze_cntr"
 	  SrcPort		  2
+	  DstBlock		  "we_pipeline"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "freeze_cntr"
+	  SrcPort		  3
+	  DstBlock		  "done_pipeline"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "addr_pipeline"
+	  SrcPort		  1
+	  DstBlock		  "bram0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "we_pipeline"
+	  SrcPort		  1
 	  DstBlock		  "bram0"
 	  DstPort		  3
 	}
@@ -11999,7 +12103,7 @@ Library {
 	  Position		  [70, 13, 120, 42]
 	  AttributesFormatString  "_ r/i"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag23"
+	  UserData		  "DataTag27"
 	  SourceBlock		  "casper_library/Misc/c_to_ri"
 	  SourceType		  "c_to_ri"
 	  ShowPortLabels	  "FromPortIcon"
@@ -12020,7 +12124,7 @@ Library {
 	  Position		  [70, 93, 120, 122]
 	  AttributesFormatString  "_ r/i"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag24"
+	  UserData		  "DataTag28"
 	  SourceBlock		  "casper_library/Misc/c_to_ri"
 	  SourceType		  "c_to_ri"
 	  ShowPortLabels	  "FromPortIcon"
@@ -19195,7 +19299,7 @@ Library {
 	  Position		  [155, 13, 205, 42]
 	  AttributesFormatString  "_ r/i"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag25"
+	  UserData		  "DataTag29"
 	  SourceBlock		  "casper_library/Misc/c_to_ri"
 	  SourceType		  "c_to_ri"
 	  ShowPortLabels	  "FromPortIcon"
@@ -19215,7 +19319,7 @@ Library {
 	  Ports			  [2, 1]
 	  Position		  [445, 38, 495, 67]
 	  UserDataPersistent	  on
-	  UserData		  "DataTag26"
+	  UserData		  "DataTag30"
 	  SourceBlock		  "casper_library/Misc/ri_to_c"
 	  SourceType		  "ri_to_c"
 	  ShowPortLabels	  "FromPortIcon"
@@ -20012,7 +20116,7 @@ Library {
       Position		      [15, 15, 65, 65]
       AttributesFormatString  "sync_period=1"
       UserDataPersistent      on
-      UserData		      "DataTag27"
+      UserData		      "DataTag31"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -24994,9 +25098,9 @@ Library {
   }
 }
 MatData {
-  NumRecords		  28
+  NumRecords		  32
   DataRecord {
-    Tag			    DataTag27
+    Tag			    DataTag31
     Data		    "  %)30     .    \\ 0   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A"
     "=&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !FV0@0.    8 0  "
     " 8    (     @         %    \"     $    !     0         %  0 $P    $   #W    9&5F875L=',              '5S:6YG7W!F8E"
@@ -25015,30 +25119,62 @@ MatData {
     "!          D    (            \\#\\"
   }
   DataRecord {
-    Tag			    DataTag26
+    Tag			    DataTag30
     Data		    "  %)30     .    <     8    (     0         %    \"     $    !     0         .    0     8    (    !     "
     "     %    \"     $    ,     0         0    #    ')I7W1O7V-?:6YI=      "
   }
   DataRecord {
-    Tag			    DataTag25
+    Tag			    DataTag29
     Data		    "  %)30     .    \\     8    (     0         %    \"     $    #     0         .    0     8    (    !    "
     "      %    \"     $    ,     0         0    #    &-?=&]?<FE?:6YI=      .    .     8    (    !@         %    \"    "
     " $    !     0         )    \"            \"! #@   #@    &    \"     8         !0    @    !     0    $         \"0 "
     "   @            <0 "
+  }
+  DataRecord {
+    Tag			    DataTag28
+    Data		    "  %)30     .    \\     8    (     0         %    \"     $    #     0         .    0     8    (    !    "
+    "      %    \"     $    ,     0         0    #    &-?=&]?<FE?:6YI=      .    .     8    (    !@         %    \"    "
+    " $    !     0         )    \"            \"! #@   #@    &    \"     8         !0    @    !     0    $         \"0 "
+    "   @            <0 "
+  }
+  DataRecord {
+    Tag			    DataTag27
+    Data		    "  %)30     .    \\     8    (     0         %    \"     $    #     0         .    0     8    (    !    "
+    "      %    \"     $    ,     0         0    #    &-?=&]?<FE?:6YI=      .    .     8    (    !@         %    \"    "
+    " $    !     0         )    \"            \"! #@   #@    &    \"     8         !0    @    !     0    $         \"0 "
+    "   @            <0 "
+  }
+  DataRecord {
+    Tag			    DataTag26
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
+  }
+  DataRecord {
+    Tag			    DataTag25
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
   }
   DataRecord {
     Tag			    DataTag24
-    Data		    "  %)30     .    \\     8    (     0         %    \"     $    #     0         .    0     8    (    !    "
-    "      %    \"     $    ,     0         0    #    &-?=&]?<FE?:6YI=      .    .     8    (    !@         %    \"    "
-    " $    !     0         )    \"            \"! #@   #@    &    \"     8         !0    @    !     0    $         \"0 "
-    "   @            <0 "
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
   }
   DataRecord {
     Tag			    DataTag23
-    Data		    "  %)30     .    \\     8    (     0         %    \"     $    #     0         .    0     8    (    !    "
-    "      %    \"     $    ,     0         0    #    &-?=&]?<FE?:6YI=      .    .     8    (    !@         %    \"    "
-    " $    !     0         )    \"            \"! #@   #@    &    \"     8         !0    @    !     0    $         \"0 "
-    "   @            <0 "
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
   }
   DataRecord {
     Tag			    DataTag22
