@@ -14,9 +14,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Feb 25 19:33:52 2010"
+  LastModifiedDate	  "Fri Feb 26 00:21:01 2010"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:489>"
+  ModelVersionFormat	  "1.%<AutoIncrement:492>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -626,7 +626,7 @@ Library {
   }
   System {
     Name		    "isi_correlator_lib"
-    Location		    [1, 58, 1412, 529]
+    Location		    [1, 58, 1262, 527]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -5772,1632 +5772,6 @@ Library {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "capt_corr"
-      Ports		      [11, 1]
-      Position		      [1340, 12, 1390, 178]
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"capt_corr"
-	Location		[1354, 162, 1594, 520]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "AA_r"
-	  Position		  [15, 13, 45, 27]
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "BB_r"
-	  Position		  [15, 28, 45, 42]
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "CC_r"
-	  Position		  [15, 43, 45, 57]
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "AB_r"
-	  Position		  [15, 108, 45, 122]
-	  Port			  "4"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "AB_i"
-	  Position		  [15, 123, 45, 137]
-	  Port			  "5"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "BC_r"
-	  Position		  [15, 138, 45, 152]
-	  Port			  "6"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "BC_i"
-	  Position		  [15, 203, 45, 217]
-	  Port			  "7"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "CA_r"
-	  Position		  [15, 218, 45, 232]
-	  Port			  "8"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "CA_i"
-	  Position		  [15, 233, 45, 247]
-	  Port			  "9"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "en"
-	  Position		  [15, 303, 45, 317]
-	  Port			  "10"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "trig"
-	  Position		  [15, 318, 45, 332]
-	  Port			  "11"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "capt0"
-	  Ports			  [5, 1]
-	  Position		  [95, 12, 145, 88]
-	  AncestorBlock		  "isi_correlator_lib/capture"
-	  UserDataPersistent	  on
-	  UserData		  "DataTag17"
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
-	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
-	  MaskType		  "capture"
-	  MaskDescription	  "This block captures N data lines into N separate BRAMs."
-	  MaskPromptString	  "Number of BRAMs:|Address width:|Provide done port"
-	  MaskStyleString	  "edit,edit,checkbox"
-	  MaskTunableValueString  "on,on,on"
-	  MaskCallbackString	  "||"
-	  MaskEnableString	  "on,on,on"
-	  MaskVisibilityString	  "on,on,on"
-	  MaskToolTipString	  "on,on,on"
-	  MaskVarAliasString	  ",,"
-	  MaskVariables		  "num_brams=@1;addr_width=@2;done_port=&3;"
-	  MaskInitialization	  "capture_init(gcb, ...\n    'num_brams', num_brams, ...\n    'addr_width', addr_width, ...\n  "
-	  "  'done_port', done_port);"
-	  MaskSelfModifiable	  on
-	  MaskIconFrame		  on
-	  MaskIconOpaque	  on
-	  MaskIconRotate	  "none"
-	  MaskPortRotate	  "default"
-	  MaskIconUnits		  "autoscale"
-	  MaskValueString	  "3|11|on"
-	  MaskTabNameString	  ",,"
-	  System {
-	    Name		    "capt0"
-	    Location		    [1003, 51, 1472, 324]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "usletter"
-	    PaperUnits		    "inches"
-	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din0"
-	      Position		      [15, 28, 45, 42]
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din1"
-	      Position		      [15, 93, 45, 107]
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din2"
-	      Position		      [15, 158, 45, 172]
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "en"
-	      Position		      [15, 223, 45, 237]
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "trig"
-	      Position		      [15, 263, 45, 277]
-	      Port		      "5"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Constant"
-	      Ports		      [0, 1]
-	      Position		      [95, 223, 145, 237]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Constant"
-	      SourceType	      "Xilinx Constant Block Block"
-	      arith_type	      "Boolean"
-	      const		      "1"
-	      n_bits		      "1"
-	      bin_pt		      "0"
-	      explicit_period	      "on"
-	      period		      "1"
-	      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
-	      equ		      "P=C"
-	      opselect		      "C"
-	      inp2		      "PCIN>>17"
-	      opr		      "+"
-	      inp1		      "P"
-	      carry		      "CIN"
-	      dbl_ovrd		      "off"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "constant"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,0,1,white,blue,0,1c72b5be,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');port_label('output',1,'1');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Logical"
-	      Ports		      [2, 1]
-	      Position		      [95, 238, 145, 282]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Logical"
-	      SourceType	      "Xilinx Logical Block Block"
-	      logical_function	      "AND"
-	      inputs		      "2"
-	      en		      "off"
-	      latency		      "0"
-	      precision		      "Full"
-	      arith_type	      "Unsigned"
-	      n_bits		      "16"
-	      bin_pt		      "0"
-	      align_bp		      "on"
-	      dbl_ovrd		      "off"
-	      xl_use_area	      "off"
-	      xl_area		      "[0,0,0,0,0,0,0]"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "logical"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,44,2,1,white,blue,0,0a851f85,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.26 0.12 0.32 0.12 0.26 0.5 0.56 0.62 0.86 0.66 0.48 0.34 0.52 0.34 0.48 0.66 0.86 0.62 0.56 0.5 0"
-	      ".26 ],[0.113636 0.272727 0.5 0.727273 0.886364 0.886364 0.818182 0.886364 0.886364 0.659091 0.863636 0.704545 0"
-	      ".5 0.295455 0.136364 0.340909 0.113636 0.113636 0.181818 0.113636 0.113636 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 "
-	      "0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('"
-	      "black');disp('\\newlineand\\newlinez^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram0"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 13, 375, 57]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram1"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 78, 375, 122]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram2"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 143, 375, 187]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "freeze_cntr"
-	      Ports		      [2, 3]
-	      Position		      [170, 218, 220, 262]
-	      SourceBlock	      "casper_library/Misc/freeze_cntr"
-	      SourceType	      "freeze_cntr"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      CounterBits	      "addr_width"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp0"
-	      Ports		      [1, 1]
-	      Position		      [170, 28, 220, 42]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp1"
-	      Ports		      [1, 1]
-	      Position		      [170, 93, 220, 107]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp2"
-	      Ports		      [1, 1]
-	      Position		      [170, 158, 220, 172]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator0"
-	      Position		      [405, 25, 425, 45]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator1"
-	      Position		      [405, 90, 425, 110]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator2"
-	      Position		      [405, 155, 425, 175]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "done"
-	      Position		      [405, 248, 435, 262]
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      SrcBlock		      "din0"
-	      SrcPort		      1
-	      DstBlock		      "reinterp0"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp0"
-	      SrcPort		      1
-	      DstBlock		      "bram0"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram0"
-	      SrcPort		      1
-	      DstBlock		      "terminator0"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "din1"
-	      SrcPort		      1
-	      DstBlock		      "reinterp1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp1"
-	      SrcPort		      1
-	      DstBlock		      "bram1"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram1"
-	      SrcPort		      1
-	      DstBlock		      "terminator1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "din2"
-	      SrcPort		      1
-	      DstBlock		      "reinterp2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp2"
-	      SrcPort		      1
-	      DstBlock		      "bram2"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram2"
-	      SrcPort		      1
-	      DstBlock		      "terminator2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "freeze_cntr"
-	      SrcPort		      3
-	      DstBlock		      "done"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "en"
-	      SrcPort		      1
-	      DstBlock		      "Logical"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "trig"
-	      SrcPort		      1
-	      DstBlock		      "Logical"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Constant"
-	      SrcPort		      1
-	      DstBlock		      "freeze_cntr"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Logical"
-	      SrcPort		      1
-	      DstBlock		      "freeze_cntr"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "freeze_cntr"
-	      SrcPort		      1
-	      Points		      [0, 0]
-	      Branch {
-		DstBlock		"bram0"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"bram1"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"bram2"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "freeze_cntr"
-	      SrcPort		      2
-	      Points		      [0, 0]
-	      Branch {
-		DstBlock		"bram0"
-		DstPort			3
-	      }
-	      Branch {
-		DstBlock		"bram1"
-		DstPort			3
-	      }
-	      Branch {
-		DstBlock		"bram2"
-		DstPort			3
-	      }
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "capt1"
-	  Ports			  [5]
-	  Position		  [95, 107, 145, 183]
-	  AncestorBlock		  "isi_correlator_lib/capture"
-	  UserDataPersistent	  on
-	  UserData		  "DataTag18"
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
-	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
-	  MaskType		  "capture"
-	  MaskDescription	  "This block captures N data lines into N separate BRAMs."
-	  MaskPromptString	  "Number of BRAMs:|Address width:|Provide done port"
-	  MaskStyleString	  "edit,edit,checkbox"
-	  MaskTunableValueString  "on,on,on"
-	  MaskCallbackString	  "||"
-	  MaskEnableString	  "on,on,on"
-	  MaskVisibilityString	  "on,on,on"
-	  MaskToolTipString	  "on,on,on"
-	  MaskVarAliasString	  ",,"
-	  MaskVariables		  "num_brams=@1;addr_width=@2;done_port=&3;"
-	  MaskInitialization	  "capture_init(gcb, ...\n    'num_brams', num_brams, ...\n    'addr_width', addr_width, ...\n  "
-	  "  'done_port', done_port);"
-	  MaskSelfModifiable	  on
-	  MaskIconFrame		  on
-	  MaskIconOpaque	  on
-	  MaskIconRotate	  "none"
-	  MaskPortRotate	  "default"
-	  MaskIconUnits		  "autoscale"
-	  MaskValueString	  "3|11|off"
-	  MaskTabNameString	  ",,"
-	  System {
-	    Name		    "capt1"
-	    Location		    [1003, 51, 1472, 324]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "usletter"
-	    PaperUnits		    "inches"
-	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din0"
-	      Position		      [15, 28, 45, 42]
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din1"
-	      Position		      [15, 93, 45, 107]
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din2"
-	      Position		      [15, 158, 45, 172]
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "en"
-	      Position		      [15, 223, 45, 237]
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "trig"
-	      Position		      [15, 263, 45, 277]
-	      Port		      "5"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Constant"
-	      Ports		      [0, 1]
-	      Position		      [95, 223, 145, 237]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Constant"
-	      SourceType	      "Xilinx Constant Block Block"
-	      arith_type	      "Boolean"
-	      const		      "1"
-	      n_bits		      "1"
-	      bin_pt		      "0"
-	      explicit_period	      "on"
-	      period		      "1"
-	      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
-	      equ		      "P=C"
-	      opselect		      "C"
-	      inp2		      "PCIN>>17"
-	      opr		      "+"
-	      inp1		      "P"
-	      carry		      "CIN"
-	      dbl_ovrd		      "off"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "constant"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,0,1,white,blue,0,1c72b5be,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');port_label('output',1,'1');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Logical"
-	      Ports		      [2, 1]
-	      Position		      [95, 238, 145, 282]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Logical"
-	      SourceType	      "Xilinx Logical Block Block"
-	      logical_function	      "AND"
-	      inputs		      "2"
-	      en		      "off"
-	      latency		      "0"
-	      precision		      "Full"
-	      arith_type	      "Unsigned"
-	      n_bits		      "16"
-	      bin_pt		      "0"
-	      align_bp		      "on"
-	      dbl_ovrd		      "off"
-	      xl_use_area	      "off"
-	      xl_area		      "[0,0,0,0,0,0,0]"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "logical"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,44,2,1,white,blue,0,0a851f85,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.26 0.12 0.32 0.12 0.26 0.5 0.56 0.62 0.86 0.66 0.48 0.34 0.52 0.34 0.48 0.66 0.86 0.62 0.56 0.5 0"
-	      ".26 ],[0.113636 0.272727 0.5 0.727273 0.886364 0.886364 0.818182 0.886364 0.886364 0.659091 0.863636 0.704545 0"
-	      ".5 0.295455 0.136364 0.340909 0.113636 0.113636 0.181818 0.113636 0.113636 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 "
-	      "0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('"
-	      "black');disp('\\newlineand\\newlinez^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram0"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 13, 375, 57]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram1"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 78, 375, 122]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram2"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 143, 375, 187]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "freeze_cntr"
-	      Ports		      [2, 3]
-	      Position		      [170, 218, 220, 262]
-	      SourceBlock	      "casper_library/Misc/freeze_cntr"
-	      SourceType	      "freeze_cntr"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      CounterBits	      "addr_width"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp0"
-	      Ports		      [1, 1]
-	      Position		      [170, 28, 220, 42]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp1"
-	      Ports		      [1, 1]
-	      Position		      [170, 93, 220, 107]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp2"
-	      Ports		      [1, 1]
-	      Position		      [170, 158, 220, 172]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator0"
-	      Position		      [405, 25, 425, 45]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator1"
-	      Position		      [405, 90, 425, 110]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator2"
-	      Position		      [405, 155, 425, 175]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator_done"
-	      Position		      [405, 245, 425, 265]
-	      ShowName		      off
-	    }
-	    Line {
-	      SrcBlock		      "din0"
-	      SrcPort		      1
-	      DstBlock		      "reinterp0"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp0"
-	      SrcPort		      1
-	      DstBlock		      "bram0"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram0"
-	      SrcPort		      1
-	      DstBlock		      "terminator0"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "din1"
-	      SrcPort		      1
-	      DstBlock		      "reinterp1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp1"
-	      SrcPort		      1
-	      DstBlock		      "bram1"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram1"
-	      SrcPort		      1
-	      DstBlock		      "terminator1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "din2"
-	      SrcPort		      1
-	      DstBlock		      "reinterp2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp2"
-	      SrcPort		      1
-	      DstBlock		      "bram2"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram2"
-	      SrcPort		      1
-	      DstBlock		      "terminator2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "freeze_cntr"
-	      SrcPort		      3
-	      DstBlock		      "terminator_done"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "en"
-	      SrcPort		      1
-	      DstBlock		      "Logical"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "trig"
-	      SrcPort		      1
-	      DstBlock		      "Logical"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Constant"
-	      SrcPort		      1
-	      DstBlock		      "freeze_cntr"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Logical"
-	      SrcPort		      1
-	      DstBlock		      "freeze_cntr"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "freeze_cntr"
-	      SrcPort		      1
-	      Points		      [0, 0]
-	      Branch {
-		DstBlock		"bram0"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"bram1"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"bram2"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "freeze_cntr"
-	      SrcPort		      2
-	      Points		      [0, 0]
-	      Branch {
-		DstBlock		"bram0"
-		DstPort			3
-	      }
-	      Branch {
-		DstBlock		"bram1"
-		DstPort			3
-	      }
-	      Branch {
-		DstBlock		"bram2"
-		DstPort			3
-	      }
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "capt2"
-	  Ports			  [5]
-	  Position		  [95, 202, 145, 278]
-	  AncestorBlock		  "isi_correlator_lib/capture"
-	  UserDataPersistent	  on
-	  UserData		  "DataTag19"
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
-	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
-	  MaskType		  "capture"
-	  MaskDescription	  "This block captures N data lines into N separate BRAMs."
-	  MaskPromptString	  "Number of BRAMs:|Address width:|Provide done port"
-	  MaskStyleString	  "edit,edit,checkbox"
-	  MaskTunableValueString  "on,on,on"
-	  MaskCallbackString	  "||"
-	  MaskEnableString	  "on,on,on"
-	  MaskVisibilityString	  "on,on,on"
-	  MaskToolTipString	  "on,on,on"
-	  MaskVarAliasString	  ",,"
-	  MaskVariables		  "num_brams=@1;addr_width=@2;done_port=&3;"
-	  MaskInitialization	  "capture_init(gcb, ...\n    'num_brams', num_brams, ...\n    'addr_width', addr_width, ...\n  "
-	  "  'done_port', done_port);"
-	  MaskSelfModifiable	  on
-	  MaskIconFrame		  on
-	  MaskIconOpaque	  on
-	  MaskIconRotate	  "none"
-	  MaskPortRotate	  "default"
-	  MaskIconUnits		  "autoscale"
-	  MaskValueString	  "3|11|off"
-	  MaskTabNameString	  ",,"
-	  System {
-	    Name		    "capt2"
-	    Location		    [1003, 51, 1472, 324]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "usletter"
-	    PaperUnits		    "inches"
-	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din0"
-	      Position		      [15, 28, 45, 42]
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din1"
-	      Position		      [15, 93, 45, 107]
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din2"
-	      Position		      [15, 158, 45, 172]
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "en"
-	      Position		      [15, 223, 45, 237]
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "trig"
-	      Position		      [15, 263, 45, 277]
-	      Port		      "5"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Constant"
-	      Ports		      [0, 1]
-	      Position		      [95, 223, 145, 237]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Constant"
-	      SourceType	      "Xilinx Constant Block Block"
-	      arith_type	      "Boolean"
-	      const		      "1"
-	      n_bits		      "1"
-	      bin_pt		      "0"
-	      explicit_period	      "on"
-	      period		      "1"
-	      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
-	      equ		      "P=C"
-	      opselect		      "C"
-	      inp2		      "PCIN>>17"
-	      opr		      "+"
-	      inp1		      "P"
-	      carry		      "CIN"
-	      dbl_ovrd		      "off"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "constant"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,0,1,white,blue,0,1c72b5be,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');port_label('output',1,'1');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Logical"
-	      Ports		      [2, 1]
-	      Position		      [95, 238, 145, 282]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Logical"
-	      SourceType	      "Xilinx Logical Block Block"
-	      logical_function	      "AND"
-	      inputs		      "2"
-	      en		      "off"
-	      latency		      "0"
-	      precision		      "Full"
-	      arith_type	      "Unsigned"
-	      n_bits		      "16"
-	      bin_pt		      "0"
-	      align_bp		      "on"
-	      dbl_ovrd		      "off"
-	      xl_use_area	      "off"
-	      xl_area		      "[0,0,0,0,0,0,0]"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "logical"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,44,2,1,white,blue,0,0a851f85,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.26 0.12 0.32 0.12 0.26 0.5 0.56 0.62 0.86 0.66 0.48 0.34 0.52 0.34 0.48 0.66 0.86 0.62 0.56 0.5 0"
-	      ".26 ],[0.113636 0.272727 0.5 0.727273 0.886364 0.886364 0.818182 0.886364 0.886364 0.659091 0.863636 0.704545 0"
-	      ".5 0.295455 0.136364 0.340909 0.113636 0.113636 0.181818 0.113636 0.113636 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 "
-	      "0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('"
-	      "black');disp('\\newlineand\\newlinez^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram0"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 13, 375, 57]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram1"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 78, 375, 122]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram2"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 143, 375, 187]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "freeze_cntr"
-	      Ports		      [2, 3]
-	      Position		      [170, 218, 220, 262]
-	      SourceBlock	      "casper_library/Misc/freeze_cntr"
-	      SourceType	      "freeze_cntr"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      CounterBits	      "addr_width"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp0"
-	      Ports		      [1, 1]
-	      Position		      [170, 28, 220, 42]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp1"
-	      Ports		      [1, 1]
-	      Position		      [170, 93, 220, 107]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp2"
-	      Ports		      [1, 1]
-	      Position		      [170, 158, 220, 172]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator0"
-	      Position		      [405, 25, 425, 45]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator1"
-	      Position		      [405, 90, 425, 110]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator2"
-	      Position		      [405, 155, 425, 175]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator_done"
-	      Position		      [405, 245, 425, 265]
-	      ShowName		      off
-	    }
-	    Line {
-	      SrcBlock		      "din0"
-	      SrcPort		      1
-	      DstBlock		      "reinterp0"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp0"
-	      SrcPort		      1
-	      DstBlock		      "bram0"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram0"
-	      SrcPort		      1
-	      DstBlock		      "terminator0"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "din1"
-	      SrcPort		      1
-	      DstBlock		      "reinterp1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp1"
-	      SrcPort		      1
-	      DstBlock		      "bram1"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram1"
-	      SrcPort		      1
-	      DstBlock		      "terminator1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "din2"
-	      SrcPort		      1
-	      DstBlock		      "reinterp2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp2"
-	      SrcPort		      1
-	      DstBlock		      "bram2"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram2"
-	      SrcPort		      1
-	      DstBlock		      "terminator2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "freeze_cntr"
-	      SrcPort		      3
-	      DstBlock		      "terminator_done"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "en"
-	      SrcPort		      1
-	      DstBlock		      "Logical"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "trig"
-	      SrcPort		      1
-	      DstBlock		      "Logical"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Constant"
-	      SrcPort		      1
-	      DstBlock		      "freeze_cntr"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Logical"
-	      SrcPort		      1
-	      DstBlock		      "freeze_cntr"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "freeze_cntr"
-	      SrcPort		      1
-	      Points		      [0, 0]
-	      Branch {
-		DstBlock		"bram0"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"bram1"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"bram2"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "freeze_cntr"
-	      SrcPort		      2
-	      Points		      [0, 0]
-	      Branch {
-		DstBlock		"bram0"
-		DstPort			3
-	      }
-	      Branch {
-		DstBlock		"bram1"
-		DstPort			3
-	      }
-	      Branch {
-		DstBlock		"bram2"
-		DstPort			3
-	      }
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "done"
-	  Position		  [170, 43, 200, 57]
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "en"
-	  SrcPort		  1
-	  Points		  [5, 0; 0, -55]
-	  Branch {
-	    Points		    [0, -95]
-	    Branch {
-	      Points		      [0, -95]
-	      DstBlock		      "capt0"
-	      DstPort		      4
-	    }
-	    Branch {
-	      DstBlock		      "capt1"
-	      DstPort		      4
-	    }
-	  }
-	  Branch {
-	    DstBlock		    "capt2"
-	    DstPort		    4
-	  }
-	}
-	Line {
-	  SrcBlock		  "trig"
-	  SrcPort		  1
-	  Points		  [15, 0; 0, -55]
-	  Branch {
-	    Points		    [0, -95]
-	    Branch {
-	      Points		      [0, -95]
-	      DstBlock		      "capt0"
-	      DstPort		      5
-	    }
-	    Branch {
-	      DstBlock		      "capt1"
-	      DstPort		      5
-	    }
-	  }
-	  Branch {
-	    DstBlock		    "capt2"
-	    DstPort		    5
-	  }
-	}
-	Line {
-	  SrcBlock		  "capt0"
-	  SrcPort		  1
-	  DstBlock		  "done"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "AA_r"
-	  SrcPort		  1
-	  DstBlock		  "capt0"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "BB_r"
-	  SrcPort		  1
-	  DstBlock		  "capt0"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "CC_r"
-	  SrcPort		  1
-	  DstBlock		  "capt0"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "AB_r"
-	  SrcPort		  1
-	  DstBlock		  "capt1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "AB_i"
-	  SrcPort		  1
-	  DstBlock		  "capt1"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "BC_r"
-	  SrcPort		  1
-	  DstBlock		  "capt1"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "BC_i"
-	  SrcPort		  1
-	  DstBlock		  "capt2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "CA_r"
-	  SrcPort		  1
-	  DstBlock		  "capt2"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "CA_i"
-	  SrcPort		  1
-	  DstBlock		  "capt2"
-	  DstPort		  3
-	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
       Name		      "capt_fft"
       Ports		      [10, 1]
       Position		      [1190, 12, 1240, 163]
@@ -7408,20 +5782,23 @@ Library {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
-      MaskPromptString	      "Bit width:"
-      MaskStyleString	      "edit"
-      MaskTunableValueString  "on"
-      MaskEnableString	      "on"
-      MaskVisibilityString    "on"
-      MaskToolTipString	      "on"
-      MaskVariables	      "bit_width=@1;"
+      MaskPromptString	      "Bit width:|Address width:|Latency:"
+      MaskStyleString	      "edit,edit,edit"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskVarAliasString      ",,"
+      MaskVariables	      "bit_width=@1;addr_width=@2;latency=@3;"
       MaskSelfModifiable      on
       MaskIconFrame	      on
       MaskIconOpaque	      on
       MaskIconRotate	      "none"
       MaskPortRotate	      "default"
       MaskIconUnits	      "autoscale"
-      MaskValueString	      "18"
+      MaskValueString	      "18|11|2"
+      MaskTabNameString	      ",,"
       System {
 	Name			"capt_fft"
 	Location		[1294, 477, 1722, 668]
@@ -7519,9 +5896,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  "on"
+	  force_arith_type	  on
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  "on"
+	  force_bin_pt		  on
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -7548,9 +5925,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  "on"
+	  force_arith_type	  on
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  "on"
+	  force_bin_pt		  on
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -7577,9 +5954,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  "on"
+	  force_arith_type	  on
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  "on"
+	  force_bin_pt		  on
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -7606,9 +5983,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  "on"
+	  force_arith_type	  on
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  "on"
+	  force_bin_pt		  on
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -7635,9 +6012,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  "on"
+	  force_arith_type	  on
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  "on"
+	  force_bin_pt		  on
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,489,477"
@@ -7664,9 +6041,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  "on"
+	  force_arith_type	  on
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  "on"
+	  force_bin_pt		  on
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -7693,9 +6070,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  "on"
+	  force_arith_type	  on
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  "on"
+	  force_bin_pt		  on
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -7722,9 +6099,9 @@ Library {
 	  "Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned wi"
 	  "th 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in "
 	  "binary)."
-	  force_arith_type	  "on"
+	  force_arith_type	  on
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  "on"
+	  force_bin_pt		  on
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,312"
@@ -7750,13 +6127,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "min(32, bit_width*2)"
-	  boolean_output	  "off"
+	  boolean_output	  off
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -7781,13 +6158,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "min(32, bit_width*2)"
-	  boolean_output	  "off"
+	  boolean_output	  off
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -7812,13 +6189,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "min(32, bit_width*2)"
-	  boolean_output	  "off"
+	  boolean_output	  off
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -7843,13 +6220,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "min(32, bit_width*2)"
-	  boolean_output	  "off"
+	  boolean_output	  off
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -7874,13 +6251,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "min(32, bit_width*2)"
-	  boolean_output	  "off"
+	  boolean_output	  off
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -7905,13 +6282,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "min(32, bit_width*2)"
-	  boolean_output	  "off"
+	  boolean_output	  off
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -7936,13 +6313,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "min(32, bit_width*2)"
-	  boolean_output	  "off"
+	  boolean_output	  off
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -7967,13 +6344,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "min(32, bit_width*2)"
-	  boolean_output	  "off"
+	  boolean_output	  off
 	  mode			  "Upper Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -7987,935 +6364,26 @@ Library {
 	  "',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
-	  BlockType		  SubSystem
+	  BlockType		  Reference
 	  Name			  "data"
 	  Ports			  [10, 1]
 	  Position		  [305, 12, 355, 163]
-	  AncestorBlock		  "isi_correlator_lib/capture"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag20"
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
+	  UserData		  "DataTag17"
+	  SourceBlock		  "isi_correlator_lib/capture"
+	  SourceType		  "capture"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
 	  FunctionWithSeparateData off
-	  Opaque		  off
-	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
-	  MaskType		  "capture"
-	  MaskDescription	  "This block captures N data lines into N separate BRAMs."
-	  MaskPromptString	  "Number of BRAMs:|Address width:|Provide done port"
-	  MaskStyleString	  "edit,edit,checkbox"
-	  MaskTunableValueString  "on,on,on"
-	  MaskCallbackString	  "||"
-	  MaskEnableString	  "on,on,on"
-	  MaskVisibilityString	  "on,on,on"
-	  MaskToolTipString	  "on,on,on"
-	  MaskVarAliasString	  ",,"
-	  MaskVariables		  "num_brams=@1;addr_width=@2;done_port=&3;"
-	  MaskInitialization	  "capture_init(gcb, ...\n    'num_brams', num_brams, ...\n    'addr_width', addr_width, ...\n  "
-	  "  'done_port', done_port);"
-	  MaskSelfModifiable	  on
-	  MaskIconFrame		  on
-	  MaskIconOpaque	  on
-	  MaskIconRotate	  "none"
-	  MaskPortRotate	  "default"
-	  MaskIconUnits		  "autoscale"
-	  MaskValueString	  "8|11|on"
-	  MaskTabNameString	  ",,"
-	  System {
-	    Name		    "data"
-	    Location		    [1003, 51, 1472, 324]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "usletter"
-	    PaperUnits		    "inches"
-	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din0"
-	      Position		      [15, 28, 45, 42]
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din1"
-	      Position		      [15, 93, 45, 107]
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din2"
-	      Position		      [15, 158, 45, 172]
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din3"
-	      Position		      [15, 223, 45, 237]
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din4"
-	      Position		      [15, 288, 45, 302]
-	      Port		      "5"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din5"
-	      Position		      [15, 353, 45, 367]
-	      Port		      "6"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din6"
-	      Position		      [15, 418, 45, 432]
-	      Port		      "7"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din7"
-	      Position		      [15, 483, 45, 497]
-	      Port		      "8"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "en"
-	      Position		      [15, 548, 45, 562]
-	      Port		      "9"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "trig"
-	      Position		      [15, 588, 45, 602]
-	      Port		      "10"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Constant"
-	      Ports		      [0, 1]
-	      Position		      [95, 548, 145, 562]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Constant"
-	      SourceType	      "Xilinx Constant Block Block"
-	      arith_type	      "Boolean"
-	      const		      "1"
-	      n_bits		      "1"
-	      bin_pt		      "0"
-	      explicit_period	      "on"
-	      period		      "1"
-	      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
-	      equ		      "P=C"
-	      opselect		      "C"
-	      inp2		      "PCIN>>17"
-	      opr		      "+"
-	      inp1		      "P"
-	      carry		      "CIN"
-	      dbl_ovrd		      "off"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "constant"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,0,1,white,blue,0,1c72b5be,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');port_label('output',1,'1');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Logical"
-	      Ports		      [2, 1]
-	      Position		      [95, 563, 145, 607]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Logical"
-	      SourceType	      "Xilinx Logical Block Block"
-	      logical_function	      "AND"
-	      inputs		      "2"
-	      en		      "off"
-	      latency		      "0"
-	      precision		      "Full"
-	      arith_type	      "Unsigned"
-	      n_bits		      "16"
-	      bin_pt		      "0"
-	      align_bp		      "on"
-	      dbl_ovrd		      "off"
-	      xl_use_area	      "off"
-	      xl_area		      "[0,0,0,0,0,0,0]"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "logical"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,44,2,1,white,blue,0,0a851f85,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.26 0.12 0.32 0.12 0.26 0.5 0.56 0.62 0.86 0.66 0.48 0.34 0.52 0.34 0.48 0.66 0.86 0.62 0.56 0.5 0"
-	      ".26 ],[0.113636 0.272727 0.5 0.727273 0.886364 0.886364 0.818182 0.886364 0.886364 0.659091 0.863636 0.704545 0"
-	      ".5 0.295455 0.136364 0.340909 0.113636 0.113636 0.181818 0.113636 0.113636 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 "
-	      "0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('"
-	      "black');disp('\\newlineand\\newlinez^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram0"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 13, 375, 57]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram1"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 78, 375, 122]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram2"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 143, 375, 187]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram3"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 208, 375, 252]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram4"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 273, 375, 317]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram5"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 338, 375, 382]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram6"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 403, 375, 447]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram7"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 468, 375, 512]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "freeze_cntr"
-	      Ports		      [2, 3]
-	      Position		      [170, 543, 220, 587]
-	      SourceBlock	      "casper_library/Misc/freeze_cntr"
-	      SourceType	      "freeze_cntr"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      CounterBits	      "addr_width"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp0"
-	      Ports		      [1, 1]
-	      Position		      [170, 28, 220, 42]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp1"
-	      Ports		      [1, 1]
-	      Position		      [170, 93, 220, 107]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp2"
-	      Ports		      [1, 1]
-	      Position		      [170, 158, 220, 172]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp3"
-	      Ports		      [1, 1]
-	      Position		      [170, 223, 220, 237]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp4"
-	      Ports		      [1, 1]
-	      Position		      [170, 288, 220, 302]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp5"
-	      Ports		      [1, 1]
-	      Position		      [170, 353, 220, 367]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp6"
-	      Ports		      [1, 1]
-	      Position		      [170, 418, 220, 432]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp7"
-	      Ports		      [1, 1]
-	      Position		      [170, 483, 220, 497]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator0"
-	      Position		      [405, 25, 425, 45]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator1"
-	      Position		      [405, 90, 425, 110]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator2"
-	      Position		      [405, 155, 425, 175]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator3"
-	      Position		      [405, 220, 425, 240]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator4"
-	      Position		      [405, 285, 425, 305]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator5"
-	      Position		      [405, 350, 425, 370]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator6"
-	      Position		      [405, 415, 425, 435]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator7"
-	      Position		      [405, 480, 425, 500]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "done"
-	      Position		      [405, 573, 435, 587]
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      SrcBlock		      "din0"
-	      SrcPort		      1
-	      DstBlock		      "reinterp0"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp0"
-	      SrcPort		      1
-	      DstBlock		      "bram0"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram0"
-	      SrcPort		      1
-	      DstBlock		      "terminator0"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "din1"
-	      SrcPort		      1
-	      DstBlock		      "reinterp1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp1"
-	      SrcPort		      1
-	      DstBlock		      "bram1"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram1"
-	      SrcPort		      1
-	      DstBlock		      "terminator1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "din2"
-	      SrcPort		      1
-	      DstBlock		      "reinterp2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp2"
-	      SrcPort		      1
-	      DstBlock		      "bram2"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram2"
-	      SrcPort		      1
-	      DstBlock		      "terminator2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "din3"
-	      SrcPort		      1
-	      DstBlock		      "reinterp3"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp3"
-	      SrcPort		      1
-	      DstBlock		      "bram3"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram3"
-	      SrcPort		      1
-	      DstBlock		      "terminator3"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "din4"
-	      SrcPort		      1
-	      DstBlock		      "reinterp4"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp4"
-	      SrcPort		      1
-	      DstBlock		      "bram4"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram4"
-	      SrcPort		      1
-	      DstBlock		      "terminator4"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "din5"
-	      SrcPort		      1
-	      DstBlock		      "reinterp5"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp5"
-	      SrcPort		      1
-	      DstBlock		      "bram5"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram5"
-	      SrcPort		      1
-	      DstBlock		      "terminator5"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "din6"
-	      SrcPort		      1
-	      DstBlock		      "reinterp6"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp6"
-	      SrcPort		      1
-	      DstBlock		      "bram6"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram6"
-	      SrcPort		      1
-	      DstBlock		      "terminator6"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "din7"
-	      SrcPort		      1
-	      DstBlock		      "reinterp7"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp7"
-	      SrcPort		      1
-	      DstBlock		      "bram7"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram7"
-	      SrcPort		      1
-	      DstBlock		      "terminator7"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "freeze_cntr"
-	      SrcPort		      3
-	      DstBlock		      "done"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "en"
-	      SrcPort		      1
-	      DstBlock		      "Logical"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "trig"
-	      SrcPort		      1
-	      DstBlock		      "Logical"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Constant"
-	      SrcPort		      1
-	      DstBlock		      "freeze_cntr"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Logical"
-	      SrcPort		      1
-	      DstBlock		      "freeze_cntr"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "freeze_cntr"
-	      SrcPort		      1
-	      Points		      [0, 0]
-	      Branch {
-		DstBlock		"bram0"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"bram1"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"bram2"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"bram3"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"bram4"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"bram5"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"bram6"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"bram7"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "freeze_cntr"
-	      SrcPort		      2
-	      Points		      [0, 0]
-	      Branch {
-		DstBlock		"bram0"
-		DstPort			3
-	      }
-	      Branch {
-		DstBlock		"bram1"
-		DstPort			3
-	      }
-	      Branch {
-		DstBlock		"bram2"
-		DstPort			3
-	      }
-	      Branch {
-		DstBlock		"bram3"
-		DstPort			3
-	      }
-	      Branch {
-		DstBlock		"bram4"
-		DstPort			3
-	      }
-	      Branch {
-		DstBlock		"bram5"
-		DstPort			3
-	      }
-	      Branch {
-		DstBlock		"bram6"
-		DstPort			3
-	      }
-	      Branch {
-		DstBlock		"bram7"
-		DstPort			3
-	      }
-	    }
-	  }
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  num_brams		  "8"
+	  addr_width		  "addr_width"
+	  done_port		  on
+	  latency		  "latency"
 	}
 	Block {
 	  BlockType		  Reference
@@ -8927,7 +6395,7 @@ Library {
 	  SourceType		  "power"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -8947,7 +6415,7 @@ Library {
 	  SourceType		  "power"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -8967,7 +6435,7 @@ Library {
 	  SourceType		  "power"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -8987,7 +6455,7 @@ Library {
 	  SourceType		  "power"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -9007,7 +6475,7 @@ Library {
 	  SourceType		  "power"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -9027,7 +6495,7 @@ Library {
 	  SourceType		  "power"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -9047,7 +6515,7 @@ Library {
 	  SourceType		  "power"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -9067,7 +6535,7 @@ Library {
 	  SourceType		  "power"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -9086,11 +6554,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
+	  en			  off
 	  latency		  "5"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  reg_retiming		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -9113,11 +6581,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
+	  en			  off
 	  latency		  "5"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  reg_retiming		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -9294,12 +6762,6 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "data"
-	  SrcPort		  1
-	  DstBlock		  "done"
-	  DstPort		  1
-	}
-	Line {
 	  SrcBlock		  "Slice0"
 	  SrcPort		  1
 	  DstBlock		  "data"
@@ -9359,1386 +6821,11 @@ Library {
 	  DstBlock		  "data"
 	  DstPort		  10
 	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "capt_xaui"
-      Ports		      [12, 1]
-      Position		      [1265, 12, 1315, 193]
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"capt_xaui"
-	Location		[1206, 344, 1613, 823]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "dataL"
-	  Position		  [15, 13, 45, 27]
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "validL"
-	  Position		  [15, 43, 45, 57]
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "data0"
-	  Position		  [15, 73, 45, 87]
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "valid0"
-	  Position		  [15, 103, 45, 117]
-	  Port			  "4"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "data1"
-	  Position		  [15, 133, 45, 147]
-	  Port			  "5"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "valid1"
-	  Position		  [15, 163, 45, 177]
-	  Port			  "6"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "data2"
-	  Position		  [15, 193, 45, 207]
-	  Port			  "7"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "valid2"
-	  Position		  [15, 223, 45, 237]
-	  Port			  "8"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "data3"
-	  Position		  [15, 253, 45, 267]
-	  Port			  "9"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "valid3"
-	  Position		  [15, 283, 45, 297]
-	  Port			  "10"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "en"
-	  Position		  [15, 408, 45, 422]
-	  Port			  "11"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "trig"
-	  Position		  [15, 438, 45, 452]
-	  Port			  "12"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Concat1"
-	  Ports			  [5, 1]
-	  Position		  [175, 308, 225, 382]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Concat"
-	  SourceType		  "Xilinx Bus Concatenator Block"
-	  infoedit		  "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary point at ze"
-	  "ro."
-	  num_inputs		  "5"
-	  dbl_ovrd		  "off"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,336,272"
-	  block_type		  "concat"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,74,5,1,white,blue,0,ad0df03d,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.64 0.56 0.48 0.22 ],[0.2297"
-	  "3 0.337838 0.5 0.662162 0.77027 0.77027 0.716216 0.77027 0.77027 0.621622 0.77027 0.662162 0.5 0.337838 0.22973 0.3"
-	  "78378 0.22973 0.22973 0.283784 0.22973 0.22973 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','"
-	  "COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'hi');\n"
-	  "color('black');port_label('input',5,'lo');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay1"
-	  Ports			  [1, 1]
-	  Position		  [75, 253, 125, 267]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
-	  latency		  "2"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,85ce9542,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','tex"
-	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay2"
-	  Ports			  [1, 1]
-	  Position		  [75, 283, 125, 297]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
-	  latency		  "2"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,85ce9542,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','tex"
-	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay25"
-	  Ports			  [1, 1]
-	  Position		  [75, 13, 125, 27]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
-	  latency		  "2"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,543,392"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,85ce9542,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','tex"
-	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay26"
-	  Ports			  [1, 1]
-	  Position		  [75, 43, 125, 57]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
-	  latency		  "2"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,85ce9542,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','tex"
-	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay27"
-	  Ports			  [1, 1]
-	  Position		  [75, 73, 125, 87]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
-	  latency		  "2"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,85ce9542,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','tex"
-	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay28"
-	  Ports			  [1, 1]
-	  Position		  [75, 103, 125, 117]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
-	  latency		  "2"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,85ce9542,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','tex"
-	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay29"
-	  Ports			  [1, 1]
-	  Position		  [75, 133, 125, 147]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
-	  latency		  "2"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,85ce9542,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','tex"
-	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay3"
-	  Ports			  [1, 1]
-	  Position		  [75, 438, 125, 452]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
-	  latency		  "2"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,85ce9542,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','tex"
-	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay30"
-	  Ports			  [1, 1]
-	  Position		  [75, 163, 125, 177]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
-	  latency		  "2"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,85ce9542,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','tex"
-	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay31"
-	  Ports			  [1, 1]
-	  Position		  [75, 193, 125, 207]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
-	  latency		  "2"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,85ce9542,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','tex"
-	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay32"
-	  Ports			  [1, 1]
-	  Position		  [75, 223, 125, 237]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
-	  latency		  "2"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,85ce9542,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','tex"
-	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay5"
-	  Ports			  [1, 1]
-	  Position		  [75, 408, 125, 422]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
-	  latency		  "2"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,85ce9542,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','tex"
-	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "data"
-	  Ports			  [8, 1]
-	  Position		  [285, 12, 335, 133]
-	  AncestorBlock		  "isi_correlator_lib/capture"
-	  UserDataPersistent	  on
-	  UserData		  "DataTag21"
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
-	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
-	  MaskType		  "capture"
-	  MaskDescription	  "This block captures N data lines into N separate BRAMs."
-	  MaskPromptString	  "Number of BRAMs:|Address width:|Provide done port"
-	  MaskStyleString	  "edit,edit,checkbox"
-	  MaskTunableValueString  "on,on,on"
-	  MaskCallbackString	  "||"
-	  MaskEnableString	  "on,on,on"
-	  MaskVisibilityString	  "on,on,on"
-	  MaskToolTipString	  "on,on,on"
-	  MaskVarAliasString	  ",,"
-	  MaskVariables		  "num_brams=@1;addr_width=@2;done_port=&3;"
-	  MaskInitialization	  "capture_init(gcb, ...\n    'num_brams', num_brams, ...\n    'addr_width', addr_width, ...\n  "
-	  "  'done_port', done_port);"
-	  MaskSelfModifiable	  on
-	  MaskIconFrame		  on
-	  MaskIconOpaque	  on
-	  MaskIconRotate	  "none"
-	  MaskPortRotate	  "default"
-	  MaskIconUnits		  "autoscale"
-	  MaskValueString	  "6|11|on"
-	  MaskTabNameString	  ",,"
-	  System {
-	    Name		    "data"
-	    Location		    [1003, 51, 1472, 324]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "usletter"
-	    PaperUnits		    "inches"
-	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din0"
-	      Position		      [15, 28, 45, 42]
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din1"
-	      Position		      [15, 93, 45, 107]
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din2"
-	      Position		      [15, 158, 45, 172]
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din3"
-	      Position		      [15, 223, 45, 237]
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din4"
-	      Position		      [15, 288, 45, 302]
-	      Port		      "5"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "din5"
-	      Position		      [15, 353, 45, 367]
-	      Port		      "6"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "en"
-	      Position		      [15, 418, 45, 432]
-	      Port		      "7"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "trig"
-	      Position		      [15, 458, 45, 472]
-	      Port		      "8"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Constant"
-	      Ports		      [0, 1]
-	      Position		      [95, 418, 145, 432]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Constant"
-	      SourceType	      "Xilinx Constant Block Block"
-	      arith_type	      "Boolean"
-	      const		      "1"
-	      n_bits		      "1"
-	      bin_pt		      "0"
-	      explicit_period	      "on"
-	      period		      "1"
-	      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
-	      equ		      "P=C"
-	      opselect		      "C"
-	      inp2		      "PCIN>>17"
-	      opr		      "+"
-	      inp1		      "P"
-	      carry		      "CIN"
-	      dbl_ovrd		      "off"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "constant"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,0,1,white,blue,0,1c72b5be,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');port_label('output',1,'1');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Logical"
-	      Ports		      [2, 1]
-	      Position		      [95, 433, 145, 477]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Logical"
-	      SourceType	      "Xilinx Logical Block Block"
-	      logical_function	      "AND"
-	      inputs		      "2"
-	      en		      "off"
-	      latency		      "0"
-	      precision		      "Full"
-	      arith_type	      "Unsigned"
-	      n_bits		      "16"
-	      bin_pt		      "0"
-	      align_bp		      "on"
-	      dbl_ovrd		      "off"
-	      xl_use_area	      "off"
-	      xl_area		      "[0,0,0,0,0,0,0]"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "logical"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,44,2,1,white,blue,0,0a851f85,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.26 0.12 0.32 0.12 0.26 0.5 0.56 0.62 0.86 0.66 0.48 0.34 0.52 0.34 0.48 0.66 0.86 0.62 0.56 0.5 0"
-	      ".26 ],[0.113636 0.272727 0.5 0.727273 0.886364 0.886364 0.818182 0.886364 0.886364 0.659091 0.863636 0.704545 0"
-	      ".5 0.295455 0.136364 0.340909 0.113636 0.113636 0.181818 0.113636 0.113636 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 "
-	      "0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('"
-	      "black');disp('\\newlineand\\newlinez^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram0"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 13, 375, 57]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram1"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 78, 375, 122]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram2"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 143, 375, 187]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram3"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 208, 375, 252]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram4"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 273, 375, 317]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "bram5"
-	      Tag		      "xps:bram"
-	      Ports		      [3, 1]
-	      Position		      [275, 338, 375, 382]
-	      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      arith_type	      "Unsigned"
-	      addr_width	      "addr_width"
-	      data_width	      "32"
-	      data_bin_pt	      "0"
-	      init_vals		      "0"
-	      sample_rate	      "1"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "freeze_cntr"
-	      Ports		      [2, 3]
-	      Position		      [170, 413, 220, 457]
-	      SourceBlock	      "casper_library/Misc/freeze_cntr"
-	      SourceType	      "freeze_cntr"
-	      ShowPortLabels	      "FromPortIcon"
-	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
-	      RTWMemSecFuncInitTerm   "Inherit from model"
-	      RTWMemSecFuncExecute    "Inherit from model"
-	      RTWMemSecDataConstants  "Inherit from model"
-	      RTWMemSecDataInternal   "Inherit from model"
-	      RTWMemSecDataParameters "Inherit from model"
-	      CounterBits	      "addr_width"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp0"
-	      Ports		      [1, 1]
-	      Position		      [170, 28, 220, 42]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp1"
-	      Ports		      [1, 1]
-	      Position		      [170, 93, 220, 107]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp2"
-	      Ports		      [1, 1]
-	      Position		      [170, 158, 220, 172]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp3"
-	      Ports		      [1, 1]
-	      Position		      [170, 223, 220, 237]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp4"
-	      Ports		      [1, 1]
-	      Position		      [170, 288, 220, 302]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "reinterp5"
-	      Ports		      [1, 1]
-	      Position		      [170, 353, 220, 367]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal b"
-	      "etween signed and unsigned, and relocate the binary point.<br><br>Hardware notes: In hardware this block costs "
-	      "nothing.<br><br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is f"
-	      "orced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an "
-	      "output of 56 (111000 in binary)."
-	      force_arith_type	      "on"
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      "on"
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "11.3"
-	      sg_icon_stat	      "50,14,1,1,white,blue,0,6b04d0b0,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.4"
-	      "2 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5"
-	      " 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 "
-	      "],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('bl"
-	      "ack');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator0"
-	      Position		      [405, 25, 425, 45]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator1"
-	      Position		      [405, 90, 425, 110]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator2"
-	      Position		      [405, 155, 425, 175]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator3"
-	      Position		      [405, 220, 425, 240]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator4"
-	      Position		      [405, 285, 425, 305]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "terminator5"
-	      Position		      [405, 350, 425, 370]
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "done"
-	      Position		      [405, 443, 435, 457]
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      SrcBlock		      "din0"
-	      SrcPort		      1
-	      DstBlock		      "reinterp0"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp0"
-	      SrcPort		      1
-	      DstBlock		      "bram0"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram0"
-	      SrcPort		      1
-	      DstBlock		      "terminator0"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "din1"
-	      SrcPort		      1
-	      DstBlock		      "reinterp1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp1"
-	      SrcPort		      1
-	      DstBlock		      "bram1"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram1"
-	      SrcPort		      1
-	      DstBlock		      "terminator1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "din2"
-	      SrcPort		      1
-	      DstBlock		      "reinterp2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp2"
-	      SrcPort		      1
-	      DstBlock		      "bram2"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram2"
-	      SrcPort		      1
-	      DstBlock		      "terminator2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "din3"
-	      SrcPort		      1
-	      DstBlock		      "reinterp3"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp3"
-	      SrcPort		      1
-	      DstBlock		      "bram3"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram3"
-	      SrcPort		      1
-	      DstBlock		      "terminator3"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "din4"
-	      SrcPort		      1
-	      DstBlock		      "reinterp4"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp4"
-	      SrcPort		      1
-	      DstBlock		      "bram4"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram4"
-	      SrcPort		      1
-	      DstBlock		      "terminator4"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "din5"
-	      SrcPort		      1
-	      DstBlock		      "reinterp5"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "reinterp5"
-	      SrcPort		      1
-	      DstBlock		      "bram5"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "bram5"
-	      SrcPort		      1
-	      DstBlock		      "terminator5"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "freeze_cntr"
-	      SrcPort		      3
-	      DstBlock		      "done"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "en"
-	      SrcPort		      1
-	      DstBlock		      "Logical"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "trig"
-	      SrcPort		      1
-	      DstBlock		      "Logical"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Constant"
-	      SrcPort		      1
-	      DstBlock		      "freeze_cntr"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Logical"
-	      SrcPort		      1
-	      DstBlock		      "freeze_cntr"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "freeze_cntr"
-	      SrcPort		      1
-	      Points		      [0, 0]
-	      Branch {
-		DstBlock		"bram0"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"bram1"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"bram2"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"bram3"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"bram4"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"bram5"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "freeze_cntr"
-	      SrcPort		      2
-	      Points		      [0, 0]
-	      Branch {
-		DstBlock		"bram0"
-		DstPort			3
-	      }
-	      Branch {
-		DstBlock		"bram1"
-		DstPort			3
-	      }
-	      Branch {
-		DstBlock		"bram2"
-		DstPort			3
-	      }
-	      Branch {
-		DstBlock		"bram3"
-		DstPort			3
-	      }
-	      Branch {
-		DstBlock		"bram4"
-		DstPort			3
-	      }
-	      Branch {
-		DstBlock		"bram5"
-		DstPort			3
-	      }
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "done"
-	  Position		  [360, 63, 390, 77]
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "dataL"
-	  SrcPort		  1
-	  DstBlock		  "Delay25"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "validL"
-	  SrcPort		  1
-	  DstBlock		  "Delay26"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "data0"
-	  SrcPort		  1
-	  DstBlock		  "Delay27"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "valid0"
-	  SrcPort		  1
-	  DstBlock		  "Delay28"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "data1"
-	  SrcPort		  1
-	  DstBlock		  "Delay29"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "valid1"
-	  SrcPort		  1
-	  DstBlock		  "Delay30"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "data2"
-	  SrcPort		  1
-	  DstBlock		  "Delay31"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "valid2"
-	  SrcPort		  1
-	  DstBlock		  "Delay32"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "data3"
-	  SrcPort		  1
-	  DstBlock		  "Delay1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "valid3"
-	  SrcPort		  1
-	  DstBlock		  "Delay2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Delay26"
-	  SrcPort		  1
-	  Points		  [25, 0; 0, 265]
-	  DstBlock		  "Concat1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Delay28"
-	  SrcPort		  1
-	  Points		  [20, 0; 0, 220]
-	  DstBlock		  "Concat1"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Delay30"
-	  SrcPort		  1
-	  Points		  [15, 0; 0, 175]
-	  DstBlock		  "Concat1"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Delay32"
-	  SrcPort		  1
-	  Points		  [10, 0; 0, 130]
-	  DstBlock		  "Concat1"
-	  DstPort		  4
-	}
-	Line {
-	  SrcBlock		  "Delay2"
-	  SrcPort		  1
-	  Points		  [5, 0; 0, 85]
-	  DstBlock		  "Concat1"
-	  DstPort		  5
-	}
-	Line {
-	  SrcBlock		  "en"
-	  SrcPort		  1
-	  DstBlock		  "Delay5"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "trig"
-	  SrcPort		  1
-	  DstBlock		  "Delay3"
-	  DstPort		  1
-	}
 	Line {
 	  SrcBlock		  "data"
 	  SrcPort		  1
 	  DstBlock		  "done"
 	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Delay5"
-	  SrcPort		  1
-	  Points		  [125, 0; 0, -305]
-	  DstBlock		  "data"
-	  DstPort		  7
-	}
-	Line {
-	  SrcBlock		  "Delay3"
-	  SrcPort		  1
-	  Points		  [140, 0]
-	  DstBlock		  "data"
-	  DstPort		  8
-	}
-	Line {
-	  SrcBlock		  "Delay25"
-	  SrcPort		  1
-	  DstBlock		  "data"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Delay27"
-	  SrcPort		  1
-	  Points		  [50, 0; 0, -45]
-	  DstBlock		  "data"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Delay29"
-	  SrcPort		  1
-	  Points		  [65, 0; 0, -90]
-	  DstBlock		  "data"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Delay31"
-	  SrcPort		  1
-	  Points		  [80, 0; 0, -135]
-	  DstBlock		  "data"
-	  DstPort		  4
-	}
-	Line {
-	  SrcBlock		  "Delay1"
-	  SrcPort		  1
-	  Points		  [95, 0; 0, -180]
-	  DstBlock		  "data"
-	  DstPort		  5
-	}
-	Line {
-	  SrcBlock		  "Concat1"
-	  SrcPort		  1
-	  Points		  [10, 0; 0, -250]
-	  DstBlock		  "data"
-	  DstPort		  6
 	}
       }
     }
@@ -10748,7 +6835,7 @@ Library {
       Ports		      [3, 1]
       Position		      [15, 342, 65, 388]
       UserDataPersistent      on
-      UserData		      "DataTag22"
+      UserData		      "DataTag18"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -10824,7 +6911,7 @@ Library {
 	  const			  "1"
 	  n_bits		  "1"
 	  bin_pt		  "0"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -10833,7 +6920,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "constant"
@@ -10856,15 +6943,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "AND"
 	  inputs		  "2"
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "16"
 	  bin_pt		  "0"
-	  align_bp		  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  align_bp		  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -10880,17 +6967,17 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "addr_pipeline"
+	  Name			  "addr_pipeline0"
 	  Ports			  [1, 1]
-	  Position		  [245, 88, 295, 102]
+	  Position		  [270, 13, 320, 27]
 	  ShowName		  off
 	  UserDataPersistent	  on
-	  UserData		  "DataTag23"
+	  UserData		  "DataTag19"
 	  SourceBlock		  "casper_library/Delays/pipeline"
 	  SourceType		  "pipeline"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -10906,10 +6993,10 @@ Library {
 	  Position		  [345, 13, 445, 57]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/Shared BRAM"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -10924,17 +7011,37 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "done_pipeline"
+	  Name			  "data_pipeline0"
 	  Ports			  [1, 1]
-	  Position		  [245, 118, 295, 132]
+	  Position		  [270, 28, 320, 42]
 	  ShowName		  off
 	  UserDataPersistent	  on
-	  UserData		  "DataTag24"
+	  UserData		  "DataTag20"
 	  SourceBlock		  "casper_library/Delays/pipeline"
 	  SourceType		  "pipeline"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "latency"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "done_pipeline"
+	  Ports			  [1, 1]
+	  Position		  [270, 118, 320, 132]
+	  ShowName		  off
+	  UserDataPersistent	  on
+	  UserData		  "DataTag21"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -10951,33 +7058,13 @@ Library {
 	  SourceType		  "freeze_cntr"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
 	  RTWMemSecDataInternal	  "Inherit from model"
 	  RTWMemSecDataParameters "Inherit from model"
 	  CounterBits		  "addr_width"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "pipeline0"
-	  Ports			  [1, 1]
-	  Position		  [245, 28, 295, 42]
-	  ShowName		  off
-	  UserDataPersistent	  on
-	  UserData		  "DataTag25"
-	  SourceBlock		  "casper_library/Delays/pipeline"
-	  SourceType		  "pipeline"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  latency		  "latency"
 	}
 	Block {
 	  BlockType		  Reference
@@ -10992,9 +7079,9 @@ Library {
 	  "<br>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigne"
 	  "d with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000"
 	  " in binary)."
-	  force_arith_type	  on
+	  force_arith_type	  "on"
 	  arith_type		  "Unsigned"
-	  force_bin_pt		  on
+	  force_bin_pt		  "on"
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -11016,17 +7103,17 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "we_pipeline"
+	  Name			  "we_pipeline0"
 	  Ports			  [1, 1]
-	  Position		  [245, 103, 295, 117]
+	  Position		  [270, 43, 320, 57]
 	  ShowName		  off
 	  UserDataPersistent	  on
-	  UserData		  "DataTag26"
+	  UserData		  "DataTag22"
 	  SourceBlock		  "casper_library/Delays/pipeline"
 	  SourceType		  "pipeline"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -11049,14 +7136,26 @@ Library {
 	Line {
 	  SrcBlock		  "reinterp0"
 	  SrcPort		  1
-	  DstBlock		  "pipeline0"
+	  DstBlock		  "data_pipeline0"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "pipeline0"
+	  SrcBlock		  "addr_pipeline0"
+	  SrcPort		  1
+	  DstBlock		  "bram0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "data_pipeline0"
 	  SrcPort		  1
 	  DstBlock		  "bram0"
 	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "we_pipeline0"
+	  SrcPort		  1
+	  DstBlock		  "bram0"
+	  DstPort		  3
 	}
 	Line {
 	  SrcBlock		  "bram0"
@@ -11097,13 +7196,13 @@ Library {
 	Line {
 	  SrcBlock		  "freeze_cntr"
 	  SrcPort		  1
-	  DstBlock		  "addr_pipeline"
+	  DstBlock		  "addr_pipeline0"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "freeze_cntr"
 	  SrcPort		  2
-	  DstBlock		  "we_pipeline"
+	  DstBlock		  "we_pipeline0"
 	  DstPort		  1
 	}
 	Line {
@@ -11111,18 +7210,6 @@ Library {
 	  SrcPort		  3
 	  DstBlock		  "done_pipeline"
 	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "addr_pipeline"
-	  SrcPort		  1
-	  DstBlock		  "bram0"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "we_pipeline"
-	  SrcPort		  1
-	  DstBlock		  "bram0"
-	  DstPort		  3
 	}
       }
     }
@@ -12103,7 +8190,7 @@ Library {
 	  Position		  [70, 13, 120, 42]
 	  AttributesFormatString  "_ r/i"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag27"
+	  UserData		  "DataTag23"
 	  SourceBlock		  "casper_library/Misc/c_to_ri"
 	  SourceType		  "c_to_ri"
 	  ShowPortLabels	  "FromPortIcon"
@@ -12124,7 +8211,7 @@ Library {
 	  Position		  [70, 93, 120, 122]
 	  AttributesFormatString  "_ r/i"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag28"
+	  UserData		  "DataTag24"
 	  SourceBlock		  "casper_library/Misc/c_to_ri"
 	  SourceType		  "c_to_ri"
 	  ShowPortLabels	  "FromPortIcon"
@@ -19299,7 +15386,7 @@ Library {
 	  Position		  [155, 13, 205, 42]
 	  AttributesFormatString  "_ r/i"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag29"
+	  UserData		  "DataTag25"
 	  SourceBlock		  "casper_library/Misc/c_to_ri"
 	  SourceType		  "c_to_ri"
 	  ShowPortLabels	  "FromPortIcon"
@@ -19319,7 +15406,7 @@ Library {
 	  Ports			  [2, 1]
 	  Position		  [445, 38, 495, 67]
 	  UserDataPersistent	  on
-	  UserData		  "DataTag30"
+	  UserData		  "DataTag26"
 	  SourceBlock		  "casper_library/Misc/ri_to_c"
 	  SourceType		  "ri_to_c"
 	  ShowPortLabels	  "FromPortIcon"
@@ -20116,7 +16203,7 @@ Library {
       Position		      [15, 15, 65, 65]
       AttributesFormatString  "sync_period=1"
       UserDataPersistent      on
-      UserData		      "DataTag31"
+      UserData		      "DataTag27"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -25098,9 +21185,9 @@ Library {
   }
 }
 MatData {
-  NumRecords		  32
+  NumRecords		  28
   DataRecord {
-    Tag			    DataTag31
+    Tag			    DataTag27
     Data		    "  %)30     .    \\ 0   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A"
     "=&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !FV0@0.    8 0  "
     " 8    (     @         %    \"     $    !     0         %  0 $P    $   #W    9&5F875L=',              '5S:6YG7W!F8E"
@@ -25119,57 +21206,33 @@ MatData {
     "!          D    (            \\#\\"
   }
   DataRecord {
-    Tag			    DataTag30
+    Tag			    DataTag26
     Data		    "  %)30     .    <     8    (     0         %    \"     $    !     0         .    0     8    (    !     "
     "     %    \"     $    ,     0         0    #    ')I7W1O7V-?:6YI=      "
   }
   DataRecord {
-    Tag			    DataTag29
-    Data		    "  %)30     .    \\     8    (     0         %    \"     $    #     0         .    0     8    (    !    "
-    "      %    \"     $    ,     0         0    #    &-?=&]?<FE?:6YI=      .    .     8    (    !@         %    \"    "
-    " $    !     0         )    \"            \"! #@   #@    &    \"     8         !0    @    !     0    $         \"0 "
-    "   @            <0 "
-  }
-  DataRecord {
-    Tag			    DataTag28
-    Data		    "  %)30     .    \\     8    (     0         %    \"     $    #     0         .    0     8    (    !    "
-    "      %    \"     $    ,     0         0    #    &-?=&]?<FE?:6YI=      .    .     8    (    !@         %    \"    "
-    " $    !     0         )    \"            \"! #@   #@    &    \"     8         !0    @    !     0    $         \"0 "
-    "   @            <0 "
-  }
-  DataRecord {
-    Tag			    DataTag27
-    Data		    "  %)30     .    \\     8    (     0         %    \"     $    #     0         .    0     8    (    !    "
-    "      %    \"     $    ,     0         0    #    &-?=&]?<FE?:6YI=      .    .     8    (    !@         %    \"    "
-    " $    !     0         )    \"            \"! #@   #@    &    \"     8         !0    @    !     0    $         \"0 "
-    "   @            <0 "
-  }
-  DataRecord {
-    Tag			    DataTag26
-    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
-    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
-    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
-    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
-    "$         \"0    @             0 "
-  }
-  DataRecord {
     Tag			    DataTag25
-    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
-    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
-    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
-    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
-    "$         \"0    @             0 "
+    Data		    "  %)30     .    \\     8    (     0         %    \"     $    #     0         .    0     8    (    !    "
+    "      %    \"     $    ,     0         0    #    &-?=&]?<FE?:6YI=      .    .     8    (    !@         %    \"    "
+    " $    !     0         )    \"            \"! #@   #@    &    \"     8         !0    @    !     0    $         \"0 "
+    "   @            <0 "
   }
   DataRecord {
     Tag			    DataTag24
-    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
-    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
-    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
-    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
-    "$         \"0    @             0 "
+    Data		    "  %)30     .    \\     8    (     0         %    \"     $    #     0         .    0     8    (    !    "
+    "      %    \"     $    ,     0         0    #    &-?=&]?<FE?:6YI=      .    .     8    (    !@         %    \"    "
+    " $    !     0         )    \"            \"! #@   #@    &    \"     8         !0    @    !     0    $         \"0 "
+    "   @            <0 "
   }
   DataRecord {
     Tag			    DataTag23
+    Data		    "  %)30     .    \\     8    (     0         %    \"     $    #     0         .    0     8    (    !    "
+    "      %    \"     $    ,     0         0    #    &-?=&]?<FE?:6YI=      .    .     8    (    !@         %    \"    "
+    " $    !     0         )    \"            \"! #@   #@    &    \"     8         !0    @    !     0    $         \"0 "
+    "   @            <0 "
+  }
+  DataRecord {
+    Tag			    DataTag22
     Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
     "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
     "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
@@ -25177,7 +21240,31 @@ MatData {
     "$         \"0    @             0 "
   }
   DataRecord {
-    Tag			    DataTag22
+    Tag			    DataTag21
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
+  }
+  DataRecord {
+    Tag			    DataTag20
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
+  }
+  DataRecord {
+    Tag			    DataTag19
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
+  }
+  DataRecord {
+    Tag			    DataTag18
     Data		    "  %)30     .    X $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
     "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ .Z]$@,.    4 $   "
     "8    (     @         %    \"     $    !     0         %  0 \"P    $    L    9&5F875L=',   !N=6U?8G)A;7,  &%D9')?=V"
@@ -25186,48 +21273,12 @@ MatData {
     "$    !          D    (            )D .    ,     8    (    !          %    \"     $    \"     0         0  ( ;VX   "
   }
   DataRecord {
-    Tag			    DataTag21
-    Data		    "  %)30     .    X $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
-    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ $F(&@<.    4 $   "
-    "8    (     @         %    \"     $    !     0         %  0 \"P    $    L    9&5F875L=',   !N=6U?8G)A;7,  &%D9')?=V"
-    "ED=&@ 9&]N95]P;W)T        #@   \"@    &    \"     $         !0    @               $         #@   #@    &    \"    "
-    " 8         !0    @    !     0    $         \"0    @            80 X    X    !@    @    &          4    (     0    "
-    "$    !          D    (            )D .    ,     8    (    !          %    \"     $    \"     0         0  ( ;VX   "
-  }
-  DataRecord {
-    Tag			    DataTag20
+    Tag			    DataTag17
     Data		    "  %)30     .    X $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
     "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $  >F'0<.    4 $   "
     "8    (     @         %    \"     $    !     0         %  0 \"P    $    L    9&5F875L=',   !N=6U?8G)A;7,  &%D9')?=V"
     "ED=&@ 9&]N95]P;W)T        #@   \"@    &    \"     $         !0    @               $         #@   #@    &    \"    "
     " 8         !0    @    !     0    $         \"0    @            @0 X    X    !@    @    &          4    (     0    "
-    "$    !          D    (            )D .    ,     8    (    !          %    \"     $    \"     0         0  ( ;VX   "
-  }
-  DataRecord {
-    Tag			    DataTag19
-    Data		    "  %)30     .    X $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
-    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ $*9I0<.    4 $   "
-    "8    (     @         %    \"     $    !     0         %  0 \"P    $    L    9&5F875L=',   !N=6U?8G)A;7,  &%D9')?=V"
-    "ED=&@ 9&]N95]P;W)T        #@   \"@    &    \"     $         !0    @               $         #@   #@    &    \"    "
-    " 8         !0    @    !     0    $         \"0    @            (0 X    X    !@    @    &          4    (     0    "
-    "$    !          D    (            )D .    ,     8    (    !          %    \"     $    #     0         0  , ;V9F  "
-  }
-  DataRecord {
-    Tag			    DataTag18
-    Data		    "  %)30     .    X $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
-    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ $*9I0<.    4 $   "
-    "8    (     @         %    \"     $    !     0         %  0 \"P    $    L    9&5F875L=',   !N=6U?8G)A;7,  &%D9')?=V"
-    "ED=&@ 9&]N95]P;W)T        #@   \"@    &    \"     $         !0    @               $         #@   #@    &    \"    "
-    " 8         !0    @    !     0    $         \"0    @            (0 X    X    !@    @    &          4    (     0    "
-    "$    !          D    (            )D .    ,     8    (    !          %    \"     $    #     0         0  , ;V9F  "
-  }
-  DataRecord {
-    Tag			    DataTag17
-    Data		    "  %)30     .    X $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
-    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ *S;%0,.    4 $   "
-    "8    (     @         %    \"     $    !     0         %  0 \"P    $    L    9&5F875L=',   !N=6U?8G)A;7,  &%D9')?=V"
-    "ED=&@ 9&]N95]P;W)T        #@   \"@    &    \"     $         !0    @               $         #@   #@    &    \"    "
-    " 8         !0    @    !     0    $         \"0    @            (0 X    X    !@    @    &          4    (     0    "
     "$    !          D    (            )D .    ,     8    (    !          %    \"     $    \"     0         0  ( ;VX   "
   }
   DataRecord {

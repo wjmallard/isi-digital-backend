@@ -83,9 +83,25 @@ for i = 1:num_brams
 		'force_bin_pt', 'on', ...
 		'bin_pt', '0');
 
-	name = ['pipeline', id];
+	name = ['addr_pipeline', id];
+	ypos = cur_ypos + 13;
+	position = [270, ypos, 320, ypos+14];
+	reuse_block(blk, name, 'casper_library/Delays/pipeline', ...
+		'Position', position, ...
+		'ShowName', 'off', ...
+		'latency', 'latency');
+
+	name = ['data_pipeline', id];
 	ypos = cur_ypos + 28;
-	position = [245, ypos, 295, ypos+14];
+	position = [270, ypos, 320, ypos+14];
+	reuse_block(blk, name, 'casper_library/Delays/pipeline', ...
+		'Position', position, ...
+		'ShowName', 'off', ...
+		'latency', 'latency');
+
+	name = ['we_pipeline', id];
+	ypos = cur_ypos + 43;
+	position = [270, ypos, 320, ypos+14];
 	reuse_block(blk, name, 'casper_library/Delays/pipeline', ...
 		'Position', position, ...
 		'ShowName', 'off', ...
@@ -110,8 +126,10 @@ for i = 1:num_brams
 		'ShowName', 'off');
 
 	add_line(blk, ['din', id, '/1'], ['reinterp', id, '/1']);
-	add_line(blk, ['reinterp', id, '/1'], ['pipeline', id, '/1']);
-	add_line(blk, ['pipeline', id, '/1'], ['bram', id, '/2']);
+	add_line(blk, ['reinterp', id, '/1'], ['data_pipeline', id, '/1']);
+	add_line(blk, ['addr_pipeline', id, '/1'], ['bram', id, '/1']);
+	add_line(blk, ['data_pipeline', id, '/1'], ['bram', id, '/2']);
+	add_line(blk, ['we_pipeline', id, '/1'], ['bram', id, '/3']);
 	add_line(blk, ['bram', id, '/1'], ['terminator', id, '/1']);
 
 	cur_port = cur_port + 1;
@@ -167,25 +185,9 @@ reuse_block(blk, name, 'casper_library/Misc/freeze_cntr', ...
 	'Position', position, ...
 	'CounterBits', 'addr_width')
 
-name = ['addr_pipeline'];
-ypos = cur_ypos + 23;
-position = [245, ypos, 295, ypos+14];
-reuse_block(blk, name, 'casper_library/Delays/pipeline', ...
-	'Position', position, ...
-	'ShowName', 'off', ...
-	'latency', 'latency');
-
-name = ['we_pipeline'];
-ypos = cur_ypos + 38;
-position = [245, ypos, 295, ypos+14];
-reuse_block(blk, name, 'casper_library/Delays/pipeline', ...
-	'Position', position, ...
-	'ShowName', 'off', ...
-	'latency', 'latency');
-
 name = ['done_pipeline'];
 ypos = cur_ypos + 53;
-position = [245, ypos, 295, ypos+14];
+position = [270, ypos, 320, ypos+14];
 reuse_block(blk, name, 'casper_library/Delays/pipeline', ...
 	'Position', position, ...
 	'ShowName', 'off', ...
@@ -214,13 +216,11 @@ add_line(blk, 'en/1', 'Logical/1')
 add_line(blk, 'trig/1', 'Logical/2')
 add_line(blk, 'Constant/1', 'freeze_cntr/1')
 add_line(blk, 'Logical/1', 'freeze_cntr/2')
-add_line(blk, 'freeze_cntr/1', 'addr_pipeline/1')
-add_line(blk, 'freeze_cntr/2', 'we_pipeline/1')
-add_line(blk, 'freeze_cntr/3', 'done_pipeline/1')
 for i = 1:num_brams
-	add_line(blk, 'addr_pipeline/1', ['bram', num2str(i-1), '/1'])
-	add_line(blk, 'we_pipeline/1', ['bram', num2str(i-1), '/3'])
+	add_line(blk, 'freeze_cntr/1', ['addr_pipeline', num2str(i-1), '/1'])
+	add_line(blk, 'freeze_cntr/2', ['we_pipeline', num2str(i-1), '/1'])
 end
+add_line(blk, 'freeze_cntr/3', 'done_pipeline/1')
 
 clean_blocks(blk)
 
