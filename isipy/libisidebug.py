@@ -123,12 +123,11 @@ class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
 	#
 
 	def read_adc (self, capt_block, read_len):
-		length = read_len / 4
-		bram_data = self.read_capt8(capt_block, 4, length, signed=True)
-		byte_data = self.bram_uncat(bram_data)
-		data_iter = self.bram_interleave(byte_data)
+		length = read_len / 16
+		bram_data = self.read_capt(capt_block, 16, length, signed=True)
+		data_iter = self.bram_interleave(bram_data)
 		data = self.flatten(data_iter)
-		return [x for x in data]
+		return [self.sign_extend(x, 8) for x in data]
 
 	def read_pfb (self, capt_block, read_len):
 		length = read_len / 16
