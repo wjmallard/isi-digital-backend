@@ -14,9 +14,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Feb 25 02:51:35 2010"
+  LastModifiedDate	  "Thu Feb 25 18:46:47 2010"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:482>"
+  ModelVersionFormat	  "1.%<AutoIncrement:487>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -626,7 +626,7 @@ Library {
   }
   System {
     Name		    "isi_correlator_lib"
-    Location		    [1, 58, 1346, 525]
+    Location		    [1, 58, 1412, 529]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -644,7 +644,7 @@ Library {
       BlockType		      SubSystem
       Name		      "9x8_strobe"
       Ports		      [1, 11]
-      Position		      [915, 277, 965, 443]
+      Position		      [990, 277, 1040, 443]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -685,7 +685,7 @@ Library {
 	  const			  "0"
 	  n_bits		  "1"
 	  bin_pt		  "0"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -694,7 +694,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,554,541"
 	  block_type		  "constant"
@@ -715,11 +715,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "1"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -742,11 +742,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "1"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -769,11 +769,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "1"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -796,11 +796,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "1"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -823,11 +823,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "1"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -850,11 +850,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "1"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -877,11 +877,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "1"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -904,11 +904,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "1"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -931,7 +931,7 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Mux"
 	  SourceType		  "Xilinx Bus Multiplexer Block"
 	  inputs		  "2"
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
@@ -939,8 +939,8 @@ Library {
 	  bin_pt		  "14"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,429"
@@ -967,13 +967,13 @@ Library {
 	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
 	  "e notes: In hardware this block costs nothing."
 	  nbits			  "1"
-	  boolean_output	  on
+	  boolean_output	  "on"
 	  mode			  "Lower Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "3"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,631,621"
 	  block_type		  "slice"
@@ -1002,15 +1002,15 @@ Library {
 	  arith_type		  "Unsigned"
 	  n_bits		  "4"
 	  bin_pt		  "0"
-	  load_pin		  off
-	  rst			  off
-	  en			  on
+	  load_pin		  "off"
+	  rst			  "off"
+	  en			  "on"
 	  explicit_period	  "on"
 	  period		  "1"
-	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
+	  dbl_ovrd		  "off"
+	  use_behavioral_HDL	  "off"
 	  implementation	  "Fabric"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,936"
@@ -1101,7 +1101,7 @@ Library {
 	  SourceType		  "pulse_ext"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -1126,15 +1126,15 @@ Library {
 	  arith_type		  "Unsigned"
 	  n_bits		  "4"
 	  bin_pt		  "0"
-	  load_pin		  off
-	  rst			  off
-	  en			  on
+	  load_pin		  "off"
+	  rst			  "off"
+	  en			  "on"
 	  explicit_period	  "on"
 	  period		  "1"
-	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
+	  dbl_ovrd		  "off"
+	  use_behavioral_HDL	  "off"
 	  implementation	  "Fabric"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,936"
@@ -1398,7 +1398,7 @@ Library {
       BlockType		      SubSystem
       Name		      "adc_ctrl"
       Ports		      [6, 3]
-      Position		      [90, 16, 140, 109]
+      Position		      [90, 277, 140, 368]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -1516,7 +1516,7 @@ Library {
 	  logical_function	  "OR"
 	  inputs		  "4"
 	  en			  "off"
-	  latency		  "0"
+	  latency		  "1"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "1"
@@ -1529,13 +1529,13 @@ Library {
 	  sggui_pos		  "20,20,543,357"
 	  block_type		  "logical"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "50,59,4,1,white,blue,0,96d3e8c1,right,"
+	  sg_icon_stat		  "50,59,4,1,white,blue,0,b6d17b45,right,"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
 	  "ch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.64 0.56 0.48 0.22 ],[0.1694"
 	  "92 0.305085 0.508475 0.711864 0.847458 0.847458 0.779661 0.847458 0.847458 0.661017 0.847458 0.711864 0.508475 0.30"
 	  "5085 0.169492 0.355932 0.169492 0.169492 0.237288 0.169492 0.169492 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 "
 	  "1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\"
-	  "newlineor\\newlinez^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  "newlineor\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -1548,7 +1548,7 @@ Library {
 	  logical_function	  "OR"
 	  inputs		  "2"
 	  en			  "off"
-	  latency		  "0"
+	  latency		  "2"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "1"
@@ -1561,13 +1561,13 @@ Library {
 	  sggui_pos		  "20,20,543,357"
 	  block_type		  "logical"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "50,29,2,1,white,blue,0,fc354646,right,"
+	  sg_icon_stat		  "50,29,2,1,white,blue,0,bbc740a2,right,"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
 	  "ch([0.34 0.24 0.38 0.24 0.34 0.5 0.54 0.58 0.74 0.62 0.5 0.4 0.54 0.4 0.5 0.62 0.74 0.58 0.54 0.5 0.34 ],[0.103448 "
 	  "0.275862 0.517241 0.758621 0.931034 0.931034 0.862069 0.931034 0.931034 0.724138 0.931034 0.758621 0.517241 0.27586"
 	  "2 0.103448 0.310345 0.103448 0.103448 0.172414 0.103448 0.103448 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0"
 	  " ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\ne"
-	  "wlineor\\newlinez^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  "wlineor\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -1580,7 +1580,7 @@ Library {
 	  logical_function	  "OR"
 	  inputs		  "2"
 	  en			  "off"
-	  latency		  "0"
+	  latency		  "1"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "1"
@@ -1590,16 +1590,16 @@ Library {
 	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,261"
+	  sggui_pos		  "20,20,543,357"
 	  block_type		  "logical"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "50,29,2,1,white,blue,0,fc354646,right,"
+	  sg_icon_stat		  "50,29,2,1,white,blue,0,d26eadf1,right,"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
 	  "ch([0.34 0.24 0.38 0.24 0.34 0.5 0.54 0.58 0.74 0.62 0.5 0.4 0.54 0.4 0.5 0.62 0.74 0.58 0.54 0.5 0.34 ],[0.103448 "
 	  "0.275862 0.517241 0.758621 0.931034 0.931034 0.862069 0.931034 0.931034 0.724138 0.931034 0.758621 0.517241 0.27586"
 	  "2 0.103448 0.310345 0.103448 0.103448 0.172414 0.103448 0.103448 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0"
 	  " ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\ne"
-	  "wlineor\\newlinez^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  "wlineor\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -1612,7 +1612,7 @@ Library {
 	  logical_function	  "OR"
 	  inputs		  "4"
 	  en			  "off"
-	  latency		  "0"
+	  latency		  "2"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "1"
@@ -1625,13 +1625,13 @@ Library {
 	  sggui_pos		  "20,20,543,357"
 	  block_type		  "logical"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "50,59,4,1,white,blue,0,96d3e8c1,right,"
+	  sg_icon_stat		  "50,59,4,1,white,blue,0,73c0e3e2,right,"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
 	  "ch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.64 0.56 0.48 0.22 ],[0.1694"
 	  "92 0.305085 0.508475 0.711864 0.847458 0.847458 0.779661 0.847458 0.847458 0.661017 0.847458 0.711864 0.508475 0.30"
 	  "5085 0.169492 0.355932 0.169492 0.169492 0.237288 0.169492 0.169492 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 "
 	  "1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\"
-	  "newlineor\\newlinez^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  "newlineor\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -1644,7 +1644,7 @@ Library {
 	  logical_function	  "OR"
 	  inputs		  "4"
 	  en			  "off"
-	  latency		  "0"
+	  latency		  "1"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "1"
@@ -1657,13 +1657,13 @@ Library {
 	  sggui_pos		  "20,20,543,357"
 	  block_type		  "logical"
 	  block_version		  "10.1.1"
-	  sg_icon_stat		  "50,59,4,1,white,blue,0,96d3e8c1,right,"
+	  sg_icon_stat		  "50,59,4,1,white,blue,0,b6d17b45,right,"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
 	  "ch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.64 0.56 0.48 0.22 ],[0.1694"
 	  "92 0.305085 0.508475 0.711864 0.847458 0.847458 0.779661 0.847458 0.847458 0.661017 0.847458 0.711864 0.508475 0.30"
 	  "5085 0.169492 0.355932 0.169492 0.169492 0.237288 0.169492 0.169492 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 "
 	  "1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\"
-	  "newlineor\\newlinez^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  "newlineor\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Terminator
@@ -2284,9 +2284,756 @@ Library {
     }
     Block {
       BlockType		      SubSystem
+      Name		      "adc_pipeline"
+      Ports		      [16, 16]
+      Position		      [90, 12, 140, 253]
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"adc_pipeline"
+	Location		[21, 86, 216, 594]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "i0"
+	  Position		  [15, 13, 45, 27]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "i1"
+	  Position		  [15, 43, 45, 57]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "i2"
+	  Position		  [15, 73, 45, 87]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "i3"
+	  Position		  [15, 103, 45, 117]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "i4"
+	  Position		  [15, 133, 45, 147]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "i5"
+	  Position		  [15, 163, 45, 177]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "i6"
+	  Position		  [15, 193, 45, 207]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "i7"
+	  Position		  [15, 223, 45, 237]
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "i8"
+	  Position		  [15, 253, 45, 267]
+	  Port			  "9"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "i9"
+	  Position		  [15, 283, 45, 297]
+	  Port			  "10"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "i10"
+	  Position		  [15, 313, 45, 327]
+	  Port			  "11"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "i11"
+	  Position		  [15, 343, 45, 357]
+	  Port			  "12"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "i12"
+	  Position		  [15, 373, 45, 387]
+	  Port			  "13"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "i13"
+	  Position		  [15, 403, 45, 417]
+	  Port			  "14"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "i14"
+	  Position		  [15, 433, 45, 447]
+	  Port			  "15"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "i15"
+	  Position		  [15, 463, 45, 477]
+	  Port			  "16"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pipeline0"
+	  Ports			  [1, 1]
+	  Position		  [70, 12, 120, 28]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag0"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pipeline1"
+	  Ports			  [1, 1]
+	  Position		  [70, 42, 120, 58]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag1"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pipeline10"
+	  Ports			  [1, 1]
+	  Position		  [70, 312, 120, 328]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag2"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pipeline11"
+	  Ports			  [1, 1]
+	  Position		  [70, 342, 120, 358]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag3"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pipeline12"
+	  Ports			  [1, 1]
+	  Position		  [70, 372, 120, 388]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag4"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pipeline13"
+	  Ports			  [1, 1]
+	  Position		  [70, 402, 120, 418]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag5"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pipeline14"
+	  Ports			  [1, 1]
+	  Position		  [70, 432, 120, 448]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag6"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pipeline15"
+	  Ports			  [1, 1]
+	  Position		  [70, 462, 120, 478]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag7"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pipeline2"
+	  Ports			  [1, 1]
+	  Position		  [70, 72, 120, 88]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag8"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pipeline3"
+	  Ports			  [1, 1]
+	  Position		  [70, 102, 120, 118]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag9"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pipeline4"
+	  Ports			  [1, 1]
+	  Position		  [70, 132, 120, 148]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag10"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pipeline5"
+	  Ports			  [1, 1]
+	  Position		  [70, 162, 120, 178]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag11"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pipeline6"
+	  Ports			  [1, 1]
+	  Position		  [70, 192, 120, 208]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag12"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pipeline7"
+	  Ports			  [1, 1]
+	  Position		  [70, 222, 120, 238]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag13"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pipeline8"
+	  Ports			  [1, 1]
+	  Position		  [70, 252, 120, 268]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag14"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "pipeline9"
+	  Ports			  [1, 1]
+	  Position		  [70, 282, 120, 298]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag15"
+	  SourceBlock		  "casper_library/Delays/pipeline"
+	  SourceType		  "pipeline"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  latency		  "2"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o0"
+	  Position		  [145, 13, 175, 27]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o1"
+	  Position		  [145, 43, 175, 57]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o2"
+	  Position		  [145, 73, 175, 87]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o3"
+	  Position		  [145, 103, 175, 117]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o4"
+	  Position		  [145, 133, 175, 147]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o5"
+	  Position		  [145, 163, 175, 177]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o6"
+	  Position		  [145, 193, 175, 207]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o7"
+	  Position		  [145, 223, 175, 237]
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o8"
+	  Position		  [145, 253, 175, 267]
+	  Port			  "9"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o9"
+	  Position		  [145, 283, 175, 297]
+	  Port			  "10"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o10"
+	  Position		  [145, 313, 175, 327]
+	  Port			  "11"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o11"
+	  Position		  [145, 343, 175, 357]
+	  Port			  "12"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o12"
+	  Position		  [145, 373, 175, 387]
+	  Port			  "13"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o13"
+	  Position		  [145, 403, 175, 417]
+	  Port			  "14"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o14"
+	  Position		  [145, 433, 175, 447]
+	  Port			  "15"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "o15"
+	  Position		  [145, 463, 175, 477]
+	  Port			  "16"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "i0"
+	  SrcPort		  1
+	  DstBlock		  "pipeline0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pipeline0"
+	  SrcPort		  1
+	  DstBlock		  "o0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "i1"
+	  SrcPort		  1
+	  DstBlock		  "pipeline1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pipeline1"
+	  SrcPort		  1
+	  DstBlock		  "o1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "i2"
+	  SrcPort		  1
+	  DstBlock		  "pipeline2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pipeline2"
+	  SrcPort		  1
+	  DstBlock		  "o2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "i3"
+	  SrcPort		  1
+	  DstBlock		  "pipeline3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pipeline3"
+	  SrcPort		  1
+	  DstBlock		  "o3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "i4"
+	  SrcPort		  1
+	  DstBlock		  "pipeline4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pipeline4"
+	  SrcPort		  1
+	  DstBlock		  "o4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "i5"
+	  SrcPort		  1
+	  DstBlock		  "pipeline5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pipeline5"
+	  SrcPort		  1
+	  DstBlock		  "o5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "i6"
+	  SrcPort		  1
+	  DstBlock		  "pipeline6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pipeline6"
+	  SrcPort		  1
+	  DstBlock		  "o6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "i7"
+	  SrcPort		  1
+	  DstBlock		  "pipeline7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pipeline7"
+	  SrcPort		  1
+	  DstBlock		  "o7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "i8"
+	  SrcPort		  1
+	  DstBlock		  "pipeline8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pipeline8"
+	  SrcPort		  1
+	  DstBlock		  "o8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "i9"
+	  SrcPort		  1
+	  DstBlock		  "pipeline9"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pipeline9"
+	  SrcPort		  1
+	  DstBlock		  "o9"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "i10"
+	  SrcPort		  1
+	  DstBlock		  "pipeline10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pipeline10"
+	  SrcPort		  1
+	  DstBlock		  "o10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "i11"
+	  SrcPort		  1
+	  DstBlock		  "pipeline11"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pipeline11"
+	  SrcPort		  1
+	  DstBlock		  "o11"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "i12"
+	  SrcPort		  1
+	  DstBlock		  "pipeline12"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pipeline12"
+	  SrcPort		  1
+	  DstBlock		  "o12"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "i13"
+	  SrcPort		  1
+	  DstBlock		  "pipeline13"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pipeline13"
+	  SrcPort		  1
+	  DstBlock		  "o13"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "i14"
+	  SrcPort		  1
+	  DstBlock		  "pipeline14"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pipeline14"
+	  SrcPort		  1
+	  DstBlock		  "o14"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "i15"
+	  SrcPort		  1
+	  DstBlock		  "pipeline15"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pipeline15"
+	  SrcPort		  1
+	  DstBlock		  "o15"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
       Name		      "adc_tvg"
       Ports		      [1, 17]
-      Position		      [90, 131, 140, 389]
+      Position		      [165, 16, 215, 274]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -3506,7 +4253,7 @@ Library {
       BlockType		      SubSystem
       Name		      "capt_adc"
       Ports		      [18, 1]
-      Position		      [1040, 12, 1090, 283]
+      Position		      [1115, 12, 1165, 283]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -4221,7 +4968,7 @@ Library {
 	  Position		  [260, 272, 310, 363]
 	  AncestorBlock		  "isi_correlator_lib/capture"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag0"
+	  UserData		  "DataTag16"
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
 	  RTWSystemCode		  "Auto"
@@ -5027,7 +5774,7 @@ Library {
       BlockType		      SubSystem
       Name		      "capt_corr"
       Ports		      [11, 1]
-      Position		      [1265, 12, 1315, 178]
+      Position		      [1340, 12, 1390, 178]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -5133,7 +5880,7 @@ Library {
 	  Position		  [95, 12, 145, 88]
 	  AncestorBlock		  "isi_correlator_lib/capture"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag1"
+	  UserData		  "DataTag17"
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
 	  RTWSystemCode		  "Auto"
@@ -5604,7 +6351,7 @@ Library {
 	  Position		  [95, 107, 145, 183]
 	  AncestorBlock		  "isi_correlator_lib/capture"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag2"
+	  UserData		  "DataTag18"
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
 	  RTWSystemCode		  "Auto"
@@ -6075,7 +6822,7 @@ Library {
 	  Position		  [95, 202, 145, 278]
 	  AncestorBlock		  "isi_correlator_lib/capture"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag3"
+	  UserData		  "DataTag19"
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
 	  RTWSystemCode		  "Auto"
@@ -6653,7 +7400,7 @@ Library {
       BlockType		      SubSystem
       Name		      "capt_fft"
       Ports		      [10, 1]
-      Position		      [1115, 12, 1165, 163]
+      Position		      [1190, 12, 1240, 163]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -7246,7 +7993,7 @@ Library {
 	  Position		  [305, 12, 355, 163]
 	  AncestorBlock		  "isi_correlator_lib/capture"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag4"
+	  UserData		  "DataTag20"
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
 	  RTWSystemCode		  "Auto"
@@ -8618,7 +9365,7 @@ Library {
       BlockType		      SubSystem
       Name		      "capt_xaui"
       Ports		      [12, 1]
-      Position		      [1190, 12, 1240, 193]
+      Position		      [1265, 12, 1315, 193]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -9079,7 +9826,7 @@ Library {
 	  Position		  [285, 12, 335, 133]
 	  AncestorBlock		  "isi_correlator_lib/capture"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag5"
+	  UserData		  "DataTag21"
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
 	  RTWSystemCode		  "Auto"
@@ -10001,7 +10748,7 @@ Library {
       Ports		      [3, 1]
       Position		      [15, 342, 65, 388]
       UserDataPersistent      on
-      UserData		      "DataTag6"
+      UserData		      "DataTag22"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -10279,7 +11026,7 @@ Library {
       BlockType		      SubSystem
       Name		      "clump"
       Ports		      [9, 5]
-      Position		      [315, 14, 365, 186]
+      Position		      [390, 14, 440, 186]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -10783,7 +11530,7 @@ Library {
       BlockType		      SubSystem
       Name		      "compress"
       Ports		      [4, 1]
-      Position		      [315, 208, 365, 267]
+      Position		      [390, 208, 440, 267]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -11189,7 +11936,7 @@ Library {
       BlockType		      SubSystem
       Name		      "cplx_mult"
       Ports		      [2, 2]
-      Position		      [840, 239, 890, 286]
+      Position		      [915, 239, 965, 286]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -11252,7 +11999,7 @@ Library {
 	  Position		  [70, 13, 120, 42]
 	  AttributesFormatString  "_ r/i"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag7"
+	  UserData		  "DataTag23"
 	  SourceBlock		  "casper_library/Misc/c_to_ri"
 	  SourceType		  "c_to_ri"
 	  ShowPortLabels	  "FromPortIcon"
@@ -11273,7 +12020,7 @@ Library {
 	  Position		  [70, 93, 120, 122]
 	  AttributesFormatString  "_ r/i"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag8"
+	  UserData		  "DataTag24"
 	  SourceBlock		  "casper_library/Misc/c_to_ri"
 	  SourceType		  "c_to_ri"
 	  ShowPortLabels	  "FromPortIcon"
@@ -11381,7 +12128,7 @@ Library {
       BlockType		      SubSystem
       Name		      "cross_mult"
       Ports		      [4, 10]
-      Position		      [840, 15, 890, 215]
+      Position		      [915, 15, 965, 215]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -12161,7 +12908,7 @@ Library {
       BlockType		      SubSystem
       Name		      "decompress"
       Ports		      [2, 3]
-      Position		      [765, 259, 815, 321]
+      Position		      [840, 259, 890, 321]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -12654,7 +13401,7 @@ Library {
       BlockType		      SubSystem
       Name		      "downshift"
       Ports		      [16, 16]
-      Position		      [165, 15, 215, 260]
+      Position		      [240, 15, 290, 260]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -15926,7 +16673,7 @@ Library {
       BlockType		      SubSystem
       Name		      "equalizer"
       Ports		      [10, 10]
-      Position		      [240, 14, 290, 216]
+      Position		      [315, 14, 365, 216]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -16880,7 +17627,7 @@ Library {
       BlockType		      SubSystem
       Name		      "loopback"
       Ports		      [3, 3]
-      Position		      [465, 16, 615, 114]
+      Position		      [540, 16, 690, 114]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -17183,7 +17930,7 @@ Library {
       BlockType		      SubSystem
       Name		      "resync"
       Ports		      [3, 2]
-      Position		      [640, 316, 740, 374]
+      Position		      [715, 316, 815, 374]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -17580,7 +18327,7 @@ Library {
       BlockType		      SubSystem
       Name		      "saturate"
       Ports		      [1, 2]
-      Position		      [240, 308, 290, 357]
+      Position		      [315, 308, 365, 357]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -18180,7 +18927,7 @@ Library {
       BlockType		      SubSystem
       Name		      "scale"
       Ports		      [2, 2]
-      Position		      [240, 238, 290, 287]
+      Position		      [315, 238, 365, 287]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -18448,7 +19195,7 @@ Library {
 	  Position		  [155, 13, 205, 42]
 	  AttributesFormatString  "_ r/i"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag9"
+	  UserData		  "DataTag25"
 	  SourceBlock		  "casper_library/Misc/c_to_ri"
 	  SourceType		  "c_to_ri"
 	  ShowPortLabels	  "FromPortIcon"
@@ -18468,7 +19215,7 @@ Library {
 	  Ports			  [2, 1]
 	  Position		  [445, 38, 495, 67]
 	  UserDataPersistent	  on
-	  UserData		  "DataTag10"
+	  UserData		  "DataTag26"
 	  SourceBlock		  "casper_library/Misc/ri_to_c"
 	  SourceType		  "ri_to_c"
 	  ShowPortLabels	  "FromPortIcon"
@@ -18646,7 +19393,7 @@ Library {
       BlockType		      SubSystem
       Name		      "shuffle"
       Ports		      [6, 5]
-      Position		      [390, 14, 440, 221]
+      Position		      [465, 14, 515, 221]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -19265,7 +20012,7 @@ Library {
       Position		      [15, 15, 65, 65]
       AttributesFormatString  "sync_period=1"
       UserDataPersistent      on
-      UserData		      "DataTag11"
+      UserData		      "DataTag27"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -20320,7 +21067,7 @@ Library {
       BlockType		      SubSystem
       Name		      "unclump"
       Ports		      [4, 10]
-      Position		      [765, 15, 815, 235]
+      Position		      [840, 15, 890, 235]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -20698,7 +21445,7 @@ Library {
       BlockType		      SubSystem
       Name		      "vacc"
       Ports		      [12, 1]
-      Position		      [915, 15, 1015, 255]
+      Position		      [990, 15, 1090, 255]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -20866,7 +21613,7 @@ Library {
 	      const		      "0"
 	      n_bits		      "1"
 	      bin_pt		      "0"
-	      explicit_period	      on
+	      explicit_period	      "on"
 	      period		      "1"
 	      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	      equ		      "P=C"
@@ -20875,7 +21622,7 @@ Library {
 	      opr		      "+"
 	      inp1		      "P"
 	      carry		      "CIN"
-	      dbl_ovrd		      off
+	      dbl_ovrd		      "off"
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,554,541"
 	      block_type	      "constant"
@@ -20898,11 +21645,11 @@ Library {
 	      SourceType	      "Xilinx Delay Block"
 	      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flo"
 	      "p."
-	      en		      off
+	      en		      "off"
 	      latency		      "1"
-	      dbl_ovrd		      off
-	      reg_retiming	      off
-	      xl_use_area	      off
+	      dbl_ovrd		      "off"
+	      reg_retiming	      "off"
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "-1,-1,-1,-1"
@@ -20926,11 +21673,11 @@ Library {
 	      SourceType	      "Xilinx Delay Block"
 	      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flo"
 	      "p."
-	      en		      off
+	      en		      "off"
 	      latency		      "1"
-	      dbl_ovrd		      off
-	      reg_retiming	      off
-	      xl_use_area	      off
+	      dbl_ovrd		      "off"
+	      reg_retiming	      "off"
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "-1,-1,-1,-1"
@@ -20954,11 +21701,11 @@ Library {
 	      SourceType	      "Xilinx Delay Block"
 	      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flo"
 	      "p."
-	      en		      off
+	      en		      "off"
 	      latency		      "1"
-	      dbl_ovrd		      off
-	      reg_retiming	      off
-	      xl_use_area	      off
+	      dbl_ovrd		      "off"
+	      reg_retiming	      "off"
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "-1,-1,-1,-1"
@@ -20982,11 +21729,11 @@ Library {
 	      SourceType	      "Xilinx Delay Block"
 	      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flo"
 	      "p."
-	      en		      off
+	      en		      "off"
 	      latency		      "1"
-	      dbl_ovrd		      off
-	      reg_retiming	      off
-	      xl_use_area	      off
+	      dbl_ovrd		      "off"
+	      reg_retiming	      "off"
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "-1,-1,-1,-1"
@@ -21010,11 +21757,11 @@ Library {
 	      SourceType	      "Xilinx Delay Block"
 	      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flo"
 	      "p."
-	      en		      off
+	      en		      "off"
 	      latency		      "1"
-	      dbl_ovrd		      off
-	      reg_retiming	      off
-	      xl_use_area	      off
+	      dbl_ovrd		      "off"
+	      reg_retiming	      "off"
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "-1,-1,-1,-1"
@@ -21038,11 +21785,11 @@ Library {
 	      SourceType	      "Xilinx Delay Block"
 	      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flo"
 	      "p."
-	      en		      off
+	      en		      "off"
 	      latency		      "1"
-	      dbl_ovrd		      off
-	      reg_retiming	      off
-	      xl_use_area	      off
+	      dbl_ovrd		      "off"
+	      reg_retiming	      "off"
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "-1,-1,-1,-1"
@@ -21066,11 +21813,11 @@ Library {
 	      SourceType	      "Xilinx Delay Block"
 	      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flo"
 	      "p."
-	      en		      off
+	      en		      "off"
 	      latency		      "1"
-	      dbl_ovrd		      off
-	      reg_retiming	      off
-	      xl_use_area	      off
+	      dbl_ovrd		      "off"
+	      reg_retiming	      "off"
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "-1,-1,-1,-1"
@@ -21094,11 +21841,11 @@ Library {
 	      SourceType	      "Xilinx Delay Block"
 	      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flo"
 	      "p."
-	      en		      off
+	      en		      "off"
 	      latency		      "1"
-	      dbl_ovrd		      off
-	      reg_retiming	      off
-	      xl_use_area	      off
+	      dbl_ovrd		      "off"
+	      reg_retiming	      "off"
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "-1,-1,-1,-1"
@@ -21121,7 +21868,7 @@ Library {
 	      SourceBlock	      "xbsIndex_r4/Mux"
 	      SourceType	      "Xilinx Bus Multiplexer Block"
 	      inputs		      "2"
-	      en		      off
+	      en		      "off"
 	      latency		      "0"
 	      precision		      "Full"
 	      arith_type	      "Unsigned"
@@ -21129,8 +21876,8 @@ Library {
 	      bin_pt		      "14"
 	      quantization	      "Truncate"
 	      overflow		      "Wrap"
-	      dbl_ovrd		      off
-	      xl_use_area	      off
+	      dbl_ovrd		      "off"
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,543,429"
@@ -21157,13 +21904,13 @@ Library {
 	      "ut type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br"
 	      "><br>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      on
+	      boolean_output	      "on"
 	      mode		      "Lower Bit Location + Width"
 	      bit1		      "0"
 	      base1		      "MSB of Input"
 	      bit0		      "3"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      off
+	      dbl_ovrd		      "off"
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,631,621"
 	      block_type	      "slice"
@@ -21193,15 +21940,15 @@ Library {
 	      arith_type	      "Unsigned"
 	      n_bits		      "4"
 	      bin_pt		      "0"
-	      load_pin		      off
-	      rst		      off
-	      en		      on
+	      load_pin		      "off"
+	      rst		      "off"
+	      en		      "on"
 	      explicit_period	      "on"
 	      period		      "1"
-	      dbl_ovrd		      off
-	      use_behavioral_HDL      off
+	      dbl_ovrd		      "off"
+	      use_behavioral_HDL      "off"
 	      implementation	      "Fabric"
-	      xl_use_area	      off
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,543,936"
@@ -21232,15 +21979,15 @@ Library {
 	      arith_type	      "Unsigned"
 	      n_bits		      "4"
 	      bin_pt		      "0"
-	      load_pin		      off
-	      rst		      off
-	      en		      on
+	      load_pin		      "off"
+	      rst		      "off"
+	      en		      "on"
 	      explicit_period	      "on"
 	      period		      "1"
-	      dbl_ovrd		      off
-	      use_behavioral_HDL      off
+	      dbl_ovrd		      "off"
+	      use_behavioral_HDL      "off"
 	      implementation	      "Fabric"
-	      xl_use_area	      off
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,543,936"
@@ -21804,7 +22551,7 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "bram"
+	  Name			  "bram0"
 	  Tag			  "xps:bram"
 	  Ports			  [3, 1]
 	  Position		  [825, 907, 925, 983]
@@ -21885,7 +22632,7 @@ Library {
 	      const		      "72*455"
 	      n_bits		      "15"
 	      bin_pt		      "0"
-	      explicit_period	      on
+	      explicit_period	      "on"
 	      period		      "1"
 	      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	      equ		      "P=C"
@@ -21894,7 +22641,7 @@ Library {
 	      opr		      "+"
 	      inp1		      "P"
 	      carry		      "CIN"
-	      dbl_ovrd		      off
+	      dbl_ovrd		      "off"
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,554,541"
 	      block_type	      "constant"
@@ -21917,11 +22664,11 @@ Library {
 	      SourceType	      "Xilinx Delay Block"
 	      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flo"
 	      "p."
-	      en		      off
+	      en		      "off"
 	      latency		      "1"
-	      dbl_ovrd		      off
-	      reg_retiming	      off
-	      xl_use_area	      off
+	      dbl_ovrd		      "off"
+	      reg_retiming	      "off"
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "-1,-1,-1,-1"
@@ -21945,11 +22692,11 @@ Library {
 	      SourceType	      "Xilinx Delay Block"
 	      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flo"
 	      "p."
-	      en		      off
+	      en		      "off"
 	      latency		      "1"
-	      dbl_ovrd		      off
-	      reg_retiming	      off
-	      xl_use_area	      off
+	      dbl_ovrd		      "off"
+	      reg_retiming	      "off"
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "-1,-1,-1,-1"
@@ -21973,11 +22720,11 @@ Library {
 	      SourceType	      "Xilinx Delay Block"
 	      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flo"
 	      "p."
-	      en		      off
+	      en		      "off"
 	      latency		      "1"
-	      dbl_ovrd		      off
-	      reg_retiming	      off
-	      xl_use_area	      off
+	      dbl_ovrd		      "off"
+	      reg_retiming	      "off"
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "-1,-1,-1,-1"
@@ -22000,10 +22747,10 @@ Library {
 	      SourceBlock	      "xbsIndex_r4/Relational"
 	      SourceType	      "Xilinx Arithmetic Relational Operator Block"
 	      mode		      "a=b"
-	      en		      off
+	      en		      "off"
 	      latency		      "1"
-	      dbl_ovrd		      off
-	      xl_use_area	      off
+	      dbl_ovrd		      "off"
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,543,249"
@@ -22035,15 +22782,15 @@ Library {
 	      arith_type	      "Unsigned"
 	      n_bits		      "15"
 	      bin_pt		      "0"
-	      load_pin		      off
-	      rst		      on
-	      en		      on
+	      load_pin		      "off"
+	      rst		      "on"
+	      en		      "on"
 	      explicit_period	      "on"
 	      period		      "1"
-	      dbl_ovrd		      off
-	      use_behavioral_HDL      off
+	      dbl_ovrd		      "off"
+	      use_behavioral_HDL      "off"
 	      implementation	      "Fabric"
-	      xl_use_area	      off
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,543,936"
@@ -22068,7 +22815,7 @@ Library {
 	      SourceType	      "posedge"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData off
+	      FunctionWithSeparateData "off"
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -23261,7 +24008,7 @@ Library {
 	  DstPort		  10
 	}
 	Line {
-	  SrcBlock		  "bram"
+	  SrcBlock		  "bram0"
 	  SrcPort		  1
 	  DstBlock		  "Terminator0"
 	  DstPort		  1
@@ -23282,19 +24029,19 @@ Library {
 	Line {
 	  SrcBlock		  "bram_ctrl"
 	  SrcPort		  1
-	  DstBlock		  "bram"
+	  DstBlock		  "bram0"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "bram_ctrl"
 	  SrcPort		  2
-	  DstBlock		  "bram"
+	  DstBlock		  "bram0"
 	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "bram_ctrl"
 	  SrcPort		  3
-	  DstBlock		  "bram"
+	  DstBlock		  "bram0"
 	  DstPort		  3
 	}
 	Line {
@@ -23414,7 +24161,7 @@ Library {
       BlockType		      SubSystem
       Name		      "xaui_resync"
       Ports		      [9, 5]
-      Position		      [640, 15, 740, 295]
+      Position		      [715, 15, 815, 295]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -24247,9 +24994,9 @@ Library {
   }
 }
 MatData {
-  NumRecords		  12
+  NumRecords		  28
   DataRecord {
-    Tag			    DataTag11
+    Tag			    DataTag27
     Data		    "  %)30     .    \\ 0   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A"
     "=&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !FV0@0.    8 0  "
     " 8    (     @         %    \"     $    !     0         %  0 $P    $   #W    9&5F875L=',              '5S:6YG7W!F8E"
@@ -24268,33 +25015,33 @@ MatData {
     "!          D    (            \\#\\"
   }
   DataRecord {
-    Tag			    DataTag10
+    Tag			    DataTag26
     Data		    "  %)30     .    <     8    (     0         %    \"     $    !     0         .    0     8    (    !     "
     "     %    \"     $    ,     0         0    #    ')I7W1O7V-?:6YI=      "
   }
   DataRecord {
-    Tag			    DataTag9
+    Tag			    DataTag25
     Data		    "  %)30     .    \\     8    (     0         %    \"     $    #     0         .    0     8    (    !    "
     "      %    \"     $    ,     0         0    #    &-?=&]?<FE?:6YI=      .    .     8    (    !@         %    \"    "
     " $    !     0         )    \"            \"! #@   #@    &    \"     8         !0    @    !     0    $         \"0 "
     "   @            <0 "
   }
   DataRecord {
-    Tag			    DataTag8
+    Tag			    DataTag24
     Data		    "  %)30     .    \\     8    (     0         %    \"     $    #     0         .    0     8    (    !    "
     "      %    \"     $    ,     0         0    #    &-?=&]?<FE?:6YI=      .    .     8    (    !@         %    \"    "
     " $    !     0         )    \"            \"! #@   #@    &    \"     8         !0    @    !     0    $         \"0 "
     "   @            <0 "
   }
   DataRecord {
-    Tag			    DataTag7
+    Tag			    DataTag23
     Data		    "  %)30     .    \\     8    (     0         %    \"     $    #     0         .    0     8    (    !    "
     "      %    \"     $    ,     0         0    #    &-?=&]?<FE?:6YI=      .    .     8    (    !@         %    \"    "
     " $    !     0         )    \"            \"! #@   #@    &    \"     8         !0    @    !     0    $         \"0 "
     "   @            <0 "
   }
   DataRecord {
-    Tag			    DataTag6
+    Tag			    DataTag22
     Data		    "  %)30     .    X $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
     "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ .Z]$@,.    4 $   "
     "8    (     @         %    \"     $    !     0         %  0 \"P    $    L    9&5F875L=',   !N=6U?8G)A;7,  &%D9')?=V"
@@ -24303,7 +25050,7 @@ MatData {
     "$    !          D    (            )D .    ,     8    (    !          %    \"     $    \"     0         0  ( ;VX   "
   }
   DataRecord {
-    Tag			    DataTag5
+    Tag			    DataTag21
     Data		    "  %)30     .    X $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
     "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ $F(&@<.    4 $   "
     "8    (     @         %    \"     $    !     0         %  0 \"P    $    L    9&5F875L=',   !N=6U?8G)A;7,  &%D9')?=V"
@@ -24312,7 +25059,7 @@ MatData {
     "$    !          D    (            )D .    ,     8    (    !          %    \"     $    \"     0         0  ( ;VX   "
   }
   DataRecord {
-    Tag			    DataTag4
+    Tag			    DataTag20
     Data		    "  %)30     .    X $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
     "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $  >F'0<.    4 $   "
     "8    (     @         %    \"     $    !     0         %  0 \"P    $    L    9&5F875L=',   !N=6U?8G)A;7,  &%D9')?=V"
@@ -24321,7 +25068,7 @@ MatData {
     "$    !          D    (            )D .    ,     8    (    !          %    \"     $    \"     0         0  ( ;VX   "
   }
   DataRecord {
-    Tag			    DataTag3
+    Tag			    DataTag19
     Data		    "  %)30     .    X $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
     "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ $*9I0<.    4 $   "
     "8    (     @         %    \"     $    !     0         %  0 \"P    $    L    9&5F875L=',   !N=6U?8G)A;7,  &%D9')?=V"
@@ -24330,7 +25077,7 @@ MatData {
     "$    !          D    (            )D .    ,     8    (    !          %    \"     $    #     0         0  , ;V9F  "
   }
   DataRecord {
-    Tag			    DataTag2
+    Tag			    DataTag18
     Data		    "  %)30     .    X $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
     "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ $*9I0<.    4 $   "
     "8    (     @         %    \"     $    !     0         %  0 \"P    $    L    9&5F875L=',   !N=6U?8G)A;7,  &%D9')?=V"
@@ -24339,7 +25086,7 @@ MatData {
     "$    !          D    (            )D .    ,     8    (    !          %    \"     $    #     0         0  , ;V9F  "
   }
   DataRecord {
-    Tag			    DataTag1
+    Tag			    DataTag17
     Data		    "  %)30     .    X $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
     "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ *S;%0,.    4 $   "
     "8    (     @         %    \"     $    !     0         %  0 \"P    $    L    9&5F875L=',   !N=6U?8G)A;7,  &%D9')?=V"
@@ -24348,12 +25095,140 @@ MatData {
     "$    !          D    (            )D .    ,     8    (    !          %    \"     $    \"     0         0  ( ;VX   "
   }
   DataRecord {
-    Tag			    DataTag0
+    Tag			    DataTag16
     Data		    "  %)30     .    X $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
     "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ (MJ%P<.    4 $   "
     "8    (     @         %    \"     $    !     0         %  0 \"P    $    L    9&5F875L=',   !N=6U?8G)A;7,  &%D9')?=V"
     "ED=&@ 9&]N95]P;W)T        #@   \"@    &    \"     $         !0    @               $         #@   #@    &    \"    "
     " 8         !0    @    !     0    $         \"0    @            00 X    X    !@    @    &          4    (     0    "
     "$    !          D    (            )D .    ,     8    (    !          %    \"     $    \"     0         0  ( ;VX   "
+  }
+  DataRecord {
+    Tag			    DataTag15
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
+  }
+  DataRecord {
+    Tag			    DataTag14
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
+  }
+  DataRecord {
+    Tag			    DataTag13
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
+  }
+  DataRecord {
+    Tag			    DataTag12
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
+  }
+  DataRecord {
+    Tag			    DataTag11
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
+  }
+  DataRecord {
+    Tag			    DataTag10
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
+  }
+  DataRecord {
+    Tag			    DataTag9
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
+  }
+  DataRecord {
+    Tag			    DataTag8
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
+  }
+  DataRecord {
+    Tag			    DataTag7
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
+  }
+  DataRecord {
+    Tag			    DataTag6
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
+  }
+  DataRecord {
+    Tag			    DataTag5
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
+  }
+  DataRecord {
+    Tag			    DataTag4
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
+  }
+  DataRecord {
+    Tag			    DataTag3
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
+  }
+  DataRecord {
+    Tag			    DataTag2
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
+  }
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
+  }
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
+    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
+    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
+    "$         \"0    @             0 "
   }
 }
