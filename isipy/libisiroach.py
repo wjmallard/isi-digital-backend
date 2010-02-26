@@ -98,7 +98,6 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 
 		clocks = int(period * self._clock_freq * 10**6)
 		self.write_int('sync_gen2_period', clocks)
-		self.write_int('sync_gen2_select', select)
 		self._sync_period = period
 
 	def set_fft_shift (self, shift):
