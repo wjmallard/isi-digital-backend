@@ -43,8 +43,8 @@ delays = get_var('delays', 'defaults', defaults, varargin{:});
 
 % Validate input fields.
 
-if fanout < 2
-	errordlg('fanout: Invalid fanout. Should be greater than one.')
+if fanout < 1
+	errordlg('fanout: Invalid fanout. Should be greater than zero.')
 	return
 end
 
@@ -99,29 +99,29 @@ for col = 1:levels+1
 			src = ['pipeline', src_id, '/1'];
 			dst = ['pipeline', dst_id, '/1'];
 			add_line(blk, src, dst);
+		end
 
-			% for the final column, wire up an outport or a terminator.
-			if col == levels+1
-				port_id = num2str(row);
-	
-				if row < fanout
-					name = ['out', port_id];
-					position = [xpos+100, ypos, xpos+130, ypos+14];
-					reuse_block(blk, name, 'built-in/outport', ...
-						'Position', position, ...
-						'ShowName', 'on', ...
-						'Port', num2str(row+1));
-				else
-					name = ['term', port_id];
-					position = [xpos+100, ypos-6, xpos+120, ypos+14];
-					reuse_block(blk, name, 'built-in/terminator', ...
-						'Position', position, ...
-						'ShowName', 'off');
-				end
+		% if this is the final column, add an outport or a terminator.
+		if col == levels+1
+			port_id = num2str(row);
 
-				delay_name = ['pipeline', num2str(col_min+row)];
-				add_line(blk, [delay_name, '/1'], [name, '/1']);
+			if row < fanout
+				name = ['out', port_id];
+				position = [xpos+100, ypos, xpos+130, ypos+14];
+				reuse_block(blk, name, 'built-in/outport', ...
+					'Position', position, ...
+					'ShowName', 'on', ...
+					'Port', num2str(row+1));
+			else
+				name = ['term', port_id];
+				position = [xpos+100, ypos-6, xpos+120, ypos+14];
+				reuse_block(blk, name, 'built-in/terminator', ...
+					'Position', position, ...
+					'ShowName', 'off');
 			end
+
+			delay_name = ['pipeline', num2str(col_min+row)];
+			add_line(blk, [delay_name, '/1'], [name, '/1']);
 		end
 	end
 
@@ -145,6 +145,9 @@ ystart = position(2);
 yend = ystart + 15*fanout;
 position = [xstart, ystart, xend, yend];
 set_param(blk, 'Position', position)
+
+fmtstr = sprintf('delay=%d', (levels+1)*delays);
+set_param(blk, 'AttributesFormatString', fmtstr);
 
 save_state(blk, 'defaults', defaults, varargin{:});
 
