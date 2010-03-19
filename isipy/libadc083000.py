@@ -65,7 +65,7 @@ class adc083000 ():
 		"""
 		The gain of the ADC is adjusted	linearly
 		and monotonically with a 9 bit data value.
-		The adjustment range is ±20% of the nominal
+		Adjustment range is +/-20% of the nominal
 		700 mVpp differential value.
 
 		0   = 560 mVpp
@@ -73,7 +73,7 @@ class adc083000 ():
 		511 = 840 mVpp
 
 		For best performance, this value should be
-		limited to the range of 192 to 448 (±15%).
+		limited to the range 192 to 448 (+/-15%).
 		"""
 
 		data = (0xff80 & amplitude) | 0x7f
