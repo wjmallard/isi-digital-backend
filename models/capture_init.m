@@ -42,8 +42,7 @@ munge_block(blk, varargin{:});
 
 num_brams = get_var('num_brams', 'defaults', defaults, varargin{:});
 addr_width = get_var('addr_width', 'defaults', defaults, varargin{:});
-done_port = get_var('done_port', 'defaults', defaults, varargin{:});
-logic_latency = get_var('logic_latency', 'defaults', defaults, varargin{:});
+input_latency = get_var('input_latency', 'defaults', defaults, varargin{:});
 
 % Validate input fields.
 
@@ -66,8 +65,6 @@ cur_port = 1;
 
 % Add input delays and BRAMs.
 
-fanout_latency = num2str(nextpow2(num_brams)+1);
-
 for i = 1:num_brams
 	id = num2str(i-1);
 
@@ -78,18 +75,10 @@ for i = 1:num_brams
 		'Position', position, ...
 		'Port', num2str(cur_port));
 
-	name = ['din_pipeline', id];
-	ypos = cur_ypos + 28;
-	position = [95, ypos, 145, ypos+14];
-	reuse_block(blk, name, 'xbsIndex_r4/Delay', ...
-		'Position', position, ...
-		'ShowName', 'off', ...
-		'latency', 'logic_latency', ...
-		'reg_retiming', 'on');
-
 	name = ['reinterp', id];
+	xpos = 95;
 	ypos = cur_ypos + 28;
-	position = [170, ypos, 220, ypos+14];
+	position = [xpos, ypos, xpos+50, ypos+14];
 	reuse_block(blk, name, 'xbsIndex_r4/Reinterpret', ...
 		'Position', position, ...
 		'ShowName', 'off', ...
@@ -98,14 +87,43 @@ for i = 1:num_brams
 		'force_bin_pt', 'on', ...
 		'bin_pt', '0');
 
-	name = ['data_pipeline', id];
+	name = ['din_delay', id];
+	xpos = 220;
 	ypos = cur_ypos + 28;
-	position = [270, ypos, 320, ypos+14];
+	position = [xpos, ypos, xpos+50, ypos+14];
 	reuse_block(blk, name, 'xbsIndex_r4/Delay', ...
 		'Position', position, ...
 		'ShowName', 'off', ...
-		'latency', fanout_latency, ...
+		'latency', 'input_latency+2', ...
 		'reg_retiming', 'on');
+
+	name = ['trig_delay', id];
+	xpos = 220;
+	ypos = cur_ypos + 50;
+	position = [xpos, ypos, xpos+50, ypos+14];
+	reuse_block(blk, name, 'xbsIndex_r4/Delay', ...
+		'Position', position, ...
+		'ShowName', 'off', ...
+		'latency', 'input_latency', ...
+		'reg_retiming', 'on');
+
+	name = ['cntr_delay', id];
+	xpos = 295;
+	ypos = cur_ypos + 28;
+	position = [xpos, ypos, xpos+50, ypos+14];
+	reuse_block(blk, name, 'xbsIndex_r4/Delay', ...
+		'Position', position, ...
+		'ShowName', 'off', ...
+		'latency', '1', ...
+		'reg_retiming', 'on');
+
+	name = ['trig_cntr', id];
+	xpos = 295;
+	ypos = cur_ypos + 43;
+	position = [xpos, ypos, xpos+50, ypos+28];
+	reuse_block(blk, name, 'isi_correlator_lib/trig_cntr', ...
+		'Position', position, ...
+		'bitwidth', 'addr_width');
 
 	name = ['bram', id];
 	xpos = 395;
@@ -127,39 +145,19 @@ for i = 1:num_brams
 		'Position', position, ...
 		'ShowName', 'off');
 
-	add_line(blk, ['din', id, '/1'], ['din_pipeline', id, '/1']);
-	add_line(blk, ['din_pipeline', id, '/1'], ['reinterp', id, '/1']);
-	add_line(blk, ['reinterp', id, '/1'], ['data_pipeline', id, '/1']);
-	add_line(blk, ['data_pipeline', id, '/1'], ['bram', id, '/2']);
+	add_line(blk, ['din', id, '/1'], ['reinterp', id, '/1']);
+	add_line(blk, ['reinterp', id, '/1'], ['din_delay', id, '/1']);
+	add_line(blk, ['din_delay', id, '/1'], ['cntr_delay', id, '/1']);
+	add_line(blk, ['cntr_delay', id, '/1'], ['bram', id, '/2']);
 	add_line(blk, ['bram', id, '/1'], ['terminator', id, '/1']);
+
+	add_line(blk, ['trig_delay', id, '/1'], ['trig_cntr', id, '/1']);
+	add_line(blk, ['trig_cntr', id, '/1'], ['bram', id, '/1']);
+	add_line(blk, ['trig_cntr', id, '/2'], ['bram', id, '/3']);
 
 	cur_port = cur_port + 1;
 	cur_ypos = cur_ypos + 65;
 end
-
-% Add pipelined fanout blocks.
-
-fanout_height = num_brams*15;
-
-name = 'addr_fanout';
-ypos = cur_ypos+15;
-position = [270, ypos, 320, ypos+fanout_height];
-reuse_block(blk, name, 'isi_correlator_lib/fanout', ...
-	'Position', position, ...
-	'fanout', num2str(num_brams), ...
-	'delays', '1');
-
-cur_ypos = ypos + fanout_height + 15;
-
-name = 'we_fanout';
-ypos = cur_ypos+15;
-position = [270, ypos, 320, ypos+fanout_height];
-reuse_block(blk, name, 'isi_correlator_lib/fanout', ...
-	'Position', position, ...
-	'fanout', num2str(num_brams), ...
-	'delays', '1');
-
-cur_ypos = ypos + fanout_height + 15;
 
 % Add control logic blocks.
 
@@ -179,80 +177,25 @@ reuse_block(blk, name, 'built-in/inport', ...
 	'Port', num2str(cur_port))
 cur_port = cur_port + 1;
 
-name = 'Constant';
-ypos = cur_ypos + 28;
-position = [95, ypos, 145, ypos+14];
-reuse_block(blk, name, 'xbsIndex_r4/Constant', ...
-	'Position', position, ...
-	'ShowName', 'off', ...
-	'arith_type', 'Boolean', ...
-	'const', num2str(1), ...
-	'n_bits', num2str(1), ...
-	'bin_pt', num2str(0), ...
-	'explicit_period', 'on', ...
-	'period', num2str(1))
-
 name = 'Logical';
+xpos = 95;
 ypos = cur_ypos + 43;
-position = [95, ypos, 145, ypos+44];
+position = [xpos, ypos, xpos+50, ypos+44];
 reuse_block(blk, name, 'xbsIndex_r4/Logical', ...
 	'Position', position, ...
 	'ShowName', 'off', ...
 	'logical_function', 'AND', ...
 	'inputs', '2', ...
 	'en', 'off', ...
-	'latency', 'logic_latency', ...
+	'latency', '2', ...
 	'precision', 'Full', ...
 	'align_bp', 'on')
 
-name = 'freeze_cntr';
-ypos = cur_ypos + 23;
-position = [170, ypos, 220, ypos+44];
-reuse_block(blk, name, 'casper_library/Misc/freeze_cntr', ...
-	'Position', position, ...
-	'CounterBits', 'addr_width')
-
-name = ['done_pipeline'];
-ypos = cur_ypos + 53;
-position = [270, ypos, 320, ypos+14];
-reuse_block(blk, name, 'xbsIndex_r4/Delay', ...
-	'Position', position, ...
-	'ShowName', 'off', ...
-	'latency', fanout_latency, ...
-	'reg_retiming', 'on');
-
-if strcmp(done_port, 'on')
-	name = 'done';
-	xpos = 520;
-	ypos = cur_ypos + 53;
-	position = [xpos, ypos, xpos+30, ypos+14];
-	reuse_block(blk, name, 'built-in/outport', ...
-		'Position', position, ...
-		'ShowName', 'on', ...
-		'Port', '1')
-	add_line(blk, 'done_pipeline/1', [name, '/1'])
-else
-	name = 'terminator_done';
-	xpos = 520;
-	ypos = cur_ypos + 50;
-	position = [xpos, ypos, xpos+20, ypos+20];
-	reuse_block(blk, name, 'built-in/terminator', ...
-		'Position', position, ...
-		'ShowName', 'off')
-	add_line(blk, 'done_pipeline/1', [name, '/1'])
-end
-
 add_line(blk, 'en/1', 'Logical/1')
 add_line(blk, 'trig/1', 'Logical/2')
-add_line(blk, 'Constant/1', 'freeze_cntr/1')
-add_line(blk, 'Logical/1', 'freeze_cntr/2')
-add_line(blk, 'freeze_cntr/1', 'addr_fanout/1');
-add_line(blk, 'freeze_cntr/2', 'we_fanout/1');
 for i = 1:num_brams
-	add_line(blk, ['addr_fanout/', num2str(i)], ['bram', num2str(i-1), '/1'])
-	add_line(blk, ['we_fanout/', num2str(i)], ['bram', num2str(i-1), '/3'])
+	add_line(blk, 'Logical/1', ['trig_delay', num2str(i-1), '/1'])
 end
-add_line(blk, 'freeze_cntr/3', 'done_pipeline/1')
 
 clean_blocks(blk)
 
