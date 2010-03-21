@@ -14,9 +14,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Mar 17 13:28:36 2010"
+  LastModifiedDate	  "Sat Mar 20 18:59:37 2010"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:512>"
+  ModelVersionFormat	  "1.%<AutoIncrement:514>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -5871,7 +5871,7 @@ Library {
       MaskIconRotate	      "none"
       MaskPortRotate	      "default"
       MaskIconUnits	      "autoscale"
-      MaskValueString	      "1|11|on|2"
+      MaskValueString	      "1|11|on|1"
       MaskTabNameString	      ",,,"
       System {
 	Name			"capture"
@@ -5966,13 +5966,13 @@ Library {
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "logical"
 	  block_version		  "11.3"
-	  sg_icon_stat		  "50,44,2,1,white,blue,0,1978429b,right,"
+	  sg_icon_stat		  "50,44,2,1,white,blue,0,2d68f70b,right,"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
 	  "ch([0.26 0.12 0.32 0.12 0.26 0.5 0.56 0.62 0.86 0.66 0.48 0.34 0.52 0.34 0.48 0.66 0.86 0.62 0.56 0.5 0.26 ],[0.113"
 	  "636 0.272727 0.5 0.727273 0.886364 0.886364 0.818182 0.886364 0.886364 0.659091 0.863636 0.704545 0.5 0.295455 0.13"
 	  "6364 0.340909 0.113636 0.113636 0.181818 0.113636 0.113636 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\n"
 	  "fprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlinea"
-	  "nd\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  "nd\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -6025,19 +6025,26 @@ Library {
 	  Ports			  [1, 1]
 	  Position		  [270, 28, 320, 42]
 	  ShowName		  off
-	  UserDataPersistent	  on
-	  UserData		  "DataTag24"
-	  SourceBlock		  "casper_library/Delays/pipeline"
-	  SourceType		  "pipeline"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
+	  SourceBlock		  "xbsIndex_r4/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+	  en			  off
 	  latency		  "1"
+	  dbl_ovrd		  off
+	  reg_retiming		  on
+	  xl_use_area		  off
+	  xl_area		  "[0,0,0,0,0,0,0]"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "-1,-1,-1,-1"
+	  block_type		  "delay"
+	  block_version		  "11.3"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,07b98262,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
+	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
+	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','tex"
+	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -6045,19 +6052,26 @@ Library {
 	  Ports			  [1, 1]
 	  Position		  [95, 28, 145, 42]
 	  ShowName		  off
-	  UserDataPersistent	  on
-	  UserData		  "DataTag25"
-	  SourceBlock		  "casper_library/Delays/pipeline"
-	  SourceType		  "pipeline"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
+	  SourceBlock		  "xbsIndex_r4/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+	  en			  off
 	  latency		  "logic_latency"
+	  dbl_ovrd		  off
+	  reg_retiming		  on
+	  xl_use_area		  off
+	  xl_area		  "[0,0,0,0,0,0,0]"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "-1,-1,-1,-1"
+	  block_type		  "delay"
+	  block_version		  "11.3"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,07b98262,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
+	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
+	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','tex"
+	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -6065,19 +6079,26 @@ Library {
 	  Ports			  [1, 1]
 	  Position		  [270, 208, 320, 222]
 	  ShowName		  off
-	  UserDataPersistent	  on
-	  UserData		  "DataTag26"
-	  SourceBlock		  "casper_library/Delays/pipeline"
-	  SourceType		  "pipeline"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
+	  SourceBlock		  "xbsIndex_r4/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+	  en			  off
 	  latency		  "1"
+	  dbl_ovrd		  off
+	  reg_retiming		  on
+	  xl_use_area		  off
+	  xl_area		  "[0,0,0,0,0,0,0]"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "-1,-1,-1,-1"
+	  block_type		  "delay"
+	  block_version		  "11.3"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,07b98262,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
+	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
+	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','tex"
+	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -6138,7 +6159,7 @@ Library {
 	  Position		  [270, 127, 320, 143]
 	  AttributesFormatString  "delay=1"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag27"
+	  UserData		  "DataTag24"
 	  SourceBlock		  "isi_correlator_lib/fanout"
 	  SourceType		  "fanout"
 	  ShowPortLabels	  "FromPortIcon"
@@ -7227,7 +7248,7 @@ Library {
 	  Position		  [70, 13, 120, 42]
 	  AttributesFormatString  "_ r/i"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag28"
+	  UserData		  "DataTag25"
 	  SourceBlock		  "casper_library/Misc/c_to_ri"
 	  SourceType		  "c_to_ri"
 	  ShowPortLabels	  "FromPortIcon"
@@ -7248,7 +7269,7 @@ Library {
 	  Position		  [70, 93, 120, 122]
 	  AttributesFormatString  "_ r/i"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag29"
+	  UserData		  "DataTag26"
 	  SourceBlock		  "casper_library/Misc/c_to_ri"
 	  SourceType		  "c_to_ri"
 	  ShowPortLabels	  "FromPortIcon"
@@ -12858,7 +12879,7 @@ Library {
       Position		      [15, 397, 65, 428]
       AttributesFormatString  "delay=2"
       UserDataPersistent      on
-      UserData		      "DataTag30"
+      UserData		      "DataTag27"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -12908,105 +12929,31 @@ Library {
 	  IconDisplay		  "Port number"
 	}
 	Block {
-	  BlockType		  SubSystem
+	  BlockType		  Reference
 	  Name			  "pipeline1"
 	  Ports			  [1, 1]
 	  Position		  [100, 48, 150, 62]
 	  ShowName		  off
-	  AncestorBlock		  "casper_library/Delays/pipeline"
-	  UserDataPersistent	  on
-	  UserData		  "DataTag31"
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
-	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
-	  MaskType		  "pipeline"
-	  MaskDescription	  "An explicitly laid-out delay line to avoid mapping to SRL16s\nfor use in pipelining to help achi"
-	  "eve timing closure."
-	  MaskPromptString	  "Latency"
-	  MaskStyleString	  "edit"
-	  MaskTunableValueString  "off"
-	  MaskEnableString	  "on"
-	  MaskVisibilityString	  "on"
-	  MaskToolTipString	  "on"
-	  MaskVariables		  "latency=@1;"
-	  MaskInitialization	  "pipeline_init(gcb, 'latency', latency);"
-	  MaskDisplay		  "port_label('input', 1, 'd');\nport_label('output', 1, 'q');\ndisp(['Z^-', num2str(latency)]);"
-	  MaskIconFrame		  on
-	  MaskIconOpaque	  on
-	  MaskIconRotate	  "none"
-	  MaskPortRotate	  "default"
-	  MaskIconUnits		  "autoscale"
-	  MaskValueString	  "1"
-	  System {
-	    Name		    "pipeline1"
-	    Location		    [371, 368, 953, 706]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "usletter"
-	    PaperUnits		    "inches"
-	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "d"
-	      Position		      [15, 48, 45, 62]
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Register0"
-	      Ports		      [1, 1]
-	      Position		      [115, 27, 175, 83]
-	      SourceBlock	      "xbsIndex_r4/Register"
-	      SourceType	      "Xilinx Register Block"
-	      init		      "0"
-	      rst		      off
-	      en		      off
-	      dbl_ovrd		      off
-	      xl_use_area	      off
-	      xl_area		      "[0,0,0,0,0,0,0]"
-	      has_advanced_control    "0"
-	      sggui_pos		      "20,20,348,193"
-	      block_type	      "register"
-	      block_version	      "10.1.3"
-	      sg_icon_stat	      "60,56,1,1,white,blue,0,ef2275f7,right,"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91"
-	      "]);\npatch([0.25 0.1 0.316667 0.1 0.25 0.5 0.566667 0.633333 0.9 0.683333 0.483333 0.333333 0.533333 0.333333 0"
-	      ".483333 0.683333 0.9 0.633333 0.566667 0.5 0.25 ],[0.107143 0.267857 0.5 0.732143 0.892857 0.892857 0.821429 0."
-	      "892857 0.892857 0.660714 0.875 0.714286 0.5 0.285714 0.125 0.339286 0.107143 0.107143 0.178571 0.107143 0.10714"
-	      "3 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf(''"
-	      ",'COMMENT: begin icon text');\ncolor('black');port_label('input',1,'d');\ncolor('black');port_label('output',1,"
-	      "'q');\ncolor('black');disp('\\bf{z^{-1}}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "q"
-	      Position		      [215, 48, 245, 62]
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      SrcBlock		      "d"
-	      SrcPort		      1
-	      DstBlock		      "Register0"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Register0"
-	      SrcPort		      1
-	      DstBlock		      "q"
-	      DstPort		      1
-	    }
-	  }
+	  SourceBlock		  "xbsIndex_r4/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+	  en			  off
+	  latency		  "delays"
+	  dbl_ovrd		  off
+	  reg_retiming		  on
+	  xl_use_area		  off
+	  xl_area		  "[0,0,0,0,0,0,0]"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "-1,-1,-1,-1"
+	  block_type		  "delay"
+	  block_version		  "11.3"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,07b98262,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
+	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
+	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','tex"
+	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -13014,19 +12961,26 @@ Library {
 	  Ports			  [1, 1]
 	  Position		  [200, 23, 250, 37]
 	  ShowName		  off
-	  UserDataPersistent	  on
-	  UserData		  "DataTag32"
-	  SourceBlock		  "casper_library/Delays/pipeline"
-	  SourceType		  "pipeline"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
+	  SourceBlock		  "xbsIndex_r4/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+	  en			  off
 	  latency		  "delays"
+	  dbl_ovrd		  off
+	  reg_retiming		  on
+	  xl_use_area		  off
+	  xl_area		  "[0,0,0,0,0,0,0]"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "-1,-1,-1,-1"
+	  block_type		  "delay"
+	  block_version		  "11.3"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,07b98262,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
+	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
+	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','tex"
+	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -13034,19 +12988,26 @@ Library {
 	  Ports			  [1, 1]
 	  Position		  [200, 73, 250, 87]
 	  ShowName		  off
-	  UserDataPersistent	  on
-	  UserData		  "DataTag33"
-	  SourceBlock		  "casper_library/Delays/pipeline"
-	  SourceType		  "pipeline"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
+	  SourceBlock		  "xbsIndex_r4/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+	  en			  off
 	  latency		  "delays"
+	  dbl_ovrd		  off
+	  reg_retiming		  on
+	  xl_use_area		  off
+	  xl_area		  "[0,0,0,0,0,0,0]"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "-1,-1,-1,-1"
+	  block_type		  "delay"
+	  block_version		  "11.3"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,07b98262,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
+	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
+	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','tex"
+	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Outport
@@ -13690,7 +13651,7 @@ Library {
 	  Ports			  [1, 1]
 	  Position		  [75, 253, 125, 267]
 	  UserDataPersistent	  on
-	  UserData		  "DataTag34"
+	  UserData		  "DataTag28"
 	  SourceBlock		  "casper_library/Delays/pipeline"
 	  SourceType		  "pipeline"
 	  ShowPortLabels	  "FromPortIcon"
@@ -13709,7 +13670,7 @@ Library {
 	  Ports			  [1, 1]
 	  Position		  [75, 283, 125, 297]
 	  UserDataPersistent	  on
-	  UserData		  "DataTag35"
+	  UserData		  "DataTag29"
 	  SourceBlock		  "casper_library/Delays/pipeline"
 	  SourceType		  "pipeline"
 	  ShowPortLabels	  "FromPortIcon"
@@ -15741,7 +15702,7 @@ Library {
 	  Position		  [155, 13, 205, 42]
 	  AttributesFormatString  "_ r/i"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag36"
+	  UserData		  "DataTag30"
 	  SourceBlock		  "casper_library/Misc/c_to_ri"
 	  SourceType		  "c_to_ri"
 	  ShowPortLabels	  "FromPortIcon"
@@ -15761,7 +15722,7 @@ Library {
 	  Ports			  [2, 1]
 	  Position		  [445, 38, 495, 67]
 	  UserDataPersistent	  on
-	  UserData		  "DataTag37"
+	  UserData		  "DataTag31"
 	  SourceBlock		  "casper_library/Misc/ri_to_c"
 	  SourceType		  "ri_to_c"
 	  ShowPortLabels	  "FromPortIcon"
@@ -16557,7 +16518,7 @@ Library {
       Ports		      [1, 1]
       Position		      [15, 15, 65, 65]
       UserDataPersistent      on
-      UserData		      "DataTag38"
+      UserData		      "DataTag32"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -16810,7 +16771,7 @@ Library {
 	  Position		  [195, 62, 245, 78]
 	  ShowName		  off
 	  UserDataPersistent	  on
-	  UserData		  "DataTag39"
+	  UserData		  "DataTag33"
 	  SourceBlock		  "casper_library/Delays/pipeline"
 	  SourceType		  "pipeline"
 	  ShowPortLabels	  "FromPortIcon"
@@ -21341,9 +21302,9 @@ Library {
   }
 }
 MatData {
-  NumRecords		  40
+  NumRecords		  34
   DataRecord {
-    Tag			    DataTag39
+    Tag			    DataTag33
     Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
     "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !GT  0.    P     "
     "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
@@ -21351,7 +21312,7 @@ MatData {
     "$         \"0    @            (0 "
   }
   DataRecord {
-    Tag			    DataTag38
+    Tag			    DataTag32
     Data		    "  %)30     .    \" 4   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A"
     "=&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ ':#20$.    > 0  "
     " 8    (     @         %    \"     $    !     0         %  0 $P    $   #W    9&5F875L=',              '5S:6YG7W!F8E"
@@ -21370,19 +21331,19 @@ MatData {
     "&          4    (     0    $    !          D    (            \\#\\"
   }
   DataRecord {
-    Tag			    DataTag37
+    Tag			    DataTag31
     Data		    "  %)30     .    <     8    (     0         %    \"     $    !     0         .    0     8    (    !     "
     "     %    \"     $    ,     0         0    #    ')I7W1O7V-?:6YI=      "
   }
   DataRecord {
-    Tag			    DataTag36
+    Tag			    DataTag30
     Data		    "  %)30     .    \\     8    (     0         %    \"     $    #     0         .    0     8    (    !    "
     "      %    \"     $    ,     0         0    #    &-?=&]?<FE?:6YI=      .    .     8    (    !@         %    \"    "
     " $    !     0         )    \"            \"! #@   #@    &    \"     8         !0    @    !     0    $         \"0 "
     "   @            <0 "
   }
   DataRecord {
-    Tag			    DataTag35
+    Tag			    DataTag29
     Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
     "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
     "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
@@ -21390,7 +21351,7 @@ MatData {
     "$         \"0    @             0 "
   }
   DataRecord {
-    Tag			    DataTag34
+    Tag			    DataTag28
     Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
     "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
     "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
@@ -21398,31 +21359,7 @@ MatData {
     "$         \"0    @             0 "
   }
   DataRecord {
-    Tag			    DataTag33
-    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
-    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
-    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
-    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
-    "$         \"0    @             0 "
-  }
-  DataRecord {
-    Tag			    DataTag32
-    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
-    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
-    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
-    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
-    "$         \"0    @             0 "
-  }
-  DataRecord {
-    Tag			    DataTag31
-    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
-    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !?T  0.    P     "
-    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
-    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
-    "$         \"0    @           #P/P"
-  }
-  DataRecord {
-    Tag			    DataTag30
+    Tag			    DataTag27
     Data		    "  %)30     .    F $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
     "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ .[(+  .    \" $  "
     " 8    (     @         %    \"     $    !     0         %  0 \"0    $    ;    9&5F875L=', 9F%N;W5T    9&5L87ES     "
@@ -21431,51 +21368,27 @@ MatData {
     "  @           #P/P"
   }
   DataRecord {
-    Tag			    DataTag29
+    Tag			    DataTag26
     Data		    "  %)30     .    \\     8    (     0         %    \"     $    #     0         .    0     8    (    !    "
     "      %    \"     $    ,     0         0    #    &-?=&]?<FE?:6YI=      .    .     8    (    !@         %    \"    "
     " $    !     0         )    \"            \"! #@   #@    &    \"     8         !0    @    !     0    $         \"0 "
     "   @            <0 "
   }
   DataRecord {
-    Tag			    DataTag28
+    Tag			    DataTag25
     Data		    "  %)30     .    \\     8    (     0         %    \"     $    #     0         .    0     8    (    !    "
     "      %    \"     $    ,     0         0    #    &-?=&]?<FE?:6YI=      .    .     8    (    !@         %    \"    "
     " $    !     0         )    \"            \"! #@   #@    &    \"     8         !0    @    !     0    $         \"0 "
     "   @            <0 "
   }
   DataRecord {
-    Tag			    DataTag27
+    Tag			    DataTag24
     Data		    "  %)30     .    F $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
     "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $  ^<2P .    \" $  "
     " 8    (     @         %    \"     $    !     0         %  0 \"0    $    ;    9&5F875L=', 9F%N;W5T    9&5L87ES     "
     "      .    *     8    (     0         %    \"                0         .    .     8    (    !@         %    \"    "
     " $    !     0         )    \"            / _#@   #@    &    \"     8         !0    @    !     0    $         \"0  "
     "  @           #P/P"
-  }
-  DataRecord {
-    Tag			    DataTag26
-    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
-    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
-    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
-    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
-    "$         \"0    @             0 "
-  }
-  DataRecord {
-    Tag			    DataTag25
-    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
-    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
-    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
-    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
-    "$         \"0    @             0 "
-  }
-  DataRecord {
-    Tag			    DataTag24
-    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
-    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ !CT  0.    P     "
-    "8    (     @         %    \"     $    !     0         %  0 \"0    $    2    9&5F875L=', ;&%T96YC>0          #@   \""
-    "@    &    \"     $         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    "
-    "$         \"0    @             0 "
   }
   DataRecord {
     Tag			    DataTag23
