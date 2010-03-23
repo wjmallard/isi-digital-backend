@@ -127,8 +127,38 @@ for i = 1:num_brams
 		'Position', position, ...
 		'bitwidth', 'addr_width');
 
+	name = ['bram', id, '_delay1'];
+	xpos = 420;
+	ypos = cur_ypos + 13;
+	position = [xpos, ypos, xpos+50, ypos+14];
+	reuse_block(blk, name, 'xbsIndex_r4/Delay', ...
+		'Position', position, ...
+		'ShowName', 'off', ...
+		'latency', 'bram_latency', ...
+		'reg_retiming', 'on');
+
+	name = ['bram', id, '_delay2'];
+	xpos = 420;
+	ypos = cur_ypos + 28;
+	position = [xpos, ypos, xpos+50, ypos+14];
+	reuse_block(blk, name, 'xbsIndex_r4/Delay', ...
+		'Position', position, ...
+		'ShowName', 'off', ...
+		'latency', 'bram_latency', ...
+		'reg_retiming', 'on');
+
+	name = ['bram', id, '_delay3'];
+	xpos = 420;
+	ypos = cur_ypos + 43;
+	position = [xpos, ypos, xpos+50, ypos+14];
+	reuse_block(blk, name, 'xbsIndex_r4/Delay', ...
+		'Position', position, ...
+		'ShowName', 'off', ...
+		'latency', 'bram_latency', ...
+		'reg_retiming', 'on');
+
 	name = ['bram', id];
-	xpos = 395;
+	xpos = 495;
 	ypos = cur_ypos + 13;
 	position = [xpos, ypos, xpos+100, ypos+44];
 	reuse_block(blk, name, 'xps_library/Shared BRAM', ...
@@ -137,26 +167,29 @@ for i = 1:num_brams
 		'addr_width', 'addr_width', ...
 		'data_bin_pt', '0', ...
 		'init_vals', '0', ...
-		'sample_rate', '1', ...
-		'latency', 'bram_latency');
+		'sample_rate', '1');
 
 	name = ['terminator', id];
-	xpos = 520;
+	xpos = 620;
 	ypos = cur_ypos + 25;
 	position = [xpos, ypos, xpos+20, ypos+20];
 	reuse_block(blk, name, 'built-in/terminator', ...
 		'Position', position, ...
 		'ShowName', 'off');
 
+	add_line(blk, ['bram', id, '_delay1/1'], ['bram', id, '/1']);
+	add_line(blk, ['bram', id, '_delay3/1'], ['bram', id, '/3']);
+
 	add_line(blk, ['din', id, '/1'], ['reinterp', id, '/1']);
 	add_line(blk, ['reinterp', id, '/1'], ['din_delay', id, '/1']);
 	add_line(blk, ['din_delay', id, '/1'], ['cntr_delay', id, '/1']);
-	add_line(blk, ['cntr_delay', id, '/1'], ['bram', id, '/2']);
+	add_line(blk, ['cntr_delay', id, '/1'], ['bram', id, '_delay2/1']);
+	add_line(blk, ['bram', id, '_delay2/1'], ['bram', id, '/2']);
 	add_line(blk, ['bram', id, '/1'], ['terminator', id, '/1']);
 
 	add_line(blk, ['trig_delay', id, '/1'], ['trig_cntr', id, '/1']);
-	add_line(blk, ['trig_cntr', id, '/1'], ['bram', id, '/1']);
-	add_line(blk, ['trig_cntr', id, '/2'], ['bram', id, '/3']);
+	add_line(blk, ['trig_cntr', id, '/1'], ['bram', id, '_delay1/1']);
+	add_line(blk, ['trig_cntr', id, '/2'], ['bram', id, '_delay3/1']);
 
 	cur_port = cur_port + 1;
 	cur_ypos = cur_ypos + 65;
