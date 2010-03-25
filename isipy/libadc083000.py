@@ -33,11 +33,12 @@ class adc083000 ():
 	ADDR_PHASE_CRS = 0xe
 	ADDR_TEST_PTRN = 0xf
 
-	DFLT_CONFIG    = 0x92ff
+	# CONFIG = 0x92ff @ POR
+	DFLT_CONFIG    = 0xb2ff
 	DFLT_OFFSET    = 0x007f
 	DFLT_AMPLITUDE = 0x807f
 	DFLT_PHASE_FIN = 0x007f
-	DFLT_PHASE_CRS = 0x003f
+	DFLT_PHASE_CRS = 0x03ff
 	DFLT_TEST_PTRN = 0xf7ff
 
 	def __init__ (self, roach, sel_reg="adc_ctrl_sel", cmd_reg="adc_ctrl_cmd"):
@@ -48,7 +49,7 @@ class adc083000 ():
 		self.reset_to_defaults()
 
 	def _write (self, adc, addr, data):
-		sel = adc | adc083000.CTRL_START_CFG
+		sel = (0x0006 & adc) | adc083000.CTRL_START_CFG
 		cmd = (0x0010 | (0x000f & addr)) << 8 | (0xffff & data)
 
 		print "Writing sel=%s, cmd=%s to ADC %s." % (repr(sel), repr(cmd), repr(adc))
