@@ -14,9 +14,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Mar 22 23:57:50 2010"
+  LastModifiedDate	  "Thu Mar 25 18:10:26 2010"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:528>"
+  ModelVersionFormat	  "1.%<AutoIncrement:530>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -6016,29 +6016,31 @@ Library {
       MaskHideContents	      off
       MaskType		      "capture"
       MaskDescription	      "This block captures N data lines into N separate BRAMs."
-      MaskPromptString	      "Number of BRAMs:|Address width:|Logic latency:|Fanout latency:|BRAM latency:"
-      MaskStyleString	      "edit,edit,edit,edit,edit"
-      MaskTunableValueString  "on,on,on,on,on"
-      MaskCallbackString      "||||"
-      MaskEnableString	      "on,on,on,on,on"
-      MaskVisibilityString    "on,on,on,on,on"
-      MaskToolTipString	      "on,on,on,on,on"
-      MaskVarAliasString      ",,,,"
-      MaskVariables	      "num_brams=@1;addr_width=@2;logic_latency=@3;fanout_latency=@4;bram_latency=@5;"
+      MaskPromptString	      "Number of BRAMs:|Address width:|Logic latency:|Fanout latency:|Counter latency:|BRAM lat"
+      "ency:"
+      MaskStyleString	      "edit,edit,edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on,on"
+      MaskCallbackString      "|||||"
+      MaskEnableString	      "on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on"
+      MaskVarAliasString      ",,,,,"
+      MaskVariables	      "num_brams=@1;addr_width=@2;logic_latency=@3;fanout_latency=@4;cntr_latency=@5;bram_latency="
+      "@6;"
       MaskInitialization      "capture_init(gcb, ...\n    'num_brams', num_brams, ...\n    'addr_width', addr_width, ."
-      "..\n    'logic_latency', logic_latency, ...\n    'fanout_latency', fanout_latency, ...\n    'bram_latency', bram"
-      "_latency);"
+      "..\n    'logic_latency', logic_latency, ...\n    'fanout_latency', fanout_latency, ...\n    'cntr_latency', cntr"
+      "_latency, ...\n    'bram_latency', bram_latency);"
       MaskSelfModifiable      on
       MaskIconFrame	      on
       MaskIconOpaque	      on
       MaskIconRotate	      "none"
       MaskPortRotate	      "default"
       MaskIconUnits	      "autoscale"
-      MaskValueString	      "1|11|2|2|0"
-      MaskTabNameString	      ",,,,"
+      MaskValueString	      "1|11|2|2|2|1"
+      MaskTabNameString	      ",,,,,"
       System {
 	Name			"capture"
-	Location		[968, 353, 1545, 717]
+	Location		[968, 353, 1623, 715]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -6108,7 +6110,7 @@ Library {
 	  Name			  "bram0"
 	  Tag			  "xps:bram"
 	  Ports			  [3, 1]
-	  Position		  [395, 13, 495, 57]
+	  Position		  [495, 13, 595, 57]
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  SourceBlock		  "xps_library/Shared BRAM"
 	  SourceType		  ""
@@ -6126,19 +6128,18 @@ Library {
 	  data_bin_pt		  "0"
 	  init_vals		  "0"
 	  sample_rate		  "1"
-	  latency		  "bram_latency"
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "cntr_delay0"
+	  Name			  "bram0_delay1"
 	  Ports			  [1, 1]
-	  Position		  [295, 28, 345, 42]
+	  Position		  [420, 13, 470, 27]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
 	  en			  off
-	  latency		  "1"
+	  latency		  "bram_latency"
 	  dbl_ovrd		  off
 	  reg_retiming		  on
 	  xl_use_area		  off
@@ -6153,6 +6154,87 @@ Library {
 	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
 	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
 	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','tex"
+	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "bram0_delay2"
+	  Ports			  [1, 1]
+	  Position		  [420, 28, 470, 42]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+	  en			  off
+	  latency		  "bram_latency"
+	  dbl_ovrd		  off
+	  reg_retiming		  on
+	  xl_use_area		  off
+	  xl_area		  "[0,0,0,0,0,0,0]"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "-1,-1,-1,-1"
+	  block_type		  "delay"
+	  block_version		  "11.3"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,07b98262,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
+	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
+	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','tex"
+	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "bram0_delay3"
+	  Ports			  [1, 1]
+	  Position		  [420, 43, 470, 57]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+	  en			  off
+	  latency		  "bram_latency"
+	  dbl_ovrd		  off
+	  reg_retiming		  on
+	  xl_use_area		  off
+	  xl_area		  "[0,0,0,0,0,0,0]"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "-1,-1,-1,-1"
+	  block_type		  "delay"
+	  block_version		  "11.3"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,07b98262,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
+	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
+	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','tex"
+	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "cntr_delay0"
+	  Ports			  [1, 1]
+	  Position		  [295, 28, 345, 42]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+	  en			  off
+	  latency		  "cntr_latency + 1"
+	  dbl_ovrd		  off
+	  reg_retiming		  on
+	  xl_use_area		  off
+	  xl_area		  "[0,0,0,0,0,0,0]"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "20,20,543,392"
+	  block_type		  "delay"
+	  block_version		  "11.3"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,83e6bb61,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
+	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
+	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-3}','tex"
 	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
@@ -6214,7 +6296,7 @@ Library {
 	Block {
 	  BlockType		  Terminator
 	  Name			  "terminator0"
-	  Position		  [520, 25, 540, 45]
+	  Position		  [620, 25, 640, 45]
 	  ShowName		  off
 	}
 	Block {
@@ -6233,6 +6315,7 @@ Library {
 	  RTWMemSecDataInternal	  "Inherit from model"
 	  RTWMemSecDataParameters "Inherit from model"
 	  bitwidth		  "addr_width"
+	  latency		  "cntr_latency"
 	}
 	Block {
 	  BlockType		  Reference
@@ -6262,6 +6345,18 @@ Library {
 	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Line {
+	  SrcBlock		  "bram0_delay1"
+	  SrcPort		  1
+	  DstBlock		  "bram0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "bram0_delay3"
+	  SrcPort		  1
+	  DstBlock		  "bram0"
+	  DstPort		  3
+	}
+	Line {
 	  SrcBlock		  "din0"
 	  SrcPort		  1
 	  DstBlock		  "reinterp0"
@@ -6282,6 +6377,12 @@ Library {
 	Line {
 	  SrcBlock		  "cntr_delay0"
 	  SrcPort		  1
+	  DstBlock		  "bram0_delay2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "bram0_delay2"
+	  SrcPort		  1
 	  DstBlock		  "bram0"
 	  DstPort		  2
 	}
@@ -6300,14 +6401,14 @@ Library {
 	Line {
 	  SrcBlock		  "trig_cntr0"
 	  SrcPort		  1
-	  DstBlock		  "bram0"
+	  DstBlock		  "bram0_delay1"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "trig_cntr0"
 	  SrcPort		  2
-	  DstBlock		  "bram0"
-	  DstPort		  3
+	  DstBlock		  "bram0_delay3"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "en"
@@ -17198,7 +17299,7 @@ Library {
       BlockType		      SubSystem
       Name		      "trig_cntr"
       Ports		      [1, 2]
-      Position		      [90, 82, 140, 113]
+      Position		      [90, 81, 140, 114]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -17206,22 +17307,26 @@ Library {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
-      MaskPromptString	      "Counter bitwidth:"
-      MaskStyleString	      "edit"
-      MaskTunableValueString  "on"
-      MaskEnableString	      "on"
-      MaskVisibilityString    "on"
-      MaskToolTipString	      "on"
-      MaskVariables	      "bitwidth=@1;"
+      MaskType		      "trig_cntr"
+      MaskPromptString	      "Counter bitwidth:|Latency:"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "bitwidth=@1;latency=@2;"
       MaskIconFrame	      on
       MaskIconOpaque	      on
       MaskIconRotate	      "none"
       MaskPortRotate	      "default"
       MaskIconUnits	      "autoscale"
-      MaskValueString	      "11"
+      MaskValueString	      "11|0"
+      MaskTabNameString	      ","
       System {
 	Name			"trig_cntr"
-	Location		[1126, 719, 1471, 817]
+	Location		[185, 685, 625, 804]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -17244,7 +17349,7 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Counter"
 	  Ports			  [2, 1]
-	  Position		  [145, 39, 195, 66]
+	  Position		  [95, 39, 145, 66]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Counter"
 	  SourceType		  "Xilinx Counter Block"
@@ -17286,7 +17391,7 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Inverter"
 	  Ports			  [1, 1]
-	  Position		  [70, 53, 120, 67]
+	  Position		  [245, 48, 295, 62]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Inverter"
 	  SourceType		  "Xilinx Inverter Block"
@@ -17310,41 +17415,67 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Slice"
+	  Name			  "Inverter1"
 	  Ports			  [1, 1]
-	  Position		  [220, 48, 270, 62]
+	  Position		  [245, 88, 295, 102]
 	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Slice"
-	  SourceType		  "Xilinx Bit Slice Extractor Block"
-	  infoedit		  "Extracts a given range of bits from each input sample and presents it at the output.  The output type "
-	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
-	  "e notes: In hardware this block costs nothing."
-	  nbits			  "1"
-	  boolean_output	  on
-	  mode			  "Upper Bit Location + Width"
-	  bit1			  "0"
-	  base1			  "MSB of Input"
-	  bit0			  "0"
-	  base0			  "LSB of Input"
+	  SourceBlock		  "xbsIndex_r4/Inverter"
+	  SourceType		  "Xilinx Inverter Block"
+	  infoedit		  "Bitwise logical negation (one's complement) operator."
+	  en			  off
+	  latency		  "0"
 	  dbl_ovrd		  off
+	  xl_use_area		  off
+	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,631,621"
-	  block_type		  "slice"
-	  block_version		  "10.1.1"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,1fd851a7,right,"
+	  sggui_pos		  "-1,-1,-1,-1"
+	  block_type		  "inv"
+	  block_version		  "11.3"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,267846e5,right,"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
 	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
 	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
 	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output"
-	  "',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('not');\nfpri"
+	  "ntf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Slice1"
-	  Ports			  [1, 1]
-	  Position		  [220, 13, 270, 27]
+	  Name			  "Logical"
+	  Ports			  [2, 1]
+	  Position		  [320, 74, 370, 101]
 	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Logical"
+	  SourceType		  "Xilinx Logical Block Block"
+	  logical_function	  "AND"
+	  inputs		  "2"
+	  en			  off
+	  latency		  "latency"
+	  precision		  "Full"
+	  arith_type		  "Unsigned"
+	  n_bits		  "16"
+	  bin_pt		  "0"
+	  align_bp		  on
+	  dbl_ovrd		  off
+	  xl_use_area		  off
+	  xl_area		  "[0,0,0,0,0,0,0]"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "20,20,543,357"
+	  block_type		  "logical"
+	  block_version		  "11.3"
+	  sg_icon_stat		  "50,27,2,1,white,blue,0,0a851f85,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.34 0.26 0.38 0.26 0.34 0.48 0.52 0.56 0.72 0.6 0.48 0.4 0.52 0.4 0.48 0.6 0.72 0.56 0.52 0.48 0.34 ],[0.11111"
+	  "1 0.259259 0.481481 0.703704 0.851852 0.851852 0.777778 0.851852 0.851852 0.62963 0.851852 0.703704 0.481481 0.2592"
+	  "59 0.111111 0.333333 0.111111 0.111111 0.185185 0.111111 0.111111 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 "
+	  "0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\n"
+	  "ewlineand\\newlinez^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "address"
+	  Ports			  [1, 1]
+	  Position		  [170, 13, 220, 27]
 	  SourceBlock		  "xbsIndex_r4/Slice"
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
 	  infoedit		  "Extracts a given range of bits from each input sample and presents it at the output.  The output type "
@@ -17371,15 +17502,72 @@ Library {
 	  "',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
+	  BlockType		  Reference
+	  Name			  "cntr_delay0"
+	  Ports			  [1, 1]
+	  Position		  [320, 13, 370, 27]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+	  en			  off
+	  latency		  "latency"
+	  dbl_ovrd		  off
+	  reg_retiming		  on
+	  xl_use_area		  off
+	  xl_area		  "[0,0,0,0,0,0,0]"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "20,20,543,392"
+	  block_type		  "delay"
+	  block_version		  "11.3"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,24450e6f,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
+	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
+	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-0}','tex"
+	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "overflow"
+	  Ports			  [1, 1]
+	  Position		  [170, 48, 220, 62]
+	  SourceBlock		  "xbsIndex_r4/Slice"
+	  SourceType		  "Xilinx Bit Slice Extractor Block"
+	  infoedit		  "Extracts a given range of bits from each input sample and presents it at the output.  The output type "
+	  "is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><br>Hardwar"
+	  "e notes: In hardware this block costs nothing."
+	  nbits			  "1"
+	  boolean_output	  on
+	  mode			  "Upper Bit Location + Width"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "0"
+	  base0			  "LSB of Input"
+	  dbl_ovrd		  off
+	  has_advanced_control	  "0"
+	  sggui_pos		  "20,20,631,621"
+	  block_type		  "slice"
+	  block_version		  "10.1.1"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,1fd851a7,right,"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
+	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
+	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
+	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output"
+	  "',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
 	  BlockType		  Outport
 	  Name			  "addr"
-	  Position		  [295, 13, 325, 27]
+	  Position		  [395, 13, 425, 27]
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "we"
-	  Position		  [295, 48, 325, 62]
+	  Position		  [395, 83, 425, 97]
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
@@ -17388,42 +17576,68 @@ Library {
 	  SrcPort		  1
 	  Points		  [5, 0]
 	  Branch {
-	    DstBlock		    "Slice"
+	    DstBlock		    "overflow"
 	    DstPort		    1
 	  }
 	  Branch {
-	    DstBlock		    "Slice1"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "Slice"
-	  SrcPort		  1
-	  Points		  [5, 0]
-	  Branch {
-	    Points		    [0, 25; -225, 0]
-	    DstBlock		    "Inverter"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "we"
+	    DstBlock		    "address"
 	    DstPort		    1
 	  }
 	}
 	Line {
 	  SrcBlock		  "trig"
 	  SrcPort		  1
-	  DstBlock		  "Counter"
+	  Points		  [15, 0]
+	  Branch {
+	    DstBlock		    "Counter"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 50]
+	    DstBlock		    "Inverter1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "address"
+	  SrcPort		  1
+	  DstBlock		  "cntr_delay0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "overflow"
+	  SrcPort		  1
+	  DstBlock		  "Inverter"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Inverter"
 	  SrcPort		  1
-	  DstBlock		  "Counter"
+	  Points		  [0, 25]
+	  Branch {
+	    Points		    [-220, 0]
+	    DstBlock		    "Counter"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Logical"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Inverter1"
+	  SrcPort		  1
+	  DstBlock		  "Logical"
 	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "Slice1"
+	  SrcBlock		  "Logical"
+	  SrcPort		  1
+	  DstBlock		  "we"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "cntr_delay0"
 	  SrcPort		  1
 	  DstBlock		  "addr"
 	  DstPort		  1
@@ -21676,15 +21890,16 @@ MatData {
   }
   DataRecord {
     Tag			    DataTag1
-    Data		    "  %)30     .    F (   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
-    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ *'5D@4.    \" (  "
-    " 8    (     @         %    \"     $    !     0         %  0 #P    $   !:    9&5F875L=',         ;G5M7V)R86US      "
-    "  861D<E]W:61T:       ;&]G:6-?;&%T96YC>0  9F%N;W5T7VQA=&5N8WD 8G)A;5]L871E;F-Y            #@   \"@    &    \"     "
-    "$         !0    @               $         #@   #@    &    \"     8         !0    @    !     0    $         \"0    "
-    "@           #P/PX    X    !@    @    &          4    (     0    $    !          D    (            )D .    .     8 "
-    "   (    !@         %    \"     $    !     0         )    \"             ! #@   #@    &    \"     8         !0    @"
-    "    !     0    $         \"0    @             0 X    X    !@    @    &          4    (     0    $    !          D "
-    "   (               "
+    Data		    "  %)30     .    Z (   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    <W1A="
+    "&4       !P87)A;65T97)S    #@   #     &    \"     T         !0    @    !     0    $         !@ $ (#N6@$.    6 (   "
+    "8    (     @         %    \"     $    !     0         %  0 #P    $   !I    9&5F875L=',         ;G5M7V)R86US       "
+    " 861D<E]W:61T:       ;&]G:6-?;&%T96YC>0  9F%N;W5T7VQA=&5N8WD 8VYT<E]L871E;F-Y    8G)A;5]L871E;F-Y              X  "
+    "  H    !@    @    !          4    (               !          X    X    !@    @    &          4    (     0    $    "
+    "!          D    (            \\#\\.    .     8    (    !@         %    \"     $    !     0         )    \"        "
+    "    \"9 #@   #@    &    \"     8         !0    @    !     0    $         \"0    @             0 X    X    !@    @ "
+    "   &          4    (     0    $    !          D    (             $ .    .     8    (    !@         %    \"     $  "
+    "  !     0         )    \"             ! #@   #@    &    \"     8         !0    @    !     0    $         \"0    @ "
+    "          #P/P"
   }
   DataRecord {
     Tag			    DataTag0
