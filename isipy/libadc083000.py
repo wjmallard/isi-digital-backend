@@ -58,10 +58,15 @@ class adc083000 ():
 		#time.sleep(.1)
 		#self._roach.write_int(self._sel_reg, 0x0)
 		for i in xrange(32):
-			bit = cmd >> i
-			self._roach.write_int(self._cmd_reg, bit & 0x01)
-			self._roach.write_int(self._sel_reg, sel | 0x01)
-			self._roach.write_int(self._sel_reg, sel | 0x00)
+			#bit1 = (cmd >> (31-i)) & 0x00000001
+			#bit2 = (cmd << (31-i)) & 0x80000000
+			bit1 = (cmd >> i) & 0x00000001
+			bit2 = (cmd << i) & 0x80000000
+			self._roach.write_int(self._cmd_reg, bit1 | bit2)
+			self._roach.write_int(self._sel_reg, sel | 0xffffffff)
+			time.sleep(.1)
+			self._roach.write_int(self._sel_reg, sel | 0x7ffffffe)
+			time.sleep(.1)
 
 	def reset_to_defaults (self, adc=6):
 		self._write(adc, adc083000.ADDR_CONFIG, adc083000.DFLT_CONFIG)
