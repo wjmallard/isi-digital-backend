@@ -52,11 +52,16 @@ class adc083000 ():
 		sel = (0x0006 & adc) | adc083000.CTRL_START_CFG
 		cmd = (0x0010 | (0x000f & addr)) << 8 | (0xffff & data)
 
-		print "Writing sel=%s, cmd=%s to ADC %s." % (repr(sel), repr(cmd), repr(adc))
-		self._roach.write_int(self._cmd_reg, cmd)
-		self._roach.write_int(self._sel_reg, sel)
-		time.sleep(.1)
-		self._roach.write_int(self._sel_reg, 0x0)
+		print "Writing cmd=%d." % cmd
+		#self._roach.write_int(self._cmd_reg, cmd)
+		#self._roach.write_int(self._sel_reg, sel)
+		#time.sleep(.1)
+		#self._roach.write_int(self._sel_reg, 0x0)
+		for i in xrange(32):
+			bit = cmd >> i
+			self._roach.write_int(self._cmd_reg, bit & 0x01)
+			self._roach.write_int(self._sel_reg, sel | 0x01)
+			self._roach.write_int(self._sel_reg, sel | 0x00)
 
 	def reset_to_defaults (self, adc=6):
 		self._write(adc, adc083000.ADDR_CONFIG, adc083000.DFLT_CONFIG)
