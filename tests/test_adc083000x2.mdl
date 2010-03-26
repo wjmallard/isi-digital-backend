@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.73"
+    ComputedModelVersion    "1.74"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Mar 25 20:00:28 2010"
-  RTWModifiedTimeStamp	  191448022
-  ModelVersionFormat	  "1.%<AutoIncrement:73>"
+  LastModifiedDate	  "Thu Mar 25 20:33:43 2010"
+  RTWModifiedTimeStamp	  191450020
+  ModelVersionFormat	  "1.%<AutoIncrement:74>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -748,7 +748,7 @@ Model {
       directory		      "./test_adc083000x2/sysgen"
       testbench		      off
       simulink_period	      "1"
-      sysclk_period	      "2.8571"
+      sysclk_period	      "2.6667"
       dcm_input_clock_period  "100"
       incr_netlist	      off
       trim_vbits	      "Everywhere in SubSystem"
@@ -951,7 +951,7 @@ Model {
       CORR_clk_src	      "sys_clk"
       gpio_clk_io_group	      "iBOB:sma"
       gpio_clk_bit_index      "0"
-      clk_rate		      "350"
+      clk_rate		      "375"
       sample_period	      "1"
       synthesis_tool	      "XST"
       mpc_type		      "powerpc440_ext"
@@ -996,7 +996,7 @@ Model {
       MaskIconRotate	      "none"
       MaskPortRotate	      "default"
       MaskIconUnits	      "autoscale"
-      MaskValueString	      "on|on|off|on|off|off|1400|1|8"
+      MaskValueString	      "on|on|off|on|off|off|1500|1|8"
       System {
 	Name			"adc083000x2"
 	Location		[95, 157, 1620, 1053]
@@ -1012,7 +1012,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	134
+	SIDHighWatermark	140
 	SIDPrevWatermark	66
 	Block {
 	  BlockType		  Inport
@@ -11253,7 +11253,7 @@ MatData {
     " 0         0  ( +3$   X    P    !@    @    $          4    (     0    ,    !         !   P!O9F8 #@   #@    &    \""
     "     0         !0    @    !    !@    $         $     8   !F9C$Q,S8   X   !0    !@    @    $          4    (     0 "
     "  !D    !         !     9    +B]T97-T7V%D8S X,S P,'@R+W-Y<V=E;@         .    .     8    (    !          %    \"   "
-    "  $    &     0         0    !@   #(N.#4W,0  #@   $     &    \"     0         !0    @    !    #0    $         $    "
+    "  $    &     0         0    !@   #(N-C8V-P  #@   $     &    \"     0         !0    @    !    #0    $         $    "
     " T   !#;&]C:R!%;F%B;&5S    #@   #     &    \"     0         !0    @    !     P    $         $  # #$P,  .    .     "
     "8    (    !@         %    \"     $    !     0         )    \"               #@   #@    &    \"     8         !0   "
     " @    !     0    $         \"0    @               X    P    !@    @    $          4    (               !         !"
@@ -11330,7 +11330,7 @@ MatData {
     "   #     &    \"     0         !0    @    !     P    $         $  # &]F9@ .    .     8    (    !          %    \" "
     "    $    &     0         0    !@   &9F,3$S-@  #@   %     &    \"     0         !0    @    !    &0    $         $  "
     "  !D    N+W1E<W1?861C,#@S,# P>#(O<WES9V5N          X    X    !@    @    $          4    (     0    8    !         "
-    "!     &    ,BXX-3<Q   .    0     8    (    !          %    \"     $    -     0         0    #0   $-L;V-K($5N86)L97"
+    "!     &    ,BXV-C8W   .    0     8    (    !          %    \"     $    -     0         0    #0   $-L;V-K($5N86)L97"
     ",    .    ,     8    (    !          %    \"     $    #     0         0  , ,3 P  X    X    !@    @    &          4"
     "    (     0    $    !          D    (               .    .     8    (    !@         %    \"     $    !     0      "
     "   )    \"               #@   #     &    \"     0         !0    @               $         $          "
