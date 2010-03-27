@@ -58,9 +58,7 @@ class adc083000 ():
 		#time.sleep(.1)
 		#self._roach.write_int(self._sel_reg, 0x0)
 		for i in xrange(32):
-			#bit1 = (cmd >> (31-i)) & 0x00000001
-			#bit2 = (cmd << (31-i)) & 0x80000000
-			bit1 = (cmd >> i) & 0x00000001
+			bit1 = (cmd >> (31-i)) & 0x00000001
 			bit2 = (cmd << i) & 0x80000000
 			self._roach.write_int(self._cmd_reg, bit1 | bit2)
 			self._roach.write_int(self._sel_reg, sel | 0xffffffff)
