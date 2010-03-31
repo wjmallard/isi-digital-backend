@@ -1,12 +1,12 @@
 Model {
   Name			  "test_9x8_strobe"
-  Version		  7.3
+  Version		  7.4
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.4"
+    ComputedModelVersion    "1.9"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -18,19 +18,20 @@ Model {
   DataTypeOverride	  "UseLocalSettings"
   MinMaxOverflowLogging	  "UseLocalSettings"
   MinMaxOverflowArchiveMode "Overwrite"
+  MaxMDLFileLineLength	  120
   Created		  "Wed Feb 24 22:07:28 2010"
   Creator		  "wjm"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Feb 24 22:28:07 2010"
-  RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:4>"
+  LastModifiedDate	  "Tue Mar 30 18:27:14 2010"
+  RTWModifiedTimeStamp	  191874432
+  ModelVersionFormat	  "1.%<AutoIncrement:9>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
-  LibraryLinkDisplay	  "none"
+  LibraryLinkDisplay	  "all"
   WideLines		  off
   ShowLineDimensions	  off
   ShowPortDataTypes	  off
@@ -64,6 +65,7 @@ Model {
   CovMetricSettings	  "dw"
   CovNameIncrementing	  off
   CovHtmlReporting	  on
+  CovForceBlockReductionOff on
   covSaveCumulativeToWorkspaceVar on
   CovSaveSingleToWorkspaceVar on
   CovCumulativeVarName	  "covCumulativeData"
@@ -135,7 +137,6 @@ Model {
 	  AutoInsertRateTranBlk	  off
 	  SampleTimeConstraint	  "Unconstrained"
 	  InsertRTBMode		  "Whenever possible"
-	  SignalSizeVariationType "Allow only fixed size"
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  3
@@ -156,12 +157,14 @@ Model {
 	  SignalLogging		  on
 	  InspectSignalLogs	  off
 	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
 	  StateSaveName		  "xout"
 	  TimeSaveName		  "tout"
 	  OutputSaveName	  "yout"
 	  SignalLoggingName	  "logsout"
 	  OutputOption		  "RefineOutputTimes"
 	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
@@ -182,6 +185,7 @@ Model {
 	  BooleanDataType	  on
 	  ConditionallyExecuteInputs on
 	  InlineParams		  off
+	  UseIntDivNetSlope	  off
 	  InlineInvariantSignals  off
 	  OptimizeBlockIOStorage  on
 	  BufferReuse		  on
@@ -189,6 +193,7 @@ Model {
 	  StrengthReduction	  off
 	  EnforceIntegerDowncast  on
 	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
 	  EnableMemcpy		  on
 	  MemcpyThreshold	  64
 	  PassReuseOutputArgsAs	  "Structure reference"
@@ -254,6 +259,9 @@ Model {
 	  ParameterUnderflowMsg	  "none"
 	  ParameterPrecisionLossMsg "warning"
 	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
 	  UnderSpecifiedDataTypeMsg "none"
 	  UnnecessaryDatatypeConvMsg "none"
 	  VectorMatrixConversionMsg "none"
@@ -278,6 +286,7 @@ Model {
 	  ModelReferenceSymbolNameMessage "warning"
 	  ModelReferenceExtraNoncontSigs "error"
 	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
 	  StrictBusMsg		  "Warning"
 	  LoggingUnavailableSignals "error"
 	  BlockIODiagnostic	  "none"
@@ -325,6 +334,9 @@ Model {
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
 	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
 	  SimUseLocalCustomCode	  off
 	  SimBuildMode		  "sf_incremental_build"
 	}
@@ -420,6 +432,7 @@ Model {
 	      CustomSymbolStrType     "$N$R$M"
 	      CustomSymbolStrField    "$N$M"
 	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
 	      CustomSymbolStrBlkIO    "rtb_$N$M"
 	      CustomSymbolStrTmpVar   "$N$M"
 	      CustomSymbolStrMacro    "$R$N$M"
@@ -474,6 +487,7 @@ Model {
 	      ParMdlRefBuildCompliant on
 	      CompOptLevelCompliant   on
 	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
 	      CombineOutputUpdateFcns off
 	      SuppressErrorStatus     off
 	      ERTFirstTimeCompliant   off
@@ -488,6 +502,7 @@ Model {
 	      PurelyIntegerCode	      off
 	      SupportContinuousTime   on
 	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
 	      EnableShiftOperators    on
 	      ParenthesesLevel	      "Nominal"
 	      PortableWordSizes	      off
@@ -574,7 +589,7 @@ Model {
   }
   System {
     Name		    "test_9x8_strobe"
-    Location		    [396, 577, 864, 809]
+    Location		    [396, 577, 885, 819]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -588,14 +603,17 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    22
     Block {
       BlockType		      Reference
       Name		      " System Generator"
+      SID		      1
       Tag		      "genX"
       Ports		      []
       Position		      [14, 14, 65, 64]
       ShowName		      off
       AttributesFormatString  "System\\nGenerator"
+      LibraryVersion	      "1.2"
       UserDataPersistent      on
       UserData		      "DataTag0"
       SourceBlock	      "xbsIndex_r4/ System Generator"
@@ -642,8 +660,10 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "9x8_strobe"
-      Ports		      [1, 11]
-      Position		      [240, 32, 290, 198]
+      SID		      2
+      Ports		      [2, 11]
+      Position		      [265, 47, 315, 213]
+      LibraryVersion	      "1.546"
       SourceBlock	      "isi_correlator_lib/9x8_strobe"
       SourceType	      "SubSystem"
       ShowPortLabels	      "FromPortIcon"
@@ -658,8 +678,10 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Counter"
+      SID		      3
       Ports		      [0, 1]
-      Position		      [90, 107, 140, 123]
+      Position		      [90, 82, 140, 98]
+      LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Counter"
       SourceType	      "Xilinx Counter Block"
       infoedit		      "Hardware notes: Free running counters are the least expensive in hardware.  A count limited cou"
@@ -670,7 +692,7 @@ Model {
       start_count	      "0"
       cnt_by_val	      "1"
       arith_type	      "Unsigned"
-      n_bits		      "8"
+      n_bits		      "10"
       bin_pt		      "0"
       load_pin		      off
       rst		      off
@@ -696,10 +718,70 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "Gateway Out"
+      Name		      "Delay"
+      SID		      20
       Ports		      [1, 1]
-      Position		      [315, 17, 365, 33]
+      Position		      [265, 17, 315, 33]
       ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Delay"
+      SourceType	      "Xilinx Delay Block"
+      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+      en		      off
+      latency		      "2"
+      dbl_ovrd		      off
+      reg_retiming	      on
+      xl_use_area	      off
+      xl_area		      "[0,0,0,0,0,0,0]"
+      has_advanced_control    "0"
+      sggui_pos		      "-1,-1,-1,-1"
+      block_type	      "delay"
+      block_version	      "11.3"
+      sg_icon_stat	      "50,16,1,1,white,blue,0,85ce9542,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.36 0.44 0.36 0.42 0.5 0.52 0.54 0.64 0.56 0.5 0.46 0.54 0.46 0.5 0.56 0.64 0.54 0.52 0.5 0.42 "
+      "],[0.125 0.3125 0.5625 0.8125 1 1 0.9375 1 1 0.75 0.9375 0.8125 0.5625 0.3125 0.1875 0.375 0.125 0.125 0.1875 0."
+      "125 0.125 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfpr"
+      "intf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end ic"
+      "on text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay1"
+      SID		      21
+      Ports		      [1, 1]
+      Position		      [265, 32, 315, 48]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Delay"
+      SourceType	      "Xilinx Delay Block"
+      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+      en		      off
+      latency		      "2"
+      dbl_ovrd		      off
+      reg_retiming	      on
+      xl_use_area	      off
+      xl_area		      "[0,0,0,0,0,0,0]"
+      has_advanced_control    "0"
+      sggui_pos		      "-1,-1,-1,-1"
+      block_type	      "delay"
+      block_version	      "11.3"
+      sg_icon_stat	      "50,16,1,1,white,blue,0,85ce9542,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.36 0.44 0.36 0.42 0.5 0.52 0.54 0.64 0.56 0.5 0.46 0.54 0.46 0.5 0.56 0.64 0.54 0.52 0.5 0.42 "
+      "],[0.125 0.3125 0.5625 0.8125 1 1 0.9375 1 1 0.75 0.9375 0.8125 0.5625 0.3125 0.1875 0.375 0.125 0.125 0.1875 0."
+      "125 0.125 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfpr"
+      "intf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end ic"
+      "on text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out"
+      SID		      4
+      Ports		      [1, 1]
+      Position		      [340, 32, 390, 48]
+      ShowName		      off
+      LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
       infoedit		      "Gateway out block.  Converts Xilinx fixed point inputs into ouputs of type Simulink integer, do"
@@ -726,9 +808,11 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Gateway Out1"
+      SID		      5
       Ports		      [1, 1]
-      Position		      [315, 32, 365, 48]
+      Position		      [340, 47, 390, 63]
       ShowName		      off
+      LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
       infoedit		      "Gateway out block.  Converts Xilinx fixed point inputs into ouputs of type Simulink integer, do"
@@ -755,9 +839,11 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Gateway Out10"
+      SID		      6
       Ports		      [1, 1]
-      Position		      [315, 167, 365, 183]
+      Position		      [340, 182, 390, 198]
       ShowName		      off
+      LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
       infoedit		      "Gateway out block.  Converts Xilinx fixed point inputs into ouputs of type Simulink integer, do"
@@ -784,9 +870,42 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Gateway Out11"
+      SID		      7
       Ports		      [1, 1]
-      Position		      [315, 182, 365, 198]
+      Position		      [340, 197, 390, 213]
       ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Gateway Out"
+      SourceType	      "Xilinx Gateway Out Block"
+      infoedit		      "Gateway out block.  Converts Xilinx fixed point inputs into ouputs of type Simulink integer, do"
+      "uble, or fixed point.<br><br>Hardware notes:  In hardware these blocks become top level output ports or are disc"
+      "arded, depending on how they are configured."
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      xl_use_area	      off
+      xl_area		      "[0,0,0,0,0,0,0]"
+      has_advanced_control    "0"
+      sggui_pos		      "-1,-1,-1,-1"
+      block_type	      "gatewayout"
+      block_version	      "11.3"
+      sg_icon_stat	      "50,16,1,1,white,yellow,0,cc31b7ac,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.95 0.93 0.65]"
+      ");\npatch([0.42 0.36 0.44 0.36 0.42 0.5 0.52 0.54 0.64 0.56 0.5 0.46 0.54 0.46 0.5 0.56 0.64 0.54 0.52 0.5 0.42 "
+      "],[0.125 0.3125 0.5625 0.8125 1 1 0.9375 1 1 0.75 0.9375 0.8125 0.5625 0.3125 0.1875 0.375 0.125 0.125 0.1875 0."
+      "125 0.125 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfpr"
+      "intf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('outp"
+      "ut',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out12"
+      SID		      19
+      Ports		      [1, 1]
+      Position		      [340, 17, 390, 33]
+      ShowName		      off
+      LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
       infoedit		      "Gateway out block.  Converts Xilinx fixed point inputs into ouputs of type Simulink integer, do"
@@ -813,9 +932,11 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Gateway Out2"
+      SID		      8
       Ports		      [1, 1]
-      Position		      [315, 47, 365, 63]
+      Position		      [340, 62, 390, 78]
       ShowName		      off
+      LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
       infoedit		      "Gateway out block.  Converts Xilinx fixed point inputs into ouputs of type Simulink integer, do"
@@ -842,9 +963,11 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Gateway Out3"
+      SID		      9
       Ports		      [1, 1]
-      Position		      [315, 62, 365, 78]
+      Position		      [340, 77, 390, 93]
       ShowName		      off
+      LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
       infoedit		      "Gateway out block.  Converts Xilinx fixed point inputs into ouputs of type Simulink integer, do"
@@ -871,9 +994,11 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Gateway Out4"
+      SID		      10
       Ports		      [1, 1]
-      Position		      [315, 77, 365, 93]
+      Position		      [340, 92, 390, 108]
       ShowName		      off
+      LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
       infoedit		      "Gateway out block.  Converts Xilinx fixed point inputs into ouputs of type Simulink integer, do"
@@ -900,9 +1025,11 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Gateway Out5"
+      SID		      11
       Ports		      [1, 1]
-      Position		      [315, 92, 365, 108]
+      Position		      [340, 107, 390, 123]
       ShowName		      off
+      LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
       infoedit		      "Gateway out block.  Converts Xilinx fixed point inputs into ouputs of type Simulink integer, do"
@@ -929,9 +1056,11 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Gateway Out6"
+      SID		      12
       Ports		      [1, 1]
-      Position		      [315, 107, 365, 123]
+      Position		      [340, 122, 390, 138]
       ShowName		      off
+      LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
       infoedit		      "Gateway out block.  Converts Xilinx fixed point inputs into ouputs of type Simulink integer, do"
@@ -958,9 +1087,11 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Gateway Out7"
+      SID		      13
       Ports		      [1, 1]
-      Position		      [315, 122, 365, 138]
+      Position		      [340, 137, 390, 153]
       ShowName		      off
+      LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
       infoedit		      "Gateway out block.  Converts Xilinx fixed point inputs into ouputs of type Simulink integer, do"
@@ -987,9 +1118,11 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Gateway Out8"
+      SID		      14
       Ports		      [1, 1]
-      Position		      [315, 137, 365, 153]
+      Position		      [340, 152, 390, 168]
       ShowName		      off
+      LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
       infoedit		      "Gateway out block.  Converts Xilinx fixed point inputs into ouputs of type Simulink integer, do"
@@ -1016,9 +1149,11 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Gateway Out9"
+      SID		      15
       Ports		      [1, 1]
-      Position		      [315, 152, 365, 168]
+      Position		      [340, 167, 390, 183]
       ShowName		      off
+      LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
       infoedit		      "Gateway out block.  Converts Xilinx fixed point inputs into ouputs of type Simulink integer, do"
@@ -1045,12 +1180,13 @@ Model {
     Block {
       BlockType		      Scope
       Name		      "Scope"
-      Ports		      [12]
-      Position		      [390, 22, 440, 193]
+      SID		      16
+      Ports		      [13]
+      Position		      [415, 19, 465, 211]
       Floating		      off
-      Location		      [1, 53, 1919, 1173]
+      Location		      [6, 78, 1916, 1169]
       Open		      off
-      NumInputPorts	      "12"
+      NumInputPorts	      "13"
       ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
@@ -1066,18 +1202,21 @@ Model {
 	axes10			"%<SignalLabel>"
 	axes11			"%<SignalLabel>"
 	axes12			"%<SignalLabel>"
+	axes13			"%<SignalLabel>"
       }
-      YMin		      "-5~-5~-5~-5~-5~-5~-5~-5~-5~-5~-5~-5"
-      YMax		      "5~5~5~5~5~5~5~5~5~5~5~5"
+      YMin		      "-5~-5~-5~-5~-5~-5~-5~-5~-5~-5~-5~-5~-5"
+      YMax		      "5~5~5~5~5~5~5~5~5~5~5~5~5"
       DataFormat	      "StructureWithTime"
       SampleTime	      "0"
     }
     Block {
       BlockType		      Reference
       Name		      "Slice"
+      SID		      17
       Ports		      [1, 1]
-      Position		      [165, 107, 215, 123]
+      Position		      [165, 82, 215, 98]
       ShowName		      off
+      LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Slice"
       SourceType	      "Xilinx Bit Slice Extractor Block"
       infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The outpu"
@@ -1089,6 +1228,39 @@ Model {
       bit1		      "0"
       base1		      "MSB of Input"
       bit0		      "7"
+      base0		      "LSB of Input"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "0,0,631,621"
+      block_type	      "slice"
+      block_version	      "11.3"
+      sg_icon_stat	      "50,16,1,1,white,blue,0,1fd851a7,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.36 0.44 0.36 0.42 0.5 0.52 0.54 0.64 0.56 0.5 0.46 0.54 0.46 0.5 0.56 0.64 0.54 0.52 0.5 0.42 "
+      "],[0.125 0.3125 0.5625 0.8125 1 1 0.9375 1 1 0.75 0.9375 0.8125 0.5625 0.3125 0.1875 0.375 0.125 0.125 0.1875 0."
+      "125 0.125 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfpr"
+      "intf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end i"
+      "con text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Slice1"
+      SID		      18
+      Ports		      [1, 1]
+      Position		      [165, 167, 215, 183]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Slice"
+      SourceType	      "Xilinx Bit Slice Extractor Block"
+      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The outpu"
+      "t type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><"
+      "br>Hardware notes: In hardware this block costs nothing."
+      nbits		      "1"
+      boolean_output	      on
+      mode		      "Lower Bit Location + Width"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "9"
       base0		      "LSB of Input"
       dbl_ovrd		      off
       has_advanced_control    "0"
@@ -1106,88 +1278,15 @@ Model {
     Line {
       SrcBlock		      "Counter"
       SrcPort		      1
-      DstBlock		      "Slice"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Slice"
-      SrcPort		      1
       Points		      [5, 0]
       Branch {
-	DstBlock		"9x8_strobe"
+	DstBlock		"Slice"
 	DstPort			1
       }
       Branch {
-	Points			[0, -90]
-	DstBlock		"Gateway Out"
+	DstBlock		"Slice1"
 	DstPort			1
       }
-    }
-    Line {
-      SrcBlock		      "Gateway Out"
-      SrcPort		      1
-      DstBlock		      "Scope"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Gateway Out1"
-      SrcPort		      1
-      DstBlock		      "Scope"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Gateway Out2"
-      SrcPort		      1
-      DstBlock		      "Scope"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Gateway Out3"
-      SrcPort		      1
-      DstBlock		      "Scope"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "Gateway Out4"
-      SrcPort		      1
-      DstBlock		      "Scope"
-      DstPort		      5
-    }
-    Line {
-      SrcBlock		      "Gateway Out5"
-      SrcPort		      1
-      DstBlock		      "Scope"
-      DstPort		      6
-    }
-    Line {
-      SrcBlock		      "Gateway Out6"
-      SrcPort		      1
-      DstBlock		      "Scope"
-      DstPort		      7
-    }
-    Line {
-      SrcBlock		      "Gateway Out7"
-      SrcPort		      1
-      DstBlock		      "Scope"
-      DstPort		      8
-    }
-    Line {
-      SrcBlock		      "Gateway Out8"
-      SrcPort		      1
-      DstBlock		      "Scope"
-      DstPort		      9
-    }
-    Line {
-      SrcBlock		      "Gateway Out9"
-      SrcPort		      1
-      DstBlock		      "Scope"
-      DstPort		      10
-    }
-    Line {
-      SrcBlock		      "Gateway Out10"
-      SrcPort		      1
-      DstBlock		      "Scope"
-      DstPort		      11
     }
     Line {
       SrcBlock		      "9x8_strobe"
@@ -1256,10 +1355,122 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Gateway Out11"
+      SrcBlock		      "Slice"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	DstBlock		"9x8_strobe"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -65]
+	DstBlock		"Delay"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Gateway Out12"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gateway Out"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Gateway Out1"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Gateway Out2"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Gateway Out3"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Gateway Out4"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Gateway Out5"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "Gateway Out6"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      8
+    }
+    Line {
+      SrcBlock		      "Gateway Out7"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      9
+    }
+    Line {
+      SrcBlock		      "Gateway Out8"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      10
+    }
+    Line {
+      SrcBlock		      "Gateway Out9"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      11
+    }
+    Line {
+      SrcBlock		      "Gateway Out10"
       SrcPort		      1
       DstBlock		      "Scope"
       DstPort		      12
+    }
+    Line {
+      SrcBlock		      "Gateway Out11"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      13
+    }
+    Line {
+      SrcBlock		      "Delay"
+      SrcPort		      1
+      DstBlock		      "Gateway Out12"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Delay1"
+      SrcPort		      1
+      DstBlock		      "Gateway Out"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Slice1"
+      SrcPort		      1
+      Points		      [25, 0]
+      Branch {
+	DstBlock		"9x8_strobe"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, -135]
+	DstBlock		"Delay1"
+	DstPort			1
+      }
     }
   }
 }
