@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.18"
+    ComputedModelVersion    "1.21"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Mar 31 21:15:14 2010"
-  RTWModifiedTimeStamp	  191970874
-  ModelVersionFormat	  "1.%<AutoIncrement:18>"
+  LastModifiedDate	  "Wed Mar 31 21:34:07 2010"
+  RTWModifiedTimeStamp	  191972043
+  ModelVersionFormat	  "1.%<AutoIncrement:21>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -603,7 +603,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    53
+    SIDHighWatermark	    54
     Block {
       BlockType		      Reference
       Name		      " System Generator"
@@ -690,13 +690,13 @@ Model {
       sggui_pos		      "20,20,543,936"
       block_type	      "counter"
       block_version	      "11.3"
-      sg_icon_stat	      "50,36,0,1,white,blue,0,335d209d,right,"
+      sg_icon_stat	      "50,14,0,1,white,blue,0,335d209d,right,"
       sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.3 0.18 0.34 0.18 0.3 0.5 0.56 0.62 0.82 0.66 0.5 0.38 0.54 0.38 0.5 0.66 0.82 0.62 0.56 0.5 0.3 ],["
-      "0.111111 0.277778 0.5 0.722222 0.888889 0.888889 0.805556 0.888889 0.888889 0.666667 0.888889 0.722222 0.5 0.277"
-      "778 0.111111 0.333333 0.111111 0.111111 0.194444 0.111111 0.111111 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 "
-      "1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');po"
-      "rt_label('output',1,'out');\nfprintf('','COMMENT: end icon text');\n"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'out');\nfprintf('','COMMENT: end icon text');\n"
     }
     Block {
       BlockType		      Reference
@@ -790,7 +790,7 @@ Model {
       Name		      "Gateway Out"
       SID		      4
       Ports		      [1, 1]
-      Position		      [415, 32, 465, 48]
+      Position		      [415, 33, 465, 47]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
@@ -821,7 +821,7 @@ Model {
       Name		      "Gateway Out1"
       SID		      5
       Ports		      [1, 1]
-      Position		      [415, 47, 465, 63]
+      Position		      [415, 48, 465, 62]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
@@ -852,7 +852,7 @@ Model {
       Name		      "Gateway Out2"
       SID		      8
       Ports		      [1, 1]
-      Position		      [415, 62, 465, 78]
+      Position		      [415, 63, 465, 77]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
@@ -883,7 +883,7 @@ Model {
       Name		      "Gateway Out3"
       SID		      47
       Ports		      [1, 1]
-      Position		      [415, 17, 465, 33]
+      Position		      [415, 18, 465, 32]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
@@ -1004,7 +1004,7 @@ Model {
       SID		      45
       Ports		      [2, 2]
       Position		      [340, 45, 390, 80]
-      LibraryVersion	      "1.552"
+      LibraryVersion	      "1.556"
       SourceBlock	      "isi_correlator_lib/integral_cntr"
       SourceType	      "trig_cntr"
       ShowPortLabels	      "FromPortIcon"
@@ -1016,7 +1016,6 @@ Model {
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
       period		      "9"
-      latency		      "1"
     }
     Line {
       SrcBlock		      "Counter"

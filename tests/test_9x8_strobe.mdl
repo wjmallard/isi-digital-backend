@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.9"
+    ComputedModelVersion    "1.11"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Mar 30 18:27:14 2010"
-  RTWModifiedTimeStamp	  191874432
-  ModelVersionFormat	  "1.%<AutoIncrement:9>"
+  LastModifiedDate	  "Wed Mar 31 21:45:13 2010"
+  RTWModifiedTimeStamp	  191972702
+  ModelVersionFormat	  "1.%<AutoIncrement:11>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -589,7 +589,7 @@ Model {
   }
   System {
     Name		    "test_9x8_strobe"
-    Location		    [396, 577, 885, 819]
+    Location		    [290, 640, 779, 882]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -603,7 +603,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    22
+    SIDHighWatermark	    23
     Block {
       BlockType		      Reference
       Name		      " System Generator"
@@ -663,9 +663,9 @@ Model {
       SID		      2
       Ports		      [2, 11]
       Position		      [265, 47, 315, 213]
-      LibraryVersion	      "1.546"
+      LibraryVersion	      "1.558"
       SourceBlock	      "isi_correlator_lib/9x8_strobe"
-      SourceType	      "SubSystem"
+      SourceType	      "9x8_strobe"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -680,7 +680,7 @@ Model {
       Name		      "Counter"
       SID		      3
       Ports		      [0, 1]
-      Position		      [90, 82, 140, 98]
+      Position		      [90, 83, 140, 97]
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Counter"
       SourceType	      "Xilinx Counter Block"
@@ -721,7 +721,7 @@ Model {
       Name		      "Delay"
       SID		      20
       Ports		      [1, 1]
-      Position		      [265, 17, 315, 33]
+      Position		      [265, 18, 315, 32]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -750,7 +750,7 @@ Model {
       Name		      "Delay1"
       SID		      21
       Ports		      [1, 1]
-      Position		      [265, 32, 315, 48]
+      Position		      [265, 33, 315, 47]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -779,7 +779,7 @@ Model {
       Name		      "Gateway Out"
       SID		      4
       Ports		      [1, 1]
-      Position		      [340, 32, 390, 48]
+      Position		      [340, 33, 390, 47]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
@@ -810,7 +810,7 @@ Model {
       Name		      "Gateway Out1"
       SID		      5
       Ports		      [1, 1]
-      Position		      [340, 47, 390, 63]
+      Position		      [340, 48, 390, 62]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
@@ -841,7 +841,7 @@ Model {
       Name		      "Gateway Out10"
       SID		      6
       Ports		      [1, 1]
-      Position		      [340, 182, 390, 198]
+      Position		      [340, 183, 390, 197]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
@@ -872,7 +872,7 @@ Model {
       Name		      "Gateway Out11"
       SID		      7
       Ports		      [1, 1]
-      Position		      [340, 197, 390, 213]
+      Position		      [340, 198, 390, 212]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
@@ -903,7 +903,7 @@ Model {
       Name		      "Gateway Out12"
       SID		      19
       Ports		      [1, 1]
-      Position		      [340, 17, 390, 33]
+      Position		      [340, 18, 390, 32]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
@@ -934,7 +934,7 @@ Model {
       Name		      "Gateway Out2"
       SID		      8
       Ports		      [1, 1]
-      Position		      [340, 62, 390, 78]
+      Position		      [340, 63, 390, 77]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
@@ -965,7 +965,7 @@ Model {
       Name		      "Gateway Out3"
       SID		      9
       Ports		      [1, 1]
-      Position		      [340, 77, 390, 93]
+      Position		      [340, 78, 390, 92]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
@@ -996,7 +996,7 @@ Model {
       Name		      "Gateway Out4"
       SID		      10
       Ports		      [1, 1]
-      Position		      [340, 92, 390, 108]
+      Position		      [340, 93, 390, 107]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
@@ -1027,7 +1027,7 @@ Model {
       Name		      "Gateway Out5"
       SID		      11
       Ports		      [1, 1]
-      Position		      [340, 107, 390, 123]
+      Position		      [340, 108, 390, 122]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
@@ -1058,7 +1058,7 @@ Model {
       Name		      "Gateway Out6"
       SID		      12
       Ports		      [1, 1]
-      Position		      [340, 122, 390, 138]
+      Position		      [340, 123, 390, 137]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
@@ -1089,7 +1089,7 @@ Model {
       Name		      "Gateway Out7"
       SID		      13
       Ports		      [1, 1]
-      Position		      [340, 137, 390, 153]
+      Position		      [340, 138, 390, 152]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
@@ -1120,7 +1120,7 @@ Model {
       Name		      "Gateway Out8"
       SID		      14
       Ports		      [1, 1]
-      Position		      [340, 152, 390, 168]
+      Position		      [340, 153, 390, 167]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
@@ -1151,7 +1151,7 @@ Model {
       Name		      "Gateway Out9"
       SID		      15
       Ports		      [1, 1]
-      Position		      [340, 167, 390, 183]
+      Position		      [340, 168, 390, 182]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
@@ -1214,7 +1214,7 @@ Model {
       Name		      "Slice"
       SID		      17
       Ports		      [1, 1]
-      Position		      [165, 82, 215, 98]
+      Position		      [165, 83, 215, 97]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Slice"
@@ -1227,7 +1227,7 @@ Model {
       mode		      "Lower Bit Location + Width"
       bit1		      "0"
       base1		      "MSB of Input"
-      bit0		      "7"
+      bit0		      "6"
       base0		      "LSB of Input"
       dbl_ovrd		      off
       has_advanced_control    "0"
@@ -1247,7 +1247,7 @@ Model {
       Name		      "Slice1"
       SID		      18
       Ports		      [1, 1]
-      Position		      [165, 167, 215, 183]
+      Position		      [165, 168, 215, 182]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Slice"
