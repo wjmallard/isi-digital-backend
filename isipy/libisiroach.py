@@ -61,12 +61,7 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		return bram_data
 
 	def reset (self):
-		self.set_clock_freq()
-		self.set_sync_period()
-		self.set_fft_shift(0)
-		self.set_eq_coeff(1)
-		self._set_flag(IsiRoachBoard.FIFO_RESET)
-		self.write_int('control', 0)
+		self._toggle_reset(IsiRoachBoard.FIFO_RESET)
 
 	def arm_sync (self):
 		self._unset_flag(IsiRoachBoard.ARM_RESET)

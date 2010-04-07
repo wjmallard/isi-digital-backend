@@ -6,7 +6,7 @@ __copyright__ = "Copyright 2010, CASPER"
 __license__ = "GPL"
 __status__ = "Development"
 
-import libisicorr
+import libisiroach
 
 import corr
 import itertools
@@ -18,7 +18,7 @@ import sys
 import IPython
 ipshell = IPython.Shell.IPShellEmbed()
 
-class IsiCorrelatorDebug (libisicorr.IsiRoachBoard):
+class IsiCorrelatorDebug (libisiroach.IsiRoachBoard):
 	def __init__ (self, host, port):
 		super(IsiCorrelatorDebug, self).__init__(host, port)
 
