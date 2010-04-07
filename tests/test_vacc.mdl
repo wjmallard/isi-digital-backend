@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.49"
+    ComputedModelVersion    "1.53"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Mar 31 21:46:31 2010"
-  RTWModifiedTimeStamp	  191876489
-  ModelVersionFormat	  "1.%<AutoIncrement:49>"
+  LastModifiedDate	  "Wed Apr  7 00:10:44 2010"
+  RTWModifiedTimeStamp	  192499835
+  ModelVersionFormat	  "1.%<AutoIncrement:53>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -109,8 +109,8 @@ Model {
 	Simulink.SolverCC {
 	  $ObjectID		  2
 	  Version		  "1.6.0"
-	  StartTime		  "0.0"
-	  StopTime		  "100"
+	  StartTime		  "0"
+	  StopTime		  "1500"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -521,7 +521,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition    " [ 520, 285, 1400, 915 ] "
+      ConfigPrmDlgPosition    " [ 523, 152, 1423, 840 ] "
     }
     PropName		    "ConfigurationSets"
   }
@@ -592,7 +592,7 @@ Model {
   }
   System {
     Name		    "test_vacc"
-    Location		    [5, 77, 870, 422]
+    Location		    [5, 77, 788, 369]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -606,7 +606,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    98
+    SIDHighWatermark	    102
     Block {
       BlockType		      Reference
       Name		      " System Generator"
@@ -775,44 +775,6 @@ Model {
       ";disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
     }
     Block {
-      BlockType		      Reference
-      Name		      "Delay4"
-      SID		      94
-      Ports		      [1, 1]
-      Position		      [390, 73, 440, 87]
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Delay"
-      SourceType	      "Xilinx Delay Block"
-      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-      en		      off
-      latency		      "2"
-      dbl_ovrd		      off
-      reg_retiming	      on
-      xl_use_area	      off
-      xl_area		      "[0,0,0,0,0,0,0]"
-      has_advanced_control    "0"
-      sggui_pos		      "0,0,419,315"
-      block_type	      "delay"
-      block_version	      "11.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,85ce9542,right,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From1"
-      SID		      97
-      Position		      [575, 238, 635, 252]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "armed"
-    }
-    Block {
       BlockType		      From
       Name		      "From17"
       SID		      10
@@ -909,22 +871,13 @@ Model {
       Position		      [575, 218, 635, 232]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "load_vacc"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From32"
-      SID		      27
-      Position		      [105, 103, 165, 117]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "vacc_full"
+      GotoTag		      "reset"
     }
     Block {
       BlockType		      From
       Name		      "From51"
       SID		      30
-      Position		      [305, 283, 365, 297]
+      Position		      [305, 233, 365, 247]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "gen_sync"
@@ -933,7 +886,7 @@ Model {
       BlockType		      From
       Name		      "From65"
       SID		      34
-      Position		      [230, 218, 290, 232]
+      Position		      [230, 168, 290, 182]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "arm_reset"
@@ -942,25 +895,16 @@ Model {
       BlockType		      From
       Name		      "From67"
       SID		      35
-      Position		      [230, 193, 290, 207]
+      Position		      [230, 143, 290, 157]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "force_trig"
     }
     Block {
       BlockType		      Goto
-      Name		      "Goto1"
-      SID		      96
-      Position		      [465, 218, 525, 232]
-      ShowName		      off
-      GotoTag		      "armed"
-      TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Goto
       Name		      "Goto11"
       SID		      41
-      Position		      [465, 293, 525, 307]
+      Position		      [465, 243, 525, 257]
       ShowName		      off
       GotoTag		      "data"
       TagVisibility	      "local"
@@ -980,7 +924,7 @@ Model {
       SID		      43
       Position		      [465, 43, 525, 57]
       ShowName		      off
-      GotoTag		      "fifo_reset"
+      GotoTag		      "reset"
       TagVisibility	      "local"
     }
     Block {
@@ -1003,27 +947,9 @@ Model {
     }
     Block {
       BlockType		      Goto
-      Name		      "Goto14"
-      SID		      48
-      Position		      [465, 73, 525, 87]
-      ShowName		      off
-      GotoTag		      "load_vacc"
-      TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto15"
-      SID		      49
-      Position		      [785, 128, 845, 142]
-      ShowName		      off
-      GotoTag		      "vacc_full"
-      TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Goto
       Name		      "Goto25"
       SID		      51
-      Position		      [465, 268, 525, 282]
+      Position		      [465, 218, 525, 232]
       ShowName		      off
       GotoTag		      "tvg_sync"
       TagVisibility	      "local"
@@ -1032,16 +958,16 @@ Model {
       BlockType		      Goto
       Name		      "Goto26"
       SID		      52
-      Position		      [465, 153, 525, 167]
+      Position		      [465, 103, 525, 117]
       ShowName		      off
       GotoTag		      "gen_sync"
       TagVisibility	      "local"
     }
     Block {
       BlockType		      Terminator
-      Name		      "TerminatorY1"
-      SID		      62
-      Position		      [315, 100, 335, 120]
+      Name		      "Terminator"
+      SID		      102
+      Position		      [465, 165, 485, 185]
       ShowName		      off
     }
     Block {
@@ -1083,8 +1009,8 @@ Model {
       Name		      "armed_trig"
       SID		      65
       Ports		      [2, 2]
-      Position		      [315, 187, 365, 238]
-      LibraryVersion	      "1.559"
+      Position		      [315, 137, 365, 188]
+      LibraryVersion	      "1.570"
       SourceBlock	      "isi_correlator_lib/armed_trig"
       SourceType	      "SubSystem"
       ShowPortLabels	      "FromPortIcon"
@@ -1121,39 +1047,6 @@ Model {
       bin_pt		      "0"
       sample_period	      "1"
       gw_name		      "test_vacc_control_user_data_out"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "control1"
-      SID		      70
-      Ports		      [1, 1]
-      Position		      [315, 73, 365, 87]
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Slice"
-      SourceType	      "Xilinx Bit Slice Extractor Block"
-      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The outpu"
-      "t type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><"
-      "br>Hardware notes: In hardware this block costs nothing."
-      nbits		      "1"
-      boolean_output	      on
-      mode		      "Lower Bit Location + Width"
-      bit1		      "0"
-      base1		      "MSB of Input"
-      bit0		      "0"
-      base0		      "LSB of Input"
-      dbl_ovrd		      off
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,631,621"
-      block_type	      "slice"
-      block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,1fd851a7,right,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
     }
     Block {
       BlockType		      Reference
@@ -1298,51 +1191,12 @@ Model {
       SampleTime	      "1"
     }
     Block {
-      BlockType		      Constant
-      Name		      "default_vacc_control"
-      SID		      77
-      Position		      [115, 73, 165, 87]
-      Value		      "0"
-      OutDataType	      "sfix(16)"
-      OutScaling	      "2^0"
-      SampleTime	      "1"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "delay3"
-      SID		      98
-      Ports		      [1, 1]
-      Position		      [390, 218, 440, 232]
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Delay"
-      SourceType	      "Xilinx Delay Block"
-      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-      en		      off
-      latency		      "1"
-      dbl_ovrd		      off
-      reg_retiming	      off
-      xl_use_area	      off
-      xl_area		      "[0,0,0,0,0,0,0]"
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,543,392"
-      block_type	      "delay"
-      block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,07b98262,right,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
       BlockType		      Reference
       Name		      "sync_gen2"
       SID		      83
       Ports		      [1, 1]
-      Position		      [390, 135, 440, 185]
-      LibraryVersion	      "1.559"
+      Position		      [390, 85, 440, 135]
+      LibraryVersion	      "1.570"
       UserDataPersistent      on
       UserData		      "DataTag1"
       SourceBlock	      "isi_correlator_lib/sync_gen2"
@@ -1361,8 +1215,8 @@ Model {
       Name		      "tvg"
       SID		      84
       Ports		      [1, 2]
-      Position		      [390, 262, 440, 313]
-      LibraryVersion	      "1.559"
+      Position		      [390, 212, 440, 263]
+      LibraryVersion	      "1.570"
       SourceBlock	      "isi_correlator_lib/tvg"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
@@ -1377,12 +1231,12 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "vacc"
-      SID		      87
-      Ports		      [12, 1]
-      Position		      [660, 15, 760, 255]
-      LibraryVersion	      "1.558"
-      SourceBlock	      "isi_correlator_lib/vacc"
+      Name		      "vacc2"
+      SID		      100
+      Ports		      [11]
+      Position		      [660, 15, 760, 235]
+      LibraryVersion	      "1.570"
+      SourceBlock	      "isi_correlator_lib/vacc2"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
@@ -1395,60 +1249,7 @@ Model {
       vector_length	      "8"
       out_bit_width	      "27"
       out_bin_point	      "4"
-      mux_latency	      "2"
-      logic_latency	      "2"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "vacc_control"
-      SID		      88
-      Tag		      "xps:sw_reg"
-      Ports		      [1, 1]
-      Position		      [190, 73, 290, 87]
-      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-      LibraryVersion	      "1.419"
-      SourceBlock	      "xps_library/software register"
-      SourceType	      ""
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      io_dir		      "From Processor"
-      arith_type	      "Unsigned"
-      bitwidth		      "32"
-      bin_pt		      "0"
-      sample_period	      "1"
-      gw_name		      "test_vacc_vacc_control_user_data_out"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "vacc_status"
-      SID		      89
-      Tag		      "xps:sw_reg"
-      Ports		      [1, 1]
-      Position		      [190, 103, 290, 117]
-      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-      LibraryVersion	      "1.419"
-      SourceBlock	      "xps_library/software register"
-      SourceType	      ""
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      io_dir		      "To Processor"
-      arith_type	      "Unsigned"
-      bitwidth		      "32"
-      bin_pt		      "0"
-      sample_period	      "1"
-      gw_name		      "test_vacc_vacc_status_user_data_in"
+      fanin_latency	      "3"
     }
     Line {
       SrcBlock		      "control20"
@@ -1539,60 +1340,6 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "From18"
-      SrcPort		      1
-      DstBlock		      "vacc"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "From19"
-      SrcPort		      1
-      DstBlock		      "vacc"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "From20"
-      SrcPort		      1
-      DstBlock		      "vacc"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "From21"
-      SrcPort		      1
-      DstBlock		      "vacc"
-      DstPort		      5
-    }
-    Line {
-      SrcBlock		      "From22"
-      SrcPort		      1
-      DstBlock		      "vacc"
-      DstPort		      6
-    }
-    Line {
-      SrcBlock		      "From23"
-      SrcPort		      1
-      DstBlock		      "vacc"
-      DstPort		      7
-    }
-    Line {
-      SrcBlock		      "From24"
-      SrcPort		      1
-      DstBlock		      "vacc"
-      DstPort		      8
-    }
-    Line {
-      SrcBlock		      "From25"
-      SrcPort		      1
-      DstBlock		      "vacc"
-      DstPort		      9
-    }
-    Line {
-      SrcBlock		      "From26"
-      SrcPort		      1
-      DstBlock		      "vacc"
-      DstPort		      10
-    }
-    Line {
       SrcBlock		      "From67"
       SrcPort		      1
       DstBlock		      "armed_trig"
@@ -1629,76 +1376,76 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "From17"
-      SrcPort		      1
-      DstBlock		      "vacc"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "control1"
-      SrcPort		      1
-      DstBlock		      "Delay4"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Delay4"
-      SrcPort		      1
-      DstBlock		      "Goto14"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "vacc"
-      SrcPort		      1
-      DstBlock		      "Goto15"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "vacc_status"
-      SrcPort		      1
-      DstBlock		      "TerminatorY1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From32"
-      SrcPort		      1
-      DstBlock		      "vacc_status"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "default_vacc_control"
-      SrcPort		      1
-      DstBlock		      "vacc_control"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "vacc_control"
-      SrcPort		      1
-      DstBlock		      "control1"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "armed_trig"
       SrcPort		      2
-      DstBlock		      "delay3"
+      DstBlock		      "Terminator"
       DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From17"
+      SrcPort		      1
+      DstBlock		      "vacc2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From18"
+      SrcPort		      1
+      DstBlock		      "vacc2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From19"
+      SrcPort		      1
+      DstBlock		      "vacc2"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "From20"
+      SrcPort		      1
+      DstBlock		      "vacc2"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "From21"
+      SrcPort		      1
+      DstBlock		      "vacc2"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "From22"
+      SrcPort		      1
+      DstBlock		      "vacc2"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "From23"
+      SrcPort		      1
+      DstBlock		      "vacc2"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "From24"
+      SrcPort		      1
+      DstBlock		      "vacc2"
+      DstPort		      8
+    }
+    Line {
+      SrcBlock		      "From25"
+      SrcPort		      1
+      DstBlock		      "vacc2"
+      DstPort		      9
+    }
+    Line {
+      SrcBlock		      "From26"
+      SrcPort		      1
+      DstBlock		      "vacc2"
+      DstPort		      10
     }
     Line {
       SrcBlock		      "From30"
       SrcPort		      1
-      DstBlock		      "vacc"
+      DstBlock		      "vacc2"
       DstPort		      11
-    }
-    Line {
-      SrcBlock		      "From1"
-      SrcPort		      1
-      DstBlock		      "vacc"
-      DstPort		      12
-    }
-    Line {
-      SrcBlock		      "delay3"
-      SrcPort		      1
-      DstBlock		      "Goto1"
-      DstPort		      1
     }
   }
 }
