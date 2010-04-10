@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.53"
+    ComputedModelVersion    "1.74"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Apr  7 00:10:44 2010"
-  RTWModifiedTimeStamp	  192499835
-  ModelVersionFormat	  "1.%<AutoIncrement:53>"
+  LastModifiedDate	  "Fri Apr  9 19:25:23 2010"
+  RTWModifiedTimeStamp	  192741913
+  ModelVersionFormat	  "1.%<AutoIncrement:74>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -110,7 +110,7 @@ Model {
 	  $ObjectID		  2
 	  Version		  "1.6.0"
 	  StartTime		  "0"
-	  StopTime		  "1500"
+	  StopTime		  "5000"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -521,7 +521,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition    " [ 523, 152, 1423, 840 ] "
+      ConfigPrmDlgPosition    " [ 528, 176, 1458, 951 ] "
     }
     PropName		    "ConfigurationSets"
   }
@@ -592,7 +592,7 @@ Model {
   }
   System {
     Name		    "test_vacc"
-    Location		    [5, 77, 788, 369]
+    Location		    [632, 87, 1415, 379]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -606,7 +606,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    102
+    SIDHighWatermark	    118
     Block {
       BlockType		      Reference
       Name		      " System Generator"
@@ -657,6 +657,286 @@ Model {
       ".86]);\npatch([12 4 16 4 12 25 29 33 47 36 25 17 29 17 25 36 47 33 29 25 12 ],[5 13 25 37 45 45 41 45 45 34 45 3"
       "7 25 13 5 16 5 5 9 5 5 ],[0.6 0.2 0.25]);\nplot([0 51 51 0 0 ],[0 0 50 50 0 ]);\nfprintf('','COMMENT: end icon g"
       "raphics');\nfprintf('','COMMENT: begin icon text');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant1"
+      SID		      104
+      Ports		      [0, 1]
+      Position		      [575, 98, 625, 112]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Constant"
+      SourceType	      "Xilinx Constant Block Block"
+      arith_type	      "Signed (2's comp)"
+      const		      "0"
+      n_bits		      "32"
+      bin_pt		      "0"
+      explicit_period	      on
+      period		      "1"
+      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
+      equ		      "P=C"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "-1,-1,-1,-1"
+      block_type	      "constant"
+      block_version	      "11.4"
+      sg_icon_stat	      "50,14,0,1,white,blue,0,bf4ddd8b,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
+      sg_list_contents	      "{'table'=>{'carry'=>'popup(0|1|CIN|~SIGN(P or PCIN)|~SIGN(A*B or A:B)|~SIGND(A*B or A:B)"
+      ")','inp1'=>'popup(0|P|A:B|A*B|C|P+C|A:B+C)','inp2'=>'popup(0|PCIN|P|C|PCIN>>17|P>>17)','opselect'=>'popup(C + A*"
+      "B|PCIN + A*B|P + A*B|A * B|C + A:B|C - A:B|C|Custom)','userSelections'=>{'carry'=>'CIN','inp1'=>'P','inp2'=>'PCI"
+      "N>>17','opselect'=>'C'}}}"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant2"
+      SID		      105
+      Ports		      [0, 1]
+      Position		      [575, 118, 625, 132]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Constant"
+      SourceType	      "Xilinx Constant Block Block"
+      arith_type	      "Signed (2's comp)"
+      const		      "0"
+      n_bits		      "32"
+      bin_pt		      "0"
+      explicit_period	      on
+      period		      "1"
+      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
+      equ		      "P=C"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "-1,-1,-1,-1"
+      block_type	      "constant"
+      block_version	      "11.4"
+      sg_icon_stat	      "50,14,0,1,white,blue,0,bf4ddd8b,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
+      sg_list_contents	      "{'table'=>{'carry'=>'popup(0|1|CIN|~SIGN(P or PCIN)|~SIGN(A*B or A:B)|~SIGND(A*B or A:B)"
+      ")','inp1'=>'popup(0|P|A:B|A*B|C|P+C|A:B+C)','inp2'=>'popup(0|PCIN|P|C|PCIN>>17|P>>17)','opselect'=>'popup(C + A*"
+      "B|PCIN + A*B|P + A*B|A * B|C + A:B|C - A:B|C|Custom)','userSelections'=>{'carry'=>'CIN','inp1'=>'P','inp2'=>'PCI"
+      "N>>17','opselect'=>'C'}}}"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant3"
+      SID		      103
+      Ports		      [0, 1]
+      Position		      [575, 58, 625, 72]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Constant"
+      SourceType	      "Xilinx Constant Block Block"
+      arith_type	      "Signed (2's comp)"
+      const		      "0"
+      n_bits		      "32"
+      bin_pt		      "0"
+      explicit_period	      on
+      period		      "1"
+      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
+      equ		      "P=C"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "-1,-1,-1,-1"
+      block_type	      "constant"
+      block_version	      "11.4"
+      sg_icon_stat	      "50,14,0,1,white,blue,0,bf4ddd8b,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
+      sg_list_contents	      "{'table'=>{'carry'=>'popup(0|1|CIN|~SIGN(P or PCIN)|~SIGN(A*B or A:B)|~SIGND(A*B or A:B)"
+      ")','inp1'=>'popup(0|P|A:B|A*B|C|P+C|A:B+C)','inp2'=>'popup(0|PCIN|P|C|PCIN>>17|P>>17)','opselect'=>'popup(C + A*"
+      "B|PCIN + A*B|P + A*B|A * B|C + A:B|C - A:B|C|Custom)','userSelections'=>{'carry'=>'CIN','inp1'=>'P','inp2'=>'PCI"
+      "N>>17','opselect'=>'C'}}}"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant4"
+      SID		      106
+      Ports		      [0, 1]
+      Position		      [575, 138, 625, 152]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Constant"
+      SourceType	      "Xilinx Constant Block Block"
+      arith_type	      "Signed (2's comp)"
+      const		      "0"
+      n_bits		      "32"
+      bin_pt		      "0"
+      explicit_period	      on
+      period		      "1"
+      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
+      equ		      "P=C"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "-1,-1,-1,-1"
+      block_type	      "constant"
+      block_version	      "11.4"
+      sg_icon_stat	      "50,14,0,1,white,blue,0,bf4ddd8b,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
+      sg_list_contents	      "{'table'=>{'carry'=>'popup(0|1|CIN|~SIGN(P or PCIN)|~SIGN(A*B or A:B)|~SIGND(A*B or A:B)"
+      ")','inp1'=>'popup(0|P|A:B|A*B|C|P+C|A:B+C)','inp2'=>'popup(0|PCIN|P|C|PCIN>>17|P>>17)','opselect'=>'popup(C + A*"
+      "B|PCIN + A*B|P + A*B|A * B|C + A:B|C - A:B|C|Custom)','userSelections'=>{'carry'=>'CIN','inp1'=>'P','inp2'=>'PCI"
+      "N>>17','opselect'=>'C'}}}"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant5"
+      SID		      107
+      Ports		      [0, 1]
+      Position		      [575, 158, 625, 172]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Constant"
+      SourceType	      "Xilinx Constant Block Block"
+      arith_type	      "Signed (2's comp)"
+      const		      "0"
+      n_bits		      "32"
+      bin_pt		      "0"
+      explicit_period	      on
+      period		      "1"
+      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
+      equ		      "P=C"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "-1,-1,-1,-1"
+      block_type	      "constant"
+      block_version	      "11.4"
+      sg_icon_stat	      "50,14,0,1,white,blue,0,bf4ddd8b,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
+      sg_list_contents	      "{'table'=>{'carry'=>'popup(0|1|CIN|~SIGN(P or PCIN)|~SIGN(A*B or A:B)|~SIGND(A*B or A:B)"
+      ")','inp1'=>'popup(0|P|A:B|A*B|C|P+C|A:B+C)','inp2'=>'popup(0|PCIN|P|C|PCIN>>17|P>>17)','opselect'=>'popup(C + A*"
+      "B|PCIN + A*B|P + A*B|A * B|C + A:B|C - A:B|C|Custom)','userSelections'=>{'carry'=>'CIN','inp1'=>'P','inp2'=>'PCI"
+      "N>>17','opselect'=>'C'}}}"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant6"
+      SID		      108
+      Ports		      [0, 1]
+      Position		      [575, 178, 625, 192]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Constant"
+      SourceType	      "Xilinx Constant Block Block"
+      arith_type	      "Signed (2's comp)"
+      const		      "0"
+      n_bits		      "32"
+      bin_pt		      "0"
+      explicit_period	      on
+      period		      "1"
+      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
+      equ		      "P=C"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "-1,-1,-1,-1"
+      block_type	      "constant"
+      block_version	      "11.4"
+      sg_icon_stat	      "50,14,0,1,white,blue,0,bf4ddd8b,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
+      sg_list_contents	      "{'table'=>{'carry'=>'popup(0|1|CIN|~SIGN(P or PCIN)|~SIGN(A*B or A:B)|~SIGND(A*B or A:B)"
+      ")','inp1'=>'popup(0|P|A:B|A*B|C|P+C|A:B+C)','inp2'=>'popup(0|PCIN|P|C|PCIN>>17|P>>17)','opselect'=>'popup(C + A*"
+      "B|PCIN + A*B|P + A*B|A * B|C + A:B|C - A:B|C|Custom)','userSelections'=>{'carry'=>'CIN','inp1'=>'P','inp2'=>'PCI"
+      "N>>17','opselect'=>'C'}}}"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant7"
+      SID		      109
+      Ports		      [0, 1]
+      Position		      [575, 198, 625, 212]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Constant"
+      SourceType	      "Xilinx Constant Block Block"
+      arith_type	      "Signed (2's comp)"
+      const		      "0"
+      n_bits		      "32"
+      bin_pt		      "0"
+      explicit_period	      on
+      period		      "1"
+      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
+      equ		      "P=C"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "-1,-1,-1,-1"
+      block_type	      "constant"
+      block_version	      "11.4"
+      sg_icon_stat	      "50,14,0,1,white,blue,0,bf4ddd8b,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
+      sg_list_contents	      "{'table'=>{'carry'=>'popup(0|1|CIN|~SIGN(P or PCIN)|~SIGN(A*B or A:B)|~SIGND(A*B or A:B)"
+      ")','inp1'=>'popup(0|P|A:B|A*B|C|P+C|A:B+C)','inp2'=>'popup(0|PCIN|P|C|PCIN>>17|P>>17)','opselect'=>'popup(C + A*"
+      "B|PCIN + A*B|P + A*B|A * B|C + A:B|C - A:B|C|Custom)','userSelections'=>{'carry'=>'CIN','inp1'=>'P','inp2'=>'PCI"
+      "N>>17','opselect'=>'C'}}}"
     }
     Block {
       BlockType		      Reference
@@ -794,72 +1074,9 @@ Model {
     }
     Block {
       BlockType		      From
-      Name		      "From19"
-      SID		      12
-      Position		      [575, 58, 635, 72]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "data"
-    }
-    Block {
-      BlockType		      From
       Name		      "From20"
       SID		      14
       Position		      [575, 78, 635, 92]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "data"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From21"
-      SID		      15
-      Position		      [575, 98, 635, 112]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "data"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From22"
-      SID		      16
-      Position		      [575, 118, 635, 132]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "data"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From23"
-      SID		      17
-      Position		      [575, 138, 635, 152]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "data"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From24"
-      SID		      18
-      Position		      [575, 158, 635, 172]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "data"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From25"
-      SID		      19
-      Position		      [575, 178, 635, 192]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "data"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From26"
-      SID		      20
-      Position		      [575, 198, 635, 212]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "data"
@@ -921,7 +1138,7 @@ Model {
     Block {
       BlockType		      Goto
       Name		      "Goto113"
-      SID		      43
+      SID		      117
       Position		      [465, 43, 525, 57]
       ShowName		      off
       GotoTag		      "reset"
@@ -1010,7 +1227,7 @@ Model {
       SID		      65
       Ports		      [2, 2]
       Position		      [315, 137, 365, 188]
-      LibraryVersion	      "1.570"
+      LibraryVersion	      "1.573"
       SourceBlock	      "isi_correlator_lib/armed_trig"
       SourceType	      "SubSystem"
       ShowPortLabels	      "FromPortIcon"
@@ -1196,7 +1413,7 @@ Model {
       SID		      83
       Ports		      [1, 1]
       Position		      [390, 85, 440, 135]
-      LibraryVersion	      "1.570"
+      LibraryVersion	      "1.573"
       UserDataPersistent      on
       UserData		      "DataTag1"
       SourceBlock	      "isi_correlator_lib/sync_gen2"
@@ -1216,7 +1433,7 @@ Model {
       SID		      84
       Ports		      [1, 2]
       Position		      [390, 212, 440, 263]
-      LibraryVersion	      "1.570"
+      LibraryVersion	      "1.573"
       SourceBlock	      "isi_correlator_lib/tvg"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
@@ -1235,7 +1452,7 @@ Model {
       SID		      100
       Ports		      [11]
       Position		      [660, 15, 760, 235]
-      LibraryVersion	      "1.570"
+      LibraryVersion	      "1.573"
       SourceBlock	      "isi_correlator_lib/vacc2"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
@@ -1306,12 +1523,6 @@ Model {
       SrcBlock		      "Delay1"
       SrcPort		      1
       DstBlock		      "Goto112"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Delay2"
-      SrcPort		      1
-      DstBlock		      "Goto113"
       DstPort		      1
     }
     Line {
@@ -1394,58 +1605,64 @@ Model {
       DstPort		      2
     }
     Line {
-      SrcBlock		      "From19"
-      SrcPort		      1
-      DstBlock		      "vacc2"
-      DstPort		      3
-    }
-    Line {
       SrcBlock		      "From20"
       SrcPort		      1
       DstBlock		      "vacc2"
       DstPort		      4
     }
     Line {
-      SrcBlock		      "From21"
+      SrcBlock		      "From30"
+      SrcPort		      1
+      DstBlock		      "vacc2"
+      DstPort		      11
+    }
+    Line {
+      SrcBlock		      "Constant3"
+      SrcPort		      1
+      DstBlock		      "vacc2"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Constant1"
       SrcPort		      1
       DstBlock		      "vacc2"
       DstPort		      5
     }
     Line {
-      SrcBlock		      "From22"
+      SrcBlock		      "Constant2"
       SrcPort		      1
       DstBlock		      "vacc2"
       DstPort		      6
     }
     Line {
-      SrcBlock		      "From23"
+      SrcBlock		      "Constant4"
       SrcPort		      1
       DstBlock		      "vacc2"
       DstPort		      7
     }
     Line {
-      SrcBlock		      "From24"
+      SrcBlock		      "Constant5"
       SrcPort		      1
       DstBlock		      "vacc2"
       DstPort		      8
     }
     Line {
-      SrcBlock		      "From25"
+      SrcBlock		      "Constant6"
       SrcPort		      1
       DstBlock		      "vacc2"
       DstPort		      9
     }
     Line {
-      SrcBlock		      "From26"
+      SrcBlock		      "Constant7"
       SrcPort		      1
       DstBlock		      "vacc2"
       DstPort		      10
     }
     Line {
-      SrcBlock		      "From30"
+      SrcBlock		      "Delay2"
       SrcPort		      1
-      DstBlock		      "vacc2"
-      DstPort		      11
+      DstBlock		      "Goto113"
+      DstPort		      1
     }
   }
 }

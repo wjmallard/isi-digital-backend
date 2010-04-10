@@ -13,28 +13,25 @@ R.progdev('test_vacc.bof')
 R.set_clock_freq(200)
 R.set_sync_period(.002)
 
-# Generate a test vector.
-tvg_data = np.ones(num_samples)
-tvg_data = tvg_data
-tvg_bstr = array_to_bytestring(tvg_data)
-R.write('tvg_bram', tvg_bstr)
-
 def get_vacc_addr():
 	x = R.read_int('vacc2_addr')
 	sync = x >> 12
 	addr = x & 0x0fff
 	print "sync %d (addr %d)" % (sync, addr)
 
-R.arm_sync()
-get_vacc_addr()
-R.send_sync()
-get_vacc_addr()
-get_vacc_addr()
-get_vacc_addr()
-get_vacc_addr()
-get_vacc_addr()
-get_vacc_addr()
-get_vacc_addr()
+R.reset()
 
-VACC = R._read_bram('vacc2_bram', 2016, offset=0)
+# Generate a test vector.
+#tvg_data = np.zeros(num_samples)
+#tvg_data[0] = 2
+#tvg_data[7] = 1
+#tvg_data = np.ones(num_samples)
+tvg_data = np.arange(num_samples)
+tvg_bstr = array_to_bytestring(tvg_data)
+R.write('tvg_bram', tvg_bstr)
+
+R.arm_sync()
+R.send_sync()
+
+VACC = R._read_bram('vacc2_bram', 4096, offset=0)
 
