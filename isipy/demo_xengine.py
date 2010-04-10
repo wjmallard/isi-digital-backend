@@ -8,6 +8,7 @@ __status__ = "Development"
 
 from libisidebug import *
 from libisitvg import *
+import numpy as np
 
 def run_test ():
 
@@ -24,13 +25,15 @@ def run_test ():
 	R.send_sync()
 
 	# Generate a test vector.
-	tvg_data = [0] * num_samples
-	tvg_data[7] = 1
+	tvg_data = np.zeros(num_samples)
+	tvg_data[0] = 1
 	# TODO: Make more useful test cases.
 	tvg_bstr = array_to_bytestring(tvg_data)
 	R.write('tvg_X_bram', tvg_bstr)
 	R.write('tvg_Y_bram', tvg_bstr)
 	R.write('tvg_Z_bram', tvg_bstr)
+
+	R.reset()
 
 	# Initiate capture.
 	R.acquire()
@@ -39,6 +42,9 @@ def run_test ():
 	(XX_r, YY_r, ZZ_r) = R.read_capt("capt_auto_raw", 3, num_samples)
 	(XY_r, YZ_r, ZX_r) = R.read_capt("capt_real_raw", 3, num_samples)
 	(XY_i, YZ_i, ZX_i) = R.read_capt("capt_imag_raw", 3, num_samples)
+
+	VACC = R._read_bram('vacc_bram', 4096, offset=0)
+	print VACC[0:72]
 
 	# Verify data.
 	status = (XX_r == YY_r == ZZ_r)

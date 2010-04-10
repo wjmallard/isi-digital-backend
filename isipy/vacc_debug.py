@@ -14,7 +14,7 @@ R.set_clock_freq(200)
 R.set_sync_period(.002)
 
 def get_vacc_addr():
-	x = R.read_int('vacc2_addr')
+	x = R.read_int('vacc_addr')
 	sync = x >> 12
 	addr = x & 0x0fff
 	print "sync %d (addr %d)" % (sync, addr)
@@ -33,5 +33,5 @@ R.write('tvg_bram', tvg_bstr)
 R.arm_sync()
 R.send_sync()
 
-VACC = R._read_bram('vacc2_bram', 4096, offset=0)
+VACC = R._read_bram('vacc_bram', 4096, offset=0)
 
