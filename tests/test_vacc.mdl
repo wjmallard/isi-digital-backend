@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.74"
+    ComputedModelVersion    "1.75"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Apr  9 19:25:23 2010"
-  RTWModifiedTimeStamp	  192741913
-  ModelVersionFormat	  "1.%<AutoIncrement:74>"
+  LastModifiedDate	  "Fri Apr  9 19:29:08 2010"
+  RTWModifiedTimeStamp	  192742145
+  ModelVersionFormat	  "1.%<AutoIncrement:75>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1227,7 +1227,7 @@ Model {
       SID		      65
       Ports		      [2, 2]
       Position		      [315, 137, 365, 188]
-      LibraryVersion	      "1.573"
+      LibraryVersion	      "1.575"
       SourceBlock	      "isi_correlator_lib/armed_trig"
       SourceType	      "SubSystem"
       ShowPortLabels	      "FromPortIcon"
@@ -1413,7 +1413,7 @@ Model {
       SID		      83
       Ports		      [1, 1]
       Position		      [390, 85, 440, 135]
-      LibraryVersion	      "1.573"
+      LibraryVersion	      "1.575"
       UserDataPersistent      on
       UserData		      "DataTag1"
       SourceBlock	      "isi_correlator_lib/sync_gen2"
@@ -1433,7 +1433,7 @@ Model {
       SID		      84
       Ports		      [1, 2]
       Position		      [390, 212, 440, 263]
-      LibraryVersion	      "1.573"
+      LibraryVersion	      "1.575"
       SourceBlock	      "isi_correlator_lib/tvg"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
@@ -1448,12 +1448,12 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "vacc2"
+      Name		      "vacc"
       SID		      100
       Ports		      [11]
       Position		      [660, 15, 760, 235]
-      LibraryVersion	      "1.573"
-      SourceBlock	      "isi_correlator_lib/vacc2"
+      LibraryVersion	      "1.575"
+      SourceBlock	      "isi_correlator_lib/vacc"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
@@ -1595,67 +1595,67 @@ Model {
     Line {
       SrcBlock		      "From17"
       SrcPort		      1
-      DstBlock		      "vacc2"
+      DstBlock		      "vacc"
       DstPort		      1
     }
     Line {
       SrcBlock		      "From18"
       SrcPort		      1
-      DstBlock		      "vacc2"
+      DstBlock		      "vacc"
       DstPort		      2
     }
     Line {
       SrcBlock		      "From20"
       SrcPort		      1
-      DstBlock		      "vacc2"
+      DstBlock		      "vacc"
       DstPort		      4
     }
     Line {
       SrcBlock		      "From30"
       SrcPort		      1
-      DstBlock		      "vacc2"
+      DstBlock		      "vacc"
       DstPort		      11
     }
     Line {
       SrcBlock		      "Constant3"
       SrcPort		      1
-      DstBlock		      "vacc2"
+      DstBlock		      "vacc"
       DstPort		      3
     }
     Line {
       SrcBlock		      "Constant1"
       SrcPort		      1
-      DstBlock		      "vacc2"
+      DstBlock		      "vacc"
       DstPort		      5
     }
     Line {
       SrcBlock		      "Constant2"
       SrcPort		      1
-      DstBlock		      "vacc2"
+      DstBlock		      "vacc"
       DstPort		      6
     }
     Line {
       SrcBlock		      "Constant4"
       SrcPort		      1
-      DstBlock		      "vacc2"
+      DstBlock		      "vacc"
       DstPort		      7
     }
     Line {
       SrcBlock		      "Constant5"
       SrcPort		      1
-      DstBlock		      "vacc2"
+      DstBlock		      "vacc"
       DstPort		      8
     }
     Line {
       SrcBlock		      "Constant6"
       SrcPort		      1
-      DstBlock		      "vacc2"
+      DstBlock		      "vacc"
       DstPort		      9
     }
     Line {
       SrcBlock		      "Constant7"
       SrcPort		      1
-      DstBlock		      "vacc2"
+      DstBlock		      "vacc"
       DstPort		      10
     }
     Line {
