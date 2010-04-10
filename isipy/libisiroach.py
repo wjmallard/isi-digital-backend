@@ -56,7 +56,7 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		else:
 			fmt = '>%sI'
 
-		bram_dump = self.read(bram_name, 4*read_len, offset=offset)
+		bram_dump = self.read(bram_name, 4*read_len, offset=4*offset)
 		bram_data = struct.unpack(fmt % read_len, bram_dump)
 		return bram_data
 
