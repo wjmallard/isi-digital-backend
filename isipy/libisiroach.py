@@ -28,7 +28,6 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		self._port = port
 		self._id = id
 		self._tv = None
-		time.sleep(.25) # NOTE: race condition!
 
 		self._clock_freq = 0 # MHz
 		self._sync_period = 0 # sec
@@ -119,21 +118,6 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		except RuntimeError:
 			print "Warning: Cannot load tvg on board %d." % (self._id)
 
-	def read_vacc (self, chan_group):
-		bram_name = "capt_%s_acc_%c_bram%d"
-		XX_auto = self._read_bram(bram_name % ("auto", chan_group, 0), 8)
-		YY_auto = self._read_bram(bram_name % ("auto", chan_group, 1), 8)
-		ZZ_auto = self._read_bram(bram_name % ("auto", chan_group, 2), 8)
-		XY_real = self._read_bram(bram_name % ("real", chan_group, 0), 8)
-		YZ_real = self._read_bram(bram_name % ("real", chan_group, 1), 8)
-		ZX_real = self._read_bram(bram_name % ("real", chan_group, 2), 8)
-		XY_imag = self._read_bram(bram_name % ("imag", chan_group, 0), 8)
-		YZ_imag = self._read_bram(bram_name % ("imag", chan_group, 1), 8)
-		ZX_imag = self._read_bram(bram_name % ("imag", chan_group, 2), 8)
-		return (XX_auto, YY_auto, ZZ_auto, \
-			XY_real, YZ_real, ZX_real, \
-			XY_imag, YZ_imag, ZX_imag)
-
 class IsiRoachFake(object):
 	"""
 	A fake ROACH board (for testing).
@@ -180,9 +164,4 @@ class IsiRoachFake(object):
 
 	def load_tvg (self, tv):
 		pass
-
-	def read_vacc (self, chan_group):
-		x = (1,1,1,1,1,1,1,1)
-		y = (x,x,x,x,x,x,x,x,x)
-		return y
 

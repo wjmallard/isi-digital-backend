@@ -7,8 +7,9 @@ __license__ = "GPL"
 __status__ = "Development"
 
 from libisiroach import *
+from libisivacc import *
 
-class IsiCorrelator(object):
+class IsiCorrelator (object):
 	"""
 	An abstraction of the three ROACH boards and their gateware.
 	"""
@@ -17,31 +18,26 @@ class IsiCorrelator(object):
 					hosts=('isi0', 'isi1', 'isi2'), \
 					ports=(7147, 7147, 7147)):
 		self._boards = []
-		self._hosts = hosts
-		self._ports = ports
+		self._vacc = None
 		self._num_chans = 64
 		self._update_delay = .1 # seconds
 
-		self._connect()
-
-	def _connect (self):
-		assert (len(self._hosts) == 3)
-		assert (len(self._ports) == 3)
-
 		for i in xrange(3):
 			new_board = None
-			if self._hosts[i] == 'fake':
+			if hosts[i] == 'fake':
 				new_board = IsiRoachFake(i)
 			else:
-				new_board = IsiRoachBoard(self._hosts[i], self._ports[i], i)
+				new_board = IsiRoachBoard(hosts[i], ports[i], i)
 			self._boards += [new_board]
 
+		self._vacc = IsiVacc("192.168.1.202")
+
 	def program (self, filename):
-		print "Programming boards ..."
-		for board in self._boards:
-			board.progdev(filename)
+		for i in xrange(3):
+			print "Programming board %d." % i
+			self._boards[i].progdev(filename)
+			self._boards[i].write_int('corr_id', i)
 		time.sleep(.25)
-		print "... done!"
 
 	def load_tvg (self, tvs):
 		for i in xrange(3):
@@ -91,42 +87,5 @@ class IsiCorrelator(object):
 		return self._num_chans
 
 	def get_data (self):
-		"""Read vacc data and permute it into a useful order."""
-		XA = self._boards[0].read_vacc('A')
-		XB = self._boards[0].read_vacc('B')
-		XC = self._boards[0].read_vacc('C')
-		YA = self._boards[1].read_vacc('A')
-		YB = self._boards[1].read_vacc('B')
-		YC = self._boards[1].read_vacc('C')
-		ZA = self._boards[2].read_vacc('A')
-		ZB = self._boards[2].read_vacc('B')
-
-		#
-		# Begin fucking magic.
-		#
-
-		# 3-D matrix transpose: (x,y,z)->(y,x,z)
-		a = itertools.izip(XA, XB, XC, YA, YB, YC, ZA, ZB)
-
-		# 3-D matrix transpose: (y,x,z)->(y,z,x)
-		b = [itertools.izip(*x) for x in a]
-
-		# 2-D matrix collapse: (y,z,x)->(y,z*x)
-		XX_auto = [x for y in b[0] for x in y]
-		YY_auto = [x for y in b[1] for x in y]
-		ZZ_auto = [x for y in b[2] for x in y]
-		XY_real = [x for y in b[3] for x in y]
-		YZ_real = [x for y in b[4] for x in y]
-		ZX_real = [x for y in b[5] for x in y]
-		XY_imag = [x for y in b[6] for x in y]
-		YZ_imag = [x for y in b[7] for x in y]
-		ZX_imag = [x for y in b[8] for x in y]
-
-		#
-		# End fucking magic.
-		#
-
-		return (XX_auto, YY_auto, ZZ_auto, \
-			XY_real, YZ_real, ZX_real, \
-			XY_imag, YZ_imag, ZX_imag)
+		self._vacc.get_next()
 
