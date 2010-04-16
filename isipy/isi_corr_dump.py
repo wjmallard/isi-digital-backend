@@ -24,5 +24,5 @@ I.arm_sync()
 print "Waiting for data ..."
 
 while True:
-	I.get_data()
+	x = I.get_data()
 

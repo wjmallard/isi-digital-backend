@@ -15,13 +15,15 @@ class IsiVacc (object):
 	BASE_PORT = 8880
 
 	def __init__ (self, addr):
-		self._socks = []
+		self._socks = [None]*9
+		self._last_pkt_id = -1
+		self._is_initialized = False
 
 		for i in xrange(9):
 			port = IsiVacc.BASE_PORT + i
 			sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 			sock.bind((addr, port))
-			self._socks += [sock]
+			self._socks[i] = sock
 
 	def _read_sock (self, id):
 		pkt = self._socks[id].recv(8192)
@@ -79,12 +81,52 @@ class IsiVacc (object):
 			XY_imag, YZ_imag, ZX_imag)
 
 	def get_next (self):
-		pkts = []
+		pids = [None]*8
+		dats = [None]*8
 
-		for i in xrange(8):
-			(board, group, pkt_id, pkt) = self._read_sock(i)
-			print "Board %d / Group %d / Packet %d" % (board, group, pkt_id)
-			pkts += [pkt]
+		if not self._is_initialized:
+			print "Synchronizing UDP streams."
 
-		return self._descramble(pkts)
+		expected_pkt_id = self._last_pkt_id + 1
+
+		cs = 0 # <-- current socket
+		while cs < 8:
+
+			pkt_id = pids[cs]
+
+			# Grab the next packet available on the curr socket,
+			# and use the packet id and data to fill the buffer.
+			# (if all is well, this should run exactly 8 times.)
+			if pkt_id == None:
+				(board, group, pkt_id, data) = self._read_sock(cs)
+				pids[cs] = pkt_id
+				dats[cs] = data
+
+			# If a stream is behind, drop old packets to catch up.
+			if pkt_id < expected_pkt_id:
+				while pkt_id < expected_pkt_id:
+					if self._is_initialized:
+						print "WARN: Got a packet late on socket %d." % cs
+					(board, group, pkt_id, data) = self._read_sock(cs)
+				pids[cs] = pkt_id
+				dats[cs] = data
+
+			# If a stream is ahead, update and start from the top.
+			if pkt_id > expected_pkt_id:
+				if self._is_initialized:
+					print "WARN: Got a packet early on socket %d." % cs
+				expected_pkt_id = pkt_id
+				cs = 0
+				continue
+
+			# Move on to the next socket.
+			cs += 1
+
+		self._last_pkt_id = expected_pkt_id
+
+		if not self._is_initialized:
+			print "Streams are synchronized!"
+			self._is_initialized = True
+
+		return self._descramble(dats)
 

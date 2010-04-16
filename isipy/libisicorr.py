@@ -20,7 +20,7 @@ class IsiCorrelator (object):
 		self._boards = []
 		self._vacc = None
 		self._num_chans = 64
-		self._update_delay = .1 # seconds
+		self._update_delay = .001 # seconds
 
 		for i in xrange(3):
 			new_board = None
@@ -87,5 +87,5 @@ class IsiCorrelator (object):
 		return self._num_chans
 
 	def get_data (self):
-		self._vacc.get_next()
+		return self._vacc.get_next()
 
