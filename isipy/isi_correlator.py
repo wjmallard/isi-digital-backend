@@ -13,12 +13,12 @@ hosts = ('isi0', 'isi2', 'isi3')
 ports = (7147, 7147, 7147)
 
 I = IsiCorrelator(hosts, ports)
-I.program('isi_correlator.bof')
+#I.program('isi_correlator.bof')
 
 D = IsiGui(I)
 
 I.set_clock_freq(200)
-I.set_sync_period(.25)
+I.set_sync_period(.002)
 I.set_fft_shift(0x7f)
 I.set_eq_coeff((2**7)<<8)
 
