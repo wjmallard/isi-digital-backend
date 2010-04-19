@@ -80,6 +80,7 @@ class IsiGui (gtk.Window):
 		return panel
 
 	def _quit_action (self, widget, *args):
+		self._isi_correlator.vacc_disconnect()
 		gtk.main_quit()
 		return True
 

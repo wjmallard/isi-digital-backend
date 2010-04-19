@@ -24,5 +24,7 @@ I.set_eq_coeff((2**7)<<8)
 
 I.arm_sync()
 
+I.vacc_connect("192.168.1.202")
+
 D.start()
 

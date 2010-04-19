@@ -18,7 +18,7 @@ class IsiCorrelator (object):
 		self._boards = [None]*3
 		self._vacc = None
 		self._num_chans = 64
-		self._update_delay = .001 # seconds
+		self._update_delay = .1 # seconds
 
 		for i in xrange(3):
 			new_board = None
