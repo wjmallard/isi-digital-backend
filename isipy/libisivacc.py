@@ -15,21 +15,14 @@ class IsiVacc (object):
 	BASE_PORT = 8880
 
 	def __init__ (self, addr):
-		self._socks = [None]*9
-		self._last_pkt_id = -1
-		self._is_initialized = False
+		self._sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+		self._sock.bind((addr, IsiVacc.BASE_PORT))
 
-		for i in xrange(9):
-			port = IsiVacc.BASE_PORT + i
-			sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-			sock.bind((addr, port))
-			self._socks[i] = sock
-
-	def _read_sock (self, id):
-		pkt = self._socks[id].recv(8192)
-		(board, group, pkt_id) = struct.unpack('!BBxxI', pkt[0:8])
+	def _read_sock (self):
+		pkt = self._sock.recv(8192)
+		(board, group, pktid) = struct.unpack('!BBxxI', pkt[0:8])
 		data = struct.unpack('!2016I', pkt[8:8072])
-		return (board, group, pkt_id, data)
+		return (board, group, pktid, data)
 
 	def _descramble (self, pkts):
 		assert (len(pkts) == 8)
