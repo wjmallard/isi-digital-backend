@@ -7,7 +7,6 @@ __license__ = "GPL"
 __status__ = "Development"
 
 from libisicorr import *
-import numpy as np
 
 hosts = ('isi0', 'isi2', 'isi3')
 ports = (7147, 7147, 7147)
