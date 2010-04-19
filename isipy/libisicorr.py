@@ -14,10 +14,8 @@ class IsiCorrelator (object):
 	An abstraction of the three ROACH boards and their gateware.
 	"""
 
-	def __init__ (self, \
-					hosts=('isi0', 'isi1', 'isi2'), \
-					ports=(7147, 7147, 7147)):
-		self._boards = []
+	def __init__ (self, hosts, ports=[7147]*3):
+		self._boards = [None]*3
 		self._vacc = None
 		self._num_chans = 64
 		self._update_delay = .001 # seconds
@@ -28,9 +26,7 @@ class IsiCorrelator (object):
 				new_board = IsiRoachFake(i)
 			else:
 				new_board = IsiRoachBoard(hosts[i], ports[i], i)
-			self._boards += [new_board]
-
-		self._vacc = IsiVacc("192.168.1.202")
+			self._boards[i] = new_board
 
 	def program (self, filename):
 		for i in xrange(3):
@@ -38,6 +34,9 @@ class IsiCorrelator (object):
 			self._boards[i].progdev(filename)
 			self._boards[i].write_int('corr_id', i)
 		time.sleep(.25)
+
+	def connect_vacc (self, host):
+		self._vacc = IsiVacc(host)
 
 	def load_tvg (self, tvs):
 		for i in xrange(3):
@@ -49,7 +48,11 @@ class IsiCorrelator (object):
 
 	def arm_sync (self):
 		for board in self._boards:
+			board.unarm_sync()
+		for board in self._boards:
 			board.arm_sync()
+		for board in self._boards:
+			board.unarm_sync()
 
 	def send_sync (self):
 		for board in self._boards:

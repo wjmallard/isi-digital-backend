@@ -63,9 +63,9 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		self._toggle_reset(IsiRoachBoard.FIFO_RESET)
 
 	def arm_sync (self):
-		self._unset_flag(IsiRoachBoard.ARM_RESET)
 		self._set_flag(IsiRoachBoard.ARM_RESET)
-		time.sleep(.1)
+
+	def unarm_sync (self):
 		self._unset_flag(IsiRoachBoard.ARM_RESET)
 
 	def send_sync (self):
