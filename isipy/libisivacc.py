@@ -9,17 +9,84 @@ __status__ = "Development"
 import itertools
 import socket
 import struct
+import threading
 
-class IsiVacc (object):
+import numpy as np
+
+class IsiVacc (threading.Thread):
 
 	BASE_PORT = 8880
 
 	def __init__ (self, addr):
+		threading.Thread.__init__(self)
+
+		self._addr = addr
 		self._sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-		self._sock.bind((addr, IsiVacc.BASE_PORT))
+		self._sock.settimeout(1)
+
+		self._num_pktid_bits = 20
+		self._buf_length = 8
+
+		num_groups = 8
+		group_size = 2048
+
+		self._ACCUM = np.zeros((self._buf_length, num_groups, group_size))
+		self._PKTID = np.arange(self._buf_length * num_groups).reshape((self._buf_length, num_groups))
+
+		self.not_killed = True
+
+	def run (self):
+		self._sock.bind((self._addr, IsiVacc.BASE_PORT))
+		print "Opened UDP socket."
+
+		lim_pktid = 1 << self._num_pktid_bits
+		max_pktid = 0
+
+		while self.not_killed:
+			try:
+				(board, group, pktid, accum) = self._read_sock()
+			except IsiVaccKilled:
+				continue
+
+			if group == 8:
+				continue
+
+			print "Board %d / Group %d / Pktid %d" % (board, group, pktid)
+			slot = pktid % self._buf_length
+
+			self._ACCUM[slot, group, 0:2016] = accum
+			self._PKTID[slot, group] = pktid
+
+			# handle full accumulations.
+			for i in xrange(self._buf_length):
+				s = (max_pktid + 1) % self._buf_length
+				if self._PKTID[s].ptp() == 0:
+					self.DO_STUFF(self._PKTID[s,0], self._ACCUM[s])
+					max_pktid = (max_pktid + 1) % lim_pktid
+					# Taint the row so that it doesn't get
+					# read again on a packet counter reset.
+					self._PKTID[s, 0] += 1
+				else:
+					break
+
+		print "Receive loop killed."
+
+		self._sock.close()
+		print "Closed UDP socket."
+
+	def DO_STUFF (self, pktid, accum):
+		print "Got a full packet with id %d!" % pktid
 
 	def _read_sock (self):
-		pkt = self._sock.recv(8192)
+		while True:
+			try:
+				pkt = self._sock.recv(8192)
+				break
+			except socket.timeout:
+				print "Waiting for UDP packets ..."
+				if not self.not_killed:
+					raise IsiVaccKilled
+
 		(board, group, pktid) = struct.unpack('!BBxxI', pkt[0:8])
 		data = struct.unpack('!2016I', pkt[8:8072])
 		return (board, group, pktid, data)
@@ -73,53 +140,7 @@ class IsiVacc (object):
 			XY_real, YZ_real, ZX_real, \
 			XY_imag, YZ_imag, ZX_imag)
 
-	def get_next (self):
-		pids = [None]*8
-		dats = [None]*8
-
-		if not self._is_initialized:
-			print "Synchronizing UDP streams."
-
-		expected_pkt_id = self._last_pkt_id + 1
-
-		cs = 0 # <-- current socket
-		while cs < 8:
-
-			pkt_id = pids[cs]
-
-			# Grab the next packet available on the curr socket,
-			# and use the packet id and data to fill the buffer.
-			# (if all is well, this should run exactly 8 times.)
-			if pkt_id == None:
-				(board, group, pkt_id, data) = self._read_sock(cs)
-				pids[cs] = pkt_id
-				dats[cs] = data
-
-			# If a stream is behind, drop old packets to catch up.
-			if pkt_id < expected_pkt_id:
-				while pkt_id < expected_pkt_id:
-					if self._is_initialized:
-						print "WARN: Got a packet late on socket %d." % cs
-					(board, group, pkt_id, data) = self._read_sock(cs)
-				pids[cs] = pkt_id
-				dats[cs] = data
-
-			# If a stream is ahead, update and start from the top.
-			if pkt_id > expected_pkt_id:
-				if self._is_initialized:
-					print "WARN: Got a packet early on socket %d." % cs
-				expected_pkt_id = pkt_id
-				cs = 0
-				continue
-
-			# Move on to the next socket.
-			cs += 1
-
-		self._last_pkt_id = expected_pkt_id
-
-		if not self._is_initialized:
-			print "Streams are synchronized!"
-			self._is_initialized = True
-
-		return self._descramble(dats)
+class IsiVaccKilled (Exception):
+	def __str__ (self):
+		return "IsiVacc killed."
 

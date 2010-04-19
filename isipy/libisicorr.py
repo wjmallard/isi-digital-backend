@@ -35,8 +35,13 @@ class IsiCorrelator (object):
 			self._boards[i].write_int('corr_id', i)
 		time.sleep(.25)
 
-	def connect_vacc (self, host):
+	def vacc_connect (self, host):
 		self._vacc = IsiVacc(host)
+		self._vacc.start()
+
+	def vacc_disconnect (self):
+		self._vacc.not_killed = False
+		self._vacc.join()
 
 	def load_tvg (self, tvs):
 		for i in xrange(3):
