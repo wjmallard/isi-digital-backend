@@ -7,20 +7,9 @@ __license__ = "GPL"
 __status__ = "Development"
 
 import itertools
-import math
-import random
 import struct
 
-def cplx_pwr (z):
-	"""Calculate the complex power of an array."""
-	p = [(a*a.conj()).real for a in z]
-	return p
-
-def fxn_sum (fxns):
-	"""Sum and normalize an arbitrary list of functions."""
-	c = 1./len(fxns)
-	f = [c*sum(a) for a in itertools.izip(*fxns)]
-	return f
+import numpy as np
 
 def interleave_tvg_bram (array, num_inputs, bram_size):
 	"""Interleave ARRAY for use in NUM_INPUTS brams of BRAM_SIZE length.
@@ -60,17 +49,18 @@ def scale_bram_list (iter_l, coeff=2**6):
 	"""Scale a list of arrays and convert it to a list of byte strings."""
 	data_l = []
 	for iter in iter_l:
-		A = scale_bram_data(iter, coeff)
-		B = array_to_bytestring(A)
+		A = scale_32bit(iter, coeff)
+		B = to_bytestring(A)
 		data_l += [B]
 	return data_l
 
-def scale_bram_data (array, coeff=2**6):
+def scale_32bit (array, coeff=2**6):
 	"""Scale an array of BRAM data."""
-	X = [int(coeff*x) for x in array]
-	return X
+	z = np.zeros(len(array), dtype=np.int32)
+	y = np.around(coeff*array, out=z)
+	return y
 
-def array_to_bytestring (array):
+def tobytestring (array):
 	"""Convert an array to a byte string."""
 	ba = [struct.pack('!i', x) for x in array]
 	bs = ''.join(ba)
@@ -78,63 +68,78 @@ def array_to_bytestring (array):
 
 def sine_wave (L, cycles=1, phase=0):
 	"""Build an L-point sine wave with range [-1,1)."""
-	x = xrange(L)
-	omega = 2*math.pi*cycles/L
-	phi = 2*math.pi*phase
-	y = [math.sin(omega*t+phi) for t in x]
+	x = np.arange(L)
+	omega = 2*np.pi*cycles/L
+	phi = 2*np.pi*phase
+	y = np.sin(omega*x+phi)
 	return y
 
 def square_wave (L):
-	"""Build an L-point square wave with range [-1,1)."""
-	s = int(L/2)
-	y = [1]*s + [-1]*s
+	"""Build an L-point square wave with range [-1,1]."""
+	x0 = np.zeros(L/2)
+	x1 = np.ones(L/2)
+	y = np.concatenate((x0, x1))
 	return y
 
 def square_fs (L, N):
 	"""Build an L-point square wave from N fourier coefficients."""
-	X = xrange(L)
-	C = [2*n+1 for n in xrange(N)]
-	c = 4./math.pi
-	f = [[(1./n)*math.sin(n*2*math.pi*x/L) for x in X] for n in C]
-	y = [c*sum(a) for a in itertools.izip(*f)]
+	X_ = np.arange(L)
+	C_ = 2*np.arange(N)+1
+	X = X_ * np.ones((N, L))
+	C = C_ * np.ones((L, N))
+	C = C.transpose()
+	f = (1./C)*np.sin(C*2*np.pi*X/L)
+	y = (4/np.pi) * np.sum(f, 0)
 	return y
 
 def triangle_wave (L):
 	"""Build an L-point triangle wave with range [-1,1)."""
-	s = int(L/4)
-	s0 = [float(x)/s for x in xrange(s)]
-	s1 = [1-float(x)/s for x in xrange(2*s)]
-	s2 = [x-1 for x in s0]
-	y = s0 + s1 + s2
+	s = L/4.
+	s0 = np.arange(s)/s
+	s1 = 1-np.arange(2*s)/s
+	s2 = s0-1
+	y = np.concatenate((s0, s1, s2))
 	return y
 
 def triangle_fs (L, N):
 	"""Build an L-point triangle wave from N fourier coefficients."""
-	X = xrange(L)
-	C = [2*n+1 for n in xrange(N)]
-	c = 8./(math.pi**2)
-	f = [[((-1)**((n-1)/2.))*(1/n**2.)*math.sin(n*2*math.pi*x/L) for x in X] for n in C]
-	y = [c*sum(a) for a in itertools.izip(*f)]
+	X_ = np.arange(L)
+	C_ = 2*np.arange(N)+1
+	X = X_ * np.ones((N, L))
+	C = C_ * np.ones((L, N))
+	C = C.transpose()
+	f = ((-1)**((C-1)/2.))*(1./C**2)*np.sin(C*2*np.pi*X/L)
+	y = (8./(np.pi**2)) * np.sum(f, 0)
 	return y
 
 def sawtooth_wave (L):
 	"""Build an L-point sawtooth wave with range [-1,1)."""
-	y = [(2.*x/L)-1 for x in xrange(L)]
+	y = (2./L)*np.arange(L)-1
 	return y
 
 def sawtooth_fs (L, N):
 	"""Build an L-point sawtooth wave from N fourier coefficients."""
-	X = xrange(L)
-	C = [n+1 for n in xrange(N)]
-	c = -2./math.pi
-	f = [[(1./n)*math.sin(n*2*math.pi*x/L) for x in X] for n in C]
-	y = [c*sum(a) for a in itertools.izip(*f)]
+	X_ = np.arange(L)
+	C_ = np.arange(N)+1
+	X = X_ * np.ones((N, L))
+	C = C_ * np.ones((L, N))
+	C = C.transpose()
+	f = (1./C)*np.sin(C*2*np.pi*X/L)
+	y = (-2/np.pi) * np.sum(f, 0)
 	return y
 
 def random_noise (L, seed=None):
 	"""Build an L-point random array with range [-1,1)."""
-	random.seed(seed)
-	y = [2*random.random()-1 for x in xrange(L)]
+	np.random.seed(seed)
+	y = 2*np.random.random(L)-1
+	return y
+
+def comb (L, period=None, offset=0):
+	"""Build an L-point comb."""
+	y = np.zeros(L)
+	if period == None:
+		period = L
+	y[offset::period] = 1
 	return y
 
 def main ():
@@ -149,24 +154,17 @@ def main ():
 	f5 = sawtooth_wave(L)
 	f6 = sawtooth_fs(L, N)
 	f7 = random_noise(L, seed=1234)
+	f8 = comb(L, period=L/2)
 
-	s0 = scaleByteString(f0)
-	s1 = scaleByteString(f1)
-	s2 = scaleByteString(f2)
-	s3 = scaleByteString(f3)
-	s4 = scaleByteString(f4)
-	s5 = scaleByteString(f5)
-	s6 = scaleByteString(f6)
-	s7 = scaleByteString(f7)
-
-	print "Sine:            %s" % (scaleArray(f0))
-	print "Square (pure):   %s" % (scaleArray(f1))
-	print "Square (fs):     %s" % (scaleArray(f2))
-	print "Triangle (pure): %s" % (scaleArray(f3))
-	print "Triangle (fs):   %s" % (scaleArray(f4))
-	print "Sawtooth (pure): %s" % (scaleArray(f5))
-	print "Sawtooth (fs):   %s" % (scaleArray(f6))
-	print "Random Noise:    %s" % (scaleArray(f7))
+	print "Sine:            %s" % (scale_32bit(f0))
+	print "Square (pure):   %s" % (scale_32bit(f1))
+	print "Square (fs):     %s" % (scale_32bit(f2))
+	print "Triangle (pure): %s" % (scale_32bit(f3))
+	print "Triangle (fs):   %s" % (scale_32bit(f4))
+	print "Sawtooth (pure): %s" % (scale_32bit(f5))
+	print "Sawtooth (fs):   %s" % (scale_32bit(f6))
+	print "Random Noise:    %s" % (scale_32bit(f7))
+	print "Comb:            %s" % (scale_32bit(f8))
 
 if __name__ == "__main__":
 	main()
