@@ -24,6 +24,7 @@ class IsiCorrelatorDebug (libisiroach.IsiRoachBoard):
 
 		self._data_l = []
 		self._figure = None
+		time.sleep(.1)
 
 	def gen_plot (self, data_l):
 		assert (type(data_l) == list)
