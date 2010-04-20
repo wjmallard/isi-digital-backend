@@ -7,20 +7,35 @@ __license__ = "GPL"
 __status__ = "Development"
 
 from libisidebug import *
+from libisitvg import *
+import time
 
 def run_test ():
 
 	num_samples = 1<<11
 
 	# Connect to board.
-	R = IsiCorrelatorDebug('localhost', 7147)
+	R = IsiCorrelatorDebug('isi0', 7147)
 	R.progdev('demo_interconnect.bof')
 
 	# Initialize board.
 	R.set_clock_freq(200)
 	R.set_sync_period(1)
+
+	# Generate a test vector.
+	tvg0_bstr = tobytestring(comb(num_samples))
+	R.write('tvg0_bram', tvg0_bstr)
+	R.write('tvg1_bram', tvg0_bstr)
+	R.write('tvg2_bram', tvg0_bstr)
+	R.write('tvg3_bram', tvg0_bstr)
+	R.write('tvg4_bram', tvg0_bstr)
+	R.write('tvg5_bram', tvg0_bstr)
+	R.write('tvg6_bram', tvg0_bstr)
+	R.write('tvg7_bram', tvg0_bstr)
+
+	# Sync boards.
 	R.arm_sync()
-	R.send_sync()
+	time.sleep(1)
 
 	# Initiate capture.
 	R.acquire()
