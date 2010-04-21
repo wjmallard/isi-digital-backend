@@ -35,6 +35,9 @@ class IsiVacc (threading.Thread):
 
 		self.not_killed = True
 
+		self.CNTR = 0
+		self.FSTEP = 1600/64.
+
 	def run (self):
 		self._sock.bind((self._addr, IsiVacc.BASE_PORT))
 		print "Opened UDP socket."
@@ -51,7 +54,7 @@ class IsiVacc (threading.Thread):
 			if group == 8:
 				continue
 
-			print "Board %d / Group %d / Pktid %d" % (board, group, pktid)
+			#print "Board %d / Group %d / Pktid %d" % (board, group, pktid)
 			slot = pktid % self._buf_length
 
 			self._ACCUM[slot, group, 0:2016] = accum
@@ -61,7 +64,7 @@ class IsiVacc (threading.Thread):
 			for i in xrange(self._buf_length):
 				s = (max_pktid + 1) % self._buf_length
 				if self._PKTID[s].ptp() == 0:
-					self.DO_STUFF(self._PKTID[s,0], self._ACCUM[s])
+					self.process_pkt(self._PKTID[s,0], self._ACCUM[s])
 					max_pktid = (max_pktid + 1) % lim_pktid
 					# Taint the row so that it doesn't get
 					# read again on a packet counter reset.
@@ -74,8 +77,24 @@ class IsiVacc (threading.Thread):
 		self._sock.close()
 		print "Closed UDP socket."
 
-	def DO_STUFF (self, pktid, accum):
-		print "Got a full packet with id %d!" % pktid
+	def process_pkt (self, pktid, accum):
+		#print "Got a full packet with id %d!" % pktid
+		data = self._descramble(accum)
+		self.plot_data(pktid, data)
+
+	def plot_data (self, pktid, data):
+		"""FOR DEBUG USE ONLY"""
+
+		self.CNTR += 1
+		if self.CNTR < 10:
+			return
+
+		self.CNTR = 0
+
+		plot = "\nPacket #%d:\n" % pktid
+		for i in xrange(64):
+			plot += "%4.0f MHz: %16d %16d %16d\n" % (i*self.FSTEP, data[0][i], data[1][i], data[2][i])
+		print plot,
 
 	def _read_sock (self):
 		while True:
