@@ -36,7 +36,7 @@ class IsiVacc (threading.Thread):
 		self.not_killed = True
 
 		self.CNTR = 0
-		self.FREQ = np.arange(64) * 1600/64.
+		self.FREQ = np.arange(64) * 1600/64
 
 	def run (self):
 		self._sock.bind((self._addr, IsiVacc.BASE_PORT))
@@ -113,47 +113,15 @@ class IsiVacc (threading.Thread):
 		return (board, group, pktid, data)
 
 	def _descramble (self, pkts):
-		assert (len(pkts) == 8)
-
-		# Group by 8s.
-
-		a0 = [iter(pkts[0])] * 8
-		a1 = [iter(pkts[1])] * 8
-		a2 = [iter(pkts[2])] * 8
-		a3 = [iter(pkts[3])] * 8
-		a4 = [iter(pkts[4])] * 8
-		a5 = [iter(pkts[5])] * 8
-		a6 = [iter(pkts[6])] * 8
-		a7 = [iter(pkts[7])] * 8
-
-		b0 = itertools.izip(*a0)
-		b1 = itertools.izip(*a1)
-		b2 = itertools.izip(*a2)
-		b3 = itertools.izip(*a3)
-		b4 = itertools.izip(*a4)
-		b5 = itertools.izip(*a5)
-		b6 = itertools.izip(*a6)
-		b7 = itertools.izip(*a7)
-
-		# Rotate.
-
-		c = itertools.izip(b0, b1, b2, b3, b4, b5, b6, b7)
-
-		# Flatten.
-
-		d = iter([itertools.chain(*x) for x in c])
-
-		# Listify.
-
-		XX_auto = list(d.next())
-		YY_auto = list(d.next())
-		ZZ_auto = list(d.next())
-		XY_real = list(d.next())
-		YZ_real = list(d.next())
-		ZX_real = list(d.next())
-		XY_imag = list(d.next())
-		YZ_imag = list(d.next())
-		ZX_imag = list(d.next())
+		XX_auto = pkts[0:8,  0: 8].transpose().flatten()
+		YY_auto = pkts[0:8,  8:16].transpose().flatten()
+		ZZ_auto = pkts[0:8, 16:24].transpose().flatten()
+		XY_real = pkts[0:8, 24:32].transpose().flatten()
+		YZ_real = pkts[0:8, 32:40].transpose().flatten()
+		ZX_real = pkts[0:8, 40:48].transpose().flatten()
+		XY_imag = pkts[0:8, 48:56].transpose().flatten()
+		YZ_imag = pkts[0:8, 56:64].transpose().flatten()
+		ZX_imag = pkts[0:8, 64:72].transpose().flatten()
 
 		# Ignore the rest for now.
 
