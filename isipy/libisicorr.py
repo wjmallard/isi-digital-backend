@@ -21,12 +21,9 @@ class IsiCorrelator (object):
 		self._update_delay = .1 # seconds
 
 		for i in xrange(3):
-			new_board = None
-			if hosts[i] == 'fake':
-				new_board = IsiRoachFake(i)
-			else:
-				new_board = IsiRoachBoard(hosts[i], ports[i], i)
-			self._boards[i] = new_board
+			self._boards[i] = IsiRoachBoard(hosts[i], ports[i], i)
+
+		time.sleep(1)
 
 	def program (self, filename):
 		for i in xrange(3):

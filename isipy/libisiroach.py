@@ -59,16 +59,53 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		bram_data = struct.unpack(fmt % read_len, bram_dump)
 		return bram_data
 
+	#
+	# BEGIN corr method overrides.
+	#
+
+	def progdev (self, filename):
+		if self._host == None:
+			return
+
+		super(IsiRoachBoard, self).progdev(filename)
+
+	def read_int (self, name):
+		if self._host == None:
+			return 0
+
+		return super(IsiRoachBoard, self).read_int(name)
+
+	def write_int (self, name, value):
+		if self._host == None:
+			return
+
+		super(IsiRoachBoard, self).write_int(name, value)
+
+	#
+	# END corr method overrides.
+	#
+
 	def reset (self):
+		if self._host == None:
+			return
+
 		self._toggle_reset(IsiRoachBoard.FIFO_RESET)
 
 	def arm_sync (self):
+		if self._host == None:
+			return
 		self._set_flag(IsiRoachBoard.ARM_RESET)
 
 	def unarm_sync (self):
+		if self._host == None:
+			return
+
 		self._unset_flag(IsiRoachBoard.ARM_RESET)
 
 	def send_sync (self):
+		if self._host == None:
+			return
+
 		self._unset_flag(IsiRoachBoard.FORCE_TRIG)
 		self.arm_sync()
 		self._set_flag(IsiRoachBoard.FORCE_TRIG)
@@ -76,15 +113,24 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		self._unset_flag(IsiRoachBoard.FORCE_TRIG)
 
 	def acquire (self):
+		if self._host == None:
+			return
+
 		self._set_flag(IsiRoachBoard.ACQUIRE)
 		time.sleep(self._sync_period)
 		self._unset_flag(IsiRoachBoard.ACQUIRE)
 
 	def set_clock_freq (self, freq=200):
+		if self._host == None:
+			return
+
 		assert (freq > 25)
 		self._clock_freq = freq
 
 	def set_sync_period (self, period=1):
+		if self._host == None:
+			return
+
 		if period > 0:
 			select = 1
 		else:
@@ -95,18 +141,30 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		self._sync_period = period
 
 	def set_fft_shift (self, shift):
+		if self._host == None:
+			return
+
 		self.write_int('fft_shift', shift)
 		self._fft_shift = shift
 
 	def set_eq_coeff (self, coeff):
+		if self._host == None:
+			return
+
 		self.write_int('eq_coeff', coeff)
 		self._eq_coeff = coeff
 
 	def get_status (self):
+		if self._host == None:
+			return
+
 		status = self.read_int('status')
 		return status
 
 	def load_tvg (self, tv):
+		if self._host == None:
+			return
+
 		assert (len(tv) == 4)
 
 		try:
@@ -117,51 +175,4 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 			self._tv = tv
 		except RuntimeError:
 			print "Warning: Cannot load tvg on board %d." % (self._id)
-
-class IsiRoachFake(object):
-	"""
-	A fake ROACH board (for testing).
-	"""
-
-	def __init__ (self, id=-1):
-		self._id = id
-
-	def read_int (self, name):
-		return 0
-
-	def write_int (self, name, value):
-		pass
-
-	def progdev (self, filename):
-		pass
-
-	def reset (self):
-		pass
-
-	def arm_sync (self):
-		pass
-
-	def send_sync (self):
-		pass
-
-	def acquire (self):
-		pass
-
-	def set_clock_freq (self, period):
-		pass
-
-	def set_sync_period (self, period):
-		pass
-
-	def set_fft_shift (self, shift):
-		pass
-
-	def set_eq_coeff (self, coeff):
-		pass
-
-	def get_status (self):
-		return 0
-
-	def load_tvg (self, tv):
-		pass
 

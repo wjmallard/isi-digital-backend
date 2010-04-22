@@ -8,11 +8,11 @@ __status__ = "Development"
 
 from libisicorr import *
 
-hosts = ('isi0', 'isi2', 'isi3')
+hosts = ('isi0', None, 'isi3')
 ports = (7147, 7147, 7147)
 
 I = IsiCorrelator(hosts, ports)
-#I.program('isi_correlator.bof')
+I.program('isi_correlator.bof')
 
 I.set_clock_freq(200)
 I.set_sync_period(.002)
