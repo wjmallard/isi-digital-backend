@@ -36,7 +36,7 @@ class IsiVacc (threading.Thread):
 		self.not_killed = True
 
 		self.CNTR = 0
-		self.FSTEP = 1600/64.
+		self.FREQ = np.arange(64) * 1600/64.
 
 	def run (self):
 		self._sock.bind((self._addr, IsiVacc.BASE_PORT))
@@ -86,14 +86,16 @@ class IsiVacc (threading.Thread):
 		"""FOR DEBUG USE ONLY"""
 
 		self.CNTR += 1
-		if self.CNTR < 10:
+		if self.CNTR < 20:
 			return
 
 		self.CNTR = 0
 
 		plot = "\nPacket #%d:\n" % pktid
 		for i in xrange(64):
-			plot += "%4.0f MHz: %16d %16d %16d\n" % (i*self.FSTEP, data[0][i], data[1][i], data[2][i])
+			plot += "%4.0f MHz: %16d %16d %16d\n" % (self.FREQ[i], data[0][i], data[1][i], data[2][i])
+#			plot += "%4.0f MHz: %16d %16d %16d\n" % (self.FREQ[i], data[3][i], data[5][i], data[7][i])
+#			plot += "%4.0f MHz: %16d %16d %16d\n" % (self.FREQ[i], data[4][i], data[6][i], data[8][i])
 		print plot,
 
 	def _read_sock (self):
