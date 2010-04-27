@@ -23,15 +23,14 @@ def run_test ():
 	R.set_sync_period(1)
 
 	# Generate a test vector.
-	tvg0_bstr = tobytestring(comb(num_samples))
-	R.write('tvg0_bram', tvg0_bstr)
-	R.write('tvg1_bram', tvg0_bstr)
-	R.write('tvg2_bram', tvg0_bstr)
-	R.write('tvg3_bram', tvg0_bstr)
-	R.write('tvg4_bram', tvg0_bstr)
-	R.write('tvg5_bram', tvg0_bstr)
-	R.write('tvg6_bram', tvg0_bstr)
-	R.write('tvg7_bram', tvg0_bstr)
+	R.write('tvg0_bram', tobytestring(counter(num_samples, period=256, offset=0, step=8)))
+	R.write('tvg1_bram', tobytestring(counter(num_samples, period=256, offset=1, step=8)))
+	R.write('tvg2_bram', tobytestring(counter(num_samples, period=256, offset=2, step=8)))
+	R.write('tvg3_bram', tobytestring(counter(num_samples, period=256, offset=3, step=8)))
+	R.write('tvg4_bram', tobytestring(counter(num_samples, period=256, offset=4, step=8)))
+	R.write('tvg5_bram', tobytestring(counter(num_samples, period=256, offset=5, step=8)))
+	R.write('tvg6_bram', tobytestring(counter(num_samples, period=256, offset=6, step=8)))
+	R.write('tvg7_bram', tobytestring(counter(num_samples, period=256, offset=7, step=8)))
 
 	# Sync boards.
 	R.arm_sync()

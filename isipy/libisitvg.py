@@ -142,6 +142,13 @@ def comb (L, period=None, offset=0):
 	y[offset::period] = 1
 	return y
 
+def counter (L, period=None, offset=0, step=1):
+	"""Build an L-point comb."""
+	y = np.arange(L) * step + offset
+	if period != None:
+		y %= period
+	return y
+
 def main ():
 	L = 8
 	N = 100
