@@ -30,6 +30,7 @@ class IsiCorrelator (object):
 			print "Programming board %d." % i
 			self._boards[i].progdev(filename)
 			self._boards[i].write_int('corr_id', i)
+			self._boards[i].reset()
 		time.sleep(.25)
 
 	def vacc_connect (self, host):

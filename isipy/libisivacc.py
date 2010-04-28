@@ -30,8 +30,8 @@ class IsiVacc (threading.Thread):
 		num_groups = 8
 		group_size = 2048
 
-		self._ACCUM = np.zeros((self._buf_length, num_groups, group_size))
-		self._PKTID = np.arange(self._buf_length * num_groups).reshape((self._buf_length, num_groups))
+		self._ACCUM = np.zeros((self._buf_length, num_groups, group_size), dtype=np.int32)
+		self._PKTID = np.arange(self._buf_length * num_groups, dtype=np.int32).reshape((self._buf_length, num_groups))
 
 		self.not_killed = True
 
@@ -60,7 +60,7 @@ class IsiVacc (threading.Thread):
 			self._ACCUM[slot, group, 0:2016] = accum
 			self._PKTID[slot, group] = pktid
 
-			# handle full accumulations.
+			# find full accumulations and process them.
 			for i in xrange(self._buf_length):
 				s = (max_pktid + 1) % self._buf_length
 				if self._PKTID[s].ptp() == 0:
@@ -93,7 +93,8 @@ class IsiVacc (threading.Thread):
 
 		plot = "\nPacket #%d:\n" % pktid
 		for i in xrange(64):
-			plot += "%4.0f MHz: %16d %16d %16d\n" % (self.FREQ[i], data[0][i], data[1][i], data[2][i])
+			plot += "%4.0f MHz: %12d %12d %12d %12d %12d %12d %12d %12d %12d\n" % (self.FREQ[i], data[0][i], data[1][i], data[2][i], data[3][i], data[5][i], data[7][i], data[4][i], data[6][i], data[8][i])
+#			plot += "%4.0f MHz: %16d %16d %16d\n" % (self.FREQ[i], data[0][i], data[1][i], data[2][i])
 #			plot += "%4.0f MHz: %16d %16d %16d\n" % (self.FREQ[i], data[3][i], data[5][i], data[7][i])
 #			plot += "%4.0f MHz: %16d %16d %16d\n" % (self.FREQ[i], data[4][i], data[6][i], data[8][i])
 		print plot,

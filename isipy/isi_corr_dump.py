@@ -8,7 +8,7 @@ __status__ = "Development"
 
 from libisicorr import *
 
-I = IsiCorrelator(('isi0', 'isi1', 'isi3'))
+I = IsiCorrelator(('isi0', 'isi1', 'isi2'))
 I.program('isi_correlator.bof')
 
 I.set_clock_freq(200)
