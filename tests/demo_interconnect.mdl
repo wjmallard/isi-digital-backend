@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.66"
+    ComputedModelVersion    "1.68"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 26 18:55:31 2010"
-  RTWModifiedTimeStamp	  194208918
-  ModelVersionFormat	  "1.%<AutoIncrement:66>"
+  LastModifiedDate	  "Tue Apr 27 12:39:37 2010"
+  RTWModifiedTimeStamp	  194272747
+  ModelVersionFormat	  "1.%<AutoIncrement:68>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -633,7 +633,7 @@ Model {
   }
   System {
     Name		    "demo_interconnect"
-    Location		    [28, 77, 1909, 703]
+    Location		    [34, 77, 1915, 703]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -647,7 +647,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    330
+    SIDHighWatermark	    424
     Block {
       BlockType		      Reference
       Name		      " System Generator"
@@ -702,9 +702,9 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Concat1"
-      SID		      2
+      SID		      380
       Ports		      [2, 1]
-      Position		      [1330, 368, 1380, 397]
+      Position		      [1425, 188, 1475, 217]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Concat"
@@ -731,7 +731,7 @@ Model {
       Name		      "Concat2"
       SID		      3
       Ports		      [5, 1]
-      Position		      [1165, 461, 1215, 539]
+      Position		      [2290, 301, 2340, 379]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Concat"
@@ -757,7 +757,7 @@ Model {
       Name		      "Concat3"
       SID		      4
       Ports		      [5, 1]
-      Position		      [1460, 461, 1510, 539]
+      Position		      [2130, 301, 2180, 379]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Concat"
@@ -780,10 +780,73 @@ Model {
     }
     Block {
       BlockType		      Reference
+      Name		      "Concat4"
+      SID		      381
+      Ports		      [2, 1]
+      Position		      [1425, 303, 1475, 332]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Concat"
+      SourceType	      "Xilinx Bus Concatenator Block"
+      infoedit		      "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary poin"
+      "t at zero."
+      num_inputs	      "2"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,328,272"
+      block_type	      "concat"
+      block_version	      "11.3"
+      sg_icon_stat	      "50,29,2,1,white,blue,0,97b7e8d2,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.34 0.24 0.38 0.24 0.34 0.5 0.54 0.58 0.74 0.62 0.5 0.4 0.54 0.4 0.5 0.62 0.74 0.58 0.54 0.5 0.34 ],"
+      "[0.103448 0.275862 0.517241 0.758621 0.931034 0.931034 0.862069 0.931034 0.931034 0.724138 0.931034 0.758621 0.5"
+      "17241 0.275862 0.103448 0.310345 0.103448 0.103448 0.172414 0.103448 0.103448 ],[0.98 0.96 0.92]);\nplot([0 1 1 "
+      "0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor("
+      "'black');port_label('input',1,'hi');\ncolor('black');port_label('input',2,'lo');\nfprintf('','COMMENT: end icon "
+      "text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant1"
+      SID		      383
+      Ports		      [0, 1]
+      Position		      [1350, 303, 1400, 317]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Constant"
+      SourceType	      "Xilinx Constant Block Block"
+      arith_type	      "Unsigned"
+      const		      "0"
+      n_bits		      "3"
+      bin_pt		      "0"
+      explicit_period	      on
+      period		      "1"
+      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
+      equ		      "P=C"
+      opselect		      "C"
+      inp2		      "PCIN>>17"
+      opr		      "+"
+      inp1		      "P"
+      carry		      "CIN"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,554,541"
+      block_type	      "constant"
+      block_version	      "10.1.1"
+      sg_icon_stat	      "50,14,0,1,white,blue,0,bf4ddd8b,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
       Name		      "Constant10"
       SID		      7
       Ports		      [0, 1]
-      Position		      [1080, 463, 1130, 477]
+      Position		      [2205, 303, 2255, 317]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Constant"
@@ -819,7 +882,7 @@ Model {
       Name		      "Constant11"
       SID		      8
       Ports		      [0, 1]
-      Position		      [1385, 463, 1435, 477]
+      Position		      [2055, 303, 2105, 317]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Constant"
@@ -853,9 +916,9 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Constant12"
-      SID		      9
+      SID		      384
       Ports		      [0, 1]
-      Position		      [1245, 368, 1295, 382]
+      Position		      [1350, 188, 1400, 202]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Constant"
@@ -927,7 +990,7 @@ Model {
       Name		      "Delay1"
       SID		      318
       Ports		      [1, 1]
-      Position		      [1385, 478, 1435, 492]
+      Position		      [2055, 318, 2105, 332]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -956,7 +1019,7 @@ Model {
       Name		      "Delay2"
       SID		      326
       Ports		      [1, 1]
-      Position		      [1385, 493, 1435, 507]
+      Position		      [2055, 333, 2105, 347]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -985,7 +1048,7 @@ Model {
       Name		      "Delay25"
       SID		      21
       Ports		      [1, 1]
-      Position		      [390, 58, 440, 72]
+      Position		      [390, 93, 440, 107]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -994,7 +1057,7 @@ Model {
       en		      off
       latency		      "3"
       dbl_ovrd		      off
-      reg_retiming	      off
+      reg_retiming	      on
       xl_use_area	      off
       xl_area		      "[0,0,0,0,0,0,0]"
       has_advanced_control    "0"
@@ -1014,7 +1077,7 @@ Model {
       Name		      "Delay26"
       SID		      22
       Ports		      [1, 1]
-      Position		      [390, 43, 440, 57]
+      Position		      [390, 78, 440, 92]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1023,7 +1086,7 @@ Model {
       en		      off
       latency		      "3"
       dbl_ovrd		      off
-      reg_retiming	      off
+      reg_retiming	      on
       xl_use_area	      off
       xl_area		      "[0,0,0,0,0,0,0]"
       has_advanced_control    "0"
@@ -1043,7 +1106,7 @@ Model {
       Name		      "Delay27"
       SID		      23
       Ports		      [1, 1]
-      Position		      [390, 28, 440, 42]
+      Position		      [390, 63, 440, 77]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1052,7 +1115,7 @@ Model {
       en		      off
       latency		      "3"
       dbl_ovrd		      off
-      reg_retiming	      off
+      reg_retiming	      on
       xl_use_area	      off
       xl_area		      "[0,0,0,0,0,0,0]"
       has_advanced_control    "0"
@@ -1072,7 +1135,7 @@ Model {
       Name		      "Delay28"
       SID		      24
       Ports		      [1, 1]
-      Position		      [390, 13, 440, 27]
+      Position		      [390, 48, 440, 62]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1081,7 +1144,7 @@ Model {
       en		      off
       latency		      "3"
       dbl_ovrd		      off
-      reg_retiming	      off
+      reg_retiming	      on
       xl_use_area	      off
       xl_area		      "[0,0,0,0,0,0,0]"
       has_advanced_control    "0"
@@ -1101,7 +1164,7 @@ Model {
       Name		      "Delay3"
       SID		      327
       Ports		      [1, 1]
-      Position		      [1385, 508, 1435, 522]
+      Position		      [2055, 348, 2105, 362]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1130,7 +1193,7 @@ Model {
       Name		      "Delay4"
       SID		      328
       Ports		      [1, 1]
-      Position		      [1385, 523, 1435, 537]
+      Position		      [2055, 363, 2105, 377]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1159,7 +1222,7 @@ Model {
       Name		      "Delay5"
       SID		      329
       Ports		      [1, 1]
-      Position		      [1460, 543, 1510, 557]
+      Position		      [2055, 408, 2105, 422]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1188,7 +1251,7 @@ Model {
       Name		      "Delay6"
       SID		      330
       Ports		      [1, 1]
-      Position		      [1460, 558, 1510, 572]
+      Position		      [2055, 423, 2105, 437]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1213,6 +1276,35 @@ Model {
       ";disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
     }
     Block {
+      BlockType		      Reference
+      Name		      "Delay7"
+      SID		      333
+      Ports		      [1, 1]
+      Position		      [390, 13, 440, 27]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Delay"
+      SourceType	      "Xilinx Delay Block"
+      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+      en		      off
+      latency		      "3"
+      dbl_ovrd		      off
+      reg_retiming	      on
+      xl_use_area	      off
+      xl_area		      "[0,0,0,0,0,0,0]"
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,348,255"
+      block_type	      "delay"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,83e6bb61,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";disp('z^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
       BlockType		      From
       Name		      "From1"
       SID		      267
@@ -1225,25 +1317,16 @@ Model {
       BlockType		      From
       Name		      "From10"
       SID		      33
-      Position		      [1815, 398, 1875, 412]
+      Position		      [2125, 478, 2185, 492]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "rx_dataY"
     }
     Block {
       BlockType		      From
-      Name		      "From100"
-      SID		      34
-      Position		      [1190, 248, 1250, 262]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "tx_valid"
-    }
-    Block {
-      BlockType		      From
       Name		      "From101"
       SID		      35
-      Position		      [1300, 523, 1360, 537]
+      Position		      [1970, 363, 2030, 377]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_sync"
@@ -1252,7 +1335,7 @@ Model {
       BlockType		      From
       Name		      "From102"
       SID		      36
-      Position		      [1300, 508, 1360, 522]
+      Position		      [1970, 348, 2030, 362]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "syncX"
@@ -1261,7 +1344,7 @@ Model {
       BlockType		      From
       Name		      "From103"
       SID		      37
-      Position		      [1300, 493, 1360, 507]
+      Position		      [1970, 333, 2030, 347]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "syncY"
@@ -1270,7 +1353,7 @@ Model {
       BlockType		      From
       Name		      "From104"
       SID		      38
-      Position		      [1300, 478, 1360, 492]
+      Position		      [1970, 318, 2030, 332]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "syncZ"
@@ -1279,7 +1362,7 @@ Model {
       BlockType		      From
       Name		      "From105"
       SID		      39
-      Position		      [1375, 543, 1435, 557]
+      Position		      [1970, 408, 2030, 422]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "acquire"
@@ -1288,7 +1371,7 @@ Model {
       BlockType		      From
       Name		      "From106"
       SID		      40
-      Position		      [1375, 558, 1435, 572]
+      Position		      [1970, 423, 2030, 437]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_sync"
@@ -1297,19 +1380,46 @@ Model {
       BlockType		      From
       Name		      "From11"
       SID		      41
-      Position		      [1815, 428, 1875, 442]
+      Position		      [2125, 508, 2185, 522]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "acquire"
     }
     Block {
       BlockType		      From
-      Name		      "From12"
-      SID		      313
-      Position		      [1490, 378, 1550, 392]
+      Name		      "From117"
+      SID		      386
+      Position		      [1265, 33, 1325, 47]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "raw_syncY"
+      GotoTag		      "tx_sync"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From118"
+      SID		      387
+      Position		      [1265, 63, 1325, 77]
+      ShowName		      off
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "tx_dataX"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From119"
+      SID		      388
+      Position		      [1265, 333, 1325, 347]
+      ShowName		      off
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "tx_valid"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From12"
+      SID		      389
+      Position		      [1265, 363, 1325, 377]
+      ShowName		      off
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "reset"
     }
     Block {
       BlockType		      From
@@ -1324,7 +1434,7 @@ Model {
       BlockType		      From
       Name		      "From130"
       SID		      44
-      Position		      [1815, 313, 1875, 327]
+      Position		      [1970, 493, 2030, 507]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_dataZ"
@@ -1333,7 +1443,7 @@ Model {
       BlockType		      From
       Name		      "From132"
       SID		      45
-      Position		      [1815, 343, 1875, 357]
+      Position		      [1970, 523, 2030, 537]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_sync"
@@ -1342,7 +1452,7 @@ Model {
       BlockType		      From
       Name		      "From139"
       SID		      46
-      Position		      [1815, 283, 1875, 297]
+      Position		      [1970, 463, 2030, 477]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_dataX"
@@ -1350,17 +1460,17 @@ Model {
     Block {
       BlockType		      From
       Name		      "From14"
-      SID		      47
-      Position		      [1245, 383, 1305, 397]
+      SID		      424
+      Position		      [2280, 213, 2340, 227]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "tx_sync"
+      GotoTag		      "corr_id"
     }
     Block {
       BlockType		      From
       Name		      "From140"
       SID		      48
-      Position		      [1815, 298, 1875, 312]
+      Position		      [1970, 478, 2030, 492]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_dataY"
@@ -1369,7 +1479,7 @@ Model {
       BlockType		      From
       Name		      "From141"
       SID		      49
-      Position		      [1815, 328, 1875, 342]
+      Position		      [1970, 508, 2030, 522]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "acquire"
@@ -1377,8 +1487,8 @@ Model {
     Block {
       BlockType		      From
       Name		      "From144"
-      SID		      50
-      Position		      [1190, 288, 1250, 302]
+      SID		      390
+      Position		      [1265, 293, 1325, 307]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_dataZ"
@@ -1386,56 +1496,11 @@ Model {
     Block {
       BlockType		      From
       Name		      "From145"
-      SID		      51
-      Position		      [1190, 173, 1250, 187]
+      SID		      391
+      Position		      [1265, 178, 1325, 192]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_dataY"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From146"
-      SID		      52
-      Position		      [1190, 213, 1250, 227]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "tx_valid"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From149"
-      SID		      53
-      Position		      [1190, 328, 1250, 342]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "tx_valid"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From15"
-      SID		      54
-      Position		      [1190, 193, 1250, 207]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "tx_oob"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From154"
-      SID		      55
-      Position		      [1190, 153, 1250, 167]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "reset"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From155"
-      SID		      56
-      Position		      [1190, 268, 1250, 282]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "reset"
     }
     Block {
       BlockType		      From
@@ -1450,7 +1515,7 @@ Model {
       BlockType		      From
       Name		      "From17"
       SID		      58
-      Position		      [920, 108, 980, 122]
+      Position		      [920, 93, 980, 107]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tvg3"
@@ -1459,7 +1524,7 @@ Model {
       BlockType		      From
       Name		      "From18"
       SID		      59
-      Position		      [920, 188, 980, 202]
+      Position		      [920, 173, 980, 187]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tvg7"
@@ -1468,7 +1533,7 @@ Model {
       BlockType		      From
       Name		      "From19"
       SID		      60
-      Position		      [920, 128, 980, 142]
+      Position		      [920, 113, 980, 127]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tvg4"
@@ -1477,7 +1542,7 @@ Model {
       BlockType		      From
       Name		      "From195"
       SID		      61
-      Position		      [1810, 513, 1870, 527]
+      Position		      [2280, 493, 2340, 507]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "xr_Z"
@@ -1486,7 +1551,7 @@ Model {
       BlockType		      From
       Name		      "From196"
       SID		      62
-      Position		      [1810, 543, 1870, 557]
+      Position		      [2280, 523, 2340, 537]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "xr_sync"
@@ -1495,7 +1560,7 @@ Model {
       BlockType		      From
       Name		      "From197"
       SID		      63
-      Position		      [1810, 483, 1870, 497]
+      Position		      [2280, 463, 2340, 477]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "xr_X"
@@ -1504,7 +1569,7 @@ Model {
       BlockType		      From
       Name		      "From198"
       SID		      64
-      Position		      [1810, 498, 1870, 512]
+      Position		      [2280, 478, 2340, 492]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "xr_Y"
@@ -1513,7 +1578,7 @@ Model {
       BlockType		      From
       Name		      "From199"
       SID		      65
-      Position		      [1810, 528, 1870, 542]
+      Position		      [2280, 508, 2340, 522]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "acquire"
@@ -1558,7 +1623,7 @@ Model {
       BlockType		      From
       Name		      "From23"
       SID		      70
-      Position		      [920, 148, 980, 162]
+      Position		      [920, 133, 980, 147]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tvg5"
@@ -1567,43 +1632,16 @@ Model {
       BlockType		      From
       Name		      "From24"
       SID		      71
-      Position		      [920, 168, 980, 182]
+      Position		      [920, 153, 980, 167]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tvg6"
     }
     Block {
       BlockType		      From
-      Name		      "From25"
-      SID		      72
-      Position		      [1190, 308, 1250, 322]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "tx_oob"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From26"
-      SID		      73
-      Position		      [1245, 408, 1305, 422]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "rx_oobY"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From27"
-      SID		      74
-      Position		      [1245, 423, 1305, 437]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "rx_oobZ"
-    }
-    Block {
-      BlockType		      From
       Name		      "From28"
       SID		      75
-      Position		      [1570, 33, 1630, 47]
+      Position		      [1960, 33, 2020, 47]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "syncX"
@@ -1612,7 +1650,7 @@ Model {
       BlockType		      From
       Name		      "From29"
       SID		      76
-      Position		      [1570, 78, 1630, 92]
+      Position		      [1960, 68, 2020, 82]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "rx_dataX"
@@ -1628,9 +1666,18 @@ Model {
     }
     Block {
       BlockType		      From
+      Name		      "From30"
+      SID		      339
+      Position		      [920, 198, 980, 212]
+      ShowName		      off
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "corr_id"
+    }
+    Block {
+      BlockType		      From
       Name		      "From31"
       SID		      79
-      Position		      [1570, 123, 1630, 137]
+      Position		      [1960, 103, 2020, 117]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "syncY"
@@ -1639,7 +1686,7 @@ Model {
       BlockType		      From
       Name		      "From32"
       SID		      80
-      Position		      [1570, 168, 1630, 182]
+      Position		      [1960, 138, 2020, 152]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "rx_dataY"
@@ -1648,7 +1695,7 @@ Model {
       BlockType		      From
       Name		      "From34"
       SID		      82
-      Position		      [1570, 213, 1630, 227]
+      Position		      [1960, 173, 2020, 187]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "syncZ"
@@ -1657,43 +1704,16 @@ Model {
       BlockType		      From
       Name		      "From35"
       SID		      83
-      Position		      [1570, 258, 1630, 272]
+      Position		      [1960, 208, 2020, 222]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "rx_dataZ"
     }
     Block {
       BlockType		      From
-      Name		      "From37"
-      SID		      314
-      Position		      [1490, 393, 1550, 407]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "rx_validY"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From38"
-      SID		      316
-      Position		      [1490, 408, 1550, 422]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "raw_syncZ"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From39"
-      SID		      317
-      Position		      [1490, 423, 1550, 437]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "rx_validZ"
-    }
-    Block {
-      BlockType		      From
       Name		      "From4"
       SID		      88
-      Position		      [1815, 413, 1875, 427]
+      Position		      [2125, 493, 2185, 507]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "rx_dataZ"
@@ -1702,7 +1722,7 @@ Model {
       BlockType		      From
       Name		      "From45"
       SID		      94
-      Position		      [1890, 193, 1950, 207]
+      Position		      [2280, 168, 2340, 182]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "xr_Z"
@@ -1711,7 +1731,7 @@ Model {
       BlockType		      From
       Name		      "From46"
       SID		      95
-      Position		      [920, 28, 980, 42]
+      Position		      [920, 13, 980, 27]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tvg_sync"
@@ -1720,7 +1740,7 @@ Model {
       BlockType		      From
       Name		      "From47"
       SID		      96
-      Position		      [1890, 93, 1950, 107]
+      Position		      [2280, 78, 2340, 92]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "xr_X"
@@ -1729,7 +1749,7 @@ Model {
       BlockType		      From
       Name		      "From48"
       SID		      97
-      Position		      [1890, 143, 1950, 157]
+      Position		      [2280, 123, 2340, 137]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "xr_Y"
@@ -1738,7 +1758,7 @@ Model {
       BlockType		      From
       Name		      "From49"
       SID		      98
-      Position		      [1890, 43, 1950, 57]
+      Position		      [2280, 33, 2340, 47]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "xr_sync"
@@ -1747,7 +1767,7 @@ Model {
       BlockType		      From
       Name		      "From5"
       SID		      99
-      Position		      [920, 48, 980, 62]
+      Position		      [920, 33, 980, 47]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tvg0"
@@ -1760,33 +1780,6 @@ Model {
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tvg2"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From53"
-      SID		      102
-      Position		      [1190, 28, 1250, 42]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "tx_sync"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From54"
-      SID		      103
-      Position		      [1190, 58, 1250, 72]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "tx_dataX"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From55"
-      SID		      104
-      Position		      [1190, 88, 1250, 102]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "tx_valid"
     }
     Block {
       BlockType		      From
@@ -1828,7 +1821,7 @@ Model {
       BlockType		      From
       Name		      "From6"
       SID		      109
-      Position		      [1815, 443, 1875, 457]
+      Position		      [2125, 523, 2185, 537]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "syncX"
@@ -1873,7 +1866,7 @@ Model {
       BlockType		      From
       Name		      "From65"
       SID		      114
-      Position		      [115, 163, 175, 177]
+      Position		      [115, 198, 175, 212]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "arm_reset"
@@ -1891,7 +1884,7 @@ Model {
       BlockType		      From
       Name		      "From67"
       SID		      116
-      Position		      [115, 138, 175, 152]
+      Position		      [115, 173, 175, 187]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "force_trig"
@@ -1900,7 +1893,7 @@ Model {
       BlockType		      From
       Name		      "From69"
       SID		      117
-      Position		      [1975, 313, 2035, 327]
+      Position		      [2440, 293, 2500, 307]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "XC"
@@ -1909,7 +1902,7 @@ Model {
       BlockType		      From
       Name		      "From7"
       SID		      118
-      Position		      [920, 68, 980, 82]
+      Position		      [920, 53, 980, 67]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tvg1"
@@ -1954,7 +1947,7 @@ Model {
       BlockType		      From
       Name		      "From75"
       SID		      123
-      Position		      [1975, 343, 2035, 357]
+      Position		      [2440, 323, 2500, 337]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "sync"
@@ -1963,7 +1956,7 @@ Model {
       BlockType		      From
       Name		      "From76"
       SID		      124
-      Position		      [1975, 283, 2035, 297]
+      Position		      [2440, 263, 2500, 277]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "XA"
@@ -1972,7 +1965,7 @@ Model {
       BlockType		      From
       Name		      "From77"
       SID		      125
-      Position		      [1975, 298, 2035, 312]
+      Position		      [2440, 278, 2500, 292]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "XB"
@@ -1981,7 +1974,7 @@ Model {
       BlockType		      From
       Name		      "From78"
       SID		      126
-      Position		      [1975, 328, 2035, 342]
+      Position		      [2440, 308, 2500, 322]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "acquire"
@@ -1990,7 +1983,7 @@ Model {
       BlockType		      From
       Name		      "From8"
       SID		      127
-      Position		      [1815, 383, 1875, 397]
+      Position		      [2125, 463, 2185, 477]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "rx_dataX"
@@ -1999,7 +1992,7 @@ Model {
       BlockType		      From
       Name		      "From80"
       SID		      128
-      Position		      [1975, 413, 2035, 427]
+      Position		      [2440, 393, 2500, 407]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "YC"
@@ -2008,7 +2001,7 @@ Model {
       BlockType		      From
       Name		      "From81"
       SID		      129
-      Position		      [1975, 443, 2035, 457]
+      Position		      [2440, 423, 2500, 437]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "sync"
@@ -2017,7 +2010,7 @@ Model {
       BlockType		      From
       Name		      "From82"
       SID		      130
-      Position		      [1975, 383, 2035, 397]
+      Position		      [2440, 363, 2500, 377]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "YA"
@@ -2026,7 +2019,7 @@ Model {
       BlockType		      From
       Name		      "From83"
       SID		      131
-      Position		      [1975, 398, 2035, 412]
+      Position		      [2440, 378, 2500, 392]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "YB"
@@ -2035,7 +2028,7 @@ Model {
       BlockType		      From
       Name		      "From84"
       SID		      132
-      Position		      [1975, 428, 2035, 442]
+      Position		      [2440, 408, 2500, 422]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "acquire"
@@ -2044,7 +2037,7 @@ Model {
       BlockType		      From
       Name		      "From86"
       SID		      133
-      Position		      [1975, 543, 2035, 557]
+      Position		      [2440, 523, 2500, 537]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "sync"
@@ -2053,7 +2046,7 @@ Model {
       BlockType		      From
       Name		      "From87"
       SID		      134
-      Position		      [1975, 483, 2035, 497]
+      Position		      [2440, 463, 2500, 477]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "ZA"
@@ -2062,7 +2055,7 @@ Model {
       BlockType		      From
       Name		      "From88"
       SID		      135
-      Position		      [1975, 498, 2035, 512]
+      Position		      [2440, 478, 2500, 492]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "ZB"
@@ -2071,7 +2064,7 @@ Model {
       BlockType		      From
       Name		      "From89"
       SID		      136
-      Position		      [1975, 528, 2035, 542]
+      Position		      [2440, 508, 2500, 522]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "acquire"
@@ -2080,7 +2073,7 @@ Model {
       BlockType		      From
       Name		      "From9"
       SID		      137
-      Position		      [920, 88, 980, 102]
+      Position		      [920, 73, 980, 87]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tvg2"
@@ -2089,7 +2082,7 @@ Model {
       BlockType		      From
       Name		      "From91"
       SID		      138
-      Position		      [1975, 513, 2035, 527]
+      Position		      [2440, 493, 2500, 507]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "ZC"
@@ -2098,7 +2091,7 @@ Model {
       BlockType		      From
       Name		      "From92"
       SID		      139
-      Position		      [1080, 523, 1140, 537]
+      Position		      [2205, 363, 2265, 377]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_valid"
@@ -2107,7 +2100,7 @@ Model {
       BlockType		      From
       Name		      "From93"
       SID		      140
-      Position		      [1080, 508, 1140, 522]
+      Position		      [2205, 348, 2265, 362]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "rx_validX"
@@ -2116,7 +2109,7 @@ Model {
       BlockType		      From
       Name		      "From94"
       SID		      141
-      Position		      [1080, 493, 1140, 507]
+      Position		      [2205, 333, 2265, 347]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "rx_validY"
@@ -2125,7 +2118,7 @@ Model {
       BlockType		      From
       Name		      "From95"
       SID		      142
-      Position		      [1080, 478, 1140, 492]
+      Position		      [2205, 318, 2265, 332]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "rx_validZ"
@@ -2134,7 +2127,7 @@ Model {
       BlockType		      From
       Name		      "From96"
       SID		      143
-      Position		      [1155, 543, 1215, 557]
+      Position		      [2205, 408, 2265, 422]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "acquire"
@@ -2143,19 +2136,10 @@ Model {
       BlockType		      From
       Name		      "From97"
       SID		      144
-      Position		      [1155, 558, 1215, 572]
+      Position		      [2205, 423, 2265, 437]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_sync"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From99"
-      SID		      145
-      Position		      [1190, 133, 1250, 147]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "tx_valid"
     }
     Block {
       BlockType		      Goto
@@ -2169,17 +2153,26 @@ Model {
     Block {
       BlockType		      Goto
       Name		      "Goto10"
-      SID		      312
-      Position		      [1650, 418, 1710, 432]
+      SID		      398
+      Position		      [1850, 248, 1910, 262]
       ShowName		      off
-      GotoTag		      "syncZ"
+      GotoTag		      "rx_dataZ"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto11"
+      SID		      334
+      Position		      [465, 13, 525, 27]
+      ShowName		      off
+      GotoTag		      "corr_id"
       TagVisibility	      "local"
     }
     Block {
       BlockType		      Goto
       Name		      "Goto112"
       SID		      149
-      Position		      [465, 43, 525, 57]
+      Position		      [465, 78, 525, 92]
       ShowName		      off
       GotoTag		      "force_trig"
       TagVisibility	      "local"
@@ -2188,7 +2181,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto113"
       SID		      150
-      Position		      [465, 28, 525, 42]
+      Position		      [465, 63, 525, 77]
       ShowName		      off
       GotoTag		      "reset"
       TagVisibility	      "local"
@@ -2197,52 +2190,61 @@ Model {
       BlockType		      Goto
       Name		      "Goto114"
       SID		      151
-      Position		      [465, 13, 525, 27]
+      Position		      [465, 48, 525, 62]
       ShowName		      off
       GotoTag		      "acquire"
       TagVisibility	      "local"
     }
     Block {
       BlockType		      Goto
+      Name		      "Goto115"
+      SID		      397
+      Position		      [1850, 178, 1910, 192]
+      ShowName		      off
+      GotoTag		      "rx_validY"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
       Name		      "Goto116"
       SID		      153
-      Position		      [465, 58, 525, 72]
+      Position		      [465, 93, 525, 107]
       ShowName		      off
       GotoTag		      "arm_reset"
       TagVisibility	      "local"
     }
     Block {
       BlockType		      Goto
-      Name		      "Goto12"
-      SID		      154
-      Position		      [1405, 378, 1465, 392]
+      Name		      "Goto117"
+      SID		      399
+      Position		      [1850, 293, 1910, 307]
       ShowName		      off
-      GotoTag		      "tx_oob"
+      GotoTag		      "rx_validZ"
       TagVisibility	      "local"
     }
     Block {
       BlockType		      Goto
-      Name		      "Goto13"
-      SID		      155
-      Position		      [1405, 408, 1465, 422]
+      Name		      "Goto12"
+      SID		      400
+      Position		      [1850, 273, 1910, 287]
       ShowName		      off
-      GotoTag		      "raw_syncY"
+      GotoTag		      "syncZ"
       TagVisibility	      "local"
     }
     Block {
       BlockType		      Goto
       Name		      "Goto14"
-      SID		      156
-      Position		      [1405, 423, 1465, 437]
+      SID		      402
+      Position		      [1850, 158, 1910, 172]
       ShowName		      off
-      GotoTag		      "raw_syncZ"
+      GotoTag		      "syncY"
       TagVisibility	      "local"
     }
     Block {
       BlockType		      Goto
       Name		      "Goto15"
-      SID		      157
-      Position		      [1460, 28, 1520, 42]
+      SID		      403
+      Position		      [1850, 33, 1910, 47]
       ShowName		      off
       GotoTag		      "syncX"
       TagVisibility	      "local"
@@ -2251,7 +2253,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto16"
       SID		      158
-      Position		      [1780, 38, 1840, 52]
+      Position		      [2170, 33, 2230, 47]
       ShowName		      off
       GotoTag		      "xr_sync"
       TagVisibility	      "local"
@@ -2260,7 +2262,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto17"
       SID		      159
-      Position		      [1780, 93, 1840, 107]
+      Position		      [2170, 78, 2230, 92]
       ShowName		      off
       GotoTag		      "xr_X"
       TagVisibility	      "local"
@@ -2269,7 +2271,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto18"
       SID		      160
-      Position		      [1780, 148, 1840, 162]
+      Position		      [2170, 123, 2230, 137]
       ShowName		      off
       GotoTag		      "xr_Y"
       TagVisibility	      "local"
@@ -2278,7 +2280,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto19"
       SID		      161
-      Position		      [1780, 203, 1840, 217]
+      Position		      [2170, 168, 2230, 182]
       ShowName		      off
       GotoTag		      "xr_Z"
       TagVisibility	      "local"
@@ -2287,7 +2289,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto2"
       SID		      162
-      Position		      [1080, 28, 1140, 42]
+      Position		      [1155, 33, 1215, 47]
       ShowName		      off
       GotoTag		      "tx_sync"
       TagVisibility	      "local"
@@ -2296,7 +2298,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto20"
       SID		      163
-      Position		      [1780, 258, 1840, 272]
+      Position		      [2170, 213, 2230, 227]
       ShowName		      off
       GotoTag		      "xr_oos"
       TagVisibility	      "local"
@@ -2341,7 +2343,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto26"
       SID		      169
-      Position		      [465, 98, 525, 112]
+      Position		      [465, 133, 525, 147]
       ShowName		      off
       GotoTag		      "gen_sync"
       TagVisibility	      "local"
@@ -2350,7 +2352,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto27"
       SID		      170
-      Position		      [465, 163, 525, 177]
+      Position		      [465, 198, 525, 212]
       ShowName		      off
       GotoTag		      "armed"
       TagVisibility	      "local"
@@ -2368,7 +2370,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto31"
       SID		      175
-      Position		      [2050, 28, 2110, 42]
+      Position		      [2515, 33, 2575, 47]
       ShowName		      off
       GotoTag		      "sync"
       TagVisibility	      "local"
@@ -2377,7 +2379,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto32"
       SID		      176
-      Position		      [2050, 48, 2110, 62]
+      Position		      [2515, 53, 2575, 67]
       ShowName		      off
       GotoTag		      "XA"
       TagVisibility	      "local"
@@ -2386,7 +2388,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto33"
       SID		      177
-      Position		      [2050, 68, 2110, 82]
+      Position		      [2515, 73, 2575, 87]
       ShowName		      off
       GotoTag		      "XB"
       TagVisibility	      "local"
@@ -2395,7 +2397,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto34"
       SID		      178
-      Position		      [2050, 88, 2110, 102]
+      Position		      [2515, 93, 2575, 107]
       ShowName		      off
       GotoTag		      "XC"
       TagVisibility	      "local"
@@ -2404,7 +2406,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto35"
       SID		      179
-      Position		      [2050, 108, 2110, 122]
+      Position		      [2515, 113, 2575, 127]
       ShowName		      off
       GotoTag		      "YA"
       TagVisibility	      "local"
@@ -2413,7 +2415,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto36"
       SID		      180
-      Position		      [2050, 128, 2110, 142]
+      Position		      [2515, 133, 2575, 147]
       ShowName		      off
       GotoTag		      "YB"
       TagVisibility	      "local"
@@ -2422,7 +2424,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto37"
       SID		      181
-      Position		      [2050, 148, 2110, 162]
+      Position		      [2515, 153, 2575, 167]
       ShowName		      off
       GotoTag		      "YC"
       TagVisibility	      "local"
@@ -2431,7 +2433,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto38"
       SID		      182
-      Position		      [2050, 168, 2110, 182]
+      Position		      [2515, 173, 2575, 187]
       ShowName		      off
       GotoTag		      "ZA"
       TagVisibility	      "local"
@@ -2440,7 +2442,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto39"
       SID		      183
-      Position		      [2050, 188, 2110, 202]
+      Position		      [2515, 193, 2575, 207]
       ShowName		      off
       GotoTag		      "ZB"
       TagVisibility	      "local"
@@ -2458,7 +2460,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto40"
       SID		      185
-      Position		      [2050, 208, 2110, 222]
+      Position		      [2515, 213, 2575, 227]
       ShowName		      off
       GotoTag		      "ZC"
       TagVisibility	      "local"
@@ -2475,26 +2477,26 @@ Model {
     Block {
       BlockType		      Goto
       Name		      "Goto6"
-      SID		      189
-      Position		      [1460, 143, 1520, 157]
+      SID		      394
+      Position		      [1850, 63, 1910, 77]
       ShowName		      off
-      GotoTag		      "rx_oobY"
+      GotoTag		      "rx_dataX"
       TagVisibility	      "local"
     }
     Block {
       BlockType		      Goto
       Name		      "Goto7"
-      SID		      190
-      Position		      [1460, 258, 1520, 272]
+      SID		      395
+      Position		      [1850, 93, 1910, 107]
       ShowName		      off
-      GotoTag		      "rx_oobZ"
+      GotoTag		      "rx_validX"
       TagVisibility	      "local"
     }
     Block {
       BlockType		      Goto
       Name		      "Goto72"
       SID		      191
-      Position		      [1080, 68, 1140, 82]
+      Position		      [1155, 73, 1215, 87]
       ShowName		      off
       GotoTag		      "tx_dataX"
       TagVisibility	      "local"
@@ -2503,7 +2505,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto73"
       SID		      192
-      Position		      [1080, 108, 1140, 122]
+      Position		      [1155, 113, 1215, 127]
       ShowName		      off
       GotoTag		      "tx_dataY"
       TagVisibility	      "local"
@@ -2512,7 +2514,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto74"
       SID		      193
-      Position		      [1080, 148, 1140, 162]
+      Position		      [1155, 153, 1215, 167]
       ShowName		      off
       GotoTag		      "tx_dataZ"
       TagVisibility	      "local"
@@ -2521,7 +2523,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto75"
       SID		      194
-      Position		      [1080, 188, 1140, 202]
+      Position		      [1155, 193, 1215, 207]
       ShowName		      off
       GotoTag		      "tx_valid"
       TagVisibility	      "local"
@@ -2537,121 +2539,67 @@ Model {
     }
     Block {
       BlockType		      Goto
-      Name		      "Goto83"
-      SID		      196
-      Position		      [1460, 58, 1520, 72]
-      ShowName		      off
-      GotoTag		      "rx_dataX"
-      TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto84"
-      SID		      197
-      Position		      [1460, 88, 1520, 102]
-      ShowName		      off
-      GotoTag		      "rx_validX"
-      TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto85"
-      SID		      198
-      Position		      [1460, 128, 1520, 142]
+      Name		      "Goto9"
+      SID		      396
+      Position		      [1850, 133, 1910, 147]
       ShowName		      off
       GotoTag		      "rx_dataY"
       TagVisibility	      "local"
     }
     Block {
-      BlockType		      Goto
-      Name		      "Goto86"
-      SID		      199
-      Position		      [1460, 173, 1520, 187]
-      ShowName		      off
-      GotoTag		      "rx_validY"
-      TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto87"
-      SID		      200
-      Position		      [1460, 243, 1520, 257]
-      ShowName		      off
-      GotoTag		      "rx_dataZ"
-      TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto88"
-      SID		      201
-      Position		      [1460, 288, 1520, 302]
-      ShowName		      off
-      GotoTag		      "rx_validZ"
-      TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto9"
-      SID		      311
-      Position		      [1650, 388, 1710, 402]
-      ShowName		      off
-      GotoTag		      "syncY"
-      TagVisibility	      "local"
-    }
-    Block {
       BlockType		      Terminator
       Name		      "Terminator1"
-      SID		      203
-      Position		      [1460, 218, 1480, 232]
+      SID		      420
+      Position		      [1700, 193, 1720, 207]
       ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "Terminator11"
-      SID		      204
-      Position		      [1460, 333, 1480, 347]
+      SID		      405
+      Position		      [1700, 338, 1720, 352]
       ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "Terminator12"
-      SID		      205
-      Position		      [1460, 273, 1480, 287]
+      SID		      406
+      Position		      [1700, 278, 1720, 292]
       ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "Terminator15"
-      SID		      206
-      Position		      [1460, 318, 1480, 332]
+      SID		      407
+      Position		      [1700, 323, 1720, 337]
       ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "Terminator2"
-      SID		      207
-      Position		      [1460, 158, 1480, 172]
+      SID		      408
+      Position		      [1700, 223, 1720, 237]
       ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "Terminator3"
-      SID		      306
-      Position		      [1460, 188, 1480, 202]
+      SID		      409
+      Position		      [1700, 163, 1720, 177]
       ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "Terminator4"
-      SID		      307
-      Position		      [1460, 303, 1480, 317]
+      SID		      421
+      Position		      [1700, 308, 1720, 322]
       ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "Terminator9"
-      SID		      208
-      Position		      [1460, 203, 1480, 217]
+      SID		      410
+      Position		      [1700, 208, 1720, 222]
       ShowName		      off
     }
     Block {
@@ -2693,8 +2641,8 @@ Model {
       Name		      "armed_trig"
       SID		      210
       Ports		      [2, 2]
-      Position		      [315, 132, 365, 183]
-      LibraryVersion	      "1.594"
+      Position		      [315, 167, 365, 218]
+      LibraryVersion	      "1.598"
       SourceBlock	      "isi_correlator_lib/armed_trig"
       SourceType	      "SubSystem"
       ShowPortLabels	      "FromPortIcon"
@@ -4205,7 +4153,7 @@ Model {
       Name		      "capt_X"
       SID		      214
       Ports		      [5]
-      Position		      [2060, 282, 2110, 358]
+      Position		      [2525, 262, 2575, 338]
       AncestorBlock	      "isi_correlator_lib/capture"
       UserDataPersistent      on
       UserData		      "DataTag4"
@@ -4703,7 +4651,7 @@ Model {
       Name		      "capt_Y"
       SID		      215
       Ports		      [5]
-      Position		      [2060, 382, 2110, 458]
+      Position		      [2525, 362, 2575, 438]
       AncestorBlock	      "isi_correlator_lib/capture"
       UserDataPersistent      on
       UserData		      "DataTag5"
@@ -5201,7 +5149,7 @@ Model {
       Name		      "capt_Z"
       SID		      216
       Ports		      [5]
-      Position		      [2060, 482, 2110, 558]
+      Position		      [2525, 462, 2575, 538]
       AncestorBlock	      "isi_correlator_lib/capture"
       UserDataPersistent      on
       UserData		      "DataTag6"
@@ -5699,7 +5647,7 @@ Model {
       Name		      "capt_clump"
       SID		      217
       Ports		      [5]
-      Position		      [1895, 282, 1945, 358]
+      Position		      [2050, 462, 2100, 538]
       AncestorBlock	      "isi_correlator_lib/capture"
       UserDataPersistent      on
       UserData		      "DataTag7"
@@ -6197,7 +6145,7 @@ Model {
       Name		      "capt_resync"
       SID		      218
       Ports		      [5]
-      Position		      [1895, 482, 1945, 558]
+      Position		      [2365, 462, 2415, 538]
       AncestorBlock	      "isi_correlator_lib/capture"
       UserDataPersistent      on
       UserData		      "DataTag8"
@@ -6695,7 +6643,7 @@ Model {
       Name		      "capt_sync"
       SID		      219
       Ports		      [3]
-      Position		      [1535, 527, 1585, 573]
+      Position		      [2130, 392, 2180, 438]
       AncestorBlock	      "isi_correlator_lib/capture"
       UserDataPersistent      on
       UserData		      "DataTag9"
@@ -6991,7 +6939,7 @@ Model {
       Name		      "capt_valid"
       SID		      220
       Ports		      [3]
-      Position		      [1245, 527, 1295, 573]
+      Position		      [2290, 392, 2340, 438]
       AncestorBlock	      "isi_correlator_lib/capture"
       UserDataPersistent      on
       UserData		      "DataTag10"
@@ -7287,7 +7235,7 @@ Model {
       Name		      "capt_xaui"
       SID		      221
       Ports		      [5]
-      Position		      [1895, 382, 1945, 458]
+      Position		      [2205, 462, 2255, 538]
       AncestorBlock	      "isi_correlator_lib/capture"
       UserDataPersistent      on
       UserData		      "DataTag11"
@@ -7783,10 +7731,10 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "clump"
-      SID		      222
+      SID		      338
       Ports		      [9, 5]
-      Position		      [1005, 14, 1055, 216]
-      LibraryVersion	      "1.594"
+      Position		      [1005, 14, 1055, 186]
+      LibraryVersion	      "1.598"
       SourceBlock	      "isi_correlator_lib/clump"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
@@ -7805,7 +7753,7 @@ Model {
       SID		      224
       Tag		      "xps:sw_reg"
       Ports		      [1, 1]
-      Position		      [190, 13, 290, 27]
+      Position		      [190, 48, 290, 62]
       BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
       LibraryVersion	      "1.419"
       SourceBlock	      "xps_library/software register"
@@ -7830,7 +7778,7 @@ Model {
       Name		      "control17"
       SID		      227
       Ports		      [1, 1]
-      Position		      [315, 58, 365, 72]
+      Position		      [315, 93, 365, 107]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Slice"
@@ -7863,7 +7811,7 @@ Model {
       Name		      "control18"
       SID		      228
       Ports		      [1, 1]
-      Position		      [315, 43, 365, 57]
+      Position		      [315, 78, 365, 92]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Slice"
@@ -7896,7 +7844,7 @@ Model {
       Name		      "control19"
       SID		      229
       Ports		      [1, 1]
-      Position		      [315, 28, 365, 42]
+      Position		      [315, 63, 365, 77]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Slice"
@@ -7926,10 +7874,43 @@ Model {
     }
     Block {
       BlockType		      Reference
+      Name		      "control2"
+      SID		      336
+      Ports		      [1, 1]
+      Position		      [315, 13, 365, 27]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Slice"
+      SourceType	      "Xilinx Bit Slice Extractor Block"
+      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The outpu"
+      "t type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><"
+      "br>Hardware notes: In hardware this block costs nothing."
+      nbits		      "2"
+      boolean_output	      off
+      mode		      "Lower Bit Location + Width"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "0"
+      base0		      "LSB of Input"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,449,376"
+      block_type	      "slice"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,1fd851a7,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
       Name		      "control20"
       SID		      231
       Ports		      [1, 1]
-      Position		      [315, 13, 365, 27]
+      Position		      [315, 48, 365, 62]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Slice"
@@ -7959,10 +7940,10 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "control5"
-      SID		      235
+      Name		      "control24"
+      SID		      411
       Ports		      [1, 1]
-      Position		      [1330, 408, 1380, 422]
+      Position		      [1700, 148, 1750, 162]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Slice"
@@ -7992,10 +7973,10 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "control6"
-      SID		      236
+      Name		      "control25"
+      SID		      412
       Ports		      [1, 1]
-      Position		      [1330, 423, 1380, 437]
+      Position		      [1700, 263, 1750, 277]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Slice"
@@ -8024,9 +8005,45 @@ Model {
       ";port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
     }
     Block {
+      BlockType		      Reference
+      Name		      "corr_id"
+      SID		      335
+      Tag		      "xps:sw_reg"
+      Ports		      [1, 1]
+      Position		      [190, 13, 290, 27]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      LibraryVersion	      "1.419"
+      SourceBlock	      "xps_library/software register"
+      SourceType	      ""
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      io_dir		      "From Processor"
+      arith_type	      "Unsigned"
+      bitwidth		      "32"
+      bin_pt		      "0"
+      sample_period	      "1"
+      gw_name		      "demo_interconnect_corr_id_user_data_out"
+    }
+    Block {
       BlockType		      Constant
       Name		      "default_control"
       SID		      249
+      Position		      [115, 48, 165, 62]
+      Value		      "0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "default_corr_id"
+      SID		      337
       Position		      [115, 13, 165, 27]
       Value		      "0"
       OutDataType	      "sfix(16)"
@@ -8036,10 +8053,10 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "loopback"
-      SID		      251
+      SID		      414
       Ports		      [3, 3]
-      Position		      [1280, 16, 1430, 114]
-      LibraryVersion	      "1.594"
+      Position		      [1525, 21, 1675, 119]
+      LibraryVersion	      "1.598"
       SourceBlock	      "isi_correlator_lib/loopback"
       SourceType	      "loopback"
       ShowPortLabels	      "FromPortIcon"
@@ -8055,9 +8072,9 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "mask_syncY"
-      SID		      309
+      SID		      415
       Ports		      [2, 1]
-      Position		      [1575, 378, 1625, 407]
+      Position		      [1775, 148, 1825, 177]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Logical"
@@ -8089,9 +8106,9 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "mask_syncZ"
-      SID		      310
+      SID		      416
       Ports		      [2, 1]
-      Position		      [1575, 408, 1625, 437]
+      Position		      [1775, 263, 1825, 292]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Logical"
@@ -8119,6 +8136,25 @@ Model {
       "17241 0.275862 0.103448 0.310345 0.103448 0.103448 0.172414 0.103448 0.103448 ],[0.98 0.96 0.92]);\nplot([0 1 1 "
       "0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor("
       "'black');disp('\\newlineand\\newlinez^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "shuffle"
+      SID		      332
+      Ports		      [6, 5]
+      Position		      [1080, 14, 1130, 221]
+      LibraryVersion	      "1.598"
+      SourceBlock	      "isi_correlator_lib/shuffle"
+      SourceType	      ""
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      latency		      "3"
     }
     Block {
       BlockType		      Reference
@@ -8389,8 +8425,8 @@ Model {
       Name		      "sync_gen2"
       SID		      260
       Ports		      [1, 1]
-      Position		      [390, 80, 440, 130]
-      LibraryVersion	      "1.594"
+      Position		      [390, 115, 440, 165]
+      LibraryVersion	      "1.598"
       UserDataPersistent      on
       UserData		      "DataTag12"
       SourceBlock	      "isi_correlator_lib/sync_gen2"
@@ -8459,7 +8495,7 @@ Model {
       SID		      266
       Ports		      [1, 2]
       Position		      [660, 12, 710, 63]
-      LibraryVersion	      "1.594"
+      LibraryVersion	      "1.598"
       SourceBlock	      "isi_correlator_lib/tvg"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
@@ -8478,7 +8514,7 @@ Model {
       SID		      269
       Ports		      [1, 2]
       Position		      [660, 82, 710, 133]
-      LibraryVersion	      "1.594"
+      LibraryVersion	      "1.598"
       SourceBlock	      "isi_correlator_lib/tvg"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
@@ -8497,7 +8533,7 @@ Model {
       SID		      270
       Ports		      [1, 2]
       Position		      [660, 152, 710, 203]
-      LibraryVersion	      "1.594"
+      LibraryVersion	      "1.598"
       SourceBlock	      "isi_correlator_lib/tvg"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
@@ -8516,7 +8552,7 @@ Model {
       SID		      279
       Ports		      [1, 2]
       Position		      [660, 222, 710, 273]
-      LibraryVersion	      "1.594"
+      LibraryVersion	      "1.598"
       SourceBlock	      "isi_correlator_lib/tvg"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
@@ -8535,7 +8571,7 @@ Model {
       SID		      280
       Ports		      [1, 2]
       Position		      [660, 292, 710, 343]
-      LibraryVersion	      "1.594"
+      LibraryVersion	      "1.598"
       SourceBlock	      "isi_correlator_lib/tvg"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
@@ -8554,7 +8590,7 @@ Model {
       SID		      281
       Ports		      [1, 2]
       Position		      [660, 362, 710, 413]
-      LibraryVersion	      "1.594"
+      LibraryVersion	      "1.598"
       SourceBlock	      "isi_correlator_lib/tvg"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
@@ -8573,7 +8609,7 @@ Model {
       SID		      290
       Ports		      [1, 2]
       Position		      [660, 432, 710, 483]
-      LibraryVersion	      "1.594"
+      LibraryVersion	      "1.598"
       SourceBlock	      "isi_correlator_lib/tvg"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
@@ -8592,7 +8628,7 @@ Model {
       SID		      291
       Ports		      [1, 2]
       Position		      [660, 502, 710, 553]
-      LibraryVersion	      "1.594"
+      LibraryVersion	      "1.598"
       SourceBlock	      "isi_correlator_lib/tvg"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
@@ -8608,10 +8644,10 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "unclump"
-      SID		      262
+      SID		      423
       Ports		      [4, 10]
-      Position		      [1975, 24, 2025, 226]
-      LibraryVersion	      "1.594"
+      Position		      [2440, 20, 2490, 240]
+      LibraryVersion	      "1.598"
       SourceBlock	      "isi_correlator_lib/unclump"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
@@ -8626,11 +8662,30 @@ Model {
     }
     Block {
       BlockType		      Reference
+      Name		      "unshuffle"
+      SID		      331
+      Ports		      [5, 4]
+      Position		      [2365, 20, 2415, 240]
+      LibraryVersion	      "1.598"
+      SourceBlock	      "isi_correlator_lib/unshuffle"
+      SourceType	      ""
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      latency		      "3"
+    }
+    Block {
+      BlockType		      Reference
       Name		      "xaui0"
-      SID		      263
+      SID		      418
       Tag		      "xps:xaui"
       Ports		      [5, 7]
-      Position		      [1280, 131, 1430, 229]
+      Position		      [1525, 136, 1675, 234]
       BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
       LibraryVersion	      "1.419"
       SourceBlock	      "xps_library/XAUI"
@@ -8653,10 +8708,10 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "xaui3"
-      SID		      264
+      SID		      419
       Tag		      "xps:xaui"
       Ports		      [5, 7]
-      Position		      [1280, 246, 1430, 344]
+      Position		      [1525, 251, 1675, 349]
       BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
       LibraryVersion	      "1.419"
       SourceBlock	      "xps_library/XAUI"
@@ -8679,10 +8734,10 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "xaui_resync"
-      SID		      265
+      SID		      422
       Ports		      [6, 5]
-      Position		      [1655, 12, 1755, 293]
-      LibraryVersion	      "1.594"
+      Position		      [2045, 18, 2145, 237]
+      LibraryVersion	      "1.598"
       SourceBlock	      "isi_correlator_lib/xaui_resync"
       SourceType	      "link_demux"
       ShowPortLabels	      "FromPortIcon"
@@ -8693,7 +8748,7 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      buffer_depth	      "10"
+      buffer_depth	      "5"
       logic_latency	      "1"
     }
     Line {
@@ -8715,162 +8770,6 @@ Model {
       DstPort		      3
     }
     Line {
-      SrcBlock		      "From53"
-      SrcPort		      1
-      DstBlock		      "loopback"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From54"
-      SrcPort		      1
-      DstBlock		      "loopback"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "From55"
-      SrcPort		      1
-      DstBlock		      "loopback"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "From154"
-      SrcPort		      1
-      DstBlock		      "xaui0"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "From145"
-      SrcPort		      1
-      DstBlock		      "xaui0"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "From146"
-      SrcPort		      1
-      DstBlock		      "xaui0"
-      DstPort		      5
-    }
-    Line {
-      SrcBlock		      "From155"
-      SrcPort		      1
-      DstBlock		      "xaui3"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "From144"
-      SrcPort		      1
-      DstBlock		      "xaui3"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "From25"
-      SrcPort		      1
-      DstBlock		      "xaui3"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "From149"
-      SrcPort		      1
-      DstBlock		      "xaui3"
-      DstPort		      5
-    }
-    Line {
-      SrcBlock		      "xaui0"
-      SrcPort		      1
-      DstBlock		      "Goto85"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui0"
-      SrcPort		      2
-      DstBlock		      "Goto6"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui0"
-      SrcPort		      3
-      DstBlock		      "Terminator2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui0"
-      SrcPort		      4
-      DstBlock		      "Goto86"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui0"
-      SrcPort		      5
-      DstBlock		      "Terminator3"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui0"
-      SrcPort		      6
-      DstBlock		      "Terminator9"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui0"
-      SrcPort		      7
-      DstBlock		      "Terminator1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui3"
-      SrcPort		      1
-      DstBlock		      "Goto87"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui3"
-      SrcPort		      2
-      DstBlock		      "Goto7"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui3"
-      SrcPort		      3
-      DstBlock		      "Terminator12"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui3"
-      SrcPort		      4
-      DstBlock		      "Goto88"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui3"
-      SrcPort		      5
-      DstBlock		      "Terminator4"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui3"
-      SrcPort		      6
-      DstBlock		      "Terminator15"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui3"
-      SrcPort		      7
-      DstBlock		      "Terminator11"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "loopback"
-      SrcPort		      2
-      DstBlock		      "Goto83"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "loopback"
-      SrcPort		      3
-      DstBlock		      "Goto84"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "From141"
       SrcPort		      1
       DstBlock		      "capt_clump"
@@ -8881,12 +8780,6 @@ Model {
       SrcPort		      1
       DstBlock		      "capt_clump"
       DstPort		      5
-    }
-    Line {
-      SrcBlock		      "loopback"
-      SrcPort		      1
-      DstBlock		      "Goto15"
-      DstPort		      1
     }
     Line {
       SrcBlock		      "From198"
@@ -9028,18 +8921,6 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "From99"
-      SrcPort		      1
-      DstBlock		      "xaui0"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From100"
-      SrcPort		      1
-      DstBlock		      "xaui3"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "From46"
       SrcPort		      1
       DstBlock		      "clump"
@@ -9086,204 +8967,6 @@ Model {
       SrcPort		      1
       DstBlock		      "clump"
       DstPort		      8
-    }
-    Line {
-      SrcBlock		      "From18"
-      SrcPort		      1
-      DstBlock		      "clump"
-      DstPort		      9
-    }
-    Line {
-      SrcBlock		      "clump"
-      SrcPort		      1
-      DstBlock		      "Goto2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "clump"
-      SrcPort		      2
-      DstBlock		      "Goto72"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "clump"
-      SrcPort		      3
-      DstBlock		      "Goto73"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "clump"
-      SrcPort		      4
-      DstBlock		      "Goto74"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "clump"
-      SrcPort		      5
-      DstBlock		      "Goto75"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Concat1"
-      SrcPort		      1
-      DstBlock		      "Goto12"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Constant12"
-      SrcPort		      1
-      DstBlock		      "Concat1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From14"
-      SrcPort		      1
-      DstBlock		      "Concat1"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "From15"
-      SrcPort		      1
-      DstBlock		      "xaui0"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "From27"
-      SrcPort		      1
-      DstBlock		      "control6"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From26"
-      SrcPort		      1
-      DstBlock		      "control5"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "control5"
-      SrcPort		      1
-      DstBlock		      "Goto13"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "control6"
-      SrcPort		      1
-      DstBlock		      "Goto14"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui_resync"
-      SrcPort		      1
-      DstBlock		      "Goto16"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui_resync"
-      SrcPort		      2
-      DstBlock		      "Goto17"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui_resync"
-      SrcPort		      3
-      DstBlock		      "Goto18"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui_resync"
-      SrcPort		      4
-      DstBlock		      "Goto19"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui_resync"
-      SrcPort		      5
-      DstBlock		      "Goto20"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From49"
-      SrcPort		      1
-      DstBlock		      "unclump"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From47"
-      SrcPort		      1
-      DstBlock		      "unclump"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "From48"
-      SrcPort		      1
-      DstBlock		      "unclump"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "From45"
-      SrcPort		      1
-      DstBlock		      "unclump"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "unclump"
-      SrcPort		      1
-      DstBlock		      "Goto31"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "unclump"
-      SrcPort		      2
-      DstBlock		      "Goto32"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "unclump"
-      SrcPort		      3
-      DstBlock		      "Goto33"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "unclump"
-      SrcPort		      4
-      DstBlock		      "Goto34"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "unclump"
-      SrcPort		      5
-      DstBlock		      "Goto35"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "unclump"
-      SrcPort		      6
-      DstBlock		      "Goto36"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "unclump"
-      SrcPort		      7
-      DstBlock		      "Goto37"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "unclump"
-      SrcPort		      8
-      DstBlock		      "Goto38"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "unclump"
-      SrcPort		      9
-      DstBlock		      "Goto39"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "unclump"
-      SrcPort		      10
-      DstBlock		      "Goto40"
-      DstPort		      1
     }
     Line {
       SrcBlock		      "From64"
@@ -9438,7 +9121,7 @@ Model {
     Line {
       SrcBlock		      "Concat2"
       SrcPort		      1
-      Points		      [5, 0; 0, 35]
+      Points		      [5, 0; 0, 45; -75, 0]
       DstBlock		      "capt_valid"
       DstPort		      1
     }
@@ -9487,7 +9170,7 @@ Model {
     Line {
       SrcBlock		      "Concat3"
       SrcPort		      1
-      Points		      [5, 0]
+      Points		      [5, 0; 0, 45; -75, 0]
       DstBlock		      "capt_sync"
       DstPort		      1
     }
@@ -9783,42 +9466,6 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "mask_syncZ"
-      SrcPort		      1
-      DstBlock		      "Goto10"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "mask_syncY"
-      SrcPort		      1
-      DstBlock		      "Goto9"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From12"
-      SrcPort		      1
-      DstBlock		      "mask_syncY"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From37"
-      SrcPort		      1
-      DstBlock		      "mask_syncY"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "From38"
-      SrcPort		      1
-      DstBlock		      "mask_syncZ"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From39"
-      SrcPort		      1
-      DstBlock		      "mask_syncZ"
-      DstPort		      2
-    }
-    Line {
       SrcBlock		      "Constant11"
       SrcPort		      1
       DstBlock		      "Concat3"
@@ -9861,6 +9508,353 @@ Model {
       DstPort		      2
     }
     Line {
+      SrcBlock		      "default_corr_id"
+      SrcPort		      1
+      DstBlock		      "corr_id"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "corr_id"
+      SrcPort		      1
+      DstBlock		      "control2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "control2"
+      SrcPort		      1
+      DstBlock		      "Delay7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Delay7"
+      SrcPort		      1
+      DstBlock		      "Goto11"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "shuffle"
+      SrcPort		      1
+      DstBlock		      "Goto2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "shuffle"
+      SrcPort		      2
+      DstBlock		      "Goto72"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "shuffle"
+      SrcPort		      3
+      DstBlock		      "Goto73"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "shuffle"
+      SrcPort		      4
+      DstBlock		      "Goto74"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "shuffle"
+      SrcPort		      5
+      DstBlock		      "Goto75"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From18"
+      SrcPort		      1
+      DstBlock		      "clump"
+      DstPort		      9
+    }
+    Line {
+      SrcBlock		      "clump"
+      SrcPort		      1
+      DstBlock		      "shuffle"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "clump"
+      SrcPort		      2
+      DstBlock		      "shuffle"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "clump"
+      SrcPort		      3
+      DstBlock		      "shuffle"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "clump"
+      SrcPort		      4
+      DstBlock		      "shuffle"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "clump"
+      SrcPort		      5
+      DstBlock		      "shuffle"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "From30"
+      SrcPort		      1
+      DstBlock		      "shuffle"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "From117"
+      SrcPort		      1
+      Points		      [80, 0]
+      Branch {
+	DstBlock		"loopback"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 170]
+	Branch {
+	  DstBlock		  "Concat4"
+	  DstPort		  2
+	}
+	Branch {
+	  DstBlock		  "Concat1"
+	  DstPort		  2
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "From118"
+      SrcPort		      1
+      DstBlock		      "loopback"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From144"
+      SrcPort		      1
+      DstBlock		      "xaui3"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "xaui0"
+      SrcPort		      1
+      DstBlock		      "Goto9"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui0"
+      SrcPort		      3
+      DstBlock		      "Terminator3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui0"
+      SrcPort		      4
+      Points		      [80, 0]
+      Branch {
+	DstBlock		"Goto115"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"mask_syncY"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "xaui0"
+      SrcPort		      5
+      DstBlock		      "Terminator1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui0"
+      SrcPort		      6
+      DstBlock		      "Terminator9"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui0"
+      SrcPort		      7
+      DstBlock		      "Terminator2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui3"
+      SrcPort		      1
+      DstBlock		      "Goto10"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui3"
+      SrcPort		      2
+      DstBlock		      "control25"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui3"
+      SrcPort		      3
+      DstBlock		      "Terminator12"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui3"
+      SrcPort		      4
+      Points		      [80, 0]
+      Branch {
+	DstBlock		"Goto117"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"mask_syncZ"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "xaui3"
+      SrcPort		      5
+      DstBlock		      "Terminator4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui3"
+      SrcPort		      6
+      DstBlock		      "Terminator15"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui3"
+      SrcPort		      7
+      DstBlock		      "Terminator11"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "loopback"
+      SrcPort		      2
+      DstBlock		      "Goto6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "loopback"
+      SrcPort		      3
+      DstBlock		      "Goto7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "loopback"
+      SrcPort		      1
+      DstBlock		      "Goto15"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "mask_syncZ"
+      SrcPort		      1
+      DstBlock		      "Goto12"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "mask_syncY"
+      SrcPort		      1
+      DstBlock		      "Goto14"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "control25"
+      SrcPort		      1
+      DstBlock		      "mask_syncZ"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui0"
+      SrcPort		      2
+      DstBlock		      "control24"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "control24"
+      SrcPort		      1
+      DstBlock		      "mask_syncY"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant1"
+      SrcPort		      1
+      DstBlock		      "Concat4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Concat4"
+      SrcPort		      1
+      DstBlock		      "xaui3"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "From12"
+      SrcPort		      1
+      Points		      [175, 0; 0, -90]
+      Branch {
+	Points			[0, -115]
+	DstBlock		"xaui0"
+	DstPort			2
+      }
+      Branch {
+	DstBlock		"xaui3"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Constant12"
+      SrcPort		      1
+      DstBlock		      "Concat1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Concat1"
+      SrcPort		      1
+      DstBlock		      "xaui0"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "From145"
+      SrcPort		      1
+      DstBlock		      "xaui0"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "From119"
+      SrcPort		      1
+      Points		      [160, 0]
+      Branch {
+	DstBlock		"xaui3"
+	DstPort			5
+      }
+      Branch {
+	Points			[0, -80]
+	Branch {
+	  Points		  [0, -35]
+	  Branch {
+	    Points		    [0, -80]
+	    Branch {
+	      Points		      [0, -45]
+	      DstBlock		      "loopback"
+	      DstPort		      3
+	    }
+	    Branch {
+	      DstBlock		      "xaui0"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "xaui0"
+	    DstPort		    5
+	  }
+	}
+	Branch {
+	  DstBlock		  "xaui3"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
       SrcBlock		      "From28"
       SrcPort		      1
       DstBlock		      "xaui_resync"
@@ -9895,6 +9889,150 @@ Model {
       SrcPort		      1
       DstBlock		      "xaui_resync"
       DstPort		      6
+    }
+    Line {
+      SrcBlock		      "xaui_resync"
+      SrcPort		      1
+      DstBlock		      "Goto16"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui_resync"
+      SrcPort		      2
+      DstBlock		      "Goto17"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui_resync"
+      SrcPort		      3
+      DstBlock		      "Goto18"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui_resync"
+      SrcPort		      4
+      DstBlock		      "Goto19"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui_resync"
+      SrcPort		      5
+      DstBlock		      "Goto20"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From49"
+      SrcPort		      1
+      DstBlock		      "unshuffle"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From47"
+      SrcPort		      1
+      DstBlock		      "unshuffle"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From48"
+      SrcPort		      1
+      DstBlock		      "unshuffle"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "From45"
+      SrcPort		      1
+      DstBlock		      "unshuffle"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "From14"
+      SrcPort		      1
+      DstBlock		      "unshuffle"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "unshuffle"
+      SrcPort		      1
+      DstBlock		      "unclump"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "unshuffle"
+      SrcPort		      2
+      DstBlock		      "unclump"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "unshuffle"
+      SrcPort		      3
+      DstBlock		      "unclump"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "unshuffle"
+      SrcPort		      4
+      DstBlock		      "unclump"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "unclump"
+      SrcPort		      1
+      DstBlock		      "Goto31"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "unclump"
+      SrcPort		      2
+      DstBlock		      "Goto32"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "unclump"
+      SrcPort		      3
+      DstBlock		      "Goto33"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "unclump"
+      SrcPort		      4
+      DstBlock		      "Goto34"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "unclump"
+      SrcPort		      5
+      DstBlock		      "Goto35"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "unclump"
+      SrcPort		      6
+      DstBlock		      "Goto36"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "unclump"
+      SrcPort		      7
+      DstBlock		      "Goto37"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "unclump"
+      SrcPort		      8
+      DstBlock		      "Goto38"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "unclump"
+      SrcPort		      9
+      DstBlock		      "Goto39"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "unclump"
+      SrcPort		      10
+      DstBlock		      "Goto40"
+      DstPort		      1
     }
   }
 }
