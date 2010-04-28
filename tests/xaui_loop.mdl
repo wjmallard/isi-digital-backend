@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.5"
+    ComputedModelVersion    "1.6"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Apr 27 20:52:53 2010"
-  RTWModifiedTimeStamp	  194302102
-  ModelVersionFormat	  "1.%<AutoIncrement:5>"
+  LastModifiedDate	  "Wed Apr 28 01:07:58 2010"
+  RTWModifiedTimeStamp	  194317666
+  ModelVersionFormat	  "1.%<AutoIncrement:6>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -794,366 +794,6 @@ Model {
       ";port_label('output',1,'1');\nfprintf('','COMMENT: end icon text');\n"
     }
     Block {
-      BlockType		      Reference
-      Name		      "Delay10"
-      SID		      11
-      Ports		      [1, 1]
-      Position		      [475, 218, 525, 232]
-      BlockMirror	      on
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Delay"
-      SourceType	      "Xilinx Delay Block"
-      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-      en		      off
-      latency		      "0"
-      dbl_ovrd		      off
-      reg_retiming	      on
-      xl_use_area	      off
-      xl_area		      "[0,0,0,0,0,0,0]"
-      has_advanced_control    "0"
-      sggui_pos		      "0,0,419,315"
-      block_type	      "delay"
-      block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,24450e6f,left,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Delay11"
-      SID		      12
-      Ports		      [1, 1]
-      Position		      [475, 353, 525, 367]
-      BlockMirror	      on
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Delay"
-      SourceType	      "Xilinx Delay Block"
-      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-      en		      off
-      latency		      "0"
-      dbl_ovrd		      off
-      reg_retiming	      on
-      xl_use_area	      off
-      xl_area		      "[0,0,0,0,0,0,0]"
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,348,255"
-      block_type	      "delay"
-      block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,24450e6f,left,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Delay12"
-      SID		      13
-      Ports		      [1, 1]
-      Position		      [475, 383, 525, 397]
-      BlockMirror	      on
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Delay"
-      SourceType	      "Xilinx Delay Block"
-      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-      en		      off
-      latency		      "0"
-      dbl_ovrd		      off
-      reg_retiming	      on
-      xl_use_area	      off
-      xl_area		      "[0,0,0,0,0,0,0]"
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,348,255"
-      block_type	      "delay"
-      block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,24450e6f,left,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Delay13"
-      SID		      14
-      Ports		      [1, 1]
-      Position		      [475, 518, 525, 532]
-      BlockMirror	      on
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Delay"
-      SourceType	      "Xilinx Delay Block"
-      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-      en		      off
-      latency		      "0"
-      dbl_ovrd		      off
-      reg_retiming	      on
-      xl_use_area	      off
-      xl_area		      "[0,0,0,0,0,0,0]"
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,348,255"
-      block_type	      "delay"
-      block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,24450e6f,left,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Delay14"
-      SID		      15
-      Ports		      [1, 1]
-      Position		      [475, 548, 525, 562]
-      BlockMirror	      on
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Delay"
-      SourceType	      "Xilinx Delay Block"
-      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-      en		      off
-      latency		      "0"
-      dbl_ovrd		      off
-      reg_retiming	      on
-      xl_use_area	      off
-      xl_area		      "[0,0,0,0,0,0,0]"
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,348,255"
-      block_type	      "delay"
-      block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,24450e6f,left,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Delay19"
-      SID		      20
-      Ports		      [1, 1]
-      Position		      [475, 683, 525, 697]
-      BlockMirror	      on
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Delay"
-      SourceType	      "Xilinx Delay Block"
-      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-      en		      off
-      latency		      "0"
-      dbl_ovrd		      off
-      reg_retiming	      on
-      xl_use_area	      off
-      xl_area		      "[0,0,0,0,0,0,0]"
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,348,255"
-      block_type	      "delay"
-      block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,24450e6f,left,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Delay20"
-      SID		      22
-      Ports		      [1, 1]
-      Position		      [475, 713, 525, 727]
-      BlockMirror	      on
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Delay"
-      SourceType	      "Xilinx Delay Block"
-      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-      en		      off
-      latency		      "0"
-      dbl_ovrd		      off
-      reg_retiming	      on
-      xl_use_area	      off
-      xl_area		      "[0,0,0,0,0,0,0]"
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,348,255"
-      block_type	      "delay"
-      block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,24450e6f,left,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Delay25"
-      SID		      75
-      Ports		      [1, 1]
-      Position		      [475, 368, 525, 382]
-      BlockMirror	      on
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Delay"
-      SourceType	      "Xilinx Delay Block"
-      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-      en		      off
-      latency		      "0"
-      dbl_ovrd		      off
-      reg_retiming	      on
-      xl_use_area	      off
-      xl_area		      "[0,0,0,0,0,0,0]"
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,348,255"
-      block_type	      "delay"
-      block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,24450e6f,left,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Delay26"
-      SID		      76
-      Ports		      [1, 1]
-      Position		      [475, 533, 525, 547]
-      BlockMirror	      on
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Delay"
-      SourceType	      "Xilinx Delay Block"
-      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-      en		      off
-      latency		      "0"
-      dbl_ovrd		      off
-      reg_retiming	      on
-      xl_use_area	      off
-      xl_area		      "[0,0,0,0,0,0,0]"
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,348,255"
-      block_type	      "delay"
-      block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,24450e6f,left,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Delay27"
-      SID		      77
-      Ports		      [1, 1]
-      Position		      [475, 698, 525, 712]
-      BlockMirror	      on
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Delay"
-      SourceType	      "Xilinx Delay Block"
-      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-      en		      off
-      latency		      "0"
-      dbl_ovrd		      off
-      reg_retiming	      on
-      xl_use_area	      off
-      xl_area		      "[0,0,0,0,0,0,0]"
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,348,255"
-      block_type	      "delay"
-      block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,24450e6f,left,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Delay5"
-      SID		      29
-      Ports		      [1, 1]
-      Position		      [475, 188, 525, 202]
-      BlockMirror	      on
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Delay"
-      SourceType	      "Xilinx Delay Block"
-      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-      en		      off
-      latency		      "0"
-      dbl_ovrd		      off
-      reg_retiming	      on
-      xl_use_area	      off
-      xl_area		      "[0,0,0,0,0,0,0]"
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,348,255"
-      block_type	      "delay"
-      block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,24450e6f,left,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Delay7"
-      SID		      74
-      Ports		      [1, 1]
-      Position		      [475, 203, 525, 217]
-      BlockMirror	      on
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Delay"
-      SourceType	      "Xilinx Delay Block"
-      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-      en		      off
-      latency		      "0"
-      dbl_ovrd		      off
-      reg_retiming	      on
-      xl_use_area	      off
-      xl_area		      "[0,0,0,0,0,0,0]"
-      has_advanced_control    "0"
-      sggui_pos		      "0,0,419,315"
-      block_type	      "delay"
-      block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,24450e6f,left,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
       BlockType		      Terminator
       Name		      "Terminator1"
       SID		      39
@@ -1387,7 +1027,7 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      demux		      "2"
+      demux		      "1"
       port		      "ROACH:0"
       open_phy		      on
       show_param	      off
@@ -1413,7 +1053,7 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      demux		      "2"
+      demux		      "1"
       port		      "ROACH:1"
       open_phy		      on
       show_param	      off
@@ -1439,7 +1079,7 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      demux		      "2"
+      demux		      "1"
       port		      "ROACH:2"
       open_phy		      on
       show_param	      off
@@ -1465,7 +1105,7 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      demux		      "2"
+      demux		      "1"
       port		      "ROACH:3"
       open_phy		      on
       show_param	      off
@@ -1481,9 +1121,9 @@ Model {
     Line {
       SrcBlock		      "xaui0"
       SrcPort		      4
-      Points		      [10, 0; 0, 75]
-      DstBlock		      "Delay5"
-      DstPort		      1
+      Points		      [10, 0; 0, 75; -180, 0]
+      DstBlock		      "xaui0"
+      DstPort		      5
     }
     Line {
       SrcBlock		      "Constant4"
@@ -1494,9 +1134,9 @@ Model {
     Line {
       SrcBlock		      "xaui1"
       SrcPort		      4
-      Points		      [10, 0; 0, 75]
-      DstBlock		      "Delay11"
-      DstPort		      1
+      Points		      [10, 0; 0, 75; -180, 0]
+      DstBlock		      "xaui1"
+      DstPort		      5
     }
     Line {
       SrcBlock		      "default_rx_reset"
@@ -1513,16 +1153,16 @@ Model {
     Line {
       SrcBlock		      "xaui1"
       SrcPort		      1
-      Points		      [30, 0; 0, 150]
-      DstBlock		      "Delay12"
-      DstPort		      1
+      Points		      [30, 0; 0, 150; -220, 0; 0, -105]
+      DstBlock		      "xaui1"
+      DstPort		      3
     }
     Line {
       SrcBlock		      "xaui0"
       SrcPort		      1
-      Points		      [30, 0; 0, 150]
-      DstBlock		      "Delay10"
-      DstPort		      1
+      Points		      [30, 0; 0, 150; -220, 0; 0, -105]
+      DstBlock		      "xaui0"
+      DstPort		      3
     }
     Line {
       SrcBlock		      "control17"
@@ -1553,34 +1193,6 @@ Model {
       }
     }
     Line {
-      SrcBlock		      "Delay5"
-      SrcPort		      1
-      Points		      [-60, 0]
-      DstBlock		      "xaui0"
-      DstPort		      5
-    }
-    Line {
-      SrcBlock		      "Delay10"
-      SrcPort		      1
-      Points		      [-80, 0; 0, -105]
-      DstBlock		      "xaui0"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Delay11"
-      SrcPort		      1
-      Points		      [-60, 0]
-      DstBlock		      "xaui1"
-      DstPort		      5
-    }
-    Line {
-      SrcBlock		      "Delay12"
-      SrcPort		      1
-      Points		      [-80, 0; 0, -105]
-      DstBlock		      "xaui1"
-      DstPort		      3
-    }
-    Line {
       SrcBlock		      "Constant2"
       SrcPort		      1
       DstBlock		      "xaui2"
@@ -1589,28 +1201,14 @@ Model {
     Line {
       SrcBlock		      "xaui2"
       SrcPort		      4
-      Points		      [10, 0; 0, 75]
-      DstBlock		      "Delay13"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui2"
-      SrcPort		      1
-      Points		      [30, 0; 0, 150]
-      DstBlock		      "Delay14"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Delay13"
-      SrcPort		      1
-      Points		      [-60, 0]
+      Points		      [10, 0; 0, 75; -180, 0]
       DstBlock		      "xaui2"
       DstPort		      5
     }
     Line {
-      SrcBlock		      "Delay14"
+      SrcBlock		      "xaui2"
       SrcPort		      1
-      Points		      [-80, 0; 0, -105]
+      Points		      [30, 0; 0, 150; -220, 0; 0, -105]
       DstBlock		      "xaui2"
       DstPort		      3
     }
@@ -1623,58 +1221,44 @@ Model {
     Line {
       SrcBlock		      "xaui3"
       SrcPort		      4
-      Points		      [10, 0; 0, 75]
-      DstBlock		      "Delay19"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui3"
-      SrcPort		      1
-      Points		      [30, 0; 0, 150]
-      DstBlock		      "Delay20"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Delay19"
-      SrcPort		      1
-      Points		      [-60, 0]
+      Points		      [10, 0; 0, 75; -180, 0]
       DstBlock		      "xaui3"
       DstPort		      5
     }
     Line {
-      SrcBlock		      "Delay20"
+      SrcBlock		      "xaui3"
       SrcPort		      1
-      Points		      [-80, 0; 0, -105]
+      Points		      [30, 0; 0, 150; -220, 0; 0, -105]
       DstBlock		      "xaui3"
       DstPort		      3
     }
     Line {
       SrcBlock		      "xaui0"
       SrcPort		      2
-      Points		      [20, 0; 0, 120]
-      DstBlock		      "Delay7"
-      DstPort		      1
+      Points		      [20, 0; 0, 120; -200, 0; 0, -70]
+      DstBlock		      "xaui0"
+      DstPort		      4
     }
     Line {
       SrcBlock		      "xaui1"
       SrcPort		      2
-      Points		      [20, 0; 0, 120]
-      DstBlock		      "Delay25"
-      DstPort		      1
+      Points		      [20, 0; 0, 120; -200, 0; 0, -70]
+      DstBlock		      "xaui1"
+      DstPort		      4
     }
     Line {
       SrcBlock		      "xaui2"
       SrcPort		      2
-      Points		      [20, 0; 0, 120]
-      DstBlock		      "Delay26"
-      DstPort		      1
+      Points		      [20, 0; 0, 120; -200, 0; 0, -70]
+      DstBlock		      "xaui2"
+      DstPort		      4
     }
     Line {
       SrcBlock		      "xaui3"
       SrcPort		      2
-      Points		      [20, 0; 0, 120]
-      DstBlock		      "Delay27"
-      DstPort		      1
+      Points		      [20, 0; 0, 120; -200, 0; 0, -70]
+      DstBlock		      "xaui3"
+      DstPort		      4
     }
     Line {
       SrcBlock		      "xaui3"
@@ -1771,34 +1355,6 @@ Model {
       SrcPort		      7
       DstBlock		      "Terminator5"
       DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Delay7"
-      SrcPort		      1
-      Points		      [-70, 0; 0, -70]
-      DstBlock		      "xaui0"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "Delay25"
-      SrcPort		      1
-      Points		      [-70, 0; 0, -70]
-      DstBlock		      "xaui1"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "Delay26"
-      SrcPort		      1
-      Points		      [-70, 0; 0, -70]
-      DstBlock		      "xaui2"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "Delay27"
-      SrcPort		      1
-      Points		      [-70, 0; 0, -70]
-      DstBlock		      "xaui3"
-      DstPort		      4
     }
   }
 }
