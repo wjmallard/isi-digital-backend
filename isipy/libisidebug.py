@@ -100,7 +100,7 @@ class IsiCorrelatorDebug (libisiroach.IsiRoachBoard):
 		"""Flattens an iterator of iterators into just an iterator."""
 		return itertools.chain(*iterlist)
 
-	def unclump(self, A):
+	def unclump (self, A):
 		"""Inverts the compression operation of the clump block."""
 		X = []
 		num_frames = len(A)/16
@@ -112,6 +112,16 @@ class IsiCorrelatorDebug (libisiroach.IsiRoachBoard):
 		X2 = X[1:None:3]
 		X3 = X[2:None:3]
 		return (tuple(X1), tuple(X2), tuple(X3))
+
+	def unshuffle (self, id, A):
+		"""Inverts the reordering operation of the shuffle block."""
+		if id == 0:
+			return (A[0], A[1], A[2])
+		if id == 1:
+			return (A[2], A[0], A[1])
+		if id == 2:
+			return (A[1], A[2], A[0])
+		return None
 
 	def sign_extend (self, data, bits):
 		return (data + 2**(bits-1)) % 2**bits - 2**(bits-1)

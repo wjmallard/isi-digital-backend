@@ -14,9 +14,12 @@ def run_test ():
 
 	num_samples = 1<<11
 
+	corr_id = 0
+
 	# Connect to board.
 	R = IsiCorrelatorDebug('isi0', 7147)
 	R.progdev('demo_interconnect.bof')
+	R.write_int('corr_id', corr_id)
 
 	# Initialize board.
 	R.set_clock_freq(200)
@@ -33,7 +36,7 @@ def run_test ():
 	R.write('tvg7_bram', tobytestring(counter(num_samples, period=256, offset=7, step=8)))
 
 	# Sync boards.
-	R.arm_sync()
+	R.send_sync()
 	time.sleep(1)
 
 	# Initiate capture.
@@ -52,6 +55,7 @@ def run_test ():
 	# Data sent over XAUI, raw.
 	(txX, txY, txZ) = R.read_capt8("capt_clump", 3, 4*num_samples)
 	# Data sent over XAUI, unscrambled.
+	(txX, txY, txZ) = R.unshuffle(corr_id, (txX, txY, txZ))
 	(tx0, tx1, tx2) = R.unclump(txX)
 	(tx3, tx4, tx5) = R.unclump(txY)
 	(tx6, tx7, txz) = R.unclump(txZ)
@@ -62,10 +66,12 @@ def run_test ():
 	(rx0, rx1, rx2) = R.unclump(rxX)
 	(rx3, rx4, rx5) = R.unclump(rxY)
 	(rx6, rx7, rxz) = R.unclump(rxZ)
+	# NOTE: This data is useless, since it is not sync aligned!
 
 	# Data received from XAUI, resynced and raw.
 	(xrX, xrZ, xrY) = R.read_capt8("capt_resync", 3, 4*num_samples)
 	# Data received from XAUI, resynced and unscrambled.
+	(xrX, xrY, xrZ) = R.unshuffle(corr_id, (xrX, xrY, xrZ))
 	(xr0, xr1, xr2) = R.unclump(xrX)
 	(xr3, xr4, xr5) = R.unclump(xrY)
 	(xr6, xr7, xrz) = R.unclump(xrZ)
@@ -79,6 +85,19 @@ def run_test ():
 
 	# These should hold:
 	# X0 = tx0 = xr0 = XA
+
+	correct_stf = \
+		(X0 == XA) & \
+		(X1 == XB) & \
+		(X2 == XC) & \
+		(X3 == YA) & \
+		(X4 == YB) & \
+		(X5 == YC) & \
+		(X6 == ZA) & \
+		(X7 == ZB) & \
+		(Xz == ZC)
+	if not correct_stf:
+		print "Failure somewhere."
 
 	correct_tx = \
 		(X0 == tx0) & \
