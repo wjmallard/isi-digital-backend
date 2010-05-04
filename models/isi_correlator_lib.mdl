@@ -15,9 +15,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Apr 27 12:32:57 2010"
-  RTWModifiedTimeStamp	  194272364
-  ModelVersionFormat	  "1.%<AutoIncrement:598>"
+  LastModifiedDate	  "Tue May  4 15:20:44 2010"
+  RTWModifiedTimeStamp	  194887237
+  ModelVersionFormat	  "1.%<AutoIncrement:600>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -18811,7 +18811,7 @@ Library {
 	  SID			  1071
 	  Ports			  [2, 2]
 	  Position		  [225, 116, 275, 149]
-	  LibraryVersion	  "1.582"
+	  LibraryVersion	  "1.598"
 	  SourceBlock		  "isi_correlator_lib/delay_bram_en"
 	  SourceType		  "delay_bram_en_plus"
 	  ShowPortLabels	  "FromPortIcon"
@@ -18831,7 +18831,7 @@ Library {
 	  SID			  1061
 	  Ports			  [2, 2]
 	  Position		  [225, 176, 275, 209]
-	  LibraryVersion	  "1.582"
+	  LibraryVersion	  "1.598"
 	  SourceBlock		  "isi_correlator_lib/delay_bram_en"
 	  SourceType		  "delay_bram_en_plus"
 	  ShowPortLabels	  "FromPortIcon"
@@ -18851,7 +18851,7 @@ Library {
 	  SID			  1062
 	  Ports			  [2, 2]
 	  Position		  [225, 236, 275, 269]
-	  LibraryVersion	  "1.582"
+	  LibraryVersion	  "1.598"
 	  SourceBlock		  "isi_correlator_lib/delay_bram_en"
 	  SourceType		  "delay_bram_en_plus"
 	  ShowPortLabels	  "FromPortIcon"
@@ -18871,7 +18871,7 @@ Library {
 	  SID			  1063
 	  Ports			  [2, 2]
 	  Position		  [225, 296, 275, 329]
-	  LibraryVersion	  "1.582"
+	  LibraryVersion	  "1.598"
 	  SourceBlock		  "isi_correlator_lib/delay_bram_en"
 	  SourceType		  "delay_bram_en_plus"
 	  ShowPortLabels	  "FromPortIcon"
@@ -18891,7 +18891,7 @@ Library {
 	  SID			  1064
 	  Ports			  [2, 2]
 	  Position		  [225, 356, 275, 389]
-	  LibraryVersion	  "1.582"
+	  LibraryVersion	  "1.598"
 	  SourceBlock		  "isi_correlator_lib/delay_bram_en"
 	  SourceType		  "delay_bram_en_plus"
 	  ShowPortLabels	  "FromPortIcon"
@@ -18911,7 +18911,7 @@ Library {
 	  SID			  1065
 	  Ports			  [2, 2]
 	  Position		  [225, 416, 275, 449]
-	  LibraryVersion	  "1.582"
+	  LibraryVersion	  "1.598"
 	  SourceBlock		  "isi_correlator_lib/delay_bram_en"
 	  SourceType		  "delay_bram_en_plus"
 	  ShowPortLabels	  "FromPortIcon"
@@ -18931,7 +18931,7 @@ Library {
 	  SID			  1066
 	  Ports			  [2, 2]
 	  Position		  [225, 476, 275, 509]
-	  LibraryVersion	  "1.582"
+	  LibraryVersion	  "1.598"
 	  SourceBlock		  "isi_correlator_lib/delay_bram_en"
 	  SourceType		  "delay_bram_en_plus"
 	  ShowPortLabels	  "FromPortIcon"
@@ -18951,7 +18951,7 @@ Library {
 	  SID			  1067
 	  Ports			  [2, 2]
 	  Position		  [225, 536, 275, 569]
-	  LibraryVersion	  "1.582"
+	  LibraryVersion	  "1.598"
 	  SourceBlock		  "isi_correlator_lib/delay_bram_en"
 	  SourceType		  "delay_bram_en_plus"
 	  ShowPortLabels	  "FromPortIcon"
@@ -21270,8 +21270,8 @@ Library {
 	  RTWMemSecDataParameters "Inherit from model"
 	  vec_len		  "8"
 	  arith_type		  "Signed"
-	  n_bits		  "27"
-	  bin_pt		  "4"
+	  n_bits		  "out_bit_width"
+	  bin_pt		  "out_bin_point"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21294,8 +21294,8 @@ Library {
 	  RTWMemSecDataParameters "Inherit from model"
 	  vec_len		  "8"
 	  arith_type		  "Signed"
-	  n_bits		  "27"
-	  bin_pt		  "4"
+	  n_bits		  "out_bit_width"
+	  bin_pt		  "out_bin_point"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21318,8 +21318,8 @@ Library {
 	  RTWMemSecDataParameters "Inherit from model"
 	  vec_len		  "8"
 	  arith_type		  "Signed"
-	  n_bits		  "27"
-	  bin_pt		  "4"
+	  n_bits		  "out_bit_width"
+	  bin_pt		  "out_bin_point"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21342,8 +21342,8 @@ Library {
 	  RTWMemSecDataParameters "Inherit from model"
 	  vec_len		  "8"
 	  arith_type		  "Signed"
-	  n_bits		  "27"
-	  bin_pt		  "4"
+	  n_bits		  "out_bit_width"
+	  bin_pt		  "out_bin_point"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21366,8 +21366,8 @@ Library {
 	  RTWMemSecDataParameters "Inherit from model"
 	  vec_len		  "8"
 	  arith_type		  "Signed"
-	  n_bits		  "27"
-	  bin_pt		  "4"
+	  n_bits		  "out_bit_width"
+	  bin_pt		  "out_bin_point"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21390,8 +21390,8 @@ Library {
 	  RTWMemSecDataParameters "Inherit from model"
 	  vec_len		  "8"
 	  arith_type		  "Signed"
-	  n_bits		  "27"
-	  bin_pt		  "4"
+	  n_bits		  "out_bit_width"
+	  bin_pt		  "out_bin_point"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21414,8 +21414,8 @@ Library {
 	  RTWMemSecDataParameters "Inherit from model"
 	  vec_len		  "8"
 	  arith_type		  "Signed"
-	  n_bits		  "27"
-	  bin_pt		  "4"
+	  n_bits		  "out_bit_width"
+	  bin_pt		  "out_bin_point"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21438,8 +21438,8 @@ Library {
 	  RTWMemSecDataParameters "Inherit from model"
 	  vec_len		  "8"
 	  arith_type		  "Signed"
-	  n_bits		  "27"
-	  bin_pt		  "4"
+	  n_bits		  "out_bit_width"
+	  bin_pt		  "out_bin_point"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21462,8 +21462,8 @@ Library {
 	  RTWMemSecDataParameters "Inherit from model"
 	  vec_len		  "8"
 	  arith_type		  "Signed"
-	  n_bits		  "27"
-	  bin_pt		  "4"
+	  n_bits		  "out_bit_width"
+	  bin_pt		  "out_bin_point"
 	}
 	Line {
 	  SrcBlock		  "Delay3"
@@ -21908,7 +21908,7 @@ Library {
       MaskIconRotate	      "none"
       MaskPortRotate	      "default"
       MaskIconUnits	      "autoscale"
-      MaskValueString	      "5|1"
+      MaskValueString	      "10|1"
       System {
 	Name			"xaui_resync"
 	Location		[831, 122, 1200, 435]
