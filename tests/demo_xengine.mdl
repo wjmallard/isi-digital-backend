@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.38"
+    ComputedModelVersion    "1.39"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Apr  9 19:36:45 2010"
-  RTWModifiedTimeStamp	  192742581
-  ModelVersionFormat	  "1.%<AutoIncrement:38>"
+  LastModifiedDate	  "Mon Apr 12 10:07:10 2010"
+  RTWModifiedTimeStamp	  192967625
+  ModelVersionFormat	  "1.%<AutoIncrement:39>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -647,7 +647,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    97
+    SIDHighWatermark	    100
     Block {
       BlockType		      Reference
       Name		      " System Generator"
@@ -1053,7 +1053,7 @@ Model {
       BlockType		      From
       Name		      "From51"
       SID		      30
-      Position		      [305, 233, 365, 247]
+      Position		      [230, 233, 290, 247]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "gen_sync"
@@ -1062,7 +1062,7 @@ Model {
       BlockType		      From
       Name		      "From52"
       SID		      31
-      Position		      [305, 308, 365, 322]
+      Position		      [230, 308, 290, 322]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "gen_sync"
@@ -1071,7 +1071,7 @@ Model {
       BlockType		      From
       Name		      "From53"
       SID		      32
-      Position		      [305, 383, 365, 397]
+      Position		      [230, 383, 290, 397]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "gen_sync"
@@ -1314,14 +1314,14 @@ Model {
       BlockType		      Terminator
       Name		      "TerminatorY"
       SID		      61
-      Position		      [465, 290, 485, 310]
+      Position		      [390, 290, 410, 310]
       ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "TerminatorZ"
       SID		      63
-      Position		      [465, 365, 485, 385]
+      Position		      [390, 365, 410, 385]
       ShowName		      off
     }
     Block {
@@ -4800,6 +4800,39 @@ Model {
     }
     Block {
       BlockType		      Reference
+      Name		      "control1"
+      SID		      98
+      Ports		      [1, 1]
+      Position		      [390, 243, 440, 257]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Slice"
+      SourceType	      "Xilinx Bit Slice Extractor Block"
+      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The outpu"
+      "t type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><"
+      "br>Hardware notes: In hardware this block costs nothing."
+      nbits		      "8"
+      boolean_output	      off
+      mode		      "Lower Bit Location + Width"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "0"
+      base0		      "LSB of Input"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,631,621"
+      block_type	      "slice"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,1fd851a7,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
       Name		      "control17"
       SID		      71
       Ports		      [1, 1]
@@ -4899,6 +4932,39 @@ Model {
     }
     Block {
       BlockType		      Reference
+      Name		      "control2"
+      SID		      99
+      Ports		      [1, 1]
+      Position		      [390, 318, 440, 332]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Slice"
+      SourceType	      "Xilinx Bit Slice Extractor Block"
+      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The outpu"
+      "t type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><"
+      "br>Hardware notes: In hardware this block costs nothing."
+      nbits		      "8"
+      boolean_output	      off
+      mode		      "Lower Bit Location + Width"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "0"
+      base0		      "LSB of Input"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,631,621"
+      block_type	      "slice"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,1fd851a7,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
       Name		      "control20"
       SID		      74
       Ports		      [1, 1]
@@ -4916,6 +4982,39 @@ Model {
       bit1		      "0"
       base1		      "MSB of Input"
       bit0		      "3"
+      base0		      "LSB of Input"
+      dbl_ovrd		      off
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,631,621"
+      block_type	      "slice"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,1fd851a7,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "control3"
+      SID		      100
+      Ports		      [1, 1]
+      Position		      [390, 393, 440, 407]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Slice"
+      SourceType	      "Xilinx Bit Slice Extractor Block"
+      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The outpu"
+      "t type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><"
+      "br>Hardware notes: In hardware this block costs nothing."
+      nbits		      "8"
+      boolean_output	      off
+      mode		      "Lower Bit Location + Width"
+      bit1		      "0"
+      base1		      "MSB of Input"
+      bit0		      "0"
       base0		      "LSB of Input"
       dbl_ovrd		      off
       has_advanced_control    "0"
@@ -4989,7 +5088,7 @@ Model {
       Name		      "tvg_X"
       SID		      84
       Ports		      [1, 2]
-      Position		      [390, 212, 440, 263]
+      Position		      [315, 212, 365, 263]
       LibraryVersion	      "1.575"
       SourceBlock	      "isi_correlator_lib/tvg"
       SourceType	      ""
@@ -5008,7 +5107,7 @@ Model {
       Name		      "tvg_Y"
       SID		      85
       Ports		      [1, 2]
-      Position		      [390, 287, 440, 338]
+      Position		      [315, 287, 365, 338]
       LibraryVersion	      "1.575"
       SourceBlock	      "isi_correlator_lib/tvg"
       SourceType	      ""
@@ -5027,7 +5126,7 @@ Model {
       Name		      "tvg_Z"
       SID		      86
       Ports		      [1, 2]
-      Position		      [390, 362, 440, 413]
+      Position		      [315, 362, 365, 413]
       LibraryVersion	      "1.575"
       SourceBlock	      "isi_correlator_lib/tvg"
       SourceType	      ""
@@ -5244,13 +5343,13 @@ Model {
     Line {
       SrcBlock		      "tvg_Z"
       SrcPort		      2
-      DstBlock		      "Goto13"
+      DstBlock		      "control3"
       DstPort		      1
     }
     Line {
       SrcBlock		      "tvg_Y"
       SrcPort		      2
-      DstBlock		      "Goto12"
+      DstBlock		      "control2"
       DstPort		      1
     }
     Line {
@@ -5268,7 +5367,7 @@ Model {
     Line {
       SrcBlock		      "tvg_X"
       SrcPort		      2
-      DstBlock		      "Goto11"
+      DstBlock		      "control1"
       DstPort		      1
     }
     Line {
@@ -5378,6 +5477,24 @@ Model {
       SrcPort		      1
       DstBlock		      "vacc"
       DstPort		      11
+    }
+    Line {
+      SrcBlock		      "control1"
+      SrcPort		      1
+      DstBlock		      "Goto11"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "control2"
+      SrcPort		      1
+      DstBlock		      "Goto12"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "control3"
+      SrcPort		      1
+      DstBlock		      "Goto13"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "From5"
