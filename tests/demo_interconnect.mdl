@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.68"
+    ComputedModelVersion    "1.69"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Apr 27 12:39:37 2010"
-  RTWModifiedTimeStamp	  194272747
-  ModelVersionFormat	  "1.%<AutoIncrement:68>"
+  LastModifiedDate	  "Tue Apr 27 19:12:35 2010"
+  RTWModifiedTimeStamp	  194296328
+  ModelVersionFormat	  "1.%<AutoIncrement:69>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -609,6 +609,28 @@ Model {
       Interpolate	      on
     }
     Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
       BlockType		      SubSystem
       ShowPortLabels	      "FromPortIcon"
       Permissions	      "ReadWrite"
@@ -633,7 +655,7 @@ Model {
   }
   System {
     Name		    "demo_interconnect"
-    Location		    [34, 77, 1915, 703]
+    Location		    [29, 53, 1910, 679]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -8051,23 +8073,131 @@ Model {
       SampleTime	      "1"
     }
     Block {
-      BlockType		      Reference
+      BlockType		      SubSystem
       Name		      "loopback"
       SID		      414
       Ports		      [3, 3]
       Position		      [1525, 21, 1675, 119]
-      LibraryVersion	      "1.598"
-      SourceBlock	      "isi_correlator_lib/loopback"
-      SourceType	      "loopback"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
+      AncestorBlock	      "isi_correlator_lib/loopback"
+      LibraryVersion	      "*1.598"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
       FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      delay		      "8"
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "loopback"
+      MaskDescription	      "A loopback link. Stores data in BRAM for long delay periods.\n\nIntended for buffering a "
+      "stream of data until the other two\narrive over XAUI for resyncing.  Its delay should be set to\nsomething on th"
+      "e order of (but less than) the XAUI latency."
+      MaskPromptString	      "Delay: (2^?)"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "delay=@1;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "8"
+      System {
+	Name			"loopback"
+	Location		[1131, 128, 1393, 253]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	1547
+	SIDPrevWatermark	1547
+	Block {
+	  BlockType		  Inport
+	  Name			  "sync"
+	  SID			  451
+	  Position		  [15, 13, 45, 27]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "data_fifo"
+	  SID			  452
+	  Position		  [15, 48, 45, 62]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "valid_fifo"
+	  SID			  453
+	  Position		  [15, 83, 45, 97]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "sync_out"
+	  SID			  457
+	  Position		  [195, 13, 225, 27]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "data_fifo_out"
+	  SID			  458
+	  Position		  [195, 48, 225, 62]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "valid_fifo_out"
+	  SID			  459
+	  Position		  [195, 83, 225, 97]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  SrcBlock		  "valid_fifo"
+	  SrcPort		  1
+	  DstBlock		  "valid_fifo_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "data_fifo"
+	  SrcPort		  1
+	  DstBlock		  "data_fifo_out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sync"
+	  SrcPort		  1
+	  DstBlock		  "sync_out"
+	  DstPort		  1
+	}
+      }
     }
     Block {
       BlockType		      Reference
@@ -8748,7 +8878,7 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      buffer_depth	      "5"
+      buffer_depth	      "10"
       logic_latency	      "1"
     }
     Line {
