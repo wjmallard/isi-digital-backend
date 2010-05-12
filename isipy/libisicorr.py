@@ -33,8 +33,8 @@ class IsiCorrelator (object):
 			self._boards[i].reset()
 		time.sleep(.25)
 
-	def vacc_connect (self, host):
-		self._vacc = IsiVacc(host)
+	def vacc_connect (self, host, port):
+		self._vacc = IsiVacc(host, port)
 		self._vacc.start()
 
 	def vacc_disconnect (self):

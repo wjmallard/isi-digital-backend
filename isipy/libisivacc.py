@@ -15,12 +15,11 @@ import numpy as np
 
 class IsiVacc (threading.Thread):
 
-	BASE_PORT = 8880
-
-	def __init__ (self, addr):
+	def __init__ (self, addr, port):
 		threading.Thread.__init__(self)
 
 		self._addr = addr
+		self._port = port
 		self._sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 		self._sock.settimeout(1)
 
@@ -39,7 +38,7 @@ class IsiVacc (threading.Thread):
 		self.FREQ = np.arange(64) * 1600/64
 
 	def run (self):
-		self._sock.bind((self._addr, IsiVacc.BASE_PORT))
+		self._sock.bind((self._addr, self._port))
 		print "Opened UDP socket."
 
 		lim_pktid = 1 << self._num_pktid_bits
@@ -93,10 +92,7 @@ class IsiVacc (threading.Thread):
 
 		plot = "\nPacket #%d:\n" % pktid
 		for i in xrange(64):
-			plot += "%4.0f MHz: %12d %12d %12d %12d %12d %12d %12d %12d %12d\n" % (self.FREQ[i], data[0][i], data[1][i], data[2][i], data[3][i], data[5][i], data[7][i], data[4][i], data[6][i], data[8][i])
-#			plot += "%4.0f MHz: %16d %16d %16d\n" % (self.FREQ[i], data[0][i], data[1][i], data[2][i])
-#			plot += "%4.0f MHz: %16d %16d %16d\n" % (self.FREQ[i], data[3][i], data[5][i], data[7][i])
-#			plot += "%4.0f MHz: %16d %16d %16d\n" % (self.FREQ[i], data[4][i], data[6][i], data[8][i])
+			plot += "%4.0f MHz: %12d %12d %12d %12d %12d %12d\n" % (self.FREQ[i], data[0][i], data[1][i], data[2][i], (data[3][i]**2+data[4][i]**2)**.5, (data[5][i]**2+data[6][i]**2)**.5, (data[7][i]**2+data[8][i]**2)**.5)
 		print plot,
 
 	def _read_sock (self):
