@@ -12,7 +12,7 @@ I = IsiCorrelator(('isi0', 'isi1', 'isi2'))
 I.program('isi_correlator.bof')
 
 I.set_clock_freq(200)
-I.set_sync_period(.002)
+I.set_sync_period(.0007)
 I.set_fft_shift(0x7f)
 I.set_eq_coeff(1<<11)
 

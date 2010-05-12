@@ -6,7 +6,6 @@ __copyright__ = "Copyright 2010, CASPER"
 __license__ = "GPL"
 __status__ = "Development"
 
-import itertools
 import socket
 import struct
 import threading
@@ -85,7 +84,7 @@ class IsiVacc (threading.Thread):
 		"""FOR DEBUG USE ONLY"""
 
 		self.CNTR += 1
-		if self.CNTR < 20:
+		if self.CNTR < 100:
 			return
 
 		self.CNTR = 0
@@ -106,7 +105,7 @@ class IsiVacc (threading.Thread):
 					raise IsiVaccKilled
 
 		(board, group, pktid) = struct.unpack('!BBxxI', pkt[0:8])
-		data = struct.unpack('!2016I', pkt[8:8072])
+		data = np.frombuffer(pkt[8:8072], dtype='>i4')
 		return (board, group, pktid, data)
 
 	def _descramble (self, pkts):
