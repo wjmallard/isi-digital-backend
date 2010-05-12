@@ -22,7 +22,7 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 	FIFO_RESET  = 1<<2
 	ACQUIRE     = 1<<3
 
-	def __init__ (self, host, port, id=-1):
+	def __init__ (self, host, port=7147, id=-1):
 		super(IsiRoachBoard, self).__init__(host, port)
 		self._host = host
 		self._port = port
