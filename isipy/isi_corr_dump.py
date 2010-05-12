@@ -14,13 +14,13 @@ I.program('isi_correlator.bof')
 I.set_clock_freq(200)
 I.set_sync_period(.002)
 I.set_fft_shift(0x7f)
-I.set_eq_coeff((2**7)<<8)
+I.set_eq_coeff(1<<11)
 
 I.arm_sync()
 
 print "Waiting for data ..."
 
-I.vacc_connect("192.168.1.202")
+I.vacc_connect("192.168.1.202", 8880)
 
 while True:
 	try:
