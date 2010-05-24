@@ -75,25 +75,6 @@ class IsiVacc (threading.Thread):
 		self._sock.close()
 		print "Closed UDP socket."
 
-	def process_pkt (self, pktid, accum):
-		#print "Got a full packet with id %d!" % pktid
-		data = self._descramble(accum)
-		self.plot_data(pktid, data)
-
-	def plot_data (self, pktid, data):
-		"""FOR DEBUG USE ONLY"""
-
-		self.CNTR += 1
-		if self.CNTR < 100:
-			return
-
-		self.CNTR = 0
-
-		plot = "\nPacket #%d:\n" % pktid
-		for i in xrange(64):
-			plot += "%4.0f MHz: %12d %12d %12d %12d %12d %12d\n" % (self.FREQ[i], data[0][i], data[1][i], data[2][i], (data[3][i]**2+data[4][i]**2)**.5, (data[5][i]**2+data[6][i]**2)**.5, (data[7][i]**2+data[8][i]**2)**.5)
-		print plot,
-
 	def _read_sock (self):
 		while True:
 			try:
@@ -107,6 +88,11 @@ class IsiVacc (threading.Thread):
 		(board, group, pktid) = struct.unpack('!BBxxI', pkt[0:8])
 		data = np.frombuffer(pkt[8:8072], dtype='>i4')
 		return (board, group, pktid, data)
+
+	def process_pkt (self, pktid, accum):
+		#print "Got a full packet with id %d!" % pktid
+		data = self._descramble(accum)
+		self._plot_data(pktid, data)
 
 	def _descramble (self, pkts):
 		XX_auto = pkts[0:8,  0: 8].transpose().flatten()
@@ -124,6 +110,20 @@ class IsiVacc (threading.Thread):
 		return (XX_auto, YY_auto, ZZ_auto, \
 			XY_real, YZ_real, ZX_real, \
 			XY_imag, YZ_imag, ZX_imag)
+
+	def _plot_data (self, pktid, data):
+		"""FOR DEBUG USE ONLY"""
+
+		self.CNTR += 1
+		if self.CNTR < 100:
+			return
+
+		self.CNTR = 0
+
+		plot = "\nPacket #%d:\n" % pktid
+		for i in xrange(64):
+			plot += "%4.0f MHz: %12d %12d %12d %12d %12d %12d\n" % (self.FREQ[i], data[0][i], data[1][i], data[2][i], (data[3][i]**2+data[4][i]**2)**.5, (data[5][i]**2+data[6][i]**2)**.5, (data[7][i]**2+data[8][i]**2)**.5)
+		print plot,
 
 class IsiVaccKilled (Exception):
 	def __str__ (self):
