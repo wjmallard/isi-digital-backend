@@ -15,16 +15,26 @@ import time
 import struct
 import sys
 
-import IPython
-ipshell = IPython.Shell.IPShellEmbed()
+from libisidatarcvr import *
 
 class IsiCorrelatorDebug (libisiroach.IsiRoachBoard):
 	def __init__ (self, host, port):
 		super(IsiCorrelatorDebug, self).__init__(host, port)
 
+		self._data_rcvr = []
 		self._data_l = []
 		self._figure = None
 		time.sleep(.1)
+
+	def _read_bram8 (self, bram_name, read_len, signed=False):
+		if signed:
+			fmt = '>%sb'
+		else:
+			fmt = '>%sB'
+
+		bram_dump = self.read(bram_name, read_len)
+		bram_data = struct.unpack(fmt % read_len, bram_dump)
+		return bram_data
 
 	def gen_plot (self, data_l):
 		assert (type(data_l) == list)
@@ -52,42 +62,20 @@ class IsiCorrelatorDebug (libisiroach.IsiRoachBoard):
 
 		return c_list
 
-	def _read_bram8 (self, bram_name, read_len, signed=False):
-		if signed:
-			fmt = '>%sb'
-		else:
-			fmt = '>%sB'
+	def start_recv (self, host, port):
+		self._data_rcvr = IsiDataRcvr(host, port)
+		self._data_rcvr.start()
 
-		bram_dump = self.read(bram_name, read_len)
-		bram_data = struct.unpack(fmt % read_len, bram_dump)
-		return bram_data
+	def stop_recv (self):
+		self._data_rcvr.not_killed = False
+		self._data_rcvr.join()
 
-	def read_capt (self, capt_name, num_brams, read_len, signed=False):
-		capt_data = []
-		for bram_num in xrange(num_brams):
-			bram_name = "%s_bram%d" % (capt_name, bram_num)
-			bram_vals = self._read_bram(bram_name, read_len, signed)
-			capt_data += [bram_vals]
-		return tuple(capt_data)
-
-	def read_capt8 (self, capt_name, num_brams, read_len, signed=False):
-		capt_data = []
-		for bram_num in xrange(num_brams):
-			bram_name = "%s_bram%d" % (capt_name, bram_num)
-			bram_vals = self._read_bram8(bram_name, read_len, signed)
-			capt_data += [bram_vals]
-		return tuple(capt_data)
+	def schedule_dump (self):
+		self._data_rcvr.dump_pending = True
 
 	#
 	# Block verification methods.
 	#
-
-	def bram_uncat (self, data):
-		"""Un-concatenates parallel BRAM data."""
-		iter = []
-		for i in data:
-			iter += 4*[itertools.chain(i)]
-		return iter
 
 	def bram_interleave (self, data):
 		"""Interleaves parallel BRAM data streams."""
@@ -125,9 +113,6 @@ class IsiCorrelatorDebug (libisiroach.IsiRoachBoard):
 
 	def sign_extend (self, data, bits):
 		return (data + 2**(bits-1)) % 2**bits - 2**(bits-1)
-
-	def diff (self, x_list, y_list):
-		return [x-y for x,y in zip(x_list, y_list)]
 
 	#
 	# Block readout functions

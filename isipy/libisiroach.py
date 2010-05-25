@@ -154,6 +154,12 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		self.write_int('eq_coeff', coeff)
 		self._eq_coeff = coeff
 
+	def get_eq_coeff (self):
+		if self._host == None:
+			return 0
+
+		return self.read_int('eq_coeff')
+
 	def get_status (self):
 		if self._host == None:
 			return

@@ -8,7 +8,7 @@ __status__ = "Development"
 
 from libisicorr import *
 
-I = IsiCorrelator(('isi0', 'isi1', 'isi2'))
+I = IsiCorrelator(('isiroach1', 'isiroach2', 'isiroach3'))
 I.program('isi_correlator.bof')
 
 I.set_clock_freq(200)
@@ -20,7 +20,7 @@ I.arm_sync()
 
 print "Waiting for data ..."
 
-I.vacc_connect("192.168.1.202", 8880)
+I.vacc_connect("straylight", 8880)
 
 while True:
 	try:
