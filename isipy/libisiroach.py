@@ -119,15 +119,3 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 	def get_status (self):
 		return self.read_int('status')
 
-	def load_tvg (self, tv):
-		assert (len(tv) == 4)
-
-		try:
-			self.write("adc_tvg_tvg0_bram", tv[0])
-			self.write("adc_tvg_tvg1_bram", tv[1])
-			self.write("adc_tvg_tvg2_bram", tv[2])
-			self.write("adc_tvg_tvg3_bram", tv[3])
-			self._tv = tv
-		except RuntimeError:
-			print "Warning: Cannot load tvg on board %d." % (self._id)
-
