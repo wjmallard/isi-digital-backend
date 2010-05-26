@@ -95,7 +95,12 @@ class IsiFengRecv ():
 			if got_a_packet:
 				got_a_packet = False
 				for oobj in ordy:
-					oobj.send(self._DATA)
+					try:
+						oobj.send(self._DATA)
+					except socket.error:
+						print "A data stream has disconnected."
+						oobj.close()
+						self._olist.remove(oobj)
 
 		print "Exited receive loop."
 		self._close_sockets()
@@ -153,6 +158,7 @@ class IsiFengRecv ():
 			name = args.pop(0)
 			sock = self._open_push_sock(name)
 			if sock:
+				print "A data stream has connected."
 				self._olist.append(sock)
 
 		elif cmd == "dump":
