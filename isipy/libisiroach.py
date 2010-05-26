@@ -7,10 +7,8 @@ __license__ = "GPL"
 __status__ = "Development"
 
 import corr
-import itertools
 import time
 import struct
-import sys
 
 class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 	"""
@@ -19,7 +17,7 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 
 	ARM_RESET   = 1<<0
 	FORCE_TRIG  = 1<<1
-	FIFO_RESET  = 1<<2
+	RESET       = 1<<2
 	ACQUIRE     = 1<<3
 
 	def __init__ (self, host, port=7147, id=-1):
@@ -27,12 +25,13 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		self._host = host
 		self._port = port
 		self._id = id
-		self._tv = None
 
-		self._clock_freq = 0 # MHz
-		self._sync_period = 0 # sec
-		self._fft_shift = 0
-		self._eq_coeff = 0
+		self.clock_freq = 0 # MHz
+		self.sync_period = 0 # sec
+		self.fft_shift = 0
+		self.eq_coeff = 0
+
+		time.sleep(.25)
 
 	def _set_flag (self, flags):
 		reg_state = self.read_int('control')
@@ -59,118 +58,68 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 		bram_data = struct.unpack(fmt % read_len, bram_dump)
 		return bram_data
 
-	#
-	# BEGIN corr method overrides.
-	#
+	def _read_bram8 (self, bram_name, read_len, signed=False, offset=0):
+		if signed:
+			fmt = '>%sb'
+		else:
+			fmt = '>%sB'
 
-	def progdev (self, filename):
-		if self._host == None:
-			return
+		bram_dump = self.read(bram_name, read_len, offset=offset)
+		bram_data = struct.unpack(fmt % read_len, bram_dump)
+		return bram_data
 
-		super(IsiRoachBoard, self).progdev(filename)
+	def initialize (self):
+		board_is_programmed = True
+		try:
+			self.status()
+		except RuntimeError:
+			board_is_programmed = False
 
-	def read_int (self, name):
-		if self._host == None:
-			return 0
+		if board_is_programmed:
+			try:
+				self.clock_freq = int(self.est_brd_clk())
+				self.clock_freq -= self.clock_freq % 5
+				print "* Clock freq = %d MHz" % self.clock_freq
 
-		return super(IsiRoachBoard, self).read_int(name)
+				self.sync_period = self.read_int('sync_gen2_period')
+				print "* Sync Period = %d clks" % self.sync_period
 
-	def write_int (self, name, value):
-		if self._host == None:
-			return
+				self.fft_shift = self.read_int('fft_shift')
+				print "* FFT Shift = 0x%x" % self.fft_shift
 
-		super(IsiRoachBoard, self).write_int(name, value)
-
-	#
-	# END corr method overrides.
-	#
+				self.eq_coeff = self.read_int('eq_coeff')
+				print "* EQ Coeff = %d" % self.eq_coeff
+			except RuntimeError:
+				print "WARN: Failed to read some registers."
+		else:
+			print "Board appears to be unprogrammed."
 
 	def reset (self):
-		if self._host == None:
-			return
-
-		self._toggle_reset(IsiRoachBoard.FIFO_RESET)
+		self._toggle_reset(IsiRoachBoard.RESET)
 
 	def arm_sync (self):
-		if self._host == None:
-			return
 		self._set_flag(IsiRoachBoard.ARM_RESET)
 
 	def unarm_sync (self):
-		if self._host == None:
-			return
-
 		self._unset_flag(IsiRoachBoard.ARM_RESET)
 
-	def send_sync (self):
-		if self._host == None:
-			return
-
-		self._unset_flag(IsiRoachBoard.FORCE_TRIG)
-		self.arm_sync()
-		self._set_flag(IsiRoachBoard.FORCE_TRIG)
-		time.sleep(.1)
-		self._unset_flag(IsiRoachBoard.FORCE_TRIG)
-
-	def acquire (self):
-		if self._host == None:
-			return
-
-		self._set_flag(IsiRoachBoard.ACQUIRE)
-		time.sleep(self._sync_period)
-		self._unset_flag(IsiRoachBoard.ACQUIRE)
-
-	def set_clock_freq (self, freq=200):
-		if self._host == None:
-			return
-
-		assert (freq > 25)
-		self._clock_freq = freq
-
-	def set_sync_period (self, period=1):
-		if self._host == None:
-			return
-
-		if period > 0:
-			select = 1
-		else:
-			select = 0
-
-		clocks = int(period * self._clock_freq * 10**6)
+	def set_sync_period (self, period):
+		clocks = int(period * self.clock_freq * 10**6)
 		self.write_int('sync_gen2_period', clocks)
-		self._sync_period = period
+		self.sync_period = period
 
 	def set_fft_shift (self, shift):
-		if self._host == None:
-			return
-
 		self.write_int('fft_shift', shift)
-		self._fft_shift = shift
+		self.fft_shift = shift
 
 	def set_eq_coeff (self, coeff):
-		if self._host == None:
-			return
-
 		self.write_int('eq_coeff', coeff)
-		self._eq_coeff = coeff
-
-	def get_eq_coeff (self):
-		if self._host == None:
-			return 0
-
-		return self.read_int('eq_coeff')
+		self.eq_coeff = coeff
 
 	def get_status (self):
-		if self._host == None:
-			return
-
-		status = self.read_int('status')
-		return status
+		return self.read_int('status')
 
 	def load_tvg (self, tv):
-		if self._host == None:
-			return
-
 		assert (len(tv) == 4)
 
 		try:

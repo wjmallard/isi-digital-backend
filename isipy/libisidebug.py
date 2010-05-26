@@ -26,16 +26,6 @@ class IsiCorrelatorDebug (libisiroach.IsiRoachBoard):
 		self._figure = None
 		time.sleep(.1)
 
-	def _read_bram8 (self, bram_name, read_len, signed=False):
-		if signed:
-			fmt = '>%sb'
-		else:
-			fmt = '>%sB'
-
-		bram_dump = self.read(bram_name, read_len)
-		bram_data = struct.unpack(fmt % read_len, bram_dump)
-		return bram_data
-
 	def gen_plot (self, data_l):
 		assert (type(data_l) == list)
 
@@ -61,17 +51,6 @@ class IsiCorrelatorDebug (libisiroach.IsiRoachBoard):
 			ax.autoscale_view(tight=True, scalex=True, scaley=True)
 
 		return c_list
-
-	def start_recv (self, host, port):
-		self._data_rcvr = IsiDataRcvr(host, port)
-		self._data_rcvr.start()
-
-	def stop_recv (self):
-		self._data_rcvr.not_killed = False
-		self._data_rcvr.join()
-
-	def schedule_dump (self):
-		self._data_rcvr.dump_pending = True
 
 	#
 	# Block verification methods.
