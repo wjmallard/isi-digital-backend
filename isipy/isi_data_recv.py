@@ -13,44 +13,21 @@ import sys
 
 import numpy as np
 
-class IsiFengRecv ():
+class IsiDataRecv ():
 
-	def __init__ (self, addr, port):
+	def __init__ (self, addr, port, pktfmt, datafmt):
+
 		self._addr = addr
 		self._port = port
 		self._data_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 		self._ctrl_sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
 		self._ctrl_sock_name = "/tmp/isi_ctrl_sock"
 
+		self._PKT = np.zeros(1, dtype=pktfmt)
+		self._DATA = np.zeros(1, dtype=datafmt)
+
 		self._ilist = [self._data_sock, self._ctrl_sock, sys.stdin]
 		self._olist = []
-
-		self._pktfmt = np.dtype \
-		([
-			('pkt_id', '>i4'),
-			('adc0', '>i4', 256),
-			('adc1', '>i4', 256),
-			('pfb0', '>i4', 64),
-			('pfb1', '>i4', 64),
-			('fftR', '>i4', 64),
-			('fftI', '>i4', 64),
-			('raR', '>i4', 64),
-			('raI', '>i4', 64),
-		])
-
-		self._datafmt = np.dtype \
-		([
-			('pkt_id', '>i4'),
-			('adc', '>i4', 512),
-			('pfb', '>i4', 128),
-			('fftR', '>i4', 64),
-			('fftI', '>i4', 64),
-			('raR', '>i4', 64),
-			('raI', '>i4', 64),
-		])
-
-		self._PKT = np.zeros(1, dtype=self._pktfmt)
-		self._DATA = np.zeros(1, dtype=self._datafmt)
 
 		self.not_killed = True
 
@@ -126,29 +103,6 @@ class IsiFengRecv ():
 		self._data_sock.close()
 		print "Closed UDP socket."
 
-	def _descramble (self):
-		raw_adc0 = self._PKT['adc0'][0].reshape([8,32])
-		raw_adc1 = self._PKT['adc1'][0].reshape([8,32])
-		adc = np.row_stack((raw_adc0, raw_adc1)).transpose()
-
-		raw_pfb0 = self._PKT['pfb0'][0].reshape([8,8]).transpose()
-		raw_pfb1 = self._PKT['pfb1'][0].reshape([8,8]).transpose()
-		pfb = np.row_stack((raw_pfb0, raw_pfb1))
-
-		fftR = self._PKT['fftR'][0].reshape([8,8]).transpose()
-		fftI = self._PKT['fftI'][0].reshape([8,8]).transpose()
-
-		raR = self._PKT['raR'][0].reshape([8,8]).transpose()
-		raI = self._PKT['raI'][0].reshape([8,8]).transpose()
-
-		self._DATA['pkt_id'] = self._PKT['pkt_id']
-		self._DATA['adc'] = adc.flatten()
-		self._DATA['pfb'] = pfb.flatten()
-		self._DATA['fftR'] = fftR.flatten()
-		self._DATA['fftI'] = fftI.flatten()
-		self._DATA['raR'] = raR.flatten()
-		self._DATA['raI'] = raI.flatten()
-
 	def _handle_command (self, iobj, data):
 		args = data.lstrip().strip().split()
 		cmd = args.pop(0).lower()
@@ -178,7 +132,4 @@ class IsiFengRecv ():
 			sock = None
 		return sock
 		print "Opened UNIX DGRAM socket."
-
-if __name__ == "__main__":
-	IsiFengRecv("straylight", 8880).main()
 
