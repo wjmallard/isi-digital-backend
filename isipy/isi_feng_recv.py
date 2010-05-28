@@ -7,6 +7,8 @@ __license__ = "GPL"
 __status__ = "Development"
 
 import numpy as np
+import sys
+
 from isi_data_recv import IsiDataRecv
 
 pktfmt = np.dtype \
@@ -61,6 +63,26 @@ class IsiFengRecv (IsiDataRecv):
 		self._DATA['raR'] = raR.flatten()
 		self._DATA['raI'] = raI.flatten()
 
+def main ():
+	sys.argv.pop(0)
+
+	if len(sys.argv) == 0:
+		print "Must specify a hostname."
+		return
+	host = sys.argv.pop(0)
+
+	if len(sys.argv) == 0:
+		print "Must specify a port."
+		return
+	s_port = sys.argv.pop(0)
+	try:
+		port = int(s_port)
+	except ValueError:
+		print "Invalid port number: %s" % s_port
+		return
+
+	IsiFengRecv(host, port).main()
+
 if __name__ == "__main__":
-	IsiFengRecv("straylight", 8880).main()
+	main()
 
