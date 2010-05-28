@@ -8,6 +8,7 @@ __status__ = "Development"
 
 from cmd import Cmd
 from libisiroach import IsiRoachBoard
+import sys
 
 class IsiFengCtrl (Cmd):
 
@@ -160,6 +161,25 @@ class IsiFengCtrl (Cmd):
 		print "quit"
 		return True
 
+def main ():
+	sys.argv.pop(0)
+
+	if len(sys.argv) == 0:
+		print "Must specify a hostname."
+		return
+	host = sys.argv.pop(0)
+
+	port = 7147
+	if len(sys.argv) != 0:
+		s_port = sys.argv.pop(0)
+		try:
+			port = int(s_port)
+		except ValueError:
+			print "Invalid port number: %s" % s_port
+			return
+
+	IsiFengCtrl(host, port).cmdloop()
+
 if __name__ == '__main__':
-	IsiFengCtrl('isiroach1').cmdloop()
+	main()
 
