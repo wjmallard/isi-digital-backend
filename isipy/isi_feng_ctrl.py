@@ -130,6 +130,11 @@ class IsiFengCtrl (Cmd):
 		self._board.progdev(bof)
 		print "Success. Running: %s" % bof
 
+	def complete_progdev (self, text, line, begidx, endidx):
+		bof_list = self._board.listbof()
+		bof_list.sort()
+		return [x for x in bof_list if x.startswith(text)]
+
 	def do_read_int (self, line):
 		"""read_int [device]
 		Read 32 bits from a device."""
@@ -138,8 +143,15 @@ class IsiFengCtrl (Cmd):
 			print "Must specify one device."
 			return
 		dev = args.pop(0)
-		val = self._board.read_int(device)
+		val = self._board.read_int(dev)
 		print "%s = %d" % (dev, val)
+
+	def complete_read_int (self, text, line, begidx, endidx):
+		args = line.split()
+		if len(args) > 1 and begidx == endidx:
+			return []
+		dev_list = self._board.listdev()
+		return [x for x in dev_list if x.startswith(text)]
 
 	def do_write_int (self, line):
 		"""write_int [device] [value]
@@ -151,6 +163,8 @@ class IsiFengCtrl (Cmd):
 		dev = args.pop(0)
 		val = args.pop(1)
 		self._board.write_int(dev, val)
+
+	complete_write_int = complete_read_int
 
 	#
 	# UI Commands
