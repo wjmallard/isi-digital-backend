@@ -19,31 +19,36 @@ class IsiDataRecv ():
 
 		self._addr = addr
 		self._port = port
-		self._data_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-		self._ctrl_sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+		self._recv_sock = None
+		self._ctrl_sock = None
 		self._ctrl_sock_name = "/tmp/isi_ctrl_sock"
 
 		self._PKT = np.zeros(1, dtype=pktfmt)
 		self._DATA = np.zeros(1, dtype=datafmt)
 
-		self._ilist = [self._data_sock, self._ctrl_sock, sys.stdin]
-		self._olist = []
+		self._ilist = None
+		self._olist = None
 
 		self.not_killed = True
 
 	def main (self):
-		self._open_sockets()
-		print "Entering receive loop."
+		self._open_recv_socket()
+		self._open_ctrl_socket()
+
+		self._ilist = [self._recv_sock, self._ctrl_sock, sys.stdin]
+		self._olist = []
 
 		got_a_packet = False
+
+		print "Entering receive loop."
 
 		while self.not_killed:
 			irdy, ordy, erdy = select.select(self._ilist, self._olist, [])
 
 			for iobj in irdy:
 
-				if iobj == self._data_sock:
-					self._data_sock.recv_into(self._PKT)
+				if iobj == self._recv_sock:
+					self._recv_sock.recv_into(self._PKT)
 					self._descramble()
 					got_a_packet = True
 					#print "Got packet #%d." % self._PKT['pkt_id'][0]
@@ -80,12 +85,17 @@ class IsiDataRecv ():
 						self._olist.remove(oobj)
 
 		print "Exited receive loop."
-		self._close_sockets()
 
-	def _open_sockets (self):
-		self._data_sock.bind((self._addr, self._port))
-		print "Opened UDP socket."
+		self._close_ctrl_socket()
+		self._close_recv_socket()
 
+	def _open_recv_socket (self):
+		self._recv_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+		self._recv_sock.bind((self._addr, self._port))
+		print "Opened recv socket."
+
+	def _open_ctrl_socket (self):
+		self._ctrl_sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
 		try:
 			self._ctrl_sock.bind(self._ctrl_sock_name)
 		except socket.error, e:
@@ -93,15 +103,27 @@ class IsiDataRecv ():
 			socket.os.unlink(self._ctrl_sock_name)
 			self._ctrl_sock.bind(self._ctrl_sock_name)
 		self._ctrl_sock.listen(5)
-		print "Opened UNIX socket."
+		print "Opened ctrl socket."
 
-	def _close_sockets (self):
+	def _open_send_socket (self, name):
+		sock = socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM)
+		try:
+			sock.connect(name)
+		except socket.error, e:
+			print "ERROR: Cannot connect to %s." % name
+			sock.close()
+			sock = None
+		return sock
+		print "Opened send socket."
+
+	def _close_recv_socket (self):
+		self._recv_sock.close()
+		print "Closed recv socket."
+
+	def _close_ctrl_socket (self):
 		self._ctrl_sock.close()
 		socket.os.unlink(self._ctrl_sock_name)
-		print "Closed UNIX socket."
-
-		self._data_sock.close()
-		print "Closed UDP socket."
+		print "Closed ctrl socket."
 
 	def _handle_command (self, iobj, data):
 		args = data.lstrip().strip().split()
@@ -110,7 +132,7 @@ class IsiDataRecv ():
 		if cmd == "subscribe":
 			print "Subscribing: %s" % args
 			name = args.pop(0)
-			sock = self._open_push_sock(name)
+			sock = self._open_send_socket(name)
 			if sock:
 				print "A data stream has connected."
 				self._olist.append(sock)
@@ -121,15 +143,4 @@ class IsiDataRecv ():
 
 		else:
 			print "Unknown command: %s" % data
-
-	def _open_push_sock (self, name):
-		sock = socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM)
-		try:
-			sock.connect(name)
-		except socket.error, e:
-			print "ERROR: Cannot connect to %s." % name
-			sock.close()
-			sock = None
-		return sock
-		print "Opened UNIX DGRAM socket."
 
