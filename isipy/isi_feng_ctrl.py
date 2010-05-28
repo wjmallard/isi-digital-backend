@@ -83,6 +83,10 @@ class IsiFengCtrl (Cmd):
 		val = self._board.get_status()
 		print "Status: 0x%08x" % val
 
+	def do_arm (self, line):
+		self._board.arm_sync()
+		print "Armed."
+
 	#
 	# ROACH Commands
 	#
