@@ -76,6 +76,7 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 			board_is_programmed = False
 
 		if board_is_programmed:
+			print "Status: Programmed."
 			try:
 				self.clock_freq = int(self.est_brd_clk())
 				self.clock_freq -= self.clock_freq % 5
@@ -92,7 +93,7 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 			except RuntimeError:
 				print "WARN: Failed to read some registers."
 		else:
-			print "Board appears to be unprogrammed."
+			print "Status: Unprogrammed."
 
 	def reset (self):
 		self._toggle_reset(IsiRoachBoard.RESET)
