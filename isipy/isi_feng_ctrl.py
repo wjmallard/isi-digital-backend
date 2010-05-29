@@ -30,14 +30,14 @@ class IsiFengCtrl (Cmd):
 	def do_sync_period (self, line):
 		args = line.split()
 		if len(args) == 0:
-			print "Sync Period: %s clks" % self._board.sync_period
+			print "Sync Period: %fs" % self._board.sync_period
 			return
 		if len(args) != 1:
 			print "Too many arguments."
 			return
 		s_val = args.pop(0)
 		try:
-			val = int(s_val, 0)
+			val = float(s_val)
 		except ValueError:
 			print "Invalid value: %s" % s_val
 			return
@@ -86,6 +86,13 @@ class IsiFengCtrl (Cmd):
 	def do_arm (self, line):
 		self._board.arm_sync()
 		print "Armed."
+
+	def do_force_trig (self, line):
+		self._board.force_trig()
+		print "Forced a trigger."
+
+	def do_reinit (self, line):
+		self._board.initialize()
 
 	#
 	# ROACH Commands

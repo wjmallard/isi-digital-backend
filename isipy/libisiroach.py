@@ -82,8 +82,9 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 				self.clock_freq -= self.clock_freq % 5
 				print "* Clock freq = %d MHz" % self.clock_freq
 
-				self.sync_period = self.read_int('sync_gen2_period')
-				print "* Sync Period = %d clks" % self.sync_period
+				clks = self.read_int('sync_gen2_period')
+				self.sync_period = float(clks) / (self.clock_freq * 10**6)
+				print "* Sync Period = %fs" % self.sync_period
 
 				self.fft_shift = self.read_int('fft_shift')
 				print "* FFT Shift = 0x%x" % self.fft_shift
@@ -104,9 +105,14 @@ class IsiRoachBoard(corr.katcp_wrapper.FpgaClient):
 	def unarm_sync (self):
 		self._unset_flag(IsiRoachBoard.ARM_RESET)
 
+	def force_trig (self):
+		self._unset_flag(IsiRoachBoard.FORCE_TRIG)
+		self._set_flag(IsiRoachBoard.FORCE_TRIG)
+		self._unset_flag(IsiRoachBoard.FORCE_TRIG)
+
 	def set_sync_period (self, period):
-		clocks = int(period * self.clock_freq * 10**6)
-		self.write_int('sync_gen2_period', clocks)
+		clks = int(period * self.clock_freq * 10**6)
+		self.write_int('sync_gen2_period', clks)
 		self.sync_period = period
 
 	def set_fft_shift (self, shift):
