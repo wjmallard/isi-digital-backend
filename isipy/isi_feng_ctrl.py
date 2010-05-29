@@ -181,6 +181,11 @@ class IsiFengCtrl (Cmd):
 		else:
 			print "Board is unreachable."
 
+	def do_deprogram (self, line):
+		"""Deprogram the FPGA."""
+		self._board.progdev("")
+		print "FPGA deprogrammed."
+
 	def do_program (self, line):
 		"""program [boffile]
 		Program the board with the specified boffile."""

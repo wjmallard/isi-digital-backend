@@ -34,7 +34,6 @@ $ ./isi_feng_recv.py isidig.isinet 8880
 Start the data pusher.
 
 $ ssh root@isiroach4
-$ cd fifo_tools
 $ ./push_fengine isidig.isinet 8880
 
 Data is now flowing across the network.
