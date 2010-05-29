@@ -94,6 +94,9 @@ class IsiFengCtrl (Cmd):
 	def do_reinit (self, line):
 		self._board.initialize()
 
+	def do_reset (self, line):
+		self._board.reset()
+
 	#
 	# ROACH Commands
 	#
@@ -125,9 +128,9 @@ class IsiFengCtrl (Cmd):
 		else:
 			print "Board is unreachable."
 
-	def do_progdev (self, line):
-		"""progdev [boffile]
-		Program the board."""
+	def do_program (self, line):
+		"""program [boffile]
+		Program the board with the specified boffile."""
 		args = line.split()
 		if len(args) != 1:
 			print "Must specify one boffile."
@@ -135,9 +138,10 @@ class IsiFengCtrl (Cmd):
 		bof = args.pop(0)
 		print "Programming ..."
 		self._board.progdev(bof)
-		print "Success. Running: %s" % bof
+		print "Success!"
+		self._board.reset()
 
-	def complete_progdev (self, text, line, begidx, endidx):
+	def complete_program (self, text, line, begidx, endidx):
 		bof_list = self._board.listbof()
 		bof_list.sort()
 		return [x for x in bof_list if x.startswith(text)]
