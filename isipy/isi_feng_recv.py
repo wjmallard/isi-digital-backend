@@ -45,9 +45,9 @@ class IsiFengRecv (IsiDataRecv):
 		raw_adc1 = self._PKT['adc1'][0].reshape([8,32])
 		adc = np.row_stack((raw_adc0, raw_adc1)).transpose()
 
-		raw_pfb0 = self._PKT['pfb0'][0].reshape([8,8]).transpose()
-		raw_pfb1 = self._PKT['pfb1'][0].reshape([8,8]).transpose()
-		pfb = np.row_stack((raw_pfb0, raw_pfb1))
+		raw_pfb0 = self._PKT['pfb0'][0].reshape([8,8])
+		raw_pfb1 = self._PKT['pfb1'][0].reshape([8,8])
+		pfb = np.row_stack((raw_pfb0, raw_pfb1)).transpose()
 
 		fftR = self._PKT['fftR'][0].reshape([8,8]).transpose()
 		fftI = self._PKT['fftI'][0].reshape([8,8]).transpose()
