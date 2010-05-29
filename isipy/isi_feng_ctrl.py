@@ -98,6 +98,59 @@ class IsiFengCtrl (Cmd):
 		self._board.reset()
 
 	#
+	# TVG Commands
+	#
+
+	def do_fill_tvgs (self, line):
+		"""fill_tvgs [tvg_name] [num_tvgs] [tvg_size] [length]"""
+
+		args = line.split()
+
+		if len(args) == 0:
+			print "Need a tvg name."
+			return
+		tvg_name = args.pop(0)
+
+		if len(args) == 0:
+			print "Need the number of tvgs."
+			return
+		s_num_tvgs = args.pop(0)
+		try:
+			num_tvgs = int(s_num_tvgs)
+		except ValueError:
+			print "Invalid value: %s" % s_num_tvgs
+			return
+
+		if len(args) == 0:
+			print "Need the size of tvgs."
+			return
+		s_tvg_size = args.pop(0)
+		try:
+			tvg_size = int(s_tvg_size)
+		except ValueError:
+			print "Invalid value: %s" % s_tvg_size
+			return
+
+		if len(args) == 0:
+			print "Need a counter length."
+			return
+		s_length = args.pop(0)
+		try:
+			length = int(s_length)
+		except ValueError:
+			print "Invalid value: %s" % s_length
+			return
+
+		import libisitvg
+		A = libisitvg.np.arange(length)
+		B = libisitvg.interleave_tvgs (A, num_tvgs, tvg_size)
+		C = libisitvg.np.array(B, dtype='>i4')
+
+		for i in xrange(num_tvgs):
+			bram_name = "%s%d_bram" % (tvg_name, i)
+			self._board.write(bram_name, C[i].tostring())
+
+	#
 	# ROACH Commands
 	#
 
