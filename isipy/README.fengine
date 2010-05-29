@@ -1,9 +1,7 @@
 Running the F-Engine
 ====================
 
-The three stages can happen in any order.
-
-
+-------------
 Control Stage
 -------------
 
@@ -21,9 +19,14 @@ isi> sync_period .25
 isi> fft_shift 0x7f
 isi> eq_coeff 2048
 
+Arm the sync reset.
+
+isi> arm
+
 Quit the control interface.
 
 
+-------------
 Readout Stage
 -------------
 
@@ -39,6 +42,7 @@ $ ./push_fengine isidig.isinet 8880
 Data is now flowing across the network.
 
 
+-----------------
 Acquisition Stage
 -----------------
 
