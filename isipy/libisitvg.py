@@ -6,65 +6,45 @@ __copyright__ = "Copyright 2010, CASPER"
 __license__ = "GPL"
 __status__ = "Development"
 
-import itertools
-import struct
-
 import numpy as np
 
-def interleave_tvg_bram (array, num_inputs, bram_size):
-	"""Interleave ARRAY for use in NUM_INPUTS brams of BRAM_SIZE length.
+def interleave_tvgs (A, num_tvgs, bram_size):
+	"""Interleave ARRAY for use in NUM_TVGS TVGs of TVG_SIZE length.
+	Loop this as many times as necessary to fill each TVG."""
 
-	Take a byte array of arbitrary length and split it into words across
-	(num_inputs/4) arrays.  Loop this as many times as necessary to fill
-	each bram."""
+	# Make sure we received an array.
+	if type(A) != np.ndarray:
+		print "ERROR: Need an array."
+		return None
 
-	window_length = len(array)
-	num_brams = num_inputs / 4
-	num_reps = (bram_size / window_length) * num_brams
+	# Make sure it's an int32 array.
+	if type(A[0]) != np.int32:
+		B = np.array(A, dtype=np.int32)
+	else:
+		B = A
 
-	iter_l = []
-	for i in xrange(num_brams):
-		# Grab one byte per input.
-		iter0 = itertools.islice(array, 4*i+0, None, num_inputs)
-		iter1 = itertools.islice(array, 4*i+1, None, num_inputs)
-		iter2 = itertools.islice(array, 4*i+2, None, num_inputs)
-		iter3 = itertools.islice(array, 4*i+3, None, num_inputs)
+	# Make sure it's not too long.
+	num_vals = num_tvgs * bram_size
+	if len(B) > num_vals:
+		print "WARN: Too many TVG values! Truncating."
+		C = B[:num_vals]
+	else:
+		C = B
 
-		# Clump bytes into words.
-		iterZ = itertools.izip(iter0, iter1, iter2, iter3)
-		iterC = itertools.chain.from_iterable(iterZ)
+	uniq_cols = len(C) / num_tvgs
+	num_reps = bram_size / uniq_cols
 
-		# Flatten iterator to list.
-		window = [x for x in iterC]
+	D = C.reshape((uniq_cols, num_tvgs))
+	E = D.transpose()
+	F = np.hstack([E]*num_reps)
 
-		# Loop sequence to fill bram.
-		iterR = itertools.repeat(window, num_reps)
-		iter = itertools.chain.from_iterable(iterR)
+	return F
 
-		iter_l += [iter]
-
-	return iter_l
-
-def scale_bram_list (iter_l, coeff=2**6):
-	"""Scale a list of arrays and convert it to a list of byte strings."""
-	data_l = []
-	for iter in iter_l:
-		A = scale_32bit(iter, coeff)
-		B = to_bytestring(A)
-		data_l += [B]
-	return data_l
-
-def scale_32bit (array, coeff=2**6):
-	"""Scale an array of BRAM data."""
+def scale_32bit (array, coeff):
+	"""Scale an array of BRAM data and round to int32."""
 	z = np.zeros(len(array), dtype=np.int32)
 	y = np.around(coeff*array, out=z)
 	return y
-
-def tobytestring (array):
-	"""Convert an array to a byte string."""
-	ba = [struct.pack('!i', x) for x in array]
-	bs = ''.join(ba)
-	return bs
 
 def sine_wave (L, cycles=1, phase=0):
 	"""Build an L-point sine wave with range [-1,1)."""
@@ -143,7 +123,7 @@ def comb (L, period=None, offset=0):
 	return y
 
 def counter (L, period=None, offset=0, step=1):
-	"""Build an L-point comb."""
+	"""Build an L-point counter."""
 	y = np.arange(L) * step + offset
 	if period != None:
 		y %= period
