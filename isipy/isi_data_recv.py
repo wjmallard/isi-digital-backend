@@ -13,6 +13,8 @@ import sys
 
 import numpy as np
 
+CTRL_SOCK = "/tmp/isi_ctrl_sock"
+
 class IsiDataRecv ():
 
 	def __init__ (self, addr, port, pktfmt, datafmt):
@@ -21,7 +23,6 @@ class IsiDataRecv ():
 		self._port = port
 		self._recv_sock = None
 		self._ctrl_sock = None
-		self._ctrl_sock_name = "/tmp/isi_ctrl_sock"
 
 		self._PKT = np.zeros(1, dtype=pktfmt)
 		self._DATA = np.zeros(1, dtype=datafmt)
@@ -32,8 +33,8 @@ class IsiDataRecv ():
 		self.not_killed = True
 
 	def main (self):
-		self._open_recv_socket()
-		self._open_ctrl_socket()
+		self._open_recv_socket(self._addr, self._port)
+		self._open_ctrl_socket(CTRL_SOCK)
 
 		self._ilist = [self._recv_sock, self._ctrl_sock, sys.stdin]
 		self._olist = []
@@ -89,19 +90,19 @@ class IsiDataRecv ():
 		self._close_ctrl_socket()
 		self._close_recv_socket()
 
-	def _open_recv_socket (self):
+	def _open_recv_socket (self, addr, port):
 		self._recv_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-		self._recv_sock.bind((self._addr, self._port))
+		self._recv_sock.bind((addr, port))
 		print "Opened recv socket."
 
-	def _open_ctrl_socket (self):
+	def _open_ctrl_socket (self, sockname):
 		self._ctrl_sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
 		try:
-			self._ctrl_sock.bind(self._ctrl_sock_name)
+			self._ctrl_sock.bind(sockname)
 		except socket.error, e:
 			print "WARN: ctrl_sock exists! Removing."
-			socket.os.unlink(self._ctrl_sock_name)
-			self._ctrl_sock.bind(self._ctrl_sock_name)
+			socket.os.unlink(sockname)
+			self._ctrl_sock.bind(sockname)
 		self._ctrl_sock.listen(5)
 		print "Opened ctrl socket."
 
@@ -121,8 +122,9 @@ class IsiDataRecv ():
 		print "Closed recv socket."
 
 	def _close_ctrl_socket (self):
+		sockname = self._ctrl_sock.getsockname()
 		self._ctrl_sock.close()
-		socket.os.unlink(self._ctrl_sock_name)
+		socket.os.unlink(sockname)
 		print "Closed ctrl socket."
 
 	def _handle_command (self, iobj, data):
