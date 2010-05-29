@@ -16,6 +16,7 @@ from time import strftime
 
 DATA_SOCK = "/tmp/isi_data_sock"
 CTRL_SOCK = "/tmp/isi_ctrl_sock"
+TIMESTAMP = False
 
 datafmt = np.dtype \
 ([
@@ -60,11 +61,12 @@ def close_ctrl_client_sock (sock):
 	sock.close()
 	print "Closed ctrl socket."
 
-
 def dump_to_file (name, data):
-	#timestamp = strftime("%Y%m%dT%H%M%S")
-	#filename = "data/%s_%s.dump" % (timestamp, name)
-	filename = "data/%s.dump" % (name)
+	if TIMESTAMP:
+		timestamp = strftime("%Y%m%dT%H%M%S")
+		filename = "data/%s_%s.dump" % (timestamp, name)
+	else:
+		filename = "data/%s.dump" % (name)
 	f = open(filename, "w")
 	for i in data:
 		f.write("%d\n" % i)
