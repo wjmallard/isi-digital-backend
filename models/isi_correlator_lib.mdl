@@ -15,9 +15,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri May 21 13:13:22 2010"
-  RTWModifiedTimeStamp	  196348322
-  ModelVersionFormat	  "1.%<AutoIncrement:625>"
+  LastModifiedDate	  "Tue Jun  1 18:58:15 2010"
+  RTWModifiedTimeStamp	  197319480
+  ModelVersionFormat	  "1.%<AutoIncrement:629>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -632,7 +632,7 @@ Library {
   }
   System {
     Name		    "isi_correlator_lib"
-    Location		    [5, 77, 1266, 506]
+    Location		    [-10, 5, 1251, 434]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -7383,7 +7383,7 @@ Library {
       MaskValueString	      "18|4"
       System {
 	Name			"equalizer"
-	Location		[1066, 215, 1412, 923]
+	Location		[229, 422, 575, 1130]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -7527,7 +7527,7 @@ Library {
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
 	  en			  "off"
-	  latency		  "6"
+	  latency		  "5"
 	  dbl_ovrd		  "off"
 	  reg_retiming		  "off"
 	  xl_use_area		  "off"
@@ -7536,13 +7536,13 @@ Library {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,14,1,1,white,blue,0,aa5bc30d,right,"
+	  sg_icon_stat		  "45,14,1,1,white,blue,0,ec356abf,right,"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
 	  "ch([0.4 0.355556 0.422222 0.355556 0.4 0.488889 0.511111 0.533333 0.622222 0.555556 0.488889 0.444444 0.511111 0.44"
 	  "4444 0.488889 0.555556 0.622222 0.533333 0.511111 0.488889 0.4 ],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 "
 	  "0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.1"
 	  "42857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nf"
-	  "printf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-6}','texmode','on');\nfprintf('','COMMENT: end ico"
+	  "printf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-5}','texmode','on');\nfprintf('','COMMENT: end ico"
 	  "n text');\n"
 	}
 	Block {
@@ -7640,7 +7640,7 @@ Library {
 	  SID			  430
 	  Ports			  [2, 2]
 	  Position		  [90, 48, 135, 97]
-	  LibraryVersion	  "1.607"
+	  LibraryVersion	  "1.626"
 	  SourceBlock		  "isi_correlator_lib/scale"
 	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
@@ -7651,8 +7651,8 @@ Library {
 	  RTWMemSecDataConstants  "Inherit from model"
 	  RTWMemSecDataInternal	  "Inherit from model"
 	  RTWMemSecDataParameters "Inherit from model"
-	  data_bit_width	  "18"
-	  dout_bit_width	  "4"
+	  data_bit_width	  "in_bit_width"
+	  dout_bit_width	  "out_bit_width"
 	}
 	Block {
 	  BlockType		  Reference
@@ -7660,7 +7660,7 @@ Library {
 	  SID			  431
 	  Ports			  [2, 2]
 	  Position		  [90, 118, 135, 167]
-	  LibraryVersion	  "1.607"
+	  LibraryVersion	  "1.626"
 	  SourceBlock		  "isi_correlator_lib/scale"
 	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
@@ -7671,8 +7671,8 @@ Library {
 	  RTWMemSecDataConstants  "Inherit from model"
 	  RTWMemSecDataInternal	  "Inherit from model"
 	  RTWMemSecDataParameters "Inherit from model"
-	  data_bit_width	  "18"
-	  dout_bit_width	  "4"
+	  data_bit_width	  "in_bit_width"
+	  dout_bit_width	  "out_bit_width"
 	}
 	Block {
 	  BlockType		  Reference
@@ -7680,7 +7680,7 @@ Library {
 	  SID			  432
 	  Ports			  [2, 2]
 	  Position		  [90, 188, 135, 237]
-	  LibraryVersion	  "1.607"
+	  LibraryVersion	  "1.626"
 	  SourceBlock		  "isi_correlator_lib/scale"
 	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
@@ -7691,8 +7691,8 @@ Library {
 	  RTWMemSecDataConstants  "Inherit from model"
 	  RTWMemSecDataInternal	  "Inherit from model"
 	  RTWMemSecDataParameters "Inherit from model"
-	  data_bit_width	  "18"
-	  dout_bit_width	  "4"
+	  data_bit_width	  "in_bit_width"
+	  dout_bit_width	  "out_bit_width"
 	}
 	Block {
 	  BlockType		  Reference
@@ -7700,7 +7700,7 @@ Library {
 	  SID			  433
 	  Ports			  [2, 2]
 	  Position		  [90, 258, 135, 307]
-	  LibraryVersion	  "1.607"
+	  LibraryVersion	  "1.626"
 	  SourceBlock		  "isi_correlator_lib/scale"
 	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
@@ -7711,8 +7711,8 @@ Library {
 	  RTWMemSecDataConstants  "Inherit from model"
 	  RTWMemSecDataInternal	  "Inherit from model"
 	  RTWMemSecDataParameters "Inherit from model"
-	  data_bit_width	  "18"
-	  dout_bit_width	  "4"
+	  data_bit_width	  "in_bit_width"
+	  dout_bit_width	  "out_bit_width"
 	}
 	Block {
 	  BlockType		  Reference
@@ -7720,7 +7720,7 @@ Library {
 	  SID			  434
 	  Ports			  [2, 2]
 	  Position		  [90, 328, 135, 377]
-	  LibraryVersion	  "1.607"
+	  LibraryVersion	  "1.626"
 	  SourceBlock		  "isi_correlator_lib/scale"
 	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
@@ -7731,8 +7731,8 @@ Library {
 	  RTWMemSecDataConstants  "Inherit from model"
 	  RTWMemSecDataInternal	  "Inherit from model"
 	  RTWMemSecDataParameters "Inherit from model"
-	  data_bit_width	  "18"
-	  dout_bit_width	  "4"
+	  data_bit_width	  "in_bit_width"
+	  dout_bit_width	  "out_bit_width"
 	}
 	Block {
 	  BlockType		  Reference
@@ -7740,7 +7740,7 @@ Library {
 	  SID			  435
 	  Ports			  [2, 2]
 	  Position		  [90, 398, 135, 447]
-	  LibraryVersion	  "1.607"
+	  LibraryVersion	  "1.626"
 	  SourceBlock		  "isi_correlator_lib/scale"
 	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
@@ -7751,8 +7751,8 @@ Library {
 	  RTWMemSecDataConstants  "Inherit from model"
 	  RTWMemSecDataInternal	  "Inherit from model"
 	  RTWMemSecDataParameters "Inherit from model"
-	  data_bit_width	  "18"
-	  dout_bit_width	  "4"
+	  data_bit_width	  "in_bit_width"
+	  dout_bit_width	  "out_bit_width"
 	}
 	Block {
 	  BlockType		  Reference
@@ -7760,7 +7760,7 @@ Library {
 	  SID			  436
 	  Ports			  [2, 2]
 	  Position		  [90, 468, 135, 517]
-	  LibraryVersion	  "1.607"
+	  LibraryVersion	  "1.626"
 	  SourceBlock		  "isi_correlator_lib/scale"
 	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
@@ -7771,8 +7771,8 @@ Library {
 	  RTWMemSecDataConstants  "Inherit from model"
 	  RTWMemSecDataInternal	  "Inherit from model"
 	  RTWMemSecDataParameters "Inherit from model"
-	  data_bit_width	  "18"
-	  dout_bit_width	  "4"
+	  data_bit_width	  "in_bit_width"
+	  dout_bit_width	  "out_bit_width"
 	}
 	Block {
 	  BlockType		  Reference
@@ -7780,7 +7780,7 @@ Library {
 	  SID			  437
 	  Ports			  [2, 2]
 	  Position		  [90, 538, 135, 587]
-	  LibraryVersion	  "1.607"
+	  LibraryVersion	  "1.626"
 	  SourceBlock		  "isi_correlator_lib/scale"
 	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
@@ -7791,8 +7791,8 @@ Library {
 	  RTWMemSecDataConstants  "Inherit from model"
 	  RTWMemSecDataInternal	  "Inherit from model"
 	  RTWMemSecDataParameters "Inherit from model"
-	  data_bit_width	  "18"
-	  dout_bit_width	  "4"
+	  data_bit_width	  "in_bit_width"
+	  dout_bit_width	  "out_bit_width"
 	}
 	Block {
 	  BlockType		  Outport
@@ -9235,11 +9235,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "1"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -9326,7 +9326,7 @@ Library {
 	      const		      "num_words - 1"
 	      n_bits		      "nextpow2(num_words)"
 	      bin_pt		      "0"
-	      explicit_period	      on
+	      explicit_period	      "on"
 	      period		      "1"
 	      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	      equ		      "P=C"
@@ -9335,7 +9335,7 @@ Library {
 	      opr		      "+"
 	      inp1		      "P"
 	      carry		      "CIN"
-	      dbl_ovrd		      off
+	      dbl_ovrd		      "off"
 	      has_advanced_control    "0"
 	      sggui_pos		      "-1,-1,-1,-1"
 	      block_type	      "constant"
@@ -9366,7 +9366,7 @@ Library {
 	      const		      "0"
 	      n_bits		      "nextpow2(num_words)"
 	      bin_pt		      "0"
-	      explicit_period	      on
+	      explicit_period	      "on"
 	      period		      "1"
 	      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	      equ		      "P=C"
@@ -9375,7 +9375,7 @@ Library {
 	      opr		      "+"
 	      inp1		      "P"
 	      carry		      "CIN"
-	      dbl_ovrd		      off
+	      dbl_ovrd		      "off"
 	      has_advanced_control    "0"
 	      sggui_pos		      "-1,-1,-1,-1"
 	      block_type	      "constant"
@@ -9403,10 +9403,10 @@ Library {
 	      SourceBlock	      "xbsIndex_r4/Inverter"
 	      SourceType	      "Xilinx Inverter Block"
 	      infoedit		      "Bitwise logical negation (one's complement) operator."
-	      en		      off
+	      en		      "off"
 	      latency		      "0"
-	      dbl_ovrd		      off
-	      xl_use_area	      off
+	      dbl_ovrd		      "off"
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "-1,-1,-1,-1"
@@ -9432,15 +9432,15 @@ Library {
 	      SourceType	      "Xilinx Logical Block Block"
 	      logical_function	      "AND"
 	      inputs		      "2"
-	      en		      off
+	      en		      "off"
 	      latency		      "0"
 	      precision		      "Full"
 	      arith_type	      "Unsigned"
 	      n_bits		      "16"
 	      bin_pt		      "0"
-	      align_bp		      on
-	      dbl_ovrd		      off
-	      xl_use_area	      off
+	      align_bp		      "on"
+	      dbl_ovrd		      "off"
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "0,0,543,357"
@@ -9468,15 +9468,15 @@ Library {
 	      SourceType	      "Xilinx Logical Block Block"
 	      logical_function	      "OR"
 	      inputs		      "2"
-	      en		      off
+	      en		      "off"
 	      latency		      "0"
 	      precision		      "Full"
 	      arith_type	      "Unsigned"
 	      n_bits		      "16"
 	      bin_pt		      "0"
-	      align_bp		      on
-	      dbl_ovrd		      off
-	      xl_use_area	      off
+	      align_bp		      "on"
+	      dbl_ovrd		      "off"
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "0,0,543,357"
@@ -9504,15 +9504,15 @@ Library {
 	      SourceType	      "Xilinx Logical Block Block"
 	      logical_function	      "OR"
 	      inputs		      "2"
-	      en		      off
+	      en		      "off"
 	      latency		      "0"
 	      precision		      "Full"
 	      arith_type	      "Unsigned"
 	      n_bits		      "16"
 	      bin_pt		      "0"
-	      align_bp		      on
-	      dbl_ovrd		      off
-	      xl_use_area	      off
+	      align_bp		      "on"
+	      dbl_ovrd		      "off"
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "0,0,543,357"
@@ -9539,10 +9539,10 @@ Library {
 	      SourceBlock	      "xbsIndex_r4/Relational"
 	      SourceType	      "Xilinx Arithmetic Relational Operator Block"
 	      mode		      "a=b"
-	      en		      off
+	      en		      "off"
 	      latency		      "0"
-	      dbl_ovrd		      off
-	      xl_use_area	      off
+	      dbl_ovrd		      "off"
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "0,0,419,209"
@@ -9578,15 +9578,15 @@ Library {
 	      arith_type	      "Unsigned"
 	      n_bits		      "nextpow2(num_words)"
 	      bin_pt		      "0"
-	      load_pin		      on
-	      rst		      off
-	      en		      on
+	      load_pin		      "on"
+	      rst		      "off"
+	      en		      "on"
 	      explicit_period	      "on"
 	      period		      "1"
-	      dbl_ovrd		      off
-	      use_behavioral_HDL      off
+	      dbl_ovrd		      "off"
+	      use_behavioral_HDL      "off"
 	      implementation	      "Fabric"
-	      xl_use_area	      off
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      use_rpm		      "off"
 	      has_advanced_control    "0"
@@ -9621,15 +9621,15 @@ Library {
 	      arith_type	      "Unsigned"
 	      n_bits		      "32"
 	      bin_pt		      "0"
-	      load_pin		      off
-	      rst		      on
-	      en		      on
+	      load_pin		      "off"
+	      rst		      "on"
+	      en		      "on"
 	      explicit_period	      "on"
 	      period		      "1"
-	      dbl_ovrd		      off
-	      use_behavioral_HDL      off
+	      dbl_ovrd		      "off"
+	      use_behavioral_HDL      "off"
 	      implementation	      "Fabric"
-	      xl_use_area	      off
+	      xl_use_area	      "off"
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      use_rpm		      "off"
 	      has_advanced_control    "0"
@@ -10299,10 +10299,10 @@ Library {
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  LibraryVersion	  "1.419"
 	  SourceBlock		  "xps_library/Shared BRAM"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -10326,7 +10326,7 @@ Library {
 	  SourceType		  "delay_bram_en_plus"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -10346,7 +10346,7 @@ Library {
 	  SourceType		  "delay_bram_en_plus"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -10366,7 +10366,7 @@ Library {
 	  SourceType		  "delay_bram_en_plus"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -10386,7 +10386,7 @@ Library {
 	  SourceType		  "delay_bram_en_plus"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -10406,7 +10406,7 @@ Library {
 	  SourceType		  "delay_bram_en_plus"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -10426,7 +10426,7 @@ Library {
 	  SourceType		  "delay_bram_en_plus"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -10446,7 +10446,7 @@ Library {
 	  SourceType		  "delay_bram_en_plus"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12516,10 +12516,10 @@ Library {
 	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
 	  LibraryVersion	  "1.419"
 	  SourceBlock		  "xps_library/software register"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12543,7 +12543,7 @@ Library {
 	  SourceType		  "pulse_ext"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12562,7 +12562,7 @@ Library {
 	  SourceType		  "pulse_ext"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12581,7 +12581,7 @@ Library {
 	  SourceType		  "pulse_ext"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12600,7 +12600,7 @@ Library {
 	  SourceType		  "pulse_ext"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12619,7 +12619,7 @@ Library {
 	  SourceType		  "pulse_ext"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12638,7 +12638,7 @@ Library {
 	  SourceType		  "pulse_ext"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12657,7 +12657,7 @@ Library {
 	  SourceType		  "pulse_ext"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -12676,7 +12676,7 @@ Library {
 	  SourceType		  "pulse_ext"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -13727,10 +13727,10 @@ Library {
       MaskIconRotate	      "none"
       MaskPortRotate	      "default"
       MaskIconUnits	      "autoscale"
-      MaskValueString	      "data_bit_width|dout_bit_width"
+      MaskValueString	      "18|4"
       System {
 	Name			"saturate"
-	Location		[837, 627, 1351, 823]
+	Location		[141, 596, 655, 792]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -13765,7 +13765,7 @@ Library {
 	  infoedit		  "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary point at ze"
 	  "ro."
 	  num_inputs		  "2"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,165"
 	  block_type		  "concat"
@@ -13792,15 +13792,15 @@ Library {
 	  arith_type		  "Signed  (2's comp)"
 	  n_bits		  "dout_bit_width"
 	  bin_pt		  "dout_bit_width - 1"
-	  quantization		  "Truncate"
+	  quantization		  "Round  (unbiased: Even Values)"
 	  overflow		  "Wrap"
 	  latency		  "2"
-	  dbl_ovrd		  "off"
-	  pipeline		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  pipeline		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "0,0,636,521"
+	  sggui_pos		  "372,119,636,521"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
 	  sg_icon_stat		  "50,14,1,1,white,blue,0,5129c5aa,right,"
@@ -13823,15 +13823,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "OR"
 	  inputs		  "2"
-	  en			  "off"
+	  en			  off
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "8"
 	  bin_pt		  "2"
-	  align_bp		  "on"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
+	  align_bp		  on
+	  dbl_ovrd		  off
+	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,261"
@@ -13861,7 +13861,7 @@ Library {
 	  const			  "max_val"
 	  n_bits		  "data_bit_width"
 	  bin_pt		  "data_bit_width - 1"
-	  explicit_period	  "on"
+	  explicit_period	  on
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -13870,7 +13870,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "95,381,400,346"
 	  block_type		  "constant"
@@ -13901,7 +13901,7 @@ Library {
 	  const			  "max_val"
 	  n_bits		  "dout_bit_width"
 	  bin_pt		  "dout_bit_width - 1"
-	  explicit_period	  "on"
+	  explicit_period	  on
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -13910,7 +13910,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "95,381,400,346"
 	  block_type		  "constant"
@@ -13941,7 +13941,7 @@ Library {
 	  const			  "0"
 	  n_bits		  "dout_bit_width"
 	  bin_pt		  "dout_bit_width - 1"
-	  explicit_period	  "on"
+	  explicit_period	  on
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -13950,7 +13950,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "95,381,400,346"
 	  block_type		  "constant"
@@ -13981,7 +13981,7 @@ Library {
 	  const			  "-max_val"
 	  n_bits		  "data_bit_width"
 	  bin_pt		  "data_bit_width - 1"
-	  explicit_period	  "on"
+	  explicit_period	  on
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -13990,7 +13990,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "465,54,400,346"
 	  block_type		  "constant"
@@ -14021,7 +14021,7 @@ Library {
 	  const			  "-max_val"
 	  n_bits		  "dout_bit_width"
 	  bin_pt		  "dout_bit_width - 1"
-	  explicit_period	  "on"
+	  explicit_period	  on
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -14030,7 +14030,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "465,54,400,346"
 	  block_type		  "constant"
@@ -14058,7 +14058,7 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Mux"
 	  SourceType		  "Xilinx Bus Multiplexer Block"
 	  inputs		  "4"
-	  en			  "off"
+	  en			  off
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Signed  (2's comp)"
@@ -14066,8 +14066,8 @@ Library {
 	  bin_pt		  "2"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,303"
@@ -14096,10 +14096,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Relational"
 	  SourceType		  "Xilinx Arithmetic Relational Operator Block"
 	  mode			  "a>b"
-	  en			  "off"
+	  en			  off
 	  latency		  "2"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,193"
@@ -14126,10 +14126,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Relational"
 	  SourceType		  "Xilinx Arithmetic Relational Operator Block"
 	  mode			  "a<b"
-	  en			  "off"
+	  en			  off
 	  latency		  "2"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
