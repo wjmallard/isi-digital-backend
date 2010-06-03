@@ -91,6 +91,35 @@ class IsiFengCtrl (Cmd):
 		self._board.force_trig()
 		print "Forced a trigger."
 
+	def do_histogram (self, line):
+		args = line.split()
+		if len(args) == 0:
+			print "Specify the desired number of samples."
+			return
+		if len(args) != 1:
+			print "Too many arguments."
+			return
+		s_val = args.pop(0)
+		try:
+			val = int(s_val, 0)
+		except ValueError:
+			print "Invalid value: %s" % s_val
+			return
+
+		print "Grabbing %d samples." % val
+		import numpy as np
+		hist = np.zeros(val, dtype=np.int32)
+		for i in xrange(val):
+			hist[i] = self._board.read_int('equalizer_sample')
+
+		print "Dumping to file."
+		from time import strftime
+		timestamp = strftime("%Y%m%dT%H%M%S")
+		filename = "data/%s_%s.dump" % (timestamp, "hist")
+		f = open(filename, "w")
+		hist.tofile(f, sep="\n", format="%d")
+		f.close()
+
 	def do_reinit (self, line):
 		self._board.initialize()
 
