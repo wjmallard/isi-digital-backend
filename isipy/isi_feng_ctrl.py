@@ -108,17 +108,16 @@ class IsiFengCtrl (Cmd):
 
 		print "Grabbing %d samples." % val
 		import numpy as np
-		hist = np.zeros(val, dtype=np.int32)
+		histR = np.zeros(val, dtype=np.int32)
+		histI = np.zeros(val, dtype=np.int32)
 		for i in xrange(val):
-			hist[i] = self._board.read_int('equalizer_sample')
+			hist_raw = self._board.read_int('equalizer_sample')
+			histR[i] = self._sign_extend(hist_raw>>4 & 0x0f, 4)
+			histI[i] = self._sign_extend(hist_raw>>0 & 0x0f, 4)
 
 		print "Dumping to file."
-		from time import strftime
-		timestamp = strftime("%Y%m%dT%H%M%S")
-		filename = "data/%s_%s.dump" % (timestamp, "hist")
-		f = open(filename, "w")
-		hist.tofile(f, sep="\n", format="%d")
-		f.close()
+		self._dump_to_file("histR", histR)
+		self._dump_to_file("histI", histI)
 
 	def do_reinit (self, line):
 		self._board.initialize()
@@ -276,6 +275,22 @@ class IsiFengCtrl (Cmd):
 		"""Quit the program."""
 		print "quit"
 		return True
+
+	#
+	# Misc helper methods.
+	#
+
+	def _sign_extend (self, data, bits):
+		return (data + 2**(bits-1)) % 2**bits - 2**(bits-1)
+
+	def _dump_to_file (self, name, data):
+		from time import strftime
+		timestamp = strftime("%Y%m%dT%H%M%S")
+		filename = "data/%s_%s.dump" % (timestamp, name)
+
+		f = open(filename, "w")
+		data.tofile(f, sep="\n", format="%d")
+		f.close()
 
 def main ():
 	sys.argv.pop(0)
