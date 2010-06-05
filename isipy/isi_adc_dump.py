@@ -6,13 +6,11 @@ __copyright__ = "Copyright 2010, CASPER"
 __license__ = "GPL"
 __status__ = "Development"
 
-import libisiroach
+import numpy as np
 import socket
 import sys
 
-import numpy as np
-from libisiroach import IsiRoachBoard
-from time import strftime
+from isi_data_view import IsiDataView
 
 DATA_SOCK = "/tmp/isi_data_sock"
 CTRL_SOCK = "/tmp/isi_ctrl_sock"
@@ -23,59 +21,28 @@ datafmt = np.dtype \
 	('pkt_id', '>i4'), 
 	('adc', '>i4', 512),
 ])
-DATA = np.zeros(1, dtype=datafmt)
 
-def open_data_client_sock (sockname):
-	sock = socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM)
-	try:
-		sock.bind(sockname)
-	except socket.error:
-		print "WARN: %s exists! Removing." % sockname
-		socket.os.unlink(sockname)
-		sock.bind(sockname)
-	print "Opened data socket."
-	return sock
+class IsiAdcDump (IsiDataView):
 
-def open_ctrl_client_sock (sockname):
-	sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-	try:
-		sock.connect(sockname)
-	except socket.error:
-		print "ERROR: Cannot connect to recv server."
-		sys.exit(1)
-	print "Opened ctrl socket."
-	return sock
+	def __init__ (self):
+		IsiDataView.__init__(self, datafmt)
 
-def close_data_client_sock (sock):
-	sockname = sock.getsockname()
-	sock.close()
-	socket.os.unlink(sockname)
-	print "Closed data socket."
+	def view_data (self):
+		print "Dumping data to file ..."
+		self._dump_to_file("adc", self._DATA['adc'][0])
 
-def close_ctrl_client_sock (sock):
-	sock.close()
-	print "Closed ctrl socket."
+	def _dump_to_file (self, name, data):
+		if TIMESTAMP:
+			from time import strftime
+			timestamp = strftime("%Y%m%dT%H%M%S")
+			filename = "data/%s_%s.dump" % (timestamp, name)
+		else:
+			filename = "data/%s.dump" % (name)
 
-def dump_to_file (name, data):
-	if TIMESTAMP:
-		timestamp = strftime("%Y%m%dT%H%M%S")
-		filename = "data/%s_%s.dump" % (timestamp, name)
-	else:
-		filename = "data/%s.dump" % (name)
-	f = open(filename, "w")
-	for i in data:
-		f.write("%d\n" % i)
-	f.close()
+		f = open(filename, "w")
+		data.tofile(f, sep="\n", format="%d")
+		f.close()
 
 if __name__ == "__main__":
-
-	data_sock = open_data_client_sock(DATA_SOCK)
-	ctrl_sock = open_ctrl_client_sock(CTRL_SOCK)
-	ctrl_sock.send("subscribe %s" % DATA_SOCK)
-	data_sock.recv_into(DATA)
-	close_data_client_sock(data_sock)
-	close_ctrl_client_sock(ctrl_sock)
-
-	print "Dumping data to file ..."
-	dump_to_file("adc", DATA['adc'][0])
+	IsiAdcDump().main()
 
