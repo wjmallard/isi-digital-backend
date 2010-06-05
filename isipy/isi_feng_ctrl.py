@@ -258,7 +258,12 @@ class IsiFengCtrl (Cmd):
 			print "Must specify a device and a value."
 			return
 		dev = args.pop(0)
-		val = args.pop(1)
+		s_val = args.pop(0)
+		try:
+			val = int(s_val, 0)
+		except ValueError:
+			print "Invalid value: %s" % s_val
+			return
 		self._board.write_int(dev, val)
 
 	complete_write_int = complete_read_int
