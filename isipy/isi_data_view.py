@@ -11,7 +11,6 @@ import socket
 import sys
 
 import numpy as np
-from libisiroach import IsiRoachBoard
 from time import strftime
 
 DATA_SOCK = "/tmp/isi_data_sock"

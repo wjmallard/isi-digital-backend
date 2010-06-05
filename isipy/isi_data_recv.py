@@ -16,6 +16,26 @@ import numpy as np
 CTRL_SOCK = "/tmp/isi_ctrl_sock"
 
 class IsiDataRecv ():
+	"""Abstract class to receive packets from an ISI roach board.
+
+	Parameters
+	----------
+	addr : string
+		The address of the receiving network interface.
+	port : int
+		The port to listen on for data from the ROACH.
+	pktfmt : np.dtype
+		A numpy struct to hold raw data from the ROACH.
+	datafmt : np.dtype
+		A numpy struct to hold descrambled ROACH data.
+
+	Abstract Methods
+	----------------
+	_descramble() :
+		* Takes no arguments.
+		* Transforms _PKT to _DATA.
+		* Returns nothing.
+	"""
 
 	def __init__ (self, addr, port, pktfmt, datafmt):
 
@@ -33,6 +53,14 @@ class IsiDataRecv ():
 		self.not_killed = True
 
 	def main (self):
+		"""The main loop. Receives and processes data and commands.
+
+		* Receives data from remote ROACH boards via a UDP socket.
+		* Receives commands from local processes via a UNIX socket,
+		  and sends data to local processes as requested.
+		* Receives user input from the console.
+		"""
+
 		self._open_recv_socket(self._addr, self._port)
 		self._open_ctrl_socket(CTRL_SOCK)
 
