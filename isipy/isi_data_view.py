@@ -34,6 +34,9 @@ class IsiDataView ():
 	def __init__ (self, datafmt):
 		self._DATA = np.zeros(1, dtype=datafmt)
 
+	def view_data (self):
+		raise NotImplementedError
+
 	def main (self):
 
 		data_sock = self._open_data_client_sock(DATA_SOCK)
