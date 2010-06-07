@@ -24,7 +24,7 @@ class IsiTpbRecv (IsiDataRecv):
 	def __init__ (self, addr, port):
 		IsiDataRecv.__init__(self, addr, port, pktfmt, datafmt)
 
-	def _descramble (self):
+	def descramble (self):
 		pb0 = self._PKT['pb0'][0].reshape([8,32]).transpose()
 
 		self._DATA['pkt_id'] = self._PKT['pkt_id']

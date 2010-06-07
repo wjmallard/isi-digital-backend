@@ -40,7 +40,7 @@ class IsiFengRecv (IsiDataRecv):
 	def __init__ (self, addr, port):
 		IsiDataRecv.__init__(self, addr, port, pktfmt, datafmt)
 
-	def _descramble (self):
+	def descramble (self):
 		raw_adc0 = self._PKT['adc0'][0].reshape([8,32])
 		raw_adc1 = self._PKT['adc1'][0].reshape([8,32])
 		adc = np.row_stack((raw_adc0, raw_adc1)).transpose()

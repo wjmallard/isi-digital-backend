@@ -31,7 +31,7 @@ class IsiDataRecv ():
 
 	Abstract Methods
 	----------------
-	_descramble() :
+	descramble() :
 		* Takes no arguments.
 		* Transforms _PKT to _DATA.
 		* Returns nothing.
@@ -51,6 +51,9 @@ class IsiDataRecv ():
 		self._olist = None
 
 		self.not_killed = True
+
+	def descramble (self):
+		raise NotImplementedError
 
 	def main (self):
 		"""The main loop. Receives and processes data and commands.
@@ -78,7 +81,7 @@ class IsiDataRecv ():
 
 				if iobj == self._recv_sock:
 					self._recv_sock.recv_into(self._PKT)
-					self._descramble()
+					self.descramble()
 					got_a_packet = True
 					#print "Got packet #%d." % self._PKT['pkt_id'][0]
 
