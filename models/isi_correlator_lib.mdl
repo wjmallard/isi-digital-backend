@@ -15,9 +15,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jun  1 18:58:15 2010"
-  RTWModifiedTimeStamp	  197319480
-  ModelVersionFormat	  "1.%<AutoIncrement:629>"
+  LastModifiedDate	  "Thu Jun 10 13:52:42 2010"
+  RTWModifiedTimeStamp	  198078751
+  ModelVersionFormat	  "1.%<AutoIncrement:631>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -632,7 +632,7 @@ Library {
   }
   System {
     Name		    "isi_correlator_lib"
-    Location		    [-10, 5, 1251, 434]
+    Location		    [5, 77, 1266, 506]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -646,7 +646,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    1751
+    SIDHighWatermark	    1755
     Block {
       BlockType		      SubSystem
       Name		      "adc_ctrl"
@@ -7383,7 +7383,7 @@ Library {
       MaskValueString	      "18|4"
       System {
 	Name			"equalizer"
-	Location		[229, 422, 575, 1130]
+	Location		[229, 422, 575, 1108]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -7407,7 +7407,7 @@ Library {
 	  BlockType		  Inport
 	  Name			  "in0"
 	  SID			  410
-	  Position		  [15, 53, 45, 67]
+	  Position		  [15, 83, 45, 97]
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
@@ -7415,7 +7415,7 @@ Library {
 	  BlockType		  Inport
 	  Name			  "in1"
 	  SID			  411
-	  Position		  [15, 123, 45, 137]
+	  Position		  [15, 153, 45, 167]
 	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
@@ -7423,7 +7423,7 @@ Library {
 	  BlockType		  Inport
 	  Name			  "in2"
 	  SID			  412
-	  Position		  [15, 193, 45, 207]
+	  Position		  [15, 223, 45, 237]
 	  Port			  "4"
 	  IconDisplay		  "Port number"
 	}
@@ -7431,7 +7431,7 @@ Library {
 	  BlockType		  Inport
 	  Name			  "in3"
 	  SID			  413
-	  Position		  [15, 263, 45, 277]
+	  Position		  [15, 293, 45, 307]
 	  Port			  "5"
 	  IconDisplay		  "Port number"
 	}
@@ -7439,7 +7439,7 @@ Library {
 	  BlockType		  Inport
 	  Name			  "in4"
 	  SID			  414
-	  Position		  [15, 333, 45, 347]
+	  Position		  [15, 363, 45, 377]
 	  Port			  "6"
 	  IconDisplay		  "Port number"
 	}
@@ -7447,7 +7447,7 @@ Library {
 	  BlockType		  Inport
 	  Name			  "in5"
 	  SID			  415
-	  Position		  [15, 403, 45, 417]
+	  Position		  [15, 433, 45, 447]
 	  Port			  "7"
 	  IconDisplay		  "Port number"
 	}
@@ -7455,7 +7455,7 @@ Library {
 	  BlockType		  Inport
 	  Name			  "in6"
 	  SID			  416
-	  Position		  [15, 473, 45, 487]
+	  Position		  [15, 503, 45, 517]
 	  Port			  "8"
 	  IconDisplay		  "Port number"
 	}
@@ -7463,7 +7463,7 @@ Library {
 	  BlockType		  Inport
 	  Name			  "in7"
 	  SID			  417
-	  Position		  [15, 543, 45, 557]
+	  Position		  [15, 573, 45, 587]
 	  Port			  "9"
 	  IconDisplay		  "Port number"
 	}
@@ -7471,7 +7471,7 @@ Library {
 	  BlockType		  Inport
 	  Name			  "scale"
 	  SID			  418
-	  Position		  [15, 613, 45, 627]
+	  Position		  [15, 643, 45, 657]
 	  Port			  "10"
 	  IconDisplay		  "Port number"
 	}
@@ -7480,7 +7480,7 @@ Library {
 	  Name			  "Constant13"
 	  SID			  1555
 	  Ports			  [0, 1]
-	  Position		  [85, 663, 135, 677]
+	  Position		  [85, 643, 135, 657]
 	  ShowName		  off
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Constant"
@@ -7489,7 +7489,7 @@ Library {
 	  const			  "0"
 	  n_bits		  "1"
 	  bin_pt		  "0"
-	  explicit_period	  "on"
+	  explicit_period	  on
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -7498,7 +7498,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,554,541"
 	  block_type		  "constant"
@@ -7526,11 +7526,11 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
+	  en			  off
 	  latency		  "5"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  reg_retiming		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -7549,103 +7549,70 @@ Library {
 	  BlockType		  Terminator
 	  Name			  "Terminator0"
 	  SID			  1556
-	  Position		  [185, 75, 205, 95]
+	  Position		  [185, 105, 205, 125]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator1"
 	  SID			  1557
-	  Position		  [185, 145, 205, 165]
+	  Position		  [185, 175, 205, 195]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator2"
 	  SID			  1558
-	  Position		  [185, 215, 205, 235]
+	  Position		  [185, 245, 205, 265]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator3"
 	  SID			  1559
-	  Position		  [185, 285, 205, 305]
+	  Position		  [185, 315, 205, 335]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator4"
 	  SID			  1560
-	  Position		  [185, 355, 205, 375]
+	  Position		  [185, 385, 205, 405]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator5"
 	  SID			  1561
-	  Position		  [185, 425, 205, 445]
+	  Position		  [185, 455, 205, 475]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator6"
 	  SID			  1562
-	  Position		  [185, 495, 205, 515]
+	  Position		  [185, 525, 205, 545]
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator7"
 	  SID			  1563
-	  Position		  [185, 565, 205, 585]
+	  Position		  [185, 595, 205, 615]
 	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator8"
-	  SID			  1565
-	  Position		  [310, 610, 330, 630]
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "sample"
-	  SID			  1564
-	  Tag			  "xps:sw_reg"
-	  Ports			  [1, 1]
-	  Position		  [185, 613, 285, 627]
-	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
-	  LibraryVersion	  "1.419"
-	  SourceBlock		  "xps_library/software register"
-	  SourceType		  "Unknown"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  io_dir		  "To Processor"
-	  arith_type		  "Signed  (2's comp)"
-	  bitwidth		  "32"
-	  bin_pt		  "0"
-	  sample_period		  "1"
-	  gw_name		  "isi_correlator_lib_equalizer_sample_user_data_in"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "scale0"
 	  SID			  430
 	  Ports			  [2, 2]
-	  Position		  [90, 48, 135, 97]
-	  LibraryVersion	  "1.626"
+	  Position		  [90, 78, 135, 127]
+	  LibraryVersion	  "1.630"
 	  SourceBlock		  "isi_correlator_lib/scale"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -7659,13 +7626,13 @@ Library {
 	  Name			  "scale1"
 	  SID			  431
 	  Ports			  [2, 2]
-	  Position		  [90, 118, 135, 167]
-	  LibraryVersion	  "1.626"
+	  Position		  [90, 148, 135, 197]
+	  LibraryVersion	  "1.630"
 	  SourceBlock		  "isi_correlator_lib/scale"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -7679,13 +7646,13 @@ Library {
 	  Name			  "scale2"
 	  SID			  432
 	  Ports			  [2, 2]
-	  Position		  [90, 188, 135, 237]
-	  LibraryVersion	  "1.626"
+	  Position		  [90, 218, 135, 267]
+	  LibraryVersion	  "1.630"
 	  SourceBlock		  "isi_correlator_lib/scale"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -7699,13 +7666,13 @@ Library {
 	  Name			  "scale3"
 	  SID			  433
 	  Ports			  [2, 2]
-	  Position		  [90, 258, 135, 307]
-	  LibraryVersion	  "1.626"
+	  Position		  [90, 288, 135, 337]
+	  LibraryVersion	  "1.630"
 	  SourceBlock		  "isi_correlator_lib/scale"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -7719,13 +7686,13 @@ Library {
 	  Name			  "scale4"
 	  SID			  434
 	  Ports			  [2, 2]
-	  Position		  [90, 328, 135, 377]
-	  LibraryVersion	  "1.626"
+	  Position		  [90, 358, 135, 407]
+	  LibraryVersion	  "1.630"
 	  SourceBlock		  "isi_correlator_lib/scale"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -7739,13 +7706,13 @@ Library {
 	  Name			  "scale5"
 	  SID			  435
 	  Ports			  [2, 2]
-	  Position		  [90, 398, 135, 447]
-	  LibraryVersion	  "1.626"
+	  Position		  [90, 428, 135, 477]
+	  LibraryVersion	  "1.630"
 	  SourceBlock		  "isi_correlator_lib/scale"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -7759,13 +7726,13 @@ Library {
 	  Name			  "scale6"
 	  SID			  436
 	  Ports			  [2, 2]
-	  Position		  [90, 468, 135, 517]
-	  LibraryVersion	  "1.626"
+	  Position		  [90, 498, 135, 547]
+	  LibraryVersion	  "1.630"
 	  SourceBlock		  "isi_correlator_lib/scale"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -7779,13 +7746,13 @@ Library {
 	  Name			  "scale7"
 	  SID			  437
 	  Ports			  [2, 2]
-	  Position		  [90, 538, 135, 587]
-	  LibraryVersion	  "1.626"
+	  Position		  [90, 568, 135, 617]
+	  LibraryVersion	  "1.630"
 	  SourceBlock		  "isi_correlator_lib/scale"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -7805,7 +7772,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "out0"
 	  SID			  439
-	  Position		  [185, 53, 215, 67]
+	  Position		  [185, 83, 215, 97]
 	  NamePlacement		  "alternate"
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -7814,7 +7781,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "out1"
 	  SID			  440
-	  Position		  [185, 123, 215, 137]
+	  Position		  [185, 153, 215, 167]
 	  NamePlacement		  "alternate"
 	  Port			  "3"
 	  IconDisplay		  "Port number"
@@ -7823,7 +7790,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "out2"
 	  SID			  441
-	  Position		  [185, 193, 215, 207]
+	  Position		  [185, 223, 215, 237]
 	  NamePlacement		  "alternate"
 	  Port			  "4"
 	  IconDisplay		  "Port number"
@@ -7832,7 +7799,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "out3"
 	  SID			  442
-	  Position		  [185, 263, 215, 277]
+	  Position		  [185, 293, 215, 307]
 	  NamePlacement		  "alternate"
 	  Port			  "5"
 	  IconDisplay		  "Port number"
@@ -7841,7 +7808,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "out4"
 	  SID			  443
-	  Position		  [185, 333, 215, 347]
+	  Position		  [185, 363, 215, 377]
 	  NamePlacement		  "alternate"
 	  Port			  "6"
 	  IconDisplay		  "Port number"
@@ -7850,7 +7817,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "out5"
 	  SID			  444
-	  Position		  [185, 403, 215, 417]
+	  Position		  [185, 433, 215, 447]
 	  NamePlacement		  "alternate"
 	  Port			  "7"
 	  IconDisplay		  "Port number"
@@ -7859,7 +7826,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "out6"
 	  SID			  445
-	  Position		  [185, 473, 215, 487]
+	  Position		  [185, 503, 215, 517]
 	  NamePlacement		  "alternate"
 	  Port			  "8"
 	  IconDisplay		  "Port number"
@@ -7868,7 +7835,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "out7"
 	  SID			  446
-	  Position		  [185, 543, 215, 557]
+	  Position		  [185, 573, 215, 587]
 	  NamePlacement		  "alternate"
 	  Port			  "9"
 	  IconDisplay		  "Port number"
@@ -7877,15 +7844,9 @@ Library {
 	  BlockType		  Outport
 	  Name			  "clip"
 	  SID			  447
-	  Position		  [185, 663, 215, 677]
+	  Position		  [185, 643, 215, 657]
 	  Port			  "10"
 	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "sample"
-	  SrcPort		  1
-	  DstBlock		  "Terminator8"
-	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "scale7"
@@ -7896,16 +7857,8 @@ Library {
 	Line {
 	  SrcBlock		  "scale7"
 	  SrcPort		  1
-	  Points		  [15, 0]
-	  Branch {
-	    Points		    [0, 70]
-	    DstBlock		    "sample"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "out7"
-	    DstPort		    1
-	  }
+	  DstBlock		  "out7"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "scale6"
@@ -13765,7 +13718,7 @@ Library {
 	  infoedit		  "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary point at ze"
 	  "ro."
 	  num_inputs		  "2"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,165"
 	  block_type		  "concat"
@@ -13795,9 +13748,9 @@ Library {
 	  quantization		  "Round  (unbiased: Even Values)"
 	  overflow		  "Wrap"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  pipeline		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  pipeline		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "372,119,636,521"
@@ -13823,15 +13776,15 @@ Library {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "OR"
 	  inputs		  "2"
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "8"
 	  bin_pt		  "2"
-	  align_bp		  on
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  align_bp		  "on"
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,261"
@@ -13861,7 +13814,7 @@ Library {
 	  const			  "max_val"
 	  n_bits		  "data_bit_width"
 	  bin_pt		  "data_bit_width - 1"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -13870,7 +13823,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "95,381,400,346"
 	  block_type		  "constant"
@@ -13901,7 +13854,7 @@ Library {
 	  const			  "max_val"
 	  n_bits		  "dout_bit_width"
 	  bin_pt		  "dout_bit_width - 1"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -13910,7 +13863,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "95,381,400,346"
 	  block_type		  "constant"
@@ -13941,7 +13894,7 @@ Library {
 	  const			  "0"
 	  n_bits		  "dout_bit_width"
 	  bin_pt		  "dout_bit_width - 1"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -13950,7 +13903,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "95,381,400,346"
 	  block_type		  "constant"
@@ -13981,7 +13934,7 @@ Library {
 	  const			  "-max_val"
 	  n_bits		  "data_bit_width"
 	  bin_pt		  "data_bit_width - 1"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -13990,7 +13943,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "465,54,400,346"
 	  block_type		  "constant"
@@ -14021,7 +13974,7 @@ Library {
 	  const			  "-max_val"
 	  n_bits		  "dout_bit_width"
 	  bin_pt		  "dout_bit_width - 1"
-	  explicit_period	  on
+	  explicit_period	  "on"
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -14030,7 +13983,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "465,54,400,346"
 	  block_type		  "constant"
@@ -14058,7 +14011,7 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Mux"
 	  SourceType		  "Xilinx Bus Multiplexer Block"
 	  inputs		  "4"
-	  en			  off
+	  en			  "off"
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Signed  (2's comp)"
@@ -14066,8 +14019,8 @@ Library {
 	  bin_pt		  "2"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,303"
@@ -14096,10 +14049,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Relational"
 	  SourceType		  "Xilinx Arithmetic Relational Operator Block"
 	  mode			  "a>b"
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,193"
@@ -14126,10 +14079,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Relational"
 	  SourceType		  "Xilinx Arithmetic Relational Operator Block"
 	  mode			  "a<b"
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
