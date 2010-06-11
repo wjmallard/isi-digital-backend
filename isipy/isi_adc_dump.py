@@ -16,10 +16,12 @@ DATA_SOCK = "/tmp/isi_data_sock"
 CTRL_SOCK = "/tmp/isi_ctrl_sock"
 TIMESTAMP = False
 
+num_samples = 2048
+
 datafmt = np.dtype \
 ([
 	('pkt_id', '>i4'), 
-	('adc', '>i4', 512),
+	('adc', '>i4', num_samples),
 ])
 
 class IsiAdcDump (IsiDataView):

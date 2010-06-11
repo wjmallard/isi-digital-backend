@@ -11,17 +11,19 @@ import sys
 
 from isi_data_recv import IsiDataRecv
 
+num_samples = 2048
+
 pktfmt = np.dtype \
 ([  
 	('pkt_id', '>i4'),
-	('adc0', '>i4', 256),
-	('adc1', '>i4', 256),
+	('adc0', '>i4', num_samples/2),
+	('adc1', '>i4', num_samples/2),
 ])
 
 datafmt = np.dtype \
 ([  
 	('pkt_id', '>i4'),
-	('adc', '>i4', 512),
+	('adc', '>i4', num_samples),
 ])
 
 class IsiAdcRecv (IsiDataRecv):
@@ -30,12 +32,17 @@ class IsiAdcRecv (IsiDataRecv):
 		IsiDataRecv.__init__(self, addr, port, pktfmt, datafmt)
 
 	def descramble (self):
-		raw_adc0 = self._PKT['adc0'][0].reshape([8,32])
-		raw_adc1 = self._PKT['adc1'][0].reshape([8,32])
+		num_rows = 8
+		samples_per_row = (num_samples/2) / num_rows
+
+		raw_adc0 = self._PKT['adc0'][0].reshape([num_rows, samples_per_row])
+		raw_adc1 = self._PKT['adc1'][0].reshape([num_rows, samples_per_row])
 		adc = np.row_stack((raw_adc0, raw_adc1)).transpose()
 
 		self._DATA['pkt_id'] = self._PKT['pkt_id']
 		self._DATA['adc'] = adc.flatten()
+
+		return True
 
 def main ():
 	sys.argv.pop(0)
