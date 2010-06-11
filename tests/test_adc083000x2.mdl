@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.78"
+    ComputedModelVersion    "1.80"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jun 10 14:22:12 2010"
-  RTWModifiedTimeStamp	  198080519
-  ModelVersionFormat	  "1.%<AutoIncrement:78>"
+  LastModifiedDate	  "Thu Jun 10 17:25:48 2010"
+  RTWModifiedTimeStamp	  198091545
+  ModelVersionFormat	  "1.%<AutoIncrement:80>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -592,7 +592,7 @@ Model {
   }
   System {
     Name		    "test_adc083000x2"
-    Location		    [823, 53, 1910, 478]
+    Location		    [818, 53, 1905, 478]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -673,35 +673,6 @@ Model {
       SID		      60
       Ports		      [1, 1]
       Position		      [390, 13, 440, 27]
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Delay"
-      SourceType	      "Xilinx Delay Block"
-      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-      en		      off
-      latency		      "1"
-      dbl_ovrd		      off
-      reg_retiming	      on
-      xl_use_area	      off
-      xl_area		      "[0,0,0,0,0,0,0]"
-      has_advanced_control    "0"
-      sggui_pos		      "0,0,543,392"
-      block_type	      "delay"
-      block_version	      "11.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,07b98262,right,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Delay1"
-      SID		      108
-      Ports		      [1, 1]
-      Position		      [745, 28, 795, 42]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -878,7 +849,7 @@ Model {
       Position		      [510, 378, 570, 392]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "arm_reset"
+      GotoTag		      "arm"
     }
     Block {
       BlockType		      From
@@ -1001,7 +972,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto114"
       SID		      27
-      Position		      [820, 28, 880, 42]
+      Position		      [820, 363, 880, 377]
       ShowName		      off
       GotoTag		      "reset"
       TagVisibility	      "local"
@@ -1012,7 +983,7 @@ Model {
       SID		      28
       Position		      [510, 13, 570, 27]
       ShowName		      off
-      GotoTag		      "arm_reset"
+      GotoTag		      "arm"
       TagVisibility	      "local"
     }
     Block {
@@ -1297,39 +1268,6 @@ Model {
       ";port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
     }
     Block {
-      BlockType		      Reference
-      Name		      "control3"
-      SID		      54
-      Ports		      [1, 1]
-      Position		      [315, 28, 365, 42]
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Slice"
-      SourceType	      "Xilinx Bit Slice Extractor Block"
-      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The outpu"
-      "t type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<br><"
-      "br>Hardware notes: In hardware this block costs nothing."
-      nbits		      "1"
-      boolean_output	      on
-      mode		      "Lower Bit Location + Width"
-      bit1		      "0"
-      base1		      "MSB of Input"
-      bit0		      "2"
-      base0		      "LSB of Input"
-      dbl_ovrd		      off
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,631,621"
-      block_type	      "slice"
-      block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,1fd851a7,right,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
       BlockType		      Constant
       Name		      "default_control"
       SID		      55
@@ -1446,12 +1384,6 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "control3"
-      SrcPort		      1
-      DstBlock		      "Delay1"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "adc083000x2"
       SrcPort		      22
       DstBlock		      "adc_ctrl"
@@ -1485,21 +1417,21 @@ Model {
       SrcBlock		      "armed_trig"
       SrcPort		      1
       Points		      [5, 0]
-      DstBlock		      "sync_gen2"
-      DstPort		      1
+      Branch {
+	DstBlock		"sync_gen2"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 10]
+	DstBlock		"Goto114"
+	DstPort			1
+      }
     }
     Line {
       SrcBlock		      "control"
       SrcPort		      1
-      Points		      [5, 0]
-      Branch {
-	DstBlock		"control0"
-	DstPort			1
-      }
-      Branch {
-	DstBlock		"control3"
-	DstPort			1
-      }
+      DstBlock		      "control0"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "Delay"
@@ -1770,12 +1702,6 @@ Model {
       SrcPort		      1
       DstBlock		      "pb_adc1"
       DstPort		      10
-    }
-    Line {
-      SrcBlock		      "Delay1"
-      SrcPort		      1
-      DstBlock		      "Goto114"
-      DstPort		      1
     }
     Line {
       SrcBlock		      "Delay2"
