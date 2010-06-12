@@ -26,7 +26,7 @@ class IsiRoachCtrl (Cmd):
 	# ISI Commands
 	#
 
-	def zero_ctrl (self, line):
+	def do_zero_ctrl (self, line):
 		self._board.zero_ctrl()
 		print "Zeroed control register."
 
@@ -96,7 +96,6 @@ class IsiRoachCtrl (Cmd):
 		print "Programming ..."
 		self._board.progdev(bof)
 		print "Success!"
-		self._board.reset()
 
 	def complete_program (self, text, line, begidx, endidx):
 		bof_list = self._board.listbof()
