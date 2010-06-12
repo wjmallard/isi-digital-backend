@@ -6,8 +6,9 @@ __copyright__ = "Copyright 2010, CASPER"
 __license__ = "GPL"
 __status__ = "Development"
 
-from libisiroach import *
+from libisifengine import *
 from libisivacc import *
+import time
 
 class IsiCorrelator (object):
 	"""
@@ -21,7 +22,7 @@ class IsiCorrelator (object):
 		self._update_delay = .1 # seconds
 
 		for i in xrange(3):
-			self._boards[i] = IsiRoachBoard(hosts[i], ports[i], i)
+			self._boards[i] = IsiFEngine(hosts[i], ports[i], i)
 
 		time.sleep(1)
 
@@ -51,11 +52,11 @@ class IsiCorrelator (object):
 
 	def arm_sync (self):
 		for board in self._boards:
-			board.unarm_sync()
+			board.zero_ctrl()
 		for board in self._boards:
-			board.arm_sync()
+			board.arm()
 		for board in self._boards:
-			board.unarm_sync()
+			board.zero_ctrl()
 
 	def send_sync (self):
 		for board in self._boards:
