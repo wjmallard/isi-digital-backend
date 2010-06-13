@@ -60,10 +60,10 @@ class IsiVacc (threading.Thread):
 
 			# find full accumulations and process them.
 			for i in xrange(self._buf_length):
-				s = (max_pktid + 1) % self._buf_length
+				s = (max_pktid + i) % self._buf_length
 				if self._PKTID[s].ptp() == 0:
 					self.process_pkt(self._PKTID[s,0], self._ACCUM[s])
-					max_pktid = (max_pktid + 1) % lim_pktid
+					max_pktid = (max_pktid + i) % lim_pktid
 					# Taint the row so that it doesn't get
 					# read again on a packet counter reset.
 					self._PKTID[s, 0] += 1
