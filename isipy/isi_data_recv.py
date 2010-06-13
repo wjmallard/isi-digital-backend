@@ -34,7 +34,7 @@ class IsiDataRecv ():
 	descramble() :
 		* Takes no arguments.
 		* Transforms _PKT to _DATA.
-		* Returns nothing.
+		* Returns a bool: True iff a full dataset is now ready.
 	"""
 
 	def __init__ (self, addr, port, pktfmt, datafmt):
@@ -70,7 +70,7 @@ class IsiDataRecv ():
 		self._ilist = [self._recv_sock, self._ctrl_sock, sys.stdin]
 		self._olist = []
 
-		got_a_packet = False
+		packet_ready = False
 
 		print "Entering receive loop."
 
@@ -81,8 +81,7 @@ class IsiDataRecv ():
 
 				if iobj == self._recv_sock:
 					self._recv_sock.recv_into(self._PKT)
-					self.descramble()
-					got_a_packet = True
+					packet_ready = self.descramble()
 					#print "Got packet #%d." % self._PKT['pkt_id'][0]
 
 				elif iobj == self._ctrl_sock:
@@ -106,8 +105,8 @@ class IsiDataRecv ():
 						iobj.close()
 						self._ilist.remove(iobj)
 
-			if got_a_packet:
-				got_a_packet = False
+			if packet_ready:
+				packet_ready = False
 				for oobj in ordy:
 					try:
 						oobj.send(self._DATA)

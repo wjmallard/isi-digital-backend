@@ -30,6 +30,8 @@ class IsiTpbRecv (IsiDataRecv):
 		self._DATA['pkt_id'] = self._PKT['pkt_id']
 		self._DATA['pb0'] = pb0.flatten()
 
+		return True
+
 def main ():
 	sys.argv.pop(0)
 
