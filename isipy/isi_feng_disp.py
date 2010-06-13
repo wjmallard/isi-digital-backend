@@ -7,8 +7,6 @@ __license__ = "GPL"
 __status__ = "Development"
 
 import numpy as np
-import socket
-import sys
 
 from isi_data_view import IsiDataView
 
