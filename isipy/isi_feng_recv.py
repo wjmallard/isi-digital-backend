@@ -63,6 +63,8 @@ class IsiFengRecv (IsiDataRecv):
 		self._DATA['raR'] = raR.flatten()
 		self._DATA['raI'] = raI.flatten()
 
+		return True
+
 def main ():
 	sys.argv.pop(0)
 
