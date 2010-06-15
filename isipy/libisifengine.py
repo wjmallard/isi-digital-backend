@@ -42,11 +42,16 @@ class IsiFEngine (IsiRoach):
 
 		if board_is_programmed:
 			print "Status: Programmed."
-			try:
-				self.clock_freq = int(self.est_brd_clk())
-				self.clock_freq -= self.clock_freq % 5
-				print "* Clock freq = %d MHz" % self.clock_freq
 
+			self.clock_freq = int(self.est_brd_clk())
+			self.clock_freq -= self.clock_freq % 5
+			print "* Clock freq = %d MHz" % self.clock_freq
+
+			if self.clock_freq == 0:
+				print "No clock is connected to this board."
+				return
+
+			try:
 				clks = self.read_int('sync_gen2_period')
 				self.sync_period = float(clks) / (self.clock_freq * 10**6)
 				print "* Sync Period = %fs" % self.sync_period
