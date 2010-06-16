@@ -15,9 +15,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jun 15 20:08:59 2010"
-  RTWModifiedTimeStamp	  198533314
-  ModelVersionFormat	  "1.%<AutoIncrement:633>"
+  LastModifiedDate	  "Tue Jun 15 20:19:29 2010"
+  RTWModifiedTimeStamp	  198533948
+  ModelVersionFormat	  "1.%<AutoIncrement:634>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -3970,7 +3970,7 @@ Library {
       SID		      202
       Ports		      [9, 5]
       Position		      [390, 14, 440, 186]
-      LibraryVersion	      "*1.578"
+      LibraryVersion	      "1.633"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -3993,7 +3993,7 @@ Library {
       MaskValueString	      "1"
       System {
 	Name			"clump"
-	Location		[195, 657, 521, 1033]
+	Location		[190, 633, 516, 1009]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4089,15 +4089,15 @@ Library {
 	  SourceType		  "Xilinx Assert Block"
 	  infoedit		  "Asserts a user-defined sample rate and/or type on a signal.<br><br>Hardware notes: In hardware this bl"
 	  "ock costs nothing."
-	  assert_type		  "on"
+	  assert_type		  on
 	  type_source		  "Explicitly"
 	  arith_type		  "Unsigned"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  assert_rate		  "on"
+	  assert_rate		  on
 	  rate_source		  "Explicitly"
 	  period		  "1"
-	  output_port		  "on"
+	  output_port		  on
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "assert"
@@ -4122,15 +4122,15 @@ Library {
 	  SourceType		  "Xilinx Assert Block"
 	  infoedit		  "Asserts a user-defined sample rate and/or type on a signal.<br><br>Hardware notes: In hardware this bl"
 	  "ock costs nothing."
-	  assert_type		  "on"
+	  assert_type		  on
 	  type_source		  "Explicitly"
 	  arith_type		  "Unsigned"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  assert_rate		  "on"
+	  assert_rate		  on
 	  rate_source		  "Explicitly"
 	  period		  "1"
-	  output_port		  "on"
+	  output_port		  on
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "assert"
@@ -4155,15 +4155,15 @@ Library {
 	  SourceType		  "Xilinx Assert Block"
 	  infoedit		  "Asserts a user-defined sample rate and/or type on a signal.<br><br>Hardware notes: In hardware this bl"
 	  "ock costs nothing."
-	  assert_type		  "on"
+	  assert_type		  on
 	  type_source		  "Explicitly"
 	  arith_type		  "Unsigned"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  assert_rate		  "on"
+	  assert_rate		  on
 	  rate_source		  "Explicitly"
 	  period		  "1"
-	  output_port		  "on"
+	  output_port		  on
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "assert"
@@ -4188,15 +4188,15 @@ Library {
 	  SourceType		  "Xilinx Assert Block"
 	  infoedit		  "Asserts a user-defined sample rate and/or type on a signal.<br><br>Hardware notes: In hardware this bl"
 	  "ock costs nothing."
-	  assert_type		  "on"
+	  assert_type		  on
 	  type_source		  "Explicitly"
 	  arith_type		  "Unsigned"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  assert_rate		  "on"
+	  assert_rate		  on
 	  rate_source		  "Explicitly"
 	  period		  "1"
-	  output_port		  "on"
+	  output_port		  on
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "assert"
@@ -4221,15 +4221,15 @@ Library {
 	  SourceType		  "Xilinx Assert Block"
 	  infoedit		  "Asserts a user-defined sample rate and/or type on a signal.<br><br>Hardware notes: In hardware this bl"
 	  "ock costs nothing."
-	  assert_type		  "on"
+	  assert_type		  on
 	  type_source		  "Explicitly"
 	  arith_type		  "Unsigned"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  assert_rate		  "on"
+	  assert_rate		  on
 	  rate_source		  "Explicitly"
 	  period		  "1"
-	  output_port		  "on"
+	  output_port		  on
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "assert"
@@ -4254,15 +4254,15 @@ Library {
 	  SourceType		  "Xilinx Assert Block"
 	  infoedit		  "Asserts a user-defined sample rate and/or type on a signal.<br><br>Hardware notes: In hardware this bl"
 	  "ock costs nothing."
-	  assert_type		  "on"
+	  assert_type		  on
 	  type_source		  "Explicitly"
 	  arith_type		  "Unsigned"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  assert_rate		  "on"
+	  assert_rate		  on
 	  rate_source		  "Explicitly"
 	  period		  "1"
-	  output_port		  "on"
+	  output_port		  on
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "assert"
@@ -4287,15 +4287,15 @@ Library {
 	  SourceType		  "Xilinx Assert Block"
 	  infoedit		  "Asserts a user-defined sample rate and/or type on a signal.<br><br>Hardware notes: In hardware this bl"
 	  "ock costs nothing."
-	  assert_type		  "on"
+	  assert_type		  on
 	  type_source		  "Explicitly"
 	  arith_type		  "Unsigned"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  assert_rate		  "on"
+	  assert_rate		  on
 	  rate_source		  "Explicitly"
 	  period		  "1"
-	  output_port		  "on"
+	  output_port		  on
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "assert"
@@ -4320,15 +4320,15 @@ Library {
 	  SourceType		  "Xilinx Assert Block"
 	  infoedit		  "Asserts a user-defined sample rate and/or type on a signal.<br><br>Hardware notes: In hardware this bl"
 	  "ock costs nothing."
-	  assert_type		  "on"
+	  assert_type		  on
 	  type_source		  "Explicitly"
 	  arith_type		  "Unsigned"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  assert_rate		  "on"
+	  assert_rate		  on
 	  rate_source		  "Explicitly"
 	  period		  "1"
-	  output_port		  "on"
+	  output_port		  on
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "assert"
@@ -4353,15 +4353,15 @@ Library {
 	  SourceType		  "Xilinx Assert Block"
 	  infoedit		  "Asserts a user-defined sample rate and/or type on a signal.<br><br>Hardware notes: In hardware this bl"
 	  "ock costs nothing."
-	  assert_type		  "on"
+	  assert_type		  on
 	  type_source		  "Explicitly"
 	  arith_type		  "Unsigned"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  assert_rate		  "on"
+	  assert_rate		  on
 	  rate_source		  "Explicitly"
 	  period		  "1"
-	  output_port		  "on"
+	  output_port		  on
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "assert"
@@ -4388,7 +4388,7 @@ Library {
 	  const			  "0"
 	  n_bits		  "2"
 	  bin_pt		  "0"
-	  explicit_period	  "on"
+	  explicit_period	  on
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -4397,7 +4397,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "constant"
@@ -4425,10 +4425,10 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Relational"
 	  SourceType		  "Xilinx Arithmetic Relational Operator Block"
 	  mode			  "a!=b"
-	  en			  "off"
+	  en			  off
 	  latency		  "1"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -4450,12 +4450,12 @@ Library {
 	  SID			  215
 	  Ports			  [4, 1]
 	  Position		  [195, 53, 245, 112]
-	  LibraryVersion	  "1.631"
+	  LibraryVersion	  "1.633"
 	  SourceBlock		  "isi_correlator_lib/compress"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -4469,12 +4469,12 @@ Library {
 	  SID			  216
 	  Ports			  [4, 1]
 	  Position		  [195, 138, 245, 197]
-	  LibraryVersion	  "1.631"
+	  LibraryVersion	  "1.633"
 	  SourceBlock		  "isi_correlator_lib/compress"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -4488,12 +4488,12 @@ Library {
 	  SID			  217
 	  Ports			  [4, 1]
 	  Position		  [195, 223, 245, 282]
-	  LibraryVersion	  "1.631"
+	  LibraryVersion	  "1.633"
 	  SourceBlock		  "isi_correlator_lib/compress"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -4515,7 +4515,7 @@ Library {
 	  const			  "0"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  explicit_period	  "on"
+	  explicit_period	  on
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -4524,7 +4524,7 @@ Library {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,554,541"
 	  block_type		  "constant"
@@ -4548,22 +4548,22 @@ Library {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
-	  latency		  "latency"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
+	  en			  off
+	  latency		  "latency + 1"
+	  dbl_ovrd		  off
+	  reg_retiming		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,07b98262,right,"
+	  sg_icon_stat		  "50,14,1,1,white,blue,0,85ce9542,right,"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
 	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
 	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
 	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','tex"
+	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','tex"
 	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
@@ -4572,12 +4572,12 @@ Library {
 	  SID			  220
 	  Ports			  [1, 1]
 	  Position		  [95, 33, 145, 47]
-	  LibraryVersion	  "1.631"
+	  LibraryVersion	  "1.633"
 	  SourceBlock		  "isi_correlator_lib/synced_cntr"
 	  SourceType		  "synced_cntr"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -16851,7 +16851,7 @@ Library {
       SID		      572
       Ports		      [4, 10]
       Position		      [915, 15, 965, 235]
-      LibraryVersion	      "*1.580"
+      LibraryVersion	      "*1.633"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -16874,7 +16874,7 @@ Library {
       MaskValueString	      "1"
       System {
 	Name			"unclump"
-	Location		[795, 605, 1191, 920]
+	Location		[795, 605, 1120, 920]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -16923,22 +16923,22 @@ Library {
 	  Name			  "Assert0"
 	  SID			  1367
 	  Ports			  [1, 1]
-	  Position		  [170, 83, 220, 97]
+	  Position		  [95, 83, 145, 97]
 	  ShowName		  off
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Assert"
 	  SourceType		  "Xilinx Assert Block"
 	  infoedit		  "Asserts a user-defined sample rate and/or type on a signal.<br><br>Hardware notes: In hardware this bl"
 	  "ock costs nothing."
-	  assert_type		  "on"
+	  assert_type		  on
 	  type_source		  "Explicitly"
 	  arith_type		  "Unsigned"
 	  n_bits		  "32"
 	  bin_pt		  "0"
-	  assert_rate		  "on"
+	  assert_rate		  on
 	  rate_source		  "Explicitly"
 	  period		  "1"
-	  output_port		  "on"
+	  output_port		  on
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "assert"
@@ -16956,22 +16956,22 @@ Library {
 	  Name			  "Assert1"
 	  SID			  1368
 	  Ports			  [1, 1]
-	  Position		  [170, 173, 220, 187]
+	  Position		  [95, 173, 145, 187]
 	  ShowName		  off
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Assert"
 	  SourceType		  "Xilinx Assert Block"
 	  infoedit		  "Asserts a user-defined sample rate and/or type on a signal.<br><br>Hardware notes: In hardware this bl"
 	  "ock costs nothing."
-	  assert_type		  "on"
+	  assert_type		  on
 	  type_source		  "Explicitly"
 	  arith_type		  "Unsigned"
 	  n_bits		  "32"
 	  bin_pt		  "0"
-	  assert_rate		  "on"
+	  assert_rate		  on
 	  rate_source		  "Explicitly"
 	  period		  "1"
-	  output_port		  "on"
+	  output_port		  on
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "assert"
@@ -16989,22 +16989,22 @@ Library {
 	  Name			  "Assert2"
 	  SID			  1369
 	  Ports			  [1, 1]
-	  Position		  [170, 263, 220, 277]
+	  Position		  [95, 263, 145, 277]
 	  ShowName		  off
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Assert"
 	  SourceType		  "Xilinx Assert Block"
 	  infoedit		  "Asserts a user-defined sample rate and/or type on a signal.<br><br>Hardware notes: In hardware this bl"
 	  "ock costs nothing."
-	  assert_type		  "on"
+	  assert_type		  on
 	  type_source		  "Explicitly"
 	  arith_type		  "Unsigned"
 	  n_bits		  "32"
 	  bin_pt		  "0"
-	  assert_rate		  "on"
+	  assert_rate		  on
 	  rate_source		  "Explicitly"
 	  period		  "1"
-	  output_port		  "on"
+	  output_port		  on
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "assert"
@@ -17022,13 +17022,13 @@ Library {
 	  Name			  "decompressX"
 	  SID			  577
 	  Ports			  [2, 3]
-	  Position		  [270, 44, 320, 106]
-	  LibraryVersion	  "1.631"
+	  Position		  [195, 44, 245, 106]
+	  LibraryVersion	  "1.633"
 	  SourceBlock		  "isi_correlator_lib/decompress"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -17041,13 +17041,13 @@ Library {
 	  Name			  "decompressY"
 	  SID			  578
 	  Ports			  [2, 3]
-	  Position		  [270, 134, 320, 196]
-	  LibraryVersion	  "1.631"
+	  Position		  [195, 134, 245, 196]
+	  LibraryVersion	  "1.633"
 	  SourceBlock		  "isi_correlator_lib/decompress"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -17060,13 +17060,13 @@ Library {
 	  Name			  "decompressZ"
 	  SID			  579
 	  Ports			  [2, 3]
-	  Position		  [270, 224, 320, 286]
-	  LibraryVersion	  "1.631"
+	  Position		  [195, 224, 245, 286]
+	  LibraryVersion	  "1.633"
 	  SourceBlock		  "isi_correlator_lib/decompress"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -17079,46 +17079,17 @@ Library {
 	  Name			  "sync_delay"
 	  SID			  580
 	  Ports			  [1, 1]
-	  Position		  [270, 13, 320, 27]
+	  Position		  [195, 13, 245, 27]
 	  ShowName		  off
 	  LibraryVersion	  "1.2"
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
+	  en			  off
 	  latency		  "latency"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,543,392"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "50,14,1,1,white,blue,0,07b98262,right,"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npat"
-	  "ch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 ],[0.14285"
-	  "7 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0.285714 0.1428"
-	  "57 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfp"
-	  "rintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','tex"
-	  "mode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "sync_delay1"
-	  SID			  581
-	  Ports			  [1, 1]
-	  Position		  [70, 13, 120, 27]
-	  ShowName		  off
-	  LibraryVersion	  "1.2"
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  "off"
-	  latency		  "1"
-	  dbl_ovrd		  "off"
-	  reg_retiming		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  reg_retiming		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,543,392"
@@ -17137,13 +17108,13 @@ Library {
 	  Name			  "synced_cntr"
 	  SID			  582
 	  Ports			  [1, 1]
-	  Position		  [170, 33, 220, 47]
-	  LibraryVersion	  "1.631"
+	  Position		  [95, 33, 145, 47]
+	  LibraryVersion	  "1.633"
 	  SourceBlock		  "isi_correlator_lib/synced_cntr"
 	  SourceType		  "synced_cntr"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -17155,14 +17126,14 @@ Library {
 	  BlockType		  Outport
 	  Name			  "sync_out"
 	  SID			  583
-	  Position		  [345, 13, 375, 27]
+	  Position		  [270, 13, 300, 27]
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "XA"
 	  SID			  584
-	  Position		  [345, 48, 375, 62]
+	  Position		  [270, 48, 300, 62]
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
@@ -17170,7 +17141,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "XB"
 	  SID			  585
-	  Position		  [345, 68, 375, 82]
+	  Position		  [270, 68, 300, 82]
 	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
@@ -17178,7 +17149,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "XC"
 	  SID			  586
-	  Position		  [345, 88, 375, 102]
+	  Position		  [270, 88, 300, 102]
 	  Port			  "4"
 	  IconDisplay		  "Port number"
 	}
@@ -17186,7 +17157,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "YA"
 	  SID			  587
-	  Position		  [345, 138, 375, 152]
+	  Position		  [270, 138, 300, 152]
 	  Port			  "5"
 	  IconDisplay		  "Port number"
 	}
@@ -17194,7 +17165,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "YB"
 	  SID			  588
-	  Position		  [345, 158, 375, 172]
+	  Position		  [270, 158, 300, 172]
 	  Port			  "6"
 	  IconDisplay		  "Port number"
 	}
@@ -17202,7 +17173,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "YC"
 	  SID			  589
-	  Position		  [345, 178, 375, 192]
+	  Position		  [270, 178, 300, 192]
 	  Port			  "7"
 	  IconDisplay		  "Port number"
 	}
@@ -17210,7 +17181,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "ZA"
 	  SID			  590
-	  Position		  [345, 228, 375, 242]
+	  Position		  [270, 228, 300, 242]
 	  Port			  "8"
 	  IconDisplay		  "Port number"
 	}
@@ -17218,7 +17189,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "ZB"
 	  SID			  591
-	  Position		  [345, 248, 375, 262]
+	  Position		  [270, 248, 300, 262]
 	  Port			  "9"
 	  IconDisplay		  "Port number"
 	}
@@ -17226,7 +17197,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "ZC"
 	  SID			  592
-	  Position		  [345, 268, 375, 282]
+	  Position		  [270, 268, 300, 282]
 	  Port			  "10"
 	  IconDisplay		  "Port number"
 	}
@@ -17268,20 +17239,6 @@ Library {
 	  SrcPort		  1
 	  DstBlock		  "decompressX"
 	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "sync_delay1"
-	  SrcPort		  1
-	  Points		  [20, 0]
-	  Branch {
-	    Points		    [0, 20]
-	    DstBlock		    "synced_cntr"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "sync_delay"
-	    DstPort		    1
-	  }
 	}
 	Line {
 	  SrcBlock		  "Z"
@@ -17358,8 +17315,16 @@ Library {
 	Line {
 	  SrcBlock		  "sync"
 	  SrcPort		  1
-	  DstBlock		  "sync_delay1"
-	  DstPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    Points		    [0, 20]
+	    DstBlock		    "synced_cntr"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "sync_delay"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "sync_delay"
@@ -21666,7 +21631,7 @@ Library {
 	  SourceType		  "simple_bram_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -21690,7 +21655,7 @@ Library {
 	  SourceType		  "simple_bram_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -21714,7 +21679,7 @@ Library {
 	  SourceType		  "simple_bram_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -21738,7 +21703,7 @@ Library {
 	  SourceType		  "simple_bram_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -21762,7 +21727,7 @@ Library {
 	  SourceType		  "simple_bram_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -21786,7 +21751,7 @@ Library {
 	  SourceType		  "simple_bram_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -21810,7 +21775,7 @@ Library {
 	  SourceType		  "simple_bram_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -21834,7 +21799,7 @@ Library {
 	  SourceType		  "simple_bram_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -21858,7 +21823,7 @@ Library {
 	  SourceType		  "simple_bram_vacc"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
+	  FunctionWithSeparateData "off"
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
