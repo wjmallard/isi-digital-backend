@@ -8,6 +8,7 @@ __status__ = "Development"
 
 from cmd import Cmd
 from corr import katcp_wrapper as katcp
+from time import sleep
 
 class AnyRoachCtrl (Cmd):
 
@@ -89,7 +90,7 @@ class AnyRoachCtrl (Cmd):
 		return line
 
 	def postcmd (self, stop, line):
-		self._ids = []
+		self._ids = None
 		return stop
 
 	def emptyline (self):
@@ -115,6 +116,7 @@ class AnyRoachCtrl (Cmd):
 			return
 		addr = args.pop(0)
 
+		# Parse arguments.
 		if len(args) == 0:
 			port = 7147
 		else:
@@ -125,8 +127,14 @@ class AnyRoachCtrl (Cmd):
 				print "Invalid port: %s" % s_port
 				return
 
-		# TODO: Check if board is reachable.
+		# Add board to list, if it is reachable.
 		board = katcp.FpgaClient(addr, port)
+		sleep(.25)
+		try:
+			board.ping()
+		except katcp.KatcpClientError:
+			print "Board is unreachable: %s:%d" % (addr, port)
+			return
 		self._boards.append(board)
 
 		if port == 7147:
