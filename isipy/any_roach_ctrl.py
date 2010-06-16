@@ -38,43 +38,53 @@ class AnyRoachCtrl (Cmd):
 			print "No active boards."
 			return ""
 
-		elif len(self._boards) == 1:
-			# Assume the single known board is the target.
-			self._ids = [0]
-
 		else:
 			# Parse the list of target boards.
 
-			if len(args) < 2:
-				print "Must specify a board."
-				return ""
+			if len(args) >= 2:
 
-			arg1 = args.pop(1)
-			s_ids = arg1.split(',')
-			line = ' '.join(args)
+				arg1 = args.pop(1)
+				s_ids = arg1.split(',')
+				num_ids = len(s_ids)
 
-			if arg1 == "all":
+				self._ids = None
+				for s_id in s_ids:
+
+					# Parse the next board ID in the list.
+					try:
+						id = int(s_id, 0)
+					except ValueError:
+						# If it's not a valid integer:
+						if num_ids == 1:
+							# Assume no board list was specified.
+							break
+						else:
+							# Skip it and move to the next one.
+							print "Invalid board ID: %s" % s_id
+							continue
+
+					# Make sure that board has been loaded.
+					if id >= len(self._boards) or id < 0:
+						print "Unknown board ID: %d" % id
+						continue
+
+					# Looks good, so add it to the list.
+					if self._ids:
+						self._ids += [id]
+					else:
+						self._ids = [id]
+
+			if self._ids:
+				# The first arg was a board ID,
+				# and we already removed it,
+				# so return the remaining line.
+				line = ' '.join(args)
+				self._ids.sort()
+			else:
+				# The first arg was not a board ID,
+				# so return a list of all boards,
+				# and return the original line.
 				self._ids = range(len(self._boards))
-				return line
-	
-			self._ids = []
-			for s_id in s_ids:
-
-				try:
-					id = int(s_id, 0)
-				except ValueError:
-					print "Invalid board ID: %s" % s_id
-					continue
-
-				if id >= len(self._boards) or id < 0:
-					print "Unknown board ID: %d" % id
-					continue
-
-				print "Adding board %d." % id
-				self._ids += [id]
-
-			if len(self._ids) == 0:
-				return ""
 
 		return line
 
@@ -89,12 +99,10 @@ class AnyRoachCtrl (Cmd):
 	# Meta Commands
 	#
 
-	def do_list_board (self, line):
+	def do_list_boards (self, line):
 		num_boards = len(self._boards)
 
 		print "Boards:"
-		if num_boards == 0:
-			print " None."
 		for i in xrange(num_boards):
 			info = self._boards[i]._bindaddr
 			print " [%d] %s : %d" % (i, info[0], info[1])
@@ -152,6 +160,7 @@ class AnyRoachCtrl (Cmd):
 		for id in self._ids:
 			print "[%d] Available devices:" % id
 			dev_list = self._boards[id].listdev()
+			dev_list.sort()
 			for dev in dev_list:
 				print "  %s" % dev
 
@@ -184,6 +193,11 @@ class AnyRoachCtrl (Cmd):
 
 		bof = args.pop(0)
 
+		bof_list = self._boards[0].listbof()
+		if not bof in bof_list:
+			print "Unknown bof file: %s" % bof
+			return
+
 		for id in self._ids:
 			print "[%d] Programming ..." % id
 			self._boards[id].progdev(bof)
@@ -208,8 +222,11 @@ class AnyRoachCtrl (Cmd):
 		dev = args.pop(0)
 
 		for id in self._ids:
-			val = self._boards[id].read_int(dev)
-			print " [%d] %s = %d" % (id, dev, val)
+			try:
+				val = self._boards[id].read_int(dev)
+				print " [%d] %s = %d" % (id, dev, val)
+			except RuntimeError:
+				print "[%d] Cannot read register: %s" % (id, dev)
 
 	def complete_read_int (self, text, line, begidx, endidx):
 
@@ -248,7 +265,11 @@ class AnyRoachCtrl (Cmd):
 			return
 
 		for id in self._ids:
-			self._boards[id].write_int(dev, val)
+			try:
+				self._boards[id].write_int(dev, val)
+				print " [%d] %s = %d" % (id, dev, val)
+			except RuntimeError:
+				print "[%d] Cannot write register: %s" % (id, dev)
 
 	complete_write_int = complete_read_int
 
