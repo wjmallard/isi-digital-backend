@@ -13,10 +13,114 @@ class AnyRoachCtrl (Cmd):
 
 	prompt = "roach> "
 
-	def __init__ (self, addr, port=7147):
+	def __init__ (self):
 		Cmd.__init__(self)
 
-		self._board = katcp.FpgaClient(addr, port)
+		self._boards = []
+		self._ids = None
+
+	#
+	# Cmd Methods
+	#
+
+	def precmd (self, line):
+		args = line.split()
+
+		if len(args) == 0 \
+			or args[0] == 'EOF' \
+			or args[0] == 'help' \
+			or args[0].endswith("_board"):
+			# Do nothing.
+			pass
+
+		elif len(self._boards) == 0:
+			# Do not execute the command.
+			print "No active boards."
+			return ""
+
+		elif len(self._boards) == 1:
+			# Assume the single known board is the target.
+			self._ids = [0]
+
+		else:
+			# Parse the list of target boards.
+
+			if len(args) < 2:
+				print "Must specify a board."
+				return ""
+
+			arg1 = args.pop(1)
+			s_ids = arg1.split(',')
+			line = ' '.join(args)
+
+			if arg1 == "all":
+				self._ids = range(len(self._boards))
+				return line
+	
+			self._ids = []
+			for s_id in s_ids:
+
+				try:
+					id = int(s_id, 0)
+				except ValueError:
+					print "Invalid board ID: %s" % s_id
+					continue
+
+				if id >= len(self._boards) or id < 0:
+					print "Unknown board ID: %d" % id
+					continue
+
+				print "Adding board %d." % id
+				self._ids += [id]
+
+			if len(self._ids) == 0:
+				return ""
+
+		return line
+
+	def postcmd (self, stop, line):
+		self._ids = []
+		return stop
+
+	def emptyline (self):
+		pass
+
+	#
+	# Meta Commands
+	#
+
+	def do_list_board (self, line):
+		num_boards = len(self._boards)
+
+		print "Boards:"
+		if num_boards == 0:
+			print " None."
+		for i in xrange(num_boards):
+			info = self._boards[i]._bindaddr
+			print " [%d] %s : %d" % (i, info[0], info[1])
+
+	def do_add_board (self, line):
+		args = line.split()
+
+		if len(args) == 0:
+			print "Must specify a hostname."
+			return
+		addr = args.pop(0)
+
+		if len(args) == 0:
+			port = 7147
+		else:
+			s_port = args.pop(0)
+			try:
+				port = int(s_port, 0)
+			except ValueError:
+				print "Invalid port: %s" % s_port
+				return
+
+		# TODO: Check if board is reachable.
+		board = katcp.FpgaClient(addr, port)
+		self._boards.append(board)
+
 		if port == 7147:
 			print "Connected to %s." % (addr)
 		else:
@@ -28,11 +132,15 @@ class AnyRoachCtrl (Cmd):
 
 	def do_est_brd_clk (self, line):
 		"""Estimate the board's clock speed."""
-		print "Clock: ~%dMHz" % self._board.est_brd_clk()
+
+		for id in self._ids:
+			clk = self._boards[id].est_brd_clk()
+			print "[%d] Clock: ~%dMHz" % (id, clk)
 
 	def do_listbof (self, line):
 		"""List all executable bof files."""
-		bof_list = self._board.listbof()
+
+		bof_list = self._boards[0].listbof()
 		bof_list.sort()
 		print "Available boffiles:"
 		for bof in bof_list:
@@ -40,66 +148,97 @@ class AnyRoachCtrl (Cmd):
 
 	def do_listdev (self, line):
 		"""List all fpga devices in /proc."""
-		dev_list = self._board.listdev()
-		print "Available devices:"
-		for dev in dev_list:
-			print "  %s" % dev
+
+		for id in self._ids:
+			print "[%d] Available devices:" % id
+			dev_list = self._boards[id].listdev()
+			for dev in dev_list:
+				print "  %s" % dev
 
 	def do_ping (self, line):
 		"""Ping the board."""
-		pingable = self._board.ping()
-		if pingable:
-			print "Board is reachable."
-		else:
-			print "Board is unreachable."
+
+		for id in self._ids:
+			pingable = self._boards[id].ping()
+			if pingable:
+				print "[%d] Board is reachable." % id
+			else:
+				print "[%d] Board is unreachable." % id
 
 	def do_deprogram (self, line):
 		"""Deprogram the FPGA."""
-		self._board.progdev("")
-		print "FPGA deprogrammed."
+
+		for id in self._ids:
+			self._boards[id].progdev("")
+			print "[%d] FPGA deprogrammed." % id
 
 	def do_program (self, line):
 		"""program [boffile]
 		Program the board with the specified boffile."""
+
 		args = line.split()
+
 		if len(args) != 1:
 			print "Must specify one boffile."
 			return
+
 		bof = args.pop(0)
-		print "Programming ..."
-		self._board.progdev(bof)
-		print "Success!"
+
+		for id in self._ids:
+			print "[%d] Programming ..." % id
+			self._boards[id].progdev(bof)
+			print "[%d] Success!" % id
 
 	def complete_program (self, text, line, begidx, endidx):
-		bof_list = self._board.listbof()
+		id = self._ids[0]
+		bof_list = self._boards[id].listbof()
 		bof_list.sort()
 		return [x for x in bof_list if x.startswith(text)]
 
 	def do_read_int (self, line):
 		"""read_int [device]
 		Read 32 bits from a device."""
+
 		args = line.split()
+
 		if len(args) != 1:
 			print "Must specify one device."
 			return
+
 		dev = args.pop(0)
-		val = self._board.read_int(dev)
-		print "%s = %d" % (dev, val)
+
+		for id in self._ids:
+			val = self._boards[id].read_int(dev)
+			print " [%d] %s = %d" % (id, dev, val)
 
 	def complete_read_int (self, text, line, begidx, endidx):
+
+		id = self._ids[0]
+
 		args = line.split()
-		if len(args) > 1 and begidx == endidx:
+
+		# TODO: Make this work fully.
+		#if len(args) == 1:
+		#	return [str(x) for x in range(len(self._boards))]
+
+		# TODO: Parse id, and grab corresponding board.
+
+		if len(args) != 2 and begidx == endidx:
 			return []
-		dev_list = self._board.listdev()
+
+		dev_list = self._boards[0].listdev()
 		return [x for x in dev_list if x.startswith(text)]
 
 	def do_write_int (self, line):
 		"""write_int [device] [value]
 		Write 32 bits to a device."""
+
 		args = line.split()
+
 		if len(args) != 2:
 			print "Must specify a device and a value."
 			return
+
 		dev = args.pop(0)
 		s_val = args.pop(0)
 		try:
@@ -107,7 +246,9 @@ class AnyRoachCtrl (Cmd):
 		except ValueError:
 			print "Invalid value: %s" % s_val
 			return
-		self._board.write_int(dev, val)
+
+		for id in self._ids:
+			self._boards[id].write_int(dev, val)
 
 	complete_write_int = complete_read_int
 
@@ -124,27 +265,6 @@ class AnyRoachCtrl (Cmd):
 		print "quit"
 		return True
 
-def main ():
-	import sys
-
-	sys.argv.pop(0)
-
-	if len(sys.argv) == 0:
-		print "Must specify a hostname."
-		return
-	host = sys.argv.pop(0)
-
-	port = 7147
-	if len(sys.argv) != 0:
-		s_port = sys.argv.pop(0)
-		try:
-			port = int(s_port)
-		except ValueError:
-			print "Invalid port number: %s" % s_port
-			return
-
-	AnyRoachCtrl(host, port).cmdloop()
-
 if __name__ == '__main__':
-	main()
+	AnyRoachCtrl().cmdloop()
 
