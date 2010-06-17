@@ -52,6 +52,8 @@ class IsiDataRecv ():
 
 		self.not_killed = True
 
+		self._dumpfile = None
+
 	def descramble (self):
 		raise NotImplementedError
 
@@ -90,11 +92,25 @@ class IsiDataRecv ():
 					self._ilist.append(client)
 
 				elif iobj == sys.stdin:
-					try:
-						raw_cmd = raw_input()
-					except EOFError:
+					raw_cmd = ""
+					raw_cmd = iobj.readline()
+					if len(raw_cmd) == 0:
 						print "Caught Ctrl-D."
 						self.not_killed = False
+					else:
+						args = raw_cmd.split()
+						if args[0] == "dump":
+							try:
+								filename = args[1]
+							except IndexError:
+								print "Must specify a filename."
+							else:
+								self._dumpfile = open(filename, "w")
+								print "Dumpfile opened."
+						elif args[0] == "stop":
+							self._dumpfile.close()
+							self._dumpfile = None
+							print "Dumpfile closed."
 
 				else:
 					data = iobj.recv(1024)

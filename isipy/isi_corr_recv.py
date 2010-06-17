@@ -66,15 +66,11 @@ class IsiCorrRecv (IsiDataRecv):
 		group = self._PKT['group_id'][0]
 		pktid = self._PKT['pkt_id'][0]
 
-		if pktid % 20 != 0:
-			return False
-
 		if group == 8:
 			return False
 
 		#print "Board %d / Group %d / Pktid %d" % (board, group, pktid)
 		slot = pktid % self._buf_length
-		print "Board %d / Group %d / Pktid %d --> Slot %d" % (board, group, pktid, slot)
 
 		self._ACCUM[slot][group] = self._PKT['vacc'].copy()
 		self._PKTID[slot][group] = self._PKT['pkt_id'].copy()
@@ -95,6 +91,14 @@ class IsiCorrRecv (IsiDataRecv):
 		return packet_ready
 
 	def process_pkt (self, pktid, accums):
+
+		if self._dumpfile:
+			accums.tofile(self._dumpfile)
+
+		return
+
+		# SKIP THE ACTUAL PROCESSING FOR NOW.
+
 		self._DATA['pkt_id'] = pktid
 
 		print "Processing #%d." % pktid
