@@ -212,8 +212,10 @@ class AnyRoachCtrl (Cmd):
 			print "[%d] Success!" % id
 
 	def complete_program (self, text, line, begidx, endidx):
-		id = self._ids[0]
-		bof_list = self._boards[id].listbof()
+		if len(self._boards) == 0:
+			return line
+
+		bof_list = self._boards[0].listbof()
 		bof_list.sort()
 		return [x for x in bof_list if x.startswith(text)]
 
@@ -238,7 +240,8 @@ class AnyRoachCtrl (Cmd):
 
 	def complete_read_int (self, text, line, begidx, endidx):
 
-		id = self._ids[0]
+		if len(self._boards) == 0:
+			return line
 
 		args = line.split()
 
