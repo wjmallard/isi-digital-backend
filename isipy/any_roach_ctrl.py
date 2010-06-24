@@ -212,12 +212,21 @@ class AnyRoachCtrl (Cmd):
 			print "[%d] Success!" % id
 
 	def complete_program (self, text, line, begidx, endidx):
+
+		line = self.precmd(line)
+
 		if len(self._boards) == 0:
 			return line
 
-		bof_list = self._boards[0].listbof()
-		bof_list.sort()
-		return [x for x in bof_list if x.startswith(text)]
+		args = line.split()
+		if (len(args) == 1 and len(text) == 0) \
+		or (len(args) == 2 and len(text) != 0):
+
+			bof_list = self._boards[0].listbof()
+			bof_list.sort()
+			return [x for x in bof_list if x.startswith(text)]
+
+		return []
 
 	def do_read_int (self, line):
 		"""read_int [device]
@@ -240,22 +249,20 @@ class AnyRoachCtrl (Cmd):
 
 	def complete_read_int (self, text, line, begidx, endidx):
 
+		line = self.precmd(line)
+
 		if len(self._boards) == 0:
 			return line
 
 		args = line.split()
+		if (len(args) == 1 and len(text) == 0) \
+		or (len(args) == 2 and len(text) != 0):
 
-		# TODO: Make this work fully.
-		#if len(args) == 1:
-		#	return [str(x) for x in range(len(self._boards))]
+			dev_list = self._boards[0].listdev()
+			dev_list.sort()
+			return [x for x in dev_list if x.startswith(text)]
 
-		# TODO: Parse id, and grab corresponding board.
-
-		if len(args) != 2 and begidx == endidx:
-			return []
-
-		dev_list = self._boards[0].listdev()
-		return [x for x in dev_list if x.startswith(text)]
+		return []
 
 	def do_write_int (self, line):
 		"""write_int [device] [value]
