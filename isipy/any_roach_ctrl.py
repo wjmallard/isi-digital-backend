@@ -14,8 +14,17 @@ class AnyRoachCtrl (Cmd):
 
 	prompt = "roach> "
 
-	def __init__ (self):
+	def __init__ (self, ctor=katcp.FpgaClient):
+		"""This ctor optionally takes a board ctor as an argument.
+
+		If passed in, each call to add_board will use the passed
+		ctor to instantiate new boards, so that subclasses don't
+		need to override the add_board method themselves.
+		"""
+
 		Cmd.__init__(self)
+
+		self._board_ctor = ctor
 
 		self._boards = []
 		self._ids = None
@@ -128,7 +137,7 @@ class AnyRoachCtrl (Cmd):
 				return
 
 		# Add board to list, if it is reachable.
-		board = katcp.FpgaClient(addr, port)
+		board = self._board_ctor(addr, port)
 		sleep(.25)
 		try:
 			board.ping()
