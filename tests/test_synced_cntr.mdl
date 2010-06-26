@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3"
+    ComputedModelVersion    "1.4"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Apr 22 17:02:04 2010"
-  RTWModifiedTimeStamp	  193855077
-  ModelVersionFormat	  "1.%<AutoIncrement:3>"
+  LastModifiedDate	  "Thu Jun 24 18:29:19 2010"
+  RTWModifiedTimeStamp	  199304955
+  ModelVersionFormat	  "1.%<AutoIncrement:4>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -593,7 +593,7 @@ Model {
   }
   System {
     Name		    "test_synced_cntr"
-    Location		    [91, 271, 798, 428]
+    Location		    [91, 271, 798, 439]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -607,7 +607,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    17
+    SIDHighWatermark	    31
     Block {
       BlockType		      Reference
       Name		      " System Generator"
@@ -671,7 +671,7 @@ Model {
       SourceType	      "Xilinx Delay Block"
       infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
       en		      off
-      latency		      "7"
+      latency		      "1"
       dbl_ovrd		      off
       reg_retiming	      off
       xl_use_area	      off
@@ -680,13 +680,13 @@ Model {
       sggui_pos		      "20,20,543,392"
       block_type	      "delay"
       block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,d93bb731,right,"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,07b98262,right,"
       sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
       ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
       "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
       "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
       " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+      ";disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
     }
     Block {
       BlockType		      Reference
@@ -858,9 +858,10 @@ Model {
       Ports		      [4]
       Position		      [635, 18, 685, 92]
       Floating		      off
-      Location		      [1, 78, 1921, 1173]
+      Location		      [5, 78, 1915, 1169]
       Open		      off
       NumInputPorts	      "4"
+      ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -1003,11 +1004,11 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "synced_cntr"
-      SID		      10
+      Name		      "synced_cntr0"
+      SID		      31
       Ports		      [1, 1]
       Position		      [485, 37, 535, 53]
-      LibraryVersion	      "1.577"
+      LibraryVersion	      "1.643"
       SourceBlock	      "isi_correlator_lib/synced_cntr"
       SourceType	      "synced_cntr"
       ShowPortLabels	      "FromPortIcon"
@@ -1018,7 +1019,7 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      bitwidth		      "5"
+      period		      "32"
     }
     Block {
       BlockType		      Reference
@@ -1026,7 +1027,7 @@ Model {
       SID		      17
       Ports		      [1, 1]
       Position		      [485, 77, 535, 93]
-      LibraryVersion	      "1.577"
+      LibraryVersion	      "1.643"
       SourceBlock	      "isi_correlator_lib/synced_cntr"
       SourceType	      "synced_cntr"
       ShowPortLabels	      "FromPortIcon"
@@ -1037,7 +1038,7 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      bitwidth		      "5"
+      period		      "32"
     }
     Line {
       SrcBlock		      "sync_gen"
@@ -1064,7 +1065,7 @@ Model {
       DstPort		      2
     }
     Line {
-      SrcBlock		      "synced_cntr"
+      SrcBlock		      "synced_cntr0"
       SrcPort		      1
       DstBlock		      "Gateway Out1"
       DstPort		      1
@@ -1081,7 +1082,7 @@ Model {
 	}
 	Branch {
 	  Points		  [0, 20]
-	  DstBlock		  "synced_cntr"
+	  DstBlock		  "synced_cntr0"
 	  DstPort		  1
 	}
       }
