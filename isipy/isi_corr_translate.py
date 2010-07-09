@@ -9,13 +9,6 @@ __status__ = "Development"
 import numpy as np
 import sys
 
-import IPython
-ipshell = IPython.Shell.IPShellEmbed()
-
-ACCS_PER_PKT = 5
-VALS_PER_PKT = 72 * ACCS_PER_PKT
-num_groups = 8
-
 class IsiCorrTrans ():
 
 	def __init__ (self, ifile, ofile):
@@ -29,44 +22,28 @@ class IsiCorrTrans ():
 
 	def main (self):
 		x = np.fromfile(self._ifile, dtype='i4')
-		y = x.reshape(-1, num_groups, VALS_PER_PKT)
+		y = x.reshape(-1,8,5,9,8)
+		z = y.transpose(0,2,3,4,1)
+		A = z.reshape(-1,9,64)
 
+		tag = "Packet #%d:\n"
 		fmt = "%12d" * 9 + "\n"
 
-		count = 0
-		for accs in y:
-			acc_list = np.split(accs, ACCS_PER_PKT, axis=1)
-			for i in xrange(ACCS_PER_PKT):
-				xyz = np.split(acc_list[i], 9, axis=1)
-
-				data = np.vstack(( \
-					xyz[0].transpose().flatten(), \
-					xyz[1].transpose().flatten(), \
-					xyz[2].transpose().flatten(), \
-					xyz[3].transpose().flatten(), \
-					xyz[4].transpose().flatten(), \
-					xyz[5].transpose().flatten(), \
-					xyz[6].transpose().flatten(), \
-					xyz[7].transpose().flatten(), \
-					xyz[8].transpose().flatten(), \
-				)).transpose()
-
-				self._ofile.write("Packet #%d:\n" % count)
-				for i in xrange(64):
-					self._ofile.write(fmt % \
-					( \
-						data[i][0], \
-						data[i][1], \
-						data[i][2], \
-						data[i][3], \
-						data[i][4], \
-						data[i][5], \
-						data[i][6], \
-						data[i][7], \
-						data[i][8], \
-					))
-
-				count += 1
+		for i in xrange(len(A)):
+			self._ofile.write(tag % i)
+			for j in xrange(64):
+				self._ofile.write(fmt % \
+				( \
+					A[i][0][j], \
+					A[i][1][j], \
+					A[i][2][j], \
+					A[i][3][j], \
+					A[i][4][j], \
+					A[i][5][j], \
+					A[i][6][j], \
+					A[i][7][j], \
+					A[i][8][j], \
+				))
 
 def main ():
 	sys.argv.pop(0)
