@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.82"
+    ComputedModelVersion    "1.83"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jul 14 18:27:38 2010"
-  RTWModifiedTimeStamp	  201032854
-  ModelVersionFormat	  "1.%<AutoIncrement:82>"
+  LastModifiedDate	  "Wed Jul 21 15:46:20 2010"
+  RTWModifiedTimeStamp	  201627978
+  ModelVersionFormat	  "1.%<AutoIncrement:83>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1281,7 +1281,7 @@ Model {
       SID		      68
       Ports		      [10]
       Position		      [915, 97, 965, 248]
-      AttributesFormatString  "size = 4096B"
+      AttributesFormatString  "size = 16384B"
       LibraryVersion	      "1.675"
       SourceBlock	      "isi_correlator_lib/packed_bram"
       SourceType	      ""
@@ -1293,7 +1293,7 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      window_length	      "128"
+      window_length	      "512"
       bit_width		      "8"
       fanin_latency	      "3"
     }
@@ -1303,7 +1303,7 @@ Model {
       SID		      69
       Ports		      [10]
       Position		      [915, 277, 965, 428]
-      AttributesFormatString  "size = 4096B"
+      AttributesFormatString  "size = 16384B"
       LibraryVersion	      "1.675"
       SourceBlock	      "isi_correlator_lib/packed_bram"
       SourceType	      ""
@@ -1315,7 +1315,7 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      window_length	      "128"
+      window_length	      "512"
       bit_width		      "8"
       fanin_latency	      "3"
     }
