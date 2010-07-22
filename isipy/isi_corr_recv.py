@@ -91,35 +91,8 @@ class IsiCorrRecv (IsiDataRecv):
 		return packet_ready
 
 	def process_pkt (self, pktid, accums):
-
 		if self._dumpfile:
 			accums.tofile(self._dumpfile)
-
-		return
-
-		# SKIP THE ACTUAL PROCESSING FOR NOW.
-
-		self._DATA['pkt_id'] = pktid
-
-		print "Processing #%d." % pktid
-
-		acc_list = np.split(accums, ACCS_PER_PKT, axis=1)
-
-		for i in xrange(ACCS_PER_PKT):
-			xyz = np.split(acc_list[i], 9, axis=1)
-			ACC = self._DATA['accums'][0]
-
-			ACC['XX_auto'][i] = xyz[0].transpose().flatten()
-			ACC['YY_auto'][i] = xyz[1].transpose().flatten()
-			ACC['ZZ_auto'][i] = xyz[2].transpose().flatten()
-			ACC['XY_real'][i] = xyz[3].transpose().flatten()
-			ACC['XY_imag'][i] = xyz[4].transpose().flatten()
-			ACC['YZ_real'][i] = xyz[5].transpose().flatten()
-			ACC['YZ_imag'][i] = xyz[6].transpose().flatten()
-			ACC['ZX_real'][i] = xyz[7].transpose().flatten()
-			ACC['ZX_imag'][i] = xyz[8].transpose().flatten()
-
-		#print "Processed %d." % pktid
 
 def main ():
 	sys.argv.pop(0)
