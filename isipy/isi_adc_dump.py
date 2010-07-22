@@ -16,10 +16,11 @@ DATA_SOCK = "/tmp/isi_data_sock"
 CTRL_SOCK = "/tmp/isi_ctrl_sock"
 TIMESTAMP = False
 
-num_samples = 2048
+num_samples = 256
 
 datafmt = np.dtype \
 ([
+	('board_id', '>i1'),
 	('pkt_id', '>i4'), 
 	('adc', '>i4', num_samples),
 ])
