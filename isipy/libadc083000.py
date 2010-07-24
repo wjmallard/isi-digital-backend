@@ -14,9 +14,9 @@ class adc083000 ():
 	A high-level interface to a NatSemi ADC083000 board.
 	"""
 
-	CTRL_START_CFG = 1<<0
-	CTRL_SEL_ADC0  = 1<<1
-	CTRL_SEL_ADC1  = 1<<2
+	CTRL_TRIG = 1<<0
+	CTRL_ADC0 = 1<<1
+	CTRL_ADC1 = 1<<2
 
 	CONF_OE        = 1<<8
 	CONF_OV        = 1<<9
@@ -41,30 +41,26 @@ class adc083000 ():
 	DFLT_PHASE_CRS = 0x03ff
 	DFLT_TEST_PTRN = 0xf7ff
 
-	def __init__ (self, roach, sel_reg="adc_ctrl_sel", cmd_reg="adc_ctrl_cmd"):
-		self._roach = roach
-		self._sel_reg = sel_reg
-		self._cmd_reg = cmd_reg
+	def __init__ (self, board, ctrl_reg="adc_ctrl_cmd"):
+		self._board = board
+		self._ctrl_reg = ctrl_reg
 
 		self.reset_to_defaults()
 
-	def _write (self, adc, addr, data):
-		sel = (0x0006 & adc) | adc083000.CTRL_START_CFG
-		cmd = (0x0010 | (0x000f & addr)) << 8 | (0xffff & data)
+	def _write (self, trig, addr, data):
+		trig &= 0x07
+		addr &= 0x0f
+		data &= 0xffff
+
+		trig ^= adc083000.CTRL_ADC0
+		trig ^= adc083000.CTRL_ADC1
+		trig |= adc083000.CTRL_TRIG
+
+		cmd = (trig << 24) | (addr << 16) | (data)
 
 		print "Writing cmd=%d." % cmd
-		#self._roach.write_int(self._cmd_reg, cmd)
-		#self._roach.write_int(self._sel_reg, sel)
-		#time.sleep(.1)
-		#self._roach.write_int(self._sel_reg, 0x0)
-		for i in xrange(32):
-			bit1 = (cmd >> (31-i)) & 0x00000001
-			bit2 = (cmd << i) & 0x80000000
-			self._roach.write_int(self._cmd_reg, bit1 | bit2)
-			self._roach.write_int(self._sel_reg, sel | 0xffffffff)
-			time.sleep(.1)
-			self._roach.write_int(self._sel_reg, sel | 0x7ffffffe)
-			time.sleep(.1)
+		self._board.write_int(self._ctrl_reg, 0x0)
+		self._board.write_int(self._ctrl_reg, cmd)
 
 	def reset_to_defaults (self, adc=6):
 		self._write(adc, adc083000.ADDR_CONFIG, adc083000.DFLT_CONFIG)
@@ -75,7 +71,7 @@ class adc083000 ():
 		self._write(adc, adc083000.ADDR_TEST_PTRN, adc083000.DFLT_TEST_PTRN)
 
 	def set_config (self, state, adc=6):
-		data = (0x007f & value) << 8 | 0x80ff
+		data = (0x007f & state) << 8 | 0x80ff
 		self._write(adc, adc083000.ADDR_OFFSET, data)
 
 	def set_offset (self, offset, adc=6):
