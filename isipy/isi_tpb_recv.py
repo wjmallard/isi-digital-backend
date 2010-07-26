@@ -22,7 +22,7 @@ datafmt = pktfmt
 class IsiTpbRecv (IsiDataRecv):
 
 	def __init__ (self, addr, port):
-		IsiDataRecv.__init__(self, addr, port, pktfmt, datafmt)
+		IsiDataRecv.__init__(self, pktfmt, datafmt)
 
 	def descramble (self):
 		pb0 = self._PKT['pb0'][0].reshape([8,32]).transpose()
@@ -32,26 +32,6 @@ class IsiTpbRecv (IsiDataRecv):
 
 		return True
 
-def main ():
-	sys.argv.pop(0)
-
-	if len(sys.argv) == 0:
-		print "Must specify a hostname."
-		return
-	host = sys.argv.pop(0)
-
-	if len(sys.argv) == 0:
-		print "Must specify a port."
-		return
-	s_port = sys.argv.pop(0)
-	try:
-		port = int(s_port)
-	except ValueError:
-		print "Invalid port number: %s" % s_port
-		return
-
-	IsiTpbRecv(host, port).main()
-
 if __name__ == "__main__":
-	main()
+	IsiTpbRecv().main()
 

@@ -44,7 +44,9 @@ class IsiDataRecv ():
 		* Returns a bool: True iff a full dataset is now ready.
 	"""
 
-	def __init__ (self, addr, port, pktfmt, datafmt):
+	def __init__ (self, pktfmt, datafmt):
+
+		(addr, port) = self._parse_opts()
 
 		self._addr = addr
 		self._port = port
@@ -169,6 +171,24 @@ class IsiDataRecv ():
 
 		self._close_ctrl_socket()
 		self._close_recv_socket()
+
+	def _parse_opts (self):
+
+		try:
+			raw_host = sys.argv[1]
+			raw_port = sys.argv[2]
+		except IndexError:
+			print "Usage: %s [host] [port]" % sys.argv[0]
+			sys.exit(1)
+
+		try:
+			host = str(raw_host)
+			port = int(raw_port)
+		except ValueError:
+			print "Invalid argument."
+			sys.exit(1)
+
+		return (host, port)
 
 	def _open_recv_socket (self, addr, port):
 		self._recv_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

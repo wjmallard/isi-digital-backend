@@ -51,8 +51,8 @@ accdim = (buf_length, num_groups, VALS_PER_PKT)
 
 class IsiCorrRecv (IsiDataRecv):
 
-	def __init__ (self, addr, port):
-		IsiDataRecv.__init__(self, addr, port, pktfmt, datafmt)
+	def __init__ (self):
+		IsiDataRecv.__init__(self, pktfmt, datafmt)
 
 		self._buf_length = buf_length
 		self._max_pktid = 0
@@ -94,26 +94,6 @@ class IsiCorrRecv (IsiDataRecv):
 		if self._dumpfile:
 			accums.tofile(self._dumpfile)
 
-def main ():
-	sys.argv.pop(0)
-
-	if len(sys.argv) == 0:
-		print "Must specify a hostname."
-		return
-	host = sys.argv.pop(0)
-
-	if len(sys.argv) == 0:
-		print "Must specify a port."
-		return
-	s_port = sys.argv.pop(0)
-	try:
-		port = int(s_port)
-	except ValueError:
-		print "Invalid port number: %s" % s_port
-		return
-
-	IsiCorrRecv(host, port).main()
-
 if __name__ == "__main__":
-	main()
+	IsiCorrRecv().main()
 

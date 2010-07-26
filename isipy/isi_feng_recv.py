@@ -37,8 +37,8 @@ datafmt = np.dtype \
 
 class IsiFengRecv (IsiDataRecv):
 
-	def __init__ (self, addr, port):
-		IsiDataRecv.__init__(self, addr, port, pktfmt, datafmt)
+	def __init__ (self):
+		IsiDataRecv.__init__(self, pktfmt, datafmt)
 
 	def descramble (self):
 		raw_adc0 = self._PKT['adc0'][0].reshape([8,32])
@@ -65,26 +65,6 @@ class IsiFengRecv (IsiDataRecv):
 
 		return True
 
-def main ():
-	sys.argv.pop(0)
-
-	if len(sys.argv) == 0:
-		print "Must specify a hostname."
-		return
-	host = sys.argv.pop(0)
-
-	if len(sys.argv) == 0:
-		print "Must specify a port."
-		return
-	s_port = sys.argv.pop(0)
-	try:
-		port = int(s_port)
-	except ValueError:
-		print "Invalid port number: %s" % s_port
-		return
-
-	IsiFengRecv(host, port).main()
-
 if __name__ == "__main__":
-	main()
+	IsiFengRecv().main()
 

@@ -33,8 +33,8 @@ datafmt = np.dtype \
 
 class IsiAdcRecv (IsiDataRecv):
 
-	def __init__ (self, addr, port):
-		IsiDataRecv.__init__(self, addr, port, pktfmt, datafmt)
+	def __init__ (self):
+		IsiDataRecv.__init__(self, pktfmt, datafmt)
 
 		self._buf_length = 4
 		self._max_pktid = 0
@@ -94,24 +94,6 @@ class IsiAdcRecv (IsiDataRecv):
 			self._dumpfile = None
 			print "Dumpfile closed."
 
-def main ():
-	if len(sys.argv) < 2:
-		print "Must specify a hostname."
-		return
-	host = sys.argv[1]
-
-	if len(sys.argv) < 3:
-		print "Must specify a port."
-		return
-	s_port = sys.argv[2]
-	try:
-		port = int(s_port)
-	except ValueError:
-		print "Invalid port number: %s" % s_port
-		return
-
-	IsiAdcRecv(host, port).main()
-
 if __name__ == "__main__":
-	main()
+	IsiAdcRecv().main()
 
