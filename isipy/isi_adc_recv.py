@@ -11,7 +11,7 @@ import sys
 
 from isi_data_recv import IsiDataRecv
 
-num_boards = 1
+num_boards = 2
 num_samples = 256
 
 pktfmt = np.dtype \
@@ -94,29 +94,16 @@ class IsiAdcRecv (IsiDataRecv):
 			self._dumpfile = None
 			print "Dumpfile closed."
 
-		#if self._dumpfile:
-		#	# TODO: remove this temporary hack.
-		#	self._dumpfile.write("Packet #%d:\n" % pktid)
-		#	for row in z:
-		#		for sample in row:
-		#			self._dumpfile.write("%d " % sample)
-		#		self._dumpfile.write("\n")
-		#	self._dumpfile.close()
-		#	import sys
-		#	sys.exit(0)
-
 def main ():
-	sys.argv.pop(0)
-
-	if len(sys.argv) == 0:
+	if len(sys.argv) < 2:
 		print "Must specify a hostname."
 		return
-	host = sys.argv.pop(0)
+	host = sys.argv[1]
 
-	if len(sys.argv) == 0:
+	if len(sys.argv) < 3:
 		print "Must specify a port."
 		return
-	s_port = sys.argv.pop(0)
+	s_port = sys.argv[2]
 	try:
 		port = int(s_port)
 	except ValueError:

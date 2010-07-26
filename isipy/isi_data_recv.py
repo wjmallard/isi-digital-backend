@@ -6,12 +6,19 @@ __copyright__ = "Copyright 2010, CASPER"
 __license__ = "GPL"
 __status__ = "Development"
 
+import matplotlib
+matplotlib.use('TkAgg')
+import matplotlib.pyplot as plt
+
 import select
 import socket
 import struct
 import sys
 
 import numpy as np
+
+import IPython
+ipshell = IPython.Shell.IPShellEmbed()
 
 CTRL_SOCK = "/tmp/isi_ctrl_sock"
 
@@ -53,6 +60,8 @@ class IsiDataRecv ():
 		self.not_killed = True
 
 		self._dumpfile = None
+
+		self._plotdata = None
 
 	def descramble (self):
 		raise NotImplementedError
@@ -111,6 +120,26 @@ class IsiDataRecv ():
 							self._dumpfile.close()
 							self._dumpfile = None
 							print "Dumpfile closed."
+						elif args[0] == "plot":
+							try:
+								plotname = args[1]
+							except IndexError:
+								print "Must specify a field name."
+							else:
+								try:
+									self._plotdata = self._DATA[plotname][0]
+								except ValueError:
+									print "Field '%s' does not exist." % plotname
+								else:
+									plt.ion()
+									print "Plotting %s." % plotname
+						elif args[0] == "plotoff":
+							self._plotdata = None
+							plt.close()
+							plt.ioff()
+							print "Not plotting."
+						else:
+							print "Unrecognized command: %s" % args[0]
 
 				else:
 					data = iobj.recv(1024)
@@ -130,6 +159,11 @@ class IsiDataRecv ():
 						print "A data stream has disconnected."
 						oobj.close()
 						self._olist.remove(oobj)
+				if self._plotdata != None:
+					plt.clf()
+					for data in self._plotdata:
+						plt.plot(data)
+					plt.draw()
 
 		print "Exited receive loop."
 

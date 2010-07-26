@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 import IPython
 ipshell = IPython.Shell.IPShellEmbed()
 
-num_boards = 1
+num_boards = 2
 num_samples = 256
 
 datafmt = np.dtype \
