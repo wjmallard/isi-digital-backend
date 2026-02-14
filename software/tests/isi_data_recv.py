@@ -110,7 +110,9 @@ class IsiDataRecv ():
 						self.not_killed = False
 					else:
 						args = raw_cmd.split()
-						if args[0] == "dump":
+						if len(args) == 0:
+							pass
+						elif args[0] == "dump":
 							try:
 								filename = args[1]
 							except IndexError:

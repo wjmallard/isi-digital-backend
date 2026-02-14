@@ -27,7 +27,7 @@ class AnyRoachCtrl (Cmd):
 		self._board_ctor = ctor
 
 		self._boards = []
-		self._ids = None
+		self._selected_ids = None
 
 	#
 	# Cmd Methods
@@ -53,16 +53,17 @@ class AnyRoachCtrl (Cmd):
 
 			if len(args) >= 2:
 
-				arg1 = args.pop(1)
+				arg1 = args[1]
 				s_ids = arg1.split(',')
+				s_ids.sort()
 				num_ids = len(s_ids)
 
-				self._ids = None
+				self._selected_ids = None
 				for s_id in s_ids:
 
 					# Parse the next board ID in the list.
 					try:
-						id = int(s_id, 0)
+						id = int(s_id)
 					except ValueError:
 						# If it's not a valid integer:
 						if num_ids == 1:
@@ -75,31 +76,34 @@ class AnyRoachCtrl (Cmd):
 
 					# Make sure that board has been loaded.
 					if id >= len(self._boards) or id < 0:
+						if num_ids == 1:
+							break
 						print "Unknown board ID: %d" % id
 						continue
 
 					# Looks good, so add it to the list.
-					if self._ids:
-						self._ids += [id]
+					if self._selected_ids:
+						self._selected_ids += [id]
 					else:
-						self._ids = [id]
+						self._selected_ids = [id]
 
-			if self._ids:
+			if self._selected_ids:
 				# The first arg was a board ID,
-				# and we already removed it,
 				# so return the remaining line.
+				if len(args) >= 2:
+					args.pop(1)
 				line = ' '.join(args)
-				self._ids.sort()
+				self._selected_ids.sort()
 			else:
 				# The first arg was not a board ID,
 				# so return a list of all boards,
 				# and return the original line.
-				self._ids = range(len(self._boards))
+				self._selected_ids = range(len(self._boards))
 
 		return line
 
 	def postcmd (self, stop, line):
-		self._ids = None
+		self._selected_ids = None
 		return stop
 
 	def emptyline (self):
@@ -136,10 +140,16 @@ class AnyRoachCtrl (Cmd):
 				print "Invalid port: %s" % s_port
 				return
 
+		for brd in self._boards:
+			(brd_addr, brd_port) = brd._bindaddr
+			if brd_addr == addr and brd_port == port:
+				print "Already loaded: %s:%d" % (addr, port)
+				return
+
 		# Add board to list, if it is reachable.
-		board = self._board_ctor(addr, port)
-		sleep(.25)
 		try:
+			board = self._board_ctor(addr, port)
+			sleep(.25)
 			board.ping()
 		except katcp.KatcpClientError:
 			print "Board is unreachable: %s:%d" % (addr, port)
@@ -158,7 +168,7 @@ class AnyRoachCtrl (Cmd):
 	def do_est_brd_clk (self, line):
 		"""Estimate the board's clock speed."""
 
-		for id in self._ids:
+		for id in self._selected_ids:
 			clk = self._boards[id].est_brd_clk()
 			print "[%d] Clock: ~%dMHz" % (id, clk)
 
@@ -174,17 +184,21 @@ class AnyRoachCtrl (Cmd):
 	def do_listdev (self, line):
 		"""List all fpga devices in /proc."""
 
-		for id in self._ids:
-			print "[%d] Available devices:" % id
-			dev_list = self._boards[id].listdev()
-			dev_list.sort()
-			for dev in dev_list:
-				print "  %s" % dev
+		for id in self._selected_ids:
+			try:
+				dev_list = self._boards[id].listdev()
+			except RuntimeError:
+				print "[%d] Board not programmed." % id
+			else:
+				dev_list.sort()
+				print "[%d] Available devices:" % id
+				for dev in dev_list:
+					print "  %s" % dev
 
 	def do_ping (self, line):
 		"""Ping the board."""
 
-		for id in self._ids:
+		for id in self._selected_ids:
 			pingable = self._boards[id].ping()
 			if pingable:
 				print "[%d] Board is reachable." % id
@@ -194,7 +208,7 @@ class AnyRoachCtrl (Cmd):
 	def do_deprogram (self, line):
 		"""Deprogram the FPGA."""
 
-		for id in self._ids:
+		for id in self._selected_ids:
 			self._boards[id].progdev("")
 			print "[%d] FPGA deprogrammed." % id
 
@@ -215,7 +229,7 @@ class AnyRoachCtrl (Cmd):
 			print "Unknown bof file: %s" % bof
 			return
 
-		for id in self._ids:
+		for id in self._selected_ids:
 			print "[%d] Programming ..." % id
 			self._boards[id].progdev(bof)
 			print "[%d] Success!" % id
@@ -249,7 +263,7 @@ class AnyRoachCtrl (Cmd):
 
 		dev = args.pop(0)
 
-		for id in self._ids:
+		for id in self._selected_ids:
 			try:
 				val = self._boards[id].read_int(dev)
 				print " [%d] %s = %d" % (id, dev, val)
@@ -267,9 +281,13 @@ class AnyRoachCtrl (Cmd):
 		if (len(args) == 1 and len(text) == 0) \
 		or (len(args) == 2 and len(text) != 0):
 
-			dev_list = self._boards[0].listdev()
-			dev_list.sort()
-			return [x for x in dev_list if x.startswith(text)]
+			try:
+				dev_list = self._boards[0].listdev()
+			except RuntimeError:
+				print "Board not programmed."
+			else:
+				dev_list.sort()
+				return [x for x in dev_list if x.startswith(text)]
 
 		return []
 
@@ -291,7 +309,7 @@ class AnyRoachCtrl (Cmd):
 			print "Invalid value: %s" % s_val
 			return
 
-		for id in self._ids:
+		for id in self._selected_ids:
 			try:
 				self._boards[id].write_int(dev, val)
 				print " [%d] %s = %d" % (id, dev, val)
