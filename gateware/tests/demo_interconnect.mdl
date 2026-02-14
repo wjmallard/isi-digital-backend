@@ -1,12 +1,12 @@
 Model {
-  Name			  "demo_interconnect"
+  Name			  "demo_interconnect_new"
   Version		  7.4
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.101"
+    ComputedModelVersion    "1.147"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wjm"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Jun 25 17:44:10 2010"
-  RTWModifiedTimeStamp	  199388626
-  ModelVersionFormat	  "1.%<AutoIncrement:101>"
+  LastModifiedDate	  "Wed Jul 14 01:02:32 2010"
+  RTWModifiedTimeStamp	  200970130
+  ModelVersionFormat	  "1.%<AutoIncrement:147>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -700,8 +700,8 @@ Model {
     }
   }
   System {
-    Name		    "demo_interconnect"
-    Location		    [5, 77, 1845, 780]
+    Name		    "demo_interconnect_new"
+    Location		    [-5, 29, 1904, 725]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -715,7 +715,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    639
+    SIDHighWatermark	    723
     Block {
       BlockType		      Reference
       Name		      " System Generator"
@@ -745,7 +745,7 @@ Model {
       package		      "ff1136"
       synthesis_tool	      "XST"
       clock_wrapper	      "Clock Enables"
-      directory		      "./demo_interconnect/sysgen"
+      directory		      "./demo_interconnect_new/sysgen"
       testbench		      off
       simulink_period	      "1"
       sysclk_period	      "5"
@@ -769,110 +769,30 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "Concat1"
-      SID		      557
-      Ports		      [2, 1]
-      Position		      [1710, 228, 1760, 257]
+      Name		      "Concat2"
+      SID		      650
+      Ports		      [7, 1]
+      Position		      [2480, 270, 2530, 380]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Concat"
       SourceType	      "Xilinx Bus Concatenator Block"
       infoedit		      "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary poin"
       "t at zero."
-      num_inputs	      "2"
+      num_inputs	      "7"
       dbl_ovrd		      off
       has_advanced_control    "0"
-      sggui_pos		      "20,20,328,272"
+      sggui_pos		      "1,25,348,272"
       block_type	      "concat"
       block_version	      "11.3"
-      sg_icon_stat	      "50,29,2,1,white,blue,0,97b7e8d2,right,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.34 0.24 0.38 0.24 0.34 0.5 0.54 0.58 0.74 0.62 0.5 0.4 0.54 0.4 0.5 0.62 0.74 0.58 0.54 0.5 0.34 ],"
-      "[0.103448 0.275862 0.517241 0.758621 0.931034 0.931034 0.862069 0.931034 0.931034 0.724138 0.931034 0.758621 0.5"
-      "17241 0.275862 0.103448 0.310345 0.103448 0.103448 0.172414 0.103448 0.103448 ],[0.98 0.96 0.92]);\nplot([0 1 1 "
-      "0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor("
-      "'black');port_label('input',1,'hi');\ncolor('black');port_label('input',2,'lo');\nfprintf('','COMMENT: end icon "
-      "text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Concat3"
-      SID		      513
-      Ports		      [6, 1]
-      Position		      [2055, 408, 2105, 497]
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Concat"
-      SourceType	      "Xilinx Bus Concatenator Block"
-      infoedit		      "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary poin"
-      "t at zero."
-      num_inputs	      "6"
-      dbl_ovrd		      off
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,328,272"
-      block_type	      "concat"
-      block_version	      "11.3"
-      sg_icon_stat	      "50,89,6,1,white,blue,0,d0d135ea,right,"
+      sg_icon_stat	      "50,110,7,1,white,blue,0,cfbdcfbc,right,"
       sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
       ");\npatch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.64 0.56 0.48 0.22"
-      " ],[0.280899 0.370787 0.505618 0.640449 0.730337 0.730337 0.685393 0.730337 0.730337 0.606742 0.730337 0.640449 "
-      "0.505618 0.370787 0.280899 0.404494 0.280899 0.280899 0.325843 0.280899 0.280899 ],[0.98 0.96 0.92]);\nplot([0 1"
-      " 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncol"
-      "or('black');port_label('input',1,'hi');\ncolor('black');port_label('input',6,'lo');\nfprintf('','COMMENT: end ic"
-      "on text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Concat4"
-      SID		      558
-      Ports		      [2, 1]
-      Position		      [1710, 378, 1760, 407]
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Concat"
-      SourceType	      "Xilinx Bus Concatenator Block"
-      infoedit		      "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary poin"
-      "t at zero."
-      num_inputs	      "2"
-      dbl_ovrd		      off
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,328,272"
-      block_type	      "concat"
-      block_version	      "11.3"
-      sg_icon_stat	      "50,29,2,1,white,blue,0,97b7e8d2,right,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.34 0.24 0.38 0.24 0.34 0.5 0.54 0.58 0.74 0.62 0.5 0.4 0.54 0.4 0.5 0.62 0.74 0.58 0.54 0.5 0.34 ],"
-      "[0.103448 0.275862 0.517241 0.758621 0.931034 0.931034 0.862069 0.931034 0.931034 0.724138 0.931034 0.758621 0.5"
-      "17241 0.275862 0.103448 0.310345 0.103448 0.103448 0.172414 0.103448 0.103448 ],[0.98 0.96 0.92]);\nplot([0 1 1 "
-      "0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor("
-      "'black');port_label('input',1,'hi');\ncolor('black');port_label('input',2,'lo');\nfprintf('','COMMENT: end icon "
-      "text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Concat5"
-      SID		      595
-      Ports		      [4, 1]
-      Position		      [1935, 470, 1985, 535]
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Concat"
-      SourceType	      "Xilinx Bus Concatenator Block"
-      infoedit		      "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary poin"
-      "t at zero."
-      num_inputs	      "4"
-      dbl_ovrd		      off
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,328,272"
-      block_type	      "concat"
-      block_version	      "11.3"
-      sg_icon_stat	      "50,65,4,1,white,blue,0,47b26f1b,right,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.22 0.06 0.3 0.06 0.22 0.48 0.56 0.64 0.92 0.7 0.48 0.32 0.56 0.32 0.48 0.7 0.92 0.64 0.56 0.48 0.22"
-      " ],[0.2 0.323077 0.507692 0.692308 0.815385 0.815385 0.753846 0.815385 0.815385 0.646154 0.815385 0.692308 0.507"
-      "692 0.323077 0.2 0.369231 0.2 0.2 0.261538 0.2 0.2 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprin"
-      "tf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input'"
-      ",1,'hi');\ncolor('black');port_label('input',4,'lo');\nfprintf('','COMMENT: end icon text');\n"
+      " ],[0.318182 0.390909 0.5 0.609091 0.681818 0.681818 0.645455 0.681818 0.681818 0.581818 0.681818 0.609091 0.5 0"
+      ".390909 0.318182 0.418182 0.318182 0.318182 0.354545 0.318182 0.318182 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],["
+      "0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black'"
+      ");port_label('input',1,'hi');\ncolor('black');port_label('input',7,'lo');\nfprintf('','COMMENT: end icon text');"
+      "\n"
     }
     Block {
       BlockType		      Reference
@@ -916,154 +836,10 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "Constant1"
-      SID		      559
-      Ports		      [0, 1]
-      Position		      [1635, 378, 1685, 392]
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Constant"
-      SourceType	      "Xilinx Constant Block Block"
-      arith_type	      "Unsigned"
-      const		      "0"
-      n_bits		      "3"
-      bin_pt		      "0"
-      explicit_period	      on
-      period		      "1"
-      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
-      equ		      "P=C"
-      opselect		      "C"
-      inp2		      "PCIN>>17"
-      opr		      "+"
-      inp1		      "P"
-      carry		      "CIN"
-      dbl_ovrd		      off
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,554,541"
-      block_type	      "constant"
-      block_version	      "10.1.1"
-      sg_icon_stat	      "50,14,0,1,white,blue,0,bf4ddd8b,right,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Constant12"
-      SID		      560
-      Ports		      [0, 1]
-      Position		      [1635, 228, 1685, 242]
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Constant"
-      SourceType	      "Xilinx Constant Block Block"
-      arith_type	      "Unsigned"
-      const		      "0"
-      n_bits		      "3"
-      bin_pt		      "0"
-      explicit_period	      on
-      period		      "1"
-      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
-      equ		      "P=C"
-      opselect		      "C"
-      inp2		      "PCIN>>17"
-      opr		      "+"
-      inp1		      "P"
-      carry		      "CIN"
-      dbl_ovrd		      off
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,554,541"
-      block_type	      "constant"
-      block_version	      "10.1.1"
-      sg_icon_stat	      "50,14,0,1,white,blue,0,bf4ddd8b,right,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      Reference
       Name		      "Constant3"
-      SID		      528
+      SID		      651
       Ports		      [0, 1]
-      Position		      [2145, 479, 2160, 491]
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Constant"
-      SourceType	      "Xilinx Constant Block Block"
-      arith_type	      "Boolean"
-      const		      "1"
-      n_bits		      "1"
-      bin_pt		      "0"
-      explicit_period	      on
-      period		      "1"
-      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
-      equ		      "P=C"
-      opselect		      "C"
-      inp2		      "PCIN>>17"
-      opr		      "+"
-      inp1		      "P"
-      carry		      "CIN"
-      dbl_ovrd		      off
-      has_advanced_control    "0"
-      sggui_pos		      "-1,-1,-1,-1"
-      block_type	      "constant"
-      block_version	      "10.1.1"
-      sg_icon_stat	      "15,12,0,1,white,blue,0,1c72b5be,right,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.266667 0.133333 0.333333 0.133333 0.266667 0.466667 0.533333 0.6 0.8 0.6 0.4 0.266667 0.466667 0.26"
-      "6667 0.4 0.6 0.8 0.6 0.533333 0.466667 0.266667 ],[0.0833333 0.25 0.5 0.75 0.916667 0.916667 0.833333 0.916667 0"
-      ".916667 0.666667 0.916667 0.75 0.5 0.25 0.0833333 0.333333 0.0833333 0.0833333 0.166667 0.0833333 0.0833333 ],[0"
-      ".98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMME"
-      "NT: begin icon text');\ncolor('black');port_label('output',1,'1');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Constant5"
-      SID		      593
-      Ports		      [0, 1]
-      Position		      [1980, 564, 1995, 576]
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Constant"
-      SourceType	      "Xilinx Constant Block Block"
-      arith_type	      "Boolean"
-      const		      "1"
-      n_bits		      "1"
-      bin_pt		      "0"
-      explicit_period	      on
-      period		      "1"
-      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
-      equ		      "P=C"
-      opselect		      "C"
-      inp2		      "PCIN>>17"
-      opr		      "+"
-      inp1		      "P"
-      carry		      "CIN"
-      dbl_ovrd		      off
-      has_advanced_control    "0"
-      sggui_pos		      "-1,-1,-1,-1"
-      block_type	      "constant"
-      block_version	      "10.1.1"
-      sg_icon_stat	      "15,12,0,1,white,blue,0,1c72b5be,right,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.266667 0.133333 0.333333 0.133333 0.266667 0.466667 0.533333 0.6 0.8 0.6 0.4 0.266667 0.466667 0.26"
-      "6667 0.4 0.6 0.8 0.6 0.533333 0.466667 0.266667 ],[0.0833333 0.25 0.5 0.75 0.916667 0.916667 0.833333 0.916667 0"
-      ".916667 0.666667 0.916667 0.75 0.5 0.25 0.0833333 0.333333 0.0833333 0.0833333 0.166667 0.0833333 0.0833333 ],[0"
-      ".98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMME"
-      "NT: begin icon text');\ncolor('black');port_label('output',1,'1');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Constant6"
-      SID		      606
-      Ports		      [0, 1]
-      Position		      [2750, 69, 2765, 81]
+      Position		      [2650, 349, 2665, 361]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Constant"
@@ -1099,7 +875,7 @@ Model {
       Name		      "Constant7"
       SID		      608
       Ports		      [0, 1]
-      Position		      [2750, 134, 2765, 146]
+      Position		      [2650, 134, 2665, 146]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Constant"
@@ -1135,7 +911,7 @@ Model {
       Name		      "Constant8"
       SID		      610
       Ports		      [0, 1]
-      Position		      [2750, 199, 2765, 211]
+      Position		      [2650, 199, 2665, 211]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Constant"
@@ -1171,7 +947,7 @@ Model {
       Name		      "Constant9"
       SID		      612
       Ports		      [0, 1]
-      Position		      [2750, 264, 2765, 276]
+      Position		      [2650, 264, 2665, 276]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Constant"
@@ -1205,31 +981,89 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Delay1"
-      SID		      614
+      SID		      722
       Ports		      [1, 1]
-      Position		      [2655, 273, 2705, 287]
+      Position		      [2555, 318, 2605, 332]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
       SourceType	      "Xilinx Delay Block"
       infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
       en		      off
-      latency		      "1028"
+      latency		      "1"
       dbl_ovrd		      off
-      reg_retiming	      off
+      reg_retiming	      on
       xl_use_area	      off
       xl_area		      "[0,0,0,0,0,0,0]"
       has_advanced_control    "0"
       sggui_pos		      "0,0,419,315"
       block_type	      "delay"
       block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,1b80ac73,right,"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,07b98262,right,"
       sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
       ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
       "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
       "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
       " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-1028}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+      ";disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay10"
+      SID		      660
+      Ports		      [1, 1]
+      Position		      [2405, 333, 2455, 347]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Delay"
+      SourceType	      "Xilinx Delay Block"
+      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+      en		      off
+      latency		      "3"
+      dbl_ovrd		      off
+      reg_retiming	      on
+      xl_use_area	      off
+      xl_area		      "[0,0,0,0,0,0,0]"
+      has_advanced_control    "0"
+      sggui_pos		      "0,0,419,315"
+      block_type	      "delay"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,83e6bb61,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";disp('z^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay11"
+      SID		      661
+      Ports		      [1, 1]
+      Position		      [2405, 348, 2455, 362]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Delay"
+      SourceType	      "Xilinx Delay Block"
+      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+      en		      off
+      latency		      "3"
+      dbl_ovrd		      off
+      reg_retiming	      on
+      xl_use_area	      off
+      xl_area		      "[0,0,0,0,0,0,0]"
+      has_advanced_control    "0"
+      sggui_pos		      "0,0,419,315"
+      block_type	      "delay"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,83e6bb61,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";disp('z^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
     }
     Block {
       BlockType		      Reference
@@ -1352,7 +1186,7 @@ Model {
       Name		      "Delay16"
       SID		      471
       Ports		      [1, 1]
-      Position		      [1020, 43, 1070, 57]
+      Position		      [945, 43, 995, 57]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1381,7 +1215,7 @@ Model {
       Name		      "Delay17"
       SID		      472
       Ports		      [1, 1]
-      Position		      [1020, 113, 1070, 127]
+      Position		      [945, 113, 995, 127]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1410,7 +1244,7 @@ Model {
       Name		      "Delay18"
       SID		      473
       Ports		      [1, 1]
-      Position		      [1020, 183, 1070, 197]
+      Position		      [945, 183, 995, 197]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1439,7 +1273,7 @@ Model {
       Name		      "Delay19"
       SID		      474
       Ports		      [1, 1]
-      Position		      [1020, 253, 1070, 267]
+      Position		      [945, 253, 995, 267]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1468,7 +1302,7 @@ Model {
       Name		      "Delay2"
       SID		      621
       Ports		      [1, 1]
-      Position		      [2655, 178, 2705, 192]
+      Position		      [2555, 178, 2605, 192]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1497,7 +1331,7 @@ Model {
       Name		      "Delay20"
       SID		      475
       Ports		      [1, 1]
-      Position		      [1020, 323, 1070, 337]
+      Position		      [945, 323, 995, 337]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1526,7 +1360,7 @@ Model {
       Name		      "Delay21"
       SID		      476
       Ports		      [1, 1]
-      Position		      [1020, 393, 1070, 407]
+      Position		      [945, 393, 995, 407]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1555,7 +1389,7 @@ Model {
       Name		      "Delay22"
       SID		      477
       Ports		      [1, 1]
-      Position		      [1020, 463, 1070, 477]
+      Position		      [945, 463, 995, 477]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1584,7 +1418,7 @@ Model {
       Name		      "Delay23"
       SID		      478
       Ports		      [1, 1]
-      Position		      [1020, 533, 1070, 547]
+      Position		      [945, 533, 995, 547]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1613,7 +1447,7 @@ Model {
       Name		      "Delay24"
       SID		      479
       Ports		      [1, 1]
-      Position		      [1020, 18, 1070, 32]
+      Position		      [945, 18, 995, 32]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1640,16 +1474,16 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Delay25"
-      SID		      603
+      SID		      662
       Ports		      [1, 1]
-      Position		      [1860, 548, 1910, 562]
+      Position		      [2405, 363, 2455, 377]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
       SourceType	      "Xilinx Delay Block"
       infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
       en		      off
-      latency		      "1"
+      latency		      "3"
       dbl_ovrd		      off
       reg_retiming	      on
       xl_use_area	      off
@@ -1658,20 +1492,20 @@ Model {
       sggui_pos		      "0,0,419,315"
       block_type	      "delay"
       block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,07b98262,right,"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,83e6bb61,right,"
       sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
       ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
       "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
       "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
       " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+      ";disp('z^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
     }
     Block {
       BlockType		      Reference
       Name		      "Delay26"
       SID		      622
       Ports		      [1, 1]
-      Position		      [2655, 118, 2705, 132]
+      Position		      [2555, 118, 2605, 132]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1700,36 +1534,7 @@ Model {
       Name		      "Delay27"
       SID		      623
       Ports		      [1, 1]
-      Position		      [2655, 58, 2705, 72]
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Delay"
-      SourceType	      "Xilinx Delay Block"
-      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-      en		      off
-      latency		      "1"
-      dbl_ovrd		      off
-      reg_retiming	      on
-      xl_use_area	      off
-      xl_area		      "[0,0,0,0,0,0,0]"
-      has_advanced_control    "0"
-      sggui_pos		      "0,0,419,315"
-      block_type	      "delay"
-      block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,07b98262,right,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Delay28"
-      SID		      624
-      Ports		      [1, 1]
-      Position		      [2655, 38, 2705, 52]
+      Position		      [2555, 58, 2605, 72]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1756,16 +1561,16 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Delay3"
-      SID		      599
+      SID		      652
       Ports		      [1, 1]
-      Position		      [1860, 473, 1910, 487]
+      Position		      [2405, 383, 2455, 397]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
       SourceType	      "Xilinx Delay Block"
       infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
       en		      off
-      latency		      "1"
+      latency		      "3"
       dbl_ovrd		      off
       reg_retiming	      on
       xl_use_area	      off
@@ -1774,20 +1579,49 @@ Model {
       sggui_pos		      "0,0,419,315"
       block_type	      "delay"
       block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,07b98262,right,"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,83e6bb61,right,"
       sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
       ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
       "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
       "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
       " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+      ";disp('z^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay30"
+      SID		      693
+      Ports		      [1, 1]
+      Position		      [2405, 273, 2455, 287]
+      ShowName		      off
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Delay"
+      SourceType	      "Xilinx Delay Block"
+      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+      en		      off
+      latency		      "3"
+      dbl_ovrd		      off
+      reg_retiming	      on
+      xl_use_area	      off
+      xl_area		      "[0,0,0,0,0,0,0]"
+      has_advanced_control    "0"
+      sggui_pos		      "0,0,419,315"
+      block_type	      "delay"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,83e6bb61,right,"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
+      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
+      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
+      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
+      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
+      ";disp('z^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
     }
     Block {
       BlockType		      Reference
       Name		      "Delay4"
-      SID		      600
+      SID		      723
       Ports		      [1, 1]
-      Position		      [1860, 488, 1910, 502]
+      Position		      [2555, 383, 2605, 397]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
@@ -1801,35 +1635,6 @@ Model {
       xl_area		      "[0,0,0,0,0,0,0]"
       has_advanced_control    "0"
       sggui_pos		      "0,0,419,315"
-      block_type	      "delay"
-      block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,07b98262,right,"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
-      ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
-      "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
-      "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
-      " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Delay5"
-      SID		      561
-      Ports		      [1, 1]
-      Position		      [1635, 38, 1685, 52]
-      ShowName		      off
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Delay"
-      SourceType	      "Xilinx Delay Block"
-      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-      en		      off
-      latency		      "1"
-      dbl_ovrd		      off
-      reg_retiming	      on
-      xl_use_area	      off
-      xl_area		      "[0,0,0,0,0,0,0]"
-      has_advanced_control    "0"
-      sggui_pos		      "20,20,348,255"
       block_type	      "delay"
       block_version	      "10.1.3"
       sg_icon_stat	      "50,14,1,1,white,blue,0,07b98262,right,"
@@ -1843,16 +1648,16 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Delay6"
-      SID		      601
+      SID		      657
       Ports		      [1, 1]
-      Position		      [1860, 503, 1910, 517]
+      Position		      [2405, 288, 2455, 302]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
       SourceType	      "Xilinx Delay Block"
       infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
       en		      off
-      latency		      "1"
+      latency		      "3"
       dbl_ovrd		      off
       reg_retiming	      on
       xl_use_area	      off
@@ -1861,13 +1666,13 @@ Model {
       sggui_pos		      "0,0,419,315"
       block_type	      "delay"
       block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,07b98262,right,"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,83e6bb61,right,"
       sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
       ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
       "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
       "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
       " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+      ";disp('z^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
     }
     Block {
       BlockType		      Reference
@@ -1901,16 +1706,16 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Delay8"
-      SID		      602
+      SID		      658
       Ports		      [1, 1]
-      Position		      [1860, 518, 1910, 532]
+      Position		      [2405, 303, 2455, 317]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
       SourceType	      "Xilinx Delay Block"
       infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
       en		      off
-      latency		      "1"
+      latency		      "3"
       dbl_ovrd		      off
       reg_retiming	      on
       xl_use_area	      off
@@ -1919,27 +1724,27 @@ Model {
       sggui_pos		      "0,0,419,315"
       block_type	      "delay"
       block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,07b98262,right,"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,83e6bb61,right,"
       sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
       ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
       "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
       "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
       " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+      ";disp('z^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
     }
     Block {
       BlockType		      Reference
       Name		      "Delay9"
-      SID		      639
+      SID		      659
       Ports		      [1, 1]
-      Position		      [1635, 603, 1685, 617]
+      Position		      [2405, 318, 2455, 332]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Delay"
       SourceType	      "Xilinx Delay Block"
       infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
       en		      off
-      latency		      "6"
+      latency		      "3"
       dbl_ovrd		      off
       reg_retiming	      on
       xl_use_area	      off
@@ -1948,64 +1753,46 @@ Model {
       sggui_pos		      "0,0,419,315"
       block_type	      "delay"
       block_version	      "10.1.3"
-      sg_icon_stat	      "50,14,1,1,white,blue,0,aa5bc30d,right,"
+      sg_icon_stat	      "50,14,1,1,white,blue,0,83e6bb61,right,"
       sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]"
       ");\npatch([0.42 0.38 0.44 0.38 0.42 0.5 0.52 0.54 0.62 0.56 0.5 0.46 0.52 0.46 0.5 0.56 0.62 0.54 0.52 0.5 0.42 "
       "],[0.142857 0.285714 0.5 0.714286 0.857143 0.857143 0.785714 0.857143 0.857143 0.642857 0.857143 0.714286 0.5 0."
       "285714 0.142857 0.357143 0.142857 0.142857 0.214286 0.142857 0.142857 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0"
       " 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black')"
-      ";disp('z^{-6}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+      ";disp('z^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
     }
     Block {
       BlockType		      From
-      Name		      "From117"
-      SID		      562
-      Position		      [1550, 38, 1610, 52]
+      Name		      "From1"
+      SID		      702
+      Position		      [1475, 203, 1535, 217]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "tx_sync"
+      GotoTag		      "armed"
     }
     Block {
       BlockType		      From
       Name		      "From118"
-      SID		      563
-      Position		      [1550, 68, 1610, 82]
+      SID		      696
+      Position		      [1475, 53, 1535, 67]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_dataX"
     }
     Block {
       BlockType		      From
-      Name		      "From119"
-      SID		      564
-      Position		      [1550, 423, 1610, 437]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "tx_valid"
-    }
-    Block {
-      BlockType		      From
       Name		      "From13"
-      SID		      565
-      Position		      [1550, 438, 1610, 452]
+      SID		      697
+      Position		      [2070, 218, 2130, 232]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "reset"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From14"
-      SID		      424
-      Position		      [2405, 283, 2465, 297]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "corr_id"
+      GotoTag		      "armed"
     }
     Block {
       BlockType		      From
       Name		      "From144"
-      SID		      566
-      Position		      [1550, 368, 1610, 382]
+      SID		      698
+      Position		      [1475, 303, 1535, 317]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_dataZ"
@@ -2013,17 +1800,35 @@ Model {
     Block {
       BlockType		      From
       Name		      "From145"
-      SID		      567
-      Position		      [1550, 218, 1610, 232]
+      SID		      699
+      Position		      [1475, 178, 1535, 192]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tx_dataY"
     }
     Block {
       BlockType		      From
+      Name		      "From15"
+      SID		      700
+      Position		      [1475, 78, 1535, 92]
+      ShowName		      off
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "armed"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From16"
+      SID		      701
+      Position		      [2320, 218, 2380, 232]
+      ShowName		      off
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "corr_id"
+    }
+    Block {
+      BlockType		      From
       Name		      "From17"
       SID		      58
-      Position		      [1205, 98, 1265, 112]
+      Position		      [1130, 98, 1190, 112]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tvg3"
@@ -2032,7 +1837,7 @@ Model {
       BlockType		      From
       Name		      "From18"
       SID		      59
-      Position		      [1205, 178, 1265, 192]
+      Position		      [1130, 178, 1190, 192]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tvg7"
@@ -2041,7 +1846,7 @@ Model {
       BlockType		      From
       Name		      "From19"
       SID		      60
-      Position		      [1205, 118, 1265, 132]
+      Position		      [1130, 118, 1190, 132]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tvg4"
@@ -2049,17 +1854,44 @@ Model {
     Block {
       BlockType		      From
       Name		      "From2"
-      SID		      531
-      Position		      [1550, 603, 1610, 617]
+      SID		      706
+      Position		      [1475, 328, 1535, 342]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "rst"
+      GotoTag		      "armed"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From20"
+      SID		      703
+      Position		      [1475, 153, 1535, 167]
+      ShowName		      off
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "tx_sync"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From21"
+      SID		      704
+      Position		      [1475, 278, 1535, 292]
+      ShowName		      off
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "tx_sync"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From22"
+      SID		      705
+      Position		      [1475, 28, 1535, 42]
+      ShowName		      off
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "tx_sync"
     }
     Block {
       BlockType		      From
       Name		      "From23"
       SID		      70
-      Position		      [1205, 138, 1265, 152]
+      Position		      [1130, 138, 1190, 152]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tvg5"
@@ -2068,79 +1900,34 @@ Model {
       BlockType		      From
       Name		      "From24"
       SID		      71
-      Position		      [1205, 158, 1265, 172]
+      Position		      [1130, 158, 1190, 172]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tvg6"
     }
     Block {
       BlockType		      From
-      Name		      "From28"
-      SID		      75
-      Position		      [2270, 38, 2330, 52]
+      Name		      "From3"
+      SID		      653
+      Position		      [2325, 383, 2385, 397]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
-      GotoTag		      "syncX"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From29"
-      SID		      76
-      Position		      [2270, 73, 2330, 87]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "rx_dataX"
+      GotoTag		      "rst"
     }
     Block {
       BlockType		      From
       Name		      "From30"
       SID		      339
-      Position		      [1205, 203, 1265, 217]
+      Position		      [1130, 203, 1190, 217]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "corr_id"
     }
     Block {
       BlockType		      From
-      Name		      "From31"
-      SID		      79
-      Position		      [2270, 108, 2330, 122]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "syncY"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From32"
-      SID		      80
-      Position		      [2270, 143, 2330, 157]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "rx_dataY"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From34"
-      SID		      82
-      Position		      [2270, 178, 2330, 192]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "syncZ"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From35"
-      SID		      83
-      Position		      [2270, 213, 2330, 227]
-      ShowName		      off
-      CloseFcn		      "tagdialog Close"
-      GotoTag		      "rx_dataZ"
-    }
-    Block {
-      BlockType		      From
       Name		      "From46"
       SID		      95
-      Position		      [1205, 18, 1265, 32]
+      Position		      [1130, 18, 1190, 32]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tvg_sync"
@@ -2149,7 +1936,7 @@ Model {
       BlockType		      From
       Name		      "From5"
       SID		      99
-      Position		      [1205, 38, 1265, 52]
+      Position		      [1130, 38, 1190, 52]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tvg0"
@@ -2167,7 +1954,7 @@ Model {
       BlockType		      From
       Name		      "From7"
       SID		      118
-      Position		      [1205, 58, 1265, 72]
+      Position		      [1130, 58, 1190, 72]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tvg1"
@@ -2176,7 +1963,7 @@ Model {
       BlockType		      From
       Name		      "From9"
       SID		      137
-      Position		      [1205, 78, 1265, 92]
+      Position		      [1130, 78, 1190, 92]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "tvg2"
@@ -2194,18 +1981,9 @@ Model {
       BlockType		      Goto
       Name		      "Goto1"
       SID		      146
-      Position		      [1095, 43, 1155, 57]
+      Position		      [1020, 43, 1080, 57]
       ShowName		      off
       GotoTag		      "tvg0"
-      TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto10"
-      SID		      398
-      Position		      [2160, 368, 2220, 382]
-      ShowName		      off
-      GotoTag		      "rx_dataZ"
       TagVisibility	      "local"
     }
     Block {
@@ -2219,63 +1997,27 @@ Model {
     }
     Block {
       BlockType		      Goto
-      Name		      "Goto12"
-      SID		      400
-      Position		      [2160, 348, 2220, 362]
-      ShowName		      off
-      GotoTag		      "syncZ"
-      TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Goto
       Name		      "Goto13"
       SID		      433
-      Position		      [760, 353, 820, 367]
+      Position		      [685, 353, 745, 367]
       ShowName		      off
       GotoTag		      "rst"
       TagVisibility	      "local"
     }
     Block {
       BlockType		      Goto
-      Name		      "Goto14"
-      SID		      402
-      Position		      [2160, 198, 2220, 212]
-      ShowName		      off
-      GotoTag		      "syncY"
-      TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto15"
-      SID		      403
-      Position		      [2160, 38, 2220, 52]
-      ShowName		      off
-      GotoTag		      "syncX"
-      TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Goto
       Name		      "Goto2"
       SID		      162
-      Position		      [1440, 38, 1500, 52]
+      Position		      [1365, 38, 1425, 52]
       ShowName		      off
       GotoTag		      "tx_sync"
       TagVisibility	      "local"
     }
     Block {
       BlockType		      Goto
-      Name		      "Goto20"
-      SID		      163
-      Position		      [2495, 268, 2555, 282]
-      ShowName		      off
-      GotoTag		      "xr_oos"
-      TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Goto
       Name		      "Goto21"
       SID		      164
-      Position		      [1095, 323, 1155, 337]
+      Position		      [1020, 323, 1080, 337]
       ShowName		      off
       GotoTag		      "tvg4"
       TagVisibility	      "local"
@@ -2284,7 +2026,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto22"
       SID		      165
-      Position		      [1095, 393, 1155, 407]
+      Position		      [1020, 393, 1080, 407]
       ShowName		      off
       GotoTag		      "tvg5"
       TagVisibility	      "local"
@@ -2293,7 +2035,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto23"
       SID		      166
-      Position		      [1095, 463, 1155, 477]
+      Position		      [1020, 463, 1080, 477]
       ShowName		      off
       GotoTag		      "tvg6"
       TagVisibility	      "local"
@@ -2302,7 +2044,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto24"
       SID		      167
-      Position		      [1095, 533, 1155, 547]
+      Position		      [1020, 533, 1080, 547]
       ShowName		      off
       GotoTag		      "tvg7"
       TagVisibility	      "local"
@@ -2320,7 +2062,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto27"
       SID		      170
-      Position		      [760, 368, 820, 382]
+      Position		      [685, 368, 745, 382]
       ShowName		      off
       GotoTag		      "armed"
       TagVisibility	      "local"
@@ -2329,7 +2071,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto3"
       SID		      173
-      Position		      [1095, 113, 1155, 127]
+      Position		      [1020, 113, 1080, 127]
       ShowName		      off
       GotoTag		      "tvg1"
       TagVisibility	      "local"
@@ -2338,7 +2080,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto4"
       SID		      184
-      Position		      [1095, 183, 1155, 197]
+      Position		      [1020, 183, 1080, 197]
       ShowName		      off
       GotoTag		      "tvg2"
       TagVisibility	      "local"
@@ -2356,25 +2098,16 @@ Model {
       BlockType		      Goto
       Name		      "Goto5"
       SID		      188
-      Position		      [1095, 253, 1155, 267]
+      Position		      [1020, 253, 1080, 267]
       ShowName		      off
       GotoTag		      "tvg3"
       TagVisibility	      "local"
     }
     Block {
       BlockType		      Goto
-      Name		      "Goto6"
-      SID		      394
-      Position		      [2160, 68, 2220, 82]
-      ShowName		      off
-      GotoTag		      "rx_dataX"
-      TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Goto
       Name		      "Goto72"
       SID		      191
-      Position		      [1440, 78, 1500, 92]
+      Position		      [1365, 78, 1425, 92]
       ShowName		      off
       GotoTag		      "tx_dataX"
       TagVisibility	      "local"
@@ -2383,7 +2116,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto73"
       SID		      192
-      Position		      [1440, 118, 1500, 132]
+      Position		      [1365, 118, 1425, 132]
       ShowName		      off
       GotoTag		      "tx_dataY"
       TagVisibility	      "local"
@@ -2392,7 +2125,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto74"
       SID		      193
-      Position		      [1440, 158, 1500, 172]
+      Position		      [1365, 158, 1425, 172]
       ShowName		      off
       GotoTag		      "tx_dataZ"
       TagVisibility	      "local"
@@ -2401,7 +2134,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto75"
       SID		      194
-      Position		      [1440, 198, 1500, 212]
+      Position		      [1365, 198, 1425, 212]
       ShowName		      off
       GotoTag		      "tx_valid"
       TagVisibility	      "local"
@@ -2410,18 +2143,9 @@ Model {
       BlockType		      Goto
       Name		      "Goto8"
       SID		      273
-      Position		      [1095, 18, 1155, 32]
+      Position		      [1020, 18, 1080, 32]
       ShowName		      off
       GotoTag		      "tvg_sync"
-      TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto9"
-      SID		      396
-      Position		      [2160, 218, 2220, 232]
-      ShowName		      off
-      GotoTag		      "rx_dataY"
       TagVisibility	      "local"
     }
     Block {
@@ -2473,42 +2197,49 @@ Model {
       BlockType		      Terminator
       Name		      "TerminatorY11"
       SID		      615
-      Position		      [2655, 75, 2675, 95]
+      Position		      [2555, 75, 2575, 95]
       ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "TerminatorY12"
       SID		      616
-      Position		      [2655, 95, 2675, 115]
+      Position		      [2555, 95, 2575, 115]
       ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "TerminatorY13"
       SID		      617
-      Position		      [2655, 135, 2675, 155]
+      Position		      [2555, 135, 2575, 155]
       ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "TerminatorY14"
       SID		      618
-      Position		      [2655, 155, 2675, 175]
+      Position		      [2555, 155, 2575, 175]
       ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "TerminatorY15"
       SID		      619
-      Position		      [2655, 195, 2675, 215]
+      Position		      [2555, 195, 2575, 215]
       ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "TerminatorY16"
       SID		      620
-      Position		      [2655, 215, 2675, 235]
+      Position		      [2555, 215, 2575, 235]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "TerminatorY17"
+      SID		      721
+      Position		      [2555, 35, 2575, 55]
       ShowName		      off
     }
     Block {
@@ -2657,7 +2388,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	89
+	SIDHighWatermark	88
 	SIDPrevWatermark	66
 	Block {
 	  BlockType		  Inport
@@ -3451,7 +3182,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "demo_interconnect_adc083000x2_adc0_user_data_valid"
+	  Name			  "demo_interconnect_new_adc083000x2_adc0_user_data_valid"
 	  SID			  88
 	  Ports			  [1, 1]
 	  Position		  [840, 598, 895, 622]
@@ -3488,7 +3219,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "demo_interconnect_adc083000x2_adc0_user_outofrange"
+	  Name			  "demo_interconnect_new_adc083000x2_adc0_user_outofrange"
 	  SID			  86
 	  Ports			  [1, 1]
 	  Position		  [840, 548, 895, 572]
@@ -3525,7 +3256,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "demo_interconnect_adc083000x2_adc0_user_s0"
+	  Name			  "demo_interconnect_new_adc083000x2_adc0_user_s0"
 	  SID			  69
 	  Ports			  [1, 1]
 	  Position		  [840, 98, 895, 122]
@@ -3562,7 +3293,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "demo_interconnect_adc083000x2_adc0_user_s0_conv"
+	  Name			  "demo_interconnect_new_adc083000x2_adc0_user_s0_conv"
 	  SID			  70
 	  Ports			  [1, 1]
 	  Position		  [1050, 95, 1130, 125]
@@ -3581,7 +3312,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "demo_interconnect_adc083000x2_adc0_user_s1"
+	  Name			  "demo_interconnect_new_adc083000x2_adc0_user_s1"
 	  SID			  71
 	  Ports			  [1, 1]
 	  Position		  [840, 148, 895, 172]
@@ -3618,7 +3349,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "demo_interconnect_adc083000x2_adc0_user_s1_conv"
+	  Name			  "demo_interconnect_new_adc083000x2_adc0_user_s1_conv"
 	  SID			  72
 	  Ports			  [1, 1]
 	  Position		  [1050, 145, 1130, 175]
@@ -3637,7 +3368,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "demo_interconnect_adc083000x2_adc0_user_s2"
+	  Name			  "demo_interconnect_new_adc083000x2_adc0_user_s2"
 	  SID			  73
 	  Ports			  [1, 1]
 	  Position		  [840, 198, 895, 222]
@@ -3674,7 +3405,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "demo_interconnect_adc083000x2_adc0_user_s2_conv"
+	  Name			  "demo_interconnect_new_adc083000x2_adc0_user_s2_conv"
 	  SID			  74
 	  Ports			  [1, 1]
 	  Position		  [1050, 195, 1130, 225]
@@ -3693,7 +3424,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "demo_interconnect_adc083000x2_adc0_user_s3"
+	  Name			  "demo_interconnect_new_adc083000x2_adc0_user_s3"
 	  SID			  75
 	  Ports			  [1, 1]
 	  Position		  [840, 248, 895, 272]
@@ -3730,7 +3461,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "demo_interconnect_adc083000x2_adc0_user_s3_conv"
+	  Name			  "demo_interconnect_new_adc083000x2_adc0_user_s3_conv"
 	  SID			  76
 	  Ports			  [1, 1]
 	  Position		  [1050, 245, 1130, 275]
@@ -3749,7 +3480,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "demo_interconnect_adc083000x2_adc0_user_s4"
+	  Name			  "demo_interconnect_new_adc083000x2_adc0_user_s4"
 	  SID			  77
 	  Ports			  [1, 1]
 	  Position		  [840, 298, 895, 322]
@@ -3786,7 +3517,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "demo_interconnect_adc083000x2_adc0_user_s4_conv"
+	  Name			  "demo_interconnect_new_adc083000x2_adc0_user_s4_conv"
 	  SID			  78
 	  Ports			  [1, 1]
 	  Position		  [1050, 295, 1130, 325]
@@ -3805,7 +3536,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "demo_interconnect_adc083000x2_adc0_user_s5"
+	  Name			  "demo_interconnect_new_adc083000x2_adc0_user_s5"
 	  SID			  79
 	  Ports			  [1, 1]
 	  Position		  [840, 348, 895, 372]
@@ -3842,7 +3573,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "demo_interconnect_adc083000x2_adc0_user_s5_conv"
+	  Name			  "demo_interconnect_new_adc083000x2_adc0_user_s5_conv"
 	  SID			  80
 	  Ports			  [1, 1]
 	  Position		  [1050, 345, 1130, 375]
@@ -3861,7 +3592,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "demo_interconnect_adc083000x2_adc0_user_s6"
+	  Name			  "demo_interconnect_new_adc083000x2_adc0_user_s6"
 	  SID			  81
 	  Ports			  [1, 1]
 	  Position		  [840, 398, 895, 422]
@@ -3898,7 +3629,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "demo_interconnect_adc083000x2_adc0_user_s6_conv"
+	  Name			  "demo_interconnect_new_adc083000x2_adc0_user_s6_conv"
 	  SID			  82
 	  Ports			  [1, 1]
 	  Position		  [1050, 395, 1130, 425]
@@ -3917,7 +3648,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "demo_interconnect_adc083000x2_adc0_user_s7"
+	  Name			  "demo_interconnect_new_adc083000x2_adc0_user_s7"
 	  SID			  83
 	  Ports			  [1, 1]
 	  Position		  [840, 448, 895, 472]
@@ -3954,7 +3685,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "demo_interconnect_adc083000x2_adc0_user_s7_conv"
+	  Name			  "demo_interconnect_new_adc083000x2_adc0_user_s7_conv"
 	  SID			  84
 	  Ports			  [1, 1]
 	  Position		  [1050, 445, 1130, 475]
@@ -3973,7 +3704,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "demo_interconnect_adc083000x2_adc0_user_sync"
+	  Name			  "demo_interconnect_new_adc083000x2_adc0_user_sync"
 	  SID			  85
 	  Ports			  [1, 1]
 	  Position		  [840, 498, 895, 522]
@@ -4126,17 +3857,17 @@ Model {
 	Line {
 	  SrcBlock		  "adc0_sim"
 	  SrcPort		  1
-	  DstBlock		  "demo_interconnect_adc083000x2_adc0_user_s0"
+	  DstBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s0"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "demo_interconnect_adc083000x2_adc0_user_s0"
+	  SrcBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s0"
 	  SrcPort		  1
-	  DstBlock		  "demo_interconnect_adc083000x2_adc0_user_s0_conv"
+	  DstBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s0_conv"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "demo_interconnect_adc083000x2_adc0_user_s0_conv"
+	  SrcBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s0_conv"
 	  SrcPort		  1
 	  DstBlock		  "adc0_s0"
 	  DstPort		  1
@@ -4144,17 +3875,17 @@ Model {
 	Line {
 	  SrcBlock		  "adc0_sim"
 	  SrcPort		  2
-	  DstBlock		  "demo_interconnect_adc083000x2_adc0_user_s1"
+	  DstBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s1"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "demo_interconnect_adc083000x2_adc0_user_s1"
+	  SrcBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s1"
 	  SrcPort		  1
-	  DstBlock		  "demo_interconnect_adc083000x2_adc0_user_s1_conv"
+	  DstBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s1_conv"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "demo_interconnect_adc083000x2_adc0_user_s1_conv"
+	  SrcBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s1_conv"
 	  SrcPort		  1
 	  DstBlock		  "adc0_s1"
 	  DstPort		  1
@@ -4162,17 +3893,17 @@ Model {
 	Line {
 	  SrcBlock		  "adc0_sim"
 	  SrcPort		  3
-	  DstBlock		  "demo_interconnect_adc083000x2_adc0_user_s2"
+	  DstBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s2"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "demo_interconnect_adc083000x2_adc0_user_s2"
+	  SrcBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s2"
 	  SrcPort		  1
-	  DstBlock		  "demo_interconnect_adc083000x2_adc0_user_s2_conv"
+	  DstBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s2_conv"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "demo_interconnect_adc083000x2_adc0_user_s2_conv"
+	  SrcBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s2_conv"
 	  SrcPort		  1
 	  DstBlock		  "adc0_s2"
 	  DstPort		  1
@@ -4180,17 +3911,17 @@ Model {
 	Line {
 	  SrcBlock		  "adc0_sim"
 	  SrcPort		  4
-	  DstBlock		  "demo_interconnect_adc083000x2_adc0_user_s3"
+	  DstBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s3"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "demo_interconnect_adc083000x2_adc0_user_s3"
+	  SrcBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s3"
 	  SrcPort		  1
-	  DstBlock		  "demo_interconnect_adc083000x2_adc0_user_s3_conv"
+	  DstBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s3_conv"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "demo_interconnect_adc083000x2_adc0_user_s3_conv"
+	  SrcBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s3_conv"
 	  SrcPort		  1
 	  DstBlock		  "adc0_s3"
 	  DstPort		  1
@@ -4198,17 +3929,17 @@ Model {
 	Line {
 	  SrcBlock		  "adc0_sim"
 	  SrcPort		  5
-	  DstBlock		  "demo_interconnect_adc083000x2_adc0_user_s4"
+	  DstBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s4"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "demo_interconnect_adc083000x2_adc0_user_s4"
+	  SrcBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s4"
 	  SrcPort		  1
-	  DstBlock		  "demo_interconnect_adc083000x2_adc0_user_s4_conv"
+	  DstBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s4_conv"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "demo_interconnect_adc083000x2_adc0_user_s4_conv"
+	  SrcBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s4_conv"
 	  SrcPort		  1
 	  DstBlock		  "adc0_s4"
 	  DstPort		  1
@@ -4216,17 +3947,17 @@ Model {
 	Line {
 	  SrcBlock		  "adc0_sim"
 	  SrcPort		  6
-	  DstBlock		  "demo_interconnect_adc083000x2_adc0_user_s5"
+	  DstBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s5"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "demo_interconnect_adc083000x2_adc0_user_s5"
+	  SrcBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s5"
 	  SrcPort		  1
-	  DstBlock		  "demo_interconnect_adc083000x2_adc0_user_s5_conv"
+	  DstBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s5_conv"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "demo_interconnect_adc083000x2_adc0_user_s5_conv"
+	  SrcBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s5_conv"
 	  SrcPort		  1
 	  DstBlock		  "adc0_s5"
 	  DstPort		  1
@@ -4234,17 +3965,17 @@ Model {
 	Line {
 	  SrcBlock		  "adc0_sim"
 	  SrcPort		  7
-	  DstBlock		  "demo_interconnect_adc083000x2_adc0_user_s6"
+	  DstBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s6"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "demo_interconnect_adc083000x2_adc0_user_s6"
+	  SrcBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s6"
 	  SrcPort		  1
-	  DstBlock		  "demo_interconnect_adc083000x2_adc0_user_s6_conv"
+	  DstBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s6_conv"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "demo_interconnect_adc083000x2_adc0_user_s6_conv"
+	  SrcBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s6_conv"
 	  SrcPort		  1
 	  DstBlock		  "adc0_s6"
 	  DstPort		  1
@@ -4252,17 +3983,17 @@ Model {
 	Line {
 	  SrcBlock		  "adc0_sim"
 	  SrcPort		  8
-	  DstBlock		  "demo_interconnect_adc083000x2_adc0_user_s7"
+	  DstBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s7"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "demo_interconnect_adc083000x2_adc0_user_s7"
+	  SrcBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s7"
 	  SrcPort		  1
-	  DstBlock		  "demo_interconnect_adc083000x2_adc0_user_s7_conv"
+	  DstBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s7_conv"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "demo_interconnect_adc083000x2_adc0_user_s7_conv"
+	  SrcBlock		  "demo_interconnect_new_adc083000x2_adc0_user_s7_conv"
 	  SrcPort		  1
 	  DstBlock		  "adc0_s7"
 	  DstPort		  1
@@ -4270,11 +4001,11 @@ Model {
 	Line {
 	  SrcBlock		  "adc0_sync_sim"
 	  SrcPort		  1
-	  DstBlock		  "demo_interconnect_adc083000x2_adc0_user_sync"
+	  DstBlock		  "demo_interconnect_new_adc083000x2_adc0_user_sync"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "demo_interconnect_adc083000x2_adc0_user_sync"
+	  SrcBlock		  "demo_interconnect_new_adc083000x2_adc0_user_sync"
 	  SrcPort		  1
 	  DstBlock		  "adc0_sync"
 	  DstPort		  1
@@ -4282,11 +4013,11 @@ Model {
 	Line {
 	  SrcBlock		  "adc0_sim"
 	  SrcPort		  9
-	  DstBlock		  "demo_interconnect_adc083000x2_adc0_user_outofrange"
+	  DstBlock		  "demo_interconnect_new_adc083000x2_adc0_user_outofrange"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "demo_interconnect_adc083000x2_adc0_user_outofrange"
+	  SrcBlock		  "demo_interconnect_new_adc083000x2_adc0_user_outofrange"
 	  SrcPort		  1
 	  DstBlock		  "adc0_outofrange"
 	  DstPort		  1
@@ -4294,11 +4025,11 @@ Model {
 	Line {
 	  SrcBlock		  "adc0_data_valid_sim"
 	  SrcPort		  1
-	  DstBlock		  "demo_interconnect_adc083000x2_adc0_user_data_valid"
+	  DstBlock		  "demo_interconnect_new_adc083000x2_adc0_user_data_valid"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "demo_interconnect_adc083000x2_adc0_user_data_valid"
+	  SrcBlock		  "demo_interconnect_new_adc083000x2_adc0_user_data_valid"
 	  SrcPort		  1
 	  DstBlock		  "adc0_data_valid"
 	  DstPort		  1
@@ -4311,7 +4042,7 @@ Model {
       SID		      210
       Ports		      [2, 2]
       Position		      [610, 337, 660, 388]
-      LibraryVersion	      "1.656"
+      LibraryVersion	      "1.675"
       SourceBlock	      "isi_correlator_lib/armed_trig"
       SourceType	      "SubSystem"
       ShowPortLabels	      "FromPortIcon"
@@ -4326,12 +4057,12 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "clump"
-      SID		      338
+      SID		      648
       Ports		      [9, 5]
-      Position		      [1290, 19, 1340, 191]
-      LibraryVersion	      "1.656"
+      Position		      [1215, 19, 1265, 191]
+      LibraryVersion	      "1.675"
       SourceBlock	      "isi_correlator_lib/clump"
-      SourceType	      ""
+      SourceType	      "SubSystem"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -4340,7 +4071,6 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      latency		      "1"
     }
     Block {
       BlockType		      Reference
@@ -4366,7 +4096,7 @@ Model {
       bitwidth		      "32"
       bin_pt		      "0"
       sample_period	      "1"
-      gw_name		      "demo_interconnect_control_user_data_out"
+      gw_name		      "demo_interconnect_new_control_user_data_out"
     }
     Block {
       BlockType		      Reference
@@ -4491,7 +4221,7 @@ Model {
       bitwidth		      "32"
       bin_pt		      "0"
       sample_period	      "1"
-      gw_name		      "demo_interconnect_corr_id_user_data_out"
+      gw_name		      "demo_interconnect_new_corr_id_user_data_out"
     }
     Block {
       BlockType		      Constant
@@ -4516,12 +4246,12 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "loopback"
-      SID		      414
-      Ports		      [3, 3]
-      Position		      [1835, 26, 1985, 124]
-      LibraryVersion	      "1.656"
+      SID		      707
+      Ports		      [5, 7]
+      Position		      [1710, 18, 1860, 122]
+      LibraryVersion	      "1.675"
       SourceBlock	      "isi_correlator_lib/loopback"
-      SourceType	      "loopback"
+      SourceType	      "SubSystem"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -4530,16 +4260,15 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      delay		      "8"
     }
     Block {
       BlockType		      Reference
-      Name		      "shuffle"
-      SID		      332
+      Name		      "permuteF"
+      SID		      719
       Ports		      [6, 5]
-      Position		      [1365, 19, 1415, 226]
-      LibraryVersion	      "1.656"
-      SourceBlock	      "isi_correlator_lib/shuffle"
+      Position		      [1290, 19, 1340, 226]
+      LibraryVersion	      "1.675"
+      SourceBlock	      "isi_correlator_lib/permuteF"
       SourceType	      ""
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
@@ -4550,6 +4279,133 @@ Model {
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
       latency		      "3"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "permuteX"
+      SID		      708
+      Ports		      [5, 4]
+      Position		      [2405, 25, 2455, 245]
+      LibraryVersion	      "1.675"
+      SourceBlock	      "isi_correlator_lib/permuteX"
+      SourceType	      ""
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      latency		      "3"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "post_loop"
+      SID		      709
+      Ports		      [7, 2]
+      Position		      [1885, 18, 1985, 122]
+      LibraryVersion	      "1.675"
+      SourceBlock	      "isi_correlator_lib/post_xaui"
+      SourceType	      "SubSystem"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "post_xaui0"
+      SID		      710
+      Ports		      [7, 2]
+      Position		      [1885, 143, 1985, 247]
+      LibraryVersion	      "1.675"
+      SourceBlock	      "isi_correlator_lib/post_xaui"
+      SourceType	      "SubSystem"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "post_xaui1"
+      SID		      711
+      Ports		      [7, 2]
+      Position		      [1885, 268, 1985, 372]
+      LibraryVersion	      "1.675"
+      SourceBlock	      "isi_correlator_lib/post_xaui"
+      SourceType	      "SubSystem"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "pre_loop"
+      SID		      712
+      Ports		      [4, 5]
+      Position		      [1585, 18, 1685, 122]
+      LibraryVersion	      "1.675"
+      SourceBlock	      "isi_correlator_lib/pre_xaui"
+      SourceType	      "SubSystem"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "pre_xaui0"
+      SID		      713
+      Ports		      [4, 5]
+      Position		      [1585, 143, 1685, 247]
+      LibraryVersion	      "1.675"
+      SourceBlock	      "isi_correlator_lib/pre_xaui"
+      SourceType	      "SubSystem"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "pre_xaui1"
+      SID		      714
+      Ports		      [4, 5]
+      Position		      [1585, 268, 1685, 372]
+      LibraryVersion	      "1.675"
+      SourceBlock	      "isi_correlator_lib/pre_xaui"
+      SourceType	      "SubSystem"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
     }
     Block {
       BlockType		      Reference
@@ -4588,7 +4444,7 @@ Model {
       Name		      "slice_tvg0"
       SID		      298
       Ports		      [1, 1]
-      Position		      [945, 43, 995, 57]
+      Position		      [870, 43, 920, 57]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Slice"
@@ -4621,7 +4477,7 @@ Model {
       Name		      "slice_tvg1"
       SID		      299
       Ports		      [1, 1]
-      Position		      [945, 113, 995, 127]
+      Position		      [870, 113, 920, 127]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Slice"
@@ -4654,7 +4510,7 @@ Model {
       Name		      "slice_tvg2"
       SID		      300
       Ports		      [1, 1]
-      Position		      [945, 183, 995, 197]
+      Position		      [870, 183, 920, 197]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Slice"
@@ -4687,7 +4543,7 @@ Model {
       Name		      "slice_tvg3"
       SID		      301
       Ports		      [1, 1]
-      Position		      [945, 253, 995, 267]
+      Position		      [870, 253, 920, 267]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Slice"
@@ -4720,7 +4576,7 @@ Model {
       Name		      "slice_tvg4"
       SID		      302
       Ports		      [1, 1]
-      Position		      [945, 323, 995, 337]
+      Position		      [870, 323, 920, 337]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Slice"
@@ -4753,7 +4609,7 @@ Model {
       Name		      "slice_tvg5"
       SID		      303
       Ports		      [1, 1]
-      Position		      [945, 393, 995, 407]
+      Position		      [870, 393, 920, 407]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Slice"
@@ -4786,7 +4642,7 @@ Model {
       Name		      "slice_tvg6"
       SID		      304
       Ports		      [1, 1]
-      Position		      [945, 463, 995, 477]
+      Position		      [870, 463, 920, 477]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Slice"
@@ -4819,7 +4675,7 @@ Model {
       Name		      "slice_tvg7"
       SID		      305
       Ports		      [1, 1]
-      Position		      [945, 533, 995, 547]
+      Position		      [870, 533, 920, 547]
       ShowName		      off
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Slice"
@@ -4849,29 +4705,10 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "snap_ctrl_xaui1"
-      SID		      516
+      Name		      "snap_meta"
+      SID		      654
       Ports		      [3]
-      Position		      [2175, 449, 2200, 491]
-      LibraryVersion	      "1.1209"
-      SourceBlock	      "casper_library/Scopes/snap"
-      SourceType	      "snap"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      nsamples		      "13"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "snap_main_xaui"
-      SID		      594
-      Ports		      [3]
-      Position		      [2010, 534, 2035, 576]
+      Position		      [2680, 319, 2705, 361]
       LibraryVersion	      "1.1209"
       SourceBlock	      "casper_library/Scopes/snap"
       SourceType	      "snap"
@@ -4890,7 +4727,7 @@ Model {
       Name		      "snap_unclump_XA"
       SID		      609
       Ports		      [3]
-      Position		      [2780, 104, 2805, 146]
+      Position		      [2680, 104, 2705, 146]
       LibraryVersion	      "1.1209"
       SourceBlock	      "casper_library/Scopes/snap"
       SourceType	      "snap"
@@ -4909,7 +4746,7 @@ Model {
       Name		      "snap_unclump_YA"
       SID		      611
       Ports		      [3]
-      Position		      [2780, 169, 2805, 211]
+      Position		      [2680, 169, 2705, 211]
       LibraryVersion	      "1.1209"
       SourceBlock	      "casper_library/Scopes/snap"
       SourceType	      "snap"
@@ -4928,26 +4765,7 @@ Model {
       Name		      "snap_unclump_ZA"
       SID		      613
       Ports		      [3]
-      Position		      [2780, 234, 2805, 276]
-      LibraryVersion	      "1.1209"
-      SourceBlock	      "casper_library/Scopes/snap"
-      SourceType	      "snap"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      nsamples		      "13"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "snap_unclump_sync"
-      SID		      607
-      Ports		      [3]
-      Position		      [2780, 39, 2805, 81]
+      Position		      [2680, 234, 2705, 276]
       LibraryVersion	      "1.1209"
       SourceBlock	      "casper_library/Scopes/snap"
       SourceType	      "snap"
@@ -4967,49 +4785,11 @@ Model {
       SID		      260
       Ports		      [1, 1]
       Position		      [685, 285, 735, 335]
-      LibraryVersion	      "1.656"
+      LibraryVersion	      "1.675"
       UserDataPersistent      on
       UserData		      "DataTag1"
-      SourceBlock	      "isi_correlator_lib/sync_gen2"
-      SourceType	      "sync_gen2"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "sync_rx_get0"
-      SID		      637
-      Ports		      [4, 3]
-      Position		      [2035, 173, 2135, 232]
-      NamePlacement	      "alternate"
-      LibraryVersion	      "1.656"
-      SourceBlock	      "isi_correlator_lib/sync_rx_get"
-      SourceType	      "SubSystem"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "sync_rx_get1"
-      SID		      636
-      Ports		      [4, 3]
-      Position		      [2035, 323, 2135, 382]
-      NamePlacement	      "alternate"
-      LibraryVersion	      "1.656"
-      SourceBlock	      "isi_correlator_lib/sync_rx_get"
-      SourceType	      "SubSystem"
+      SourceBlock	      "isi_correlator_lib/sync_gen"
+      SourceType	      "sync_gen"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -5023,49 +4803,49 @@ Model {
       BlockType		      Terminator
       Name		      "terminator1"
       SID		      274
-      Position		      [945, 85, 965, 105]
+      Position		      [870, 85, 890, 105]
       ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "terminator3"
       SID		      275
-      Position		      [945, 155, 965, 175]
+      Position		      [870, 155, 890, 175]
       ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "terminator4"
       SID		      292
-      Position		      [945, 225, 965, 245]
+      Position		      [870, 225, 890, 245]
       ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "terminator5"
       SID		      293
-      Position		      [945, 295, 965, 315]
+      Position		      [870, 295, 890, 315]
       ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "terminator6"
       SID		      294
-      Position		      [945, 365, 965, 385]
+      Position		      [870, 365, 890, 385]
       ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "terminator7"
       SID		      295
-      Position		      [945, 435, 965, 455]
+      Position		      [870, 435, 890, 455]
       ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "terminator8"
       SID		      296
-      Position		      [945, 505, 965, 525]
+      Position		      [870, 505, 890, 525]
       ShowName		      off
     }
     Block {
@@ -5073,10 +4853,10 @@ Model {
       Name		      "tvg0"
       SID		      266
       Ports		      [1, 2]
-      Position		      [870, 12, 920, 63]
-      LibraryVersion	      "1.656"
+      Position		      [795, 12, 845, 63]
+      LibraryVersion	      "1.675"
       SourceBlock	      "isi_correlator_lib/tvg"
-      SourceType	      ""
+      SourceType	      "tvg"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -5085,17 +4865,17 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      addr_width	      "11"
+      length		      "2^11"
     }
     Block {
       BlockType		      Reference
       Name		      "tvg1"
       SID		      269
       Ports		      [1, 2]
-      Position		      [870, 82, 920, 133]
-      LibraryVersion	      "1.656"
+      Position		      [795, 82, 845, 133]
+      LibraryVersion	      "1.675"
       SourceBlock	      "isi_correlator_lib/tvg"
-      SourceType	      ""
+      SourceType	      "tvg"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -5104,17 +4884,17 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      addr_width	      "11"
+      length		      "2^11"
     }
     Block {
       BlockType		      Reference
       Name		      "tvg2"
       SID		      270
       Ports		      [1, 2]
-      Position		      [870, 152, 920, 203]
-      LibraryVersion	      "1.656"
+      Position		      [795, 152, 845, 203]
+      LibraryVersion	      "1.675"
       SourceBlock	      "isi_correlator_lib/tvg"
-      SourceType	      ""
+      SourceType	      "tvg"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -5123,17 +4903,17 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      addr_width	      "11"
+      length		      "2^11"
     }
     Block {
       BlockType		      Reference
       Name		      "tvg3"
       SID		      279
       Ports		      [1, 2]
-      Position		      [870, 222, 920, 273]
-      LibraryVersion	      "1.656"
+      Position		      [795, 222, 845, 273]
+      LibraryVersion	      "1.675"
       SourceBlock	      "isi_correlator_lib/tvg"
-      SourceType	      ""
+      SourceType	      "tvg"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -5142,17 +4922,17 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      addr_width	      "11"
+      length		      "2^11"
     }
     Block {
       BlockType		      Reference
       Name		      "tvg4"
       SID		      280
       Ports		      [1, 2]
-      Position		      [870, 292, 920, 343]
-      LibraryVersion	      "1.656"
+      Position		      [795, 292, 845, 343]
+      LibraryVersion	      "1.675"
       SourceBlock	      "isi_correlator_lib/tvg"
-      SourceType	      ""
+      SourceType	      "tvg"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -5161,17 +4941,17 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      addr_width	      "11"
+      length		      "2^11"
     }
     Block {
       BlockType		      Reference
       Name		      "tvg5"
       SID		      281
       Ports		      [1, 2]
-      Position		      [870, 362, 920, 413]
-      LibraryVersion	      "1.656"
+      Position		      [795, 362, 845, 413]
+      LibraryVersion	      "1.675"
       SourceBlock	      "isi_correlator_lib/tvg"
-      SourceType	      ""
+      SourceType	      "tvg"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -5180,17 +4960,17 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      addr_width	      "11"
+      length		      "2^11"
     }
     Block {
       BlockType		      Reference
       Name		      "tvg6"
       SID		      290
       Ports		      [1, 2]
-      Position		      [870, 432, 920, 483]
-      LibraryVersion	      "1.656"
+      Position		      [795, 432, 845, 483]
+      LibraryVersion	      "1.675"
       SourceBlock	      "isi_correlator_lib/tvg"
-      SourceType	      ""
+      SourceType	      "tvg"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -5199,17 +4979,17 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      addr_width	      "11"
+      length		      "2^11"
     }
     Block {
       BlockType		      Reference
       Name		      "tvg7"
       SID		      291
       Ports		      [1, 2]
-      Position		      [870, 502, 920, 553]
-      LibraryVersion	      "1.656"
+      Position		      [795, 502, 845, 553]
+      LibraryVersion	      "1.675"
       SourceBlock	      "isi_correlator_lib/tvg"
-      SourceType	      ""
+      SourceType	      "tvg"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -5218,17 +4998,17 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      addr_width	      "11"
+      length		      "2^11"
     }
     Block {
       BlockType		      Reference
       Name		      "unclump"
-      SID		      423
+      SID		      649
       Ports		      [4, 10]
-      Position		      [2580, 25, 2630, 245]
-      LibraryVersion	      "1.656"
+      Position		      [2480, 25, 2530, 245]
+      LibraryVersion	      "1.675"
       SourceBlock	      "isi_correlator_lib/unclump"
-      SourceType	      ""
+      SourceType	      "SubSystem"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -5237,34 +5017,14 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      latency		      "1"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "unshuffle"
-      SID		      331
-      Ports		      [5, 4]
-      Position		      [2505, 25, 2555, 245]
-      LibraryVersion	      "1.656"
-      SourceBlock	      "isi_correlator_lib/unshuffle"
-      SourceType	      ""
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      latency		      "3"
     }
     Block {
       BlockType		      Reference
       Name		      "xaui0"
-      SID		      418
+      SID		      715
       Tag		      "xps:xaui"
       Ports		      [5, 7]
-      Position		      [1835, 176, 1985, 274]
+      Position		      [1710, 143, 1860, 247]
       BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
       LibraryVersion	      "1.419"
       SourceBlock	      "xps_library/XAUI"
@@ -5287,10 +5047,10 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "xaui1"
-      SID		      419
+      SID		      716
       Tag		      "xps:xaui"
       Ports		      [5, 7]
-      Position		      [1835, 326, 1985, 424]
+      Position		      [1710, 268, 1860, 372]
       BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
       LibraryVersion	      "1.419"
       SourceBlock	      "xps_library/XAUI"
@@ -5313,12 +5073,12 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "xaui_resync"
-      SID		      422
-      Ports		      [6, 5]
-      Position		      [2355, 23, 2455, 242]
-      LibraryVersion	      "1.656"
+      SID		      717
+      Ports		      [7, 7]
+      Position		      [2155, 24, 2255, 246]
+      LibraryVersion	      "1.675"
       SourceBlock	      "isi_correlator_lib/xaui_resync"
-      SourceType	      "link_demux"
+      SourceType	      "xaui_resync"
       ShowPortLabels	      "FromPortIcon"
       SystemSampleTime	      "-1"
       FunctionWithSeparateData off
@@ -5327,8 +5087,7 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      buffer_depth	      "10"
-      logic_latency	      "1"
+      depth		      "10"
     }
     Line {
       SrcBlock		      "armed_trig"
@@ -5339,7 +5098,6 @@ Model {
 	DstPort			1
       }
       Branch {
-	Points			[0, 10]
 	DstBlock		"Goto13"
 	DstPort			1
       }
@@ -5543,31 +5301,31 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "shuffle"
+      SrcBlock		      "permuteF"
       SrcPort		      1
       DstBlock		      "Goto2"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "shuffle"
+      SrcBlock		      "permuteF"
       SrcPort		      2
       DstBlock		      "Goto72"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "shuffle"
+      SrcBlock		      "permuteF"
       SrcPort		      3
       DstBlock		      "Goto73"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "shuffle"
+      SrcBlock		      "permuteF"
       SrcPort		      4
       DstBlock		      "Goto74"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "shuffle"
+      SrcBlock		      "permuteF"
       SrcPort		      5
       DstBlock		      "Goto75"
       DstPort		      1
@@ -5581,124 +5339,38 @@ Model {
     Line {
       SrcBlock		      "clump"
       SrcPort		      1
-      DstBlock		      "shuffle"
+      DstBlock		      "permuteF"
       DstPort		      1
     }
     Line {
       SrcBlock		      "clump"
       SrcPort		      2
-      DstBlock		      "shuffle"
+      DstBlock		      "permuteF"
       DstPort		      2
     }
     Line {
       SrcBlock		      "clump"
       SrcPort		      3
-      DstBlock		      "shuffle"
+      DstBlock		      "permuteF"
       DstPort		      3
     }
     Line {
       SrcBlock		      "clump"
       SrcPort		      4
-      DstBlock		      "shuffle"
+      DstBlock		      "permuteF"
       DstPort		      4
     }
     Line {
       SrcBlock		      "clump"
       SrcPort		      5
-      DstBlock		      "shuffle"
+      DstBlock		      "permuteF"
       DstPort		      5
     }
     Line {
       SrcBlock		      "From30"
       SrcPort		      1
-      DstBlock		      "shuffle"
+      DstBlock		      "permuteF"
       DstPort		      6
-    }
-    Line {
-      SrcBlock		      "loopback"
-      SrcPort		      2
-      DstBlock		      "Goto6"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "loopback"
-      SrcPort		      1
-      DstBlock		      "Goto15"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From28"
-      SrcPort		      1
-      DstBlock		      "xaui_resync"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From29"
-      SrcPort		      1
-      DstBlock		      "xaui_resync"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "From31"
-      SrcPort		      1
-      DstBlock		      "xaui_resync"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "From32"
-      SrcPort		      1
-      DstBlock		      "xaui_resync"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "From34"
-      SrcPort		      1
-      DstBlock		      "xaui_resync"
-      DstPort		      5
-    }
-    Line {
-      SrcBlock		      "From35"
-      SrcPort		      1
-      DstBlock		      "xaui_resync"
-      DstPort		      6
-    }
-    Line {
-      SrcBlock		      "xaui_resync"
-      SrcPort		      5
-      Points		      [10, 0; 0, 50]
-      DstBlock		      "Goto20"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From14"
-      SrcPort		      1
-      Points		      [10, 0; 0, -65]
-      DstBlock		      "unshuffle"
-      DstPort		      5
-    }
-    Line {
-      SrcBlock		      "unshuffle"
-      SrcPort		      1
-      DstBlock		      "unclump"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "unshuffle"
-      SrcPort		      2
-      DstBlock		      "unclump"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "unshuffle"
-      SrcPort		      3
-      DstBlock		      "unclump"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "unshuffle"
-      SrcPort		      4
-      DstBlock		      "unclump"
-      DstPort		      4
     }
     Line {
       SrcBlock		      "From65"
@@ -5880,7 +5552,7 @@ Model {
     Line {
       SrcBlock		      "sync_gen2"
       SrcPort		      1
-      Points		      [105, 0]
+      Points		      [30, 0]
       Branch {
 	Points			[0, 10]
 	Branch {
@@ -5989,167 +5661,6 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "xaui_resync"
-      SrcPort		      1
-      DstBlock		      "unshuffle"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "xaui_resync"
-      SrcPort		      2
-      DstBlock		      "unshuffle"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "xaui_resync"
-      SrcPort		      3
-      DstBlock		      "unshuffle"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "xaui_resync"
-      SrcPort		      4
-      DstBlock		      "unshuffle"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "From2"
-      SrcPort		      1
-      DstBlock		      "Delay9"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From117"
-      SrcPort		      1
-      DstBlock		      "Delay5"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From118"
-      SrcPort		      1
-      DstBlock		      "loopback"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "From144"
-      SrcPort		      1
-      DstBlock		      "xaui1"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Constant1"
-      SrcPort		      1
-      DstBlock		      "Concat4"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Concat4"
-      SrcPort		      1
-      DstBlock		      "xaui1"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "Constant12"
-      SrcPort		      1
-      DstBlock		      "Concat1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Concat1"
-      SrcPort		      1
-      DstBlock		      "xaui0"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "From145"
-      SrcPort		      1
-      DstBlock		      "xaui0"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Delay5"
-      SrcPort		      1
-      Points		      [5, 0]
-      Branch {
-	Points			[0, 205]
-	Branch {
-	  DstBlock		  "Concat1"
-	  DstPort		  2
-	}
-	Branch {
-	  Points		  [0, 150]
-	  Branch {
-	    DstBlock		    "Concat4"
-	    DstPort		    2
-	  }
-	  Branch {
-	    Points		    [0, 80]
-	    DstBlock		    "Delay3"
-	    DstPort		    1
-	  }
-	}
-      }
-      Branch {
-	DstBlock		"loopback"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "Constant5"
-      SrcPort		      1
-      DstBlock		      "snap_main_xaui"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Concat5"
-      SrcPort		      1
-      Points		      [5, 0]
-      DstBlock		      "snap_main_xaui"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Delay25"
-      SrcPort		      1
-      DstBlock		      "snap_main_xaui"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Delay3"
-      SrcPort		      1
-      DstBlock		      "Concat5"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Delay4"
-      SrcPort		      1
-      DstBlock		      "Concat5"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Delay6"
-      SrcPort		      1
-      DstBlock		      "Concat5"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Delay8"
-      SrcPort		      1
-      DstBlock		      "Concat5"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "Constant6"
-      SrcPort		      1
-      DstBlock		      "snap_unclump_sync"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "unclump"
-      SrcPort		      1
-      DstBlock		      "Delay28"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "Constant7"
       SrcPort		      1
       DstBlock		      "snap_unclump_XA"
@@ -6184,34 +5695,6 @@ Model {
       SrcPort		      8
       DstBlock		      "Delay2"
       DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Delay1"
-      SrcPort		      1
-      Points		      [30, 0; 0, -25]
-      Branch {
-	Points			[0, -65]
-	Branch {
-	  Points		  [0, -65]
-	  Branch {
-	    Points		    [0, -65]
-	    DstBlock		    "snap_unclump_sync"
-	    DstPort		    2
-	  }
-	  Branch {
-	    DstBlock		    "snap_unclump_XA"
-	    DstPort		    2
-	  }
-	}
-	Branch {
-	  DstBlock		  "snap_unclump_YA"
-	  DstPort		  2
-	}
-      }
-      Branch {
-	DstBlock		"snap_unclump_ZA"
-	DstPort			2
-      }
     }
     Line {
       SrcBlock		      "unclump"
@@ -6271,232 +5754,556 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Delay28"
-      SrcPort		      1
-      DstBlock		      "snap_unclump_sync"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "Constant3"
       SrcPort		      1
-      DstBlock		      "snap_ctrl_xaui1"
+      DstBlock		      "snap_meta"
       DstPort		      3
     }
     Line {
-      SrcBlock		      "xaui1"
+      SrcBlock		      "Delay3"
       SrcPort		      1
-      DstBlock		      "sync_rx_get1"
+      DstBlock		      "Delay4"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "xaui1"
-      SrcPort		      2
-      Points		      [30, 0]
+      SrcBlock		      "From3"
+      SrcPort		      1
+      DstBlock		      "Delay3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Concat2"
+      SrcPort		      1
+      DstBlock		      "Delay1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Delay30"
+      SrcPort		      1
+      DstBlock		      "Concat2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Delay6"
+      SrcPort		      1
+      DstBlock		      "Concat2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Delay8"
+      SrcPort		      1
+      DstBlock		      "Concat2"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Delay9"
+      SrcPort		      1
+      DstBlock		      "Concat2"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Delay10"
+      SrcPort		      1
+      DstBlock		      "Concat2"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Delay11"
+      SrcPort		      1
+      DstBlock		      "Concat2"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Delay25"
+      SrcPort		      1
+      DstBlock		      "Concat2"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "From16"
+      SrcPort		      1
+      DstBlock		      "permuteX"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "xaui_resync"
+      SrcPort		      1
+      Points		      [130, 0]
       Branch {
-	DstBlock		"sync_rx_get1"
-	DstPort			2
+	DstBlock		"permuteX"
+	DstPort			1
       }
       Branch {
-	Points			[0, 70]
-	DstBlock		"Concat3"
+	DstBlock		"Delay30"
 	DstPort			1
       }
     }
     Line {
-      SrcBlock		      "xaui1"
+      SrcBlock		      "xaui_resync"
+      SrcPort		      2
+      Points		      [75, 0; 0, 15]
+      DstBlock		      "permuteX"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "xaui_resync"
       SrcPort		      3
-      Points		      [25, 0]
-      Branch {
-	DstBlock		"sync_rx_get1"
-	DstPort			3
-      }
-      Branch {
-	Points			[0, 70]
-	DstBlock		"Concat3"
-	DstPort			2
-      }
+      Points		      [60, 0; 0, 30]
+      DstBlock		      "permuteX"
+      DstPort		      3
     }
     Line {
-      SrcBlock		      "xaui1"
+      SrcBlock		      "xaui_resync"
       SrcPort		      4
-      Points		      [20, 0]
-      Branch {
-	DstBlock		"sync_rx_get1"
-	DstPort			4
-      }
-      Branch {
-	Points			[0, 70]
-	DstBlock		"Concat3"
-	DstPort			3
-      }
+      Points		      [45, 0; 0, 45]
+      DstBlock		      "permuteX"
+      DstPort		      4
     }
     Line {
-      SrcBlock		      "sync_rx_get1"
+      SrcBlock		      "From13"
       SrcPort		      1
-      Points		      [10, 0; 0, -30; -335, 0; 0, 30]
-      Branch {
-	DstBlock		"xaui1"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, 175]
-	DstBlock		"Delay6"
-	DstPort			1
-      }
+      DstBlock		      "xaui_resync"
+      DstPort		      7
     }
     Line {
       SrcBlock		      "xaui0"
       SrcPort		      1
-      DstBlock		      "sync_rx_get0"
+      DstBlock		      "post_xaui0"
       DstPort		      1
     }
     Line {
       SrcBlock		      "xaui0"
       SrcPort		      2
-      DstBlock		      "sync_rx_get0"
+      DstBlock		      "post_xaui0"
       DstPort		      2
     }
     Line {
       SrcBlock		      "xaui0"
       SrcPort		      3
-      DstBlock		      "sync_rx_get0"
+      DstBlock		      "post_xaui0"
       DstPort		      3
     }
     Line {
       SrcBlock		      "xaui0"
       SrcPort		      4
-      DstBlock		      "sync_rx_get0"
+      DstBlock		      "post_xaui0"
       DstPort		      4
     }
     Line {
-      SrcBlock		      "sync_rx_get0"
+      SrcBlock		      "xaui0"
+      SrcPort		      5
+      DstBlock		      "post_xaui0"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "xaui0"
+      SrcPort		      6
+      DstBlock		      "post_xaui0"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "xaui0"
+      SrcPort		      7
+      DstBlock		      "post_xaui0"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "xaui1"
       SrcPort		      1
-      Points		      [10, 0; 0, -30; -335, 0; 0, 30]
+      DstBlock		      "post_xaui1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xaui1"
+      SrcPort		      2
+      DstBlock		      "post_xaui1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "xaui1"
+      SrcPort		      3
+      DstBlock		      "post_xaui1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "xaui1"
+      SrcPort		      4
+      DstBlock		      "post_xaui1"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "xaui1"
+      SrcPort		      5
+      DstBlock		      "post_xaui1"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "xaui1"
+      SrcPort		      6
+      DstBlock		      "post_xaui1"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "xaui1"
+      SrcPort		      7
+      DstBlock		      "post_xaui1"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "From1"
+      SrcPort		      1
+      DstBlock		      "pre_xaui0"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "From145"
+      SrcPort		      1
+      DstBlock		      "pre_xaui0"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From20"
+      SrcPort		      1
+      DstBlock		      "pre_xaui0"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From21"
+      SrcPort		      1
+      DstBlock		      "pre_xaui1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From144"
+      SrcPort		      1
+      DstBlock		      "pre_xaui1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "pre_xaui0"
+      SrcPort		      1
       DstBlock		      "xaui0"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "sync_rx_get1"
+      SrcBlock		      "pre_xaui0"
       SrcPort		      2
-      DstBlock		      "Goto12"
-      DstPort		      1
+      DstBlock		      "xaui0"
+      DstPort		      2
     }
     Line {
-      SrcBlock		      "sync_rx_get1"
+      SrcBlock		      "pre_xaui0"
       SrcPort		      3
-      DstBlock		      "Goto10"
-      DstPort		      1
+      DstBlock		      "xaui0"
+      DstPort		      3
     }
     Line {
-      SrcBlock		      "sync_rx_get0"
-      SrcPort		      2
-      DstBlock		      "Goto14"
-      DstPort		      1
+      SrcBlock		      "pre_xaui0"
+      SrcPort		      4
+      DstBlock		      "xaui0"
+      DstPort		      4
     }
     Line {
-      SrcBlock		      "sync_rx_get0"
-      SrcPort		      3
-      DstBlock		      "Goto9"
-      DstPort		      1
+      SrcBlock		      "pre_xaui0"
+      SrcPort		      5
+      DstBlock		      "xaui0"
+      DstPort		      5
     }
     Line {
-      SrcBlock		      "From13"
+      SrcBlock		      "pre_xaui1"
       SrcPort		      1
-      Points		      [185, 0]
+      DstBlock		      "xaui1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "pre_xaui1"
+      SrcPort		      2
+      DstBlock		      "xaui1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "pre_xaui1"
+      SrcPort		      3
+      DstBlock		      "xaui1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "pre_xaui1"
+      SrcPort		      4
+      DstBlock		      "xaui1"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "pre_xaui1"
+      SrcPort		      5
+      DstBlock		      "xaui1"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "From118"
+      SrcPort		      1
+      DstBlock		      "pre_loop"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From15"
+      SrcPort		      1
+      DstBlock		      "pre_loop"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "From22"
+      SrcPort		      1
+      DstBlock		      "pre_loop"
+      DstPort		      1
+    }
+    Line {
+      Labels		      [2, 0]
+      SrcBlock		      "xaui_resync"
+      SrcPort		      5
+      Points		      [35, 0; 0, 130]
       Branch {
-	Points			[0, -90]
-	Branch {
-	  Points		  [0, -150]
-	  DstBlock		  "xaui0"
-	  DstPort		  2
-	}
-	Branch {
-	  DstBlock		  "xaui1"
-	  DstPort		  2
-	}
+	Points			[0, 115; -750, 0; 0, -300]
+	DstBlock		"pre_loop"
+	DstPort			4
       }
       Branch {
-	Points			[0, 50]
-	DstBlock		"Delay4"
+	DstBlock		"Delay6"
 	DstPort			1
       }
     }
     Line {
-      SrcBlock		      "From119"
-      SrcPort		      1
-      Points		      [170, 0]
+      SrcBlock		      "xaui_resync"
+      SrcPort		      6
+      Points		      [25, 0; 0, 115]
       Branch {
-	Points			[0, -15]
-	Branch {
-	  DstBlock		  "xaui1"
-	  DstPort		  5
-	}
-	Branch {
-	  Points		  [0, -150]
-	  Branch {
-	    Points		    [0, -160]
-	    DstBlock		    "loopback"
-	    DstPort		    3
-	  }
-	  Branch {
-	    DstBlock		    "xaui0"
-	    DstPort		    5
-	  }
-	}
+	Points			[0, 90; -730, 0; 0, -165]
+	DstBlock		"pre_xaui0"
+	DstPort			4
       }
       Branch {
-	Points			[0, 95]
 	DstBlock		"Delay8"
 	DstPort			1
       }
     }
     Line {
-      SrcBlock		      "Concat3"
+      SrcBlock		      "xaui_resync"
+      SrcPort		      7
+      Points		      [15, 0; 0, 100]
+      Branch {
+	Points			[0, 65; -705, 0]
+	DstBlock		"pre_xaui1"
+	DstPort			4
+      }
+      Branch {
+	DstBlock		"Delay9"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "From2"
       SrcPort		      1
-      DstBlock		      "snap_ctrl_xaui1"
+      DstBlock		      "pre_xaui1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "pre_loop"
+      SrcPort		      1
+      DstBlock		      "loopback"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "xaui1"
-      SrcPort		      5
-      Points		      [40, 0; 0, 70]
-      DstBlock		      "Concat3"
+      SrcBlock		      "pre_loop"
+      SrcPort		      2
+      DstBlock		      "loopback"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "pre_loop"
+      SrcPort		      3
+      DstBlock		      "loopback"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "pre_loop"
+      SrcPort		      4
+      DstBlock		      "loopback"
       DstPort		      4
     }
     Line {
-      SrcBlock		      "xaui1"
-      SrcPort		      6
-      Points		      [30, 0; 0, 70]
-      DstBlock		      "Concat3"
+      SrcBlock		      "pre_loop"
+      SrcPort		      5
+      DstBlock		      "loopback"
       DstPort		      5
     }
     Line {
-      SrcBlock		      "xaui1"
-      SrcPort		      7
-      Points		      [20, 0; 0, 70]
-      DstBlock		      "Concat3"
+      SrcBlock		      "loopback"
+      SrcPort		      1
+      DstBlock		      "post_loop"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "loopback"
+      SrcPort		      2
+      DstBlock		      "post_loop"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "loopback"
+      SrcPort		      3
+      DstBlock		      "post_loop"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "loopback"
+      SrcPort		      4
+      DstBlock		      "post_loop"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "loopback"
+      SrcPort		      5
+      DstBlock		      "post_loop"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "loopback"
+      SrcPort		      6
+      DstBlock		      "post_loop"
       DstPort		      6
     }
     Line {
-      SrcBlock		      "Delay9"
+      SrcBlock		      "loopback"
+      SrcPort		      7
+      DstBlock		      "post_loop"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "post_loop"
+      SrcPort		      2
+      Points		      [20, 0; 0, -20]
+      DstBlock		      "xaui_resync"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "post_xaui0"
       SrcPort		      1
-      Points		      [130, 0]
+      Points		      [30, 0]
       Branch {
-	Points			[0, -55]
+	Points			[0, -65]
+	DstBlock		"xaui_resync"
+	DstPort			3
+      }
+      Branch {
+	Points			[0, 185]
+	DstBlock		"Delay11"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "post_xaui0"
+      SrcPort		      2
+      Points		      [40, 0; 0, -85]
+      DstBlock		      "xaui_resync"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "post_xaui1"
+      SrcPort		      1
+      Points		      [50, 0]
+      Branch {
+	Points			[0, -130]
+	DstBlock		"xaui_resync"
+	DstPort			5
+      }
+      Branch {
+	Points			[0, 75]
 	DstBlock		"Delay25"
 	DstPort			1
       }
+    }
+    Line {
+      SrcBlock		      "post_xaui1"
+      SrcPort		      2
+      Points		      [60, 0; 0, -150]
+      DstBlock		      "xaui_resync"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "post_loop"
+      SrcPort		      1
+      Points		      [10, 0]
       Branch {
-	Points			[310, 0]
+	DstBlock		"xaui_resync"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 295]
+	DstBlock		"Delay10"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "permuteX"
+      SrcPort		      1
+      DstBlock		      "unclump"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "permuteX"
+      SrcPort		      2
+      DstBlock		      "unclump"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "permuteX"
+      SrcPort		      3
+      DstBlock		      "unclump"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "permuteX"
+      SrcPort		      4
+      DstBlock		      "unclump"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "unclump"
+      SrcPort		      1
+      DstBlock		      "TerminatorY17"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Delay1"
+      SrcPort		      1
+      DstBlock		      "snap_meta"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Delay4"
+      SrcPort		      1
+      Points		      [30, 0; 0, -50]
+      Branch {
+	DstBlock		"snap_meta"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, -85]
 	Branch {
-	  Points		  [0, -140]
-	  DstBlock		  "snap_ctrl_xaui1"
-	  DstPort		  2
+	  Points		  [0, -65]
+	  Branch {
+	    Points		    [0, -65]
+	    DstBlock		    "snap_unclump_XA"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "snap_unclump_YA"
+	    DstPort		    2
+	  }
 	}
 	Branch {
-	  Points		  [510, 0]
-	  DstBlock		  "Delay1"
-	  DstPort		  1
+	  DstBlock		  "snap_unclump_ZA"
+	  DstPort		  2
 	}
       }
     }
@@ -6598,7 +6405,7 @@ MatData {
     "4    (     0    D    !         !     )    >&,U=G-X.35T          X    P    !@    @    $          4    (     0    ( "
     "   !         !   @ M,0  #@   #     &    \"     0         !0    @    !     P    $         $  # &]F9@ .    .     8  "
     "  (    !          %    \"     $    &     0         0    !@   &9F,3$S-@  #@   %     &    \"     0         !0    @  "
-    "  !    &@    $         $    !H    N+V1E;6]?:6YT97)C;VYN96-T+W-Y<V=E;@        X    P    !@    @    $          4    "
+    "  !    '@    $         $    !X    N+V1E;6]?:6YT97)C;VYN96-T7VYE=R]S>7-G96X   X    P    !@    @    $          4    "
     "(     0    $    !         !   0 U    #@   $     &    \"     0         !0    @    !    #0    $         $     T   !#"
     ";&]C:R!%;F%B;&5S    #@   #     &    \"     0         !0    @    !     P    $         $  # #$P,  .    .     8    ( "
     "   !@         %    \"     $    !     0         )    \"               #@   #@    &    \"     8         !0    @    !"
@@ -6674,8 +6481,8 @@ MatData {
     "          %    \"     $    '     0         0    !P   '9I<G1E>#4 #@   $     &    \"     0         !0    @    !    \""
     "0    $         $     D   !X8S5V<W@Y-70         #@   #     &    \"     0         !0    @    !     @    $         $ "
     " \" \"TQ   .    ,     8    (    !          %    \"     $    #     0         0  , ;V9F  X    X    !@    @    $     "
-    "     4    (     0    8    !         !     &    9F8Q,3,V   .    4     8    (    !          %    \"     $    :     0"
-    "         0    &@   \"XO9&5M;U]I;G1E<F-O;FYE8W0O<WES9V5N        #@   #     &    \"     0         !0    @    !     0"
+    "     4    (     0    8    !         !     &    9F8Q,3,V   .    4     8    (    !          %    \"     $    >     0"
+    "         0    '@   \"XO9&5M;U]I;G1E<F-O;FYE8W1?;F5W+W-Y<V=E;@  #@   #     &    \"     0         !0    @    !     0"
     "    $         $  ! #4    .    0     8    (    !          %    \"     $    -     0         0    #0   $-L;V-K($5N86)"
     "L97,    .    ,     8    (    !          %    \"     $    #     0         0  , ,3 P  X    X    !@    @    &        "
     "  4    (     0    $    !          D    (               .    .     8    (    !@         %    \"     $    !     0   "
