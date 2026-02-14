@@ -1,0 +1,8 @@
+Diagnostics:
+* board reachable?
+* adc non-zero?
+* sync_gen_period non-zero?
+* sync not armed?
+* cable order?
+* vaccs match sync_gen_period?
+* pkt_ids increasing?
