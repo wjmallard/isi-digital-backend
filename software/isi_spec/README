@@ -1,0 +1,22 @@
+====================================
+Running the ISI Digital Spectrometer
+====================================
+
+Before starting a series of observations, program the FPGA:
+$ ./run_spec.py -p
+
+For each new observation, update any header fields in fits.cfg:
+$ vi fits.cfg
+Be sure to set the source name and observation duration.
+
+To take data:
+$ ./run_spec.py
+
+Data is saved as a FITS file:
+  $PATH/$DATE/$SOURCE/$TIME.fits
+where:
+  $PATH   is specified in spec.cfg
+  $DATE   is the UTC date, in YYYYMmmDD
+  $SOURCE is specified in fits.cfg
+  $TIME   is the UTC time, in yearseconds
+
