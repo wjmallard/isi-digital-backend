@@ -1,0 +1,984 @@
+commit 39abebf258fb9e82478d1212487fd883707a992f
+Author: William Mallard <wjm@llard.net>
+Date:   2011-01-28
+
+    Drawing cleanup in fft_wideband_real.
+    
+    The fft_direct block now resizes based on the number of input ports,
+    and the of_or block now moves vertically with the of_or port.
+
+ casper_library/fft_wideband_real_init.m | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+commit 00a1431c5a8e1b34fded93994eef9b3acfab6537
+Author: William Mallard <wjm@llard.net>
+Date:   2011-01-28
+
+    Optimized hilbert_dsp48e.
+    
+    The cast blocks in hilbert_dsp48e were not pipelined. This commit
+    fixes that.
+
+ casper_library/casper_library_ffts_internal.mdl | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 8bd3580740134f513454d71d3a56d661219555e3
+Author: William Mallard <wjm@llard.net>
+Date:   2011-01-28
+
+    Optimized twiddle_stage_2.
+    
+    The negate block in twiddle_stage_2 was also being used as a cast
+    block without pipelined delay. This commit splits these functions
+    into a negate block followed by a pipelined cast block.
+    
+    This resolves the fft_stage_2 bottleneck. All unit tests pass.
+
+ casper_library/casper_library_ffts.mdl         | 9107 ++++++++++++++++++------
+ casper_library/casper_library_ffts_twiddle.mdl |  505 +-
+ 2 files changed, 7218 insertions(+), 2394 deletions(-)
+
+commit 3fa70ae1b89f23589cdd97ce8f4d1ad81ddf7778
+Author: William Mallard <wjm@llard.net>
+Date:   2011-01-27
+
+    Updated biplex_core unit test.
+    
+    Commit 69e8d61 shifted the unit test output by 5 relative to the
+    reference data. Updated accordingly. All existing unit tests pass.
+
+ casper_library/Tests/biplex_core_test_reference.mat | Bin 79495 -> 79494 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 6c82d089306d42aa5dcdb0e175f3bc8ceea92fc3
+Merge: c503e629e 8f0689206
+Author: William Mallard <wjm@llard.net>
+Date:   2011-01-27
+
+    Merge git://casper.berkeley.edu/mlib_devel/bwrc into wjm
+
+commit 8f06892062e87675ce7d607684b591f7ce75e253
+Author: William Mallard <wjm@llard.net>
+Date:   2011-01-15
+
+    Bugfix in fft_biplex_real_4x_init.m.
+    
+    Set bram_map to 'off', and fully removed bram_map logic that was
+    accidentally copied over from fft_biplex_real_4x_init in commit
+    5ca815c.
+
+ casper_library/fft_biplex_real_4x_init.m | 8 +-------
+ 1 file changed, 1 insertion(+), 7 deletions(-)
+
+commit c503e629e78dd6feb0b989eeb607a746673e6d3a
+Author: William Mallard <wjm@llard.net>
+Date:   2011-01-11
+
+    Created delay_tree block.
+    
+    This new block automates the drawing of delay trees with arbitrary
+    branching factors.
+
+ casper_library/casper_library_delays.mdl | 297 ++++++++++++++++++++++++++-----
+ casper_library/delay_tree_init.m         | 166 +++++++++++++++++
+ 2 files changed, 418 insertions(+), 45 deletions(-)
+
+commit bf1bb89eb997be707b9ad85b9a94927f89474120
+Author: William Mallard <wjm@llard.net>
+Date:   2011-01-11
+
+    Added bi_real_unscr_4x speed optimization.
+    
+    Added an optional delay before all mirror_spectrum inputs.
+
+ casper_library/bi_real_unscr_4x_init.m          |   68 +-
+ casper_library/casper_library_ffts.mdl          | 1459 ++++++++++++++---------
+ casper_library/casper_library_ffts_internal.mdl | 1095 +++++++++++------
+ 3 files changed, 1639 insertions(+), 983 deletions(-)
+
+commit 4a17526b39bb25a894d983f39f380626596f91d7
+Author: William Mallard <wjm@llard.net>
+Date:   2011-01-05
+
+    Re-added aux[01]_clk to hw_routes table.
+    
+    Commit ccc4f9d added two entries for aux[01]_clk to BEE2_hw_routes.
+    Commit 11b65e2 clobbered them, breaking aux_clk support in the gpio
+    block. This commit re-adds the missing aux[01]_clk entries.
+
+ xps_library/BEE2_hw_routes.mat | Bin 11640 -> 11671 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 058f562343807a40e8e437f58bf99998b074930f
+Author: William Mallard <wjm@llard.net>
+Date:   2011-01-04
+
+    Rewrote fft_wideband_real_init.
+    
+    Reverted fft_wideband_real_init.m to Commit e150ef9 and re-added
+    support for parameterized pipeline delays in a way that conforms
+    to every other casper init script.  Specifically, i reverted all
+    reuse_line() calls back to add_line() calls and fixed the errors
+    introduced in Commit 69e8d61 that reuse_line() was just ignoring.
+    
+    Also reverted the block's default parameters. These should stay
+    small, as they determine what gets drawn when a block is dropped
+    into a design.
+    
+    Deleted contents of fft_wideband_real library block, since they
+    are automatically drawn when a block is dropped into a design.
+    
+    This auto-drawing behavior was introduced in Commit 2233ce8 to
+    eliminate the need to modify library models when just changing
+    a block's init script.
+    
+    Updated existing unit tests to work with the new parameters in
+    fft_wideband_real's mask.
+    
+    Finished mask script rewrite started a few weeks ago:
+    
+    Reorganized the script to draw blocks first and lines second.
+    This makes it easier to locate bugs that stop the block from
+    drawing, so it should simplify future development.
+    
+    Broke up reuse_block varargs so that one key/value pair appears
+    per line. This makes it easier to see single-parameter changes
+    with vcs diff commands.
+
+ casper_library/Tests/tester_input.txt   |     2 +-
+ casper_library/casper_library_ffts.mdl  | 16597 +-----------------------------
+ casper_library/fft_wideband_real_init.m |   306 +-
+ 3 files changed, 360 insertions(+), 16545 deletions(-)
+
+commit b2550ab1c914b90e63ecb2f0ba8a96550309c490
+Author: William Mallard <wjm@llard.net>
+Date:   2010-12-28
+
+    Bugfix in cmult_dsp48e: output cast latency.
+    
+    cast_latency was not being propagated to the output cast blocks.
+    Now fixed.
+    
+    Also reverts twiddle_general_dsp48e to allow for non-zero cast
+    latency in cmult_dsp48e. This feature was removed while trying
+    to fix a bug that was actually caused by this bug in cmult.
+    
+    Reverted twiddle_general_dsp48e_init.m to Commit e150ef9.
+
+ casper_library/cmult_dsp48e_init.m           | 6 ++++--
+ casper_library/twiddle_general_dsp48e_init.m | 8 +++-----
+ 2 files changed, 7 insertions(+), 7 deletions(-)
+
+commit e150ef9b5d2a07570227dc565b3a86347dab9c39
+Author: William Mallard <wjm@llard.net>
+Date:   2010-12-23
+
+    Fixed conv_latency usage in bi_real_unscr_4x.
+    
+    For whatever reason, the complex_addsub block (now called hilbert)
+    in bi_real_unscr_4x used to set the convert block's latency equal
+    to add_latency, despite bi_real_unscr_4x *having* a conv_latency
+    parameter. This hurts performance at high speed when add_latency
+    is greater than 1, as the extra latency requires an SRL16.
+    
+    So, this commit disentangles conv_latency from add_latency in the
+    bi_real_unscr_4x hilbert block.
+    
+    Updated affected unit tests accordingly.
+
+ .../Tests/fft_biplex_real_4x_delay_bram_test.mdl   |  4234 +-
+ ...ft_biplex_real_4x_delay_bram_test_reference.mat |   Bin 22646 -> 2499 bytes
+ .../Tests/fft_biplex_real_4x_delay_slr_test.mdl    | 40132 +++++++------------
+ ...fft_biplex_real_4x_delay_slr_test_reference.mat |   Bin 11382 -> 1023 bytes
+ .../Tests/fft_biplex_real_4x_dsp48_opt_test.mdl    |  2212 +-
+ ...fft_biplex_real_4x_dsp48_opt_test_reference.mat |   Bin 1015 -> 1034 bytes
+ casper_library/bi_real_unscr_4x_init.m             |    17 +-
+ casper_library/casper_library_ffts.mdl             |     6 +-
+ casper_library/casper_library_ffts_internal.mdl    |     6 +-
+ 9 files changed, 15843 insertions(+), 30764 deletions(-)
+
+commit a89da171873b54cf7689e225b0889bfc324248e5
+Author: William Mallard <wjm@llard.net>
+Date:   2010-12-22
+
+    Added negate_latency parameter to mirror_spectrum.
+    
+    The Negate blocks in the conjugation operation of mirror_spectrum
+    were not meeting timing at high speed. So, there is now an option
+    for a non-zero negate_latency.
+    
+    For designs without dsp48s, bi_real_unscr_4x sets negate_latency
+    to zero to maintain backwards compatibility. For designs that do
+    use them, it sets the latency to one.
+    
+    This affects fft_biplex_real_4x when dsp48_adders is enabled,
+    so i've generated a new unit test for this case.
+
+ .../Tests/fft_biplex_real_4x_dsp48_opt_test.mdl    | 37893 +++++++++++++++++++
+ ...fft_biplex_real_4x_dsp48_opt_test_reference.mat |   Bin 0 -> 1015 bytes
+ casper_library/Tests/tester_input.txt              |     6 +-
+ casper_library/bi_real_unscr_4x_init.m             |    13 +-
+ casper_library/casper_library_ffts.mdl             |  6906 ++--
+ casper_library/casper_library_ffts_internal.mdl    |  5264 +--
+ 6 files changed, 41759 insertions(+), 8323 deletions(-)
+
+commit 9e9b7c4c4eb3ad803f48d3daed93ecd5b126e32c
+Author: William Mallard <wjm@llard.net>
+Date:   2010-12-22
+
+    Optimized delays in bi_real_unscr_4x.
+    
+    The sync delay was originally implemented as a sync_delay block,
+    which includes a counter, two comparators, a mux, and a feedback
+    loop (with zero latency and a logical block).  For small delays,
+    this seems wasteful.
+    
+    So, sync_delay has been replaced by a new delay_srl block for any
+    delay that requires less than four slices.  This threshold can be
+    easily tuned and is documented in a comment in the init script.
+    
+    The two delays following the hilbert0 block used to be implemented
+    as delay_slr blocks. To help meet timing, these have been replaced
+    with new delay_srl blocks.
+
+ casper_library/bi_real_unscr_4x_init.m          |    41 +-
+ casper_library/casper_library_ffts_internal.mdl | 10187 ++++++++++++----------
+ 2 files changed, 5707 insertions(+), 4521 deletions(-)
+
+commit daa9b20eca20cf37c0ef8e5c406c15d404b0513e
+Author: William Mallard <wjm@llard.net>
+Date:   2010-12-22
+
+    Created delay_srl block.
+    
+    delay_srl implements a delay using Structural HDL in a way that is
+    optimized for high speed designs. It explicitly places a flip flop
+    before the chain of SRL16+FFs so that any long combinational path
+    preceding the delay_srl is not burdened with the long setup time
+    of an SRL.
+    
+    delay_srl does not conflict with the existing (erroneously named)
+    delay_slr block, which appears to just be a wrapper for a Xilinx
+    delay block anyway.
+
+ casper_library/casper_library_delays.mdl | 51729 ++++++++++++++++-------------
+ 1 file changed, 28028 insertions(+), 23701 deletions(-)
+
+commit a18a3cc79d436df1b6c37c4cfc73d9da4b734734
+Author: William Mallard <wjm@llard.net>
+Date:   2010-12-20
+
+    Unit test script maintenance.
+    
+    Fixed almost all warnings caught by the Matlab editor.
+    
+    Added a count of the number of tests passed.
+    
+    Fixed non-uniform indentation.
+    
+    Cleaned up code and message formatting.
+    
+    Made unit tests compatible with new empty library block scheme:
+    
+    Automated testing broke for the fft and fft_wideband_real blocks
+    in the transition to making their library blocks empty by default.
+    With the new empty block scheme, replace_block seemed to undo the
+    action of set_mask: the old block is replaced by a new block with
+    its parameters set to the defaults specified in its init script.
+    So, any unit test that tested non-default parameters would fail.
+    (Tests would still pass if the blocks were manually updated and
+    simulated, though.)
+    
+    To fix the problem, the new testing scheme saves the old block's
+    position, deletes the old block entirely, and then moves the new
+    block into the old block's saved position.
+
+ casper_library/Tests/test_library.m   | 327 ++++++++++++++++++----------------
+ casper_library/Tests/tester_input.txt |   1 -
+ 2 files changed, 169 insertions(+), 159 deletions(-)
+
+commit 5eac043ed8a6e4bcc702e22ffba699c84498a62e
+Author: William Mallard <wjm@llard.net>
+Date:   2010-12-20
+
+    Bugfix in bi_real_unscr_4x.
+    
+    Forgot to commit changes to this init script last night.
+
+ casper_library/bi_real_unscr_4x_init.m | 25 ++++++++++++++++---------
+ 1 file changed, 16 insertions(+), 9 deletions(-)
+
+commit 509d4ad367b731ec083151c62424bec791a6669c
+Author: William Mallard <wjm@llard.net>
+Date:   2010-12-20
+
+    Bugfix in caddsub_dsp48e.
+    
+    Forgot to propagate cast_latency to output cast blocks. Now fixed.
+
+ casper_library/caddsub_dsp48e_init.m | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 5ca815c794b3abc66a2aecba7557abef18c3744a
+Author: William Mallard <wjm@llard.net>
+Date:   2010-12-20
+
+    Integrated FFTs/Internal blocks into ffts.
+    
+    Rewrote fft_biplex_real_[24]x_init to fully redraw their blocks,
+    and integrated optimized dsp48e adders into bi_real_unscr_[24]x.
+    
+    Modified biplex_core, fft_biplex, and fft_biplex_real_4x to match
+    the standard casper port ordering: sync and shift inputs at top;
+    sync_out at top; of output at bottom.  Propagated port orderings
+    up through all top-level fft blocks.
+    
+    All existing fft unit tests pass.
+
+ casper_library/Tests/biplex_core_test.mdl          | 36445 ++++++++++++-------
+ casper_library/Tests/fft_biplex_real_2x_test.mdl   | 12352 ++++---
+ .../Tests/fft_biplex_real_4x_delay_bram_test.mdl   | 18701 ++++++----
+ .../Tests/fft_biplex_real_4x_delay_slr_test.mdl    | 32947 ++++++++++++-----
+ casper_library/Tests/fft_biplex_test.mdl           | 16318 ++++-----
+ casper_library/Tests/tester_input.txt              |     9 +-
+ casper_library/biplex_core_init.m                  |    37 +-
+ casper_library/casper_library.mdl                  |  1627 +-
+ casper_library/casper_library_ffts.mdl             | 31460 ++++++++++++----
+ casper_library/casper_library_ffts_internal.mdl    |   278 +-
+ casper_library/fft_biplex_real_2x_init.m           |   177 +-
+ casper_library/fft_biplex_real_4x_init.m           |   160 +-
+ casper_library/fft_init.m                          |    36 +-
+ casper_library/fft_wideband_real_init.m            |    24 +-
+ 14 files changed, 101015 insertions(+), 49556 deletions(-)
+
+commit b58b5af793430439dd7b9f413348853f226e839f
+Author: William Mallard <wjm@llard.net>
+Date:   2010-12-17
+
+    Created FFTs/Internals sub-library.
+    
+    Converted bi_real_unscr_2x and bi_real_unscr_4x into fully redrawn
+    masked blocks based on fft_biplex_real_[24]x sub-blocks, and moved
+    them into a new sub-library.
+    
+    Made mirror_spectrum block into a static block in the sub-library.
+    
+    Copied casper_library/Misc/complex_addsub and renamed it "hilbert"
+    to better reflect what it actually does. (Will probably remove the
+    misleadingly labelled block from Misc soon.)
+    
+    Created a dsp48e-based hilbert block.
+    
+    Have not yet actually integrated these blocks into any fft blocks.
+
+ casper_library/bi_real_unscr_2x_init.m          |   267 +
+ casper_library/bi_real_unscr_4x_init.m          |   438 +
+ casper_library/casper_library_ffts.mdl          |    43 +-
+ casper_library/casper_library_ffts_internal.mdl | 19843 ++++++++++++++++++++++
+ 4 files changed, 20585 insertions(+), 6 deletions(-)
+
+commit 2233ce8e4a0e3b502c6ed14f2a2d35a46f3ffdfa
+Author: William Mallard <wjm@llard.net>
+Date:   2010-12-16
+
+    Reduced size of fft sub-library.
+    
+    Made the fft and fft_wideband_real library blocks empty by default,
+    and set the CopyFcn callback to populate them when they are copied
+    from the library into a new design.
+    
+    This was most recently suggested on 02 Dec 2010 by Andrew Martens:
+    www.mail-archive.com/casper-scm@lists.berkeley.edu/msg00059.html
+    
+    In addition to reducing the size of the fft sub-library, it also
+    prevents the library from ending up in a state where looking under
+    a scripted mask causes Matlab to segfault.
+
+ casper_library/casper_library_ffts.mdl  | 54828 ++++++++----------------------
+ casper_library/fft_init.m               |     5 +
+ casper_library/fft_wideband_real_init.m |     2 +
+ 3 files changed, 13322 insertions(+), 41513 deletions(-)
+
+commit 0c2309c70ed69cb7d8e36c773a2fa2ea0d0343a9
+Author: William Mallard <wjm@llard.net>
+Date:   2010-12-10
+
+    Created twiddle_general_dsp48e.
+    
+    This new twiddle block uses a cmult_dsp48e block for its complex
+    multiplication.  It explicitly instantiates 4 DSP48Es instead of
+    relying on Xilinx System Generator to optimize 4 multipliers and
+    2 adders into DSP48Es if their parameters are tuned just right.
+
+ casper_library/casper_library_ffts_twiddle.mdl | 11970 ++++++++++++++++-------
+ casper_library/twiddle_general_dsp48e_init.m   |   208 +
+ 2 files changed, 8528 insertions(+), 3650 deletions(-)
+
+commit 079f6793b84084b52e26b12ee4289cfd8f84b39e
+Author: William Mallard <wjm@llard.net>
+Date:   2010-12-10
+
+    Modified cmult_dsp48e to allow for non-full-precision output.
+    
+    Added cast blocks to the outputs.
+    Added corresponding mask parameters.
+    
+    Modified block interface, splitting
+    up complex inputs into re/im inputs.
+    Matches interface of caddsub_dsp48e.
+
+ casper_library/casper_library_multipliers.mdl | 1122 +++++++++----------------
+ casper_library/cmult_dsp48e_init.m            |  139 +--
+ 2 files changed, 474 insertions(+), 787 deletions(-)
+
+commit 9101acc4f7d7bb20b56f4f186994bfd3ce2c948e
+Merge: 94723a0e1 42078d097
+Author: William Mallard <wjm@llard.net>
+Date:   2010-12-10
+
+    Merge git://casper.berkeley.edu/mlib_devel/kat
+
+commit 94723a0e1175dcd0d6bb171ae3e49077e7f3364b
+Author: William Mallard <wjm@llard.net>
+Date:   2010-12-07
+
+    Fixed segfault triggered by fft block redraw.
+    
+    Commit 36331a9 was supposed to fix a wiring bug in commit a6932f7,
+    but it inexplicably causes Matlab to segfault when redrawing the
+    fft block.  This commit resolves the segfaults in commit 36331a9.
+
+ casper_library/casper_library_ffts.mdl | 10453 +++++++++++++++++++++++--------
+ 1 file changed, 7816 insertions(+), 2637 deletions(-)
+
+commit 36331a983dcb398353be465fbabaf1a613022279
+Author: William Mallard <wjm@llard.net>
+Date:   2010-12-07
+
+    Bugfix in fft_biplex_real_4x block.
+    
+    Fixed a bug introduced in the last commit.  The solution involved
+    breaking links to reorder blocks.
+
+ casper_library/casper_library_ffts.mdl | 30100 +++++++++++++++++++++++++++----
+ 1 file changed, 26573 insertions(+), 3527 deletions(-)
+
+commit a6932f791593d14d0a7fbbb1b7b6ea78f2c479b0
+Author: William Mallard <wjm@llard.net>
+Date:   2010-12-06
+
+    Added ability to hardcode the fft shift schedule.
+    
+    The fft and fft_wideband_real blocks now allow the user to hardcode
+    a shift schedule at compile time.  This option allows ffts to meet
+    timing at higher speeds by reducing wiring complexity and resource
+    consumption.
+    
+    All fft blocks now have a checkbox to hardcode_shifts.  The higher
+    level blocks have a text field for entering the shift schedule as
+    an array; the lower level blocks have a checkbox to select whether
+    or not to downshift in that particular stage.
+    
+    All existing fft unit tests pass.
+
+ casper_library/Tests/tester_input.txt    |    36 +-
+ casper_library/biplex_core_init.m        |   152 +-
+ casper_library/butterfly_direct_init.m   |   284 +-
+ casper_library/casper_library_ffts.mdl   | 20080 ++++++++++++++---------------
+ casper_library/fft_biplex_init.m         |    80 +-
+ casper_library/fft_biplex_real_2x_init.m |   102 +-
+ casper_library/fft_biplex_real_4x_init.m |   115 +-
+ casper_library/fft_direct_init.m         |   193 +-
+ casper_library/fft_init.m                |   218 +-
+ casper_library/fft_stage_n_init.m        |   108 +-
+ casper_library/fft_unscrambler_init.m    |    60 +-
+ casper_library/fft_wideband_real_init.m  |   185 +-
+ 12 files changed, 10324 insertions(+), 11289 deletions(-)
+
+commit d38fb1c0484b262cef5845c07f8ae341ca30b901
+Author: William Mallard <wjm@llard.net>
+Date:   2010-11-29
+
+    Workaround for a Xilinx bug in caddsub_dsp48e.
+    
+    Disabled "Use adder only" option in the dsp48e in caddsub_dsp48e.
+    According to the manual, this option saves power by powering down
+    unused parts of the dsp48e.
+    
+    There is currently a bug in the Xilinx blockset that requires some
+    GCC environment variables to be unset when this option is checked.
+    I'm disabling it until the bug is fixed to prevent user confusion.
+
+ casper_library/casper_library_misc.mdl | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit ace5f311e49a80a5e361752dc51e2fbcaf0aff71
+Author: William Mallard <wjm@llard.net>
+Date:   2010-11-24
+
+    Made the fft output unscrambler optional.
+    
+    The fft and fft_wideband_real blocks now have a checkbox to enable
+    or disable the channel unscrambler block at their outputs.
+    
+    Disabling the unscrambler allows the ffts to meet timing at higher
+    speeds by reducing wiring complexity and resource consumption, but
+    the user must then handle channel unscrambling in post-processing.
+    
+    Enabling the unscrambler simplifies channel readout.
+
+ casper_library/casper_library_ffts.mdl  | 8372 +++----------------------------
+ casper_library/fft_init.m               |   53 +-
+ casper_library/fft_wideband_real_init.m |   58 +-
+ 3 files changed, 856 insertions(+), 7627 deletions(-)
+
+commit 13b597819717ec17967ff3b7dc49f25570c53445
+Author: William Mallard <wjm@llard.net>
+Date:   2010-11-23
+
+    Rewrote butterfly_direct_init.
+    
+    When dsp48_adders is enabled, butterfly_direct now uses caddsub
+    blocks for complex addition, halving the number of dsp48s used.
+    
+    To implement this, the block's init script needed to be almost
+    completely rewritten to redraw itself.  This also necessitated
+    the string of recent changes to all fft-related masks, as well
+    as the creation of the parameterized caddsub_dsp48e block.
+    
+    All existing fft unit tests pass.
+
+ casper_library/butterfly_direct_init.m     |  644 +-
+ casper_library/casper_library_ffts.mdl     | 9814 ++++++++++++++++++++++++----
+ casper_library/fft_callback_arch.m         |    4 +-
+ casper_library/fft_callback_dsp48_adders.m |   13 +-
+ 4 files changed, 8963 insertions(+), 1512 deletions(-)
+
+commit 578f13f4da5d847a689ea66b7ee06bfbb84455af
+Author: William Mallard <wjm@llard.net>
+Date:   2010-11-23
+
+    Updated 6 fft-related unit tests.
+    
+    Modified models and new reference data:
+    * butterfly_direct_stage_2_test
+    * biplex_core_test
+    * fft_wideband_real_test
+    
+    These had dsp48_adders enabled but add_latency set to 1 or 3.
+    Their add_latency vals are now set to 2 to work with upcoming
+    dsp48 optimizations in the fft. Also updated System Generator
+    block as described below.
+    
+    Modified models only:
+    * fft_biplex_real_4x_delay_slr_test
+    * fft_stage_n_delay_slr_test
+    * fft_test
+    
+    These models have dsp48_adders enabled, and their add_latency
+    is already set to 2.  But their System Generator block is set
+    to target Virtex4, which doesn't have dsp48s.  This does not
+    break anything yet, but it might in the near future, so i've
+    preemptively retargeted them for Virtex5.
+
+ casper_library/Tests/biplex_core_test.mdl          | 17274 ++++++++++---------
+ .../Tests/biplex_core_test_reference.mat           |   Bin 1960086 -> 79495 bytes
+ .../Tests/butterfly_direct_stage_2_test.mdl        |   696 +-
+ .../butterfly_direct_stage_2_test_reference.mat    |   Bin 14422 -> 1348 bytes
+ .../Tests/fft_biplex_real_4x_delay_slr_test.mdl    |  3136 ++--
+ .../Tests/fft_stage_n_delay_slr_test.mdl           |   940 +-
+ casper_library/Tests/fft_test.mdl                  | 10885 +++++++-----
+ casper_library/Tests/fft_wideband_real_test.mdl    |  4891 ++++--
+ .../Tests/fft_wideband_real_test_reference.mat     |   Bin 7278 -> 693 bytes
+ casper_library/Tests/tester_input.txt              |     6 +-
+ 10 files changed, 21933 insertions(+), 15895 deletions(-)
+
+commit 2823b7a2a0010d163961679487e9fa30f463c386
+Author: William Mallard <wjm@llard.net>
+Date:   2010-11-18
+
+    Made all fft blocks enforce dsp48_adders==off when arch!=Virtex5.
+    
+    Created two dialog callback scripts for all fft blocks to share.
+    
+    fft_callback_arch currently unchecks and disables dsp48_adders
+    when the architecture is not set to Virtex5.
+    
+    fft_callback_dsp48_adders is a placeholder for a future commit
+    when dsp48_adders will restrict other options.
+
+ casper_library/casper_library_ffts.mdl     | 102587 +++++---------------------
+ casper_library/fft_callback_arch.m         |     37 +
+ casper_library/fft_callback_dsp48_adders.m |     28 +
+ 3 files changed, 17366 insertions(+), 85286 deletions(-)
+
+commit 745af7bd2f634e04085f16a89d34926a019b14a8
+Author: William Mallard <wjm@llard.net>
+Date:   2010-11-18
+
+    Added two functions to simplify dialog callbacks in block masks.
+    
+    set_param_state enables or disables a mask parameter.
+    get_param_state determines whether a mask parameter is enabled.
+    
+    Most existing mask scripts in the library enable or disable
+    mask parameters explicitly by their index number.  This is
+    fragile, as index numbers change whenever parameter lists
+    get shuffled around.
+    
+    The alternative is to look up each parameter by name. But
+    Matlab doesn't support dictionaries of arbitrary objects,
+    so each lookup takes several lines of code.
+    
+    These functions wrap the lookup process into a single call.
+
+ casper_library/get_param_state.m | 32 ++++++++++++++++++++++++++++++++
+ casper_library/set_param_state.m | 33 +++++++++++++++++++++++++++++++++
+ 2 files changed, 65 insertions(+)
+
+commit cd92b04f27832997a5eed24107b4fe217f46e68b
+Author: William Mallard <wjm@llard.net>
+Date:   2010-11-18
+
+    Disabled sync_gen_init debug message.
+
+ casper_library/sync_gen_init.m | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 199b9bdf8b5fb23683f4daa4c339b6f993dd6bb8
+Author: William Mallard <wjm@llard.net>
+Date:   2010-11-18
+
+    Modified caddsub_dsp48e to allow for non-full-precision output.
+    
+    Added cast blocks to the outputs.
+    Added corresponding mask parameters.
+    Shifted addends over to the MSBs.
+
+ casper_library/caddsub_dsp48e_init.m   |   69 +-
+ casper_library/casper_library_misc.mdl | 1120 ++++++++++++++++++++------------
+ 2 files changed, 755 insertions(+), 434 deletions(-)
+
+commit 147807f77ab5a20cb86fdac7f170bfdeaa8a2a79
+Author: William Mallard <wjm@llard.net>
+Date:   2010-11-15
+
+    Added caddsub_dsp48e.
+    
+    Performs a complex addition or subtraction in a single DSP48E.
+    Accepts heterogeneous inputs, each up to 23 bits of real/imag.
+
+ casper_library/caddsub_dsp48e_init.m   |  156 +++
+ casper_library/casper_library_misc.mdl | 2108 +++++++++++++++++++++++++-------
+ 2 files changed, 1842 insertions(+), 422 deletions(-)
+
+commit 99c709dcc21486c11fe7eb0411f8b58ff17ff692
+Author: William Mallard <wjm@llard.net>
+Date:   2010-11-13
+
+    Added dsp48e_bram_vacc.
+    
+    This new block rolls the adder and mux into a single DSP48E,
+    allowing the block to compile at higher clock rates than the
+    original simple_bram_vacc block.
+
+ casper_library/casper_library_accumulators.mdl | 74746 +++++++++++++----------
+ casper_library/dsp48e_bram_vacc_init.m         |    95 +
+ 2 files changed, 41274 insertions(+), 33567 deletions(-)
+
+commit e4dcffd19a6a838abe4b6d6c4350f6f2670e74fe
+Author: William Mallard <wjm@llard.net>
+Date:   2010-11-13
+
+    Converted cmult_init.m from dos to unix format.
+
+ casper_library/cmult_init.m | 308 ++++++++++++++++++++++----------------------
+ 1 file changed, 154 insertions(+), 154 deletions(-)
+
+commit 971d6c0bb8736ba0be9dc5b7b797e1ccd15c7c11
+Author: William Mallard <wjm@llard.net>
+Date:   2010-11-13
+
+    Added conjugation to cmult block; cleaned up cmult_dsp48e mask.
+
+ casper_library/casper_library_multipliers.mdl | 853 +++++++++++++-------------
+ casper_library/cmult_dsp48e_init.m            |   8 +-
+ casper_library/cmult_init.m                   |  43 +-
+ 3 files changed, 472 insertions(+), 432 deletions(-)
+
+commit 4e328242b104bd3d1aa8192aa81036b78cc861bf
+Author: William Mallard <wjm@llard.net>
+Date:   2010-11-12
+
+    Ported cmult block from r3 to r4 Xilinx block set.
+
+ casper_library/casper_library_multipliers.mdl | 934 ++++++++++++++------------
+ 1 file changed, 512 insertions(+), 422 deletions(-)
+
+commit 372069ad1915cf6623538bc07fa5200d25470fe3
+Author: William Mallard <wjm@llard.net>
+Date:   2010-11-12
+
+    Extended cmult_dsp48e block to accept heterogenous inputs.
+    
+    Now performs up to a 25-by-18 bit complex multiplication.
+    Output remains full-precision.  Added a mask init script.
+
+ casper_library/casper_library_multipliers.mdl | 1212 ++++++++++++++++---------
+ casper_library/cmult_dsp48e_init.m            |  187 ++++
+ 2 files changed, 989 insertions(+), 410 deletions(-)
+
+commit d21e872a755e8673fa63958db1b638d4f7e0652b
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-11-08
+
+    Improved cmult_dsp48e block documentation.
+
+ casper_library/casper_library_multipliers.mdl | 848 +++++++++++++++-----------
+ 1 file changed, 479 insertions(+), 369 deletions(-)
+
+commit 986751df3fc4caebc2cd697e000b42c7418717ac
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-11-08
+
+    Added DSP48E-based complex mult and power blocks.
+    
+    Both are fully parameterized (without using mask scripts).
+    There is a bit width / binary point bug in the existing
+    (non-DSP48E) power block that is fixed in this new block.
+
+ casper_library/casper_library_misc.mdl        | 19000 ++++++++++++++----------
+ casper_library/casper_library_multipliers.mdl | 11994 +++++++++------
+ 2 files changed, 18346 insertions(+), 12648 deletions(-)
+
+commit e6bcb8ff08338b3f4f7b38ba49ee1ff9aa543613
+Merge: 00f34ff28 582c5e41c
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-11-08
+
+    Merge git://casper.berkeley.edu/mlib_devel/kat
+
+commit ccc4f9df22f7d5f630172dc253a52e69f17e0e34
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-09-22
+
+    Added aux[01]_clk inputs to gpio block.
+    
+    The two SMA inputs near the ZDOK connectors (aux0_clk and aux1_clk)
+    were meant to provide a clock input for designs without ADCs. They
+    were previously only accessible from the User IP Clock Source menu
+    in the XSG Core Config block. This patch makes them also accessible
+    from the GPIO block.
+
+ xps_library/BEE2_hw_routes.mat | Bin 11650 -> 11680 bytes
+ xps_library/xps_library.mdl    |  17 +++++++++--------
+ 2 files changed, 9 insertions(+), 8 deletions(-)
+
+commit e2d783af9a2b37e2ec2a17ef911acd319a5f1988
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-04-07
+
+    Parameterized simple_bram_vacc.
+
+ casper_library/casper_library.mdl      | 887571 ++++++++++++++++--------------
+ casper_library/simple_bram_vacc_init.m |     68 +
+ 2 files changed, 482957 insertions(+), 404682 deletions(-)
+
+commit 4ccc24e4f8c14416a9f7261aab421313575c8b6d
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-04-07
+
+    Removing what appears to be cruft.
+
+ casper_library/slprj/sl_proj.tmw | 2 --
+ 1 file changed, 2 deletions(-)
+
+commit 690e877dd8e51274b0d8c4102c093e3c41975477
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-03-30
+
+    Bugfix in edge_detect mask inside armed_trigger block.
+
+ casper_library/casper_library.mdl | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit f6fa498a312cc0c502fa62a9441ddb00a5969137
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-03-24
+
+    Removing my sed script from last commit.
+
+ casper_library/wikify.sed | 23 -----------------------
+ 1 file changed, 23 deletions(-)
+
+commit 030f5eddb3a3f17079e2157bc2f624b66fc1ec18
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-03-24
+
+    Rewrote all MaskHelp fields in casper_library.mdl to point to the wiki
+    instead of the deprecated (and unmaintained) latex/html documentation.
+    Including my sed script to automate this process, just for the record.
+
+ casper_library/casper_library.mdl | 322 +++++++++++++++++++-------------------
+ casper_library/wikify.sed         |  23 +++
+ 2 files changed, 184 insertions(+), 161 deletions(-)
+
+commit a326cc100fd4805e30d9d9b3a42a8708c2c9c1b0
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-03-24
+
+    Switched to XPS_LIBRARY_PATH env var, and deprecated MLIB_ROOT.
+
+ xps_library/dram_sim.m | 27 +++++++++++++++------------
+ xps_library/sram_sim.m | 20 +++++++++++++-------
+ 2 files changed, 28 insertions(+), 19 deletions(-)
+
+commit a15e2cb18d4fb822b3a685b8c7d386f33a14c6b9
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-03-23
+
+    Reverted adding 'latency' parameter to Shared BRAM block.
+
+ xps_library/xps_library.mdl | 37 ++++++++++++++++++-------------------
+ 1 file changed, 18 insertions(+), 19 deletions(-)
+
+commit bcc7dff001b905e0d3e9b81f8faf67660560530d
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-03-23
+
+    Added 'latency' as a parameter to the Shared BRAM block.
+    This latency goes into the Convert block.  Default is 0.
+
+ xps_library/xps_library.mdl | 269 +++++++++++++++++++++++---------------------
+ 1 file changed, 141 insertions(+), 128 deletions(-)
+
+commit 9099be9fcaca642a3bd11d1eb0ee4b63897fbb0d
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-03-23
+
+    Created mask script for adc083000_ctrl block.
+
+ xps_library/adc083000_ctrl_mask.m |  44 +++++
+ xps_library/xps_library.mdl       | 336 +++++++++++++++++++++-----------------
+ 2 files changed, 227 insertions(+), 153 deletions(-)
+
+commit b1bac8884085601ec7e9156d91372aba38158a7e
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-03-23
+
+    Updating .mpd and .pao for adc083000ctrl pcore.
+
+ .../data/opb_adc083000ctrl_v2_1_0.mpd                         | 11 +++++++----
+ .../data/opb_adc083000ctrl_v2_1_0.pao                         |  1 +
+ 2 files changed, 8 insertions(+), 4 deletions(-)
+
+commit 43f5f6fa9f99146b4d6365b494747ee2741b18ef
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-03-23
+
+    Reverting accidental commit of extra file.
+
+ xps_library/@xps_adc083000x2/xps_adc083000x2.m | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a00b919d8fc47502c4f1f3a97612d711cf051ef8
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-03-23
+
+    Bugfix for bugfix for adc083000_ctrl block.
+
+ xps_library/@xps_adc083000x2/xps_adc083000x2.m | 2 +-
+ xps_library/xps_library.mdl                    | 8 ++++----
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 13c743c7c0677d5ab7d453589a1e28620f25633d
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-03-23
+
+    Bugfix in adc083000_ctrl block.
+
+ xps_library/xps_library.mdl | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 9584f94cf2e1a0f1ac33f8f8bfe05d7c35cbcfb4
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-03-23
+
+    Renamed demux_adc0 to demux_adc (since it applies to both adcs).
+
+ .../@xps_adc083000_ctrl/xps_adc083000_ctrl.m       |   2 +-
+ xps_library/@xps_adc083000x2/xps_adc083000x2.m     |   2 +-
+ xps_library/adc083000_mask.m                       |  22 +-
+ xps_library/xps_library.mdl                        | 588 ++++++++++-----------
+ 4 files changed, 296 insertions(+), 318 deletions(-)
+
+commit 775c40ccaa63b8a7c40e8fb5609e12ddcb0d1d08
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-03-23
+
+    Bugfixes, logic simplification, and code cleanup.
+
+ xps_library/adc083000_mask.m | 234 ++++++++++++++++++++++++++-----------------
+ 1 file changed, 140 insertions(+), 94 deletions(-)
+
+commit 705e36f9b6fc18839766943fc7a18cf2c720c985
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-03-21
+
+    Adding missing files from opb_adc083000ctrl_v1_00_a.
+
+ .../data/opb_adc083000ctrl_v2_1_0.bbd              |  3 +
+ .../data/opb_adc083000ctrl_v2_1_0.mpd              | 39 +++++++++
+ .../data/opb_adc083000ctrl_v2_1_0.pao              |  2 +
+ .../hdl/verilog/opb_adc083000ctrl.v                | 93 ++++++++++++++++++++++
+ .../netlist/async_fifo_64by16.ngc                  |  3 +
+ 5 files changed, 140 insertions(+)
+
+commit f5c8b433f91cf5143c6137951bb41e49ae6305c3
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-03-20
+
+    Set 'smode' to 'Force single rate' on all Downsample blocks.
+
+ casper_library/adc_sim_init.m | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit e7643e3ef8794333fb8ddf71e1291e604920f893
+Author: Billy Mallard <wjm@llard.net>
+Date:   2010-03-12
+
+    Bugfix.  Typo was breaking my compiles.
+
+ xps_library/adc083000_mask.m | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3013c0470c44c4f5d9a4fbc800b1973c143618bc
+Author: Billy Mallard <wjm@llard.net>
+Date:   2009-12-30
+
+    Added a checkbox to the pfb_fir_real block to chose whether to use
+    behavioral HDL in the adder_tree adders instead of pipelining them.
+    Cleaned up the Dialog Callback code for the specify_mult checkbox.
+
+ casper_library/casper_library.mdl  | 726607 ++++++++++++++++++----------------
+ casper_library/pfb_fir_real_init.m |      3 +-
+ 2 files changed, 390113 insertions(+), 336497 deletions(-)
+
+commit 5133efb90efb379e474e6af873cc73caf6e5e3bc
+Author: Billy Mallard <wjm@llard.net>
+Date:   2009-12-28
+
+    Forced the adc083000 block to explicitly load the Xilinx blockset.
+    This fixes a bug that was causing the block to fail to fully draw.
+
+ xps_library/adc083000_mask.m | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 345464068df57dbe0f72630ee660c9258a4d38d5
+Author: Billy Mallard <wjm@llard.net>
+Date:   2009-01-03
+
+    Bugfix: Made the constant zero block in vacc_core into a Sampled Constant with Sample Period of 1.
+
+ gavrt_library/gavrt_library.mdl | 1878 ++++++---------------------------------
+ 1 file changed, 266 insertions(+), 1612 deletions(-)
